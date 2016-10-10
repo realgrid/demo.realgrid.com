@@ -27,3 +27,33 @@ github_username:  jekyll
 # Build settings
 markdown: kramdown
 theme: minima
+
+logo:
+  nav_mobile: '../images/logo-coralspace.svg'
+  sidebar: '../images/icon-white.svg'
+  url: 'http://www.realgrid.com'
+  title: 'RealGrid'
+  target: _new
+
+nav_links:
+  - title: Demo
+    url: http://demo.realgrid.com
+    partial: illustration-demo
+    active: true
+  - title: Tutorials
+    url: http://help.realgrid.com/tutorial
+    partial: illustration-tutorial
+  - title: API Docs
+    url: http://help.realgrid.com/apis
+    partial: illustration-docs
+  - title: Forums
+    url: https://forums.meteor.com/
+    partial: illustration-forums
+    target: _new
+
+sidebar_categories:
+  Concept:
+  Columns:
+  API:
+  Packages:
+  Command Line:

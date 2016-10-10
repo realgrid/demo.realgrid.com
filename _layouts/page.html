@@ -1,0 +1,75 @@
+---
+layout: default
+---
+
+
+  {% include sidebar.html %}
+
+<div class="nav dark">
+  <div class="nav-group">
+    <div class="nav-item">
+      <span class="js-sidebar-toggle">
+        <span class="icon-menu"></span>
+      </span>
+    </div>
+  </div>
+
+  <div class="center-wrapper">
+    <img src="{{ config.logo }}" alt="{{ config.title }}"/>
+    <div>{{ config.title }}</div>
+  </div>
+
+  {% if config.apis and config.apis.docsearch  %}
+  <div class="nav-group right">
+    <div class="nav-item">
+      <span class="js-search-toggle">
+        <span class="icon-search"></span>
+      </span>
+    </div>
+  </div>
+
+  <div class="nav-search">
+    <div class="input-symbol">
+      <input type="text" placeholder="Search {{ config.subtitle }}" id="mobile-search-input"/>
+      <span class="icon-search"></span>
+    </div>
+
+    <div class="nav-group right">
+      <div class="nav-item">
+        <span class="js-search-toggle">
+          <span class="icon-close"></span>
+        </span>
+      </div>
+    </div>
+
+    <div class="wrapper-mobile-search-results"></div>
+  </div>
+  {% endif %}
+</div>
+
+<div class="content">
+  <div class="content-wrapper" style="margin-right: 40%;">
+    <div class="header-content">
+      <h1 class="title-page">{{ page.title }}</h1>
+      {% if page.description  %}
+        <div class="subtitle-page">{{ page.description }}</div>
+      {% endif %}
+
+      <div class="page-actions">
+        <div class="actions-group">
+          <a class="btn primary small round lowercase" href="{{ githubUrl }}" target="_blank"><span class="icon-github"></span> <span>Edit on GitHub</span></a>
+          {% if page.discourseTopicId %}
+            <a class="btn tertiary small round lowercase" href="https://forums.meteor.com/t/{{ page.discourseTopicId }}"><span class="icon-comment"></span> <span>Discuss</span></a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="document-formatting">
+      {{ content }}
+    </div>
+
+  </div>
+
+
+</div>

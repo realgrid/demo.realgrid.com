@@ -1,0 +1,73 @@
+<div class="sidebar">
+  <div class="panel">
+    <div class="panel-item">
+      <a href="" title="RealGrid" >
+        <img src="/images/realgrid-logo.png" style="width:31px; height:39px;" alt="RealGrid">
+      </a>
+    </div>
+    {% for link in site.nav_links %}
+      <div class="panel-item{% if link.active %} active{% endif %}">
+        <a class="" href="{{ link.url }}" {% if link.target %} target="{{ link.target }}" {% endif %}>
+          {% if link.partial %}  {% else %} <img src="{{ link.src }}" />  {% endif %}
+          <span>{{ link.title }}</span>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="sidebar-content">
+    <div class="topcap">
+      <span class="title-sidebar">{{ config.title }}</span>
+      {% if config.versions.length > 1 %}
+        <span class="select version-sidebar nochrome">
+          <select class="version-select">
+            {% for v in config.versions %}
+              <option value="v{{ v }}">{{ v }}</option>
+            {% endfor %}
+          </select>
+        </span>
+      {% endif %}
+    </div>
+
+    {% if config.apis and config.apis.docsearch  %}
+    <div class="wrapper-search">
+      <div class="input-symbol small round">
+        <input type="text" placeholder="Search {{ config.subtitle }}" id="desktop-search-input" />
+        <span class="icon-search"></span>
+      </div>
+      <div class="wrapper-desktop-search-results"></div>
+    </div>
+
+    {% endif %}
+
+    <ul class="toc">
+      {% for category in site.sidebar_categories %}
+        <li>
+          {% if category != 'null' %}
+            <div class="heading-toc">{{ category }}</div>
+          {% endif %}
+          <ul class="list-toc">
+            {% for path in site.pages %}
+              <li class="item-toc {% if page.title == path.title %}current {% endif %}">
+                <a href="{{ path.url }}" class="sidebar-link {% if page.title == path.title %}current{% endif %}">
+                  <span>{{ path.title }}</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+
+          <ul class="list-toc">
+            {% for path in site.posts %}
+              <li class="item-toc {% if page.title == path.title %}current {% endif %}">
+                <a href="{{ path.url }}" class="sidebar-link {% if page.title == path.title %}current{% endif %}">
+                  <span>{{ path.title }}</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
