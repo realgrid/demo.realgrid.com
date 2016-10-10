@@ -2,49 +2,12 @@
 layout: default
 ---
 
+{% include sidebar.html %}
 
-  {% include sidebar.html %}
-
-<div class="nav dark">
-<div class="nav-group">
-  <div class="nav-item">
-    <span class="js-sidebar-toggle show-mobile">
-      <span class="icon-menu"></span>
-    </span>
-    <a class="logo show-desktop" href="" title="RealGrid" >
-      <img src="/images/realgrid-logo.png" style="width:31px; height:39px;" alt="RealGrid">
-      <span>RealGrid</span>
-    </a>
-  </div>
-</div>
-
-<div class="nav-group right">
-      <div class="nav-item show-mobile">
-        <span class="js-search-toggle">
-          <span class="icon-search"></span>
-        </span>
-      </div>
-
-      <div class="nav-item show-desktop active">
-        <a class="link" href="http://help.realgrid.com">
-          <span>개발자문서</span>
-        </a>
-      </div>
-      <div class="nav-item show-desktop">
-        <a class="link" href="http://demo.realgrid.com/questions/">
-          <span>질문답변</span>
-        </a>
-      </div>
-      <div class="nav-item show-desktop">
-        <a class="link" href="http://help.realgrid.com">
-          <span>평가판</span>
-        </a>
-      </div>
-  </div>
-</div>
-
+{% include header.html %}
 
 <div class="content">
+
   <div class="content-wrapper" >
     <div class="header-content">
       <h1 class="title-page">{{ page.title }}</h1>
@@ -65,8 +28,6 @@ layout: default
     <div class="document-formatting">
       {{ content }}
     </div>
-
   </div>
-
 
 </div>

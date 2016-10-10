@@ -1,74 +1,44 @@
-<div class="navbar navbar-custom navbar-fixed-top" role="navigation">
-    <div class="container">
-
-      <!-- Navbar-header -->
-      <div class="navbar-header">
-        <!-- Responsive menu button -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <i class="zmdi zmdi-menu"></i>
-        </button>
-
-        <!-- LOGO -->
-        <a class="navbar-brand logo" href="/">
-            <span class="text-white"><img src="images/realgrid-logo1.png" /> RealGrid</span>
-        </a>
-
-      </div>
-      <!-- end navbar-header -->
-
-      <!-- menu -->
-      <div class="navbar-collapse collapse" id="navbar-menu">
-
-        <!-- Navbar left -->
-        <ul class="nav navbar-nav nav-custom-left">
-          <li class="text-white active">
-            <a href="#home">제품소개</a>
-          </li>
-          <!-- <li class="text-white">
-            <a href="#features">주요기능</a>
-          </li> -->
-          <li class="text-light">
-            <a href="#edu">교육 <small id="eduPlan"></small></a>
-          </li>
-          <li class="text-light">
-            <a href="#support">기술지원</a>
-          </li>
-          <li class="text-light">
-            <a href="#clients">고객사</a>
-          </li>
-          <!-- <li class="text-light">
-            <a href="#projects">구축사례</a>
-          </li> -->
-          <li class="text-light">
-            <a href="#license">제품구매</a>
-          </li>
-          <!-- <li class="dropdown">
-              <a href="#contact">회사</a>
-          </li> -->
-        </ul>
-
-        <!-- Navbar right -->
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a href="http://demo.realgrid.com" target="_blank">데모보기</a>
-          </li>
-          <li>
-            <a href="http://help.realgrid.com" target="_blank">개발자문서</a>
-          </li>
-          <li>
-            <a href="http://demo.realgrid.com/Manager/Questions" target="_blank">질문답변</a>
-          </li>
-          <li>
-              <button type="button" id="reqLicense" style="color: #fff !important;"
-                class="btn navbar-btn btn-primary">평가판</button>
-            <!-- <a href="#"
-                class="btn btn-inverse btn-bordered navbar-btn">평가판</a> -->
-          </li>
-        </ul>
-
-      </div>
-      <!--/Menu -->
+<div class="nav dark">
+    <div class="nav-group">
+        <div class="nav-item">
+            <span class="js-sidebar-toggle show-mobile">
+                <span class="icon-menu"></span>
+            </span>
+            <a class="logo show-desktop"
+                href=""
+                title="RealGrid">
+                <img src="/images/realgrid-logo.png"
+                    style="width:31px; height:39px;"
+                    alt="RealGrid">
+                <span>RealGrid</span>
+            </a>
+        </div>
     </div>
-    <!-- end container -->
+
+    <div class="nav-group right">
+        <div class="nav-item show-mobile">
+            <span class="js-search-toggle">
+                <span class="icon-search"></span>
+            </span>
+        </div>
+
+        <div class="nav-item show-desktop active">
+            <a class="link"
+                href="http://help.realgrid.com">
+                <span>개발자문서</span>
+            </a>
+        </div>
+        <div class="nav-item show-desktop">
+            <a class="link"
+                href="http://demo.realgrid.com/questions/">
+                <span>질문답변</span>
+            </a>
+        </div>
+        <div class="nav-item show-desktop">
+            <a class="link"
+                href="http://help.realgrid.com">
+                <span>평가판</span>
+            </a>
+        </div>
+    </div>
 </div>
-<!-- End navbar-custom -->
