@@ -2594,12 +2594,12 @@ a:visited,
   margin-right: .25em;
   vertical-align: baseline;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 900px) {
   .show-mobile {
     display: none !important;
   }
 }
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 899px) {
   .show-desktop {
     display: none !important;
   }
@@ -2922,7 +2922,8 @@ body {
   padding-top: 48px;
   z-index: 2;
 }
-@media screen and (min-width: 600px) {
+/*900보다 작으면 sidebar를 없앤다.*/
+@media screen and (min-width: 900px) {
   .content {
     padding-top: 64px;
     margin-left: 260px;
@@ -3274,6 +3275,7 @@ body.sidebar-visible .content {
 @media screen and (min-width: 600px) {
   .content .content-wrapper {
     padding-top: 3rem;
+    margin-right: 40%;
   }
 }
 .content .anchor-offset {
@@ -3479,22 +3481,16 @@ body.sidebar-visible .content {
   padding-right: 1.25rem;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-  position: absolute;
-  right: 0px;
-  width: 40%;
-  height: 100%;
-  overflow-y: auto;
+  width: 100%;
 }
 @media screen and (min-width: 600px) {
   .content .dev-box {
     padding-left: 1.875rem;
     padding-right: 1.875rem;
-  }
-}
-@media screen and (min-width: 600px) {
-  .content .dev-box {
-    padding-top: 1.875rem;
-    padding-bottom: 1.875rem;
+    position: absolute;
+    right: 0px;
+    width: 40%;
+    overflow-y: auto;
   }
 }
 .content .dev-box .highlight {
@@ -3505,8 +3501,12 @@ body.sidebar-visible .content {
   background: #f3f3f3;
 }
 .content .style2 {
-  top: 0
-		background: #f3f3f3;
+  top: 64px;
+	background: #f3f3f3;
+}
+.content .style3 {
+  top: 335px;
+	background: #f3f3f3;
 }
 .content .hidden {
   display: none;

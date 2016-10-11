@@ -1,19 +1,4 @@
 <div class="sidebar">
-  <div class="panel">
-    <div class="panel-item">
-      <a href="" title="RealGrid" >
-        <img src="/images/realgrid-logo.png" style="width:31px; height:39px;" alt="RealGrid">
-      </a>
-    </div>
-    {% for link in site.nav_links %}
-      <div class="panel-item{% if link.active %} active{% endif %}">
-        <a class="" href="{{ link.url }}" {% if link.target %} target="{{ link.target }}" {% endif %}>
-          {% if link.partial %}  {% else %} <img src="{{ link.src }}" />  {% endif %}
-          <span>{{ link.title }}</span>
-        </a>
-      </div>
-    {% endfor %}
-  </div>
 
   <div class="sidebar-content">
     <div class="topcap">
@@ -41,20 +26,25 @@
     {% endif %}
 
     <ul class="toc">
-      {% for category in site.sidebar_categories %}
+        <li>
+            <ul class="list-toc">
+                {% for path in site.pages %}
+                    {% if path.title %}
+                    <li class="item-toc {% if page.title == path.title %}current {% endif %}">
+                        <a href="{{ path.url }}" class="sidebar-link {% if page.title == path.title %}current{% endif %}">
+                            <span>{{ path.title }}</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </li>
+
+        {% for category in site.sidebar_categories %}
         <li>
           {% if category != 'null' %}
             <div class="heading-toc">{{ category }}</div>
           {% endif %}
-          <ul class="list-toc">
-            {% for path in site.pages %}
-              <li class="item-toc {% if page.title == path.title %}current {% endif %}">
-                <a href="{{ path.url }}" class="sidebar-link {% if page.title == path.title %}current{% endif %}">
-                  <span>{{ path.title }}</span>
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
 
           <ul class="list-toc">
             {% for path in site.posts %}
@@ -67,7 +57,8 @@
           </ul>
 
         </li>
-      {% endfor %}
+        {% endfor %}
+
     </ul>
   </div>
 </div>
