@@ -25,6 +25,31 @@ github_username:  jekyll
 markdown: kramdown
 theme: minima
 
+highlighter: rouge
+# More › http://kramdown.gettalong.org/quickref.html
+# Options › http://kramdown.gettalong.org/options.html
+kramdown:
+  input: GFM
+  # https://github.com/jekyll/jekyll/pull/4090
+  syntax_highlighter: rouge
+
+  # Rouge Highlighter in Kramdown › http://kramdown.gettalong.org/syntax_highlighter/rouge.html
+  # span, block element options fall back to global
+  syntax_highlighter_opts:
+    # Rouge Options › https://github.com/jneen/rouge#full-options
+    css_class: 'highlight'
+    #line_numbers: true # bad idea, spans don't need linenos and would inherit this option
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+collections:
+  demos:
+    output: true
+    permalink: /:path/
+
 logo:
   nav_mobile: '../images/logo-coralspace.svg'
   sidebar: '../images/icon-white.svg'
@@ -51,3 +76,24 @@ nav_links:
 sidebar_categories:
   Concept:
   Columns:
+  Getting Started:
+  Concepts:
+  Columns:
+  Rows:
+  Data:
+  Paging:
+  Renderers:
+  Series:
+  Editing:
+  Components:
+  TreeView:
+  Expression:
+  Styles:
+  DataCellStyle:
+  Export:
+  Import:
+  Events:
+  HighChart Interface:
+  UbiReport Interface:
+  Crownix Interface:
+  Fusion Charts:

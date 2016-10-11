@@ -627,11 +627,12 @@ code {
   padding-left: 2px;
   padding-right: 2px;
   vertical-align: baseline;
-  color: #1c887e;
+  /*color: #1c887e;*/
+  color: #444444;
 }
 pre {
   padding: 1em 1.25em;
-  white-space: pre-wrap;
+  /*white-space: pre-wrap;*/
   background: #f8f8f8;
   color: #333333;
 }
@@ -2760,14 +2761,18 @@ pre {
   color: #444444;
 }
 pre .function .keyword,
+pre .kd,
 pre .constant {
   color: #0092db;
 }
 pre .keyword,
+pre .kr,
+pre .k,
 pre .attribute {
   color: #e96900;
 }
 pre .number,
+pre .mi,
 pre .literal {
   color: #ae81ff;
 }
@@ -2796,6 +2801,7 @@ pre .title {
 }
 pre .tag .value,
 pre .string,
+pre .s2,
 pre .subst,
 pre .haskell .type,
 pre .preprocessor,
@@ -2821,6 +2827,7 @@ pre .prompt {
   color: #90a959;
 }
 pre .comment,
+pre .c1,
 pre .java .annotation,
 pre .python .decorator,
 pre .template_comment,
