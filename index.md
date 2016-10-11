@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RealGrid는 무엇인가?
+title: RealGrid DEMO
 description: 페이지에 대한 설명
 ---
 

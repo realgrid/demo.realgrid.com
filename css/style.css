@@ -3282,6 +3282,8 @@ body.sidebar-visible .content {
 @media screen and (min-width: 600px) {
   .content .content-wrapper {
     padding-top: 3rem;
+  }
+  .with-code-box {
     margin-right: 40%;
   }
 }
@@ -3483,7 +3485,7 @@ body.sidebar-visible .content {
   padding-bottom: 1.5rem;
   text-align: center;
 }
-.content .dev-box {
+.content .code-box {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
   padding-top: 1.25rem;
@@ -3491,7 +3493,7 @@ body.sidebar-visible .content {
   width: 100%;
 }
 @media screen and (min-width: 600px) {
-  .content .dev-box {
+  .content .code-box {
     padding-left: 1.875rem;
     padding-right: 1.875rem;
     position: absolute;
@@ -3500,7 +3502,7 @@ body.sidebar-visible .content {
     overflow-y: auto;
   }
 }
-.content .dev-box .highlight {
+.content .code-box .highlight {
   margin: 1.5em -2.2em;
 }
 .content .style1 {

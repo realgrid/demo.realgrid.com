@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Set Columns
-description: 그리드 컬럼은 그리드에 연결된 데이터셋 한 필드의 값들을 표시하고 관리하는 View 모델입니다.
+title: 컬럼 만들기
+codebox: true
 categories: columns
 ---
 
@@ -52,7 +52,7 @@ this.set();
 grid.setColumns(columns);
 ```
 
-<div class="dev-box style2" markdown="1">
+<div class="code-box style2" markdown="1">
 
 ```js
 const $window = $(window);

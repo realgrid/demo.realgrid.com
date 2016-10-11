@@ -37,6 +37,15 @@
                     </li>
                     {% endif %}
                 {% endfor %}
+                {% for path in site.posts %}
+                    {% if path.title %}
+                    <li class="item-toc {% if page.title == path.title %}current {% endif %}">
+                        <a href="{{ path.url }}" class="sidebar-link {% if page.title == path.title %}current{% endif %}">
+                            <span>{{ path.title }}</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
             </ul>
         </li>
 
@@ -47,12 +56,18 @@
           {% endif %}
 
           <ul class="list-toc">
-            {% for path in site.posts %}
-              <li class="item-toc {% if page.title == path.title %}current {% endif %}">
-                <a href="{{ path.url }}" class="sidebar-link {% if page.title == path.title %}current{% endif %}">
-                  <span>{{ path.title }}</span>
+            {% for demo in site.demos %}
+              {% assign democat = demo.categories[0] | downcase %}
+              {% assign cat = category[0] | downcase %}
+
+              {% if cat == democat %}
+              <li class="item-toc {% if page.title == demo.title %}current {% endif %}">
+                <a href="{{ demo.url }}" class="sidebar-link {% if page.title == demo.title %}current{% endif %}">
+                  <span>{{ demo.title }}</span>
                 </a>
               </li>
+              {% endif %}
+
             {% endfor %}
           </ul>
 
