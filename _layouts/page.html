@@ -8,7 +8,7 @@ layout: default
 
 <div class="content">
 
-    <div class="content-wrapper {% if page.codebox %}with-code-box{% endif %}">
+    <div class="content-wrapper {% if page.codefile or page.codebox %}with-code-box{% endif %}">
         <div class="header-content">
             <h1 class="title-page">{{ page.title }}</h1>
             {% if page.description  %}
@@ -40,6 +40,14 @@ layout: default
 
         <div class="document-formatting">
             {{ content }}
+
+            {% if page.codefile %}
+            <div class="code-box style2">
+                {% capture my-include %}{% include_relative codebox/{{page.codefile}} %}{% endcapture %}
+                {{ my-include | markdownify }}
+            </div>
+            {% endif %}
+
         </div>
     </div>
 

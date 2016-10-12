@@ -2,6 +2,7 @@
 layout: page
 title: 컬럼 만들기
 codebox: true
+codefile: SetColumns.md
 categories: columns
 ---
 
@@ -51,39 +52,3 @@ var columns = [
 this.set();
 grid.setColumns(columns);
 ```
-
-<div class="code-box style2" markdown="1">
-
-```js
-const $window = $(window);
-function getDimensions() {
-  return {
-    width: $window.width(),
-    height: $window.height()
-  };
-};
-
-WindowSize = new ReactiveDict();
-WindowSize.set(getDimensions());
-$window.on('resize', () => {
-  WindowSize.set(getDimensions());
-});
-
-if (expr) {
-  // 모든 컬럼의 기존 custom_filter 제거 및 다른 filter deactivate
-  var columns = gridView.getColumns();
-  for(var c in columns) {
-    gridView.removeColumnFilters(columns[c], ["custom_filter"]);
-    gridView.activateAllColumnFilters(columns[c], false);
-  }
-
-  // 새로운 custom filter 추가
-  var filters = [{
-    name: "custom_filter",
-    criteria: expr,
-    active: true
-  }];
-  gridView.addColumnFilters(filterColumn, filters);
-}
-```
-</div>
