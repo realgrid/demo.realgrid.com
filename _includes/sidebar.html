@@ -2,7 +2,7 @@
 
   <div class="sidebar-content">
     <div class="topcap">
-      <span class="title-sidebar">{{ config.title }}</span>
+      <span class="title-sidebar">{{ site.subtitle }}</span>
       {% if config.versions.length > 1 %}
         <span class="select version-sidebar nochrome">
           <select class="version-select">
@@ -14,21 +14,19 @@
       {% endif %}
     </div>
 
-    {% if config.apis and config.apis.docsearch  %}
     <div class="wrapper-search">
       <div class="input-symbol small round">
-        <input type="text" placeholder="Search {{ config.subtitle }}" id="desktop-search-input" />
+        <input type="text" placeholder="Search Demo" id="desktop-search-input" />
         <span class="icon-search"></span>
       </div>
       <div class="wrapper-desktop-search-results"></div>
     </div>
 
-    {% endif %}
-
     <ul class="toc">
         <li>
             <ul class="list-toc">
-                {% for path in site.pages %}
+                {% assign sorted_by_orderno = site.pages | sort: "order" %}
+                {% for path in sorted_by_orderno %}
                     {% if path.title %}
                     <li class="item-toc {% if page.title == path.title %}current {% endif %}">
                         <a href="{{ path.url }}" class="sidebar-link {% if page.title == path.title %}current{% endif %}">
@@ -37,7 +35,9 @@
                     </li>
                     {% endif %}
                 {% endfor %}
-                {% for path in site.posts %}
+
+                {% assign sorted_by_orderno = site.posts | sort: "order" %}
+                {% for path in sorted_by_orderno %}
                     {% if path.title %}
                     <li class="item-toc {% if page.title == path.title %}current {% endif %}">
                         <a href="{{ path.url }}" class="sidebar-link {% if page.title == path.title %}current{% endif %}">
@@ -56,7 +56,8 @@
           {% endif %}
 
           <ul class="list-toc">
-            {% for demo in site.demos %}
+            {% assign sorted_by_orderno = site.demos | sort: "order" %}
+            {% for demo in sorted_by_orderno %}
               {% assign democat = demo.categories[0] | downcase %}
               {% assign cat = category[0] | downcase %}
 

@@ -1,6 +1,3 @@
----
----
-
 보관하는 컬럼 정보들인데, **flash grid** 내부에서 생성되는 컬럼 객체와는 양쪽에서 관리하는 id 값으로 연결되지만 속성들이 자동으로 동기화 되지는 않습니다.
 컬럼은 각각 Header와 Footer를 표시하기 위한 정보를 갖습니다. 또한, 컬럼별로 스타일을 설정할 수 있습니다.
 
@@ -46,6 +43,12 @@ columns.push(column);
 
 grid.setColumns(columns);
 ```
+<a class="btn secondary small round lowercase">secondary</a>
+<a class="btn tertiary small round lowercase">tertiary</a>
+<a class="btn ancillary small round lowercase">ancillary</a>
+<a class="btn orange small round lowercase">orange</a>
+
+
 
 flash 그리드로 컬럼 정보를 전달할 때, 굳이 RealGrids.DataColumn 객체로 생성하여 전달할 필요는 없습니다. 아래 처럼 컬럼 정보들을 생성할 수도 있습니다. RealGrids.DataColumn 등 realgridplus.js에서 정의된 대부분의 클래스들은 명세로 존재합니다.
 

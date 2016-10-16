@@ -14,17 +14,16 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: RealGrid DEMO
+subtitle: RealGrid 데모보기
 email: support@realgrid.com
 description: RealGrid 데모사이트 입니다.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://example.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "demo.realgrid.com" # the base hostname & protocol for your site
+twitter_username: realgrid
+github_username:  realgrid
 
 # Build settings
 markdown: kramdown
-theme: minima
-
 highlighter: rouge
 # More › http://kramdown.gettalong.org/quickref.html
 # Options › http://kramdown.gettalong.org/options.html
