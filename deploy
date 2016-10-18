@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# _site폴더가 생성되었다고 가정하고 실행
+
+cd ./_site
+
+echo "--------- check status"
+git status
+git remote -v
+
+# 혹시 _site가 재생성되어 remote가 제거되었다면 다시 생성하는 코드가 필요하다.
+
+echo "--------- add"
+git add -A
+
+echo "--------- commit"
+now=$(date +'%Y-%m-%d %T')
+message="Update message $now"
+git commit -m "$message"
+
+echo "--------- push"
+git push deploy gh-pages

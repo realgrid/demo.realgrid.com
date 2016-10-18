@@ -12,7 +12,7 @@ categories: Columns
   var dataProvider;
 
   $(document).ready( function(){
-      RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.19");
+      RealGridJS.setRootContext("{{ "/lib/realgrid/realgridjs_eval.1.1.19" | prepend: site.baseurl }}");
 
       dataProvider = new RealGridJS.LocalDataProvider();
       gridView = new RealGridJS.GridView("realgrid");

@@ -1,0 +1,6 @@
+<div class="sidebar devbox">
+  <div class="sidebar-content devbox document-formatting">
+      {% capture my-include %}{% include_relative devbox/{{page.devboxfile}} %}{% endcapture %}
+      {{ my-include | markdownify }}
+  </div>
+</div>

@@ -29,7 +29,7 @@
                 {% for path in sorted_by_orderno %}
                     {% if path.title %}
                     <li class="item-toc {% if page.title == path.title %}current {% endif %}">
-                        <a href="{{ path.url }}" class="sidebar-link {% if page.title == path.title %}current{% endif %}">
+                        <a href="{{ path.url | prepend: site.baseurl }}" class="sidebar-link {% if page.title == path.title %}current{% endif %}">
                             <span>{{ path.title }}</span>
                         </a>
                     </li>
@@ -40,7 +40,7 @@
                 {% for path in sorted_by_orderno %}
                     {% if path.title %}
                     <li class="item-toc {% if page.title == path.title %}current {% endif %}">
-                        <a href="{{ path.url }}" class="sidebar-link {% if page.title == path.title %}current{% endif %}">
+                        <a href="{{ path.url | prepend: site.baseurl }}" class="sidebar-link {% if page.title == path.title %}current{% endif %}">
                             <span>{{ path.title }}</span>
                         </a>
                     </li>
@@ -63,7 +63,7 @@
 
               {% if cat == democat %}
               <li class="item-toc {% if page.title == demo.title %}current {% endif %}">
-                <a href="{{ demo.url }}" class="sidebar-link {% if page.title == demo.title %}current{% endif %}">
+                <a href="{{ demo.url | prepend: site.baseurl }}" class="sidebar-link {% if page.title == demo.title %}current{% endif %}">
                   <span>{{ demo.title }}</span>
                 </a>
               </li>

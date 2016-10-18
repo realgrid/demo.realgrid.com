@@ -43,11 +43,23 @@ columns.push(column);
 
 grid.setColumns(columns);
 ```
+<h4>기본버튼</h4>
+<a class="btn primary small round lowercase">primary</a>
 <a class="btn secondary small round lowercase">secondary</a>
 <a class="btn tertiary small round lowercase">tertiary</a>
 <a class="btn ancillary small round lowercase">ancillary</a>
+<h4>추가버튼</h4>
 <a class="btn orange small round lowercase">orange</a>
+<a class="btn danger small round lowercase">danger</a>
 
+<h4>기본버튼</h4>
+<a class="btn primary small lowercase">primary</a>
+<a class="btn secondary small lowercase">secondary</a>
+<a class="btn tertiary small lowercase">tertiary</a>
+<a class="btn ancillary small lowercase">ancillary</a>
+<h4>추가버튼</h4>
+<a class="btn orange small lowercase">orange</a>
+<a class="btn danger small lowercase">danger</a>
 
 
 flash 그리드로 컬럼 정보를 전달할 때, 굳이 RealGrids.DataColumn 객체로 생성하여 전달할 필요는 없습니다. 아래 처럼 컬럼 정보들을 생성할 수도 있습니다. RealGrids.DataColumn 등 realgridplus.js에서 정의된 대부분의 클래스들은 명세로 존재합니다.

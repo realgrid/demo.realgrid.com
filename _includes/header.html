@@ -7,7 +7,7 @@
             <a class="logo show-desktop"
                 href=""
                 title="{{ site.title }}">
-                <img src="/images/realgrid-logo.png"
+                <img src="{{ "/images/realgrid-logo.png" | prepend: site.baseurl }}"
                     alt="{{ site.title }}">
                 <span>{{ site.title }}</span>
             </a>
@@ -23,7 +23,7 @@
 
         <div class="nav-item show-desktop active">
             <a class="link"
-                href="http://demo.realgrid.com">
+                href="http://www.realgrid.com/demo">
                 <span>데모보기</span>
             </a>
         </div>
