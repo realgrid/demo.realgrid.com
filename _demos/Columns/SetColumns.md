@@ -1,8 +1,8 @@
 ---
 layout: page
 title: 컬럼 만들기
-devbox: true
 order : 1
+devbox: true
 devboxfile: SetColumns.md
 categories: columns
 ---

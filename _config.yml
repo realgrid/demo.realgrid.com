@@ -48,6 +48,9 @@ collections:
   demos:
     output: true
     permalink: /:path/
+  release:
+    output: true
+    permalink: /:path/
 
 logo:
   nav_mobile: '../images/logo-coralspace.svg'

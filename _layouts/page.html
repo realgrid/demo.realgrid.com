@@ -11,9 +11,17 @@ layout: default
     <div class="content-wrapper {% if page.devbox or page.devboxfile %}with-devbox{% else %}no-devbox{% endif %}">
         <div class="header-content">
             <h1 class="title-page">{{ page.title }}</h1>
-            {% if page.description  %}
-                <div class="subtitle-page">{{ page.description }}</div>
+            {% if page.description or page.version %}
+                <div class="subtitle-page">
+                    {% if page.version  %}
+                        <!--버전이 있는 경우 버전 표시-->
+                        {{ page.releaseDate }} Relaese {{ page.version }}
+                    {% else %}
+                        {{ page.description }}
+                    {% endif %}
+                </div>
             {% endif %}
+
 
             {% if page.devbox %}
             <div class="page-actions">

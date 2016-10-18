@@ -2920,7 +2920,7 @@ body {
   background: #f3f3f3;
 }
 .sidebar-content.devbox {
-  padding: 1.5rem; 
+  padding: 1.5rem;
   /*padding-left: 1.875rem;
   padding-right: 1.875rem;*/
 }
@@ -3158,6 +3158,9 @@ body.sidebar-visible .content {
 }
 .sidebar .toc > li:first-child > .heading-toc {
   padding-top: 0;
+}
+.sidebar .release {
+  color: #56579B;
 }
 .sidebar ul.toc {
   list-style: none;
