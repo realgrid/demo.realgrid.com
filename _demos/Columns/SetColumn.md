@@ -6,3 +6,5 @@ devbox: true
 devboxfile: SetColumns.md
 categories: 컬럼
 ---
+
+{% include realgrid.html grid-id="realgrid" grid-width="100%" grid-height="300px" %}

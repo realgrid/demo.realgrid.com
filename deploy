@@ -5,7 +5,8 @@ echo "---------------------"
 echo " jekyll build "
 echo "---------------------"
 
-JEKYLL_ENV=production jekyll build
+# 리뷰를 위해 잠시 풀기
+#JEKYLL_ENV=production jekyll build
 
 # _site폴더가 생성되었다고 가정하고 실행
 cd ./_site
