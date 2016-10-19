@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# 실행환경으로 빌드한다.
+JEKYLL_ENV=production jekyll build
+
 # _site폴더가 생성되었다고 가정하고 실행
 
 cd ./_site

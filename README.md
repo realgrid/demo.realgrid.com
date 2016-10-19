@@ -81,4 +81,18 @@ Provider);
 
 ## Deployment
 
-- 배포 저장소(Public) : https://github.com/RealGridSites/demo.git
+### 배포소스
+
+- 배포는 _site폴더의 내용을 github-pages 서비스를 위한 배포 저장소에 올린다.
+
+### 저장소
+
+- 배포 저장소(Public): https://github.com/RealGridSites/demo.git
+- branch: 배포 브랜치는 gh-pages 이며 기본 도메인은 www.realgrid.com/demo 가 된다.
+
+### 배포방법
+
+- ./branch 스크립트를 실행
+- 스크립트 내부에는
+  - `JEKYLL_ENV=production jekyll build` 로 환경값을 production으로 해서 _posts폴더의 내용을 메뉴에서 감춘다.
+  - _site 폴더의 내용을 모두 commit 하고 push한다.
