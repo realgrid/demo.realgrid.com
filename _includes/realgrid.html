@@ -1,0 +1,22 @@
+{% if site.realgrid_product == 'eval' %}
+    {% capture realgrid_product %}_eval{% endcapture %}
+{% else %}
+    {% capture realgrid_product %}_eval{% endcapture %}
+{% endif %}
+
+{% capture realgrid_folder %}/lib/realgrid/realgridjs{{ realgrid_product }}.{{ site.realgrid_version }}{% endcapture %}
+
+<div id="{{ include.grid-id }}" style="width:{{ include.grid-width }}; height:{{ include.grid-height }}"></div>
+
+<script>
+  var gridView;
+  var dataProvider;
+
+  $(document).ready( function(){
+      RealGridJS.setRootContext("{{ realgrid_folder | prepend: site.baseurl }}");
+
+      dataProvider = new RealGridJS.LocalDataProvider();
+      gridView = new RealGridJS.GridView("{{ include.grid-id }}");
+      gridView.setDataSource(dataProvider);
+  });
+</script>
