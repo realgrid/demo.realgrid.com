@@ -2,7 +2,7 @@
 layout: page
 title: Release 1.1.19
 releaseDate: 2016-09-30
-version: 1.1.19.2277
+releaseVersion: 1.1.19.2277
 sidebar: true
 ---
 

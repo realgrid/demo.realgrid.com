@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 최신버전 릴리즈(1.1.19)
+title: 최신버전(1.1.19)
 description: RealGrid 데모보기 페이지 소개 및 최신버전 릴리즈
 ---
 

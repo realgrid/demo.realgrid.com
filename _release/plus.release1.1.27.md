@@ -2,7 +2,7 @@
 layout: page
 title: RealGridPlus Release 1.1.27
 releaseDate: 2016-03-22
-version: 1.1.27.2635
+releaseVersion: 1.1.27.2635
 sidebar: false
 ---
 
