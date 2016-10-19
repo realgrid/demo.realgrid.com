@@ -36,16 +36,19 @@
                     {% endif %}
                 {% endfor %}
 
-                {% assign sorted_by_orderno = site.posts | sort: "order" %}
-                {% for path in sorted_by_orderno %}
-                    {% if path.title %}
-                    <li class="item-toc {% if page.title == path.title %}current {% endif %}">
-                        <a href="{{ path.url | prepend: site.baseurl }}" class="sidebar-link {% if page.title == path.title %}current{% endif %}">
-                            <span>{{ path.title }}</span>
-                        </a>
-                    </li>
-                    {% endif %}
-                {% endfor %}
+                {% if jekyll.environment == "development" %}
+                    <!-- _posts폴더의 post는 개발시에만 메뉴에 표시됩니다. -->
+                    {% assign sorted_by_orderno = site.posts | sort: "order" %}
+                    {% for path in sorted_by_orderno %}
+                        {% if path.title %}
+                        <li class="item-toc {% if page.title == path.title %}current {% endif %}">
+                            <a href="{{ path.url | prepend: site.baseurl }}" class="sidebar-link {% if page.title == path.title %}current{% endif %}">
+                                <span>{{ path.title }}</span>
+                            </a>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
             </ul>
         </li>
 

@@ -3,12 +3,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <!-- Site Title -->
+    <title>RealGrid DEMO - html5/canvas Web Data Grid - RealGrid(웹 데이터 그리드 - 리얼그리드) 데모사이트 -
+    {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}
+    </title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="images/favicon.ico">
 
     <link rel="stylesheet" href="{{ "/css/style.css" | prepend: site.baseurl }}">
 
     <script type="text/javascript" src="{{ "/lib/jquery/jquery-1.11.2.min.js" | prepend: site.baseurl }}"></script>
+
+    {% if site.realgrid_product == 'eval' %}
+        {% capture realgrid_product %}_eval{% endcapture %}
+    {% else %}
+        {% capture realgrid_product %}_eval{% endcapture %}
+    {% endif %}
+
+    {% capture realgrid_folder %}/lib/realgrid/realgridjs{{ realgrid_product }}.{{ site.realgrid_version }}{% endcapture %}
+    {% capture realgrid_file %}{{ realgrid_folder }}/realgridjs{{ realgrid_product }}.{{ site.realgrid_version }}.min.js{% endcapture %}
+    {% capture realgrid_apifile %}{{ realgrid_folder }}/realgridjs-api.{{ site.realgrid_version }}.js{% endcapture %}
+    {% capture realgrid_zipfile %}{{ realgrid_folder }}/jszip.min.js{% endcapture %}
 
 <!--
       <link rel="stylesheet" href="{{ "/css/bootstrap.css" | prepend: site.baseurl }}">

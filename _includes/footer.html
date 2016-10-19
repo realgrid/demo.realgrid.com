@@ -2,7 +2,21 @@
 <script type="text/javascript" src="{{ "/lib/common/smooth-scroll.min.js" | prepend: site.baseurl }}"></script>
 <script type="text/javascript" src="{{ "/lib/common/main.js" | prepend: site.baseurl }}"></script>
 
+
 <script type="text/javascript" src="{{ "/lib/realgrid/realgridjs-lic.js" | prepend: site.baseurl }}"></script>
-<script type="text/javascript" src="{{ "/lib/realgrid/realgridjs_eval.1.1.19/realgridjs_eval.1.1.19.min.js" | prepend: site.baseurl }}"></script>
-<script type="text/javascript" src="{{ "/lib/realgrid/realgridjs_eval.1.1.19/realgridjs-api.1.1.19.js" | prepend: site.baseurl }}"></script>
-<script type="text/javascript" src="{{ "/lib/realgrid/realgridjs_eval.1.1.19/jszip.min.js" | prepend: site.baseurl }}"></script>
+
+<script type="text/javascript" src="{{ realgrid_file | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ realgrid_apifile | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ realgrid_zipfile | prepend: site.baseurl }}"></script>
+
+<script>
+    window.onload = function() {
+        RealGridJS.setRootContext("{{ realgrid_folder | prepend: site.baseurl }}");
+    }
+
+    function togglePageStyles() {
+        $('.content-wrapper').toggleClass('with-devbox');
+        $('.content-wrapper').toggleClass('no-devbox');
+        $('.devbox').toggle('display');
+    }
+</script>
