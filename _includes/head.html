@@ -10,7 +10,7 @@
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
     <!-- Favicon icon -->
-    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="shortcut icon" href="{{ "/images/favicon.ico" | prepend: site.baseurl }}">
 
     <link rel="stylesheet" href="{{ "/css/style.css" | prepend: site.baseurl }}">
 
