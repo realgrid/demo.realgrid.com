@@ -84,6 +84,10 @@ Provider);
   - sidebar: {true|false} 왼쪽 메뉴에 보일지 말지 결정한다.
   - releaseVersion: {배포버전}
 
+### SEE
+
+- [지킬 성능 이슈](https://wiredcraft.com/blog/make-jekyll-fast/)
+
 ## Deployment
 
 ### 배포소스
