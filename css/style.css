@@ -627,8 +627,8 @@ code {
   padding-left: 2px;
   padding-right: 2px;
   vertical-align: baseline;
-  /*color: #1c887e;*/
-  color: #444444;
+  color: #1c887e;
+  /*color: #444444;*/
 }
 pre {
   padding: 1em 1.25em;
