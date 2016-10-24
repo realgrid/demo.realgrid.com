@@ -2,7 +2,6 @@
 layout: page
 title: 인디케이터
 order: 1
-version: 1.0.11
 devbox: true
 devboxfile: indicator-dbox.md
 categories:
