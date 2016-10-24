@@ -24,7 +24,7 @@
 
     <ul class="toc">
         <li>
-            <ul class="list-toc">
+            <ul class="list-toc release">
                 {% assign sorted_by_orderno = site.pages | sort: "order" %}
                 {% for path in sorted_by_orderno %}
                     {% if path.title %}
@@ -77,24 +77,7 @@
 
         </li>
         {% endfor %}
-
-        <!--릴리즈 메뉴-->
-        <li>
-          <div class="heading-toc release">release</div>
-          <ul class="list-toc">
-            {% assign sorted_by_orderno = site.release | sort: "date" | reverse %}
-            {% for item in sorted_by_orderno %}
-                {% if item.sidebar %}
-                  <li class="item-toc {% if page.title == item.title %}current {% endif %}">
-                    <a href="{{ item.url | prepend: site.baseurl }}" class="sidebar-link {% if page.title == item.title %}current{% endif %}">
-                      <span>{{ item.title }}</span>
-                    </a>
-                  </li>
-                {% endif %}
-            {% endfor %}
-          </ul>
-        </li>
-
+        
     </ul>
   </div>
 </div>
