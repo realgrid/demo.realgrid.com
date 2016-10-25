@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 안녕하세요!
-description: RealGrid 데모 사이트를 소개하는 페이지 입니다.
+description: RealGrid 데모 사이트입니다.
 ---
 
 RealGrid 데모 사이트는 RealGrid의 모든 기능을 다양하게 활용할 수 있는 방법을 보여드릴 뿐만 아니라
