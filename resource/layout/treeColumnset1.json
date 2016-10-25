@@ -1,0 +1,131 @@
+[{
+    "name": "col0",
+    "fieldName": "col0",
+    "width": "200",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Location"
+    }
+}, {
+    "name": "col1",
+    "fieldName": "col1",
+    "width": "60",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Id"
+    }
+}, {
+    "name": "col2",
+    "fieldName": "col2",
+    "width": "90",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Phone"
+    }
+}, {
+    "name": "col3",
+    "fieldName": "col3",
+    "width": "60",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Year"
+    },
+    "footer": {
+        "expression": "sum",
+        "styles": {
+            "textAlignment": "far"
+        }
+    }
+}, {
+    "name": "col4",
+    "fieldName": "col4",
+    "width": "100",
+    "imageList": "images",
+    "renderer": {
+        "type": "icon"
+    },
+    "dynamicStyles": [{
+        "criteria": "value='Argentina'",
+        "styles": "iconIndex=0"
+    }, {
+        "criteria": "value='Brazil'",
+        "styles": "iconIndex=1"
+    }, {
+        "criteria": "value='France'",
+        "styles": "iconIndex=2"
+    }, {
+        "criteria": "value='Mexico'",
+        "styles": "iconIndex=3"
+    }, {
+        "criteria": "value='Portugal'",
+        "styles": "iconIndex=4"
+    }, {
+        "criteria": "value='Spain'",
+        "styles": "iconIndex=5"
+    }, {
+        "criteria": "value='UK'",
+        "styles": "iconIndex=6"
+    }, {
+        "criteria": "value='USA'",
+        "styles": "iconIndex=7"
+    }, {
+        "criteria": "value='Venezuela'",
+        "styles": "iconIndex=8"
+    }],
+    "styles": {
+        "textAlignment": "near",
+        "iconIndex": 0,
+        "iconLocation": "left",
+        "iconAlignment": "center",
+        "iconOffset": 0,
+        "iconPadding": 2
+    },
+    "header": {
+        "text": "Country"
+    }
+}, {
+    "type": "group",
+    "width": "300",
+    "header": {
+        "text": "Detail Info"
+    },
+    "columns": [{
+        "name": "col5",
+        "fieldName": "col5",
+        "width": "60",
+        "styles": {
+            "textAlignment": "center"
+        },
+        "header": {
+            "text": "Spot"
+        }
+    }, {
+        "name": "col6",
+        "fieldName": "col6",
+        "width": "100",
+        "styles": {
+            "textAlignment": "center"
+        },
+        "header": {
+            "text": "Serial"
+        }
+    }, {
+        "name": "col7",
+        "fieldName": "col7",
+        "width": "120",
+        "styles": {
+            "textAlignment": "center"
+        },
+        "header": {
+            "text": "Mail"
+        }
+    }]
+}]
