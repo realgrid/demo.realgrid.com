@@ -1,0 +1,120 @@
+{% if site.realgrid_product == 'eval' %}
+    {% capture realgrid_product %}_eval{% endcapture %}
+{% else %}
+    {% capture realgrid_product %}_eval{% endcapture %}
+{% endif %}
+
+{% capture realgrid_folder %}/lib/realgrid/realgridjs{{ realgrid_product }}.{{ site.realgrid_version }}{% endcapture %}
+
+<div id="{{ include.treeId }}" style="width:{{ include.treeWidth }}; height:{{ include.treeHeight }}"></div>
+
+<script>
+    var {{ include.treeVar }};
+    var {{ include.dpVar }};
+
+    $(document).ready( function(){
+        RealGridJS.setRootContext("{{ realgrid_folder | prepend: site.baseurl }}");
+
+        {{ include.dpVar }} = new RealGridJS.LocalTreeDataProvider();
+        {{ include.treeVar }} = new RealGridJS.TreeView("{{ include.treeId }}");
+        {{ include.treeVar }}.setDataSource({{ include.dpVar }});
+
+        {% if include.fieldSet %}
+            {% capture fieldfile %}/resource/layout/{{ include.fieldSet }}.json{% endcapture %}
+
+            $.getJSON("{{ fieldfile | prepend: site.baseurl }}", function (data) {
+                {{ include.dpVar }}.setFields(data);
+            })
+            .done(function () {
+                {{ include.treeVar }}.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console && console.log("jQuery getJSON() Failed: " + err);
+                alert("jQuery getJSON() Failed: " + err);
+            });
+        {% endif %}
+
+        {% if include.columnSet %}
+            {% capture columnfile %}/resource/layout/{{ include.columnSet }}.json{% endcapture %}
+
+            $.getJSON("{{ columnfile | prepend: site.baseurl }}", function (data) {
+                {{ include.treeVar }}.setColumns(data);
+            })
+            .done(function () {
+                {{ include.treeVar }}.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console && console.log("jQuery getJSON() Failed: " + err);
+                alert("jQuery getJSON() Failed: " + err);
+            });
+        {% endif %}
+
+        {% if include.dpOptionSet %}
+            {% capture optionfile %}/resource/option/{{ include.dpOptionSet }}.json{% endcapture %}
+
+            $.getJSON("{{ optionfile | prepend: site.baseurl }}", function (data) {
+                {{ include.dpVar }}.setOptions(data);
+            })
+            .done(function () {
+                {{ include.treeVar }}.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console && console.log("jQuery getJSON() Failed: " + err);
+                alert("jQuery getJSON() Failed: " + err);
+            });
+        {% endif %}
+
+        {% if include.treeOptionSet %}
+            {% capture optionfile %}/resource/option/{{ include.treeOptionSet }}.json{% endcapture %}
+
+            $.getJSON("{{ optionfile | prepend: site.baseurl }}", function (data) {
+                {{ include.treeVar }}.setOptions(data);
+            })
+            .done(function () {
+                {{ include.treeVar }}.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console && console.log("jQuery getJSON() Failed: " + err);
+                alert("jQuery getJSON() Failed: " + err);
+            });
+        {% endif %}
+
+        {% if include.styleSet %}
+            {% capture stylefile %}/resource/style/{{ include.styleSet }}.json{% endcapture %}
+
+            $.getJSON("{{ stylefile | prepend: site.baseurl }}", function (data) {
+                {{ include.treeVar }}.setStyles(data);
+            })
+            .done(function () {
+                {{ include.treeVar }}.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console && console.log("jQuery getJSON() Failed: " + err);
+                alert("jQuery getJSON() Failed: " + err);
+            });
+        {% endif %}
+
+
+        {% if include.dataSet %}
+            {% capture datafile %}/resource/data/{{ include.dataSet }}.json{% endcapture %}
+
+            $.getJSON("{{ datafile | prepend: site.baseurl }}", function (data) {
+                {{ include.dpVar }}.setRows(data, "tree", true, "");
+            })
+            .done(function () {
+                {{ include.treeVar }}.setFocus();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+                console && console.log("jQuery getJSON() Failed: " + err);
+                alert("jQuery getJSON() Failed: " + err);
+            });
+        {% endif %}
+
+    });
+</script>
