@@ -627,7 +627,8 @@ code {
   padding-left: 2px;
   padding-right: 2px;
   vertical-align: baseline;
-  color: #1c887e;
+  /*color: #1c887e;*/
+  color: #e04e4b;
   /*color: #444444;*/
 }
 pre {
@@ -2818,6 +2819,8 @@ pre .tag .title,
 pre .change,
 pre .winutils,
 pre .flow,
+pre .nt,
+pre .na,
 pre .lisp .title,
 pre .clojure .built_in,
 pre .nginx .title,
@@ -2836,9 +2839,13 @@ pre .regexp {
 pre .title {
   color: #a6e22e;
 }
+pre .cp {
+  color: #e96900;
+}
 pre .tag .value,
 pre .string,
 pre .s2,
+pre .s,
 pre .subst,
 pre .haskell .type,
 pre .preprocessor,
