@@ -104,7 +104,13 @@
             {% capture datafile %}/resource/data/{{ include.dataSet }}.json{% endcapture %}
 
             $.getJSON("{{ datafile | prepend: site.baseurl }}", function (data) {
-                {{ include.dpVar }}.setRows(data, "tree", true, "");
+                {{ include.dpVar }}.setRows(
+                  data
+                  {% if include.treeField %} ,"{{ include.treeField }}" {% else %} ,"" {% endif %}
+                  {% if include.needSorting %} ,{{ include.needSorting }} {% else %} ,false {% endif %}
+                  {% if include.childrenField %} ,"{{ include.childrenField }}" {% else %} ,""{% endif %}
+                  {% if include.iconField %} ,"{{ include.iconField }}" {% endif %}
+                );
             })
             .done(function () {
                 {{ include.treeVar }}.setFocus();
