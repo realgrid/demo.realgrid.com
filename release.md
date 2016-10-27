@@ -3,6 +3,14 @@ layout: page
 title: 최신버전 (1.1.19)
 ---
 
+<div class="nav-item show-desktop">
+  <a class="btn orange small round lowercase"
+      href="http://www.realgrid.com/license"
+      target="_new">
+      <span>평가판</span>
+  </a>
+</div>
+
 ## September 2016 (1.1.19)
 
 - Renderer.showTooltip속성이 TextCellRenderer뿐 아니라 Data를 표시하는 전체 Cell Renderer에서 적용되도록 개선되었습니다.
