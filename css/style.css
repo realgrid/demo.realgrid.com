@@ -1477,8 +1477,8 @@ pre {
 .document-formatting ol,
 .document-formatting ul {
   list-style-position: outside;
-  margin-bottom: 0.75em;
-  margin-top: 0.75em;
+  margin-bottom: 0.95em;
+  margin-top: 0.15em;
   padding-left: 30px;
 }
 .document-formatting ol {
