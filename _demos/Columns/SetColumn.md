@@ -3,9 +3,16 @@ layout: page
 title: 컬럼 만들기
 order : 1
 devbox: true
-devboxfile: SetColumns.md
+devboxfile: SetColumns-dbox.md
 categories: 컬럼
-tags: ['column', 'setcolumn']
+tags: ['column', 'setColumns']
 ---
 
-{% include realgrid.html grid-id="realgrid" grid-width="100%" grid-height="300px" %}
+{% include realgrid.html
+  gridVar="gridView"
+  dpVar="dataProvider"
+  fieldSet="fieldset_Columns"
+  styleSet="style1"
+  gridId="realgrid"
+  gridWidth="100%"
+  gridHeight="300px" %}
