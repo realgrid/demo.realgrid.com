@@ -11,7 +11,7 @@
     "width": 110,
     "header": {
         "text": "Column 2"
-    }    
+    }
 }, {
     "name": "column3",
     "fieldName": "Field3",
@@ -19,8 +19,8 @@
     "header": {
         "text": "Column 3"
     },
-    styles: { 
-        background: "#33ffff00" 
+    "styles": {
+        "background": "#33ffff00"
     }
 }, {
     "name": "column4",
@@ -28,14 +28,14 @@
     "width": 110,
     "header": {
         "text": "Column 4"
-    }    
+    }
 }, {
     "name": "column5",
     "fieldName": "Field5",
     "width": 110,
     "header": {
         "text": "Column 5"
-    }    
+    }
 }, {
     "name": "column6",
     "fieldName": "Field3",
@@ -43,7 +43,7 @@
     "header": {
         "text": "Column 6"
     },
-    styles: { 
-        background: "#33ffff00" 
+    "styles": {
+        "background": "#33ffff00"
     }
 }]

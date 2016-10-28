@@ -1,26 +1,26 @@
 [{
-        "fieldName": "OrderID",
-        "dataType": "text"
-    }, {
-        "fieldName": "CustomerID"
-    }, {
-        "fieldName": "EmployeeID"
-    }, {
-        "fieldName": "OrderDate"
-    }, {
-        "fieldName": "CompanyName"
-    }, {
-        "fieldName": "Country"
-    }, {
-        "fieldName": "Phone"
-    }, {
-        "fieldName": "ProductName"
-    }, {
-        "fieldName": "QuantityPerUnit"
-    }, {
-        "fieldName": "Quantity",
-        "dataType": "number"
-    }, {
-        "fieldName": "UnitPrice",
-        "dataType": "number"
+    "fieldName": "OrderID",
+    "dataType": "text"
+}, {
+    "fieldName": "CustomerID"
+}, {
+    "fieldName": "EmployeeID"
+}, {
+    "fieldName": "OrderDate"
+}, {
+    "fieldName": "CompanyName"
+}, {
+    "fieldName": "Country"
+}, {
+    "fieldName": "Phone"
+}, {
+    "fieldName": "ProductName"
+}, {
+    "fieldName": "QuantityPerUnit"
+}, {
+    "fieldName": "Quantity",
+    "dataType": "number"
+}, {
+    "fieldName": "UnitPrice",
+    "dataType": "number"
 }]
