@@ -1515,13 +1515,14 @@ pre {
 }
 .document-formatting .highlight .gutter pre {
   margin: 0;
-  padding: 1.5em 10px;
+  padding: 1.0em 10px;
   text-align: right;
 }
 .document-formatting .highlight .code pre {
   overflow-y: auto;
   overflow-x: auto;
-  padding: 1.5em 15px 1.5em 20px;
+  padding: 1.0em 15px 1.0em 20px;
+  padding-left: 5px;
   margin: 0;
   white-space: pre;
 }
