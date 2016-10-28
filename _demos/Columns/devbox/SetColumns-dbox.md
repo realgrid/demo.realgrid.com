@@ -118,21 +118,6 @@ alert(columns.length);
 <script>
 
 $('#btnColumns').click(function() {
-    var flds = dataProvider.getFieldCount();
-    if (flds > 0) {
-        var rows = [];
-
-        for (var i = 0; i < 10; i++) {
-            var row = [];
-            for (var c = 0; c < flds; c++) {
-                row.push("Cell(" + i + ", " + c + ")");
-            }
-            rows.push(row);
-        }
-
-        dataProvider.setRows(rows);
-    }
-
     var columns = [];
 
     var column = new RealGridJS.DataColumn();
@@ -140,7 +125,7 @@ $('#btnColumns').click(function() {
     column.fieldName = "Field1";
     column.header = { text: "Column 1" }
     column.tag = "columntag1";
-    column.width = 110;
+    column.width = 90;
     columns.push(column);
 
     column = new RealGridJS.DataColumn();
@@ -148,14 +133,14 @@ $('#btnColumns').click(function() {
     column.fieldName = "Field2";
     column.tag = "columntag1";
     column.header = { text: "Column 2" }
-    column.width = 110;
+    column.width = 90;
     columns.push(column);
 
     column = new RealGridJS.DataColumn();
     column.name = "column3";
     column.fieldName = "Field3";
     column.header = { text: "Column 3" }
-    column.width = 110;
+    column.width = 90;
     column.styles = { background: "#33ffff00" };
     columns.push(column);
 
@@ -163,21 +148,21 @@ $('#btnColumns').click(function() {
     column.name = "column4";
     column.fieldName = "Field4";
     column.header = { text: "Column 4" }
-    column.width = 110;
+    column.width = 90;
     columns.push(column);
 
     column = new RealGridJS.DataColumn();
     column.name = "column5";
     column.fieldName = "Field5";
     column.header = { text: "Column 5" }
-    column.width = 110;
+    column.width = 90;
     columns.push(column);
 
     column = new RealGridJS.DataColumn();
     column.name = "column6";
     column.fieldName = "Field3";
     column.header = { text: "Column 6" }
-    column.width = 110;
+    column.width = 90;
     column.styles = { background: "#33ffff00" };
     columns.push(column);
 

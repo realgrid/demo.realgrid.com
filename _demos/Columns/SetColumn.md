@@ -8,6 +8,25 @@ categories: 컬럼
 tags: ['column', 'setColumns']
 ---
 
+<script>
+var onSuccessFieldSet = function(data, textStatus, jqXHR) {
+	var flds = dataProvider.getFieldCount();
+	if (flds > 0) {
+	    var rows = [];
+
+	    for (var i = 0; i < 10; i++) {
+	        var row = [];
+	        for (var c = 0; c < flds; c++) {
+	            row.push("Cell(" + i + ", " + c + ")");
+	        }
+	        rows.push(row);
+	    }
+
+	    dataProvider.setRows(rows);
+	}
+}
+</script>
+
 {% include realgrid.html
   gridVar="gridView"
   dpVar="dataProvider"
@@ -15,4 +34,7 @@ tags: ['column', 'setColumns']
   styleSet="style1"
   gridId="realgrid"
   gridWidth="100%"
-  gridHeight="300px" %}
+  gridHeight="300px" 
+  successFieldSet="onSuccessFieldSet"
+%}
+
