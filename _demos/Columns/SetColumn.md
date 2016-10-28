@@ -5,7 +5,7 @@ order : 1
 devbox: true
 devboxfile: SetColumns-dbox.md
 categories: 컬럼
-tags: ['column', 'setColumns']
+tags: ['컬럼', 'column', 'setColumns']
 ---
 
 <script>
@@ -30,7 +30,8 @@ var onSuccessFieldSet = function(data, textStatus, jqXHR) {
 {% include realgrid.html
   gridVar="gridView"
   dpVar="dataProvider"
-  fieldSet="fieldset_Columns"
+  fieldSet="fieldset_setColumns"
+  gridOptionSet="gridOption_setColumns"
   styleSet="style1"
   gridId="realgrid"
   gridWidth="100%"
