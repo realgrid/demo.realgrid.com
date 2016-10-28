@@ -22,80 +22,145 @@
         {% if include.fieldSet %}
             {% capture fieldfile %}/resource/layout/{{ include.fieldSet }}.json{% endcapture %}
 
-            $.getJSON("{{ fieldfile | prepend: site.baseurl }}", function (data) {
+            $.getJSON("{{ fieldfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.dpVar }}.setFields(data);
+
+                {% if include.successFieldSet %}
+                  {{ include.successFieldSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
-            .done(function () {
+            .done(function (data, textStatus, jqXHR) {
                 {{ include.gridVar }}.setFocus();
+
+                {% if include.doneFieldSet %}
+                  {{ include.doneFieldSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
             .fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ', ' + error;
-                console && console.log("jQuery getJSON() Failed: " + err);
-                alert("jQuery getJSON() Failed: " + err);
+
+                {% if include.failFieldSet %}
+                  {{ include.failFieldSet }}(jqxhr, textStatus, error);
+                {% else %}
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                {% endif %}
             });
         {% endif %}
 
         {% if include.columnSet %}
             {% capture columnfile %}/resource/layout/{{ include.columnSet }}.json{% endcapture %}
 
-            $.getJSON("{{ columnfile | prepend: site.baseurl }}", function (data) {
+            $.getJSON("{{ columnfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.gridVar }}.setColumns(data);
+
+                {% if include.successColumnSet %}
+                  {{ include.successColumnSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
-            .done(function () {
+            .done(function (data, textStatus, jqXHR) {
                 {{ include.gridVar }}.setFocus();
+
+                {% if include.doneColumnSet %}
+                  {{ include.doneColumnSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
             .fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ', ' + error;
-                console && console.log("jQuery getJSON() Failed: " + err);
-                alert("jQuery getJSON() Failed: " + err);
+
+                {% if include.failColumnSet %}
+                  {{ include.failColumnSet }}(jqxhr, textStatus, error);
+                {% else %}
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                {% endif %}
             });
         {% endif %}
 
         {% if include.dpOptionSet %}
             {% capture optionfile %}/resource/option/{{ include.dpOptionSet }}.json{% endcapture %}
 
-            $.getJSON("{{ optionfile | prepend: site.baseurl }}", function (data) {
+            $.getJSON("{{ optionfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.dpVar }}.setOptions(data);
+
+                {% if include.successDpOptionSet %}
+                  {{ include.successDpOptionSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
-            .done(function () {
+            .done(function (data, textStatus, jqXHR) {
                 {{ include.gridVar }}.setFocus();
+
+                {% if include.doneDpOptionSet %}
+                  {{ include.doneDpOptionSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
             .fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ', ' + error;
-                console && console.log("jQuery getJSON() Failed: " + err);
-                alert("jQuery getJSON() Failed: " + err);
+
+                {% if include.failDpOptionSet %}
+                  {{ include.failDpOptionSet }}(jqxhr, textStatus, error);
+                {% else %}
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                {% endif %}
             });
         {% endif %}
 
         {% if include.gridOptionSet %}
             {% capture optionfile %}/resource/option/{{ include.gridOptionSet }}.json{% endcapture %}
 
-            $.getJSON("{{ optionfile | prepend: site.baseurl }}", function (data) {
+            $.getJSON("{{ optionfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.gridVar }}.setOptions(data);
+
+                {% if include.successGridOptionSet %}
+                  {{ include.successGridOptionSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
-            .done(function () {
+            .done(function (data, textStatus, jqXHR) {
                 {{ include.gridVar }}.setFocus();
+
+                {% if include.doneGridOptionSet %}
+                  {{ include.doneGridOptionSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
             .fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ', ' + error;
-                console && console.log("jQuery getJSON() Failed: " + err);
-                alert("jQuery getJSON() Failed: " + err);
+
+                {% if include.failGridOptionSet %}
+                  {{ include.failGridOptionSet }}(jqxhr, textStatus, error);
+                {% else %}
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                {% endif %}
             });
         {% endif %}
 
         {% if include.styleSet %}
             {% capture stylefile %}/resource/style/{{ include.styleSet }}.json{% endcapture %}
 
-            $.getJSON("{{ stylefile | prepend: site.baseurl }}", function (data) {
+            $.getJSON("{{ stylefile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.gridVar }}.setStyles(data);
+
+                {% if include.successStyleSet %}
+                  {{ include.successStyleSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
-            .done(function () {
+            .done(function (data, textStatus, jqXHR) {
                 {{ include.gridVar }}.setFocus();
+
+                {% if include.doneStyleSet %}
+                  {{ include.doneStyleSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
             .fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ', ' + error;
-                console && console.log("jQuery getJSON() Failed: " + err);
-                alert("jQuery getJSON() Failed: " + err);
+
+                {% if include.failStyleSet %}
+                  {{ include.failStyleSet }}(jqxhr, textStatus, error);
+                {% else %}
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                {% endif %}
             });
         {% endif %}
 
@@ -103,16 +168,29 @@
         {% if include.dataSet %}
             {% capture datafile %}/resource/data/{{ include.dataSet }}.json{% endcapture %}
 
-            $.getJSON("{{ datafile | prepend: site.baseurl }}", function (data) {
+            $.getJSON("{{ datafile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.dpVar }}.setRows(data);
+
+                {% if include.successDataSet %}
+                  {{ include.successDataSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
-            .done(function () {
+            .done(function (data, textStatus, jqXHR) {
                 {{ include.gridVar }}.setFocus();
+
+                {% if include.doneDataSet %}
+                  {{ include.doneDataSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
             .fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ', ' + error;
-                console && console.log("jQuery getJSON() Failed: " + err);
-                alert("jQuery getJSON() Failed: " + err);
+
+                {% if include.failDataSet %}
+                  {{ include.failDataSet }}(jqxhr, textStatus, error);
+                {% else %}
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                {% endif %}
             });
         {% endif %}
 
