@@ -7,6 +7,12 @@
 {% capture realgrid_folder %}/lib/realgrid/realgridjs{{ realgrid_product }}.{{ site.realgrid_version }}{% endcapture %}
 
 <div id="{{ include.gridId }}" style="width:{{ include.gridWidth }}; height:{{ include.gridHeight }}"></div>
+<div class="toolbox">
+  <a class="btn secondary small lowercase">필드정보</a>
+  <a class="btn secondary small lowercase">컬럼정보</a>
+  <a class="btn secondary small lowercase">옵션정보</a>
+  <a class="btn secondary small lowercase">스타일정보</a>
+</div>
 
 <script>
     var {{ include.gridVar }};
