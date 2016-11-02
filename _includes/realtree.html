@@ -31,14 +31,14 @@
         {% if include.fieldSet %}
             {% capture fieldfile %}/resource/layout/{{ include.fieldSet }}.json{% endcapture %}
 
-            $.getJSON("{{ fieldfile | prepend: site.baseurl }}", function (data) {
+            $.getJSON("{{ fieldfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.dpVar }}.setFields(data);
 
                 {% if include.successFieldSet %}
                   {{ include.successFieldSet }}(data, textStatus, jqXHR);
                 {% endif %}
             })
-            .done(function () {
+            .done(function (data, textStatus, jqXHR) {
                 {{ include.treeVar }}.setFocus();
 
                 {% if include.doneFieldSet %}
@@ -60,14 +60,14 @@
         {% if include.columnSet %}
             {% capture columnfile %}/resource/layout/{{ include.columnSet }}.json{% endcapture %}
 
-            $.getJSON("{{ columnfile | prepend: site.baseurl }}", function (data) {
+            $.getJSON("{{ columnfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.treeVar }}.setColumns(data);
 
                 {% if include.successColumnSet %}
                   {{ include.successColumnSet }}(data, textStatus, jqXHR);
                 {% endif %}
             })
-            .done(function () {
+            .done(function (data, textStatus, jqXHR) {
                 {{ include.treeVar }}.setFocus();
 
                 {% if include.doneColumnSet %}
@@ -89,14 +89,14 @@
         {% if include.dpOptionSet %}
             {% capture optionfile %}/resource/option/{{ include.dpOptionSet }}.json{% endcapture %}
 
-            $.getJSON("{{ optionfile | prepend: site.baseurl }}", function (data) {
+            $.getJSON("{{ optionfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.dpVar }}.setOptions(data);
 
                 {% if include.successDpOptionSet %}
                   {{ include.successDpOptionSet }}(data, textStatus, jqXHR);
                 {% endif %}
             })
-            .done(function () {
+            .done(function (data, textStatus, jqXHR) {
                 {{ include.treeVar }}.setFocus();
 
                 {% if include.doneDpOptionSet %}
@@ -118,14 +118,14 @@
         {% if include.treeOptionSet %}
             {% capture optionfile %}/resource/option/{{ include.treeOptionSet }}.json{% endcapture %}
 
-            $.getJSON("{{ optionfile | prepend: site.baseurl }}", function (data) {
+            $.getJSON("{{ optionfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.treeVar }}.setOptions(data);
 
                 {% if include.successTreeOptionSet %}
                   {{ include.successTreeOptionSet }}(data, textStatus, jqXHR);
                 {% endif %}
             })
-            .done(function () {
+            .done(function (data, textStatus, jqXHR) {
                 {{ include.treeVar }}.setFocus();
 
                 {% if include.doneTreeOptionSet %}
@@ -147,14 +147,14 @@
         {% if include.styleSet %}
             {% capture stylefile %}/resource/style/{{ include.styleSet }}.json{% endcapture %}
 
-            $.getJSON("{{ stylefile | prepend: site.baseurl }}", function (data) {
+            $.getJSON("{{ stylefile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.treeVar }}.setStyles(data);
 
                 {% if include.successStyleSet %}
                   {{ include.successStyleSet }}(data, textStatus, jqXHR);
                 {% endif %}
             })
-            .done(function () {
+            .done(function (data, textStatus, jqXHR) {
                 {{ include.treeVar }}.setFocus();
 
                 {% if include.doneStyleSet %}
@@ -177,7 +177,7 @@
         {% if include.dataSet %}
             {% capture datafile %}/resource/data/{{ include.dataSet }}.json{% endcapture %}
 
-            $.getJSON("{{ datafile | prepend: site.baseurl }}", function (data) {
+            $.getJSON("{{ datafile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.dpVar }}.setRows(
                   data
                   {% if include.treeField %} ,"{{ include.treeField }}" {% else %} ,"" {% endif %}
@@ -190,7 +190,7 @@
                   {{ include.successDataSet }}(data, textStatus, jqXHR);
                 {% endif %}
             })
-            .done(function () {
+            .done(function (data, textStatus, jqXHR) {
                 {{ include.treeVar }}.setFocus();
 
                 {% if include.doneDataSet %}
