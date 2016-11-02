@@ -1546,6 +1546,17 @@ pre {
 .document-formatting dl dd {
   margin: 0;
 }
+.document-formatting .realgrid {
+  position: relative;
+
+  /* 페이지에 그리드만 있는 경우 툴박스 때문에 스크롤 생김 방지 */
+  margin-bottom: 35px;
+}
+.document-formatting .toolbox {
+  position: absolute;
+  bottom: -35px;
+  right:0px;
+}
 textarea,
 input:not([type="checkbox"]):not([type="number"]):not([type="radio"]):not([type=submit]):not([type=file]),
 input[type="number"] {

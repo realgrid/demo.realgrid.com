@@ -6,7 +6,16 @@
 
 {% capture realgrid_folder %}/lib/realgrid/realgridjs{{ realgrid_product }}.{{ site.realgrid_version }}{% endcapture %}
 
-<div id="{{ include.treeId }}" style="width:{{ include.treeWidth }}; height:{{ include.treeHeight }}"></div>
+<div id="{{ include.treeId }}" class="realgrid" style="width:{{ include.treeWidth }}; height:{{ include.treeHeight }}">
+  {% if include.showToolbox %}
+  <div class="toolbox">
+    <a class="btn tertiary small lowercase">필드정보</a>
+    <a class="btn tertiary small lowercase">컬럼정보</a>
+    <a class="btn tertiary small lowercase">옵션정보</a>
+    <a class="btn tertiary small lowercase">스타일정보</a>
+  </div>
+  {% endif %}
+</div>
 
 <script>
     var {{ include.treeVar }};
@@ -24,14 +33,27 @@
 
             $.getJSON("{{ fieldfile | prepend: site.baseurl }}", function (data) {
                 {{ include.dpVar }}.setFields(data);
+
+                {% if include.successFieldSet %}
+                  {{ include.successFieldSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
             .done(function () {
                 {{ include.treeVar }}.setFocus();
+
+                {% if include.doneFieldSet %}
+                  {{ include.doneFieldSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
             .fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ', ' + error;
-                console && console.log("jQuery getJSON() Failed: " + err);
-                alert("jQuery getJSON() Failed: " + err);
+
+                {% if include.failFieldSet %}
+                  {{ include.failFieldSet }}(jqxhr, textStatus, error);
+                {% else %}
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                {% endif %}
             });
         {% endif %}
 
@@ -40,14 +62,27 @@
 
             $.getJSON("{{ columnfile | prepend: site.baseurl }}", function (data) {
                 {{ include.treeVar }}.setColumns(data);
+
+                {% if include.successColumnSet %}
+                  {{ include.successColumnSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
             .done(function () {
                 {{ include.treeVar }}.setFocus();
+
+                {% if include.doneColumnSet %}
+                  {{ include.doneColumnSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
             .fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ', ' + error;
-                console && console.log("jQuery getJSON() Failed: " + err);
-                alert("jQuery getJSON() Failed: " + err);
+
+                {% if include.failColumnSet %}
+                  {{ include.failColumnSet }}(jqxhr, textStatus, error);
+                {% else %}
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                {% endif %}
             });
         {% endif %}
 
@@ -56,14 +91,27 @@
 
             $.getJSON("{{ optionfile | prepend: site.baseurl }}", function (data) {
                 {{ include.dpVar }}.setOptions(data);
+
+                {% if include.successDpOptionSet %}
+                  {{ include.successDpOptionSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
             .done(function () {
                 {{ include.treeVar }}.setFocus();
+
+                {% if include.doneDpOptionSet %}
+                  {{ include.doneDpOptionSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
             .fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ', ' + error;
-                console && console.log("jQuery getJSON() Failed: " + err);
-                alert("jQuery getJSON() Failed: " + err);
+
+                {% if include.failDpOptionSet %}
+                  {{ include.failDpOptionSet }}(jqxhr, textStatus, error);
+                {% else %}
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                {% endif %}
             });
         {% endif %}
 
@@ -72,14 +120,27 @@
 
             $.getJSON("{{ optionfile | prepend: site.baseurl }}", function (data) {
                 {{ include.treeVar }}.setOptions(data);
+
+                {% if include.successTreeOptionSet %}
+                  {{ include.successTreeOptionSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
             .done(function () {
                 {{ include.treeVar }}.setFocus();
+
+                {% if include.doneTreeOptionSet %}
+                  {{ include.doneTreeOptionSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
             .fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ', ' + error;
-                console && console.log("jQuery getJSON() Failed: " + err);
-                alert("jQuery getJSON() Failed: " + err);
+
+                {% if include.failTreeOptionSet %}
+                  {{ include.failTreeOptionSet }}(jqxhr, textStatus, error);
+                {% else %}
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                {% endif %}
             });
         {% endif %}
 
@@ -88,14 +149,27 @@
 
             $.getJSON("{{ stylefile | prepend: site.baseurl }}", function (data) {
                 {{ include.treeVar }}.setStyles(data);
+
+                {% if include.successStyleSet %}
+                  {{ include.successStyleSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
             .done(function () {
                 {{ include.treeVar }}.setFocus();
+
+                {% if include.doneStyleSet %}
+                  {{ include.doneStyleSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
             .fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ', ' + error;
-                console && console.log("jQuery getJSON() Failed: " + err);
-                alert("jQuery getJSON() Failed: " + err);
+
+                {% if include.failStyleSet %}
+                  {{ include.failStyleSet }}(jqxhr, textStatus, error);
+                {% else %}
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                {% endif %}
             });
         {% endif %}
 
@@ -111,14 +185,27 @@
                   {% if include.childrenField %} ,"{{ include.childrenField }}" {% else %} ,""{% endif %}
                   {% if include.iconField %} ,"{{ include.iconField }}" {% endif %}
                 );
+
+                {% if include.successDataSet %}
+                  {{ include.successDataSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
             .done(function () {
                 {{ include.treeVar }}.setFocus();
+
+                {% if include.doneDataSet %}
+                  {{ include.doneDataSet }}(data, textStatus, jqXHR);
+                {% endif %}
             })
             .fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ', ' + error;
-                console && console.log("jQuery getJSON() Failed: " + err);
-                alert("jQuery getJSON() Failed: " + err);
+
+                {% if include.failDataSet %}
+                  {{ include.failDataSet }}(jqxhr, textStatus, error);
+                {% else %}
+                  console && console.log("jQuery getJSON() Failed: " + err);
+                  alert("jQuery getJSON() Failed: " + err);
+                {% endif %}
             });
         {% endif %}
 

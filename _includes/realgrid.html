@@ -6,13 +6,21 @@
 
 {% capture realgrid_folder %}/lib/realgrid/realgridjs{{ realgrid_product }}.{{ site.realgrid_version }}{% endcapture %}
 
-<div id="{{ include.gridId }}" style="width:{{ include.gridWidth }}; height:{{ include.gridHeight }}"></div>
-<div class="toolbox">
-  <a class="btn secondary small lowercase">필드정보</a>
-  <a class="btn secondary small lowercase">컬럼정보</a>
-  <a class="btn secondary small lowercase">옵션정보</a>
-  <a class="btn secondary small lowercase">스타일정보</a>
+<div id="{{ include.gridId }}" class="realgrid" style="width:{{ include.gridWidth }}; height:{{ include.gridHeight }}">
+  {% if include.showToolbox %}
+  <div class="toolbox">
+    <!-- <a class="btn tertiary small lowercase"><span class="icon-comment"></span> <span>필드정보</span></a>
+    <a class="btn tertiary small lowercase"><span class="icon-browser"></span> <span>컬럼정보</span></a>
+    <a class="btn tertiary small lowercase"><span class="icon-circle-hollow"></span> <span>옵션정보</span></a>
+    <a class="btn tertiary small lowercase"><span class="icon-dashboard"></span> <span>스타일정보</span></a> -->
+    <a class="btn tertiary small lowercase">필드정보</a>
+    <a class="btn tertiary small lowercase">컬럼정보</a>
+    <a class="btn tertiary small lowercase">옵션정보</a>
+    <a class="btn tertiary small lowercase">스타일정보</a>
+  </div>
+  {% endif %}
 </div>
+
 
 <script>
     var {{ include.gridVar }};
