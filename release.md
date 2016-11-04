@@ -20,6 +20,8 @@ permalink: /release/
 
 #### 기능 개선
 
+---
+
 1. [Renderer.showTooltip](http://help.realgrid.com/api/types/TextCellRenderer/)
   - TextCellRenderer에서만 가능했던 showTooltip속성을 모든 Cell Renderer에 적용되도록 개선했습니다.
 1. [GridBase.onContextMenuPopup](http://help.realgrid.com/api/GridBase/onContextMenuPopup/)
@@ -90,6 +92,9 @@ gridView.groupBy(['field1', 'field2'], false);
 
 
 #### 오류 수정
+
+---
+
 
 1. `onRowInserted이벤트에서 dataProvider.setValue()함수 사용시 오류 발생 현상`
   - 새로운 행 추가시 발생하는 `onRowInserted`이벤트 내에서 `dataProvider.setValue()`함수를 사용할 때 오류가 발생하던 문제를 해결했습니다.
