@@ -27,24 +27,18 @@
     {% capture realgrid_apifile %}{{ realgrid_folder }}/realgridjs-api.{{ site.realgrid_version }}.js{% endcapture %}
     {% capture realgrid_zipfile %}{{ realgrid_folder }}/jszip.min.js{% endcapture %}
 
-<!--
-      <link rel="stylesheet" href="{{ "/css/bootstrap.css" | prepend: site.baseurl }}">
-      <link rel="stylesheet" href="{{ "/css/prettify.css" | prepend: site.baseurl }}">
-      <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-      <link rel="stylesheet" href="{{ "/css/octicons.css" | prepend: site.baseurl }}">
-      <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-      <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+    <!-- app.js -->
+    <script>
+      var togglePageStyles = function() {
+          $('.content-wrapper').toggleClass('with-devbox');
+          $('.content-wrapper').toggleClass('no-devbox');
+          $('.devbox').toggle('display');
+      }
 
-      <script type="text/javascript" src="{{ "/script/jquery-1.11.2.min.js" | prepend: site.baseurl }}"></script>
-      <script type="text/javascript" src="{{ "/script/bootstrap.min.js" | prepend: site.baseurl }}"></script>
-      <script type="text/javascript" src="{{ "/script/prettify.js" | prepend: site.baseurl }}"></script>
- -->
-<!--
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="shortcut icon" type="image/png" href="<%- theme.favicon || 'https://www.meteor.com/favicon.png' %>" sizes="16x16 32x32 64x64">
+      var showCodes = function(evt, cls) {
+        $('.codeview.'+cls).toggle();
+        $(event.target).toggleClass('active');
+      }
+    </script>
 
-    <meta name="google-site-verification" content="" />
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200,300italic,400italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/style/style.css">
- -->
 </head>

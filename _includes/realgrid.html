@@ -6,21 +6,28 @@
 
 {% capture realgrid_folder %}/lib/realgrid/realgridjs{{ realgrid_product }}.{{ site.realgrid_version }}{% endcapture %}
 
-<div id="{{ include.gridId }}" class="realgrid" style="width:{{ include.gridWidth }}; height:{{ include.gridHeight }}">
-  {% if include.showToolbox %}
-  <div class="toolbox">
-    <!-- <a class="btn tertiary small lowercase"><span class="icon-comment"></span> <span>필드정보</span></a>
-    <a class="btn tertiary small lowercase"><span class="icon-browser"></span> <span>컬럼정보</span></a>
-    <a class="btn tertiary small lowercase"><span class="icon-circle-hollow"></span> <span>옵션정보</span></a>
-    <a class="btn tertiary small lowercase"><span class="icon-dashboard"></span> <span>스타일정보</span></a> -->
-    <a class="btn tertiary small lowercase">필드정보</a>
-    <a class="btn tertiary small lowercase">컬럼정보</a>
-    <a class="btn tertiary small lowercase">옵션정보</a>
-    <a class="btn tertiary small lowercase">스타일정보</a>
-  </div>
-  {% endif %}
-</div>
+<div id="{{ include.gridId }}" class="realgrid" style="width:{{ include.gridWidth }}; height:{{ include.gridHeight }}"></div>
 
+{% if include.showToolbox %}
+<div class="toolbox">
+  <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.gridId }}field')">필드정보</a>
+  <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.gridId }}column')">컬럼정보</a>
+  <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.gridId }}dpoption')">Provider 옵션</a>
+  <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.gridId }}viewoption')">Grid 옵션</a>
+  <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.gridId }}style')">스타일정보</a>
+  <div class="codeview {{ include.gridId }}field" style="display: none;"></div>
+  <div class="codeview {{ include.gridId }}column" style="display: none;"></div>
+  <div class="codeview {{ include.gridId }}dpoption" style="display: none;"></div>
+  <div class="codeview {{ include.gridId }}viewoption" style="display: none;"></div>
+  <div class="codeview {{ include.gridId }}style" style="display: none;"></div>
+</div>
+{% endif %}
+
+{% comment %}
+  TODO:
+    - tree, grid 하나의 파일로?
+    - 툴박스 열고 닫기 위한 변수명, 클래스명을 명료하게
+{% endcomment %}
 
 <script>
     var {{ include.gridVar }};
@@ -38,6 +45,12 @@
 
             $.getJSON("{{ fieldfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.dpVar }}.setFields(data);
+
+                $('.codeview.{{ include.gridId }}field').html(
+                  '<pre style="background-color: #f8f8f8;">'+
+                  JSON.stringify(data, null, 4)+
+                  '</pre>'
+                );
 
                 {% if include.successFieldSet %}
                   {{ include.successFieldSet }}(data, textStatus, jqXHR);
@@ -68,6 +81,12 @@
             $.getJSON("{{ columnfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.gridVar }}.setColumns(data);
 
+                $('.codeview.{{ include.gridId }}column').html(
+                  '<pre style="background-color: #f8f8f8;">'+
+                  JSON.stringify(data, null, 4)+
+                  '</pre>'
+                );
+
                 {% if include.successColumnSet %}
                   {{ include.successColumnSet }}(data, textStatus, jqXHR);
                 {% endif %}
@@ -96,6 +115,12 @@
 
             $.getJSON("{{ optionfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.dpVar }}.setOptions(data);
+
+                $('.codeview.{{ include.gridId }}dpoption').html(
+                  '<pre style="background-color: #f8f8f8;">'+
+                  JSON.stringify(data, null, 4)+
+                  '</pre>'
+                );
 
                 {% if include.successDpOptionSet %}
                   {{ include.successDpOptionSet }}(data, textStatus, jqXHR);
@@ -126,6 +151,12 @@
             $.getJSON("{{ optionfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.gridVar }}.setOptions(data);
 
+                $('.codeview.{{ include.gridId }}viewoption').html(
+                  '<pre style="background-color: #f8f8f8;">'+
+                  JSON.stringify(data, null, 4)+
+                  '</pre>'
+                );
+
                 {% if include.successGridOptionSet %}
                   {{ include.successGridOptionSet }}(data, textStatus, jqXHR);
                 {% endif %}
@@ -154,6 +185,12 @@
 
             $.getJSON("{{ stylefile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.gridVar }}.setStyles(data);
+
+                $('.codeview.{{ include.gridId }}style').html(
+                  '<pre style="background-color: #f8f8f8;">'+
+                  JSON.stringify(data, null, 4)+
+                  '</pre>'
+                );
 
                 {% if include.successStyleSet %}
                   {{ include.successStyleSet }}(data, textStatus, jqXHR);

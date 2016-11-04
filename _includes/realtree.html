@@ -6,16 +6,22 @@
 
 {% capture realgrid_folder %}/lib/realgrid/realgridjs{{ realgrid_product }}.{{ site.realgrid_version }}{% endcapture %}
 
-<div id="{{ include.treeId }}" class="realgrid" style="width:{{ include.treeWidth }}; height:{{ include.treeHeight }}">
-  {% if include.showToolbox %}
-  <div class="toolbox">
-    <a class="btn tertiary small lowercase">필드정보</a>
-    <a class="btn tertiary small lowercase">컬럼정보</a>
-    <a class="btn tertiary small lowercase">옵션정보</a>
-    <a class="btn tertiary small lowercase">스타일정보</a>
-  </div>
-  {% endif %}
+<div id="{{ include.treeId }}" class="realgrid" style="width:{{ include.treeWidth }}; height:{{ include.treeHeight }}"></div>
+{% if include.showToolbox %}
+<div class="toolbox">
+  <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.treeId }}field')">필드정보</a>
+  <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.treeId }}column')">컬럼정보</a>
+  <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.treeId }}dpoption')">Provider 옵션</a>
+  <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.treeId }}viewoption')">Tree 옵션</a>
+  <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.treeId }}style')">스타일정보</a>
+  <div class="codeview {{ include.treeId }}field" style="display: none;"></div>
+  <div class="codeview {{ include.treeId }}column" style="display: none;"></div>
+  <div class="codeview {{ include.treeId }}dpoption" style="display: none;"></div>
+  <div class="codeview {{ include.treeId }}viewoption" style="display: none;"></div>
+  <div class="codeview {{ include.treeId }}style" style="display: none;"></div>
 </div>
+{% endif %}
+
 
 <script>
     var {{ include.treeVar }};
@@ -33,6 +39,12 @@
 
             $.getJSON("{{ fieldfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.dpVar }}.setFields(data);
+
+                $('.codeview.{{ include.treeId }}field').html(
+                  '<pre style="background-color: #f8f8f8;">'+
+                  JSON.stringify(data, null, 4)+
+                  '</pre>'
+                );
 
                 {% if include.successFieldSet %}
                   {{ include.successFieldSet }}(data, textStatus, jqXHR);
@@ -63,6 +75,12 @@
             $.getJSON("{{ columnfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.treeVar }}.setColumns(data);
 
+                $('.codeview.{{ include.treeId }}column').html(
+                  '<pre style="background-color: #f8f8f8;">'+
+                  JSON.stringify(data, null, 4)+
+                  '</pre>'
+                );
+
                 {% if include.successColumnSet %}
                   {{ include.successColumnSet }}(data, textStatus, jqXHR);
                 {% endif %}
@@ -91,6 +109,12 @@
 
             $.getJSON("{{ optionfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.dpVar }}.setOptions(data);
+
+                $('.codeview.{{ include.treeId }}dpoption').html(
+                  '<pre style="background-color: #f8f8f8;">'+
+                  JSON.stringify(data, null, 4)+
+                  '</pre>'
+                );
 
                 {% if include.successDpOptionSet %}
                   {{ include.successDpOptionSet }}(data, textStatus, jqXHR);
@@ -121,6 +145,12 @@
             $.getJSON("{{ optionfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.treeVar }}.setOptions(data);
 
+                $('.codeview.{{ include.treeId }}viewoption').html(
+                  '<pre style="background-color: #f8f8f8;">'+
+                  JSON.stringify(data, null, 4)+
+                  '</pre>'
+                );
+
                 {% if include.successTreeOptionSet %}
                   {{ include.successTreeOptionSet }}(data, textStatus, jqXHR);
                 {% endif %}
@@ -149,6 +179,12 @@
 
             $.getJSON("{{ stylefile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.treeVar }}.setStyles(data);
+
+                $('.codeview.{{ include.treeId }}style').html(
+                  '<pre style="background-color: #f8f8f8;">'+
+                  JSON.stringify(data, null, 4)+
+                  '</pre>'
+                );
 
                 {% if include.successStyleSet %}
                   {{ include.successStyleSet }}(data, textStatus, jqXHR);

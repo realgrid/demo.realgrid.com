@@ -716,7 +716,7 @@ pre {
   box-shadow: none;
 }
 .btn.tertiary {
-  background-color: #dedede;
+  background-color: #f8f8f8;
   color: #333333;
 }
 .btn.tertiary:hover {
@@ -724,6 +724,9 @@ pre {
 }
 .btn.tertiary:active {
   box-shadow: rgba(94, 94, 94, 0.3) 0 0px 0px 3em inset;
+}
+.btn.tertiary.active {
+  background-color: #ccc;
 }
 .btn.tertiary[disabled],
 .btn.tertiary[disabled]:hover,
@@ -1487,6 +1490,17 @@ pre {
 .document-formatting ul {
   list-style-type: disc;
 }
+.document-formatting ul.tab {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+.document-formatting ul.tab li {
+  float: left;
+}
 .document-formatting *:not(figure.highlight) pre {
   margin-top: 0.75em;
   margin-bottom: 0.75em;
@@ -1548,14 +1562,12 @@ pre {
 }
 .document-formatting .realgrid {
   position: relative;
-
-  /* 페이지에 그리드만 있는 경우 툴박스 때문에 스크롤 생김 방지 */
-  margin-bottom: 35px;
 }
 .document-formatting .toolbox {
-  position: absolute;
-  bottom: -35px;
-  right:0px;
+  margin: 3px 0px;
+  width: 100%;
+  background-color: #f8f8f8;
+  border: solid 1px;
 }
 textarea,
 input:not([type="checkbox"]):not([type="number"]):not([type="radio"]):not([type=submit]):not([type=file]),
