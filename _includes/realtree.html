@@ -9,16 +9,19 @@
 <div id="{{ include.treeId }}" class="realgrid" style="width:{{ include.treeWidth }}; height:{{ include.treeHeight }}"></div>
 {% if include.showToolbox %}
 <div class="toolbox">
-  <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.treeId }}field')">필드정보</a>
-  <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.treeId }}column')">컬럼정보</a>
-  <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.treeId }}dpoption')">Provider 옵션</a>
-  <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.treeId }}viewoption')">Tree 옵션</a>
-  <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.treeId }}style')">스타일정보</a>
-  <div class="codeview {{ include.treeId }}field" style="display: none;"></div>
-  <div class="codeview {{ include.treeId }}column" style="display: none;"></div>
-  <div class="codeview {{ include.treeId }}dpoption" style="display: none;"></div>
-  <div class="codeview {{ include.treeId }}viewoption" style="display: none;"></div>
-  <div class="codeview {{ include.treeId }}style" style="display: none;"></div>
+  <div class="buttonbox">
+    {% comment %} showCodes() 는 include/head.html 에 있음. {% endcomment %}
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.treeId }}field')">필드</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.treeId }}column')">컬럼</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.treeId }}dpoption')">Provider 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.treeId }}viewoption')">Tree 옵션</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.treeId }}style')">스타일</a>
+  </div>
+  <pre class="codeview {{ include.treeId }}field"></pre>
+  <pre class="codeview {{ include.treeId }}column"></pre>
+  <pre class="codeview {{ include.treeId }}dpoption"></pre>
+  <pre class="codeview {{ include.treeId }}viewoption"></pre>
+  <pre class="codeview {{ include.treeId }}style"></pre>
 </div>
 {% endif %}
 
@@ -41,9 +44,7 @@
                 {{ include.dpVar }}.setFields(data);
 
                 $('.codeview.{{ include.treeId }}field').html(
-                  '<pre style="background-color: #f8f8f8;">'+
-                  JSON.stringify(data, null, 4)+
-                  '</pre>'
+                  JSON.stringify(data, null, 4)
                 );
 
                 {% if include.successFieldSet %}
@@ -76,9 +77,7 @@
                 {{ include.treeVar }}.setColumns(data);
 
                 $('.codeview.{{ include.treeId }}column').html(
-                  '<pre style="background-color: #f8f8f8;">'+
-                  JSON.stringify(data, null, 4)+
-                  '</pre>'
+                  JSON.stringify(data, null, 4)
                 );
 
                 {% if include.successColumnSet %}
@@ -111,9 +110,7 @@
                 {{ include.dpVar }}.setOptions(data);
 
                 $('.codeview.{{ include.treeId }}dpoption').html(
-                  '<pre style="background-color: #f8f8f8;">'+
-                  JSON.stringify(data, null, 4)+
-                  '</pre>'
+                  JSON.stringify(data, null, 4)
                 );
 
                 {% if include.successDpOptionSet %}
@@ -146,9 +143,7 @@
                 {{ include.treeVar }}.setOptions(data);
 
                 $('.codeview.{{ include.treeId }}viewoption').html(
-                  '<pre style="background-color: #f8f8f8;">'+
-                  JSON.stringify(data, null, 4)+
-                  '</pre>'
+                  JSON.stringify(data, null, 4)
                 );
 
                 {% if include.successTreeOptionSet %}
@@ -181,9 +176,7 @@
                 {{ include.treeVar }}.setStyles(data);
 
                 $('.codeview.{{ include.treeId }}style').html(
-                  '<pre style="background-color: #f8f8f8;">'+
-                  JSON.stringify(data, null, 4)+
-                  '</pre>'
+                  JSON.stringify(data, null, 4)
                 );
 
                 {% if include.successStyleSet %}

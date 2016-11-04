@@ -715,26 +715,6 @@ pre {
   background-color: #8384ba;
   box-shadow: none;
 }
-.btn.tertiary {
-  background-color: #f8f8f8;
-  color: #333333;
-}
-.btn.tertiary:hover {
-  background-color: #d1d1d1;
-}
-.btn.tertiary:active {
-  box-shadow: rgba(94, 94, 94, 0.3) 0 0px 0px 3em inset;
-}
-.btn.tertiary.active {
-  background-color: #ccc;
-}
-.btn.tertiary[disabled],
-.btn.tertiary[disabled]:hover,
-.btn.tertiary[disabled]:active {
-  background-color: #e8e8e8;
-  box-shadow: none;
-  color: #999999;
-}
 .btn.danger {
   background-color: #dc3935;
   color: #ffffff;
@@ -1563,11 +1543,41 @@ pre {
 .document-formatting .realgrid {
   position: relative;
 }
+/* toolbox 관련 */
+.btn.tertiary {
+  background-color: #e8e8e8;
+  color: #333333;
+}
+.btn.tertiary:hover {
+  background-color: #d1d1d1;
+}
+.btn.tertiary:active {
+  box-shadow: rgba(94, 94, 94, 0.3) 0 0px 0px 3em inset;
+}
+.btn.tertiary[disabled],
+.btn.tertiary[disabled]:hover,
+.btn.tertiary[disabled]:active {
+  background-color: #e8e8e8;
+  box-shadow: none;
+  color: #999999;
+}
+.btn.tertiary.active {
+  box-shadow: inset 1px 1px 3px 1px #999;
+  background-color: #ccc;
+}
 .document-formatting .toolbox {
   margin: 3px 0px;
   width: 100%;
   background-color: #f8f8f8;
   border: solid 1px;
+}
+.document-formatting pre.codeview {
+  display: none;
+  background-color: #f8f8f8;
+}
+.document-formatting .buttonbox {
+  background-color: #e8e8e8;
+  text-align: center;
 }
 textarea,
 input:not([type="checkbox"]):not([type="number"]):not([type="radio"]):not([type=submit]):not([type=file]),
