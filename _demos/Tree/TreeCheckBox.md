@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Load Xml DataSet
+title: 트리뷰의 특별한 체크박스
 order: 8
 categories:
-  - 트리 그리드
+  - 트리뷰(TreeView)
 tags: ['트리', 'Tree']
 ---

@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Lazy Loading
+title: 트리 구현 - loadData()함수 
 order: 5
 categories:
-  - 트리 그리드
+  - 트리뷰(TreeView)
 tags: ['트리', 'Tree']
 ---

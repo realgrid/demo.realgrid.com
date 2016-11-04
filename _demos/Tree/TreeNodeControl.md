@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Load Json Array
+title: 트리뷰 노드 조작하기
 order: 7
 categories:
-  - 트리 그리드
+  - 트리뷰(TreeView)
 tags: ['트리', 'Tree']
 ---

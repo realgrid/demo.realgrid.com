@@ -1,8 +1,8 @@
 ---
 layout: page
-title: 트리 편집
-order: 11
+title: 트리뷰에서 추가/수정/삭제
+order: 8
 categories:
-  - 트리 그리드
+  - 트리뷰(TreeView)
 tags: ['트리', 'Tree']
 ---

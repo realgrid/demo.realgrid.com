@@ -1,3 +1,35 @@
-TreeView는 일반적인 트리 UI와 동일하게 부모 자식 관계를 갖는 데이터셋을 표시하고 관리하는 툴입니다. 다만, 리얼그리드의 TreeView는 GridView와 같이 컬럼셋을 지정할 수 있고, TreeView의 각 행(노드)은 컬럼셋에 해당하는 속성들을 갖게 됩니다. 각 컬럼은 TreeView에 연결된 데이터 제공자의 데이터필드에 연결됩니다.
-TreeView의 데이터 제공자인 TreeDataProvider의 데이터셋은 Json, Xml, Csv 등 다양한 소스로 부터 구성될 수 있습니다. TreeDataProvider에 추가된 데이터행들은 부모/자식 관계를 갖는 구조로 재구성되며 원본 데이터셋 내에서의 위치 정보는 유지하지 않습니다. 하지만, 원본의 각 행이 TreeDataProvider의 데이터행으로 추가될 때 rowId 라는 유일한 키값이 행별로 지정되고, 이 후 Javascript 등에서는 이 값으로 TreeDataProvider의 데이터행을 추적할 수 있습니다. CellIndex의 dataRow나 함수, callback등에서 dataRow는 rowId를 의미합니다.
-TreeView의 Item Model은 GridView와 동일하고, 각 item은 TreeDataProvider의 한 행을 표시합니다. GridView와 다르게 RowGrouping은 지원하지 않습니다. 또, Sorting이나 Filtering은 계층 구조 내에서 진행됩니다. 예를 들어, 부모 행이 Filtering에서 제외되면 자식 행들 역시 자동적으로 제외됩니다. 마찬가지로 Sorting이 계층 구조를 변경하지는 않고, 자식들을 정렬하게 됩니다.
+TreeView는 GridView의 각 행들이 계층구조를 갖고 트리형식으로 표현할 수 있도록 만들어진 컨트롤입니다.
+
+
+TreeView에 계층구조를 표현하기 위해 데이터 유형에 따라 세가지 방법으로 구현이 가능하며,
+`TreeDataProvider`에는 세 가지 방법에 대한 함수가 마련되어 있습니다. 각 함수에 대한 소개를 위해
+각각 별도의 데모페이지가 준비되어 있습니다.
+
+- [setRows()](http://help.realgrid.com/api/TreeDataProvider/setRows/): [트리: 배열형 데이터]({{ "/Tree/Indicator/" | prepend: site.baseurl }})
+- [setJsonRows()](http://help.realgrid.com/api/TreeDataProvider/setJsonRows/)
+- [setXmlRows()](http://help.realgrid.com/api/TreeDataProvider/setXmlRows/)
+
+각 함수에 대한 데모는 각각 다른 페이지에서 설명
+이 함수에는 트리를 구성하기 위해 아래와 같은 인자를 포함하고 있습니다.
+
+- `rows`: 트리 데이터
+- `treeField`: 트리 구조를 담고 있는 필드명
+- `needSorting`: `treeField`로 정렬을 다시 할 것인지 여부
+- `childrenField`: 자식 행이 있는지 지정하는 필드명
+- `iconField`: 아이콘 인덱스 필드명
+
+[setRows()](http://help.realgrid.com/api/TreeDataProvider/setRows/){:target='_blank'}함수를 호출하는 샘플 코드를 작성해 보겠습니다.
+
+```js
+treeDataProvider.setRows(data,
+  "tree",
+  true,
+  "",
+  "icon");
+```
+
+TreeView는 GridView와 달리 몇 가지 제약사항이 있습니다.
+
+- RowGrouping: **트리는 그룹핑을 지원하지 않습니다.**
+- Filtering: **부모 행이 필터에 의해 제외되면 자식 행들 역시 제외됩니다.**
+- Sorting: **정렬시 계층 구조를 유지한채 자식들만 정렬됩니다.**
