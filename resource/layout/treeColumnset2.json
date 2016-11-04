@@ -1,0 +1,31 @@
+[{
+    "name": "do",
+    "fieldName": "do",
+    "width": "200",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "도"
+    }
+}, {
+    "name": "si",
+    "fieldName": "si",
+    "width": "60",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "시"
+    }
+}, {
+    "name": "gu",
+    "fieldName": "gu",
+    "width": "90",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "구"
+    }
+}]
