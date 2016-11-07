@@ -7,7 +7,7 @@
 {% capture realgrid_folder %}/lib/realgrid/realgridjs{{ realgrid_product }}.{{ site.realgrid_version }}{% endcapture %}
 
 <div id="{{ include.treeId }}" class="realgrid" style="width:{{ include.treeWidth }}; height:{{ include.treeHeight }}"></div>
-{% if include.showToolbox %}
+{% if include.showToolbox != false %}
 <div class="toolbox">
   <div class="buttonbox">
     {% comment %} showCodes() 는 include/head.html 에 있음. {% endcomment %}

@@ -7,7 +7,8 @@
 {% capture realgrid_folder %}/lib/realgrid/realgridjs{{ realgrid_product }}.{{ site.realgrid_version }}{% endcapture %}
 
 <div id="{{ include.gridId }}" class="realgrid" style="width:{{ include.gridWidth }}; height:{{ include.gridHeight }}"></div>
-{% if include.showToolbox %}
+{% if include.showToolbox == false %}
+{% else %}
 <div class="toolbox">
   <div class="buttonbox">
     {% comment %} showCodes() 는 include/head.html 에 있음. {% endcomment %}
@@ -69,8 +70,9 @@
                 {% if include.failFieldSet %}
                   {{ include.failFieldSet }}(jqxhr, textStatus, error);
                 {% else %}
-                  console && console.log("jQuery getJSON() Failed: " + err);
-                  alert("jQuery getJSON() Failed: " + err);
+                  var msg = "{{ include.gridVar }} failFieldSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
                 {% endif %}
             });
         {% endif %}
@@ -102,8 +104,9 @@
                 {% if include.failColumnSet %}
                   {{ include.failColumnSet }}(jqxhr, textStatus, error);
                 {% else %}
-                  console && console.log("jQuery getJSON() Failed: " + err);
-                  alert("jQuery getJSON() Failed: " + err);
+                  var msg = "{{ include.gridVar }} failColumnSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
                 {% endif %}
             });
         {% endif %}
@@ -135,8 +138,9 @@
                 {% if include.failDpOptionSet %}
                   {{ include.failDpOptionSet }}(jqxhr, textStatus, error);
                 {% else %}
-                  console && console.log("jQuery getJSON() Failed: " + err);
-                  alert("jQuery getJSON() Failed: " + err);
+                  var msg = "{{ include.gridVar }} failDpOptionSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
                 {% endif %}
             });
         {% endif %}
@@ -168,8 +172,9 @@
                 {% if include.failGridOptionSet %}
                   {{ include.failGridOptionSet }}(jqxhr, textStatus, error);
                 {% else %}
-                  console && console.log("jQuery getJSON() Failed: " + err);
-                  alert("jQuery getJSON() Failed: " + err);
+                  var msg = "{{ include.gridVar }} failGridOptionSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
                 {% endif %}
             });
         {% endif %}
@@ -201,8 +206,9 @@
                 {% if include.failStyleSet %}
                   {{ include.failStyleSet }}(jqxhr, textStatus, error);
                 {% else %}
-                  console && console.log("jQuery getJSON() Failed: " + err);
-                  alert("jQuery getJSON() Failed: " + err);
+                  var msg = "{{ include.gridVar }} failStyleSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
                 {% endif %}
             });
         {% endif %}
@@ -231,8 +237,9 @@
                 {% if include.failDataSet %}
                   {{ include.failDataSet }}(jqxhr, textStatus, error);
                 {% else %}
-                  console && console.log("jQuery getJSON() Failed: " + err);
-                  alert("jQuery getJSON() Failed: " + err);
+                  var msg = "{{ include.gridVar }} failDataSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
                 {% endif %}
             });
         {% endif %}
