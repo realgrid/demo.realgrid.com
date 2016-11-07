@@ -1,0 +1,28 @@
+{
+   "edit": {
+      "insertable": true,
+      "appendable": true,
+      "deletable": true,
+      "upateable": true,
+      "commitWhenExitLast": true,
+      "crossWhenExitLast": true
+   },
+   "sort": {
+      "keepFocusedRow": true
+   },
+   "footer": {
+      "visible": false
+   },
+   "header": {
+      "visible": false
+   },
+   "indicator": {
+      "visible": false
+   },
+   "stateBar": {
+      "visible": false
+   },
+   "checkBar": {
+      "visible": false
+   }
+}

@@ -1,0 +1,17 @@
+[
+   {
+      "name": "Code",
+      "fieldName": "TreeCode",
+      "width": "150",
+      "imageList": "images",
+      "renderer": {
+         "type": "icon"
+      },
+      "styles": {
+         "textAlignment": "near"
+      },
+      "header": {
+         "text": "Code"
+      }
+   }
+]

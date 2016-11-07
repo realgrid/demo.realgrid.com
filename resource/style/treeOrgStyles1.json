@@ -1,0 +1,13 @@
+{
+   "body": {
+      "border": "#ffff0000,0px",
+      "borderBottom": 0,
+      "borderRight": 0,
+      "line": "#ff000000, 0px"
+   },
+   "empty": {
+      "border": "#ffff0000, 0px",
+      "borderBottom": "#ffff0000, 0px",
+      "borderRight": "#ffff0000, 0px"
+   }
+}

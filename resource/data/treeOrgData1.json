@@ -1,0 +1,24 @@
+{
+    "rows": [{
+        "TreeCode": "C:",
+        "rows": [{
+            "TreeCode": "Windows",
+            "rows": [{
+                "TreeCode": "Boot"
+            }, {
+                "TreeCode": "Help"
+            }, {
+                "TreeCode": "Logs"
+            }, {
+                "TreeCode": "Microsoft"
+            }]
+        }]
+    }, {
+        "TreeCode": "D:",
+        "rows": [{
+            "TreeCode": "MS"
+        }, {
+            "TreeCode": "bin"
+        }]
+    }]
+}
