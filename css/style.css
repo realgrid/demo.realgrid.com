@@ -589,7 +589,7 @@ h3 {
   line-height: 1;
 }
 h4 {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 24px;
 }
 sub,
@@ -1315,9 +1315,11 @@ pre {
 }
 .document-formatting h1:not(:first-child),
 .document-formatting h2:not(:first-child),
-.document-formatting h3:not(:first-child),
-.document-formatting h4:not(:first-child) {
+.document-formatting h3:not(:first-child) {
   margin-top: 4rem;
+}
+.document-formatting h4:not(:first-child) {
+  margin-top: 2rem;
 }
 .document-formatting h1 + *,
 .document-formatting h2 + *,
