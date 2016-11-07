@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 트리 구현 - 배열형 데이타
+title: 트리 구현 - 배열형 데이터
 order: 2
 categories:
   - 트리뷰(TreeView)
