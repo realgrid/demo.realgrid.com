@@ -2975,6 +2975,7 @@ body {
     font-size: 90%;
     line-height: 1.5
 }
+.sidebar.devbox p a:hover,
 .sidebar.devbox li a:hover {
   text-decoration:underline;
 }
