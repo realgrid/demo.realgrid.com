@@ -31,9 +31,17 @@
     <!-- app.js -->
     <script>
       var togglePageStyles = function() {
+        var devbox = $('#devbox')[0];
+        if (devbox) {
+          $('#devbox').toggleClass('sidebar');
           $('.content-wrapper').toggleClass('with-devbox');
-          $('.content-wrapper').toggleClass('no-devbox');
-          $('.devbox').toggle('display');
+          window.dispatchEvent(new Event('resize'));
+          if ($('#devbox').parent()[0] === $('.content')[0]) {
+            $('.footer').before($('#devbox'));
+          } else {
+            $('.content').append($('#devbox'));
+          }
+        }
       }
 
       var showCodes = function(evt, cls) {

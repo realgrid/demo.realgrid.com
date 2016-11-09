@@ -60,14 +60,14 @@ layout: default
         <div class="document-formatting">
             {{ content }}
             <p>
-              
+
             </p>
         </div>
     </div>
 </div>
 
 {% if page.devboxfile %}
-<div class="sidebar devbox">
+<div class="sidebar devbox" id="devbox">
   <div class="sidebar-content devbox document-formatting">
       {% capture my-include %}{% include_relative devbox/{{page.devboxfile}} %}{% endcapture %}
       {{ my-include | markdownify }}
