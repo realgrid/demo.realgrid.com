@@ -39,6 +39,13 @@
 - sidebar 메뉴는 page.title, page.tags로 필터링 한다.
 - tags로 검색 조건을 조절 할 수 있다.
 
+### RealGrid 버전 변경하기
+
+- lib/realgrid폴더에 사용할 버전의 폴더를 추가한다.
+- _config.yml 파일에 `realgrid_version`속성에 사용할 버전을 입력한다.
+- 라이선스 파일은 /lib/realgrid폴더 루트에 위치해야 한다.
+- 명령라인에 jekyll build 로 다시 빌드한다.
+
 ### demo 페이지에서 RealGrid 사용하기
 
 - RealGrid는 lib/realgrid/realgridjs_{eval}.{version} 폴더 밑에 버전별 폴더를 만들어 넣어준다.
@@ -56,8 +63,8 @@
 $(document).ready( function(){
     RealGridJS.setRootContext("{{ "/lib/realgrid/realgridjs_eval.1.1.19" | prepend: site.baseurl }}");
     ...
-Provider);    
-});   
+Provider);
+});
 ```
 
 ### 페이지 머릿말(frontmatter)
