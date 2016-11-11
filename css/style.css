@@ -1472,6 +1472,9 @@ pre {
 .document-formatting ul {
   list-style-type: disc;
 }
+.document-formatting ul ul {
+  list-style-type: circle;
+}
 .document-formatting ul.tab {
   list-style-type: none;
   margin: 0;
