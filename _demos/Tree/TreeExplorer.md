@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 파일 탐색기 샘플
-order: 10
+title: '[샘플화면] 트리뷰를 이용한 파일 탐색기'
+order: 11
 categories:
   - 트리뷰(TreeView)
 tags: ['트리', 'Tree']
@@ -30,7 +30,7 @@ tags: ['트리', 'Tree']
       treeOptionSet="treeOrgOption1"
       styleSet="treeOrgStyles1"
       doneStyleSet="onDoneStyleSet"
-      
+
       treeId="realtree"
       treeField="tree"
       needSorting="true"

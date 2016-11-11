@@ -1,7 +1,7 @@
 [{
     "name": "do",
     "fieldName": "do",
-    "width": "200",
+    "width": "150",
     "styles": {
         "textAlignment": "near"
     },
@@ -11,7 +11,7 @@
 }, {
     "name": "si",
     "fieldName": "si",
-    "width": "60",
+    "width": "100",
     "styles": {
         "textAlignment": "center"
     },
@@ -21,7 +21,7 @@
 }, {
     "name": "gu",
     "fieldName": "gu",
-    "width": "90",
+    "width": "100",
     "styles": {
         "textAlignment": "near"
     },
