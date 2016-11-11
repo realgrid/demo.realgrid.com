@@ -10,7 +10,7 @@ tags: ['CellButton', 'button']
 --- 
 
 <script>
-	var doneDataSet = function() {
+	var onDoneDataSet = function() {
 		gridView.setDisplayOptions({rowHeight:30})
 
 		var menu = [{
@@ -36,7 +36,7 @@ tags: ['CellButton', 'button']
 	}
 </script>
 
-데이터 셀의 편집기 외에 버튼을 표시하고 사용자 버튼 클릭 이벤트를 이용해 추가 작업을 실행할 수 있습니다.
+셀 버튼은 `action`, `popup`, `image` 중 하나로 지정할 수 있습니다.  
 
 <p></p>
 {% include realgrid.html
@@ -46,13 +46,9 @@ tags: ['CellButton', 'button']
   columnSet="btnColumnset"
   dpOptionSet="dataProviderOption1"
   gridOptionSet="gridOption1"
-  doneDataSet="doneDataSet"
+  doneDataSet="onDoneDataSet"
   styleSet="style1"
   dataSet="griddata1"
   gridId="realgrid"
   gridWidth="100%"
   gridHeight="300px" %}
-
-Action 버튼을 클릭하면 그리드 [onCellButtonClicked](http://help.realgrid.com/api/GridBase/onCellButtonClicked/)가 발생합니다.    
-Popup 버튼을 클릭하면 컬럼에 지정한 popupMenu가 표시됩니다. 메뉴에 대해서는 [Popup Menu]()를 참조하십시오.  
-IMAGE 버튼을 클릭하면 그리드 [onImageButtonClicked](http://help.realgrid.com/api/GridBase/onImageButtonClicked/)가 발생합니다.
