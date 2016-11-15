@@ -50,6 +50,37 @@ gridView.setColumnProperty("OrderID", "buttonVisibility", "hidden");
 gridView.setColumnProperty("CustomerID", "buttonVisibility", "hidden");
 ```
 
+#### 버튼 클릭 이벤트
+
+팝업 메뉴 버튼 클릭 이벤트
+
+- [onMenuItemClicked](http://help.realgrid.com/api/GridBase/onMenuItemClicked/)
+
+```js
+gridView.onMenuItemClicked = function (grid, data) {
+    alert(data.label);
+};
+```
+셀버튼 클릭 이벤트
+
+- [onCellButtonClicked](http://help.realgrid.com/api/GridBase/onCellButtonClicked/)
+
+```js
+gridView.onCellButtonClicked = function (grid, itemIndex, column) {
+    alert("CellButton Clicked: itemIndex=" + itemIndex + ", fieldName=" + column.fieldName);
+};
+```
+
+이미지 버튼 클릭 이벤트
+
+- [onImageButtonClicked](http://help.realgrid.com/api/GridBase/onImageButtonClicked/)
+
+```js
+gridView.onImageButtonClicked = function (grid, itemIndex, column, buttonIndex, name) {
+    alert("onImageButtonClicked: " + itemIndex + ", " + column.name+", " + buttonIndex + ", " + name);
+};
+```
+
 <script>
   $('#btnButtonAlwaysShowButton').click(function() {
     gridView.setColumnProperty("EmployeeID", "alwaysShowButton", "true");

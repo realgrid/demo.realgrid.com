@@ -42,8 +42,8 @@ tags: ['CellButton', 'button']
 {% include realgrid.html
   gridVar="gridView"
   dpVar="dataProvider"
-  fieldSet="fieldset1"
-  columnSet="btnColumnset"
+  fieldSet="cellButtonField"
+  columnSet="cellButtonColumn"
   dpOptionSet="dataProviderOption1"
   gridOptionSet="gridOption1"
   doneDataSet="onDoneDataSet"
