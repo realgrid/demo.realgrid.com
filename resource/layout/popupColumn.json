@@ -1,0 +1,81 @@
+[{
+    "name": "EmployeeID",
+    "fieldName": "EmployeeID",
+    "width": "110",
+    "alwaysShowButton": "true",
+    "button": "popup",
+    "popupMenu": "menu1",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Employee ID"
+    }
+}, {
+    "name": "OrderID",
+    "fieldName": "OrderID",
+    "width": "110",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "button": "popup",
+    "popupMenu": "menu1",
+    "header": {
+        "text": "Order ID"
+    }
+}, {
+    "name": "CustomerID",
+    "fieldName": "CustomerID",
+    "width": "110",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "button": "popup",
+    "popupMenu": "menu1",
+    "header": {
+        "text": "Customer ID"
+    }
+}, {
+    "name": "Country",
+    "fieldName": "Country",
+    "width": "110",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "button": "popup",
+    "popupMenu": "menu1",
+    "header": {
+        "text": "Country"
+    }
+}, {
+    "name": "OrderDate",
+    "fieldName": "OrderDate",
+    "width": "130",
+    "styles": {
+        "textAlignment": "center",
+        "datetimeFormat": "yyyy/MM/dd"
+    },
+    "header": {
+        "text": "Order Date"
+    }
+}, {
+    "name": "CompanyName",
+    "fieldName": "CompanyName",
+    "width": "180",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Company Name"
+    }
+}, {
+    "name": "Phone",
+    "fieldName": "Phone",
+    "width": "110",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Phone"
+    }
+}]
