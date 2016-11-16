@@ -3,7 +3,7 @@ layout: page
 title: 셀 버튼
 order: 2
 devbox: true
-devboxfile: CellButton-dbox.md
+devboxfile: CellButton-devbox.md
 categories:
   - 셀 구성요소
 tags: ['CellButton', 'button']

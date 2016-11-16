@@ -3,7 +3,7 @@ layout: page
 title: 팝업 메뉴
 order: 3
 devbox: true
-devboxfile: PopupMenu-dbox.md
+devboxfile: PopupMenu-devbox.md
 categories:
   - 셀 구성요소
 tags: ['PopupMenu', 'popup']

@@ -18,8 +18,8 @@ var menu = [{
     label: "-"
 }, {
     label: "menu3 입니다",
-    type: "check", //check 상태
-    checked: true,
+    type: "check", //check 설정
+    checked: true, //check 상태
     tag: "check_menu"
 }, {
     label: "group menu", //group 및 radio
@@ -42,7 +42,8 @@ var menu = [{
 
 #### PopupMenu 추가
 
-구성된 메뉴 정보를 그리드 `addPopupMenu` 함수로 추가할 수 있습니다.
+위에서 구성된 메뉴 정보를 그리드 [addPopupMenu](http://help.realgrid.com/api/GridBase/addPopupMenu/) 함수로 추가할 수 있습니다.  
+추가된 `menu1` 을 컬럼에 설정하는 방법은 컬럼 설정 정보를 확인하세요.
 
 ```js
 gridView.addPopupMenu("menu1", menu);
@@ -50,7 +51,7 @@ gridView.addPopupMenu("menu1", menu);
 
 #### onMenuItemClicked 이벤트
 
-메뉴 아이템이 클릭되면 `onMenuItemClicked` 이벤트가 발생됩니다.
+메뉴 아이템이 클릭되면 [onMenuItemClicked](http://help.realgrid.com/api/GridBase/onMenuItemClicked/) 이벤트가 발생됩니다.
 
 ```js
 gridView.onMenuItemClicked = function (grid, data, index) {
