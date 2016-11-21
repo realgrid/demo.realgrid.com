@@ -1,0 +1,89 @@
+[{
+    "name": "UserId",
+    "fieldName": "UserId",
+    "width": "90",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "User ID"
+    }
+}, {
+    "name": "UserName",
+    "fieldName": "UserName",
+    "type": "data",
+    "width": "130",
+    "sortable": false,
+    "lookupDisplay": true,
+    "values": ["VINET", "HANAR", "SUPRD", "VICTE", "THREE", "SEVEN"],
+    "labels": ["<VINET>", "<HANAR>", "<SUPRD>", "<VICTE>", "<THREE>", "<SEVEN>"],
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Values/Labels",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    }
+}, {
+    "name": "Age",
+    "fieldName": "Age",
+    "type": "data",
+    "width": "130",
+    "lookupDisplay": true,
+    "labelField": "AgeLabel",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Label Field",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    }
+}, {
+    "name": "Gender",
+    "fieldName": "Gender",
+    "type": "data",
+    "width": "100",
+    "sortable": false,
+    "lookupDisplay": true,
+    "editor": {
+        "type": "dropDown",
+        "dropDownCount": 2,
+        "domainOnly": true,
+        "values": ["Male","Female"],
+        "labels": ["<Male>","<Female>"]
+    },
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Gender",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    }
+}, {
+    "name": "MobilePhone",
+    "fieldName": "MobilePhone",
+    "width": "200",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Mobile Phone"
+    }
+}, {
+    "name": "Email",
+    "fieldName": "Email",
+    "type": "data",
+    "width": "200",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Email"
+    }
+}]
