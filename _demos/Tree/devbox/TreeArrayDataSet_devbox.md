@@ -19,12 +19,12 @@ var data = [
 ]
 ```
 
-배열의 첫 번째 항목은 트리 노드에 표시될 `아이콘(icon) index` 입니다.
-두 번째 항목은 트리를 구성할 계층 구조을 담고 있는 `트리(tree) code` 입니다.
+배열의 첫 번째 항목은 트리 노드에 표시될 `아이콘 인덱스(icon index)` 입니다.
+두 번째 항목은 트리를 구성할 계층 구조을 담고 있는 `트리 코드(tree code)` 입니다.
 
 우선, 위 데이터를 입력하기 위해 [TreeDataProvider.setRows()](http://help.realgrid.com/api/TreeDataProvider/setRows/)함수를 호출하는 샘플 코드를 작성해 보겠습니다.
 
-<a class="btn primary small round lowercase" id="clearRows">데이터 지우기</a>
+<a class="btn primary small round lowercase clearRows">데이터 지우기</a>
 <a class="btn primary small round lowercase" id="setRowsNeedSorting">배열형 데이터 정렬하여 입력하기</a>
 
 ```js
@@ -38,7 +38,7 @@ treeView.expandAll();
 
 #### 계층구조 표현을 위한 treeField
 
-`setRows()`함수의 정의는 아래와 같습니다.
+[TreeDataProvider.setRows()](http://help.realgrid.com/api/TreeDataProvider/setRows/)함수의 정의는 아래와 같습니다.
 
 ```javascript
 function setRows(rows, treeField, needSorting, childrenField, iconField) {}
@@ -48,11 +48,11 @@ TreeView는 이 필드의 값으로 트리를 구성합니다.
 
 > 하지만, 트리의 계층 구조가 바뀌어도 자동으로 이 필드의 값이 바뀌지는 않는다는 사실을 기억하세요.
 
-RealGrid 튜토리얼에 가시면 계층구조 표현을 위한 데이터 구조에 대해 좀더 자세히 다루고 있는 문서들이 있습니다. 아래 링크를 참조하세요.
+RealGrid 튜토리얼에 계층 구조 표현을 위한 데이터 구조에 대해 좀더 자세히 다루고 있는 문서들이 있습니다. 아래 링크를 참조하세요.
 
-- [B9-1 배열형 트리 데이터 구조이해](http://help.realgrid.com/tutorial/b9-1/)
-- [B9-2 JSON형 트리 데이터 구조이해](http://help.realgrid.com/tutorial/b9-2/)
-- [B9-3 TreeView의 ItemModel 이해](http://help.realgrid.com/tutorial/b9-3/)
+  - [B9-1 배열형 트리 데이터 구조이해](http://help.realgrid.com/tutorial/b9-1/)
+  - [B9-2 JSON형 트리 데이터 구조이해](http://help.realgrid.com/tutorial/b9-2/)
+  - [B9-3 TreeView의 ItemModel 이해하기](http://help.realgrid.com/tutorial/b9-3/)
 
 #### treeField값의 정렬
 
@@ -60,7 +60,7 @@ RealGrid 튜토리얼에 가시면 계층구조 표현을 위한 데이터 구�
 
 위의 배열형 데이터를 다시 자세히 보면 일곱 번째 행에 있는 `성남시 수정구`의 경우 treeField 값이 순방향 정렬 순서에 맞지 않는 곳에 위치해 있습니다.
 
-<a class="btn primary small round lowercase" id="clearRows">데이터 지우기</a>
+<a class="btn primary small round lowercase clearRows">데이터 지우기</a>
 <a class="btn primary small round lowercase" id="setRowsNoSorting">배열형 데이터 정렬하지 않고 입력하기</a>
 
 ```js
@@ -112,6 +112,8 @@ treeView.setTreeOptions({
 });
 ```
 
+
+{% comment %} ----------------- DEVBOX SCRIPT --------------- {% endcomment %}
 <script>
 
 var data = [
@@ -137,7 +139,7 @@ $('#setRowsNoSorting').click(function() {
   treeView.expandAll();
 });
 
-$('#clearRows').click(function() {
+$('.clearRows').click(function() {
   treeDataProvider.clearRows();
 });
 

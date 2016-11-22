@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 트리 구현 - 배열형 데이터
+title: 트리 구현 - Array 데이터
 order: 2
 devbox: true
 devboxfile: TreeArrayDataSet_devbox.md
@@ -9,8 +9,8 @@ categories:
 tags: ['트리', 'Tree']
 ---
 
-TreeView를 구현하기 위해 `배열형 데이터`를 사용할 수 있습니다.
-배열형 데이터의 구조와 [`TreeDataProvider.setRows()`](http://help.realgrid.com/api/TreeDataProvider/setRows/)함수를 사용하여 TreeView를 구현하는 샘플 코드를 살펴보세요.
+트리뷰(TreeView)를 구현하기 위해 `배열형(Array) 데이터`를 사용할 수 있습니다.
+배열형 데이터의 구조와 [TreeDataProvider.setRows()](http://help.realgrid.com/api/TreeDataProvider/setRows/)함수를 사용하여 트리뷰(TreeView)를 구현하는 샘플 코드를 살펴보세요.
 
 {% include realtree.html
   treeVar="treeView"
