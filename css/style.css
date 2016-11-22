@@ -1404,7 +1404,9 @@ pre {
 .document-formatting li a {
   color: #22A699;
   font-weight: 400;
-  text-decoration: underline;
+  font-family: "Andale Mono WT", "Andale Mono", "Menlo", "Lucida Console", "Lucida Sans Typewriter", Monaco, monospace;
+  font-size: 90%;
+  line-height: 1.5
 }
 .document-formatting .btn {
   text-decoration: none;
@@ -1414,6 +1416,9 @@ pre {
 .document-formatting p a:visited,
 .document-formatting li a:visited {
   color: #22A699;
+}
+.document-formatting p a:hover {
+  text-decoration: underline;  
 }
 .document-formatting p a:active,
 .document-formatting li a:active {
@@ -2979,9 +2984,9 @@ body {
 .devbox li a:not(.btn) {
   text-decoration:none;
   font-family: "Andale Mono WT", "Andale Mono", "Menlo", "Lucida Console", "Lucida Sans Typewriter", Monaco, monospace;
-    font-weight: 400;
-    font-size: 90%;
-    line-height: 1.5
+  font-weight: 400;
+  font-size: 90%;
+  line-height: 1.5
 }
 .devbox p a:hover:not(.btn),
 .devbox li a:hover {
