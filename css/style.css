@@ -1400,8 +1400,8 @@ pre {
 .document-formatting a code {
   text-decoration: underline;
 }
-.document-formatting p a,
-.document-formatting li a {
+.document-formatting p a:not(.btn),
+.document-formatting li a:not(.btn) {
   color: #22A699;
   font-weight: 400;
   font-family: "Andale Mono WT", "Andale Mono", "Menlo", "Lucida Console", "Lucida Sans Typewriter", Monaco, monospace;
@@ -1417,8 +1417,8 @@ pre {
 .document-formatting li a:visited {
   color: #22A699;
 }
-.document-formatting p a:hover {
-  text-decoration: underline;  
+.document-formatting p a:hover:not(.btn) {
+  text-decoration: underline;
 }
 .document-formatting p a:active,
 .document-formatting li a:active {
