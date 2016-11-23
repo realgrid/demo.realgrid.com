@@ -10,7 +10,7 @@ tags: ['트리', 'Tree']
 ---
 
 트리뷰(TreeView)를 구현하기 위해 `XML 데이터`를 사용할 수 있습니다.
-XML 데이터의 구조와 [TreeDataProvider.setXmlRows()](http://help.realgrid.com/api/TreeDataProvider/setXmlRows/)함수를 사용하여 트리뷰(TreeView)를 구현하는 샘플 코드를 살펴보세요.
+`XML 데이터`의 구조와 트리 구현 방법을 오른쪽 devbox에서 확인할 수 있습니다.
 
 {% include realtree.html
   treeVar="treeView"
@@ -20,7 +20,6 @@ XML 데이터의 구조와 [TreeDataProvider.setXmlRows()](http://help.realgrid.
   dpOptionSet="treeDataProviderOption1"
   treeOptionSet="treeOption1"
   styleSet="treeStyle1"
-  doneDataSet="onDoneDataSet"
   treeId="realtree"
   treeField="tree"
   needSorting="true"

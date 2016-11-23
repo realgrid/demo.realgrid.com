@@ -5,7 +5,7 @@
 즉, 트리 형식의 데이터를 표현할 수 있도록 만들어진 컨트롤입니다.
 
 트리뷰에 계층구조를 표현하기 위한 몇 가지 방법을 소개 합니다.
-데이터 유형에 따라 각기 다른 함수를 사용합니다. 이 함수들은 `TreeDataProvider`에 마련되어 있습니다.
+데이터 유형에 따라 각기 다른 함수를 사용합니다. 이 함수들은 `TreeDataProvider`객체에 구현되어 있습니다.
 
 - [트리 구현 - Array 데이터]({{ "/Tree/TreeArrayDataSet/" | prepend: site.baseurl }})
   - [`setRows()`](http://help.realgrid.com/api/TreeDataProvider/setRows/)

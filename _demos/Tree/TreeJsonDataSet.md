@@ -9,9 +9,8 @@ categories:
 tags: ['트리', 'Tree']
 ---
 
-
 트리뷰(TreeView)를 구현하기 위해 `JSON 데이터`를 사용할 수 있습니다.
-JSON 데이터의 구조와 함수를 사용해 트리뷰를 구현하는 방법을 확인하세요.
+`JSON 데이터`의 구조와 트리 구현 방법을 오른쪽 devbox에서 확인할 수 있습니다.
 
 {% include realtree.html
   treeVar="treeView"
@@ -21,7 +20,6 @@ JSON 데이터의 구조와 함수를 사용해 트리뷰를 구현하는 방법
   dpOptionSet="treeDataProviderOption1"
   treeOptionSet="treeOption1"
   styleSet="treeStyle1"
-  doneDataSet="onDoneDataSet"
   treeId="realtree"
   treeField="tree"
   needSorting="true"
