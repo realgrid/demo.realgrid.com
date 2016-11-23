@@ -627,7 +627,7 @@ code {
   padding-left: 2px;
   padding-right: 2px;
   vertical-align: baseline;
-  font-size: 100%;
+  font-size: 95%;
   /*color: #1c887e;*/
   color: #e04e4b;
   /*color: #444444;*/
@@ -1406,7 +1406,7 @@ pre {
   color: #22A699;
   font-weight: 400;
   font-family: "Andale Mono WT", "Andale Mono", "Menlo", "Lucida Console", "Lucida Sans Typewriter", Monaco, monospace;
-  font-size: 90%;
+  font-size: 95%;
   line-height: 1.5
 }
 .document-formatting .btn {
@@ -2974,7 +2974,7 @@ body {
 }
 .devbox p {
   font-size: 0.9rem;
-  line-height: 1.5rem;  
+  line-height: 1.5rem;
 }
 .devbox h4 {
   font-size: 18px;
@@ -2990,7 +2990,7 @@ body {
   text-decoration:none;
   font-family: "Andale Mono WT", "Andale Mono", "Menlo", "Lucida Console", "Lucida Sans Typewriter", Monaco, monospace;
   font-weight: 400;
-  font-size: 90%;
+  font-size: 95%;
   line-height: 1.5
 }
 .devbox p a:hover:not(.btn),
