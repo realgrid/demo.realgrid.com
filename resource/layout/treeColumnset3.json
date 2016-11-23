@@ -1,0 +1,96 @@
+[{
+    "name": "col0",
+    "fieldName": "col0",
+    "type": "data",
+    "width": "150",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "구분"
+    }
+}, {
+    "name": "col1",
+    "fieldName": "col1",
+    "type": "data",
+    "width": "80",
+    "styles": {
+        "textAlignment": "far",
+        "numberFormat": "0,000"
+    },
+    "header": {
+        "text": "농림어업"
+    }
+}, {
+    "name": "col2",
+    "fieldName": "col2",
+    "type": "data",
+    "width": "75",
+    "styles": {
+        "textAlignment": "far",
+        "numberFormat": "0,000"
+    },
+    "header": {
+        "text": "광업"
+    }
+}, {
+    "name": "col3",
+    "fieldName": "col3",
+    "type": "data",
+    "width": "75",
+    "styles": {
+        "textAlignment": "far",
+        "numberFormat": "0,000"
+    },
+    "header": {
+        "text": "제조업"
+    }
+}, {
+    "name": "col4",
+    "fieldName": "col4",
+    "type": "data",
+    "width": "80",
+    "styles": {
+        "textAlignment": "far",
+        "numberFormat": "0,000"
+    },
+    "header": {
+        "text": "건설업"
+    }
+}, {
+    "name": "col5",
+    "fieldName": "col5",
+    "type": "data",
+    "width": "130",
+    "styles": {
+        "textAlignment": "far",
+        "numberFormat": "0,000"
+    },
+    "header": {
+        "text": "도소매, 소비자용품"
+    }
+}, {
+    "name": "col6",
+    "fieldName": "col6",
+    "type": "data",
+    "width": "90",
+    "styles": {
+        "textAlignment": "far",
+        "numberFormat": "0,000"
+    },
+    "header": {
+        "text": "음식숙박업"
+    }
+}, {
+    "name": "col7",
+    "fieldName": "col7",
+    "type": "data",
+    "width": "120",
+    "styles": {
+        "textAlignment": "far",
+        "numberFormat": "0,000"
+    },
+    "header": {
+        "text": "운수,창고 통신업"
+    }
+}]

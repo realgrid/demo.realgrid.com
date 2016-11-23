@@ -1,0 +1,28 @@
+[{
+    "fieldName": "icon",
+    "dataType": "number"
+}, {
+    "fieldName": "Col0",
+    "dataType": "text"
+}, {
+    "fieldName": "Col1",
+    "dataType": "number"
+}, {
+    "fieldName": "Col2",
+    "dataType": "number"
+}, {
+    "fieldName": "Col3",
+    "dataType": "number"
+}, {
+    "fieldName": "Col4",
+    "dataType": "number"
+}, {
+    "fieldName": "Col5",
+    "dataType": "number"
+}, {
+    "fieldName": "Col6",
+    "dataType": "number"
+}, {
+    "fieldName": "Col7",
+    "dataType": "number"
+}]
