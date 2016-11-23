@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '[샘플화면] 트리뷰를 이용한 파일 탐색기'
+title: '[샘플] 트리뷰를 이용한 파일 탐색기'
 order: 11
 categories:
   - 트리뷰(TreeView)

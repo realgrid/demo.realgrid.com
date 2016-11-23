@@ -1,9 +1,9 @@
 ---
 layout: page
-title: jQuery ajax() 이용하기
-order: 6
+title: 트리 구현 - CSV 데이터
+order: 5
 devbox: true
-devboxfile: TreeLoadData_devbox.md
+devboxfile: TreeCsvDataSet_devbox.md
 categories:
   - 트리뷰(TreeView)
 tags: ['트리', 'Tree']
