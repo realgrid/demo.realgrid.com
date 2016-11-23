@@ -207,13 +207,22 @@
             {% capture datafile %}/resource/data/{{ include.dataSet }}.json{% endcapture %}
 
             $.getJSON("{{ datafile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
-                {{ include.dpVar }}.setRows(
-                  data
-                  {% if include.treeField %} ,"{{ include.treeField }}" {% else %} ,"" {% endif %}
-                  {% if include.needSorting %} ,{{ include.needSorting }} {% else %} ,false {% endif %}
-                  {% if include.childrenField %} ,"{{ include.childrenField }}" {% else %} ,""{% endif %}
-                  {% if include.iconField %} ,"{{ include.iconField }}" {% endif %}
-                );
+                {% if include.treeDataFunc == "setJsonRows" %}
+                  {{ include.dpVar }}.setJsonRows(
+                    data
+                    {% if include.treeField %} ,"{{ include.treeField }}" {% else %} ,"" {% endif %}
+                    {% if include.childrenField %} ,"{{ include.childrenField }}" {% else %} ,""{% endif %}
+                    {% if include.iconField %} ,"{{ include.iconField }}" {% endif %}
+                  );
+                {% else %}
+                  {{ include.dpVar }}.setRows(
+                    data
+                    {% if include.treeField %} ,"{{ include.treeField }}" {% else %} ,"" {% endif %}
+                    {% if include.needSorting %} ,{{ include.needSorting }} {% else %} ,false {% endif %}
+                    {% if include.childrenField %} ,"{{ include.childrenField }}" {% else %} ,""{% endif %}
+                    {% if include.iconField %} ,"{{ include.iconField }}" {% endif %}
+                  );
+                {% endif %}
 
                 {% if include.successDataSet %}
                   {{ include.successDataSet }}(data, textStatus, jqXHR);
