@@ -204,46 +204,32 @@
 
 
         {% if include.dataSet %}
-            {% capture datafile %}/resource/data/{{ include.dataSet }}.json{% endcapture %}
-
-            $.getJSON("{{ datafile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
-                {% if include.treeDataFunc == "setJsonRows" %}
-                  {{ include.dpVar }}.setJsonRows(
-                    data
-                    {% if include.treeField %} ,"{{ include.treeField }}" {% else %} ,"" {% endif %}
-                    {% if include.childrenField %} ,"{{ include.childrenField }}" {% else %} ,""{% endif %}
-                    {% if include.iconField %} ,"{{ include.iconField }}" {% endif %}
-                  );
-                {% else %}
-                  {{ include.dpVar }}.setRows(
-                    data
-                    {% if include.treeField %} ,"{{ include.treeField }}" {% else %} ,"" {% endif %}
-                    {% if include.needSorting %} ,{{ include.needSorting }} {% else %} ,false {% endif %}
-                    {% if include.childrenField %} ,"{{ include.childrenField }}" {% else %} ,""{% endif %}
-                    {% if include.iconField %} ,"{{ include.iconField }}" {% endif %}
-                  );
-                {% endif %}
-
+            {% capture datafile %}/resource/data/{{ include.dataSet }}{% endcapture %}
+            $.ajax({
+              type: "GET",
+              url:"{{ datafile | prepend: site.baseurl }}",
+              success: function(data, textStatus, jqXHR) {
                 {% if include.successDataSet %}
                   {{ include.successDataSet }}(data, textStatus, jqXHR);
                 {% endif %}
+              }
             })
-            .done(function (data, textStatus, jqXHR) {
-                {{ include.treeVar }}.setFocus();
+            .done( function(data, textStatus, jqXHR) {
+              {{ include.treeVar }}.setFocus();
 
-                {% if include.doneDataSet %}
-                  {{ include.doneDataSet }}(data, textStatus, jqXHR);
-                {% endif %}
+              {% if include.doneDataSet %}
+                {{ include.doneDataSet }}(data, textStatus, jqXHR);
+              {% endif %}
             })
-            .fail(function (jqxhr, textStatus, error) {
-                var err = textStatus + ', ' + error;
+            .fail( function(jqxhr, textStatus, error) {
+              var err = textStatus + ', ' + error;
 
-                {% if include.failDataSet %}
-                  {{ include.failDataSet }}(jqxhr, textStatus, error);
-                {% else %}
-                  console && console.log("jQuery getJSON() Failed: " + err);
-                  alert("jQuery getJSON() Failed: " + err);
-                {% endif %}
+              {% if include.failDataSet %}
+                {{ include.failDataSet }}(jqxhr, textStatus, error);
+              {% else %}
+                console && console.log("jQuery ajax() Failed: " + err);
+                alert("jQuery ajax() Failed: " + err);
+              {% endif %}
             });
         {% endif %}
 
