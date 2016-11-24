@@ -4,6 +4,7 @@ title: 정규식 표현
 order: 7
 devbox: true
 devboxfile: RegularExpression-devbox.md
+published: true
 categories:
   - 셀 구성요소
 tags: ['RegularExpression', '정규식', '마스킹']

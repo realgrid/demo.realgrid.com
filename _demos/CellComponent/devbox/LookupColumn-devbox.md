@@ -1,6 +1,6 @@
 #### values와 labels 설정
 
-`values`값을 `labels`로 표시될 목록을 지정하면 values값의 위치에 맞는 labels 항목이 표시됩니다.
+`values`값을 `labels`로 표시될 목록을 지정하면 `values`값의 위치에 맞는 `labels` 항목이 표시됩니다.
 
 ```js
 var columns = [{
@@ -20,7 +20,7 @@ var columns = [{
     header: {
         text: "Values/Labels",
         styles: {
-            "background": "linear,#22ffd500,#ffffd500,90"
+            background: "linear,#22ffd500,#ffffd500,90"
         }
     }
 }, {
@@ -86,8 +86,8 @@ var columns = [{
     },
     header: {
         text: "Gender",
-        "styles": {
-            "background": "linear,#22ffd500,#ffffd500,90"
+        styles: {
+            background: "linear,#22ffd500,#ffffd500,90"
         }
     }
 }, {

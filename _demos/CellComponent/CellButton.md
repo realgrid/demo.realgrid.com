@@ -4,6 +4,7 @@ title: 셀 버튼
 order: 2
 devbox: true
 devboxfile: CellButton-devbox.md
+published: true
 categories:
   - 셀 구성요소
 tags: ['CellButton', 'button']

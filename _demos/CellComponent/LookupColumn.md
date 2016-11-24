@@ -4,6 +4,7 @@ title: Lookup 컬럼
 order: 5
 devbox: true
 devboxfile: LookupColumn-devbox.md
+published: true
 categories:
   - 셀 구성요소
 tags: ['LookupColumn', 'Lookup', 'label']

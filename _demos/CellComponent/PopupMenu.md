@@ -4,6 +4,7 @@ title: 팝업 메뉴
 order: 3
 devbox: true
 devboxfile: PopupMenu-devbox.md
+published: true
 categories:
   - 셀 구성요소
 tags: ['PopupMenu', 'popup']

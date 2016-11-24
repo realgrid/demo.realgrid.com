@@ -4,6 +4,7 @@ title: 툴팁
 order: 8
 devbox: true
 devboxfile: Tooltip-devbox.md
+published: true
 categories:
   - 셀 구성요소
 tags: ['Tooltip']
