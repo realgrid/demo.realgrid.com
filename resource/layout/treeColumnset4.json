@@ -1,0 +1,801 @@
+[{
+        "fieldName": "model",
+        "name": "Model",
+        "width": 160,
+        "styles": {
+            "textAlignment": "near"
+        }
+    },
+
+    {
+        "type": "group",
+        "name": "2014",
+        "width": 2800,
+        "columns": [{
+                "fieldName": "2014",
+                "name": "2014",
+                "header": {
+                    "text": "2014년"
+                },
+                "width": 80,
+                "styles": {
+                    "textAlignment": "far",
+                    "numberFormat": "#,##0"
+                },
+                "footer": {
+                    "expression": "sum",
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "groupExpression": "sum"
+                }
+            },
+
+            {
+                "type": "group",
+                "name": "January",
+                "width": 240,
+                "columns": [{
+                    "fieldName": "201401",
+                    "name": "201401",
+                    "header": {
+                        "text": "1월"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201401_price",
+                    "name": "201401_price",
+                    "header": {
+                        "text": "Price"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201401_count",
+                    "name": "201401_count",
+                    "header": {
+                        "text": "Quantity"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }]
+            }, {
+                "type": "group",
+                "name": "February",
+                "width": 240,
+                "columns": [{
+                    "fieldName": "201402",
+                    "name": "201402",
+                    "header": {
+                        "text": "2월"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201402_price",
+                    "name": "201402_price",
+                    "header": {
+                        "text": "Price"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201402_count",
+                    "name": "201402_count",
+                    "header": {
+                        "text": "Quantity"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }]
+            }, {
+                "type": "group",
+                "name": "March",
+                "width": 240,
+                "columns": [{
+                    "fieldName": "201403",
+                    "name": "201403",
+                    "header": {
+                        "text": "3월"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201403_price",
+                    "name": "201403_price",
+                    "header": {
+                        "text": "Price"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201403_count",
+                    "name": "201403_count",
+                    "header": {
+                        "text": "Quantity"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }]
+            }, {
+                "type": "group",
+                "name": "April",
+                "width": 240,
+                "columns": [{
+                    "fieldName": "201404",
+                    "name": "201404",
+                    "header": {
+                        "text": "4월"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201404_price",
+                    "name": "201404_price",
+                    "header": {
+                        "text": "Price"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201404_count",
+                    "name": "201404_count",
+                    "header": {
+                        "text": "Quantity"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }]
+            }, {
+                "type": "group",
+                "name": "May",
+                "width": 240,
+                "columns": [{
+                    "fieldName": "201405",
+                    "name": "201405",
+                    "header": {
+                        "text": "5월"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201405_price",
+                    "name": "201405_price",
+                    "header": {
+                        "text": "Price"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201405_count",
+                    "name": "201405_count",
+                    "header": {
+                        "text": "Quantity"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }]
+            }, {
+                "type": "group",
+                "name": "June",
+                "width": 240,
+                "columns": [{
+                    "fieldName": "201406",
+                    "name": "201406",
+                    "header": {
+                        "text": "6월"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201406_price",
+                    "name": "201406_price",
+                    "header": {
+                        "text": "Price"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201406_count",
+                    "name": "201406_count",
+                    "header": {
+                        "text": "Quantity"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }]
+            }, {
+                "type": "group",
+                "name": "July",
+                "width": 240,
+                "columns": [{
+                    "fieldName": "201407",
+                    "name": "201407",
+                    "header": {
+                        "text": "7월"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201407_price",
+                    "name": "201407_price",
+                    "header": {
+                        "text": "Price"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201407_count",
+                    "name": "201407_count",
+                    "header": {
+                        "text": "Quantity"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }]
+            }, {
+                "type": "group",
+                "name": "August",
+                "width": 240,
+                "columns": [{
+                    "fieldName": "201408",
+                    "name": "201408",
+                    "header": {
+                        "text": "8월"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201408_price",
+                    "name": "201408_price",
+                    "header": {
+                        "text": "Price"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201408_count",
+                    "name": "201408_count",
+                    "header": {
+                        "text": "Quantity"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }]
+            }, {
+                "type": "group",
+                "name": "September",
+                "width": 240,
+                "columns": [{
+                    "fieldName": "201409",
+                    "name": "201409",
+                    "header": {
+                        "text": "9월"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201409_price",
+                    "name": "201409_price",
+                    "header": {
+                        "text": "Price"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201409_count",
+                    "name": "201409_count",
+                    "header": {
+                        "text": "Quantity"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }]
+            }, {
+                "type": "group",
+                "name": "October",
+                "width": 240,
+                "columns": [{
+                    "fieldName": "201410",
+                    "name": "201410",
+                    "header": {
+                        "text": "10월"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201410_price",
+                    "name": "201410_price",
+                    "header": {
+                        "text": "Price"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201410_count",
+                    "name": "201410_count",
+                    "header": {
+                        "text": "Quantity"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }]
+            }, {
+                "type": "group",
+                "name": "November",
+                "width": 240,
+                "columns": [{
+                    "fieldName": "201411",
+                    "name": "201411",
+                    "header": {
+                        "text": "11월"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201411_price",
+                    "name": "201411_price",
+                    "header": {
+                        "text": "Price"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201411_count",
+                    "name": "201411_count",
+                    "header": {
+                        "text": "Quantity"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }]
+            }, {
+                "type": "group",
+                "name": "December",
+                "width": 240,
+                "columns": [{
+                    "fieldName": "201412",
+                    "name": "201412",
+                    "header": {
+                        "text": "12월"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201412_price",
+                    "name": "201412_price",
+                    "header": {
+                        "text": "Price"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }, {
+                    "fieldName": "201412_count",
+                    "name": "201412_count",
+                    "header": {
+                        "text": "Quantity"
+                    },
+                    "width": 80,
+                    "styles": {
+                        "textAlignment": "far",
+                        "numberFormat": "#,##0"
+                    },
+                    "footer": {
+                        "expression": "sum",
+                        "styles": {
+                            "textAlignment": "far",
+                            "numberFormat": "#,##0"
+                        },
+                        "groupExpression": "sum"
+                    }
+                }]
+            }
+        ]
+    }, {
+        "fieldName": "total_summary",
+        "name": "total_summary",
+        "header": {
+            "text": "Summary"
+        },
+        "width": 80,
+        "styles": {
+            "textAlignment": "far",
+            "numberFormat": "#,##0"
+        },
+        "footer": {
+            "expression": "sum",
+            "styles": {
+                "textAlignment": "far",
+                "numberFormat": "#,##0"
+            },
+            "groupExpression": "sum"
+        }
+    }
+]

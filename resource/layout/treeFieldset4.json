@@ -1,0 +1,259 @@
+[{
+    "fieldName": "id"
+}, {
+    "fieldName": "icon"
+}, {
+    "fieldName": "model"
+}, {
+    "fieldName": "2014",
+    "dataType": "number",
+    "calculateExpression": "values['201401_price']*values['201401_count']+values['201402_price']*values['201402_count']+values['201403_price']*values['201403_count']+values['201404_price']*values['201404_count']+values['201405_price']*values['201405_count']+values['201406_price']*values['201406_count']+values['201407_price']*values['201407_count']+values['201408_price']*values['201408_count']+values['201409_price']*values['201409_count']+values['201410_price']*values['201410_count']+values['201411_price']*values['201411_count']+values['201412_price']*values['201412_count']"
+}, {
+    "fieldName": "201401",
+    "dataType": "number",
+    "calculateExpression": "values['201401_price'] * values['201401_count']"
+}, {
+    "fieldName": "201401_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201401_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201402",
+    "dataType": "number",
+    "calculateExpression": "values['201402_price'] * values['201402_count']"
+}, {
+    "fieldName": "201402_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201402_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201403",
+    "dataType": "number",
+    "calculateExpression": "values['201403_price'] * values['201403_count']"
+}, {
+    "fieldName": "201403_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201403_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201404",
+    "dataType": "number",
+    "calculateExpression": "values['201404_price'] * values['201404_count']"
+}, {
+    "fieldName": "201404_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201404_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201405",
+    "dataType": "number",
+    "calculateExpression": "values['201405_price'] * values['201405_count']"
+}, {
+    "fieldName": "201405_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201405_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201406",
+    "dataType": "number",
+    "calculateExpression": "values['201406_price'] * values['201406_count']"
+}, {
+    "fieldName": "201406_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201406_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201407",
+    "dataType": "number",
+    "calculateExpression": "values['201407_price'] * values['201407_count']"
+}, {
+    "fieldName": "201407_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201407_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201408",
+    "dataType": "number",
+    "calculateExpression": "values['201408_price'] * values['201408_count']"
+}, {
+    "fieldName": "201408_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201408_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201409",
+    "dataType": "number",
+    "calculateExpression": "values['201409_price'] * values['201409_count']"
+}, {
+    "fieldName": "201409_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201409_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201410",
+    "dataType": "number",
+    "calculateExpression": "values['201410_price'] * values['201410_count']"
+}, {
+    "fieldName": "201410_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201410_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201411",
+    "dataType": "number",
+    "calculateExpression": "values['201411_price'] * values['201411_count']"
+}, {
+    "fieldName": "201411_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201411_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201412",
+    "dataType": "number",
+    "calculateExpression": "values['201412_price'] * values['201412_count']"
+}, {
+    "fieldName": "201412_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201412_count",
+    "dataType": "number"
+}, {
+    "fieldName": "2013",
+    "dataType": "number",
+    "calculateExpression": "values['201301_price']*values['201301_count']+values['201302_price']*values['201302_count']+values['201303_price']*values['201303_count']+values['201304_price']*values['201304_count']+values['201305_price']*values['201305_count']+values['201306_price']*values['201306_count']+values['201307_price']*values['201307_count']+values['201308_price']*values['201308_count']+values['201309_price']*values['201309_count']+values['201310_price']*values['201310_count']+values['201311_price']*values['201311_count']+values['201312_price']*values['201312_count']"
+}, {
+    "fieldName": "201301",
+    "dataType": "number",
+    "calculateExpression": "values['201301_price'] * values['201301_count']"
+}, {
+    "fieldName": "201301_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201301_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201302",
+    "dataType": "number",
+    "calculateExpression": "values['201302_price'] * values['201302_count']"
+}, {
+    "fieldName": "201302_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201302_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201303",
+    "dataType": "number",
+    "calculateExpression": "values['201303_price'] * values['201303_count']"
+}, {
+    "fieldName": "201303_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201303_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201304",
+    "dataType": "number",
+    "calculateExpression": "values['201304_price'] * values['201304_count']"
+}, {
+    "fieldName": "201304_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201304_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201305",
+    "dataType": "number",
+    "calculateExpression": "values['201305_price'] * values['201305_count']"
+}, {
+    "fieldName": "201305_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201305_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201306",
+    "dataType": "number",
+    "calculateExpression": "values['201306_price'] * values['201306_count']"
+}, {
+    "fieldName": "201306_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201306_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201307",
+    "dataType": "number",
+    "calculateExpression": "values['201307_price'] * values['201307_count']"
+}, {
+    "fieldName": "201307_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201307_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201308",
+    "dataType": "number",
+    "calculateExpression": "values['201308_price'] * values['201308_count']"
+}, {
+    "fieldName": "201308_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201308_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201309",
+    "dataType": "number",
+    "calculateExpression": "values['201309_price'] * values['201309_count']"
+}, {
+    "fieldName": "201309_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201309_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201310",
+    "dataType": "number",
+    "calculateExpression": "values['201310_price'] * values['201310_count']"
+}, {
+    "fieldName": "201310_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201310_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201311",
+    "dataType": "number",
+    "calculateExpression": "values['201311_price'] * values['201311_count']"
+}, {
+    "fieldName": "201311_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201311_count",
+    "dataType": "number"
+}, {
+    "fieldName": "201312",
+    "dataType": "number",
+    "calculateExpression": "values['201312_price'] * values['201312_count']"
+}, {
+    "fieldName": "201312_price",
+    "dataType": "number"
+}, {
+    "fieldName": "201312_count",
+    "dataType": "number"
+}, {
+    "fieldName": "total_summary",
+    "dataType": "number",
+    "calculateExpression": "values['201401_price']*values['201401_count']+values['201402_price']*values['201402_count']+values['201403_price']*values['201403_count']+values['201404_price']*values['201404_count']+values['201405_price']*values['201405_count']+values['201406_price']*values['201406_count']+values['201407_price']*values['201407_count']+values['201408_price']*values['201408_count']+values['201409_price']*values['201409_count']+values['201410_price']*values['201410_count']+values['201411_price']*values['201411_count']+values['201412_price']*values['201412_count']+values['201301_price']*values['201301_count']+values['201302_price']*values['201302_count']+values['201303_price']*values['201303_count']+values['201304_price']*values['201304_count']+values['201305_price']*values['201305_count']+values['201306_price']*values['201306_count']+values['201307_price']*values['201307_count']+values['201308_price']*values['201308_count']+values['201309_price']*values['201309_count']+values['201310_price']*values['201310_count']+values['201311_price']*values['201311_count']+values['201312_price']*values['201312_count']"
+}]
