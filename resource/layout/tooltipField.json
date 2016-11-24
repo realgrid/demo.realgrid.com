@@ -1,0 +1,45 @@
+[{
+    "fieldName": "OrderID"
+}, {
+    "fieldName": "EmployeeID"
+}, {
+    "fieldName": "OrderDate",
+    "dataType": "datetime"
+}, {
+    "fieldName": "ProductName"
+}, {
+    "fieldName": "CustomerID"
+}, {
+    "fieldName": "CompanyName"
+}, {
+    "fieldName": "Phone"
+}, {
+    "fieldName": "RequiredDate",
+    "dataType": "datetime"
+}, {
+    "fieldName": "ShippedDate",
+    "dataType": "datetime"
+}, {
+    "fieldName": "ShipVia"
+}, {
+    "fieldName": "Freight",
+    "dataType": "number"
+}, {
+    "fieldName": "ShipName"
+}, {
+    "fieldName": "ShipAddress"
+}, {
+    "fieldName": "ShipCity"
+}, {
+    "fieldName": "ShipRegion"
+}, {
+    "fieldName": "ShipPortalCode"
+}, {
+    "fieldName": "ShipCountry"
+}, {
+    "fieldName": "Quantity",
+    "dataType": "numeric"
+}, {
+    "fieldName": "UnitPrice",
+    "dataType": "numeric"
+}]

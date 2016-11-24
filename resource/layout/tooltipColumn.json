@@ -1,0 +1,91 @@
+[{
+    "name": "OrderID",
+    "fieldName": "OrderID",
+    "width": "90",
+    "renderer": {
+        "showTooltip": true
+    },
+    "styles": {
+        "textAlignment": "center",
+        "background": "#ffffff99"
+    },
+    "header": {
+        "text": "Order"
+    }
+}, {
+    "name": "CustomerID",
+    "fieldName": "CustomerID",
+    "renderer": {
+        "showTooltip": true
+    },
+    "styles": {
+        "textAlignment": "center",
+        "background": "#ffffff99"
+    },
+    "header": {
+        "text": "Customer"
+    }
+}, {
+    "name": "RequiredDate",
+    "fieldName": "RequiredDate",
+    "width": "80",
+    "renderer": {
+        "showTooltip": true
+    },
+    "styles": {
+        "textAlignment": "center",
+        "datetimeFormat": "yyyy.MM.dd"
+    },
+    "header": {
+        "showTooltip": true,
+        "tooltip": "Require Date",
+        "text": "R/D",
+        "styles": {
+            "background": "#ffffff99"
+        }
+    }
+}, {
+    "name": "OrderDate",
+    "fieldName": "OrderDate",
+    "width": "80",
+    "styles": {
+        "textAlignment": "center",
+        "datetimeFormat": "yyyy.MM.dd"
+    },
+    "header": {
+        "showTooltip": true,
+        "text": "O/D",
+        "styles": {
+            "background": "#ffffff99"
+        }
+    }
+}, {
+    "name": "ShipVia",
+    "fieldName": "ShipVia",
+    "width": "120",
+    "renderer": {
+        "showTooltip": true
+    },
+    "styles": {
+        "background": "#ffffff99"
+    },
+    "header": {
+        "text": "Shipping"
+    }
+}, {
+    "name": "Quantity",
+    "fieldName": "Quantity",
+    "width": "100",
+    "styles": {
+        "textAlignment": "far",
+        "numberFormat": "#,##0.00"
+    }
+}, {
+    "name": "UnitPrice",
+    "fieldName": "UnitPrice",
+    "width": "100",
+    "styles": {
+        "textAlignment": "far",
+        "numberFormat": "#,##0.00"
+    }
+}]
