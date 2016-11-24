@@ -4,6 +4,7 @@ title: 트리 구현 - JSON 데이터
 order: 3
 devbox: true
 devboxfile: TreeJsonDataSet_devbox.md
+published: true
 categories:
   - 트리뷰(TreeView)
 tags: ['트리', 'Tree']

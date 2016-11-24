@@ -4,6 +4,7 @@ title: 트리뷰 아이콘 컨트롤하기
 order: 10
 devbox: true
 devboxfile: TreeIcons_devbox.md
+published: true
 categories:
   - 트리뷰(TreeView)
 tags: ['트리', 'Tree']
@@ -14,36 +15,8 @@ tags: ['트리', 'Tree']
 
 <script>
   var onDoneDataSet = function() {
-    var imageList = new RealGridJS.ImageList("images", "{{"/resource/image/smallflag/" | prepend: site.baseurl}}");
-    imageList.addUrls([
-                "icon_male.png",
-                "icon_female.png",
-                "de.png",
-                "gr.png",
-                "hu.png",
-                "is.png",
-                "eg.png",
-                "au.png",
-                "nz.png",
-                "ph.png",
-                "sg.png",
-                "th.png",
-                "tr.png",
-                "ca.png",
-                "mx.png",
-                "us.png",
-                "bo.png",
-                "cr.png",
-                "pe.png",
-                "uy.png"
-        ]
-    );
- 
-    treeView.registerImageList(imageList);
-    treeView.setTreeOptions({
-        iconImages: imageList.getName(),
-        iconWidth: 20
-    });
+    treeView.expand(0);
+    treeView.expand(1);
   }
 </script>
 

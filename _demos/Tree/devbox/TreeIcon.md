@@ -2,7 +2,8 @@
 
 트리뷰(TreeView)에는 각 노드에 아이콘을 표시할 수 있습니다.
 
-아래 트리 구현 함수들에서는 함수의 마지막 인자인 `iconField`에 트리컬럼에 표시할 아이콘의 index값이 들어 있는 필드명을 입력합니다.
+아래 트리 구현 함수들에서는 함수의 마지막 인자인 `iconField`에 트리컬럼에 표시할 아이콘의 index값이
+들어 있는 필드명을 입력합니다. 이 필드에 들어있는 값이 트리노드의 `기본 아이콘 인덱스(icon index)`가 됩니다.
 
 - [TreeDataProvider.setRows()](http://help.realgrid.com/api/TreeDataProvider/setRows/)
 - [TreeDataProvider.setJsonRows()](http://help.realgrid.com/api/TreeDataProvider/setJsonRows/)
@@ -34,7 +35,9 @@ var imgFiles = [
               "es.png",
               "gb.png",
               "us.png",
-              "ve.png"
+              "ve.png",
+              "icon_folder_col",
+              "icon_folder_exp"
   ];
 var imageList = new RealGridJS.ImageList("images", "{{"/resource/image/smallflag/" | prepend: site.baseurl}}");
 imageList.addUrls(imgFiles);
@@ -45,6 +48,30 @@ treeView.setTreeOptions({
     iconImages: imageList.getName(),
     iconWidth: 20
 });
+```
+
+#### 트리 노드 아이콘 변경 하기
+
+트리 노드의 `아이콘 인덱스(icon index)`를 가져오고 지정하기 위해
+
+- [TreeDataProvider.getIconIndex()](http://help.realgrid.com/api/TreeDataProvider/getIconIndex/)
+- [TreeDataProvider.setIconIndex()](http://help.realgrid.com/api/TreeDataProvider/setIconIndex/)
+
+함수를 사용합니다.
+
+<a class="btn primary small round lowercase" id="setIconIndex">현재 노드의 아이콘 변경하기</a>
+
+```js
+// 현재 노드의 아이콘을 9 또는 10으로 변경하기
+var current = treeView.getCurrent();
+if (current && current.dataRow) {
+  var iidx = treeDataProvider.getIconIndex(current.dataRow);
+  if (iidx == 9) {
+    treeDataProvider.setIconIndex(current.dataRow, 10);
+  } else {
+    treeDataProvider.setIconIndex(current.dataRow, 9);
+  }
+}
 ```
 
 <script>
@@ -58,7 +85,9 @@ treeView.setTreeOptions({
                   "es.png",
                   "gb.png",
                   "us.png",
-                  "ve.png"
+                  "ve.png",
+                  "icon_folder_col.png",
+                  "icon_folder_exp.png"
       ];
     var imageList = new RealGridJS.ImageList("images", "{{"/resource/image/smallflag/" | prepend: site.baseurl}}");
     imageList.addUrls(imgFiles);
@@ -69,5 +98,17 @@ treeView.setTreeOptions({
         iconImages: imageList.getName(),
         iconWidth: 20
     });
-  })
+  });
+
+  $('#setIconIndex').click(function() {
+    var current = treeView.getCurrent();
+    if (current && current.dataRow) {
+      var iidx = treeDataProvider.getIconIndex(current.dataRow);
+      if (iidx == 9) {
+        treeDataProvider.setIconIndex(current.dataRow, 10);
+      } else {
+        treeDataProvider.setIconIndex(current.dataRow, 9);
+      }
+    }
+  });
 </script>
