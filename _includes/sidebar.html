@@ -85,8 +85,9 @@
               {% assign cat = category[0] | downcase %}
 
               {% if cat == democat %}
-              <li class="item-toc {% if page.title == demo.title %}current {% endif %}">
-                <a href="{{ demo.url | prepend: site.baseurl }}" class="sidebar-link {% if page.title == demo.title %}current{% endif %}">
+              <li class="item-toc {% if page.title == demo.title %}current{% endif %}">
+                <a href="{{ demo.url | prepend: site.baseurl }}"
+                  class="{% if page.title == demo.title %}current{% endif %} {% if demo.published != true %}sidebar-link{% endif %}">
                   <span>{{ demo.title }}</span>
                   <span style="display: none;">
                   {{ demo.tags | join: ', '}}
