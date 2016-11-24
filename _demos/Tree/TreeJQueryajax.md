@@ -4,6 +4,7 @@ title: jQuery ajax() 이용하기
 order: 6
 devbox: true
 devboxfile: TreeJQueryAjax_devbox.md
+published: true
 categories:
   - 트리뷰(TreeView)
 tags: ['트리', 'Tree']
