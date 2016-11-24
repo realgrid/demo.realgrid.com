@@ -1,0 +1,26 @@
+[{
+        "fieldName": "id"
+    }, {
+        "fieldName": "userid"
+    }, {
+        "fieldName": "company"
+    }, {
+        "fieldName": "first_name"
+    }, {
+        "fieldName": "last_name"
+    }, {
+        "fieldName": "email"
+    }, {
+        "fieldName": "ip_address"
+    }, {
+        "fieldName": "phone"
+    }, {
+        "fieldName": "pay",
+        "dataType": "number"
+    }, {
+        "fieldName": "card_number",
+        "subtype": "char",
+        "length": 16
+    }, {
+        "fieldName": "card_type"
+    }]
