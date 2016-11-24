@@ -4,6 +4,7 @@ title: 트리 구현 - XML 데이터
 order: 4
 devbox: true
 devboxfile: TreeXmlDataSet_devbox.md
+published: true
 categories:
   - 트리뷰(TreeView)
 tags: ['트리', 'Tree']

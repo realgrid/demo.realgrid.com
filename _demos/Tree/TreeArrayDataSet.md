@@ -4,6 +4,7 @@ title: 트리 구현 - Array 데이터
 order: 2
 devbox: true
 devboxfile: TreeArrayDataSet_devbox.md
+published: true
 categories:
   - 트리뷰(TreeView)
 tags: ['트리', 'Tree']

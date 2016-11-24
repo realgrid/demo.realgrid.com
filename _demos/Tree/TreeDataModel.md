@@ -4,6 +4,7 @@ title: 트리뷰 데이터 모델
 order: 1
 devbox: true
 devboxfile: TreeDataModel_devbox.md
+published: true
 categories:
   - 트리뷰(TreeView)
 tags: ['트리', 'Tree']

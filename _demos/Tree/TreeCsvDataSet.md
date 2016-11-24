@@ -4,6 +4,7 @@ title: 트리 구현 - CSV 데이터
 order: 5
 devbox: true
 devboxfile: TreeCsvDataSet_devbox.md
+published: true
 categories:
   - 트리뷰(TreeView)
 tags: ['트리', 'Tree']
