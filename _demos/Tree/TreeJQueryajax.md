@@ -15,6 +15,10 @@ tags: ['트리', 'Tree']
 
 
 <script>
+  var onSuccessDataSet = function(data, textStatus, jqXHR) {
+    //onDoneDataSet() 호출 할려고...
+  }
+
   var onDoneDataSet = function() {
     var imageList = new RealGridJS.ImageList("images", "{{"/resource/image/smallflag/" | prepend: site.baseurl}}");
     imageList.addUrls([
@@ -57,18 +61,18 @@ tags: ['트리', 'Tree']
 {% include realtree.html
   treeVar="treeView"
   dpVar="treeDataProvider"
+  treeId="realtree"
+
   fieldSet="treeFieldset3"
   columnSet="treeColumnset3"
   dpOptionSet="treeDataProviderOption1"
   treeOptionSet="treeOption1"
   styleSet="treeStyle1"
-  dataSet="treedata3"
+
+  dataSet="treedata3.json"
+  successDataSet="onSuccessDataSet"
   doneDataSet="onDoneDataSet"
-  treeId="realtree"
-  treeDataFunc="setJsonRows"
-  treeField="rows"
-  childrenField=""
-  iconField="icon"
+
   showToolbox="true"
   treeWidth="100%"
   treeHeight="300px" %}

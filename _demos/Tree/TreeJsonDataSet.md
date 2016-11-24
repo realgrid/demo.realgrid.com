@@ -21,11 +21,9 @@ tags: ['트리', 'Tree']
   dpOptionSet="treeDataProviderOption1"
   treeOptionSet="treeOption1"
   styleSet="treeStyle1"
+
   treeId="realtree"
-  treeField="tree"
-  needSorting="true"
-  childrenField=""
-  iconField="icon"
+
   showToolbox="true"
   treeWidth="100%"
   treeHeight="300px" %}

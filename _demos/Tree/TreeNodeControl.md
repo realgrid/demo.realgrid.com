@@ -12,6 +12,10 @@ tags: ['트리', 'Tree']
 
 
 <script>
+  var onSuccessDataSet = function(data, textStatus, jqXHR) {
+    treeDataProvider.setRows(data, "tree", true, "", "icon");
+  }
+
   var onDoneDataSet = function() {
     var imgFiles = [
                   "kr.png",
@@ -43,18 +47,18 @@ RealGrid의 트리뷰(TreeView)는 트리 노드를 조작하기 위해 다양�
 {% include realtree.html
   treeVar="treeView"
   dpVar="treeDataProvider"
+  treeId="realtree"
+
   fieldSet="treeFieldset1"
   columnSet="treeColumnset1"
   dpOptionSet="treeDataProviderOption1"
   treeOptionSet="treeOption1"
   styleSet="treeStyle1"
-  dataSet="treedata1"
+
+  dataSet="treedata1.json"
+  successDataSet="onSuccessDataSet"
   doneDataSet="onDoneDataSet"
-  treeId="realtree"
-  treeField="tree"
-  needSorting="true"
-  childrenField=""
-  iconField="icon"
+
   showToolbox="true"
   treeWidth="100%"
   treeHeight="300px" %}

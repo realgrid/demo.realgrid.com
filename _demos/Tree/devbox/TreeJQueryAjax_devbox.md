@@ -13,7 +13,7 @@ treeView.showProgress();
 // jQuery ajax() 함수 호출
 $.ajax({
     type: "GET",
-    url: "http://" + location.host + "{{'/resource/data/' | prepend: site.baseurl}}treedata3.json?__time__=" + new Date().getTime(),
+      url: "http://" + location.host + "{{'/resource/data/' | prepend: site.baseurl}}treedata3.json?__time__=" + new Date().getTime(),
     dataType: "text",
     success: function (data) {
       // 원격 데이터를 비동기로 가져온 경우 호출 되는 콜백
