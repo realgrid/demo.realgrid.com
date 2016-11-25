@@ -21,13 +21,13 @@ var columns = [{
 grid.setColumns(columns);
 ```
 
-<a class="btn primary small round lowercase" id="btnEqualBlankTrue">true</a>
+<a class="btn primary small round lowercase" id="btnEqualBlankTrue">CustomerID컬럼 같은 값 생략</a>
 
 ```js
 gridView.setColumnProperty("CustomerID", "equalBlank", true);
 ```
 
-<a class="btn primary small round lowercase" id="btnEqualBlankFalse">false</a>
+<a class="btn primary small round lowercase" id="btnEqualBlankFalse">CustomerID컬럼 생략 해제</a>
 
 ```js
 gridView.setColumnProperty("CustomerID", "equalBlank", false);
