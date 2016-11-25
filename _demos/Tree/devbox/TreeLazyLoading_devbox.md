@@ -15,6 +15,8 @@
 
 <a class="btn primary small round lowercase" id="setExpandingEvent">트리 펼쳐질때 자식 노드로 데이터 추가</a>
 
+버튼을 클릭하면 노드의 (+) 버튼을 눌러 펼칠때 원격 데이터를 비동기 방식으로 불러와 자식 노드를 만듭니다.
+
 ```js
 // onTreeItemExpanding 이벤트에서 자식 노드 추가
 treeView.onTreeItemExpanding = function (tree, itemIndex, rowId) {

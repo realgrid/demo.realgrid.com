@@ -118,6 +118,8 @@ if (current && current.dataRow) {
 
 <a class="btn primary small round lowercase" id="setDynamicIconIndex">노드를 접고 펼칠 때 아이콘 변경</a>
 
+버튼을 누르면 트리의 두번째 레벨 노드를 접을때와 펼칠때 다른 아이콘이 표시됩니다.
+
 ```js
 // 노드를 펼칠때 아이콘 인덱스를 3으로 변경
 treeView.onTreeItemExpanded = function (tree, itemIndex, rowId) {
