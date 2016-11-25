@@ -7,8 +7,7 @@
 {% capture realgrid_folder %}/lib/realgrid/realgridjs{{ realgrid_product }}.{{ site.realgrid_version }}{% endcapture %}
 
 <div id="{{ include.gridId }}" class="realgrid" style="width:{{ include.gridWidth }}; height:{{ include.gridHeight }}"></div>
-{% if include.showToolbox == false %}
-{% else %}
+{% unless include.showToolbox == false %}
 <div class="toolbox">
   <div class="buttonbox">
     {% comment %} showCodes() 는 include/head.html 에 있음. {% endcomment %}
@@ -24,7 +23,7 @@
   <pre class="codeview {{ include.gridId }}viewoption"></pre>
   <pre class="codeview {{ include.gridId }}style"></pre>
 </div>
-{% endif %}
+{% endunless %}
 
 {% comment %}
   TODO:
@@ -215,6 +214,9 @@
 
 
         {% if include.dataSet %}
+            {% if include.showProgress %}
+              {{ include.gridVar }}.showProgress();
+            {% endif %}
             {% capture datafile %}/resource/data/{{ include.dataSet }}{% endcapture %}
             $.ajax({
               type: "GET",
@@ -224,17 +226,29 @@
                   {{ include.successDataSet }}(data, textStatus, jqXHR);
                 {% endif %}
               }
+              {% if include.showProgress %}
+              ,xhr: function () {
+                var xhr = new window.XMLHttpRequest();
+                xhr.addEventListener("progress", function (evt) {
+                    if (evt.lengthComputable) {
+                        {{ include.gridVar }}.setProgress(0, evt.total, evt.loaded);
+                    }
+                }, false);
+                return xhr;
+              }
+              {% endif %}
             })
             .done( function(data, textStatus, jqXHR) {
               {{ include.gridVar }}.setFocus();
-
               {% if include.doneDataSet %}
                 {{ include.doneDataSet }}(data, textStatus, jqXHR);
+              {% endif %}
+              {% if include.showProgress %}
+                {{ include.gridVar }}.closeProgress();
               {% endif %}
             })
             .fail( function(jqxhr, textStatus, error) {
               var err = textStatus + ', ' + error;
-
               {% if include.failDataSet %}
                 {{ include.failDataSet }}(jqxhr, textStatus, error);
               {% else %}
@@ -242,6 +256,7 @@
                 alert("jQuery ajax() Failed: " + err);
               {% endif %}
             });
+;
         {% endif %}
 
     });

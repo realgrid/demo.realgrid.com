@@ -204,6 +204,9 @@
 
 
         {% if include.dataSet %}
+            {% if include.showProgress %}
+              {{ include.treeVar }}.showProgress();
+            {% endif %}
             {% capture datafile %}/resource/data/{{ include.dataSet }}{% endcapture %}
             $.ajax({
               type: "GET",
@@ -213,17 +216,29 @@
                   {{ include.successDataSet }}(data, textStatus, jqXHR);
                 {% endif %}
               }
+              {% if include.showProgress %}
+              ,xhr: function () {
+                var xhr = new window.XMLHttpRequest();
+                xhr.addEventListener("progress", function (evt) {
+                    if (evt.lengthComputable) {
+                        {{ include.treeVar }}.setProgress(0, evt.total, evt.loaded);
+                    }
+                }, false);
+                return xhr;
+              }
+              {% endif %}
             })
             .done( function(data, textStatus, jqXHR) {
               {{ include.treeVar }}.setFocus();
-
               {% if include.doneDataSet %}
                 {{ include.doneDataSet }}(data, textStatus, jqXHR);
+              {% endif %}
+              {% if include.showProgress %}
+                {{ include.treeVar }}.closeProgress();
               {% endif %}
             })
             .fail( function(jqxhr, textStatus, error) {
               var err = textStatus + ', ' + error;
-
               {% if include.failDataSet %}
                 {{ include.failDataSet }}(jqxhr, textStatus, error);
               {% else %}
