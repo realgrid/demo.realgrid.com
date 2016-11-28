@@ -1,0 +1,76 @@
+[{
+        "name": "id",
+        "fieldName": "id",
+        "width": 40,
+        "header": { "text": "No" },
+        "styles": { "textAlignment": "center", "font": "Tahoma" }
+    }, {
+        "name": "userid",
+        "fieldName": "userid",
+        "width": 80,
+        "header": { "text": "사용자 Id" },
+        "styles": {
+            "textAlignment": "near",
+            "font": "Tahoma"
+        }
+    }, {
+        "name": "company",
+        "fieldName": "company",
+        "width": 100,
+        "header": { "text": "회사" },
+        "styles": { "textAlignment": "near", "font": "Tahoma" }
+    }, {
+        "name": "first_name",
+        "fieldName": "first_name",
+        "width": 80,
+        "header": { "text": "이름" },
+        "styles": { "textAlignment": "near", "font": "Tahoma" }
+    }, {
+        "name": "last_name",
+        "fieldName": "last_name",
+        "width": 80,
+        "header": { "text": "성" },
+        "styles": { "textAlignment": "near", "font": "Tahoma" }
+    }, {
+        "name": "phone",
+        "fieldName": "phone",
+        "width": 120,
+        "header": { "text": "전화번호" },
+        "styles": {
+            "textAlignment": "near",
+            "font": "arial"
+        }
+    }, {
+        "name": "email",
+        "fieldName": "email",
+        "width": 150,
+        "header": { "text": "E-Mail" },
+        "styles": {
+            "textAlignment": "near",
+            "font": "arial"
+        }
+    }, {
+        "name": "ip_address",
+        "fieldName": "ip_address",
+        "width": 100,
+        "header": { "text": "IP Address" },
+        "styles": {
+            "textAlignment": "near",
+            "font": "arial"
+        }
+    }, {
+        "name": "card_number",
+        "fieldName": "card_number",
+        "width": 150,
+        "header": { "text": "신용카드" },
+        "styles": {
+            "textAlignment": "near",
+            "font": "arial"
+        }
+    }, {
+        "name": "card_type",
+        "fieldName": "card_type",
+        "width": 90,
+        "header": { "text": "카드종류" },
+        "styles": { "textAlignment": "near" }
+    }]
