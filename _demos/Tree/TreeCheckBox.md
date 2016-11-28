@@ -24,32 +24,32 @@ tags: ['트리', 'Tree']
 
   var onDoneDataSet = function() {
     var imageList = new RealGridJS.ImageList("images", "{{"/resource/image/smallflag/" | prepend: site.baseurl}}");
-    imageList.addUrls([
-                "icon_male.png",
-                "icon_female.png",
+    imageList.addUrls([
+                "icon_male.png",
+                "icon_female.png",
                 "icon_folder_col.png",
-                "icon_folder_exp.png",
-                "de.png",
-                "gr.png",
-                "hu.png",
-                "is.png",
-                "eg.png",
-                "au.png",
-                "nz.png",
-                "ph.png",
-                "sg.png",
-                "th.png",
-                "tr.png",
-                "ca.png",
-                "mx.png",
-                "us.png",
-                "bo.png",
-                "cr.png",
-                "pe.png",
-                "uy.png"
-        ]
-    );
- 
+                "icon_folder_exp.png",
+                "de.png",
+                "gr.png",
+                "hu.png",
+                "is.png",
+                "eg.png",
+                "au.png",
+                "nz.png",
+                "ph.png",
+                "sg.png",
+                "th.png",
+                "tr.png",
+                "ca.png",
+                "mx.png",
+                "us.png",
+                "bo.png",
+                "cr.png",
+                "pe.png",
+                "uy.png"
+        ]
+    );
+ 
     treeView.registerImageList(imageList);
     treeView.setTreeOptions({
         iconImages: imageList.getName(),
