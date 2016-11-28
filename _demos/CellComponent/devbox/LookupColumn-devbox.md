@@ -2,6 +2,8 @@
 
 `values`값을 `labels`로 표시될 목록을 지정하면 `values`값의 위치에 맞는 `labels` 항목이 표시됩니다.
 
+values/labels 컬럼에 `values`로 설정된 값 중 하나를 입력해 보세요.
+
 ```js
 var columns = [{
 	...
@@ -60,6 +62,18 @@ var columns = [{
 grid.setColumns(columns);
 ```
 
+<a class="btn primary small round lowercase" id="getFieldValues">Label Field컬럼 값 확인</a>
+
+```js
+alert(dataProvider.getFieldValues("Age"))
+```
+
+<a class="btn primary small round lowercase" id="getLabelValues">labelField 값 확인</a>
+
+```js
+alert(dataProvider.getFieldValues("AgeLabel"))
+```
+
 #### dropDown lookup 설정
 
 values와 labels 목록은 `DropDown` 편집기의 lookup 목록으로 사용될 수도 있습니다.
@@ -114,5 +128,13 @@ $('#getValue').click(function() {
     var focusIndex = gridView.getCurrent().itemIndex;
 	var focusField = gridView.getCurrent().fieldName;
 	alert(gridView.getValue(focusIndex, focusField))
+});
+
+$('#getFieldValues').click(function() {
+    alert(dataProvider.getFieldValues("Age"))
+});
+
+$('#getLabelValues').click(function() {
+    alert(dataProvider.getFieldValues("AgeLabel"))
 });
 </script>
