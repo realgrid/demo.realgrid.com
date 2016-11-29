@@ -40,7 +40,7 @@
         {% if include.fieldSet %}
             {% capture fieldfile %}/resource/layout/{{ include.fieldSet }}.json{% endcapture %}
 
-            $.getJSON("{{ fieldfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
+            $.getJSON("{{ fieldfile | prepend: site.baseurl }}?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
                 {{ include.dpVar }}.setFields(data);
 
                 $('.codeview.{{ include.treeId }}field').html(
@@ -210,7 +210,7 @@
             {% capture datafile %}/resource/data/{{ include.dataSet }}{% endcapture %}
             $.ajax({
               type: "GET",
-              url:"{{ datafile | prepend: site.baseurl }}",
+              url:"{{ datafile | prepend: site.baseurl }}?__time__=" + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 {% if include.successDataSet %}
                   {{ include.successDataSet }}(data, textStatus, jqXHR);
