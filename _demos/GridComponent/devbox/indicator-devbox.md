@@ -158,8 +158,8 @@ gridView.setIndicator({
     gridView.setIndicator({
       headText: null,  
       footText: null,
-      headImageUrl: "/resource/image/common/dot_arrow2_top.gif",  
-      footImageUrl: "/resource/image/common/dot_arrow2_bottom.gif"  
+      headImageUrl: "{{"/resource/image/common/" | prepend: site.baseurl}}" + "/dot_arrow2_top.gif",  
+      footImageUrl: "{{"/resource/image/common/" | prepend: site.baseurl}}" + "/dot_arrow2_bottom.gif"  
     });
   });  
 
