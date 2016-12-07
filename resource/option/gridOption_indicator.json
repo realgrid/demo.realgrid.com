@@ -1,0 +1,15 @@
+{
+    "panel": {
+        "visible": false
+    },
+    "stateBar": {
+        "visible": false
+    },
+    "header": {
+        "minHeight": 30
+    },
+    "edit": {
+        "insertable": true,
+        "appendable": true
+    }
+}
