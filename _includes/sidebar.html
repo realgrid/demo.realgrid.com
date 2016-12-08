@@ -49,7 +49,8 @@
                 {% for path in sorted_by_orderno %}
                     {% if path.title %}
                     <li class="item-toc {% if page.title == path.title %}current {% endif %}">
-                        <a href="{{ path.url | prepend: site.baseurl }}" class="sidebar-link {% if page.title == path.title %}current{% endif %}">
+                        <a href="{{ path.url | prepend: site.baseurl }}"
+                          class="sidebar-link {% if path.published != true %}sidebar-link-unpub{% endif %} {% if page.title == path.title %}current{% endif %}">
                             <span>{{ path.title }}</span>
                         </a>
                     </li>
@@ -62,7 +63,8 @@
                     {% for path in sorted_by_orderno %}
                         {% if path.title %}
                         <li class="item-toc {% if page.title == path.title %}current {% endif %}">
-                            <a href="{{ path.url | prepend: site.baseurl }}" class="sidebar-link {% if page.title == path.title %}current{% endif %}">
+                            <a href="{{ path.url | prepend: site.baseurl }}"
+                              class="sidebar-link {% if path.published != true %}sidebar-link-unpub{% endif %} {% if page.title == path.title %}current{% endif %}">
                                 <span>{{ path.title }}</span>
                             </a>
                         </li>
@@ -87,7 +89,7 @@
               {% if cat == democat %}
               <li class="item-toc {% if page.title == demo.title %}current{% endif %}">
                 <a href="{{ demo.url | prepend: site.baseurl }}"
-                  class="{% if page.title == demo.title %}current{% endif %} {% if demo.published != true %}sidebar-link{% endif %}">
+                  class="{% if page.title == demo.title %}current{% endif %} sidebar-link {% if demo.published != true %}sidebar-link-unpub{% endif %}">
                   <span>{{ demo.title }}</span>
                   <span style="display: none;">
                   {{ demo.tags | join: ', '}}

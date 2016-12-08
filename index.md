@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 안녕하세요!
+published: true
 description: RealGrid 데모 사이트입니다.
 ---
 
@@ -13,6 +14,6 @@ RealGrid 데모 사이트는 RealGrid의 모든 기능을 다양하게 활용할
 
 - Renderer.showTooltip속성이 TextCellRenderer뿐 아니라 Data를 표시하는 전체 Cell Renderer에서 적용되도록 개선되었습니다.
 - 그리드에서 행을 추가할때 dataProvider.onRowInserted 이벤트에서 dataProvider.setValue api를 사용할때 발생하는 오류를 수정하였습니다.
-- [상세보기...]({{ "/release1.1.19" | prepend: site.baseurl }})
+- [상세보기...]({{ "/release/" | prepend: site.baseurl }})
 
 <h2>주요기능 요약</h2>

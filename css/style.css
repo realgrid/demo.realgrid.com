@@ -3284,7 +3284,7 @@ body.sidebar-visible .content {
 .aa-cursor .algolia-docsearch-suggestion--content:active {
   color: #262626;
 }
-.sidebar ul.list-toc a.sidebar-link {
+.sidebar ul.list-toc a.sidebar-link-unpub {
   color: #cccccc;
 }
 .sidebar ul.list-toc a.current,
