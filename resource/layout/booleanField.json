@@ -1,0 +1,23 @@
+[{
+    "fieldName": "Values"
+}, {
+    "fieldName": "Boolean1",
+    "dataType": "boolean",
+    "booleanFormat": "False,N,0:True,Y,1:0"
+}, {
+    "fieldName": "Boolean2",
+    "dataType": "boolean",
+    "booleanFormat": "True,N,0:False,Y,1:1"
+}, {
+    "fieldName": "Boolean3",
+    "dataType": "boolean",
+    "booleanFormat": "False,0:True,1:0"
+}, {
+    "fieldName": "Boolean4",
+    "dataType": "boolean",
+    "booleanFormat": "True,Y,1:False,N,0:0"
+}, {
+    "fieldName": "Boolean5",
+    "dataType": "boolean",
+    "booleanFormat": "False,N,1:True,Y,0:1"
+}]

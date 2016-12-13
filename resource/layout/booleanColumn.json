@@ -1,0 +1,77 @@
+[{
+    "name": "Values",
+    "fieldName": "Values",
+    "width": "200",
+    "ignoreDefaultDynamicStyles": true,
+    "header": {
+        "text": "Values"
+    },
+    "styles": {
+        "textAlignment": "near"
+    }
+}, {
+    "fieldName": "Boolean1",
+    "width": "120",
+    "header": {
+        "text": "Boolean 1"
+    },
+    "editor": {
+        "booleanFormat": "거짓,f,false:참,t,true:0",
+        "emptyValue": false
+    },
+    "styles": {
+        "booleanFormat": "거짓:참"
+    }
+}, {
+    "name": "FieldLoadCase",
+    "fieldName": "Boolean2",
+    "width": "100",
+    "header": {
+        "text": "Boolean 2"
+    },
+    "editor": {
+        "booleanFormat": "Falsity,False,f,false:Truth,True,t,true:1"
+    },
+    "styles": {
+        "booleanFormat": "Falsity:Truth:False"
+    }
+}, {
+    "name": "RenderingTest",
+    "fieldName": "Boolean3",
+    "width": "120",
+    "header": {
+        "text": "Boolenan 3"
+    },
+    "editor": {
+        "booleanFormat": "0,f,false:1,t,true:0"
+    },
+    "styles": {
+        "booleanFormat": "0:1"
+    }
+}, {
+    "name": "EditorTest",
+    "fieldName": "Boolean4",
+    "width": "120",
+    "header": {
+        "text": "Boolean 4"
+    },
+    "editor": {
+        "booleanFormat": "No,f,false:Yes,t,true:0"
+    },
+    "styles": {
+        "booleanFormat": "No:Yes"
+    }
+}, {
+    "name": "Boolean5",
+    "fieldName": "Boolean5",
+    "width": "100",
+    "header": {
+        "text": "Boolean 5"
+    },
+    "editor": {
+        "booleanFormat": "Male,f,false:Female,t,true:0"
+    },
+    "styles": {
+        "booleanFormat": "Male:Female"
+    }
+}]
