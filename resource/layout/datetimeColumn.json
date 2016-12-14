@@ -1,0 +1,56 @@
+[{
+    "name": "Datetime1",
+    "fieldName": "Datetime1",
+    "width": "110",
+    "header": "YYYYMMDD",
+    "editor": {
+        "datetimeFormat": "yyyy-MM-dd"
+    },
+    "styles": {
+        "datetimeFormat": "yyyy/MM/dd"
+    }
+}, {
+    "name": "Datetime2",
+    "fieldName": "Datetime2",
+    "width": "150",
+    "header": "yyyyMMddahhmmss",
+    "editor": {
+        "datetimeFormat": "yyyy-MM-dd HH:mm:ss"
+    },
+    "styles": {
+        "datetimeFormat": "yyyy/MM/dd HH:mm:ss.SSS"
+    }
+}, {
+    "name": "Datetime3",
+    "fieldName": "Datetime3",
+    "width": "160",
+    "header": "yyyy/MM/dd HH:mm:ss",
+    "editor": {
+        "datetimeFormat": "yyyy.MM.dd HH:mm:ss;2000;AM,PM"
+    },
+    "styles": {
+        "datetimeFormat": "yyyy/MM/dd HH:mm:ss"
+    }
+}, {
+    "name": "Datetime4",
+    "fieldName": "Datetime4",
+    "width": "180",
+    "header": "flash",
+    "editor": {
+        "datetimeFormat": "yyyy.MM.dd a hh:mm;2000;AM,PM"
+    },
+    "styles": {
+        "datetimeFormat": "yyyy년 M월 d일 a h시m분"
+    }
+}, {
+    "name": "Datetime5",
+    "fieldName": "Datetime5",
+    "width": "180",
+    "header": "iso",
+    "editor": {
+        "datetimeFormat": "yyyy.MM.dd HH:mm;2000;AM,PM"
+    },
+    "styles": {
+        "datetimeFormat": "yyyy년 M월 d일 a h시m분"
+    }
+}]

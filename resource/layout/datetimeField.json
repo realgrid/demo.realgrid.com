@@ -1,0 +1,23 @@
+[{
+    "fieldName": "Datetime1",
+    "dataType": "datetime",
+    "datetimeFormat": "yyyyMMdd"
+}, {
+    "fieldName": "Datetime2",
+    "dataType": "datetime",
+    "datetimeFormat": "yyyyMMddahhmmss",
+    "amText": "AM",
+    "pmText": "PM"
+}, {
+    "fieldName": "Datetime3",
+    "dataType": "datetime",
+    "datetimeFormat": "yyyyMMddHHmmssSSS"
+}, {
+    "fieldName": "Datetime4",
+    "dataType": "datetime",
+    "datetimeFormat": "flash"
+}, {
+    "fieldName": "Datetime5",
+    "dataType": "datetime",
+    "datetimeFormat": "iso"
+}]
