@@ -155,7 +155,8 @@ dataProvider.setFields([{
 DataProvider나 DataField의 datetimeFormat 속성은 "yyyy/MM/dd"과 같은 패턴으로 지정합니다.  
 또한, DataProvider와 DataField에는 custom 형식을 해석하는 데 필요한 baseYear, amText, pmText 속성들이 있습니다.  
 baseYear에는 년도 값이 100보다 작을 경우 기준 년도가 됩니다. 기본값은 2000입니다.  
-amText, pmText에는 각각 AM/PM 구분자를 지정합니다. 이 값이 지정되어야 문자열에 포함된 AM/PM 구분자를 해석합니다.  문자열에는 AM/PM 구분자가 중간 포함되어 있는 데 형식에 지정하지 않으면 시간 쪽 값을 읽지 못하게 됩니다. 기본값은 "AM", "PM"입니다.  
+amText, pmText에는 각각 AM/PM 구분자를 지정합니다. 이 값이 지정되어야 문자열에 포함된 AM/PM 구분자를 해석합니다.  
+문자열에는 AM/PM 구분자가 중간 포함되어 있는 데 형식에 지정하지 않으면 시간 쪽 값을 읽지 못하게 됩니다. 기본값은 "AM", "PM"입니다.  
 datetimeFormat 속성이 DataField에 지정하지 않으면, DataProvider에 지정된 datetimeFormat, amText, pmText, baseYear 속성 값들을 이용합니다.  
 DataField에 datetimeFormat는 지정됐지만, amText, pmText, baseYear가 지정되지 않았다면 DataProvider에 지정된 값을 이용합니다.  
 DataProvider에 지정된 기본 값은 각각 "yyyy/MM/dd HH:mm:ss", "AM", "PM", 20000 입니다. custom 형식으로 해석할 수 있는 문자열 패턴들은 아래와 같습니다.   

@@ -23,8 +23,8 @@ var menu = [{
     tag: "check_menu"
 }, {
     label: "group menu", //group 및 radio
-    children: [{ 
-        label: "group1 - 첫번째", 
+    children: [{
+        label: "group1 - 첫번째",
         type: "radio",
         group: "group1",
         checked: true
