@@ -41,7 +41,7 @@ dataProvider.insertRow(row, values);
 
 ```js
 dataProvider.onRowInserting = function (provider, row) {
-    addLog("1. onRowInserting이벤트 row: " + row)
+    addLog("1. onRowInserting이벤트 row = " + row)
 };
 ```
 
@@ -51,7 +51,7 @@ dataProvider.onRowInserting = function (provider, row) {
 
 ```js
 dataProvider.onRowInserted = function (provider, row) {
-    addLog("2. onRowInserted이벤트 row: " + row)
+    addLog("2. onRowInserted이벤트 row = " + row)
 }
 ```
 
@@ -61,7 +61,7 @@ dataProvider.onRowInserted = function (provider, row) {
 
 ```js
 dataProvider.onRowCountChanged = function (provider, count) {
-    addLog("3. onRowCountChanged이벤트 count: " + count)
+    addLog("3. onRowCountChanged이벤트 count = " + count)
 };
 ```
 
