@@ -1,0 +1,28 @@
+[{
+    "fieldName": "OrderID",
+    "dataType": "number"
+}, {
+    "fieldName": "CustomerID"
+}, {
+    "fieldName": "EmployeeID"
+}, {
+    "fieldName": "OrderDate",
+    "dataType": "datetime"
+}, {
+    "fieldName": "CompanyName"
+}, {
+    "fieldName": "ProductName"
+}, {
+    "fieldName": "Quantity",
+    "dataType": "number"
+}, {
+    "fieldName": "UnitPrice",
+    "dataType": "number"
+}, {
+    "fieldName": "Price",
+    "dataType": "number",
+    "calculateExpression": "values['Quantity'] * values['UnitPrice']"
+}, {
+    "fieldName": "Price2",
+    "dataType": "number"
+}]

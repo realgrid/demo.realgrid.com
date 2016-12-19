@@ -1,0 +1,76 @@
+[{
+    "name": "OrderID",
+    "fieldName": "OrderID",
+    "width": "90",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "textInputCase": "upper",
+    "header": {
+        "text": "Order ID"
+    }
+}, {
+    "name": "CustomerID",
+    "fieldName": "CustomerID",
+    "width": "100",
+    "styles": {
+        "textAlignment": "center"
+    }
+}, {
+    "name": "EmployeeID",
+    "fieldName": "EmployeeID",
+    "width": "80",
+    "styles": {
+        "textAlignment": "center"
+    }
+}, {
+    "name": "OrderDate",
+    "fieldName": "OrderDate",
+    "width": "100",
+    "styles": {
+        "textAlignment": "center",
+        "datetimeFormat": "yyyy.MM.dd"
+    }
+}, {
+    "name": "Quantity",
+    "fieldName": "Quantity",
+    "width": "100",
+    "styles": {
+        "background": "#88ffff55",
+        "textAlignment": "far",
+        "numberFormat": "#,##0.00"
+    }
+}, {
+    "name": "UnitPrice",
+    "fieldName": "UnitPrice",
+    "width": "100",
+    "styles": {
+        "background": "#88ffff55",
+        "textAlignment": "far",
+        "numberFormat": "#,##0.00"
+    }
+}, {
+    "name": "PriceTotal",
+    "fieldName": "PriceTotal",
+    "width": "100",
+    "styles": {
+        "background": "#88b0b0b0",
+        "textAlignment": "far",
+        "numberFormat": "#,##0.00"
+    },
+    "header": {
+        "text": "PriceTotal"
+    }
+}, {
+    "name": "Discounted",
+    "fieldName": "Discounted",
+    "width": "100",
+    "styles": {
+        "background": "#88b0b0b0",
+        "textAlignment": "far",
+        "numberFormat": "#,##0.00"
+    },
+    "header": {
+        "text": "Discounted"
+    }
+}]
