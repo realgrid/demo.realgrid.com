@@ -125,4 +125,5 @@ git remote rename origin deploy
 
 ### github pages include_releate 관련 오류
 
-github pages에서 발행하는 이상한 오류로 _site/.gitignore 파일에 **/devbox/ 추가로 `devbox`폴더를 강제로 제거한다.
+- github pages에서 발행하는 이상한 오류로 _site/.gitignore 파일에 **/devbox/ 추가로 `devbox`폴더를 강제로 제거한다.
+- #1 참고
