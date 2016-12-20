@@ -5,6 +5,7 @@
 }, {
     "fieldName": "브랜드번호",
     "name": "브랜드번호",
+    "header": "브랜드\n번호",
     "width": 50
 }, {
     "fieldName": "브랜드명",
