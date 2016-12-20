@@ -108,7 +108,21 @@ Provider);
 
 ### 배포방법
 
-- ./branch 스크립트를 실행
+- ./deploy 스크립트를 실행
 - 스크립트 내부에는
   - `JEKYLL_ENV=production jekyll build` 로 환경값을 production으로 해서 _posts폴더의 내용을 메뉴에서 감춘다.
   - _site 폴더의 내용을 모두 commit 하고 push한다.
+
+### 배포폴더 clean
+
+- _site폴더를 지울 필요가 있을때
+
+```js
+jekyll clean
+git clone https://github.com/RealGridSites/demo.git _site/
+git remote rename origin deploy
+```
+
+### github pages include_releate 관련 오류
+
+github pages에서 발행하는 이상한 오류로 _site/.gitignore 파일에 **/devbox/ 추가로 `devbox`폴더를 강제로 제거한다.
