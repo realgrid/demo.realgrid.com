@@ -1,16 +1,16 @@
 ---
 layout: page
-title: JSON  데이타 가져오기
-order: 2
+title: Array 데이타 가져오기
+order: 1
 devbox: true
-devboxfile: LoadJsonData_devbox.md
+devboxfile: LoadArrayData_devbox.md
 published: true
 categories:
   - 데이터 가져오기
 tags: ['filldata', 'json']
 ---
 
-RealGrid는 [LocalDataProvider.fillJsonData()](http://help.realgrid.com/api/LocalDataProvider/fillJsonData/) 함수를 이용해 JSON 포멧의 데이터를 읽어 올 수 있습니다. 
+RealGrid는 [LocalDataProvider.setRows()](http://help.realgrid.com/api/LocalDataProvider/setRows/) 함수를 이용해 배열형 데이터를 읽어 올 수 있습니다. 
 
 {% include realgrid.html
 

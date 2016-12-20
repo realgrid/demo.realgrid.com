@@ -21,7 +21,7 @@ baseurl: "/demo" # the subpath of your site, e.g. /blog
 url: "demo.realgrid.com" # the base hostname & protocol for your site
 twitter_username: realgrid
 github_username:  realgrid
-incremental: true
+incremental: false
 
 # 최신버전
 release_date: 2016-12-23T10:20:00Z
