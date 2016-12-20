@@ -1,4 +1,8 @@
 [{
+    "fieldName": "국산/수입",
+    "name": "국산/수입",
+    "width": 60
+}, {
     "fieldName": "국가",
     "name": "국가",
     "width": 50
