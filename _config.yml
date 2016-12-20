@@ -21,6 +21,7 @@ baseurl: "/demo" # the subpath of your site, e.g. /blog
 url: "demo.realgrid.com" # the base hostname & protocol for your site
 twitter_username: realgrid
 github_username:  realgrid
+incremental: true
 
 # RealGrid
 realgrid_product: eval # 무조건 eval product를 여기서 쓸일은 없겠지?
