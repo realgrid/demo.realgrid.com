@@ -1,18 +1,35 @@
 ---
 layout: page
-title: '최신버전 1.1.20'
+title: '최신버전 1.1.21'
 published: true
 permalink: /release/
 ---
+
+{% comment %}
+  - 함수 링크는 원본 객체명과 함께 작성해 주세요.
+    - 예: GridBase.checkValidateCells()
+  - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
+    - 예: PasteOptions.forceColumnValidation 속성
+{% endcomment %}
+
+## 1.1.21 (2016년 12월)
+
+---
+
+#### 기능 개선
+
+1. [function() link]()
+  - 개선 내용
+
+#### 오류 수정
+
+1. `오류 현상`
+  - 오류 수정 내용
 
 
 ## 1.1.20 (2016년 10월)
 
 ---
-
-1.1.20버전에서는 새로운 기능이 추가 되거나 개선되었습니다.
-또, 지난 버전 이후 문제되었던 크고 작은 오류들도 해결되었습니다.<br/>
-아래에서 내용을 확인하고 링크를 클릭하여 자세한 사용방법등을 알아보세요.
 
 #### 기능 개선
 
@@ -50,30 +67,41 @@ permalink: /release/
 
 #### 오류 수정
 
-1. `GridBase.onCellEdited event에서 commit()함수 호출시 client Editing 관련 메시지가 팝업되는 현상`
-  - [DataProviderOptions.commitBeforeDataEdit](http://help.realgrid.com/api/types/DataProviderOptions/)속성이 `true`일 때 [GridBase.onCellEdited](http://help.realgrid.com/api/GridBase/onCellEdited/) event에서 [commit()](http://help.realgrid.com/api/GridBase/commit/)함수 호출시 client Editing 관련 메시지가 팝업되는 문제를 해결했습니다.
+1. `commit()함수 호출시 메시지 팝업 오류`
+  - [DataProviderOptions.commitBeforeDataEdit](http://help.realgrid.com/api/types/DataProviderOptions/)속성이 `true`일 때 [GridBase.onCellEdited](http://help.realgrid.com/api/GridBase/onCellEdited/) event에서 [commit()](http://help.realgrid.com/api/GridBase/commit/)함수 호출시 client Editing 관련 메시지가 팝업되는 현상을 수정했습니다.
 
-1. merge된 셀의 popupButton을 클릭했을 때 popupMenu가 merge된 셀의 하단에 생성되는 현상을 수정하였습니다.
+1. `병합(merge)된 셀의 팝업메뉴 위치 오류`
+  - 병합(merge)된 셀의 팝업 버튼(pupupButton)을 클릭했을 때 팝업메뉴(popupMenu)가 병합된 셀의 하단에 생성되는 현상을 수정했습니다.
 
-1. grid.setColumns()를 한 후 다시한번 grid.setColumns()를 했을 때 헤더의 이미지가 왼쪽 위로 이동하는 현상을 수정하였습니다.
+1. `GridBase.setColumns()함수 두 번 호출시 헤더 이미지 위치 오류`
+  - GridBase.setColumns()함수를 두 번 호출하는 경우 헤더의 이미지가 왼쪽 위로 이동하는 현상을 수정했습니다.
 
-1. grid.pasteOptions.forceColumnValidation이 true이면서 column에 validation이 설정되어있을 때 복수행을 붙여넣기 하는 경우 validation오류가 발생하는 현상을 수정하였습니다.
+1. `복수행 붙여넣기시 validation 오류`
+  - [PasteOptions.forceColumnValidation](http://help.realgrid.com/api/types/PasteOptions/)이 `true`이면서 컬럼에 validation이 설정되어 있을 때 복수행을 붙여넣기하는 경우 validation오류가 발생하는 현상을 수정했습니다.
 
-1. Renderer가 checkCellRenderer인 칼럼이 merge된 경우 merge된 cell중 첫번째 row만 체크되는 현상이 수정되었습니다.
+1. `checkCellRenderer의 체크 오류`
+  - checkCellRenderer 컬럼이 병합(merge)된 경우 병합(merge)된 cell중 첫 번째 행만 체크되는 현상을 수정했습니다.
 
-1. DataProviderOptions.softDeleting이 true이고 GridOptions.hideDeletedRows가 true일때 dataProvider.moveRow를 이용하여 row를 이동하는 경우 삭제된 행이 보여지는 현상이 수정되었습니다.
+1. `DataProvider.moveRow()시 삭제행이 보여지는 현상`
+  - [DataProviderOptions.softDeleting](http://help.realgrid.com/api/types/DataProviderOptions/)이 `true`이고 [GridOptions.hideDeletedRows](http://help.realgrid.com/api/types/GridOptions/)가 `true`일때 [LocalDataProvider.moveRow()](http://help.realgrid.com/api/LocalDataProvider/moveRow/)를 이용하여 행을 이동하는 경우 삭제된 행이 보여지는 현상을 수정했습니다.
 
-1. editor가 multiLineEditor인 칼럼을 선택했을 때 복사 또는 붙여넣기가 안되는 현상을 개선하였습니다.
+1. `MultiLineCellEditor의 복사/붙여넣기 오류`
+  - [MultiLineCellEditor](http://help.realgrid.com/api/types/MultiLineCellEditor/)인 컬럼을 선택했을 때 복사 또는 붙여넣기가 안되는 현상을 수정했습니다.
 
-1. tree그리드를 export할때 showProgress를true로 주면 정상적으로 export되지 않는 현상이 수정되었습니다.
+1. `TreeView 엑셀 내보내기 오류`
+  - TreeView에서 엑셀 내보내기 할때 [GridExportOptions.showProgress](http://help.realgrid.com/api/types/GridExportOptions/)를 `true`로 하면 비정상적으로 export되는 현상을 수정했습니다.
 
-1. columnGroup.orientation이 vertical인 그리드에서 여러 행을 복사 후 붙여넣기할때 행이 추가되는 경우 발생하는 오류를 수정하였습니다.
+1. `ColumnGroupOrientation이 vertical인 경우 붙여넣기 오류`
+  - [ColumnGroupOrientation](http://help.realgrid.com/api/types/ColumnGroupOrientation/)이 `vertical`인 그리드에서 여러 행을 복사 후 붙여넣기할 때 행이 추가되는 경우 발생하는 오류를 수정하였습니다.
 
-1. 전체컬럼의 넓이가 그리드의 넓이보다 큰 경우에도 가로 스크롤바가 즉시 생기지 않는 현상이 수정되었습니다.
+1. `스크롤바 오류`
+  - 전체 컬럼의 너이가 그리드의 너비 보다 큰 경우에도 가로 스크롤바가 즉시 생기지 않는 현상이 수정되었습니다.
 
-1. 크롬브라우저에서 그리드의 div 태그를 감싸고 있는 상위 div의 크기가 작아서 그리드가 스크롤 되어있을 때 그리드를 클릭하면 그리드의 위치가 변경되는 현상이 일부 개선되었습니다.
+1. `크롬브라우저에서 클릭시 스크롤 위치 오류`
+  - 크롬브라우저에서 그리드의 `div`태그를 감싸고 있는 상위 `div`의 크기가 작아서 그리드가 들어 있는 레이어(layer)가 스크롤 되었을 때 그리드를 클릭하면 그리드의 스크롤 위치가 변경되는 현상이 일부 개선되었습니다.
 
-1. onItemChecked 이벤트 내부에서 checkItem, checkRow를 사용하는 경우 이벤트가 반복적으로 발생하지 않도록 수정하였습니다. 자세한 내용은 CheckBar페이지를 참조하세요.
+1. `GridBase.onItemChecked() 이벤트 반복 오류`
+  - [GridBase.onItemChecked()](http://help.realgrid.com/api/GridBase/onItemChecked/) 이벤트 내부에서 checkItem, checkRow를 사용하는 경우 이벤트가 반복적으로 발생하지 않도록 수정하였습니다. 자세한 내용은 [CheckBar 페이지]({{ "/GridComponent/CheckBar/" | prepend: site.baseurl }})를 참조하세요.
 
 
 ## 1.1.19 (2016년 9월)
