@@ -224,6 +224,8 @@
               success: function(data, textStatus, jqXHR) {
                 {% if include.successDataSet %}
                   {{ include.successDataSet }}(data, textStatus, jqXHR);
+                {% else %}
+                  {{ include.dpVar }}.setRows(data);
                 {% endif %}
               }
               {% if include.showProgress %}
