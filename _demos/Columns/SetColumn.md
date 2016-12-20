@@ -4,6 +4,7 @@ title: 컬럼 만들기
 order : 1
 devbox: true
 devboxfile: SetColumns-dbox.md
+published: true
 categories: 컬럼
 tags: ['컬럼', 'column', 'setColumns']
 ---

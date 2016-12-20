@@ -1,3 +1,7 @@
+#### 인디케이터를 설정하는 방법
+인디케이터의 설정을 변경하는 것은 [setIndicator()](http://help.realgrid.com/api/GridBase/setIndicator/)를 사용 합니다.   
+현재 설정된 상태를 확인하는 것은 [getIndicator()](http://help.realgrid.com/api/GridBase/getIndicator/)을 사용 합니다.  
+
 #### 인디케이터의 화면 표시여부를 지정   
 
 - `visible`: 인디케이터 영역의 화면 표시여부를 지정합니다. 

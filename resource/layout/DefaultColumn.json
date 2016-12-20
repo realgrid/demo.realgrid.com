@@ -1,6 +1,7 @@
 [{
     "name": "OrderID",
     "fieldName": "OrderID",
+    "type": "data",
     "width": "90",
     "styles": {
         "textAlignment": "center"
@@ -11,7 +12,8 @@
 }, {
     "name": "CustomerID",
     "fieldName": "CustomerID",
-    "width": "110",
+    "type": "data",
+    "width": "130",
     "styles": {
         "textAlignment": "center"
     },
@@ -21,6 +23,7 @@
 }, {
     "name": "EmployeeID",
     "fieldName": "EmployeeID",
+    "type": "data",
     "width": "100",
     "styles": {
         "textAlignment": "center"
@@ -31,10 +34,10 @@
 }, {
     "name": "OrderDate",
     "fieldName": "OrderDate",
+    "type": "data",
     "width": "130",
     "styles": {
         "textAlignment": "center"
-
     },
     "header": {
         "text": "Order Date"
@@ -42,7 +45,8 @@
 }, {
     "name": "CompanyName",
     "fieldName": "CompanyName",
-    "width": "180",
+    "type": "data",
+    "width": "200",
     "styles": {
         "textAlignment": "near"
     },
@@ -52,16 +56,7 @@
 }, {
     "name": "Country",
     "fieldName": "Country",
-    "width": "100",
-    "styles": {
-        "textAlignment": "center"
-    },
-    "header": {
-        "text": "Country"
-    }
-}, {
-    "name": "Country",
-    "fieldName": "Country",
+    "type": "data",
     "width": "100",
     "styles": {
         "textAlignment": "center"
@@ -72,6 +67,7 @@
 }, {
     "name": "Phone",
     "fieldName": "Phone",
+    "type": "data",
     "width": "100",
     "styles": {
         "textAlignment": "near"
@@ -82,6 +78,7 @@
 }, {
     "name": "ProductName",
     "fieldName": "ProductName",
+    "type": "data",
     "width": "200",
     "styles": {
         "textAlignment": "near"
@@ -92,6 +89,7 @@
 }, {
     "name": "QuantityPerUnit",
     "fieldName": "QuantityPerUnit",
+    "type": "data",
     "width": "100",
     "styles": {
         "textAlignment": "near"
@@ -102,6 +100,7 @@
 }, {
     "name": "Quantity",
     "fieldName": "Quantity",
+    "type": "data",
     "width": "100",
     "styles": {
         "textAlignment": "far"
@@ -119,6 +118,7 @@
 }, {
     "name": "UnitPrice",
     "fieldName": "UnitPrice",
+    "type": "data",
     "width": "100",
     "styles": {
         "textAlignment": "far"

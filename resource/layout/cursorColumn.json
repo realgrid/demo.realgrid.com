@@ -1,0 +1,111 @@
+[{
+    "name": "auto",
+    "fieldName": "auto",
+    "width": "80",
+    "cursor": "auto",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "auto"
+    }
+}, {
+    "name": "crosshair",
+    "fieldName": "crosshair",
+    "width": "80",
+    "cursor": "crosshair",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "crosshair"
+    }
+}, {
+    "name": "default",
+    "fieldName": "default",
+    "width": "80",
+    "cursor": "default",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "default"
+    }
+}, {
+    "name": "pointer",
+    "fieldName": "pointer",
+    "width": "80",
+    "cursor": "pointer",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "pointer"
+    }
+}, {
+    "name": "move",
+    "fieldName": "move",
+    "width": "80",
+    "cursor": "move",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "move"
+    }
+}, {
+    "name": "text",
+    "fieldName": "text",
+    "width": "80",
+    "cursor": "text",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "text"
+    }
+}, {
+    "name": "wait",
+    "fieldName": "wait",
+    "width": "80",
+    "cursor": "wait",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "wait"
+    }
+}, {
+    "name": "help",
+    "fieldName": "help",
+    "width": "80",
+    "cursor": "help",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "help"
+    }
+}, {
+    "name": "progress",
+    "fieldName": "progress",
+    "width": "80",
+    "cursor": "progress",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "progress"
+    }
+}, {
+    "name": "e-resize",
+    "fieldName": "e-resize",
+    "width": "80",
+    "cursor": "e-resize",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "e-resize"
+    }
+}]  

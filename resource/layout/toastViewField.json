@@ -1,0 +1,26 @@
+[{
+    "fieldName": "ItemId"
+}, {
+    "fieldName": "ItemName"
+}, {
+    "fieldName": "RequestType"
+}, {
+    "fieldName": "ServiceName"
+}, {
+    "fieldName": "ServiceCode"
+}, {
+    "fieldName": "Standard"
+}, {
+    "fieldName": "LowBounds"
+}, {
+    "fieldName": "LowSign"
+}, {
+    "fieldName": "HighSign"
+}, {
+    "fieldName": "HighBounds"
+}, {
+    "fieldName": "CheckUnit"
+}, {
+    "fieldName": "CheckPrice",
+    "dataType": "number"
+}]

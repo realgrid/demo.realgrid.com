@@ -58,7 +58,8 @@ GridBase.setColumns() 함수는 기존 컬럼들을 지우고 매개변수로 �
 
 [`GridBase.columnByName()`](http://help.realgrid.com/api/GridBase/columnByName/){:target="_blank"} 함수는 주어진 이름에 해당하는 컬럼 객체를 반환합니다.
 
-<a class="btn primary small round lowercase" id="btnColumnByName">columnByName</a>
+<a class="btn primary small round lowercase" id="btnColumnByName">columnByName</a> 
+
 ```js
 var column = gridView.columnByName("column3");
 alert(JSON.stringify(column));
@@ -68,6 +69,7 @@ alert(JSON.stringify(column));
 결과가 하나로 예상 되는경우는 [`GridBase.columnByField()`](http://help.realgrid.com/api/GridBase/columnByField/){:target="_blank"}함수를 사용합니다.
 
 <a class="btn primary small round lowercase" id="btnColumnsByField">columnsByField</a>
+
 ```js
 var columns = gridView.columnsByField("Field3");
 alert(columns.length);
@@ -75,7 +77,8 @@ alert(columns.length);
 
 컬럼의 tag 속성 값은 다양한 용도로 사용할 수 있는 사용자 지정 값으로 중복하여 지정 할 수 있습니다. [`GridBase.columnsByTag()`](http://help.realgrid.com/api/GridBase/columnsByTag/){:target="_blank"} 함수는 매개변수로 지정한 tag 값을 갖는 모든 컬럼들을 배열로 리턴 합니다. 
 결과가 하나로 예상 되는경우는 [`GridBase.columnByTag()`](http://help.realgrid.com/api/GridBase/columnByTag/){:target="_blank"} 함수를 사용합니다.
-<a class="btn primary small round lowercase" id="btnColumnsByTag">columnsByTag</a>
+<a class="btn primary small round lowercase" id="btnColumnsByTag">columnsByTag</a>  
+
 ```js
 var columns = gridView.columnsByTag("columntag1");
 alert(columns.length);
