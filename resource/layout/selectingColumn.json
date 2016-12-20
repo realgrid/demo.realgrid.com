@@ -1,0 +1,101 @@
+[{
+    "name": "CompanyName",
+    "fieldName": "CompanyName",
+    "type": "data",
+    "width": "200",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Company Name"
+    }
+}, {
+    "name": "group",
+    "type": "group",
+    "header": {
+        "text": "Group"
+    },
+    "width": 500,
+    "columns": [{
+        "name": "ProductName",
+        "fieldName": "ProductName",
+        "type": "data",
+        "width": "200",
+        "styles": {
+            "textAlignment": "near"
+        },
+        "header": {
+            "text": "Product Name"
+        }
+    }, {
+        "name": "QuantityPerUnit",
+        "fieldName": "QuantityPerUnit",
+        "type": "data",
+        "width": "100",
+        "styles": {
+            "textAlignment": "near"
+        },
+        "header": {
+            "text": "Quantity / Unit"
+        }
+    }, {
+        "name": "Quantity",
+        "fieldName": "Quantity",
+        "type": "data",
+        "width": "100",
+        "styles": {
+            "textAlignment": "far"
+        },
+        "header": {
+            "text": "Quantity"
+        },
+        "footer": {
+            "expression": "sum",
+            "styles": {
+                "textAlignment": "far",
+                "numberFormat": "#,000"
+            }
+        }
+    }, {
+        "name": "UnitPrice",
+        "fieldName": "UnitPrice",
+        "type": "data",
+        "width": "100",
+        "styles": {
+            "textAlignment": "far"
+        },
+        "header": {
+            "text": "Unit Price"
+        },
+        "footer": {
+            "expression": "avg",
+            "styles": {
+                "textAlignment": "far",
+                "numberFormat": "0.00",
+                "prefix": "AVG = "
+            }
+        }
+    }]
+}, {
+    "name": "Country",
+    "fieldName": "Country",
+    "type": "data",
+    "width": "100",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Country"
+    }
+}, {
+    "name": "Phone",
+    "fieldName": "Phone",
+    "type": "data",
+    "width": "100",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Phone"
+    }
+}]

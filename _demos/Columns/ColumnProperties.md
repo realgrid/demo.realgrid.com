@@ -4,6 +4,7 @@ title: 컬럼 속성 변경하기
 order: 2
 devbox: true
 devboxfile: ColumnProperties-dbox.md
+published: true
 categories: 컬럼
 tags: ['column', '컬럼', 'properties', '속성']
 ---

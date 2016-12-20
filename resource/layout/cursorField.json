@@ -1,0 +1,21 @@
+[{
+    "fieldName": "auto"
+}, {
+    "fieldName": "crosshair"
+}, {
+    "fieldName": "default"
+}, {
+    "fieldName": "pointer"
+}, {
+    "fieldName": "move"
+}, {
+    "fieldName": "text"
+}, {
+    "fieldName": "wait"
+}, {
+    "fieldName": "help"
+}, {
+    "fieldName": "progress"
+}, {
+    "fieldName": "e-resize"
+}]

@@ -1,0 +1,18 @@
+{
+    "panel": {
+        "visible": false
+    },
+    "CheckBar": {
+        "visible": false
+    },
+    "stateBar": {
+        "visible": true
+    },
+    "header": {
+        "minHeight": 30
+    },
+    "edit": {
+        "insertable": true,
+        "appendable": true
+    }
+}

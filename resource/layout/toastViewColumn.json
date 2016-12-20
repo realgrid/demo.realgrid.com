@@ -1,0 +1,57 @@
+[{
+    "fieldName": "ItemId",
+    "width": 80,
+    "header": { "text": "ItemId" }
+}, {
+    "fieldName": "ItemName",
+    "width": 100,
+    "header": { "text": "항목명" },
+    "styles": { "textAlignment": "near" }
+}, {
+    "fieldName": "RequestType",
+    "width": 80,
+    "header": { "text": "분야" },
+    "filters": [{
+        "name": "식품",
+        "criteria": "value = '식품'"
+    }, {
+        "name": "수질",
+        "criteria": "value = '수질'"
+    }],
+    "styles": { "textAlignment": "near" }
+}, {
+    "fieldName": "ServiceName",
+    "width": 150,
+    "header": { "text": "유형명" },
+    "styles": { "textAlignment": "near" }
+}, {
+    "fieldName": "ServiceCode",
+    "width": 150,
+    "header": { "text": "서비스코드" },
+    "styles": { "textAlignment": "near" }
+}, {
+    "fieldName": "Standard",
+    "width": 150,
+    "header": { "text": "표준" },
+    "styles": { "textAlignment": "near" }
+}, {
+    "fieldName": "LowBounds",
+    "width": 80,
+    "header": { "text": "하위 값" },
+    "styles": { "textAlignment": "near" }
+}, {
+    "fieldName": "HighBounds",
+    "width": 80,
+    "header": { "text": "상위 값" },
+    "styles": { "textAlignment": "near" }
+}, {
+    "fieldName": "CheckUnit",
+    "width": 80,
+    "header": { "text": "단위" },
+    "styles": { "textAlignment": "near" }
+}, {
+    "fieldName": "CheckPrice",
+    "width": 90,
+    "header": { "text": "수수료" },
+    "styles": { "textAlignment": "far" }
+}]  
