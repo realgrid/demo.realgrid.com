@@ -1,0 +1,96 @@
+[{
+    "fieldName": "continent",
+    "width": 80,
+    "styles": { "textAlignment": "near" },
+    "header": { "text": "Continent" }
+}, {
+    "fieldName": "country",
+    "width": 80,
+    "styles": { "textAlignment": "near" },
+    "header": { "text": "Country" }
+}, {
+    "name": "colSeries",
+    "type": "series",
+    "fieldNames": "2000,2002,2004,2006,2008,2010",
+    "width": 120,
+    "header": { "text": "Series" },
+    "styles": { 
+        "background": "#0800ff00",
+        "textAlignment": "near"
+    }
+}, {
+    "name": "colSpark",
+    "type": "series",
+    "fieldNames": "2000..2010",
+    "width": 150,
+    "renderer": { 
+        "type": "sparkLine",
+        "highFill": "#ff008800",
+        "lowFill": "#ffff0000",
+        "lastFill": "#ff888888"
+    },
+    "header": { "text": "Spark" },
+    "styles": { 
+        "background": "#08000000",
+        "figureBackground": "#ff888888", 
+        "paddingLeft":4, 
+        "paddingRight":4 ,
+        "paddingTop":4,
+        "paddingBottom":4
+    }
+}, {
+    "fieldName": "2000",
+    "width": 50,
+    "styles": { "textAlignment": "far" },
+    "header": { "text": "2000" }
+}, {
+    "fieldName": "2001",
+    "width": 50,
+    "styles": { "textAlignment": "far" },
+    "header": { "text": "2001" }
+}, {
+    "fieldName": "2002",
+    "width": 50,
+    "styles": { "textAlignment": "far" },
+    "header": { "text": "2002" }
+}, {
+    "fieldName": "2003",
+    "width": 50,
+    "styles": { "textAlignment": "far" },
+    "header": { "text": "2003" }
+}, {
+    "fieldName": "2004",
+    "width": 50,
+    "styles": { "textAlignment": "far" },
+    "header": { "text": "2004" }
+}, {
+    "fieldName": "2005",
+    "width": 50,
+    "styles": { "textAlignment": "far" },
+    "header": { "text": "2005" }
+}, {
+    "fieldName": "2006",
+    "width": 50,
+    "styles": { "textAlignment": "far" },
+    "header": { "text": "2006" }
+}, {
+    "fieldName": "2007",
+    "width": 50,
+    "styles": { "textAlignment": "far" },
+    "header": { "text": "2007" }
+}, {
+    "fieldName": "2008",
+    "width": 50,
+    "styles": { "textAlignment": "far" },
+    "header": { "text": "2008" }
+}, {
+    "fieldName": "2009",
+    "width": 50,
+    "styles": { "textAlignment": "far" },
+    "header": { "text": "2009" }
+}, {
+    "fieldName": "2010",
+    "width": 50,
+    "styles": { "textAlignment": "far" },
+    "header": { "text": "2010" }
+}]
