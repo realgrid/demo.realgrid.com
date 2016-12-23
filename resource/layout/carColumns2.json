@@ -52,12 +52,13 @@
 }, {
     "fieldName": "salesDay",
     "name": "salesDay",
+    "header": "판매일",
     "width": 90
 }, {
     "fieldName": "salesQty",
     "name": "salesQty",
     "header": {
-        "text": "salesQty"
+        "text": "판매수량"
     },
     "width": 80,
     "styles": {
@@ -99,10 +100,12 @@
 }, {
     "fieldName": "vehicleType",
     "name": "vehicleType",
+    "header": "차종",
     "width": 60
 }, {
     "fieldName": "fuel",
     "name": "fuel",
+    "header": "연료",
     "width": 60
 }, {
     "fieldName": "판매월",
