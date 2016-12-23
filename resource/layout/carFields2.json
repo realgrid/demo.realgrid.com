@@ -1,0 +1,30 @@
+[{
+    "fieldName": "produce"
+}, {
+    "fieldName": "country"
+}, {
+    "fieldName": "brandNo"
+}, {
+    "fieldName": "brandName"
+}, {
+    "fieldName": "modelNo"
+}, {
+    "fieldName": "modelName"
+}, {
+    "fieldName": "colorNo"
+}, {
+    "fieldName": "color"
+}, {
+    "fieldName": "salesDay",
+    "dataType": "datetime"
+}, {
+    "fieldName": "salesQty",
+    "dataType": "number"
+}, {
+    "fieldName": "price",
+    "dataType": "number"
+}, {
+    "fieldName": "vehicleType"
+}, {
+    "fieldName": "fuel"
+}]

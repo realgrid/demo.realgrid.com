@@ -1,0 +1,111 @@
+[{
+    "fieldName": "produce",
+    "name": "produce",
+    "header": "국산/수입",
+    "width": 60
+}, {
+    "fieldName": "country",
+    "name": "country",
+    "header": "제조국",
+    "width": 50
+}, {
+    "fieldName": "brandNo",
+    "name": "brandNo",
+    "header": "브랜드\n번호",
+    "width": 50
+}, {
+    "fieldName": "brandName",
+    "name": "brandName",
+    "width": 80,
+    "header": "브랜드명",
+    "styles": {
+        "textAlignment": "near"
+    }
+}, {
+    "fieldName": "modelNo",
+    "name": "modelNo",
+    "header": "모델\n번호",
+    "width": 50
+}, {
+    "fieldName": "modelName",
+    "name": "modelName",
+    "header": "모델명",
+    "width": 140,
+    "styles": {
+        "textAlignment": "near"
+    }
+}, {
+    "fieldName": "colorNo",
+    "name": "colorNo",
+    "header": "색상\n번호",
+    "width": 50,
+    "editable": false
+}, {
+    "fieldName": "color",
+    "name": "color",
+    "header": "색상",
+    "width": 100,
+    "styles": {
+        "textAlignment": "near"
+    },
+    "editable": false
+}, {
+    "fieldName": "salesDay",
+    "name": "salesDay",
+    "width": 90
+}, {
+    "fieldName": "salesQty",
+    "name": "salesQty",
+    "header": {
+        "text": "salesQty"
+    },
+    "width": 80,
+    "styles": {
+        "textAlignment": "far",
+        "numberFormat": "#,##0"
+    },
+    "footer": {
+        "expression": "sum",
+        "styles": {
+            "textAlignment": "far",
+            "numberFormat": "#,##0"
+        },
+        "groupExpression": "sum"
+    }
+}, {
+    "fieldName": "price",
+    "name": "price",
+    "header": {
+        "text": "판매가격",
+        "subtext": "(만원)",
+        "substyles": {
+            "foreground": "#5F607F",
+            "fontSize": 11
+        }
+    },
+    "width": 80,
+    "styles": {
+        "textAlignment": "far",
+        "numberFormat": "#,##0"
+    },
+    "footer": {
+        "expression": "sum",
+        "styles": {
+            "textAlignment": "far",
+            "numberFormat": "#,##0"
+        },
+        "groupExpression": "sum"
+    }
+}, {
+    "fieldName": "vehicleType",
+    "name": "vehicleType",
+    "width": 60
+}, {
+    "fieldName": "fuel",
+    "name": "fuel",
+    "width": 60
+}, {
+    "fieldName": "판매월",
+    "name": "판매월",
+    "width": 60
+}]
