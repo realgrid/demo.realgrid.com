@@ -10,7 +10,7 @@ categories:
 tags: ['트리', 'Tree']
 ---
 
-트리뷰(TreeView)에서 Lazy Loading(지연된 로드, 레지 로딩)은 트리의 노드가 펼쳐질때 자식 노드를
+트리뷰(TreeView)에서 Lazy Loading(지연된 로드, 레이지 로딩)은 트리의 노드가 펼쳐질때 자식 노드를
 추가 하는 방식으로 구현할 수 있습니다.
 
 <script>
