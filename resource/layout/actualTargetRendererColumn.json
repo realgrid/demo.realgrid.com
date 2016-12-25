@@ -1,0 +1,60 @@
+[{
+    "fieldName": "category",
+    "width": 300,
+    "styles": { "textAlignment": "far" },
+    "header": { "text": "Category" }
+}, {
+    "fieldName": "target",
+    "width": 70,
+    "styles": { "textAlignment": "far" },
+    "header": { "text": "Target" }
+}, {
+    "fieldName": "actual",
+    "width": 70,
+    "styles": { "textAlignment": "far" },
+    "header": { "text": "Actual" }
+}, {
+    "type": "group",
+    "orientation": "vertical",
+    "width": 330,
+    "header": { "visible": false },
+    "columns": [{
+        "name": "colBullet",
+        "type": "series",
+        "fieldNames": "target,actual",
+        "height": 30,
+        "renderer": {
+            "type": "actualTargetBullet",
+            "maxValue": 100,
+            "maximumBackground": "#18000000"
+        },
+        "header": { "text": "Bullet" },
+        "styles": {
+            "paddingLeft": 4,
+            "paddingRight": 4,
+            "paddingTop": 3,
+            "paddingBottom": 3,
+            "figureSize": "50%",
+            "figureBackground": "#88008800",
+            "figureBorder": "#88008800",
+            "line": "#ff008800,2"
+        }
+    }, {
+        "name": "colText",
+        "type": "series",
+        "fieldNames": "target,actual",
+        "fillHeight": 100,
+        "renderer": {
+            "type": "actualTargetText",
+            "actualFont": "Arial,30,bold",
+            "actualForeground": "#ff888888",
+            "dynamicStyles": [{
+                "criteria": "value[1] / value[0] >= 1.0",
+                "styles": "actualForeground=#ffff0000"
+            }]
+        },
+        "header": { "text": "Text" },
+        "styles": {
+        }
+    }]
+}]

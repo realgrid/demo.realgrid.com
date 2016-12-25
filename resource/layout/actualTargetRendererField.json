@@ -1,0 +1,10 @@
+[{
+    "fieldName": "category",
+    "dataType": "text"
+}, {
+    "fieldName": "target",
+    "dataType": "number"
+}, {
+    "fieldName": "actual",
+    "dataType": "number"
+}]
