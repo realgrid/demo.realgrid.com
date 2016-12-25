@@ -1,0 +1,64 @@
+[{
+        "fieldName": "country",
+        "width": 80,
+        "styles": { "textAlignment": "near" },
+        "header": { "text": "Country" }
+    }, {
+        "name": "colLine",
+        "type": "series",
+        "fieldNames": "2000..2010",
+        "width": 150,
+        "renderer": {
+            "type": "sparkLine",
+            "highFill": "#ff008800",
+            "lowFill": "#ffff0000",
+            "lastFill": "#ff888888"
+        },
+        "header": { "text": "Spark Line" },
+        "styles": {
+            "background": "#080000ff",
+            "figureBackground": "#ff888888",
+            "paddingLeft": 4,
+            "paddingRight": 4,
+            "paddingTop": 4,
+            "paddingBottom": 4
+        }
+    }, {
+        "name": "colColumn",
+        "type": "series",
+        "fieldNames": "2000..2010",
+        "width": 150,
+        "renderer": {
+            "type": "sparkColumn",
+            "highFill": "#ff008800",
+            "lowFill": "#ffff0000",
+            "lastFill": "#ff888888"
+        },
+        "header": { "text": "Spark Column" },
+        "styles": {
+            "figureBackground": "#ff888888",
+            "paddingLeft": 4,
+            "paddingRight": 4,
+            "paddingTop": 4,
+            "paddingBottom": 4
+        }
+    }, {
+        "name": "colWinLoss",
+        "type": "series",
+        "fieldNames": "2000..2010",
+        "width": 150,
+        "renderer": {
+            "belowHeight": 0.45,
+            "type": "sparkWinLoss",
+            "belowFill": "#ffff0000"
+        },
+        "header": { "text": "Spark WinLoss" },
+        "styles": {
+            "background": "#080000ff",
+            "figureBackground": "#ff008800",
+            "paddingLeft": 2,
+            "paddingRight": 2,
+            "paddingTop": 2,
+            "paddingBottom": 2
+        }
+    }]
