@@ -18,8 +18,8 @@ RealGrid는 [LocalDataProvider.setRows()](http://help.realgrid.com/api/LocalData
   dpVar="dataProvider"
   gridId="realgrid"
 
-  fieldSet="carFields1"
-  columnSet="carColumns1"
+  fieldSet="carFields2"
+  columnSet="carColumns2"
   dpOptionSet="dataProviderOption1"
   gridOptionSet="gridOption1"
   styleSet="style1"
