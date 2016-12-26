@@ -57,7 +57,7 @@
                     {% endif %}
                 {% endfor %}
 
-                {% if jekyll.environment == "development" %}
+                {% if jekyll.environment == 'development' %}
                     <!-- _posts폴더의 post는 개발시에만 메뉴에 표시됩니다. -->
                     {% assign sorted_by_orderno = site.posts | sort: "order" %}
                     {% for path in sorted_by_orderno %}
@@ -86,10 +86,12 @@
               {% assign democat = demo.categories[0] | downcase %}
               {% assign cat = category[0] | downcase %}
 
+              {% if jekyll.environment != 'development' and demo.published != true %}{% continue %}{% endif %}
+
               {% if cat == democat %}
               <li class="item-toc {% if page.title == demo.title %}current{% endif %}">
                 <a href="{{ demo.url | prepend: site.baseurl }}"
-                  class="{% if page.title == demo.title %}current{% endif %} sidebar-link {% if demo.published != true %}sidebar-link-unpub{% endif %}">
+                class="{% if page.title == demo.title %}current{% endif %} sidebar-link {% if demo.published != true %}sidebar-link-unpub{% endif %}">
                   <span>{{ demo.title }}</span>
                   <span style="display: none;">
                   {{ demo.tags | join: ', '}}
