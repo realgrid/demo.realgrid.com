@@ -19,6 +19,15 @@
 
 - 개발 저장소(Private) : https://github.com/realgrid/demo.realgrid.com.git
 
+### local pc에서 개발하기(배포개발자 전용)
+
+- 배포개발자가 내 PC에서 개발할 때에는 development 환경값을 준다. `./deploy`로 배포 할때 production 환경값이 들어가기 때문.
+- 이 환경값은 실제 사이트 운영시 빠져야 하는 부분들을 포함하고 있기 때문에 이 환경값없이 개발 하면 많이 불편하다.
+- 환경값을 포함한 jekyll 실행 명령은 다음과 같다.
+  ```
+  > JEKYLL_ENV=development jekyll build
+  ```
+
 ### 메뉴 카테고리 구분
 
 - 카테고리 없는 일반 페이지
