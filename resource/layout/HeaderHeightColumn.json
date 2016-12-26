@@ -1,0 +1,159 @@
+[{
+       "type": "group",
+       "name": "GroupOrder",
+       "orientation": "vertical",
+       "width": 250,
+       "header": {"visible": false},
+       "columns": [{
+           "type": "group",
+           "name": "GroupIds",
+           "header": {
+               "fixedHeight": 20
+           },
+           "columns": [{
+               "name": "OrderID",
+               "fieldName": "OrderID",
+               "type": "data",
+               "width": "90",
+               "styles": {
+                   "textAlignment": "center"
+               },
+               "header": {
+                   "fixedHeight": 40,
+                   "text": "Order"
+               }
+           }, {
+               "name": "CustomerID",
+               "fieldName": "CustomerID",
+               "type": "data",
+               "width": "130",
+               "styles": {
+                   "textAlignment": "center"
+               },
+               "header": {
+                   "text": "Customer ID"
+               }
+           }, {
+               "name": "EmployeeID",
+               "fieldName": "EmployeeID",
+               "type": "data",
+               "width": "100",
+               "styles": {
+                   "textAlignment": "center"
+               },
+               "header": {
+                   "text": "Employee ID"
+               }
+           }]
+       }, {
+           "name": "OrderDate",
+           "fieldName": "OrderDate",
+           "type": "data",
+           "width": "130",
+           "styles": {
+               "textAlignment": "center"
+           },
+           "header": {
+               "text": "Order Date",
+               "subText": "(* 이 컬럼에 대해 사용자에게 도움이 되는 내용이나 설명을 이곳에 표시합니다.)",
+           "subTextGap": 4,
+           "subTextLocation": "lower",
+           "subStyles": {"foreground": "#ffff0000", "fontSize": 11}
+           }
+       }]
+   }, {
+       "name": "CompanyName",
+       "fieldName": "CompanyName",
+       "type": "data",
+       "width": "100",
+       "styles": {
+           "textAlignment": "near"
+       },
+       "header": {
+           "text": "Company Name"
+       }
+   }, {
+       "name": "Country",
+       "fieldName": "Country",
+       "type": "data",
+       "width": "70",
+       "styles": {
+           "textAlignment": "center"
+       },
+       "header": {
+           "text": "Country"
+       }
+   }, {
+       "name": "Phone",
+       "fieldName": "Phone",
+       "type": "data",
+       "width": "80",
+       "styles": {
+           "textAlignment": "near"
+       },
+       "header": {
+           "text": "Phone"
+       }
+   }, {
+       "type": "group",
+       "name": "GroupSales",
+       "width": 300,
+       "header": {
+           "fixedHeight": 60
+       },
+       "columns": [{
+           "type":"group",
+           "name":"GroupProduct",
+           "orientation":"vertical",
+           "columns": [{
+               "name": "ProductName",
+               "fieldName": "ProductName",
+               "type": "data",
+               "width": "200",
+               "styles": {
+                   "textAlignment": "near"
+               },
+               "header": {
+                   "text": "Product Name"
+               }
+           }, {
+               "name": "QuantityPerUnit",
+               "fieldName": "QuantityPerUnit",
+               "type": "data",
+               "width": "100",
+               "styles": {
+                   "textAlignment": "near"
+               },
+               "header": {
+                   "text": "Quantity / Unit"
+               }
+           }]
+       }, {
+           "type": "group",
+           "name": "GroupUnit",
+           "orientation": "vertical",
+           "columns": [{
+               "name": "Quantity",
+               "fieldName": "Quantity",
+               "type": "data",
+               "width": "100",
+               "styles": {
+                   "textAlignment": "far"
+               },
+               "header": {
+                   "text": "Quantity"
+               }
+           }, {
+               "name": "UnitPrice",
+               "fieldName": "UnitPrice",
+               "type": "data",
+               "width": "100",
+               "styles": {
+                   "textAlignment": "far"
+               },
+               "header": {
+                   "text": "Unit Price"
+               }
+           }]
+       }]
+   }]

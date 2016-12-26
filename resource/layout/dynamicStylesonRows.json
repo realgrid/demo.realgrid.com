@@ -1,0 +1,68 @@
+[{
+    "fieldName": "continent",
+    "width": 80,
+    "equalBlank": true,
+    "header": { "text": "Continent" }
+}, {
+    "name": "country",
+    "fieldName": "country",
+    "width": 80,
+    "styles": { "background": "#33ffe27a", "textAlignment": "center" },
+    "header": { "text": "Country" }
+}, {
+    "fieldName": "2000",
+    "width": 50,
+    "styles": "colStyles",
+    "header": { "text": "2000" }
+}, {
+    "fieldName": "2001",
+    "width": 50,
+    "styles": "colStyles",
+    "header": { "text": "2001" }
+}, {
+    "fieldName": "2002",
+    "width": 50,
+    "header": { "text": "2002" }
+}, {
+    "fieldName": "2003",
+    "width": 50,
+    "header": { "text": "2003" }
+}, {
+    "fieldName": "2004",
+    "width": 50,
+    "styles": "colStyles",
+    "header": { "text": "2004" }
+}, {
+    "fieldName": "2005",
+    "width": 50,
+    "styles": "colStyles",
+    "header": { "text": "2005" }
+}, {
+    "fieldName": "2006",
+    "width": 50,
+    "header": { "text": "2006" }
+}, {
+    "fieldName": "2007",
+    "width": 50,
+    "header": { "text": "2007" }
+}, {
+    "fieldName": "2008",
+    "width": 50,
+    "header": { "text": "2008" }
+}, {
+    "fieldName": "2009",
+    "width": 50,
+    "header": { "text": "2009" }
+}, {
+    "fieldName": "2010",
+    "width": 50,
+    "header": { "text": "2010" }
+}, {
+    "fieldName": "2011",
+    "width": 50,
+    "header": { "text": "2011" }
+}, {
+    "fieldName": "2012",
+    "width": 50,
+    "header": { "text": "2012" }
+}]

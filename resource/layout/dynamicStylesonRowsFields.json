@@ -1,0 +1,46 @@
+[{
+       "fieldName": "continent"
+   }, {
+       "fieldName": "country"
+   }, {
+       "fieldName": "2000",
+       "dataType": "number"
+   }, {
+       "fieldName": "2001",
+       "baseField": "2000",
+       "dataType": "number"
+   }, {
+       "fieldName": "2002",
+       "dataType": "number"
+   }, {
+       "fieldName": "2003",
+       "dataType": "number"
+   }, {
+       "fieldName": "2004",
+       "dataType": "number"
+   }, {
+       "fieldName": "2005",
+       "dataType": "number"
+   }, {
+       "fieldName": "2006",
+       "dataType": "number"
+   }, {
+       "fieldName": "2007",
+       "dataType": "number"
+   }, {
+       "fieldName": "2008",
+       "dataType": "number"
+   }, {
+       "fieldName": "2009",
+       "dataType": "number"
+   }, {
+       "fieldName": "2010",
+       "dataType": "number"
+   }, {
+       "fieldName": "2011",
+       "dataType": "number"
+   }, {
+       "fieldName": "2012",
+       "dataType": "number"
+   }
+ ]

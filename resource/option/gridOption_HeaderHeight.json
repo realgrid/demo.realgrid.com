@@ -1,0 +1,19 @@
+{
+    "panel": {
+        "visible": false
+    },
+    "stateBar": {
+        "visible": false
+    },
+    "header": {
+        "height": 120,
+        "heightFill": "fixed"
+    },
+    "edit": {
+        "insertable": false,
+        "appendable": false
+    },
+    "display": {
+        "rowHeight": 50
+    }
+}
