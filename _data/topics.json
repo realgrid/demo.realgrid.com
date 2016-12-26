@@ -1,0 +1,17 @@
+[{
+    "name": "상단에 합계 표시(1.1.19)",
+    "link": "HeaderAndFooter/HeaderSummary/",
+    "image": "RealGrid-HTML5-Web-data-grid-screen-shot-snapshot-HeaderSummary.png"
+}, {
+    "name": "오른쪽 컬럼 고정하기(1.1.17)",
+    "link": "GridComponent/FixedColumns/",
+    "image": "RealGrid-HTML5-Web-data-grid-screen-shot-snapshot-RightFixedColumn.png"
+}, {
+    "name": "컬럼 헤더 높이 조정(1.1.17)",
+    "link": "HeaderAndFooter/HeaderHeight/",
+    "image": "RealGrid-HTML5-Web-data-grid-screen-shot-snapshot-HeaderHeight.png"
+}, {
+    "name": "풋터 병합(Footer Merge) (1.1.16)",
+    "link": "/HeaderAndFooter/FooterMerge/",
+    "image": "RealGrid-HTML5-Web-data-grid-screen-shot-snapshot-FooterMerge.png"
+}]
