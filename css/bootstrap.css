@@ -1283,3 +1283,14 @@ select[multiple].input-lg {
 .affix {
   position: fixed;
 }
+
+/* 나중에 추가된 속성 - demo.realgrid.com */
+.m-b-0 {
+  margin-bottom: 0px !important;
+}
+.m-t-30 {
+  margin-top: 30px;
+}
+.text-center {
+    text-align: center;
+}
