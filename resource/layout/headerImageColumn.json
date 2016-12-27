@@ -1,0 +1,137 @@
+[{
+        "name": "Country Column",
+        "fieldName": "Country",
+        "width": 90,
+        "tag": "grouping",
+        "styles": {
+            "textAlignment": "near"
+        },
+        "header": {
+            "text": "Country",
+            "imageLocation": "left",
+            "imageUrl": "../../images/realgridsmall.png"
+        }
+    }, {
+        "name": "CompanyName Column",
+        "fieldName": "CompanyName",
+        "width": 160,
+        "tag": "grouping",
+        "styles": {
+            "textAlignment": "near"
+        },
+        "header": {
+            "text": "Company",
+            "imageLocation": "right",
+            "imageUrl": "../../images/realgridsmall.png"
+        },
+        "footer": {
+            "styles": {
+                "textAlignment": "far",
+                "numberFormat": "0,000",
+                "suffix": " $",
+                "font": "Arial,12"
+            },
+            "groupStyles": {
+                "foreground": "#ffffff",
+                "fontBold": true
+            },
+            "expression": "stdev['UnitPrice']",
+            "groupExpression": "varp['UnitPrice']"
+        }
+    }, {
+        "fieldName": "OrderID",
+        "width": 90,
+        "tag": "grouping",
+        "styles": {
+            "textAlignment": "center"
+        },
+        "header": {
+            "text": "Order ID",
+            "imageLocation": "top",
+            "imageUrl": "../../images/realgridsmall.png"
+        }
+    }, {
+        "fieldName": "QuantityPerUnit",
+        "width": 120,
+        "styles": {
+            "textAlignment": "near"
+        },
+        "header": {
+            "text": "Unit",
+            "imageLocation": "bottom",
+            "imageUrl": "../../images/realgridsmall.png"
+        },
+        "footer": {
+            "styles": {
+                "textAlignment": "far",
+                "font": "굴림,12"
+            },
+            "text": "합계 =>"
+        }
+    }, {
+        "fieldName": "Quantity",
+        "width": 80,
+        "styles": {
+            "textAlignment": "far"
+        },
+        "header": {
+            "text": "Quantity",
+            "imageLocation": "center",
+            "imageUrl": "../../images/realgridsmall.png"
+        },
+        "footer": {
+            "styles": {
+                "textAlignment": "far",
+                "numberFormat": "0,000",
+                "suffix": " $",
+                "font": "Arial,12"
+            },
+            "groupStyles": {
+                "foreground": "#ffffff",
+                "fontBold": true
+            },
+            "text": "합계",
+            "expression": "sum",
+            "groupExpression": "sum"
+        }
+    }, {
+        "fieldName": "CustomerID",
+        "width": 130,
+        "tag": "grouping",
+        "styles": {
+            "textAlignment": "center"
+        },
+        "header": {
+            "text": "Customer ID",
+            "imageLocation": "none",
+            "imageUrl": "../../images/realgridsmall.png"
+        },
+        "footer": {
+            "styles": {
+                "textAlignment": "far",
+                "font": "굴림,12"
+            },
+            "text": "분산 =>"
+        }
+    }, {
+        "name": "unitPrice Column",
+        "fieldName": "UnitPrice",
+        "width": 100,
+        "styles": {
+            "textAlignment": "far"
+        },
+        "header": {
+            "text": "Unit Price"
+        },
+        "footer": {
+            "styles": {
+                "textAlignment": "far",
+                "numberFormat": "0,000",
+                "suffix": " $",
+                "font": "Arial,12"
+            },
+            "text": "Variance",
+            "expression": "sum",
+            "groupExpression": "var"
+        }
+    }]
