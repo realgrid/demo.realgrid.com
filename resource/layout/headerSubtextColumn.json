@@ -1,0 +1,148 @@
+[{
+        "name": "Country Column",
+        "fieldName": "Country",
+        "width": 90,
+        "tag": "grouping",
+        "styles": {
+            "textAlignment": "near"
+        },
+        "header": {
+            "text": "Country",
+            "subText": "나라",
+            "subTextGap": 4,
+            "subTextLocation": "none",
+            "subStyles": {"foreground": "#ffff0000", "fontSize": 10 }
+        }
+    }, {
+        "name": "CompanyName Column",
+        "fieldName": "CompanyName",
+        "width": 160,
+        "tag": "grouping",
+        "styles": {
+            "textAlignment": "near"
+        },
+        "header": {
+            "text": "Company",
+            "subText": "회사",
+            "subTextLocation": "left",
+            "subTextGap": 4,
+            "subStyles": { "foreground": "#ffff0000", "fontSize": 10 }
+        },
+        "footer": {
+            "styles": {
+                "textAlignment": "far",
+                "numberFormat": "0,000",
+                "suffix": " $",
+                "font": "Arial,12"
+            },
+            "groupStyles": {
+                "foreground": "#ffffff",
+                "fontBold": true
+            },
+            "expression": "stdev['UnitPrice']",
+            "groupExpression": "varp['UnitPrice']"
+        }
+    }, {
+        "fieldName": "OrderID",
+        "width": 120,
+        "tag": "grouping",
+        "styles": {
+            "textAlignment": "center"
+        },
+        "header": {
+            "text": "Order ID",
+            "subText": "주문번호",
+            "subTextLocation": "right",
+            "subTextGap": 4,
+            "subStyles": { "foreground": "#ffff0000", "fontSize": 10 }
+        }
+    }, {
+        "fieldName": "QuantityPerUnit",
+        "width": 120,
+        "styles": {
+            "textAlignment": "near"
+        },
+        "header": {
+            "text": "Unit",
+            "subText": "단위",
+            "subTextLocation": "upper",
+            "subTextGap": 4,
+            "subStyles": { "foreground": "#ffff0000", "fontSize": 10 }
+        },
+        "footer": {
+            "styles": {
+                "textAlignment": "far",
+                "font": "굴림,12"
+            },
+            "text": "합계 =>"
+        }
+    }, {
+        "fieldName": "Quantity",
+        "width": 80,
+        "styles": {
+            "textAlignment": "far"
+        },
+        "header": {
+            "text": "Quantity",
+            "subText": "수량",
+            "subTextLocation": "lower",
+            "subTextGap": 4,
+            "subStyles": { "foreground": "#ffff0000", "fontSize": 10 }
+        },
+        "footer": {
+            "styles": {
+                "textAlignment": "far",
+                "numberFormat": "0,000",
+                "suffix": " $",
+                "font": "Arial,12"
+            },
+            "groupStyles": {
+                "foreground": "#ffffff",
+                "fontBold": true
+            },
+            "text": "합계",
+            "expression": "sum",
+            "groupExpression": "sum"
+        }
+    }, {
+        "fieldName": "CustomerID",
+        "width": 90,
+        "tag": "grouping",
+        "styles": {
+            "textAlignment": "center"
+        },
+        "header": {
+            "text": "Customer ID",
+            "subText": "나라",
+            "subTextLocation": "none",
+            "subStyles": { "foreground": "#ffff0000" }
+        },
+        "footer": {
+            "styles": {
+                "textAlignment": "far",
+                "font": "굴림,12"
+            },
+            "text": "분산 =>"
+        }
+    }, {
+        "name": "unitPrice Column",
+        "fieldName": "UnitPrice",
+        "width": 100,
+        "styles": {
+            "textAlignment": "far"
+        },
+        "header": {
+            "text": "Unit Price"
+        },
+        "footer": {
+            "styles": {
+                "textAlignment": "far",
+                "numberFormat": "0,000",
+                "suffix": " $",
+                "font": "Arial,12"
+            },
+            "text": "Variance",
+            "expression": "sum",
+            "groupExpression": "var"
+        }
+    }]
