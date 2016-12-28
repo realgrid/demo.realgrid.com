@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 동적 행 스타일
-order: 1
+order: 5
 devbox: true
 devboxfile: DynamicStylesonRows_devbox.md
 published: true

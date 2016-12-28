@@ -1,0 +1,123 @@
+[{
+        "name": "Country Column",
+        "fieldName": "Country",
+        "width": 100,
+        "tag":"grouping",
+        "styles": {
+            "textAlignment": "near"
+            },
+        "header": {
+            "text": "Country"
+        },
+        "footer": {
+            "groupText": "Country Footer"
+        }
+    }, {
+        "name": "CompanyName Column",
+        "fieldName": "CompanyName",
+        "width": 140,
+        "tag":"grouping",
+        "styles": {
+            "textAlignment": "near"
+            },
+        "header": {
+            "text": "Company"
+        },
+        "footer": {
+            "groupText": "Company Footer"
+        }
+    }, {
+        "name": "Order Column",
+        "fieldName": "OrderID",
+        "width": 80,
+        "tag":"grouping",
+        "styles": {
+            "textAlignment": "center"
+        },
+        "header": {
+            "text": "Order ID"
+        },
+        "footer": {
+            "groupText": "Order Footer"
+        }
+    }, {
+        "name": "QuantityPerUnit Column",
+        "fieldName": "QuantityPerUnit",
+        "width": 160,
+        "styles": {
+            "textAlignment": "near"
+        },
+        "header": {
+            "text": "Unit"
+        },
+        "footer": {
+            "styles": {
+                "textAlignment": "far",
+                "font": "굴림,12"
+            },
+            "text": "합계 =>"
+        }
+    }, {
+        "fieldName": "Quantity",
+        "width": 80,
+        "styles": {
+            "textAlignment": "far"
+        },
+        "header": {
+            "text": "Quantity"
+        },
+        "footer": {
+            "styles": {
+                "textAlignment": "far",
+                "numberFormat": "0,000",
+                "suffix": " $",
+                "font": "Arial,12"
+            },
+            "groupStyles": {
+                "foreground": "#ffffff",
+                "fontBold": true
+            },
+            "text": "합계",
+            "expression": "sum",
+            "groupExpression": "sum"
+        }
+    }, {
+        "name": "Customer Column",
+        "fieldName": "CustomerID",
+        "width": 100,
+        "tag":"grouping",
+        "styles": {
+            "textAlignment": "center"
+        },
+        "header": {
+            "text": "Customer ID"
+        },
+        "footer": {
+            "styles": {
+                "textAlignment": "far",
+                "font": "굴림,12"
+            },
+            "text": "분산 =>"
+        }
+    }, {
+        "name": "UnitPrice Column",
+        "fieldName": "UnitPrice",
+        "width": 80,
+        "styles": {
+            "textAlignment": "far"
+        },
+        "header": {
+            "text": "Unit Price"
+        },
+        "footer": {
+            "styles": {
+                "textAlignment": "far",
+                "numberFormat": "0,000",
+                "suffix": " $",
+                "font": "Arial,12"
+            },
+            "text": "Variance",
+            "expression": "sum",
+            "groupExpression": "var"
+        }
+    }]

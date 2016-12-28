@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 동적 컬럼 스타일
-order: 1
+order: 4
 devbox: true
 devboxfile: DynamicStylesonColumns_devbox.md
 published: true
