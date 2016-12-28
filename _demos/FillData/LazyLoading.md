@@ -35,7 +35,7 @@ tags: ['filldata', 'lazy']
   dpOptionSet="dataProviderOption1"
   gridOptionSet="gridOption1"
   styleSet="style1"
-  dataSet="cardata2.json"
+  dataSet="carData2.json"
   successDataSet="onSuccessDataSet"
 
   showToolbox=true
