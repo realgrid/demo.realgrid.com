@@ -7,7 +7,7 @@
     {% endif %}
 
         <div class="col-md-6 col-xs-6 animated fadeInLeft wow" data-wow-delay=".1s">
-            <a href="{{ item.link | prepand: site.baseurl }}" target="_blank">
+            <a href="{{ item.link | prepand: site.baseurl }}">
             <img class="img-responsive snapshot" src="{{ 'images/snapshot/'  | prepand: site.baseurl }}{{item.image}}" alt="{{item.name}}" />
             </a>
             <label class="text-center">{{ item.name }}</label>
