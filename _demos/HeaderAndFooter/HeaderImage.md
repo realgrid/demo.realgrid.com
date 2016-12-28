@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 헤더 이미지 사용
-order: 1
+order: 2
 devbox: true
 devboxfile: HeaderImage_devbox.md
 published: true

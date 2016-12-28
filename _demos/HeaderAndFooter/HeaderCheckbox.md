@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 헤더 체크박스 사용
-order: 1
+order: 3
 devbox: true
 devboxfile: HeaderCheckbox_devbox.md
 published: true

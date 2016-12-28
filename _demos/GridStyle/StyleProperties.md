@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 스타일 속성
-order: 1
+order: 3
 devbox: false
 published: true
 categories:

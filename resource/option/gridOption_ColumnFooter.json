@@ -1,0 +1,19 @@
+{
+   "summaryMode": "RealGridJS.SummaryMode.AGGREGATE",
+   "panel":{
+      "visible":false
+   },
+   "stateBar":{
+      "visible":false
+   },
+   "header":{
+      "minHeight":30
+   },
+   "footer": {
+            "visible": true
+   },
+   "edit":{
+      "insertable":true,
+      "appendable":true
+   }
+}
