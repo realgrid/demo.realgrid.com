@@ -31,8 +31,8 @@
 }, {
     "name": "컨텍스트 메뉴(Context Menu)",
     "link": "/GridComponent/ContextMenu/",
-    "image": "RealGrid-HTML5-Web-data-grid-screen-shot-snapshot-ContextMenu.gif",
-    "alt": "RealGrid-HTML5-Web-data-grid-screen-shot-snapshot-ContextMenu"
+    "image": "RealGrid-HTML5-Web-data-grid-screen-shot-snapshot-Context_Menu.gif",
+    "alt": "RealGrid-HTML5-Web-data-grid-screen-shot-snapshot-Context_Menu"
 }, {
     "name": "트리뷰(TreeView) 구현하기",
     "link": "/Tree/TreeDataModel/",
