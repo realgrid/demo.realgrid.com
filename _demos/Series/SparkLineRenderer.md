@@ -34,7 +34,7 @@ var onDoneDataSet = function() {
   gridOptionSet="gridOption1"
   styleSet="style1"
 
-  dataSet="seriesData.json"
+  dataSet="seriesColumnData.json"
   successDataSet="onGridSuccessDataSet" 
   doneDataSet="onDoneDataSet"
 
