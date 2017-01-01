@@ -1,0 +1,17 @@
+[
+  { "fieldName": "국가", "name": "국가", "width": 50 },
+  { "fieldName": "브랜드번호", "name": "브랜드번호", "width": 50 },
+  { "fieldName": "브랜드명", "name": "브랜드명", "width": 80, "styles": { "textAlignment": "near" } },
+  { "fieldName": "모델번호", "name": "모델번호", "header": { "text": "모델\n번호" }, "width": 50 },
+  { "fieldName": "모델명", "name": "모델명", "width": 140, "styles": { "textAlignment": "near" } },
+  { "fieldName": "색상번호", "name": "색상번호", "header": { "text": "색상\n번호" }, "width": 50, "editable": false},
+  { "fieldName": "색상", "name": "색상", "width": 100, "styles": { "textAlignment": "near" }, "editable": false},
+  { "fieldName": "판매날짜", "name": "판매날짜", "width": 90 },
+  { "fieldName": "판매수량", "name": "판매수량", "header": { "text": "판매수량" }, "width": 80, "styles": "numStyle", "footer": { "expression": "sum", "styles": "numStyle","groupexpression": "sum" } },
+  { "fieldName": "차량가격", "name": "판매가격", "header": { "text": "판매가격", "subtext":"(만원)", "substyles": {"foreground": "#5F607F", "fontSize": 11} }, "width": 80, "styles": "numStyle", "footer": { "expression": "sum", "styles": "numStyle", "groupexpression": "sum" } },
+  { "fieldName": "차종", "name": "차종", "width": 60 },
+  { "fieldName": "연료", "name": "연료", "width": 60 },
+  { "fieldName": "사진파일명", "name": "사진파일명", "width": 80 },
+  { "fieldName": "사진파일명", "name": "사진", "width": 80 , "renderer": { "type": "image", "smoothing": "true" } },
+  { "fieldName": "판매월", "name": "판매월", "width": 60 }
+]

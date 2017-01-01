@@ -1,0 +1,689 @@
+[
+    {
+        "fieldName": "Prod_Lv",
+        "type": "data",
+        "width": "70",
+        "header": {
+            "text": "Prod_Lv"
+        },
+        "styles": {
+            "background":"#FFE6F5FE",
+            "borderRight":"#FFC6C6C6, 1",
+            "textAlignment": "near"
+        },
+        "mergeRule": {
+            "criteria": "row div 6"
+        }
+    }, {
+        "fieldName": "DC_Lv",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "DC_Lv"
+        },
+        "styles": {
+            "background":"#FFE6F5FE",
+            "borderRight":"#FFC6C6C6, 1",
+            "textAlignment": "near"
+        },
+        "mergeRule": {
+            "criteria": "row div 6"
+        }
+    }, {
+        "fieldName": "Sales_Lv",
+        "type": "data",
+        "width": "80",
+        "header": {
+            "text": "Sales_Lv"
+        },
+        "styles": {
+            "background":"#FFE6F5FE",
+            "borderRight":"#FFC6C6C6, 1",
+            "textAlignment": "near"
+        },
+        "mergeRule": {
+            "criteria": "row div 3"
+        }
+    }, {
+        "fieldName": "Category",
+        "type": "data",
+        "width": "70",
+        "header": {
+            "text": "Category"
+        },
+        "styles": {
+            "background":"#FFE6F5FE",
+            "borderRight":"#FFC6C6C6, 1",
+            "textAlignment": "near"
+        }
+    }, {
+        "fieldName": "2014_02",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "2014/02"
+        },
+        "styles": {
+            "background":"#FFF5F5F5"
+        },
+        "dynamicstyles": [{
+            "criteria": "value mod 10 = 0",
+            "styles": "fontBold=true;background=#FFFCF99B;foreground=#FFFF0000"
+        }]
+    }, {
+        "fieldName": "2014_02_01",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "02/01"
+        },
+        "dynamicstyles": [{
+            "criteria": "value mod 5 > 0",
+            "styles": "background=#e0eff9"
+        }]
+    }, {
+        "fieldName": "2014_02_02",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "02/02"
+        },
+        "dynamicstyles": [{
+            "criteria": "(row mod 10 = 0) or (row mod 10 = 1) or (row mod 10 = 2) or (row mod 10 = 6) or (row mod 10 = 7)",
+            "styles": "background=#80F3E5FA"
+        }, {
+            "criteria": "(row > 10) and ((value mod 17 = 0) or (row mod 18 = 0) or (row mod 19 = 0))",
+            "styles": "background=#FFE9C9FA"
+        }]
+    }, {
+        "fieldName": "2014_02_03",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "02/03"
+        },
+        "dynamicstyles": [{
+            "criteria": "(row mod 10 = 0) or (row mod 10 = 1) or (row mod 10 = 2) or (row mod 10 = 6) or (row mod 10 = 7)",
+            "styles": "background=#80F3E5FA"
+        }, {
+            "criteria": "(row > 10) and ((value mod 17 = 0) or (row mod 18 = 0) or (row mod 19 = 0))",
+            "styles": "background=#FFE9C9FA"
+        }]
+    }, {
+        "fieldName": "2014_02_04",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "02/04"
+        },
+        "dynamicstyles": [{
+            "criteria": "(row mod 10 = 0) or (row mod 10 = 1) or (row mod 10 = 2) or (row mod 10 = 6) or (row mod 10 = 7)",
+            "styles": "background=#80F3E5FA"
+        }, {
+            "criteria": "(row > 10) and ((value mod 17 = 0) or (row mod 18 = 0) or (row mod 19 = 0))",
+            "styles": "background=#FFE9C9FA"
+        }]
+    }, {
+        "fieldName": "2014_02_05",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "02/05"
+        },
+        "dynamicstyles": [{
+            "criteria": "(row mod 10 = 0) or (row mod 10 = 1) or (row mod 10 = 2) or (row mod 10 = 6) or (row mod 10 = 7)",
+            "styles": "background=#80F3E5FA"
+        }, {
+            "criteria": "(row > 10) and ((value mod 17 = 0) or (row mod 18 = 0) or (row mod 19 = 0))",
+            "styles": "background=#FFE9C9FA"
+        }]
+    }, {
+        "fieldName": "2014_02_06",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "02/06"
+        },
+        "dynamicstyles": [{
+            "criteria": "(row mod 10 = 0) or (row mod 10 = 1) or (row mod 10 = 2) or (row mod 10 = 6) or (row mod 10 = 7)",
+            "styles": "background=#80F3E5FA"
+        }, {
+            "criteria": "(row > 20) and ((value mod 15 = 0) or (row mod 16 = 0) or (row mod 17 = 0) or (row mod 20 = 0))",
+            "styles": "background=#FFC0D79E"
+        }, {
+            "criteria": "(row > 20) and ((value mod 18 = 0) or (row mod 19 = 0))",
+            "styles": "foreground=#FFFF0000"
+        }]
+    }, {
+        "fieldName": "2014_02_07",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "02/07"
+        },
+        "dynamicstyles": [{
+            "criteria": "(row mod 10 = 0) or (row mod 10 = 1) or (row mod 10 = 2) or (row mod 10 = 6) or (row mod 10 = 7)",
+            "styles": "background=#80F3E5FA"
+        }, {
+            "criteria": "(row > 20) and ((value mod 15 = 0) or (row mod 16 = 0) or (row mod 17 = 0) or (row mod 20 = 0))",
+            "styles": "background=#FFC0D79E"
+        }, {
+            "criteria": "(row > 20) and ((value mod 18 = 0) or (row mod 19 = 0))",
+            "styles": "foreground=#FFFF0000"
+        }]
+    }, {
+        "fieldName": "2014_02_08",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "02/08"
+        },
+        "dynamicstyles": [{
+            "criteria": "(row mod 10 = 0) or (row mod 10 = 1) or (row mod 10 = 2) or (row mod 10 = 6) or (row mod 10 = 7)",
+            "styles": "background=#80F3E5FA"
+        }, {
+            "criteria": "(row > 20) and ((value mod 18 = 0) or (row mod 19 = 0))",
+            "styles": "foreground=#FFFF0000"
+        }, {
+            "criteria": "(row > 20) and ((value mod 15 = 0) or (row mod 16 = 0) or (row mod 17 = 0) or (row mod 20 = 0))",
+            "styles": "background=#FFC0D79E"
+        }]
+    }, {
+        "fieldName": "2014_02_09",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "02/09"
+        },
+        "dynamicstyles": [{
+            "criteria": "(row mod 10 = 0) or (row mod 10 = 1) or (row mod 10 = 2) or (row mod 10 = 6) or (row mod 10 = 7)",
+            "styles": "background=#80F3E5FA"
+        }, {
+            "criteria": "(row > 20) and ((value mod 15 = 0) or (row mod 16 = 0) or (row mod 17 = 0) or (row mod 20 = 0))",
+            "styles": "background=#FFC0D79E"
+        }, {
+            "criteria": "(row > 20) and ((value mod 18 = 0) or (row mod 19 = 0))",
+            "styles": "foreground=#FFFF0000"
+        }]
+    }, {
+        "fieldName": "2014_02_10",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "02/10"
+        },
+        "dynamicstyles": [{
+            "criteria": "(row mod 10 = 0) or (row mod 10 = 1) or (row mod 10 = 2) or (row mod 10 = 6) or (row mod 10 = 7)",
+            "styles": "background=#80F3E5FA"
+        }, {
+            "criteria": "(value mod 27 = 0) or (row mod 39 = 0)",
+            "styles": "foreground=#FFFF0000"
+        }]
+    }, {
+        "fieldName": "2014_03",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "2014/03"
+        },
+        "styles": {
+            "background":"#FFF5F5F5"
+        },
+        "dynamicstyles": [{
+            "criteria": "value mod 5 = 0",
+            "styles": "fontBold=true;background=#FFFCF99B;foreground=#FFFF0000"
+        }]
+    }, {
+        "fieldName": "2014_03_01",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "03/01"
+        },
+        "dynamicstyles": [{
+            "criteria": "(row mod 10 = 0) or (row mod 10 = 1) or (row mod 10 = 2) or (row mod 10 = 6) or (row mod 10 = 7)",
+            "styles": "background=#80F3E5FA"
+        }, {
+            "criteria": "(value mod 17 = 0) or (row mod 19 = 0)",
+            "styles": "foreground=#FFFF0000"
+        }]
+    }, {
+        "fieldName": "2014_03_02",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "03/02"
+        },
+        "dynamicstyles": [{
+            "criteria": "(row mod 10 = 0) or (row mod 10 = 1) or (row mod 10 = 2) or (row mod 10 = 6) or (row mod 10 = 7)",
+            "styles": "background=#80F3E5FA"
+        }, {
+            "criteria": "(value mod 13 = 0) or (row mod 11 = 0)",
+            "styles": "foreground=#FFFF0000"
+        }]
+    }, {
+        "fieldName": "2014_03_03",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "03/03"
+        },
+        "dynamicstyles": [{
+            "criteria": "(row mod 10 = 0) or (row mod 10 = 1) or (row mod 10 = 2) or (row mod 10 = 6) or (row mod 10 = 7)",
+            "styles": "background=#80F3E5FA"
+        }]
+    }, {
+        "fieldName": "2014_03_04",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "03/04"
+        },
+        "dynamicstyles": [{
+            "criteria": "(row mod 10 = 0) or (row mod 10 = 1) or (row mod 10 = 2) or (row mod 10 = 6) or (row mod 10 = 7)",
+            "styles": "background=#80F3E5FA"
+        }]
+    }, {
+        "fieldName": "2014_03_05",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "03/05"
+        },
+        "dynamicstyles": [{
+            "criteria": "(row mod 10 = 0) or (row mod 10 = 1) or (row mod 10 = 2) or (row mod 10 = 6) or (row mod 10 = 7)",
+            "styles": "background=#80F3E5FA"
+        }]
+    }, {
+        "fieldName": "2014_03_06",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "03/06"
+        },
+        "dynamicstyles": [{
+            "criteria": "(row mod 10 = 0) or (row mod 10 = 1) or (row mod 10 = 2) or (row mod 10 = 6) or (row mod 10 = 7)",
+            "styles": "background=#80F3E5FA"
+        }]
+    }, {
+        "fieldName": "2014_03_07",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "03/07"
+        },
+        "dynamicstyles": [{
+            "criteria": "(row mod 10 = 0) or (row mod 10 = 1) or (row mod 10 = 2) or (row mod 10 = 6) or (row mod 10 = 7)",
+            "styles": "background=#80F3E5FA"
+        }]
+    }, {
+        "fieldName": "2014_03_08",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "03/08"
+        },
+        "dynamicstyles": [{
+            "criteria": "(row mod 10 = 0) or (row mod 10 = 1) or (row mod 10 = 2) or (row mod 10 = 6) or (row mod 10 = 7)",
+            "styles": "background=#80F3E5FA"
+        }]
+    }, {
+        "fieldName": "2014_03_09",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "03/09"
+        },
+        "dynamicstyles": [{
+            "criteria": "(row mod 10 = 0) or (row mod 10 = 1) or (row mod 10 = 2) or (row mod 10 = 6) or (row mod 10 = 7)",
+            "styles": "background=#80F3E5FA"
+        }]
+    }, {
+        "fieldName": "2014_03_10",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "03/10"
+        },
+        "dynamicstyles": [{
+            "criteria": "(row mod 10 = 0) or (row mod 10 = 1) or (row mod 10 = 2) or (row mod 10 = 6) or (row mod 10 = 7)",
+            "styles": "background=#80F3E5FA"
+        }]
+    }, {
+        "fieldName": "2014_04",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "2014/04"
+        },
+        "styles": {
+            "background":"#FFF5F5F5"
+        },
+        "dynamicstyles": [{
+            "criteria": "value mod 8 = 0",
+            "styles": "fontBold=true;background=#FFFCF99B;foreground=#FFFF0000"
+        }]
+    }, {
+        "fieldName": "2014_04_01",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "04/01"
+        }
+    }, {
+        "fieldName": "2014_04_02",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "04/02"
+        }
+    }, {
+        "fieldName": "2014_04_04",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "04/03"
+        }
+    }, {
+        "fieldName": "2014_04_04",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "04/04"
+        }
+    }, {
+        "fieldName": "2014_04_05",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "04/05"
+        }
+    }, {
+        "fieldName": "2014_04_06",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "04/06"
+        }
+    }, {
+        "fieldName": "2014_04_07",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "04/07"
+        }
+    }, {
+        "fieldName": "2014_04_08",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "04/08"
+        }
+    }, {
+        "fieldName": "2014_04_09",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "04/09"
+        }
+    }, {
+        "fieldName": "2014_04_10",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "04/10"
+        }
+    }, {
+        "fieldName": "2014_05",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "2014/05"
+        },
+        "styles": {
+            "background":"#FFF5F5F5"
+        },
+        "dynamicstyles": [{
+            "criteria": "value mod 3 = 0",
+            "styles": "fontBold=true;background=#FFFCF99B;foreground=#FFFF0000"
+        }]
+    }, {
+        "fieldName": "2014_05_01",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "05/01"
+        }
+    }, {
+        "fieldName": "2014_05_02",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "05/02"
+        }
+    }, {
+        "fieldName": "2014_05_05",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "05/03"
+        }
+    }, {
+        "fieldName": "2014_05_04",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "05/04"
+        }
+    }, {
+        "fieldName": "2014_05_05",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "05/05"
+        }
+    }, {
+        "fieldName": "2014_05_06",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "05/06"
+        }
+    }, {
+        "fieldName": "2014_05_07",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "05/07"
+        }
+    }, {
+        "fieldName": "2014_05_08",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "05/08"
+        }
+    }, {
+        "fieldName": "2014_05_09",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "05/09"
+        }
+    }, {
+        "fieldName": "2014_05_10",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "05/10"
+        }
+    }, {
+        "fieldName": "2014_06",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "2014/06"
+        },
+        "styles": {
+            "background":"#FFF5F5F5"
+        },
+        "dynamicstyles": [{
+            "criteria": "value mod 7 = 0",
+            "styles": "fontBold=true;background=#FFFCF99B;foreground=#FFFF0000"
+        }]
+    }, {
+        "fieldName": "2014_06_01",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "06/01"
+        }
+    }, {
+        "fieldName": "2014_06_02",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "06/02"
+        }
+    }, {
+        "fieldName": "2014_06_06",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "06/03"
+        }
+    }, {
+        "fieldName": "2014_06_04",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "06/04"
+        }
+    }, {
+        "fieldName": "2014_06_05",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "06/05"
+        }
+    }, {
+        "fieldName": "2014_06_06",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "06/06"
+        }
+    }, {
+        "fieldName": "2014_06_07",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "06/07"
+        }
+    }, {
+        "fieldName": "2014_06_08",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "06/08"
+        }
+    }, {
+        "fieldName": "2014_06_09",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "06/09"
+        }
+    }, {
+        "fieldName": "2014_06_10",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "06/10"
+        }
+    }, {
+        "fieldName": "2014_07",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "2014/07"
+        },
+        "styles": {
+            "background":"#FFF5F5F5"
+        },
+        "dynamicstyles": [{
+            "criteria": "value mod 11 = 0",
+            "styles": "fontBold=true;background=#FFFCF99B;foreground=#FFFF0000"
+        }]
+    }, {
+        "fieldName": "2014_07_01",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "07/01"
+        }
+    }, {
+        "fieldName": "2014_07_02",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "07/02"
+        }
+    }, {
+        "fieldName": "2014_07_07",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "07/03"
+        }
+    }, {
+        "fieldName": "2014_07_04",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "07/04"
+        }
+    }, {
+        "fieldName": "2014_07_05",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "07/05"
+        }
+    }, {
+        "fieldName": "2014_07_06",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "07/06"
+        }
+    }, {
+        "fieldName": "2014_07_07",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "07/07"
+        }
+    }, {
+        "fieldName": "2014_07_08",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "07/08"
+        }
+    }, {
+        "fieldName": "2014_07_09",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "07/09"
+        }
+    }, {
+        "fieldName": "2014_07_10",
+        "type": "data",
+        "width": "55",
+        "header": {
+            "text": "07/10"
+        }
+    }
+]
