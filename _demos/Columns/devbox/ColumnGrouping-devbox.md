@@ -1,5 +1,7 @@
 컬럼그룹선택 <select id="groupList"></select>
 
+#### 컬럼 배치방향
+
 컬럼 그룹에 포함된 자식 컬럼들의 배치 방향을 수평 혹은 수직으로 바꿀 수 있습니다.
 
 <a class="btn primary small round lowercase" id="btnToggleOrientation">표시 방향</a>
@@ -13,6 +15,8 @@ if (group) {
     gridView.setColumnProperty(group, "orientation", orientation);
 }
 ```
+
+#### 헤더 표시 여부
 
 그룹 헤더를 감추거나 표시할 수 있습니다.
 
@@ -41,6 +45,8 @@ if (group) {
     gridView.setColumnProperty(group, "hideChildHeaders", hide);
 }
 ```
+
+#### 그룹 너비 변경
 
 그룹의 너비를 변경합니다.
 

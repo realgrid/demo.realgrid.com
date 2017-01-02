@@ -1,6 +1,6 @@
 #### 체크바를 설정하는 방법
-체크바의 설정을 변경하는 것은 [setCheckBar()](http://help.realgrid.com/api/GridBase/setCheckBar/)를 사용 합니다.  
-현재 설정된 상태를 확인하는 것은 [getCheckBar()](http://help.realgrid.com/api/GridBase/getCheckBar/)을 사용 합니다.
+체크바의 설정을 변경하는 것은 [setCheckBar()](http://help.realgrid.com/api/GridBase/setCheckBar/){:target="_blank"}를 사용 합니다.  
+현재 설정된 상태를 확인하는 것은 [getCheckBar()](http://help.realgrid.com/api/GridBase/getCheckBar/){:target="_blank"}을 사용 합니다.
 
 #### 체크바의 화면 표시여부를 지정   
 - `visible`: 체크바 영역의 화면 표시여부를 지정합니다. 
@@ -64,9 +64,9 @@ gridView.setCheckBar({
 ```
 
 #### 체크하기
-`한 행씩 체크할 수 있는 API`: [checkItem()](http://help.realgrid.com/api/GridBase/checkItem/), [checkRow()](http://help.realgrid.com/api/GridBase/checkRow/)  
-`여러 행을 체크할 수 있는 API`: [checkItems()](http://help.realgrid.com/api/GridBase/checkItems/), [checkRows()](http://help.realgrid.com/api/GridBase/checkRows/)  
-`전체 행을 체크할 수 있는 API`: [checkAll()](http://help.realgrid.com/api/GridBase/checkAll/)  
+`한 행씩 체크할 수 있는 API`: [checkItem()](http://help.realgrid.com/api/GridBase/checkItem/){:target="_blank"}, [checkRow()](http://help.realgrid.com/api/GridBase/checkRow/){:target="_blank"}  
+`여러 행을 체크할 수 있는 API`: [checkItems()](http://help.realgrid.com/api/GridBase/checkItems/){:target="_blank"}, [checkRows()](http://help.realgrid.com/api/GridBase/checkRows/){:target="_blank"}  
+`전체 행을 체크할 수 있는 API`: [checkAll()](http://help.realgrid.com/api/GridBase/checkAll/){:target="_blank"}  
 
 <a class="btn primary small round lowercase" id="btnCheckItemTrue">checkItem: 0행 체크</a>
 
@@ -153,15 +153,15 @@ gridView.setCheckBar({
 ```
 
 #### Checkable 제어
-아래와 같은 수식을 사용하여 체크바에 체크 가능 여부를 제어할 수 있습니다. [expression 참고](http://demo.realgrid.com/Demo/ExpressionConcept)  
+아래와 같은 수식을 사용하여 체크바에 체크 가능 여부를 제어할 수 있습니다. [expression 참고](http://demo.realgrid.com/Demo/ExpressionConcept){:target="_blank"}  
 `state = 'c'`: 새로 추가된 행만 체크 가능   
 `values['OrderID'] = '10248'`: OrderID필드값이 10248인 행만 체크 가능   
 `row < 10`: itemIndex가 10 이하인 행만 체크 가능    
 `datarow < 10`: dataRow가 10 이하인 행만 체크 가능  
 
-이러한 수식들을 checkBar.checkableExpression 에 설정 후 [gridView.applyCheckable()](http://help.realgrid.com/api/GridBase/applyCheckables/) 사용하여 그리드에 적용시킬 수 있습니다.  
-[gridView.setCheckableExpression()](http://help.realgrid.com/api/GridBase/setCheckableExpression/)을 사용하여 설정과 적용을 한번에 적용할 수도 있습니다.  
-적용된 체커블 상태의 초기화는 [gridView.resetCheckables()](http://help.realgrid.com/api/GridBase/resetCheckables/)을 사용합니다.  
+이러한 수식들을 checkBar.checkableExpression 에 설정 후 [gridView.applyCheckable()](http://help.realgrid.com/api/GridBase/applyCheckables/){:target="_blank"} 사용하여 그리드에 적용시킬 수 있습니다.  
+[gridView.setCheckableExpression()](http://help.realgrid.com/api/GridBase/setCheckableExpression/){:target="_blank"}을 사용하여 설정과 적용을 한번에 적용할 수도 있습니다.  
+적용된 체커블 상태의 초기화는 [gridView.resetCheckables()](http://help.realgrid.com/api/GridBase/resetCheckables/){:target="_blank"}을 사용합니다.  
 
 <a class="btn primary small round lowercase" id="btnCheckableExpression">수식만 설정</a>
 

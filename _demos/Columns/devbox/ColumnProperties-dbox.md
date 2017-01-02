@@ -1,6 +1,7 @@
 컬럼선택 <select id="columnList"></select>
 
-[`GridBase.getColumnProperty()`](http://help.realgrid.com/api/GridBase/getColumnProperty/){:target="_blank"},[`setColumnProperty()`](http://help.realgrid.com/api/GridBase/setColumnProperty/){:target="_blank"} 함수를 이용하여 [컬럼](http://help.realgrid.com/api/types/DataColumn/){:target="_blank"}의 속성을 변경합니다.
+#### 컬럼속성 제어하기  
+[`getColumnProperty()`](http://help.realgrid.com/api/GridBase/getColumnProperty/){:target="_blank"},[`setColumnProperty()`](http://help.realgrid.com/api/GridBase/setColumnProperty/){:target="_blank"} 함수를 이용하여 [컬럼](http://help.realgrid.com/api/types/DataColumn/){:target="_blank"}의 속성을 변경합니다.
 
 <a class="btn primary small round lowercase" id="btnToggleVisible">표시 여부</a>
 

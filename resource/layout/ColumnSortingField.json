@@ -1,0 +1,11 @@
+[{
+    "fieldName": "Years",
+    "dataType": "number"
+}, {
+    "fieldName": "Months"
+}, {
+    "fieldName": "Days"
+}, {
+    "fieldName": "Hours",
+    "dataType": "number"
+}]

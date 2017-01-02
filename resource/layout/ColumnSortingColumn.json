@@ -1,0 +1,45 @@
+[{
+    "name": "colYear",
+    "fieldName": "Years",
+    "type": "data",
+    "width": "150",
+    "styles": {
+        "textAlignment": "far"
+    },
+    "header": {
+        "text": "Year"
+    }
+}, {
+    "name": "colMonth",
+    "fieldName": "Months",
+    "type": "data",
+    "width": "150",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Month"
+    }
+}, {
+    "name": "colDay",
+    "fieldName": "Days",
+    "type": "data",
+    "width": "150",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Day"
+    }
+}, {
+    "name": "colHour",
+    "fieldName": "Hours",
+    "type": "data",
+    "width": "150",
+    "styles": {
+        "textAlignment": "far"
+    },
+    "header": {
+        "text": "Hour"
+    }
+}]
