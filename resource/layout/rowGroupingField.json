@@ -1,0 +1,37 @@
+[{
+    "fieldName": "OrderID",
+    "header": "OrderID Field Header"
+}, {
+    "fieldName": "CustomerID",
+    "header": "CustomerID Field Header"
+}, {
+    "fieldName": "EmployeeID",
+    "header": "EmployeeID Field Header"
+}, {
+    "fieldName": "OrderDate",
+    "dataType": "datetime",
+    "header": "OrderDate Field Header"
+}, {
+    "fieldName": "CompanyName",
+    "header": "CompanyName Field Header"
+}, {
+    "fieldName": "Country",
+    "header": "Country Field Header"
+}, {
+    "fieldName": "Phone",
+    "header": "Phone Field Header"
+}, {
+    "fieldName": "ProductName",
+    "header": "ProductName Field Header"
+}, {
+    "fieldName": "QuantityPerUnit",
+    "header": "QuantityPerUnit Field Header"
+}, {
+    "fieldName": "Quantity",
+    "dataType": "number",
+    "header": "Quantity Field Header"
+}, {
+    "fieldName": "UnitPrice",
+    "dataType": "number",
+    "header": "UnitPrice Field Header"
+}]
