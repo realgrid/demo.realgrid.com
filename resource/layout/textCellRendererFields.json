@@ -1,0 +1,16 @@
+[{
+    "fieldName": "CustomerID",
+    "dataType": "text"
+}, {
+    "fieldName": "EmployeeID",
+    "dataType": "text"
+}, {
+    "fieldName": "OrderDate",
+    "dataType": "datetime"
+}, {
+    "fieldName": "Quantity",
+    "dataType": "number"
+}, {
+    "fieldName": "UnitPrice",
+    "dataType": "number"
+}]

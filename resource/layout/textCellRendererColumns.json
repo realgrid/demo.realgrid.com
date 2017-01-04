@@ -1,0 +1,74 @@
+[{
+    "name": "CustomerID",
+    "fieldName": "CustomerID",
+    "type": "data",
+    "width": "150",
+    "styles": {
+        "textAlignment": "center",
+        "font": "Tahoma",
+        "fontBold": "true"
+    },
+    "header": {
+        "text": "Customer ID"
+    }
+}, {
+    "name": "EmployeeID",
+    "fieldName": "EmployeeID",
+    "type": "data",
+    "width": "150",
+    "styles": {
+        "textAlignment": "center",
+        "font": "Arial",
+        "foreground": "#ffff0000"
+    },
+    "header": {
+        "text": "Employee ID"
+    }
+}, {
+    "name": "UnitPrice",
+    "fieldName": "UnitPrice",
+    "type": "data",
+    "width": "150",
+    "styles": {
+        "textAlignment": "far",
+        "paddingRight": "5",
+        "suffix": " $",
+        "font": "Arial,12,bold"
+    },
+    "header": {
+        "text": "Unit Price"
+    }
+}, {
+    "name": "Quantity",
+    "fieldName": "Quantity",
+    "type": "data",
+    "width": "150",
+    "styles": {
+        "textAlignment": "far",
+        "font": "Arial",
+        "paddingRight": "5",
+        "numberFormat": "00.00",
+        "foreground": "#0000ff"
+    },
+    "header": {
+        "text": "Quantity"
+    },
+    "footer": {
+        "styles": { "textAlignment": "far" },
+        "text": "SUM",
+        "expression": "sum"
+    }
+}, {
+    "name": "OrderDate",
+    "fieldName": "OrderDate",
+    "type": "data",
+    "width": "160",
+    "styles": {
+        "textAlignment": "center",
+        "font": "Tahoma",
+        "datetimeFormat": "yyyy-MM-dd"
+    },
+    "header": {
+        "text": "Order Date"
+    }
+}]
