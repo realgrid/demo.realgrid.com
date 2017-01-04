@@ -1,0 +1,233 @@
+[{
+        "name": "OrderID",
+        "fieldName": "OrderID",
+        "type": "data",
+        "width": 60,
+        "styles": {
+            "textAlignment": "center"
+        },
+        "header": {
+            "text": "Order ID"
+        },
+        "footer": {
+            "text": "Count:%",
+            "expression": "count"
+        }
+    }, {
+        "name": "UnitPrice",
+        "fieldName": "UnitPrice",
+        "type": "data",
+        "width": 90,
+        "renderer": {
+            "type": "bar",
+            "minimum": 0,
+            "maximum": 100,
+            "showLabel":false
+        },
+        "styles": {
+            "textAlignment": "far",
+            "paddingRight": 5
+        },
+        "header": {
+            "text": "Unit Price"
+        }
+    }, {
+        "name": "Quantity",
+        "fieldName": "Quantity",
+        "type": "data",
+        "width": 100,
+        "renderer": {
+            "type": "bar",
+            "minimum": 0,
+            "maximum": 100,
+            "minWidth": 150,
+            "showLabel": true
+        },
+        "styles": {
+            "figureBackground": "linear,#ff000044,#ffeeeeee",
+            "textAlignment": "far",
+            "paddingRight": 5,
+            "figureSize": "50%"
+        },
+        "header": {
+            "text": "Quantity"
+        },
+        "footer": {
+            "styles": { "textAlignment": "far" },
+            "text": "SUM",
+            "expression": "sum"
+        }
+    }, {
+        "name": "UnitPrice",
+        "fieldName": "UnitPrice",
+        "type": "data",
+        "width": 90,
+        "renderer": {
+            "type": "bar",
+            "minimum": 0,
+            "maximum": 100,
+            "minWidth": 100,
+            "showLabel": false,
+            "origin":"right"
+        },
+        "styles": {
+            "textAlignment": "far",
+            "paddingRight": 5
+        },
+        "header": {
+            "text": "Unit Price"
+        }
+    }, {
+        "name": "Quantity",
+        "fieldName": "Quantity",
+        "type": "data",
+        "width": 100,
+        "renderer": {
+            "type": "bar",
+            "minimum": 0,
+            "maximum": 100,
+            "minWidth": 150,
+            "showLabel": true,
+            "origin":"top"
+        },
+        "styles": {
+            "figureBackground": "linear,#ff000044,#ffeeeeee,90",
+            "textAlignment": "center",
+            "lineAlignment": "far",
+            "paddingRight": 5,
+            "figureSize": "70%"
+        },
+        "header": {
+            "text": "Quantity"
+        },
+        "footer": {
+            "styles": { "textAlignment": "far" },
+            "text": "SUM",
+            "expression": "sum"
+        }
+    }, {
+        "name": "UnitPrice",
+        "fieldName": "UnitPrice",
+        "type": "data",
+        "width": 90,
+        "renderer": {
+            "type": "bar",
+            "minimum": 0,
+            "maximum": 100,
+            "minWidth": 100,
+            "showLabel": false,
+            "origin": "bottom"
+        },
+        "styles": {
+            "textAlignment": "far",
+            "paddingRight": 5
+        },
+        "header": {
+            "text": "Unit Price"
+        }
+    }, {
+        "type": "group",
+        "width": "400",
+        "header": {
+            "text": "Company"
+        },
+        "columns": [{
+            "name": "CompanyName",
+            "fieldName": "CompanyName",
+            "type": "data",
+            "width": "200",
+            "styles": {
+                "textAlignment": "near"
+            },
+            "header": {
+                "text": "Company Name"
+            }
+        }, {
+            "type": "group",
+            "width": "200",
+            "orientation": "vertical",
+            "header": {
+                "text": "",
+                "visible": false
+            },
+            "columns": [{
+                "name": "Country",
+                "fieldName": "Country",
+                "type": "data",
+                "width": "100",
+                "styles": {
+                    "textAlignment": "center"
+                },
+                "header": {
+                    "text": "Country"
+                }
+            }, {
+                "name": "Phone",
+                "fieldName": "Phone",
+                "type": "data",
+                "width": "100",
+                "styles": {
+                    "textAlignment": "center"
+                },
+                "header": {
+                    "text": "Phone"
+                }
+            }]
+        }]
+    }, {
+        "name": "OrderDate",
+        "fieldName": "OrderDate",
+        "type": "data",
+        "width": "130",
+        "visible" : false,
+        "styles": {
+            "textAlignment": "center"
+        },
+        "header": {
+            "text": "Order Date"
+        }
+    }, {
+        "name": "CustomerID",
+        "fieldName": "CustomerID",
+        "type": "data",
+        "width": 80,
+        "styles": {
+            "textAlignment": "center"
+        },
+        "header": {
+            "text": "Customer ID"
+        }
+    }, {
+        "name": "EmployeeID",
+        "fieldName": "EmployeeID",
+        "type": "data",
+        "width": 70,
+        "styles": {
+            "textAlignment": "center"
+        },
+        "header": {
+            "text": "Employee ID"
+        }
+    }, {
+        "name": "ProductName",
+        "fieldName": "ProductName",
+        "type": "data",
+        "width": "200",
+        "styles": {
+            "textAlignment": "near"
+        },
+        "header": {
+            "text": "Product Name"
+        }
+    }, {
+        "name": "QuantityPerUnit",
+        "fieldName": "QuantityPerUnit",
+        "type": "data",
+        "width": "100",
+        "styles": {
+            "textAlignment": "near"
+        },
+        "header": {
+            "text": "Quantity / Unit"
+        }
+    }]
