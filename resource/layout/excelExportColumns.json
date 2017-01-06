@@ -1,0 +1,151 @@
+[{
+    "name": "OrderID",
+    "fieldName": "OrderID",
+    "width": "90",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Order ID"
+    }
+}, {
+    "name": "CustomerID",
+    "fieldName": "CustomerID",
+    "width": "100",
+    "styles": {
+        "textAlignment": "center",
+        "fontBold": "true"
+    },
+    "dynamicStyles": [{
+        "criteria": "value like 'VI%'",
+        "styles": {"background": "#11ff0000"}
+    }],
+    "header": {
+        "text": "Customer ID"
+    }
+}, {
+    "name": "EmployeeID",
+    "fieldName": "EmployeeID",
+    "width": "100",
+    "styles": {
+        "textAlignment": "center",
+        "foreground": "#ffff0000"
+    },
+    "header": {
+        "text": "Employee ID"
+    }
+}, {
+    "name": "UnitPrice",
+    "fieldName": "UnitPrice",
+    "width": "100",
+    "styles": {
+        "textAlignment": "far",
+        "paddingRight": "5",
+        "suffix": " $",
+        "font": "Arial,12,bold"
+    },
+    "header": {
+        "text": "Unit Price"
+    },
+    "footer": {
+        "styles": {
+            "textAlignment": "far",
+            "paddingRight": "5",
+            "numberFormat": "#,##0",
+            "foreground": "#000088"
+        },
+        "groupStyles": {
+            "textAlignment": "far",
+            "paddingRight": "5",
+            "numberFormat": "#,##0.###",
+            "foreground": "#000088"
+        },
+        "text": "SUM",
+        "expression": "sum",
+        "groupExpression": "sum"
+    }
+}, {
+    "name": "Quantity",
+    "fieldName": "Quantity",
+    "width": "100",
+    "styles": {
+        "textAlignment": "far"
+    },
+    "header": {
+        "text": "Quantity"
+    },
+    "footer": {
+        "styles": {
+            "textAlignment": "far",
+            "paddingRight": "5",
+            "numberFormat": "#,##0.00",
+            "foreground": "#000088"
+        },
+        "text": "SUM",
+        "expression": "sum"
+    }
+}, {
+    "name": "OrderDate",
+    "fieldName": "OrderDate",
+    "width": "140",
+    "styles": {
+        "textAlignment": "center",
+        "dataFormat": "YYYY-MM-DD HH:NN",
+        "background": "#10ffff00"
+    },
+    "header": {
+        "text": "Order Date"
+    }
+}, {
+    "name": "CompanyName",
+    "fieldName": "CompanyName",
+    "width": "200",
+    "styles": {
+        "textAlignment": "near",
+        "background": "#1000ffff"
+    },
+    "header": {
+        "text": "Company Name"
+    }
+}, {
+    "name": "Country",
+    "fieldName": "Country",
+    "width": "100",
+    "styles": {
+        "textAlignment": "center",
+        "background": "#10ff00ff"
+    },
+    "header": {
+        "text": "Country"
+    }
+}, {
+    "name": "Phone",
+    "fieldName": "Phone",
+    "width": "100",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Phone"
+    }
+}, {
+    "name": "ProductName",
+    "fieldName": "ProductName",
+    "width": "200",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Product Name"
+    }
+}, {
+    "name": "QuantityPerUnit",
+    "fieldName": "QuantityPerUnit",
+    "width": "100",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Quantity / Unit"
+    }
+}]
