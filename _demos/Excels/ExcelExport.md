@@ -18,7 +18,15 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
   dataProvider.setRows(data);
 }
 var onDoneDataSet = function() {
-
+	var cellDefaultStyles = [{
+        criteria: "value like 'VI%'",
+        styles: "background=#11ff0000"
+	}];
+	gridView.setStyles({
+		body: {
+	        cellDynamicStyles: cellDefaultStyles
+	    }
+	});
 }
 </script>
 
