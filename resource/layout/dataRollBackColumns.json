@@ -1,0 +1,60 @@
+[{
+    "fieldName": "id",
+    "width": 50,
+    "header": { "text": "No" },
+    "styles": { "textAlignment": "center", "font": "Tahoma" }
+}, {
+    "fieldName": "userid",
+    "width": 90,
+    "header": { "text": "사용자 Id" },
+    "styles": { "textAlignment": "center", "font": "Tahoma" }
+}, {
+    "fieldName": "company",
+    "width": 90,
+    "header": { "text": "회사" },
+    "styles": { "textAlignment": "center", "font": "Tahoma" }
+}, {
+    "fieldName": "first_name",
+    "width": 100,
+    "header": { "text": "이름" },
+    "styles": { "textAlignment": "center", "font": "Tahoma" }
+}, {
+    "fieldName": "last_name",
+    "width": 100,
+    "header": { "text": "성" },
+    "styles": { "textAlignment": "center", "font": "Tahoma" }
+}, {
+    "fieldName": "gender",
+    "width": 100,
+    "header": { "text": "성별" },
+    "styles": { "textAlignment": "center", "font": "Tahoma" }
+}, {
+    "fieldName": "email",
+    "width": 150,
+    "header": { "text": "E-Mail" },
+    "styles": { "textAlignment": "center", "font": "Tahoma" }
+}, {
+    "fieldName": "birthday",
+    "width": 90,
+    "header": { "text": "생년월일" },
+    "editor": {
+        "datetimeFormat": "yyyy-MM-dd"
+    },
+    "styles": {
+        "textAlignment": "center",
+        "font": "Tahoma",
+        "datetimeFormat": "yyyy/MM/dd"
+    }
+}, {
+    "fieldName": "pay",
+    "width": 90,
+    "header": { "text": "급여" },
+    "editor": {
+        "type": "number"
+    },
+    "styles": {
+        "textAlignment": "center",
+        "font": "Tahoma",
+        "numberFormat": "#,##0"
+    }
+}]

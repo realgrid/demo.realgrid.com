@@ -1,0 +1,22 @@
+[{
+    "fieldName": "id"
+}, {
+    "fieldName": "userid"
+}, {
+    "fieldName": "company"
+}, {
+    "fieldName": "first_name"
+}, {
+    "fieldName": "last_name"
+}, {
+    "fieldName": "gender"
+}, {
+    "fieldName": "email"
+}, {
+    "fieldName": "birthday",
+    "dataType": "datetime",
+    "datetimeFormat": "iso"
+}, {
+    "fieldName": "pay",
+    "dataType": "number"
+}]
