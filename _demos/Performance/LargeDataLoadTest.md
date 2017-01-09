@@ -1,8 +1,10 @@
 ---
 layout: page
-title: Large Data Load Test
+title: 대량 데이터 불러오기
 order: 3
 published: true
+devbox: true
+devboxfile: LageDataLoadTest_devbox.md
 categories:
   - 성능
 tags: ['성능', 'performance', '스크롤', 'scroll']
@@ -25,14 +27,10 @@ tags: ['성능', 'performance', '스크롤', 'scroll']
   dpVar="dataProvider"
   gridId="realgrid"
 
-  fieldSet="scrollTestField"
-  columnSet="scrollTestColumn"
+  fieldSet="largeDataField"
+  columnSet="largeDataColumn"
   dpOptionSet="dataProviderOption1"  
   styleSet="style1"
-
-  dataSet="celloData.json"
-  successDataSet="onGridSuccessDataSet"
-  doneDataSet="onDoneDataSet"
 
   gridWidth="100%"
   gridHeight="300px" %}
