@@ -1,0 +1,97 @@
+[{
+    "fieldName": "OrderID",
+    "width": "60",
+    "styles": { 
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Order ID"
+    }
+}, {
+    "name": "OrderID2",
+    "fieldName": "OrderID",
+    "width": "186",
+    "header": {
+        "text": "Code128",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    }
+}, {
+    "fieldName": "CustomerID",
+    "width": "80",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Customer ID"
+    }
+}, {
+    "name": "CustomerID2",
+    "fieldName": "CustomerID",
+    "width": "130",
+    "header": {
+        "text": "Code39",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    }
+}, {
+    "fieldName": "Country",
+    "width": "70",
+    "styles": { 
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Country"
+    }
+}, {
+    "name": "Country2",
+    "fieldName": "Country",
+    "width": "280",
+    "styles": { 
+        "figureBackground": "#ff004400"
+    },
+    "header": {
+        "text": "Code128",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    }
+}, {
+    "fieldName": "CompanyName",
+    "width": "160",
+    "styles": { 
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Company"
+    }
+},  {
+    "fieldName": "QuantityPerUnit",
+    "width": "140",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Unit"
+    }
+}, {
+    "fieldName": "Quantity",
+    "width": "100",
+    "styles": {
+        "textAlignment": "far"
+    },
+    "header": {
+        "text": "Quantity"
+    }
+}, {
+    "fieldName": "UnitPrice",
+    "width": "100",
+    "styles": {
+        "textAlignment": "far"
+    },
+    "header": {
+        "text": "Unit Price"
+    }
+}]
