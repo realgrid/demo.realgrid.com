@@ -1,0 +1,159 @@
+[{
+    "name": "OrderID",
+    "fieldName": "OrderID",
+    "type": "data",
+    "width": 60,
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Order ID"
+    }
+}, {
+    "name": "CustomerID",
+    "fieldName": "CustomerID",
+    "width": 100,
+    "header": {
+        "text": "CustomerID"
+    }
+}, {
+    "name": "UnitPrice1",
+    "fieldName": "UnitPrice",
+    "type": "data",
+    "width": 90,
+    "styles": {
+        "textAlignment": "far",
+        "paddingRight": 5
+    },
+    "header": {
+        "text": "Unit Price1",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    }
+}, {
+    "name": "UnitPrice2",
+    "fieldName": "UnitPrice",
+    "type": "data",
+    "width": 90,
+    "styles": {
+        "textAlignment": "far",
+        "paddingLeft": 5
+    },
+    "header": {
+        "text": "Unit Price2",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    }
+}, {
+    "name": "Quantity1",
+    "fieldName": "Quantity",
+    "type": "data",
+    "width": 100,
+    "header": {
+        "text": "Quantity1",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    }
+}, {
+    "name": "Quantity2",
+    "fieldName": "Quantity",
+    "type": "data",
+    "width": 100,
+    "styles": {
+        "textAlignment": "far"
+    },
+    "header": {
+        "text": "Quantity2",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    }
+}, {
+    "type": "group",
+    "width": "400",
+    "header": {
+        "text": "Company"
+    },
+    "columns": [{
+        "name": "CompanyName",
+        "fieldName": "CompanyName",
+        "type": "data",
+        "width": "200",
+        "styles": {
+            "textAlignment": "near"
+        },
+        "header": {
+            "text": "Company Name"
+        }
+    }, {
+        "name": "Country",
+        "fieldName": "Country",
+        "type": "data",
+        "width": "150",
+        "styles": {
+            "textAlignment": "center"
+        },
+        "header": {
+            "text": "Country"
+        }
+    }]
+}, {
+    "name": "OrderDate",
+    "fieldName": "OrderDate",
+    "type": "data",
+    "width": "130",
+    "visible" : false,
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Order Date"
+    }
+}, {
+    "name": "CustomerID",
+    "fieldName": "CustomerID",
+    "type": "data",
+    "width": 80,
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Customer ID"
+    }
+}, {
+    "name": "EmployeeID",
+    "fieldName": "EmployeeID",
+    "type": "data",
+    "width": 70,
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Employee ID"
+    }
+}, {
+    "name": "ProductName",
+    "fieldName": "ProductName",
+    "type": "data",
+    "width": "200",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Product Name"
+    }
+}, {
+    "name": "QuantityPerUnit",
+    "fieldName": "QuantityPerUnit",
+    "type": "data",
+    "width": "100",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Quantity / Unit"
+    }
+}]
