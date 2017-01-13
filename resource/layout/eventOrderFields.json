@@ -1,0 +1,30 @@
+[{
+    "fieldName": "OrderID",
+    "dataType": "text"
+}, {
+    "fieldName": "CustomerID"
+}, {
+    "fieldName": "EmployeeID"
+}, {
+    "fieldName": "OrderDate",
+    "dataType": "datetime",
+    "datetimeFormat": "yyyy-MM-dd a hh:mm:ss",
+    "amText": "오전",
+    "pmText": "오후"
+}, {
+    "fieldName": "CompanyName"
+}, {
+    "fieldName": "Country"
+}, {
+    "fieldName": "Phone"
+}, {
+    "fieldName": "ProductName"
+}, {
+    "fieldName": "QuantityPerUnit"
+}, {
+    "fieldName": "Quantity",
+    "dataType": "number"
+}, {
+    "fieldName": "UnitPrice",
+    "dataType": "number"
+}]
