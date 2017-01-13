@@ -1,0 +1,144 @@
+[{
+    "type": "group",
+    "name": "GroupOrder",
+    "orientation": "vertical",
+    "width": 250,
+    "columns": [{
+        "type": "group",
+        "name": "GroupIds",
+        "header": {
+            "text": "GroupIds",
+            "checked": true,
+            "checkLocation": "left"
+        },
+        "columns": [{
+            "name": "OrderID",
+            "fieldName": "OrderID",
+            "type": "data",
+            "width": "90",
+            "styles": {
+                "textAlignment": "center"
+            },
+            "header": {
+                "text": "Order"
+            }
+        }, {
+            "name": "CustomerID",
+            "fieldName": "CustomerID",
+            "width": "130",
+            "styles": {
+                "textAlignment": "center"
+            },
+            "header": {
+                "text": "Customer ID"
+            }
+        }, {
+            "name": "EmployeeID",
+            "fieldName": "EmployeeID",
+            "width": "100",
+            "styles": {
+                "textAlignment": "center"
+            },
+            "header": {
+                "text": "Employee ID"
+            }
+        }]
+    }, {
+        "name": "OrderDate",
+        "fieldName": "OrderDate",
+        "width": "130",
+        "styles": {
+            "textAlignment": "center"
+        },
+        "header": {
+            "text": "Order Date",
+            "checked": true,
+            "checkLocation": "left"
+        }
+    }]
+}, {
+    "name": "CompanyName",
+    "fieldName": "CompanyName",
+    "width": "100",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Company Name"
+    }
+}, {
+    "name": "Country",
+    "fieldName": "Country",
+    "width": "70",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Country"
+    }
+}, {
+    "name": "Phone",
+    "fieldName": "Phone",
+    "width": "80",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Phone"
+    }
+}, {
+    "type": "group",
+    "name": "GroupSales",
+    "width": 300,
+    "columns": [{
+        "type": "group",
+        "name": "GroupProduct",
+        "orientation": "vertical",
+        "columns": [{
+            "name": "ProductName",
+            "fieldName": "ProductName",
+            "width": "200",
+            "styles": {
+                "textAlignment": "near"
+            },
+            "header": {
+                "text": "Product Name"
+            }
+        }, {
+            "name": "QuantityPerUnit",
+            "fieldName": "QuantityPerUnit",
+            "width": "100",
+            "styles": {
+                "textAlignment": "near"
+            },
+            "header": {
+                "text": "Quantity / Unit"
+            }
+        }]
+    }, {
+        "type": "group",
+        "name": "GroupUnit",
+        "orientation": "vertical",
+        "columns": [{
+            "name": "Quantity",
+            "fieldName": "Quantity",
+            "width": "100",
+            "styles": {
+                "textAlignment": "far"
+            },
+            "header": {
+                "text": "Quantity"
+            }
+        }, {
+            "name": "UnitPrice",
+            "fieldName": "UnitPrice",
+            "width": "100",
+            "styles": {
+                "textAlignment": "far"
+            },
+            "header": {
+                "text": "Unit Price"
+            }
+        }]
+    }]
+}]
