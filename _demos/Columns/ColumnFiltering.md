@@ -52,7 +52,7 @@ tags: ['Filtering', '필터링', '필터']
 	  $("#divAutoFilter").show();
 	}
 
-	function applyAutoFilter() {
+	$("#applyAutoFilter").click(function() { 
 	  var filterExpr = "";
 	  var filterItems = $('input[name="chkAutoFilterItem"]:checked');
 	  autoFilterItems = [];
@@ -72,12 +72,27 @@ tags: ['Filtering', '필터링', '필터']
 
 	  gridView.addColumnFilters(autoFiltercolumn, filters, true);
 	  $("#divAutoFilter").hide();
+	});
+
+	$("#cancelAutoFilter").click(function() { 
+	  $("#divAutoFilter").hide();
+	});
+    
+    gridView.onFilterActionClicked = function (grid, column, action, x, y) {
+	  console.log("onFilterActionClicked");
+	  if (action == "autoFilter") {
+	    var offset = $("#realgrid").offset();
+
+	    showAutoFiltering(column, x-260 + offset.left, y + offset.top);
+	  }
 	};
 
-	function closeAutoFilter() {
-	  $("#divAutoFilter").hide();
-	}
-    
+	gridView.setFilteringOptions({
+	    selector: {
+	        maxWidth: 130,
+	        maxHeight: 200
+	    }
+	});
   }
 </script>
 
@@ -100,9 +115,9 @@ tags: ['Filtering', '필터링', '필터']
   gridWidth="100%"
   gridHeight="300px" %}
 
-<div id="divAutoFilter" style="display:none; position:absolute; height:260px; background-color:#eeeeee; border:1px solid black;">
+<div id="divAutoFilter" style="display:none; position:absolute; height:260px; width:146px; background-color:#eeeeee; border:1px solid black;">
     <span id="spanFilters" style="overflow-y:scroll; display:block; width:100%; height:230px">
     </span>
-    <input type="button" id="applyAutoFilter" value="Apply" onclick="applyAutoFilter();" class="button gray medium3" />
-    <input type="button" id="cancelAutoFilter" value="Cancel" onclick="closeAutoFilter();" class="button gray medium3" />
+    <a class="btn secondary small lowercase" id="applyAutoFilter">Apply</a>
+    <a class="btn secondary small lowercase" id="cancelAutoFilter">Cancel</a>
 </div>

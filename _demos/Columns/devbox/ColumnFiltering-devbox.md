@@ -397,14 +397,7 @@ $("#btnSetFilterAction").click(function() {
     $("#txtFilter").text("'CustomerId' 컬럼에 필터가 설정됐습니다.");  
 });
 
-gridView.onFilterActionClicked = function (grid, column, action, x, y) {
-  console.log("onFilterActionClicked");
-  if (action == "autoFilter") {
-    var offset = $("#realgrid").offset();
 
-    showAutoFiltering(column, x + offset.left, y + offset.top);
-  }
-};
 
 var autoFiltercolumn;
 var autoFilterItems = [];
