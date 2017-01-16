@@ -176,7 +176,12 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
         $("#eventLog").scrollTop($("#eventLog")[0].scrollHeight);
     };  
 
-	  dataProvider.setRows(data);
+	dataProvider.setRows(data);
+    
+    $('#btnClearTextaea').click(function() {
+        events = 0;
+        $("#eventLog").val('');
+    });
 }
 
 var onDoneDataSet = function() {
@@ -191,11 +196,6 @@ function findField(field, fieldName) {
             return i;
     }
     return -1;
-}
-
-function clearTextarea() {
-	events = 0;
-	$("#eventLog").val('');
 }
 </script>
 
@@ -218,13 +218,5 @@ function clearTextarea() {
   gridWidth="100%"
   gridHeight="300px" %}
 
-<input type="button" onclick="clearTextarea()" value="지우기" style="width:60px; height:20;
-	background-color: #5d8cc9;
-    border: none;
-    color: white;
-    padding: 5px 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 15px;" >
+<a class="btn secondary small round lowercase" id="btnClearTextaea">지우기</a>
 <textarea id="eventLog" style="width:100%; height:200px; border: 2px solid #5d8cc9"></textarea>
