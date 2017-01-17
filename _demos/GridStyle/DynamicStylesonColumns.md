@@ -48,8 +48,8 @@ tags: ['Style', 'Dynamic Styles', '스타일', '동적스타일']
   dpVar="dataProvider"
   gridId="realgrid"
 
-  fieldSet="DynamicStylesonColumnsFields"
-  columnSet="DynamicStylesonColumns"
+  fieldSet="dynamicStylesonColumnsFields"
+  columnSet="dynamicStylesonColumns"
   dpOptionSet="dataProviderOption1"  
   styleSet="style1"
 

@@ -50,8 +50,8 @@ body.**rowStylesFirst** 속성을 true로 지정하면 위와 같은 순서대�
   dpVar="dataProvider"
   gridId="realgrid"
 
-  fieldSet="DynamicStylesonRowsFields"
-  columnSet="DynamicStylesonRows"
+  fieldSet="dynamicStylesonRowsFields"
+  columnSet="dynamicStylesonRows"
   dpOptionSet="dataProviderOption1"  
   styleSet="style1"
 
