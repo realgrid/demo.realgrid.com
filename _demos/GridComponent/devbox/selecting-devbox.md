@@ -73,33 +73,33 @@ gridView.setSelectOptions({
 <script>
 
   $('#btnSetNone').click(function() {
-    gridView.setFixedOptions({
+    gridView.setSelectOptions({
       style: 'none'
     });
   });
 
 
   $('#btnSetRows').click(function() {
-    gridView.setFixedOptions({
+    gridView.setSelectOptions({
       style: 'rows'
     });
   });
 
 
   $('#btnSetColumns').click(function() {
-    gridView.setFixedOptions({
+    gridView.setSelectOptions({
       style: 'columns'
     });
   });
 
   $('#btnSetSingleRow').click(function() {
-    gridView.setFixedOptions({
+    gridView.setSelectOptions({
       style: 'singleRow'
     });
   });
 
   $('#btnSetSingleColumn').click(function() {
-    gridView.setFixedOptions({
+    gridView.setSelectOptions({
       style: 'singleColumn'
     });
   });
