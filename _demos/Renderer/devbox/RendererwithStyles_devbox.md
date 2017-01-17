@@ -98,16 +98,16 @@ gridView.setColumnProperty("UnitPrice1", "dynamicStyles", [{
         "renderer": "shape01"
     }
 }, {
-    "criteria": "value < 20",
+    "criteria": "(value < 20) and (checked)",
     "styles": "figureBackground=#ff0000ff;foreground=#ff0000ff;figureName=itriangle"
 }, {
-    "criteria": "value < 10",
+    "criteria": "(value < 10) and (checked)",
     "styles": "figureBackground=#ff0000ff;foreground=#ff0000ff;figureName=downarrow"
 }, {
-    "criteria": "value >= 20",
+    "criteria": "(value >= 20) and (checked)",
     "styles": "figureBackground=#ffff0000;foreground=#ffff0000;figureName=triangle"
 }, {
-    "criteria": "value > 80",
+    "criteria": "(value > 80) and (checked)",
     "styles": "figureBackground=#ffff0000;foreground=#ffff0000;figureName=uparrow"
 }]);
 ```
@@ -227,16 +227,16 @@ $('#btnSetCheckRenderer').click(function() {
 	        "figureSize": 15
 	    }
 	}, {
-        "criteria": "value < 20",
+        "criteria": "(value < 20) and (checked)",
         "styles": "figureBackground=#ff0000ff;foreground=#ff0000ff;figureName=itriangle"
     }, {
-        "criteria": "value < 10",
+        "criteria": "(value < 10) and (checked)",
         "styles": "figureBackground=#ff0000ff;foreground=#ff0000ff;figureName=downarrow"
     }, {
-        "criteria": "value >= 20",
+        "criteria": "(value >= 20) and (checked)",
         "styles": "figureBackground=#ffff0000;foreground=#ffff0000;figureName=triangle"
     }, {
-        "criteria": "value > 80",
+        "criteria": "(value > 80) and (checked)",
         "styles": "figureBackground=#ffff0000;foreground=#ffff0000;figureName=uparrow"
     }]);
 
@@ -246,16 +246,16 @@ $('#btnSetCheckRenderer').click(function() {
 	        "renderer": "shape01"
 	    }
 	}, {
-        "criteria": "value < 20",
+        "criteria": "(value < 20) and (checked)",
         "styles": "figureBackground=#ff0000ff;foreground=#ff0000ff;figureName=itriangle"
     }, {
-        "criteria": "value < 10",
+        "criteria": "(value < 10) and (checked)",
         "styles": "figureBackground=#ff0000ff;foreground=#ff0000ff;figureName=downarrow"
     }, {
-        "criteria": "value >= 20",
+        "criteria": "(value >= 20) and (checked)",
         "styles": "figureBackground=#ffff0000;foreground=#ffff0000;figureName=triangle"
     }, {
-        "criteria": "value > 80",
+        "criteria": "(value > 80) and (checked)",
         "styles": "figureBackground=#ffff0000;foreground=#ffff0000;figureName=uparrow"
     }]);
 });
