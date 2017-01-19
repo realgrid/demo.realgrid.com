@@ -9,7 +9,7 @@
 function loadNext() {
   var newStart = dataProvider.getRowCount();
   $.ajax({
-    url: "{{ "/resource/data/cardata2.json" | prepend : site.baseurl }}",
+    url: "{{ "/resource/data/carData2.json" | prepend : site.baseurl }}",
     success: function(data) {
       dataProvider.fillJsonData(data,
         {fillMode: "append", start: newStart, count: 100});
@@ -34,7 +34,7 @@ gridView.onScrollToBottom = function() {
 function loadNext() {
   var newStart = dataProvider.getRowCount();
   $.ajax({
-    url: "{{ "/resource/data/cardata2.json" | prepend : site.baseurl }}",
+    url: "{{ "/resource/data/carData2.json" | prepend : site.baseurl }}",
     success: function(data) {
       dataProvider.fillJsonData(data,
         {fillMode: "append", start: newStart, count: 100});
@@ -56,7 +56,7 @@ gridView.onTopItemIndexChanged = function(grid, item) {
 function loadNext() {
   var newStart = dataProvider.getRowCount();
   $.ajax({
-    url: "{{ "/resource/data/cardata2.json" | prepend : site.baseurl }}",
+    url: "{{ "/resource/data/carData2.json" | prepend : site.baseurl }}",
     success: function(data) {
       dataProvider.fillJsonData(data, {fillMode: "append", start: newStart, count: 100});
     }
