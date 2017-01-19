@@ -18,7 +18,7 @@ var filters = [
 dataProvider.setFilters(filters);
 
 $.ajax({
-  url: "{{ "/resource/data/cardata2.json" | prepend : site.baseurl }}",
+  url: "{{ "/resource/data/carData2.json" | prepend : site.baseurl }}",
   success: function(data) {
     dataProvider.fillJsonData(data);
   }
@@ -44,7 +44,7 @@ var filters = [
 dataProvider.setFilters(filters, "and");
 
 $.ajax({
-  url: "{{ "/resource/data/cardata2.json" | prepend : site.baseurl }}",
+  url: "{{ "/resource/data/carData2.json" | prepend : site.baseurl }}",
   success: function(data) {
     dataProvider.fillJsonData(data);
   }
@@ -64,7 +64,7 @@ $('#setFilters1').click(function() {
   dataProvider.setFilters(filters);
 
   $.ajax({
-    url: "{{ "/resource/data/cardata2.json" | prepend : site.baseurl }}",
+    url: "{{ "/resource/data/carData2.json" | prepend : site.baseurl }}",
     success: function(data) {
       dataProvider.fillJsonData(data);
     }
@@ -80,7 +80,7 @@ $('#setFilters2').click(function() {
   dataProvider.setFilters(filters, "and");
 
   $.ajax({
-    url: "{{ "/resource/data/cardata2.json" | prepend : site.baseurl }}",
+    url: "{{ "/resource/data/carData2.json" | prepend : site.baseurl }}",
     success: function(data) {
       dataProvider.fillJsonData(data);
     }
