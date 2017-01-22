@@ -1,0 +1,106 @@
+[{
+    "fieldName": "Country",
+    "width": "80",
+    "defaultValue": "Seoul",
+    "styles": { 
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Country"
+    }
+}, {
+    "name": "CustomerID",
+    "fieldName": "CustomerID",
+    "width": "150",
+    "editButtonVisibility": "always",
+    "lookupDisplay": true,        
+    "values": ["VINET", "HANAR", "SUPRD", "VICTE", "THREE", "SEVEN"],
+    "labels": ["<VINET>", "<HANAR>", "<SUPRD>", "<VICTE>", "<THREE>", "<SEVEN>"],
+    "editor": {
+        "type": "dropDown",
+        "domainOnly": true,
+        "dropDownCount": 4
+    },
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Customer ID"
+    }
+}, {
+    "fieldName": "CompanyName",
+    "width": "160",
+    "styles": { 
+        "textAlignment": "near"
+        },
+    "header": {
+        "text": "Company"
+        },
+    "footer": {
+        "groupExpression": "count",
+        "styles": {
+            "suffix": " compaines"
+        }
+    }
+},  {
+    "fieldName": "OrderID",
+    "width": "70",
+    "styles": { 
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Order ID"
+    }
+}, {
+    "fieldName": "OrderDate"
+}, {
+    "fieldName": "ProductName",
+    "width": "160",
+    "readOnly": true,
+    "styles": { 
+        "textAlignment": "near"
+        },
+    "editor": {
+        "type": "multiline"
+    },
+    "header": {
+        "text": "Product"
+    }
+}, {
+    "fieldName": "Shipped",
+    "editor": {
+        "booleanFormat": "0:1:0"
+    }
+}, {
+    "fieldName": "QuantityPerUnit",
+    "width": "140",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Unit"
+    }
+}, {
+    "fieldName": "Quantity",
+    "width": "60",
+    "styles": {
+        "textAlignment": "far",
+        "numberFormat": "#,##0"
+    },
+    "header": {
+        "text": "Quantity"
+    }
+}, {
+    "fieldName": "UnitPrice",
+    "width": "80",
+    "styles": {
+        "textAlignment": "far",
+        "numberFormat": "#,##0.00"
+    },
+    "header": {
+        "text": "Unit Price"
+    },
+    "editor": {
+        "type": "number"
+    }
+}]

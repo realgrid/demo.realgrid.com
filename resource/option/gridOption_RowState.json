@@ -1,0 +1,12 @@
+{
+   "header":{
+      "minHeight":30
+   },
+   "edit":{
+      "insertable":true,
+      "appendable":true
+   },
+   "select": {
+      "style": "rows"
+   }
+}

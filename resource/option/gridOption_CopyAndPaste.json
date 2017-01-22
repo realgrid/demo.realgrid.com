@@ -1,0 +1,23 @@
+{
+  "panel": {
+    "visible": true
+  },
+  "footer": {
+    "visible": false
+  },
+  "edit": {
+    "appendable": true
+  },
+  "select": {
+    "style": "block"
+  },
+  "copy": {
+     "datetimeFormat": "yyyy/MM/dd",
+     "booleanFormat":"N;Y"
+  },
+  "paste": {
+     "datetimeFormats": ["yy-MM-dd","yyyy-MM-dd"],
+     "booleanFormat":"Y,T;N,F:1",
+     "numberChars": [",","USD","$","₩","\\"]
+  }
+}

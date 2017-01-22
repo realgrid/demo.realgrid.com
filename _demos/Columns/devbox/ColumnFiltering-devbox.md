@@ -250,9 +250,60 @@ function closeAutoFilter() {
     <input type="button" id="applyAutoFilter" value="Apply" onclick="applyAutoFilter();" class="button gray medium3" />
     <input type="button" id="cancelAutoFilter" value="Cancel" onclick="closeAutoFilter();" class="button gray medium3" />
 </div>
-
+  
 ```
+
 <script>
+var autoFiltercolumn;
+var autoFilterItems = [];
+
+function showAutoFiltering(column, x, y) {
+  autoFiltercolumn = column;
+  var fieldName = gridView.columnByName(column).fieldName;
+  var values = dataProvider.getDistinctValues(fieldName, 100);
+
+  var span = $("#spanFilters");
+  span.empty();
+  values.forEach(function (v) {
+    var label = $("<label />").appendTo(span);
+    var existsFilter = autoFilterItems.indexOf(v) >= 0;
+    $("<input />", { type: "checkbox", name: "chkAutoFilterItem", value: v, checked: existsFilter}).appendTo(label);
+    label.append(v);
+    span.append("<br/>");
+  });
+
+  $("#divAutoFilter").css("left", x);
+  $("#divAutoFilter").css("top", y);
+
+  $("#divAutoFilter").show();
+}
+
+function applyAutoFilter() {
+  var filterExpr = "";
+  var filterItems = $('input[name="chkAutoFilterItem"]:checked');
+  autoFilterItems = [];
+  for (var i = 0; i < filterItems.length; i++) {
+    autoFilterItems.push(filterItems[i].value);
+    if (filterExpr != "")
+      filterExpr += " or ";
+    filterExpr += "(value = '" + filterItems[i].value + "')";
+  };
+  console.log(filterExpr);
+  var filters = {
+    name: "auto_result",
+    criteria: filterExpr,
+    active: true,
+    hidden:true
+  };
+
+  gridView.addColumnFilters(autoFiltercolumn, filters, true);
+  $("#divAutoFilter").hide();
+};
+
+function closeAutoFilter() {
+  $("#divAutoFilter").hide();
+}
+
 
 $("#btnSetFilters").click(function() { 
 var column = gridView.columnByName('CustomerID');
@@ -397,6 +448,11 @@ $("#btnSetFilterAction").click(function() {
     $("#txtFilter").text("'CustomerId' 컬럼에 필터가 설정됐습니다.");  
 });
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 
 
 var autoFiltercolumn;
@@ -422,32 +478,8 @@ function showAutoFiltering(column, x, y) {
 
   $("#divAutoFilter").show();
 }
+>>>>>>> origin/master
 
-function applyAutoFilter() {
-  var filterExpr = "";
-  var filterItems = $('input[name="chkAutoFilterItem"]:checked');
-  autoFilterItems = [];
-  for (var i = 0; i < filterItems.length; i++) {
-    autoFilterItems.push(filterItems[i].value);
-    if (filterExpr != "")
-      filterExpr += " or ";
-    filterExpr += "(value = '" + filterItems[i].value + "')";
-  };
-  console.log(filterExpr);
-  var filters = {
-    name: "auto_result",
-    criteria: filterExpr,
-    active: true,
-    hidden:true
-  };
-
-  gridView.addColumnFilters(autoFiltercolumn, filters, true);
-  $("#divAutoFilter").hide();
-};
-
-function closeAutoFilter() {
-  $("#divAutoFilter").hide();
-}
 
 </script>
 
