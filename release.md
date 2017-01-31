@@ -18,13 +18,71 @@ permalink: /release/
 
 #### 기능 개선
 
-1. [function() link]()
-  - 개선 내용
+1. [DisplayOptions](http://help.realgrid.com/api/types/DisplayOptions/)
+  - Tooltip이 나타나는 시간을 지연시킬수 있는 `DisplayOptions.hintDuration`속성이 추가되었습니다.
+  - `DisplayOptions.hintDuration`을 0 이상으로 지정하면 Tooltip이 지정된 시간만큼 지연되어 표시됩니다.
+  - 자세한 내용은 [툴팁]({{ '/CellComponent/Tooltip/' | prepend: site.baseurl }})페이지에서 데모를 참조하세요.
+
+1. [FilterSelectorOptions](http://help.realgrid.com/api/types/FilterSelectorOptions/)
+  - 그리드 ColumnFilter의 스타일을 사용자가 지정할수 있도록 `FilteringOptions.selector.useCssStyle`속성이 추가되었습니다.
+
+1. [DisplayOptions](http://help.realgrid.com/api/types/DisplayOptions/)
+  - 데이터의 행높이를 각 Row별로 변경할 수 있도록 DisplayOptions.eachRowResizable 속성이 추가되었습니다.
+
+1. [getEditValue()](http://help.realgrid.com/api/GridBase/getEditValue/)
+  - 그리드를 편집중인 경우 편집중인 값을 가져올 수 있도록 getEditValue api가 추가되었습니다.
+
+1. [Footer](http://help.realgrid.com/api/types/Footer/)
+  - 그리드 Column Footer를 여러 줄로 표시할 수 있도록 `Footer.count` 속성이 추가되었습니다.
+  - Column Footer를 여러줄로 표시하는 경우 Column.footer.text와 Column.footer.expression을 배열로 지정할수 있습니다.
+
+1. [MultiCheckCellEditor](http://help.realgrid.com/api/types/MultiCheckCellEditor/)
+  - 여러 개의 항목을 선택할 수 있는 MultiCheckCellEditor가 추가되었습니다.
+
+1. [ButtonVisibility](http://help.realgrid.com/api/types/ButtonVisibility/)
+  - 행이 선택되었을때만 버튼이 보여지는 `ButtonVisibility.ROWFOCUSED` 속성이 추가되었습니다.
+  - 자세한 내용은 [셀버튼]({{ '/CellComponent/CellButton/' | prepend: site.baseurl }})페이지에서 데모를 참조하세요.
+
+1. [ShapeCellRenderer](http://help.realgrid.com/api/types/ShapeCellRenderer/)
+  - ShapeCellRenderer에 원을 표시할 수 있도록 ellipse 속성이 추가되었습니다. 자세한 내용은 [도형 렌더러]({{ '/Renderer/ShapeCellRenderer/' | prepend: site.baseurl }})페이지에서 데모를 참조하세요.
+
 
 #### 오류 수정
 
-1. `오류 현상`
-  - 오류 수정 내용
+1. `RowGrouping 상태에서 ExcelExport`
+  - FooterOptions.footerCellMerge:true일때 Excel에서는 merge가 되지않는 현상이 수정되었습니다.
+  - RowGroup을 접은상태에서 Export하면 footer의 내용이 일부 나오지 않는 현상이 수정되었습니다.
+  - RowGroup.expandedAdornments:"summary"인 경우 Excel Export시 Style이 적용되지 않는 현상이 수정되었습니다.
+
+1. `Footer가 일부만 표시되는 현상`
+  - ColumnGroup.orientation이 vertical인 컬럼이 중첩된 경우 footer가 일부만 표시되는 현상이 수정되었습니다.
+
+1. `Excel Export 시 공백이 표시되지 않는 현상`
+  - 공백이 있는 Data를 ExcelExport할때 공백이 사라지는 현상을 수정하였습니다.
+
+1. `RowGroup의 childModel을 찾을수 없는 현상`
+  - RowGrouping상태에서 그룹의 첫번재 행이 편집중이면 해당 그룹의 childModel을 찾을 수 없는 현상이 수정되었습니다.
+
+1. `getGroupSummary() 함수가 정상적으로 실행되지 않는 현상`
+  - MergedRowGrouping상태에서 expandedAdornments가 "footer"인경우 getGroupSummary api의 결과값이 정상적으로 나오도록 수정되었습니다.
+
+1. `그리드의 button이 사라지는 현상`
+  - 그리드를 편집중일때 스크롤을 하면 button들이 사라지는 현상이 수정되었습니다.
+
+1. `FireFox에서 일부 문자가 사라지는 현상`
+  - FireFox 브라우저에서 영문을 입력시 첫 글자가 일부 사라지는 현상을 수정하였습니다.
+
+1. `RealGrid에서 Export한 파일을 Import할때 오류`
+  - DateTime Field가 있는 그리드를 Export하고 Export된 파일을 POI Library를 이용하여 Import할때 발생하는 오류를 수정하였습니다.
+
+1. `EditOptioins.Editalbe이 false일때 붙여넣기 수정`
+  - PasteOptions.checkReadOnly:true, EditOptions.Editable:false인 경우에도 붙여넣기가 되는 현상이 수정되었습니다.
+
+1. `Fixed Column이 남아있는 현상`
+  - dataProvider.clearRows()와  grid.setFixedOptions()를 순차적으로 호출했을때 FixedColumn이 화면에 남아있는 현상이 수정되었습니다.
+
+1. `Grid.getSelection() 오류 수정`
+  - 그리드에서 select하는 방향이 따라서 getSelection() api의 결과값이 달라지는 현상이 수정되었습니다.
 
 
 ## 1.1.20 (2016년 10월)
