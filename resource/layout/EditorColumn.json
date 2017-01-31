@@ -1,0 +1,192 @@
+[{
+	"name": "OrderID",
+	"fieldName": "OrderID",
+	"editor": {
+        "maxLength": 5
+	},
+	"width": "90",
+	"styles": {
+	    "textAlignment": "center"
+	},
+	"textInputCase": "upper",
+	"header": {
+	    "text": "Text editor",
+	    "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+	}
+}, {
+	"name": "CompanyName",
+	"fieldName": "CompanyName",
+	"width": "200",
+	"editor": {
+	    "type": "multiline",
+	    "textCase": "upper"
+	},
+	"styles": {
+	    "textAlignment": "near",
+	    "textWrap": "normal" 
+	},
+	"header": {
+	    "text": "Multiline Edit",
+	    "styles": {
+	        "background": "linear,#22ffd500,#ffffd500,90"
+	    }
+	}	
+}, {
+    "name": "Quantity",
+    "fieldName": "Quantity",
+    "width": "100",
+    "sortable": false,
+    "editor": {
+        "type": "number",
+        "textAlignment": "far",
+        "editFormat": "#,##0.##",
+        "multipleChar": "+"
+    },
+    "styles": {
+        "textAlignment": "far",
+        "numberFormat": "#,##0.##"
+    },
+    "header": {
+        "text": "Number Edit",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    }
+}, {
+	"name": "CustomerID",
+	"fieldName": "CustomerID",
+	"width": "150",
+	"sortable": false,
+	"lookupDisplay": true,
+	"values": ["VINET", "HANAR", "SUPRD", "VICTE", "THREE", "SEVEN"],
+	"labels": ["<VINET>", "<HANAR>", "<SUPRD>", "<VICTE>", "<THREE>", "<SEVEN>"],
+	"editor": {
+	    "type": "dropDown",
+	    "dropDownCount": 4
+	},
+	"styles": {
+	    "textAlignment": "center"
+	},
+	"header": {
+	    "text": "DropDown Edit",
+	    "styles": {
+	        "background": "linear,#22ffd500,#ffffd500,90"
+	    }
+	}
+}, {
+	"name": "CustomerID2",
+	"fieldName": "CustomerID",
+	"width": "150",
+	"sortable": false,
+	"editor": {
+        "type": "dropDown",
+        "dropDownCount": 4,
+        "domainOnly": true,
+        "textReadOnly": true,
+	    "values": ["VINET", "HANAR", "SUPRD", "VICTE", "THREE", "SEVEN"],
+	    "labels": ["<VINET>", "<HANAR>", "<SUPRD>", "<VICTE>", "<THREE>", "<SEVEN>"]
+	},
+	"styles": {
+	    "textAlignment": "center"
+	},
+	"header": {
+	    "text": "Domain Only",
+	    "styles": {
+	        "background": "linear,#22ffd500,#ffffd500,90"
+	    }
+	}
+}, {
+    "name": "CustomerID3",
+    "fieldName": "CustomerID",
+    "width": "150",
+    "sortable": false,
+    "editor": {
+        "type": "search",
+        "searchLength": 1,  
+        "searchDelay": 1000,
+        "useCtrlEnterKey": true,
+        "useEnterKey": true
+    },
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Search Editor ",
+        "styles": {
+	        "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    }
+}, {
+    "name": "CountryKor",
+    "fieldName": "Country",
+    "width": "150",
+    "sortable": false,
+    "lookupDisplay": true,
+    "values": ["Austria", "Belgium", "Brazil", "Finland", "France", "Germany", "Ireland", "Italy", "Mexico", "Spain", "Sweden", "Switzerland", "UK", "USA", "Venezuela"],
+    "labels": ["오스트리아", "벨기에", "브라질", "핀란드", "프랑스", "독일", "아일랜드", "이탈리아", "멕시코", "스페인", "스웨덴", "스위스", "영국", "미국", "베네수엘라"],
+    "editor": {
+        "type": "dropDown",
+        "dropDownCount": 5,
+        "partialMatch": true
+    },
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "partialMatch",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    }
+}, {
+	"name": "OrderDate",
+	"fieldName": "OrderDate",
+	"width": "180",
+	"sortable": false,
+	"editor": {
+	    "type": "date",
+        "datetimeFormat": "yyyy.MM.dd"
+	},
+	"styles": {
+	    "textAlignment": "center",
+        "datetimeFormat": "yyyy.MM.dd"
+	},
+	"header": {
+	    "text": "Date Edit",
+	    "styles": {
+	        "background": "linear,#22ffd500,#ffffd500,90"
+	    }
+	}
+}, {
+	"name": "Country",
+	"fieldName": "Country",
+	"width": "100",
+	"styles": {
+	    "textAlignment": "center"
+	},
+	"header": {
+	    "text": "Country"
+	}
+},{
+	"name": "Phone",
+	"fieldName": "Phone",
+	"width": "100",
+	"styles": {
+	    "textAlignment": "near"
+	},
+	"header": {
+	    "text": "Phone"
+	}
+}, {
+	"name": "ProductName",
+	"fieldName": "ProductName",
+	"width": "200",
+	"styles": {
+	    "textAlignment": "near"
+	},
+	"header": {
+	    "text": "Product Name"
+	}
+}]

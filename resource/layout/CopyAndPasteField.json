@@ -1,0 +1,30 @@
+[{
+    "fieldName": "OrderID"
+}, {
+    "fieldName": "CustomerID"
+}, {
+    "fieldName": "EmployeeID"
+}, {
+    "fieldName": "OrderDate",
+    "dataType": "datetime"
+}, {
+    "fieldName": "Shipped",
+    "dataType": "boolean"
+}, {
+    "fieldName": "CompanyName"
+}, {
+    "fieldName": "Country",
+    "defaultValue": "Korea"
+}, {
+    "fieldName": "Phone"
+}, {
+    "fieldName": "ProductName"
+}, {
+    "fieldName": "QuantityPerUnit"
+}, {
+    "fieldName": "Quantity",
+    "dataType": "number"
+}, {
+    "fieldName": "UnitPrice",
+    "dataType": "number"
+}]

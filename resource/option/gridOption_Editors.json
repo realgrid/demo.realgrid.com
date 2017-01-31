@@ -1,0 +1,13 @@
+{
+   "header":{
+      "minHeight":30
+   },
+   "edit":{
+     "insertable": true,
+     "appendable": true,
+     "updatable": true,
+     "checkDiff": true,
+     "checkCellDiff": true,
+     "enterToTab": false
+   }
+}
