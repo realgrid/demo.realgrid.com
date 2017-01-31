@@ -216,6 +216,10 @@ gridView.onEditSearch = function (grid, index, text) {
 ```
 
 <script>
+  $('#btnTextCase').click(function() {
+    var textCase = $(':radio[name="rbTextCase"]:checked').val()
+    gridView.setColumnProperty("OrderID", "editor", {"textCase": textCase});
+  });
 
   $('#btnSetRowState').click(function() {
     var curr = gridView.getCurrent();
