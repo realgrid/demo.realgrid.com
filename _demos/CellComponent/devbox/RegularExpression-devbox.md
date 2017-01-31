@@ -36,7 +36,7 @@ gridView.setColumnProperty("ip_address","displayReplace", "$1$2***$4")
 <a class="btn primary small round lowercase" id="card_number">신용카드 컬럼 마스킹 처리</a>
 
 ```js
-gridView.setColumnProperty("card_number","displayRegExp", /^(\d{4})(\d{4})(\d{4})(\d{4})$/)
+gridView.setColumnProperty("card_number","displayRegExp", /^([0-9]{4})([0-9]{4})([0-9]{4})([0-9]{4})$/)
 gridView.setColumnProperty("card_number","displayReplace", "$1-$2-****-$4")
 ```
 
@@ -52,7 +52,7 @@ var columns = [{
         "font": "arial",
         "background": "#ffffff99"
     },
-    "displayRegExp": /^([0-9]+)\(([0-9]+)\)(\d{3})(\d{4})$/, 
+    "displayRegExp": /^([0-9]+)\(([0-9]+)\)([0-9]{3})([0-9]{4})$/, 
     "displayReplace": "$1-$2-$3-$4"
 }];
 
@@ -81,7 +81,7 @@ $('#ip_address').click(function() {
 });
 
 $('#card_number').click(function() {
-    gridView.setColumnProperty("card_number","displayRegExp", /^(\d{4})(\d{4})(\d{4})(\d{4})$/)
+    gridView.setColumnProperty("card_number","displayRegExp", /^([0-9]{4})([0-9]{4})([0-9]{4})([0-9]{4})$/)
     gridView.setColumnProperty("card_number","displayReplace", "$1-$2-****-$4")
     gridView.setColumnProperty("card_number", "styles", {background:"#ffffff99"})
 });
@@ -96,7 +96,7 @@ $('#regularColumn').click(function() {
 	        "font": "arial",
 	        "background": "#ffffff99"
 	    },
-	    "displayRegExp": /^([0-9]+)\(([0-9]+)\)(\d{3})(\d{4})$/, 
+	    "displayRegExp": /^([0-9]+)\(([0-9]+)\)([0-9]{3})([0-9]{4})$/, 
 	    "displayReplace": "$1-$2-$3-$4"
 	}];
 
