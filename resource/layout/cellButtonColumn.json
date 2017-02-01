@@ -8,14 +8,14 @@
         "height": 13,
         "images": [{
             "name": "팝업버튼",
-            "up": "/demo/resource/image/btnImages/popup_normal.png",
-            "hover": "/demo/resource/image/btnImages/popup_hover.png",
-            "down": "/demo/resource/image/btnImages/popup_click.png"
+            "up": "/resource/image/btnImages/popup_normal.png",
+            "hover": "/resource/image/btnImages/popup_hover.png",
+            "down": "/resource/image/btnImages/popup_click.png"
         }, {
             "name": "조회버튼",
-            "up": "/demo/resource/image/btnImages/search_normal.png",
-            "hover": "/demo/resource/image/btnImages/search_hover.png",
-            "down": "/demo/resource/image/btnImages/search_click.png"           
+            "up": "/resource/image/btnImages/search_normal.png",
+            "hover": "/resource/image/btnImages/search_hover.png",
+            "down": "/resource/image/btnImages/search_click.png"           
         }]
     },
     "styles": {

@@ -57,7 +57,7 @@ var onDoneDataSet = function() {
     if (oldKey != keyValue) {
       var params = { country: keyValue };
 
-      $.getJSON("/demo/resource/data/AllCustomerByCountry.json", function (data) {
+      $.getJSON("/resource/data/AllCustomerByCountry.json", function (data) {
         lookupData = [];
         for(var j = 0; j < data.length; j++){
           if (data[j].Country == params.country){
