@@ -17,7 +17,7 @@ title: RealGrid DEMO
 subtitle: RealGrid 데모보기
 email: support@realgrid.com
 description: RealGrid 데모사이트 입니다.
-baseurl: "/demo" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "demo.realgrid.com" # the base hostname & protocol for your site
 twitter_username: realgrid
 github_username:  realgrid
@@ -77,7 +77,7 @@ nav_links:
     url: http://help.realgrid.com/apis
     partial: illustration-docs
   - title: Forums
-    url: https://forums.meteor.com/
+    url: http://forum.realgrid.com
     partial: illustration-forums
     target: _new
 
