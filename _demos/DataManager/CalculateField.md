@@ -55,7 +55,7 @@ var onDoneDataSet = function() {
 
 dataProvider.setFields(fields);
 
-$.getJSON("/demo/resource/data/calculateFieldData.json", function (data) {
+$.getJSON("/resource/data/calculateFieldData.json", function (data) {
         dataProvider.setRows(data);
     })
     .done(function () {

@@ -77,7 +77,10 @@
         "textAlignment": "near"
     },
     "header": {
-        "text": "Company Name"
+        "text": "Company Name",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
     }
 }, {
     "name": "Country",
