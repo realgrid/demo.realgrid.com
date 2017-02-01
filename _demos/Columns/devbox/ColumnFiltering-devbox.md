@@ -448,38 +448,6 @@ $("#btnSetFilterAction").click(function() {
     $("#txtFilter").text("'CustomerId' 컬럼에 필터가 설정됐습니다.");  
 });
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
-
-
-var autoFiltercolumn;
-var autoFilterItems = [];
-
-function showAutoFiltering(column, x, y) {
-  autoFiltercolumn = column;
-  var fieldName = gridView.columnByName(column).fieldName;
-  var values = dataProvider.getDistinctValues(fieldName, 100);
-
-  var span = $("#spanFilters");
-  span.empty();
-  values.forEach(function (v) {
-    var label = $("<label />").appendTo(span);
-    var existsFilter = autoFilterItems.indexOf(v) >= 0;
-    $("<input />", { type: "checkbox", name: "chkAutoFilterItem", value: v, checked: existsFilter}).appendTo(label);
-    label.append(v);
-    span.append("<br/>");
-  });
-
-  $("#divAutoFilter").css("left", x);
-  $("#divAutoFilter").css("top", y);
-
-  $("#divAutoFilter").show();
-}
->>>>>>> origin/master
-
 
 </script>
 

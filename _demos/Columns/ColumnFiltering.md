@@ -24,14 +24,11 @@ gridView.onFilterActionClicked = function (grid, column, action, x, y) {
   if (action == "autoFilter") {
     var offset = $("#realgrid").offset();
 
-<<<<<<< HEAD
+
     showAutoFiltering(column, x + offset.left - 260, y + offset.top);
   }
 };    
-=======
-	    showAutoFiltering(column, x + offset.left, y + offset.top);
-	  }
-	};
+
 
 	var autoFiltercolumn;
 	var autoFilterItems = [];
@@ -98,10 +95,7 @@ gridView.onFilterActionClicked = function (grid, column, action, x, y) {
 	        maxHeight: 200
 	    }
 	});
-<<<<<<< Updated upstream
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
+
   }
 </script>
 
@@ -127,16 +121,7 @@ gridView.onFilterActionClicked = function (grid, column, action, x, y) {
 <div id="divAutoFilter" style="display:none; position:absolute; height:260px; width:146px; background-color:#eeeeee; border:1px solid black;">
     <span id="spanFilters" style="overflow-y:scroll; display:block; width:100%; height:230px">
     </span>
-<<<<<<< Updated upstream
     <a class="btn secondary small lowercase" id="applyAutoFilter">Apply</a>
     <a class="btn secondary small lowercase" id="cancelAutoFilter">Cancel</a>
-=======
-<<<<<<< HEAD
-    <a type="button" id="applyAutoFilter" onclick="applyAutoFilter();"  />Apply
-    <a type="button" id="cancelAutoFilter"  onclick="closeAutoFilter();"  />Cancel
-=======
-    <a class="btn secondary small lowercase" id="applyAutoFilter">Apply</a>
-    <a class="btn secondary small lowercase" id="cancelAutoFilter">Cancel</a>
->>>>>>> origin/master
->>>>>>> Stashed changes
+
 </div>
