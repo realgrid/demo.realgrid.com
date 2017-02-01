@@ -71,6 +71,11 @@ gridView.setSelectOptions({
 ```
 
 <script>
+  $('#btnSetBlock').click(function() {
+    gridView.setSelectOptions({
+      style: 'block'
+    });
+  });
 
   $('#btnSetNone').click(function() {
     gridView.setSelectOptions({
