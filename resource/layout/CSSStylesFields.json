@@ -1,0 +1,30 @@
+[{
+    "fieldName": "OrderID",
+    "dataType": "text"
+}, {
+    "fieldName": "CustomerID"
+}, {
+    "fieldName": "EmployeeID"
+}, {
+    "fieldName": "OrderDate",
+    "dataType": "datetime",
+    "datetimeFormat": "iso"
+}, {
+    "fieldName": "CompanyName"
+}, {
+    "fieldName": "Country"
+}, {
+    "fieldName": "CountryKor"
+}, {
+    "fieldName": "Phone"
+}, {
+    "fieldName": "ProductName"
+}, {
+    "fieldName": "QuantityPerUnit"
+}, {
+    "fieldName": "Quantity",
+    "dataType": "number"
+}, {
+    "fieldName": "UnitPrice",
+    "dataType": "number"
+}]

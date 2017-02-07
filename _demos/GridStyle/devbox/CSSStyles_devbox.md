@@ -1,19 +1,39 @@
----
-layout: page
-title: CSS Styles
-order: 6
-published: true
-devbox: true
-devboxfile: CSSStyles_devbox.md
-categories:
-  - 그리드 스타일
-tags: ['style', '스타일', 'css', '씨에스에스']
----
+#### CSS Styles 적용
 
-RealGridJS 1.1.17.2245 버전부터 Popup, DropDown, Date 에디터에서 CSS 스타일을 적용할 수 있습니다.
-ContextMenu는 PopupMenu와 CSS 스타일을 공유 합니다.
-그리드에서 마우스 오른쪽 버튼을 클릭하여 ContextMenu 스타일을 확인하세요.
+필터를 제외한 각 에디터에 CSS 스타일을 사용하기 위해서는 
 
+* editorOptions.useCssStyleDropDownList
+* editorOptions.useCssStyleDatePicker
+* editorOptions.useCssStylePopupMenu
+* editorOptions.useCssStyleMultiCheck 
+
+속성값에 true를 설정해야 합니다.  
+에디터 모두 CSS Style을 적용 한다면 useCssStyle 속성값만 true로 설정해도 됩니다.
+
+필터의 CSS 스타일 적용여부는 FilteringOptions.selector.useCssStyle 에서 설정 합니다.  
+필터의 경우 editorOptions.useCssStyle 의 영향을 받지 않습니다. 
+
+`※ CSS 스타일은 각 객체가 생성된 이후에는 변경할 수 없습니다.(동적으로 변경할 수 없습니다.)`
+
+```js
+//각 Editor에 CSS 스타일 적용 여부 설정
+gridView.setEditorOptions({
+    //useCssStyle: true,  //모든 에디터에 CSS를 적용할 경우 사용  
+    useCssStyleDropDownList: true, //dropDown
+    useCssStyleDatePicker: true,   //달력
+    useCssStylePopupMenu: true,    //popupMenu
+    useCssStyleMultiCheck: true    //multiCheck
+});
+ 
+// 필터에 CSS 스타일 적용 여부 설정
+gridView.setFilteringOptions({selector: {useCssStyle: true}});
+```
+
+#### CSS Styles
+
+아래는 CSS Styles 데모에서 사용된 CSS 속성들입니다.  
+
+```js
 <style type="text/css">
     /*                  */
     /*      Filter      */
@@ -63,6 +83,7 @@ ContextMenu는 PopupMenu와 CSS 스타일을 공유 합니다.
     }
     .rg-filter-item-label {
     }
+
     /*                  */
     /*    MultiCheck    */
     /*                  */
@@ -111,6 +132,7 @@ ContextMenu는 PopupMenu와 CSS 스타일을 공유 합니다.
     }
     .rg-filter-item-label {
     }
+
     /*                  */
     /*    MultiCheck    */
     /*                  */
@@ -492,158 +514,4 @@ ContextMenu는 PopupMenu와 CSS 스타일을 공유 합니다.
         background: #88ff88;
     }
 </style>
-<script>
-  var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
-    var datas = [{
-        "OrderID": "10248", "CustomerID": "VINET", "EmployeeID": "5", "OrderDate": "1996-07-03T15:00:00.000Z", "CompanyName": "Vins et alcools Chevalier\r\n", "Country": "FR,KR,JP", "Phone": "26.47.15.10", "ProductName": "Queso Cabrales", "QuantityPerUnit": "1 kg pkg.", "Quantity": 1200, "UnitPrice": 14
-    }, {
-        "OrderID": "10248", "CustomerID": "VINET", "EmployeeID": "5", "OrderDate": "1996-07-03T15:00:00.000Z", "CompanyName": "Vins et alcools Chevalier\r\n", "Country": "KR,FR", "Phone": "26.47.15.10", "ProductName": "Singaporean Hokkien Fried Mee", "QuantityPerUnit": "32 - 1 kg pkgs.", "Quantity": 10, "UnitPrice": 9.8
-    }, {
-        "OrderID": "10248", "CustomerID": "VINET", "EmployeeID": "5", "OrderDate": "1996-07-03T15:00:00.000Z", "CompanyName": "Vins et alcools Chevalier\r\n", "Country": "DE,FR", "Phone": "26.47.15.10", "ProductName": "Mozzarella di Giovanni", "QuantityPerUnit": "24 - 200 g pkgs.", "Quantity": 5, "UnitPrice": 34.8
-    }, {
-        "OrderID": "10249", "CustomerID": "TOMSP", "EmployeeID": "6", "OrderDate": "1996-07-04T15:00:00.000Z", "CompanyName": "Toms Spezialitäten", "Country": "DE,US,UK", "Phone": "0251-031259", "ProductName": "Tofu", "QuantityPerUnit": "40 - 100 g pkgs.", "Quantity": 9, "UnitPrice": 18.6
-    }, {
-        "OrderID": "10249", "CustomerID": "TOMSP", "EmployeeID": "6", "OrderDate": "1996-07-04T15:00:00.000Z", "CompanyName": "Toms Spezialitäten", "Country": "DE", "Phone": "0251-031259", "ProductName": "Manjimup Dried Apples", "QuantityPerUnit": "50 - 300 g pkgs.", "Quantity": 1004, "UnitPrice": 42.4
-    }, {
-        "OrderID": "10250", "CustomerID": "HANAR", "EmployeeID": "4", "OrderDate": "1996-07-07T15:00:00.000Z", "CompanyName": "Hanari Carnes", "Country": "KR,BE,CH,BR,FR,JP,CN", "Phone": "(21) 555-0091", "ProductName": "Jack's New England Clam Chowder", "QuantityPerUnit": "12 - 12 oz cans", "Quantity": 10, "UnitPrice": 7.7
-    }, {
-        "OrderID": "10250", "CustomerID": "HANAR", "EmployeeID": "4", "OrderDate": "1996-07-07T15:00:00.000Z", "CompanyName": "Hanari Carnes", "Country": "BR", "Phone": "(21) 555-0091", "ProductName": "Manjimup Dried Apples", "QuantityPerUnit": "50 - 300 g pkgs.", "Quantity": 35, "UnitPrice": 42.4
-    }, {
-        "OrderID": "10250", "CustomerID": "HANAR", "EmployeeID": "4", "OrderDate": "1996-07-07T15:00:00.000Z", "CompanyName": "Hanari Carnes", "Country": "BR", "Phone": "(21) 555-0091", "ProductName": "Louisiana Fiery Hot Pepper Sauce", "QuantityPerUnit": "32 - 8 oz bottles", "Quantity": 15, "UnitPrice": 16.8
-    }, {
-        "OrderID": "10251", "CustomerID": "VICTE", "EmployeeID": "3", "OrderDate": "1996-07-07T15:00:00.000Z", "CompanyName": "Victuailles en stock", "Country": "FR", "Phone": "78.32.54.86", "ProductName": "Gustaf's Knäckebröd", "QuantityPerUnit": "24 - 500 g pkgs.", "Quantity": 6, "UnitPrice": 16.8
-    }, {
-        "OrderID": "10251", "CustomerID": "VICTE", "EmployeeID": "3", "OrderDate": "1996-07-07T15:00:00.000Z", "CompanyName": "Victuailles en stock", "Country": "FR", "Phone": "78.32.54.86", "ProductName": "Ravioli Angelo", "QuantityPerUnit": "24 - 250 g pkgs.", "Quantity": 15, "UnitPrice": 15.6
-    }, {
-        "OrderID": "10251", "CustomerID": "VICTE", "EmployeeID": "3", "OrderDate": "1996-07-07T15:00:00.000Z", "CompanyName": "Victuailles en stock", "Country": "FR", "Phone": "78.32.54.86", "ProductName": "Louisiana Fiery Hot Pepper Sauce", "QuantityPerUnit": "32 - 8 oz bottles", "Quantity": 20, "UnitPrice": 16.8
-    }, {
-        "OrderID": "10252", "CustomerID": "SUPRD", "EmployeeID": "4", "OrderDate": "1996-07-08T15:00:00.000Z", "CompanyName": "Suprêmes délices", "Country": "BE", "Phone": "(071) 23 67 22 20", "ProductName": "Sir Rodney's Marmalade", "QuantityPerUnit": "30 gift boxes", "Quantity": 40, "UnitPrice": 64.8
-    }, {
-        "OrderID": "10252", "CustomerID": "SUPRD", "EmployeeID": "4", "OrderDate": "1996-07-08T15:00:00.000Z", "CompanyName": "Suprêmes délices", "Country": "BE,CN", "Phone": "(071) 23 67 22 20", "ProductName": "Geitost", "QuantityPerUnit": "500 g", "Quantity": 25, "UnitPrice": 2
-    }, {
-        "OrderID": "10252", "CustomerID": "SUPRD", "EmployeeID": "4", "OrderDate": "1996-07-08T15:00:00.000Z", "CompanyName": "Suprêmes délices", "Country": "BE", "Phone": "(071) 23 67 22 20", "ProductName": "Camembert Pierrot", "QuantityPerUnit": "15 - 300 g rounds", "Quantity": 40, "UnitPrice": 27.2
-    }, {
-        "OrderID": "10253", "CustomerID": "HANAR", "EmployeeID": "3", "OrderDate": "1996-07-09T15:00:00.000Z", "CompanyName": "Hanari Carnes", "Country": "SG,AE,BR", "Phone": "(21) 555-0091", "ProductName": "Gorgonzola Telino", "QuantityPerUnit": "12 - 100 g pkgs", "Quantity": 20, "UnitPrice": 10
-    }, {
-        "OrderID": "10253", "CustomerID": "HANAR", "EmployeeID": "3", "OrderDate": "1996-07-09T15:00:00.000Z", "CompanyName": "Hanari Carnes", "Country": "BR", "Phone": "(21) 555-0091", "ProductName": "Chartreuse verte", "QuantityPerUnit": "750 cc per bottle", "Quantity": 42, "UnitPrice": 14.4
-    }, {
-        "OrderID": "10253", "CustomerID": "HANAR", "EmployeeID": "3", "OrderDate": "1996-07-09T15:00:00.000Z", "CompanyName": "Hanari Carnes", "Country": "SG,BR", "Phone": "(21) 555-0091", "ProductName": "Maxilaku", "QuantityPerUnit": "24 - 50 g pkgs.", "Quantity": 40, "UnitPrice": 16
-    }, {
-        "OrderID": "10254", "CustomerID": "CHOPS", "EmployeeID": "5", "OrderDate": "1996-07-10T15:00:00.000Z", "CompanyName": "Chop-suey Chinese", "Country": "CH", "Phone": "0452-076545", "ProductName": "Guaraná Fantástica", "QuantityPerUnit": "12 - 355 ml cans", "Quantity": 15, "UnitPrice": 3.6
-    }, {
-        "OrderID": "10254", "CustomerID": "CHOPS", "EmployeeID": "5", "OrderDate": "1996-07-10T15:00:00.000Z", "CompanyName": "Chop-suey Chinese", "Country": "AE,FR,CH", "Phone": "0452-076545", "ProductName": "Pâté chinois", "QuantityPerUnit": "24 boxes x 2 pies", "Quantity": 21, "UnitPrice": 19.2
-    }, {
-        "OrderID": "10254", "CustomerID": "CHOPS", "EmployeeID": "5", "OrderDate": "1996-07-10T15:00:00.000Z", "CompanyName": "Chop-suey Chinese", "Country": "CH", "Phone": "0452-076545", "ProductName": "Longlife Tofu", "QuantityPerUnit": "5 kg pkg.", "Quantity": 21, "UnitPrice": 8
-    }]
- 
-    dataProvider.setRows(datas);
-  }
-
-  //popup
-  var onDoneDataSet = function() {
-    var menu = [{
-        label: "menu1 입니다.",
-        enabled: true,
-        children: [{
-            label: "submenu1 입니다."
-        }, {
-            label: "submenu2 입니다."
-        }]
-    }, {
-        label: "menu2 입니다",
-        enabled: true
-    }, {
-        label: "-"
-    }, {
-        label: "menu3 입니다",
-        type: "check",
-        checked: true,
-        tag: "check_menu"
-    }, {
-        label: "group menu",
-        children: [{
-            label: "group1 - 첫번째",
-            type: "radio",
-            group: "group1",
-            checked: true
-        }, {
-            label: "group1 - 두번째",
-            type: "radio",
-            group: "group1"
-        }, {
-            label: "group1 - 세번째",
-            type: "radio",
-            group: "group1"
-        }]
-    }];
-    gridView.addPopupMenu("menu1", menu);
-
-    gridView.onMenuItemClicked = function (grid, data, index) {
-        var s = data.label + (data.checked ? " checked" : "");
-        if (data.tag)
-            s += "n" + "tag: " + data.tag;
-        alert(s);
-    };
-
-    // context
-    gridView.setContextMenu([{
-        label: "Menu1"
-    }, {
-        label: "Menu2"
-    }, {
-        label: "-" // menu separator를 삽입합니다.
-    }, {
-        label: "ExcelExport"
-    }]);
- 
-    gridView.onContextMenuItemClicked = function (grid, label, index) {
-        alert("Context menu가 클릭됐습니다: " + label.label + "\n" + JSON.stringify(index));
-        if (label.label == "ExcelExport") {
-            grid.exportGrid({
-                type: "excel",
-                target: "local",
-                showConfirm: false,
-                linear: true    // Expand all columns and Export
-            });
-        };
-    };
-
-    gridView.setEditOptions({
-        insertable: true,
-        appendable: true,
-        updatable: true,
-        checkDiff: true,
-        checkCellDiff: true,
-        enterToTab: false
-    });
- 
-    gridView.setEditorOptions({
-        //useCssStyle: true,      //모든 에디터에 CSS를 적용할 경우 사용  
-        useCssStyleDropDownList: true,
-        useCssStyleDatePicker: true,
-        useCssStylePopupMenu: true,
-        useCssStyleMultiCheck: true
-         
-    });
- 
-    gridView.setFilteringOptions({selector: {useCssStyle: true}});  
-  }
-</script>
-
-{% include realgrid.html
-
-  gridVar="gridView"
-  dpVar="dataProvider"
-  gridId="realgrid"
-
-  fieldSet="CSSStylesFields"
-  columnSet="CSSStylesColumns"
-  dpOptionSet="dataProviderOption1"  
-  styleSet="style1"
-
-  dataSet="CustomOrders.json"
-  successDataSet="onGridSuccessDataSet"
-  doneDataSet="onDoneDataSet"
-
-  gridWidth="100%"
-  gridHeight="300px" %}
+```

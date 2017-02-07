@@ -1,0 +1,176 @@
+[{
+    "name": "OrderID",
+    "fieldName": "OrderID",
+    "width": "90",
+    "styles": {
+        "textAlignment": "center",
+        "numberFormat": "#,##0"
+    },
+    "textInputCase": "upper",
+    "header": {
+        "text": "Text editor"
+    }
+}, {
+    "name": "CustomerID",
+    "fieldName": "CustomerID",
+    "width": "130",
+    "button": "popup",
+    "popupMenu": "menu1",       
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Popup Menu",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    }
+}, {
+    "name": "CustomerID2",
+    "fieldName": "CustomerID",
+    "width": "130",
+    "sortable": false,
+    "editor": {
+        "type": "dropDown",
+        "dropDownCount": 4,
+        "domainOnly": true,
+        "values": ["VINET", "HANAR", "SUPRD", "VICTE", "THREE", "SEVEN"],
+        "labels": ["<VINET>", "<HANAR>", "<SUPRD>", "<VICTE>", "<THREE>", "<SEVEN>"]
+    },
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Drop Down",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    }
+}, {
+    "name": "CustomerID3",
+    "fieldName": "CustomerID",
+    "width": "130",
+    "filters": [{
+        "name": "VINET",
+        "criteria": "value = 'VINET'"
+    }, {
+        "name": "VICTE",
+        "criteria": "value = 'VICTE'"
+    }, {
+        "name": "HANAR",
+        "criteria": "value = 'HANAR'"
+    }, {
+        "name": "VICTE or HANAR",
+        "criteria": "(value = 'VICTE') or (value = 'HANAR')"
+    }, {
+        "name": "HANAR: value > 'HANAR'",
+        "criteria": "value > 'HANAR'"
+    }, {
+        "name": "SUPRD",
+        "criteria": "value = 'SUPRD'"
+    }, {
+        "name": "SUPRD: value <> 'SUPRD'",
+        "criteria": "value <> 'SUPRD'"
+    }],
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Filter",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    }
+}, {
+    "name": "Country1",
+    "fieldName": "Country",
+    "width": "270",
+    "valueSeparator": ",",
+    "lookupDisplay": true,
+    "editor": {
+        "type": "multicheck",
+        "acceptText": "확인",
+        "cancelText": "취소",
+        "showButtons": true
+    },
+    "values": ["KR", "US", "JP", "FR", "CH", "BR", "BE", "DE", "UK", "CN", "AE", "SG"],
+    "labels": ["대한민국", "미국", "일본", "프랑스", "스위스", "브라질", "벨기에", "독일", "영국", "중국", "아랍에미레이트", "싱가폴"],
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Multi Check",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    }
+}, {
+    "name": "OrderDate",
+    "fieldName": "OrderDate",
+    "width": "180",
+    "sortable": false,
+    "editor": {
+        "type": "date",
+        "datetimeFormat": "yyyy.MM.dd"
+    },
+    "styles": {
+        "textAlignment": "center",
+        "datetimeFormat": "yyyy.MM.dd"
+    },
+    "header": {
+        "text": "Date Edit",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    }
+}, {
+    "name": "Quantity",
+    "fieldName": "Quantity",
+    "width": "100",
+    "sortable": false,
+    "editor": {
+        "type": "number"
+    },
+    "styles": {
+        "textAlignment": "far",
+        "numberFormat": "#,##0"
+    },
+    "header": {
+        "text": "Number Edit"
+    }
+}, {
+    "name": "CompanyName",
+    "fieldName": "CompanyName",
+    "width": "200",
+    "editor": {
+        "type": "multiline",
+        "textCase": "upper"
+    },
+    "styles": {
+        "textAlignment": "near",
+        "textWrap": "explicit"
+    },
+    "header": {
+        "text": "CompanyName"
+    }
+},{
+    "name": "Phone",
+    "fieldName": "Phone",
+    "width": "100",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Phone"
+    }
+}, {
+    "name": "ProductName",
+    "fieldName": "ProductName",
+    "width": "200",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Product Name"
+    }
+}]
