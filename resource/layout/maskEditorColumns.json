@@ -1,0 +1,98 @@
+[{
+        "name": "id",
+        "fieldName": "id",
+        "width": 40,
+        "header": { "text": "No" },
+        "styles": { "textAlignment": "center", "font": "Tahoma" }
+    }, {
+        "name": "card_number",
+        "fieldName": "card_number",
+        "width": 150,
+        "header": { 
+        	"text": "TextCellEditor",
+        	"styles": {
+            	"background": "linear,#22ffd500,#ffffd500,90"
+        	}
+        },
+        "styles": {
+            "textAlignment": "center",
+            "font": "arial"
+        },
+	    "editor": {
+		    "type":"text",
+		    "mask": "0000-0000-0000-0000"
+	  	},
+	  	"displayRegExp": "([0-9]{4})([0-9]{4})([0-9]{4})([0-9]{4})",
+		"displayReplace": "$1-$2-$3-$4"
+    }, {
+        "name": "birthday",
+        "fieldName": "birthday",
+        "width": 120,
+        "header": { 
+        	"text": "DateCellEditor",
+        	"styles": {
+            	"background": "linear,#22ffd500,#ffffd500,90"
+        	}
+        },
+        "styles": {
+            "textAlignment": "center",
+            "font": "arial"
+        },
+        "editor": {
+        	"type":"date", 
+    		"mask": {
+      			"editMask":"9999-99-99",
+      			"placeHolder":"yyyy-MM-dd",  
+      			"includedFormat":true 
+      		}, 
+    		"datetimeFormat":"yyyy-MM-dd" 
+    	}, 
+		"styles": {
+			"datetimeFormat":"yyyy-MM-dd"
+		}
+    }, {
+        "name": "userid",
+        "fieldName": "userid",
+        "width": 80,
+        "header": { "text": "사용자 Id" },
+        "styles": {
+            "textAlignment": "near",
+            "font": "Tahoma"
+        }
+    }, {
+        "name": "company",
+        "fieldName": "company",
+        "width": 100,
+        "header": { "text": "회사" },
+        "styles": { "textAlignment": "near", "font": "Tahoma" }
+    }, {
+        "name": "first_name",
+        "fieldName": "first_name",
+        "width": 80,
+        "header": { "text": "이름" },
+        "styles": { "textAlignment": "near", "font": "Tahoma" }
+    }, {
+        "name": "last_name",
+        "fieldName": "last_name",
+        "width": 80,
+        "header": { "text": "성" },
+        "styles": { "textAlignment": "near", "font": "Tahoma" }
+    }, {
+        "name": "phone",
+        "fieldName": "phone",
+        "width": 120,
+        "header": { "text": "전화번호" },
+        "styles": {
+            "textAlignment": "near",
+            "font": "arial"
+        }
+    }, {
+        "name": "email",
+        "fieldName": "email",
+        "width": 150,
+        "header": { "text": "E-Mail" },
+        "styles": {
+            "textAlignment": "near",
+            "font": "arial"
+        }
+    }]
