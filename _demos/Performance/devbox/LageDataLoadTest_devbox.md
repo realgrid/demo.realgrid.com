@@ -15,7 +15,7 @@ gridView.showProgress();
 
 var startTime = new Date().getTime();
 $.ajax({
-    url: "/demo/resource/data/TooLargeDataSet.csv?__time__=" + startTime,
+    url: "/resource/data/TooLargeDataSet.csv?__time__=" + startTime,
     success: function (data) {
         dataProvider.fillCsvData(data, {});
 
@@ -51,7 +51,7 @@ $('#fillCsvData1').click(function() {
 
   var startTime = new Date().getTime();
   $.ajax({
-      url: "/demo/resource/data/TooLargeDataSet.csv?__time__=" + startTime,
+      url: "/resource/data/TooLargeDataSet.csv?__time__=" + startTime,
       success: function (data) {
           dataProvider.fillCsvData(data, {});
 
