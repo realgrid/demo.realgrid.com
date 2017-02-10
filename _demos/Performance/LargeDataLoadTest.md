@@ -34,3 +34,5 @@ tags: ['성능', 'performance', '스크롤', 'scroll']
 
   gridWidth="100%"
   gridHeight="300px" %}
+
+<span id="loadResult" style="display:none"></span>
