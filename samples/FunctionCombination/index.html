@@ -1,0 +1,261 @@
+<html>
+<head>
+	<title>RealGridJS sample page</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script src="/lib/realgrid/realgridjs-lic.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.22/realgridjs_eval.1.1.22.min.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.22/realgridjs-api.1.1.22.js"></script>
+	<script src="/lib/jquery/jquery-1.11.2.min.js"></script>
+	<script language="javascript">
+	var dataProvider;
+	var gridView;
+	var firstFocus = true;
+	$(document).ready( function(){
+	    RealGridJS.setTrace(false);
+	    RealGridJS.setRootContext("lib");
+	    
+	    dataProvider = new RealGridJS.LocalDataProvider();
+	    dataProvider.setFields([{
+	            fieldName: "name",
+				defaultValue: "홍길동"
+	        }, {
+	            fieldName: "company",
+				defaultValue: "주식회사 대기업"
+	        }, {
+	            fieldName: "email",
+				defaultValue: "anonymous@somthing.com"
+	        }, {
+	        	fieldName: "EmployeeID",
+	        	defaultValue: "사원 번호"
+	        }, {
+	        	fieldName: "OrderID",
+	        	defaultValue: "주문 번호"
+	        }, {
+	        	fieldName: "CustomerID",
+	        	defaultValue: "고객 번호"
+	        }]);
+	    gridView = new RealGridJS.GridView("realgrid", true);
+	    gridView.setDataSource(dataProvider);   
+	    gridView.setColumns([{
+	            fieldName: "name",
+	            name: "name",
+	            width: 70,
+	            styles: {
+	                textAlignment: "center"
+	            },
+	            header: {text: "이름"},
+	            renderer: {
+	            	type: "link",
+				    url: "https://www.google.co.kr/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#newwindow=1&q=${company}",
+				    requiredFields: "company",
+				    showUrl: false
+	            }
+	        }, {
+	            fieldName: "company",
+	            name: "company",
+	            width: 150,
+	            styles: {
+	                textAlignment: "center",
+	                textWrap: "normal"
+	            },
+	            header: {text: "회사"}
+	        }, {
+	           fieldName: "email",
+	            name: "email",
+	            width: 200,
+	            header: {text: "e-mail"}
+	        }, {
+	           fieldName: "EmployeeID",
+	            name: "EmployeeID",
+	            width: 150,
+	            styles: {
+	                textAlignment: "center",
+	                textWrap: "normal"
+	            },
+	            header: {text: "사원"}
+	        }, {
+	           fieldName: "OrderID",
+	            name: "OrderID",
+	            width: 150,
+	            styles: {
+	                textAlignment: "center",
+	                textWrap: "normal"
+	            },
+	            header: {text: "주문"}
+	        }, {
+	           fieldName: "CustomerID",
+	            name: "CustomerID",
+	            width: 150,
+	            styles: {
+	                textAlignment: "center",
+	                textWrap: "normal"
+	            },
+	            header: {text: "고객"}
+	        }]);
+	    gridView.setOptions({
+	    	panel: { visible: false },
+	        edit: { 
+	            insertable: false,
+	            appendable: false
+	        }
+	    });
+		
+		dataProvider.setRowCount(10, true);
+		
+	    gridView.onCurrentChanged = function (grid, newIndex) {
+			var colHeader = gridView.getColumnProperty(newIndex.column, "header");
+			var title = colHeader && colHeader.text ? colHeader.text : newIndex.column;
+			
+	    	var v = title + "열 " + newIndex.itemIndex + "행 " + gridView.getValue(newIndex.itemIndex, newIndex.fieldName);
+	    	$("#cellData").text(v);
+	    };
+
+	    gridView.onSortingChanged = function (grid) {
+	    	var sortedFields = gridView.getSortedFields();
+	    	var sortFieldName = [];
+	    	var v;
+	    	if(sortedFields == null){
+	    		v = "정렬된 필드가 없습니다."
+	    	} else{
+	    		for(var i = 0; i < sortedFields.length; i++){
+	    			var direction;
+	    			if (sortedFields[i].direction == "ascending"){
+	    				direction = "오름차순"
+	    			}else if(sortedFields[i].direction == "descending"){
+	    				direction = "내림차순"
+	    			}
+					var colHeader = gridView.getColumnProperty(gridView.columnByField(sortedFields[i].orgFieldName),"header").text
+		    		sortFieldName.push( colHeader +"열이 " + direction +"으로 정렬 되었습니다.")
+		    	}
+		    	v = sortFieldName
+	    	}
+
+		    $("#sortMode").text(v);
+		}
+
+		gridView.onLinkableCellClicked = function (grid, index, url) {
+		    alert(url + "  페이지를 띄웁니다.");
+		    window.open(url, '_newtab');
+		};
+
+		gridView.onDataCellDblClicked =  function (grid, index) {
+			var colHeader = gridView.getColumnProperty(index.column,"header").text
+
+			alert(colHeader + "열에 " + index.itemIndex + "행이" + " 더블클릭 되었습니다.")
+		};
+
+		gridView.onKeyDown = function (grid, key, ctrl, shift, alt) {
+			if (alt && key === 112){
+				var currField = gridView.getCurrent().fieldName;
+			    var fields = [];
+			    var directions = [];
+			    if (currField) {
+			        var sortedFields = gridView.getSortedFields();
+			        if (sortedFields) {
+			            var findIndex = sortedFields.map(function (x) { return x.orgFieldName; }).indexOf(currField);
+
+			            if (findIndex > -1) {
+			                if (sortedFields[findIndex].direction == "ascending") {
+			                    sortedFields[findIndex].direction = "descending";
+			                } else if (sortedFields[findIndex].direction == "descending") {
+			                    sortedFields.splice(findIndex, 1);
+			                };
+			            } else {
+			                sortedFields.push({
+			                    direction: "ascending",
+			                    orgFieldName: currField
+			                })
+			            }
+
+			            for (var i = 0 ; i < sortedFields.length ; i++) {
+			                fields.push(sortedFields[i].orgFieldName);
+			                directions.push(sortedFields[i].direction);
+			            }
+			        } else {
+			            fields = [currField];
+			            directions = ["ascending"];
+			        }
+
+			        gridView.orderBy(fields, directions);
+			    }
+			}
+
+		    if (shift && key === 13) {
+		    	alert("Shift와 Enter 키가 동시 입력되었습니다.")
+		    	return false;
+		    }
+		};
+
+		gridView.setEditOptions({enterToTab: false, enterToEdit:true});
+	});
+
+	function disableAria(container) {
+		var inputs = $("#"+container).find("input:text");
+		var obj = $(inputs[1]);
+		obj.attr("aria-hidden", "true");
+	}
+/*
+    var currField = gridView.getCurrent().fieldName;
+    var fields = [];
+    var directions = [];
+    if (currField) {
+        var sortedFields = gridView.getSortedFields();
+        if (sortedFields) {
+            var findIndex = sortedFields.map(function (x) { return x.orgFieldName; }).indexOf(currField);
+
+            if (findIndex > -1) {
+                if (sortedFields[findIndex].direction == "ascending") {
+                    sortedFields[findIndex].direction = "descending";
+                } else if (sortedFields[findIndex].direction == "descending") {
+                    sortedFields.splice(findIndex, 1);
+                };
+            } else {
+                sortedFields.push({
+                    direction: "ascending",
+                    orgFieldName: currField
+                })
+            }
+
+            for (var i = 0 ; i < sortedFields.length ; i++) {
+                fields.push(sortedFields[i].orgFieldName);
+                directions.push(sortedFields[i].direction);
+            }
+        } else {
+            fields = [currField];
+            directions = ["ascending"];
+        }
+
+        gridView.orderBy(fields, directions);
+        }
+*/
+
+	</script>
+</head>
+<body>
+
+<span>그리드에서 정렬은 Alt+F1키로 동작합니다.</span><br>
+<span>그리드에서 선택은 Space키로 동작합니다.</span><br>
+<span>그리드에서 상세보기는 Shift+Enter키로 동작합니다.</span>
+	<div id="actions" style="margin-bottom:4px">
+        <span id="loadResult" style="display:none"></span>
+        <a href="../index.html">Home</a>
+        <input id="txtMain" style="width: 100px;"/>
+        <input id="txtSub" style="width: 80px;display: none"/>
+        <input id="txtMin" style="width: 60px;display: none"/>
+  	</div>
+
+<div id="realgrid" style="height:383px;width:950px;" title="리얼그리드"></div>
+<div id='cellData' aria-live='assertive' role='region' aria-atomic='true' aria-hidden='false' aria-relevant='additions'></div>
+<div id='sortMode' aria-live='assertive' role='region' aria-atomic='true' aria-hidden='false' aria-relevant='additions'></div>
+
+</body>
+</html>
+
+<!--
+센차
+http://examples.sencha.com/extjs/6.0.1/examples/
+<div id="docs-aria-speakable" class="docs-a11y-ariascreenreader-speakable docs-offscreen" aria-live="assertive" role="region" aria-atomic="true" aria-hidden="false" aria-relevant="additions">11/25/2014;  D167 </div>
+<div class="cell-input" tabindex="0" role="textbox" contenteditable="true" dir="ltr" aria-activedescendant="fake-activedescendant-:47" aria-owns="fake-activedescendant-:47">11/25/2014<br></div>
+-->
+
+
