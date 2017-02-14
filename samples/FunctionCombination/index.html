@@ -12,7 +12,7 @@
 	var firstFocus = true;
 	$(document).ready( function(){
 	    RealGridJS.setTrace(false);
-	    RealGridJS.setRootContext("lib");
+	    RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.22/");
 	    
 	    dataProvider = new RealGridJS.LocalDataProvider();
 	    dataProvider.setFields([{
@@ -46,7 +46,7 @@
 	            header: {text: "이름"},
 	            renderer: {
 	            	type: "link",
-				    url: "https://www.google.co.kr/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#newwindow=1&q=${company}",
+				    url: "https://www.google.co.kr/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#newwindow=1&q=",
 				    requiredFields: "company",
 				    showUrl: false
 	            }
@@ -133,9 +133,20 @@
 		    $("#sortMode").text(v);
 		}
 
+		gridView.onItemChecked = function (grid, itemIndex, checked) {
+		    var v;
+		    var checkState;
+		    if (checked == true){
+		    	checkState = "선택";
+		    }else {
+		    	checkState = "취소";
+		    }
+		    v = itemIndex + "행이 " + checkState + "되었습니다."
+		    $("#itemCheck").text(v);
+		};
+
 		gridView.onLinkableCellClicked = function (grid, index, url) {
-		    alert(url + "  페이지를 띄웁니다.");
-		    window.open(url, '_newtab');
+			onLinkEvent();
 		};
 
 		gridView.onDataCellDblClicked =  function (grid, index) {
@@ -180,8 +191,8 @@
 			    }
 			}
 
-		    if (shift && key === 13) {
-		    	alert("Shift와 Enter 키가 동시 입력되었습니다.")
+		    if (key === 13 && gridView.getCurrent().fieldName == "name") {
+					onLinkEvent();
 		    	return false;
 		    }
 		};
@@ -229,13 +240,17 @@
         }
 */
 
+	function onLinkEvent() {
+		var url = gridView.getColumnProperty("name","renderer").url + gridView.getValue(gridView.getCurrent().dataRow, "company");
+		window.open(url, '_newtab');
+	}
 	</script>
 </head>
 <body>
 
 <span>그리드에서 정렬은 Alt+F1키로 동작합니다.</span><br>
 <span>그리드에서 선택은 Space키로 동작합니다.</span><br>
-<span>그리드에서 상세보기는 Shift+Enter키로 동작합니다.</span>
+<span>그리드에서 이름컬럼의 링크는 Enter키로 동작합니다.</span>
 	<div id="actions" style="margin-bottom:4px">
         <span id="loadResult" style="display:none"></span>
         <a href="../index.html">Home</a>
@@ -247,6 +262,7 @@
 <div id="realgrid" style="height:383px;width:950px;" title="리얼그리드"></div>
 <div id='cellData' aria-live='assertive' role='region' aria-atomic='true' aria-hidden='false' aria-relevant='additions'></div>
 <div id='sortMode' aria-live='assertive' role='region' aria-atomic='true' aria-hidden='false' aria-relevant='additions'></div>
+<div id='itemCheck' aria-live='assertive' role='region' aria-atomic='true' aria-hidden='false' aria-relevant='additions'></div>
 
 </body>
 </html>
