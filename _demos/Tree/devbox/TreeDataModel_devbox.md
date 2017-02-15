@@ -19,7 +19,7 @@
   - [`fillXmlData()`](http://help.realgrid.com/api/TreeDataProvider/fillXmlData/)
 
 - [트리 구현 - CSV 데이터]({{ "/Tree/TreeCsvDataSet/" | prepend: site.baseurl }})
-  - [`fillCsvData()`](http://help.realgrid.com/api/TreeDataProvider/setCsvData/)
+  - [`fillCsvData()`](http://help.realgrid.com/api/TreeDataProvider/fillCsvData/)
 
 - [jQuery ajax() 이용하기]({{ "/Tree/TreeLoadData/" | prepend: site.baseurl }})
   - jQuery ajax()함수를 이용해 원격 데이터를 트리뷰(TreeView)에 로드 하는 방법을 설명합니다.
