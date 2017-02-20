@@ -3,11 +3,11 @@ layout: page
 title: 같은 값의 셀 생략 하기
 order: 1
 devbox: true
-devboxfile: BlinkCell-devbox.md
+devboxfile: BlankCell-devbox.md
 published: true
 categories:
   - 셀 구성요소
-tags: ['BlinkCell', '병합', '셀병합']
+tags: ['BlankCell', '병합', '셀병합']
 ---
 
 equalBlank속성을 이용하면 기초적인 셀 병합 효과를 낼 수 있습니다.
