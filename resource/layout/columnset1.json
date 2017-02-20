@@ -34,7 +34,8 @@
     "fieldName": "OrderDate",
     "width": "130",
     "styles": {
-        "textAlignment": "center"
+        "textAlignment": "center",
+        "datetimeFormat": "yyyy-MM-dd"
     },
     "header": {
         "text": "Order Date"
