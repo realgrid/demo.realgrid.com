@@ -19,12 +19,17 @@ var onDoneDataSet = function() {
 }
 
 function setCustomFilter(){
-	var span = $("#spanFilters");
-	var label = $("<label />").appendTo(span);
-	$("<input />", { type: "checkbox", name: "chkAutoFilterItem", value: $("#customerText").val(), checked: false}).appendTo(label);
-	label.append($("#customerText").val());
-	span.append("<br/>");
-	document.getElementById("customerText").value = ""
+	if ($("#customerText").val() == ""){
+
+	}else{
+		var span = $("#spanFilters");
+		var label = $("<label />").appendTo(span);
+		$("<input />", { type: "checkbox", name: "chkAutoFilterItem", value: $("#customerText").val(), checked: true}).appendTo(label);
+		label.append($("#customerText").val());
+		span.append("<br/>");
+		document.getElementById("customerText").value = ""
+		applyAutoFilter();
+	}
 }
 
 function applyAutoFilter() {
@@ -76,7 +81,7 @@ function closeAutoFilter() {
 
 
 <div id="divAutoFilter" style="display:none; position:absolute; height:280px; width:146px; background-color:#eeeeee; border:1px solid black;">
-	<input type="text" id="customerText" placeholder="Custom Filter" style="height:20px;width:144px" onkeypress="if(event.keyCode==13) {setCustomFilter();}">
+	<input type="text" id="customerText" placeholder="Custom Filter" style="height:20px;width:144px" onkeypress="if(event.keyCode==13) {setCustomFilter();}" autofocus>
     <span id="spanFilters" style="overflow-y:scroll; display:block; width:100%; height:230px">
     </span>
 

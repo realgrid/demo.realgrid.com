@@ -64,5 +64,6 @@ $("#btnSetFilters").click(function() {
 	 
 	    $("#divAutoFilter").show();
 	}
+	document.getElementById("customerText").focus();
 });
 </script>
