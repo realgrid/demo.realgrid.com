@@ -35,7 +35,7 @@ function applyAutoFilter() {
     autoFilterItems.push(filterItems[i].value);
     if (filterExpr != "")
       filterExpr += " or ";
-    filterExpr += "(value = '" + filterItems[i].value + "')";
+    filterExpr += "(value like '%" + filterItems[i].value + "%')";
   };
   console.log(filterExpr);
   var filters = {
@@ -45,7 +45,7 @@ function applyAutoFilter() {
     hidden:true
   };
 
-  gridView.addColumnFilters("OrderID", filters, true);
+  gridView.addColumnFilters("CustomerID", filters, true);
   $("#divAutoFilter").hide();
 };
 

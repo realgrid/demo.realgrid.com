@@ -43,7 +43,7 @@ $("#btnSetFilters").click(function() {
 	  text: "CustomFilter",
 	  description: "Custom Filter Actions"
 	}];
-	gridView.setColumnFilterActions('OrderID', actions);
+	gridView.setColumnFilterActions('CustomerID', actions);
 
 	//사용자 필터 이벤트
 	gridView.onFilterActionClicked = function (grid, column, action, x, y) {
