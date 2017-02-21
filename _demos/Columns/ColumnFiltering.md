@@ -19,15 +19,14 @@ tags: ['Filtering', '필터링', '필터']
     dataProvider.setRows(data);
   }
   var onDoneDataSet = function() {
-gridView.onFilterActionClicked = function (grid, column, action, x, y) {
-  console.log("onFilterActionClicked");
-  if (action == "autoFilter") {
-    var offset = $("#realgrid").offset();
+	gridView.onFilterActionClicked = function (grid, column, action, x, y) {
+	  console.log("onFilterActionClicked");
+	  if (action == "autoFilter") {
+	   var offset = $("#realgrid").offset();
 
-
-    showAutoFiltering(column, x + offset.left - 260, y + offset.top);
-  }
-};    
+	   showAutoFiltering(column, x + offset.left - 260, y + offset.top);
+	}
+  };    
 
 
 	var autoFiltercolumn;
