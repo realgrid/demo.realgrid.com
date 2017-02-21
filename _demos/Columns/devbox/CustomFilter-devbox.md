@@ -1,6 +1,6 @@
 #### 사용자 필터링
 
-Custom Filter버튼 클릭 시 `OrderID` 컬럼에 `Custom Filter`가 설정되며
+Custom Filter버튼 클릭 시 `CustomerID` 컬럼에 `Custom Filter`가 설정되며
 Custom Filter의 textBox에 `value` 값 입력 후 Enter키 입력 시 필터가 추가됩니다.  
 해당 filter값을 체크 후 `Apply버튼`을 클릭하면 선택된 값으로 필터링 합니다.
 
