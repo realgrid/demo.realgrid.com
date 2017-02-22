@@ -10,12 +10,33 @@ tags: ['Filtering', '필터링', '필터', 'Custom']
 ---
 
 <script>
+var chkID;
 var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 	dataProvider.setRows(data);
 }
 
 var onDoneDataSet = function() {
+	//사용자 필터 이벤트
+	gridView.onFilterActionClicked = function (grid, column, action, x, y) {
+	  
+	  console.log("onFilterActionClicked");
+	  if (action == "CustomFilter") {
+	    var offset = $("#realgrid").offset();
 
+	    showAutoFiltering(column, x + offset.left - 260, y + offset.top);
+	  }
+	  setTimeout(function(){
+	    document.getElementById("customerText").focus();
+	  }, 100)
+
+	};
+}
+
+function showAutoFiltering(column, x, y) {
+    $("#divAutoFilter").css("left", x);
+    $("#divAutoFilter").css("top", y);
+ 
+    $("#divAutoFilter").show();
 }
 
 function setCustomFilter(){
@@ -54,10 +75,21 @@ function applyAutoFilter() {
 
   gridView.addColumnFilters("CustomerID", filters, true);
   $("#divAutoFilter").hide();
+  var chkArr = [];
+  $("input[name=chkAutoFilterItem]:checked").each(function() {
+	  chkArr.push($(this).val());
+  });
+  chkID = chkArr;
 };
 
 function closeAutoFilter() {
   $("#divAutoFilter").hide();
+  $("input[name=chkAutoFilterItem]:checkbox").each(function() {
+	$(this).attr("checked", false);
+  });
+  for(var i = 0; i < chkID.length; i++){
+  	document.getElementById(chkID[i]).checked = true
+  }
 }
 
 </script>

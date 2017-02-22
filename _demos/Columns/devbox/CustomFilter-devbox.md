@@ -8,6 +8,7 @@ Custom Filter의 textBox에 `value` 값 입력 후 Enter키 입력 시 필터가
 
 
 <script>
+
 var oldFilterColumn;
 $("#btnSetFilters").click(function() { 
 	/*
@@ -45,27 +46,11 @@ $("#btnSetFilters").click(function() {
 	}];
 	gridView.setColumnFilterActions('CustomerID', actions);
 
-	//사용자 필터 이벤트
-	gridView.onFilterActionClicked = function (grid, column, action, x, y) {
-	  console.log("onFilterActionClicked");
-	  if (action == "CustomFilter") {
-	    var offset = $("#realgrid").offset();
 
-	    showAutoFiltering(column, x + offset.left - 260, y + offset.top);
-	  }
-	  setTimeout(function(){
-	    document.getElementById("customerText").focus();
-	  }, 100)
-	};
 
 	var autoFiltercolumn;
 	var autoFilterItems = [];
 
-	function showAutoFiltering(column, x, y) {
-	    $("#divAutoFilter").css("left", x);
-	    $("#divAutoFilter").css("top", y);
-	 
-	    $("#divAutoFilter").show();
-	}
+	
 });
 </script>
