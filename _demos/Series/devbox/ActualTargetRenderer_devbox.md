@@ -1,7 +1,7 @@
 #### ActualTartget Renderer 종류
 
 
-* [ActualTartgetBulletRenderer](http://help.realgrid.com/api/types/ActualTargetBulletRenderer/)
+* [ActualTargetBulletRenderer](http://help.realgrid.com/api/types/ActualTargetBulletRenderer/)
 * [ActualTargetTextRenderer](http://help.realgrid.com/api/types/ActualTargetTextRenderer/)
 
 위와 같은 타입들이 있으며, 데이터의 내용에 맞게 적절한 타입을 선택해야 합니다.
