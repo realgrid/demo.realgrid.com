@@ -53,6 +53,9 @@ $("#btnSetFilters").click(function() {
 
 	    showAutoFiltering(column, x + offset.left - 260, y + offset.top);
 	  }
+	  setTimeout(function(){
+	    document.getElementById("customerText").focus();
+	  }, 100)
 	};
 
 	var autoFiltercolumn;
@@ -64,6 +67,5 @@ $("#btnSetFilters").click(function() {
 	 
 	    $("#divAutoFilter").show();
 	}
-	document.getElementById("customerText").focus();
 });
 </script>

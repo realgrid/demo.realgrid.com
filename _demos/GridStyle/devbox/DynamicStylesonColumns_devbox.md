@@ -4,6 +4,7 @@
 - `cellDynamicStyles`: 동적 스타일을 지정합니다.
 
 <a class="btn primary small round lowercase" id="btnSetDynamicStyles">동적 컬럼 스타일 변경</a>
+
 ```js
 var newDynamicStyles = [{
     criteria: "value >= 1000",
