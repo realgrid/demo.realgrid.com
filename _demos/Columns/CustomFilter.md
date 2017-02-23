@@ -118,10 +118,10 @@ function closeAutoFilter() {
   gridHeight="300px" %}
 
 
-<div id="divAutoFilter" style="display:none; position:absolute; height:280px; width:146px; background-color:#eeeeee; border:1px solid black;">
-	<input type="text" id="customerText" placeholder="Custom Filter" style="height:20px;width:144px" onkeypress="if(event.keyCode==13) {setCustomFilter();}" autofocus>
+<div id="divAutoFilter" style="display:none; position:absolute; height:280px; width:149px; background-color:#eeeeee; border:1px solid black;">
+	<input type="text" id="customerText" placeholder="Custom Filter" style="height:20px;width:146px" onkeypress="if(event.keyCode==13) {setCustomFilter();}" autofocus>
     <span id="spanFilters" style="overflow-y:scroll; display:block; width:100%; height:230px"></span>
 
-    <a class="btn secondary small lowercase" onclick="applyAutoFilter();" id="applyAutoFilter">Apply</a>
+    <a class="btn secondary small lowercase" onclick="applyAutoFilter();" id="applyAutoFilter">Apply</a>&nbsp;
     <a class="btn secondary small lowercase" onclick="closeAutoFilter();" id="cancelAutoFilter">Cancel</a>
 </div>
