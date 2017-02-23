@@ -4,6 +4,7 @@ title: 사용자 필터링(Custom Filter)
 order: 11
 devbox: true
 devboxfile: CustomFilter-devbox.md
+published: true
 categories:
   - 컬럼
 tags: ['Filtering', '필터링', '필터', 'Custom']
@@ -16,6 +17,7 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 }
 
 var onDoneDataSet = function() {
+	gridView.setColumnProperty("CustomerID","header",{styles:{background:"linear,#22ffd500,#ffffd500,90"}})
 	//사용자 필터 이벤트
 	gridView.onFilterActionClicked = function (grid, column, action, x, y) {
 	  
@@ -56,40 +58,42 @@ function setCustomFilter(){
 }
 
 function applyAutoFilter() {
-  var filterExpr = "";
-  var filterItems = $('input[name="chkAutoFilterItem"]:checked');
-  autoFilterItems = [];
-  for (var i = 0; i < filterItems.length; i++) {
-    autoFilterItems.push(filterItems[i].value);
-    if (filterExpr != "")
-      filterExpr += " or ";
-    filterExpr += "(value like '%" + filterItems[i].value + "%')";
-  };
-  console.log(filterExpr);
-  var filters = {
-    name: "auto_result",
-    criteria: filterExpr,
-    active: true,
-    hidden:true
-  };
+	var filterExpr = "";
+	var filterItems = $('input[name="chkAutoFilterItem"]:checked');
+	autoFilterItems = [];
+	for (var i = 0; i < filterItems.length; i++) {
+		autoFilterItems.push(filterItems[i].value);
+		if (filterExpr != "")
+		filterExpr += " or ";
+		filterExpr += "(value like '%" + filterItems[i].value + "%')";
+	};
+	console.log(filterExpr);
+	var filters = {
+		name: "auto_result",
+		criteria: filterExpr,
+		active: true,
+		hidden:true
+	};
 
-  gridView.addColumnFilters("CustomerID", filters, true);
-  $("#divAutoFilter").hide();
-  var chkArr = [];
-  $("input[name=chkAutoFilterItem]:checked").each(function() {
-	  chkArr.push($(this).val());
-  });
-  chkID = chkArr;
+	gridView.addColumnFilters("CustomerID", filters, true);
+	$("#divAutoFilter").hide();
+	var chkArr = [];
+	$("input[name=chkAutoFilterItem]:checked").each(function() {
+		chkArr.push($(this).val());
+	});
+	chkID = chkArr;
 };
 
 function closeAutoFilter() {
-  $("#divAutoFilter").hide();
-  $("input[name=chkAutoFilterItem]:checkbox").each(function() {
-	$(this).attr("checked", false);
-  });
-  for(var i = 0; i < chkID.length; i++){
-  	document.getElementById(chkID[i]).checked = true
-  }
+	$("#divAutoFilter").hide();
+	$("input[name=chkAutoFilterItem]:checkbox").each(function() {
+		$(this).attr("checked", false);
+	});
+	if(chkID !== undefined){
+		for(var i = 0; i < chkID.length; i++){
+			document.getElementById(chkID[i]).checked = true
+		}
+	}
 }
 
 </script>
@@ -120,5 +124,4 @@ function closeAutoFilter() {
 
     <a class="btn secondary small lowercase" onclick="applyAutoFilter();" id="applyAutoFilter">Apply</a>
     <a class="btn secondary small lowercase" onclick="closeAutoFilter();" id="cancelAutoFilter">Cancel</a>
-
 </div>
