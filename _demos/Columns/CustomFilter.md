@@ -32,6 +32,8 @@ var onDoneDataSet = function() {
 	  }, 100)
 
 	};
+
+	$(".btn.small").css("padding", ".25rem 1.16rem")
 }
 
 function showAutoFiltering(column, x, y) {
