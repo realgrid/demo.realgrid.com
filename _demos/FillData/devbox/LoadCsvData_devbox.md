@@ -6,13 +6,12 @@
 <a class="btn primary small round lowercase" id="fillCsvData1">CSV 데이터 로드</a>
 
 ```js
-var data = ' \
-  국산,국산,2,기아,15,더 뉴 K9,9,미드나이트 블랙,2016/01/01,16,8620,대형,휘발유,images/215.png,images/215.png \n\r \
-  국산,국산,5,르노삼성,2,QM6,3,이온 실버,2016/01/01,71,3470,중형SUV,휘발유,images/502.png,images/502.png \
-  ';
+var data = '\
+국산,국산,2,기아,15,더 뉴 K9,9,미드나이트 블랙,2016/01/01,16,8620,대형,휘발유,images/215.png, images/215.png\n\
+국산,국산,5,르노삼성,2,QM6,3,이온 실버,2016/01/01,71,3470,중형SUV,휘발유,images/502.png, images/502.png\
+';
 
-dataProvider.fillCsvData(data, 
-  {quoted: true});
+dataProvider.fillCsvData(data);
 ```
 
 #### 쌍따옴표로 값이 싸여진 CSV 데이터
@@ -22,13 +21,13 @@ dataProvider.fillCsvData(data,
 <a class="btn primary small round lowercase" id="fillCsvData2">쌍따옴표로 둘러싸인 데이터 로드</a>
 
 ```js
-var data = ' \
-  "국산", "국산", "2", "기아", "15", "더 뉴 K9", "9", "미드나이트 블랙", "2016/01/01", "16", "8620", "대형", "휘발유", "images/215.png", "images/215.png" \n\r \
-  "국산", "국산", "5", "르노삼성", "2", "QM6", "3", "이온 실버", "2016/01/01", "71", "3470", "중형SUV", "휘발유", "images/502.png", "images/502.png" \
-  ';
+var data = '\
+"국산","국산","2","기아","15","더 뉴 K9","9","미드나이트 블랙","2016/01/01", 16, 8620,"대형","휘발유","images/215.png","images/215.png"\n\
+"국산","국산","5","르노삼성","2","QM6","3","이온 실버","2016/01/01", 71, 3470,"중형SUV","휘발유","images/502.png","images/502.png"\
+';
 
-dataProvider.fillCsvData(data, 
-  {fillMode: "append", quoted: true});
+dataProvider.fillCsvData(data, {fillMode:"append", quoted: true});
+});
 ```
 
 #### 헤더(Header)가 있는 CSV 데이터
@@ -38,13 +37,12 @@ dataProvider.fillCsvData(data,
 <a class="btn primary small round lowercase" id="fillCsvData3">헤더가 있는 CSV 데이터 로드</a>
 
 ```js
-var data = ' \
-  "head1", "head2", "head3", "head4", "head5", "head6", "head7", "head8" \
-  "국산", "국산", "2", "기아", "15", "더 뉴 K9", "9", "미드나이트 블랙", "2016/01/01", "16", "8620", "대형", "휘발유", "images/215.png", "images/215.png" \
-  ';
+var data = '\
+"head1","head2","head3","head4","head5","head6","head7","head8"\
+"국산","국산","2","기아","15","더 뉴 K9","9","미드나이트 블랙","2016/01/01","16","8620","대형","휘발유","images/215.png","images/215.png"\
+';
 
-dataProvider.fillCsvData(data, 
-  {fillMode: "append", quoted: true, start: 1});
+dataProvider.fillCsvData(data, {fillMode:"append", quoted: true, start: 1});
 ```
 
 #### 구분자가 콤마(comma)가 아닌 데이터
@@ -54,12 +52,11 @@ dataProvider.fillCsvData(data,
 <a class="btn primary small round lowercase" id="fillCsvData4">탭으로 구분된 데이터 로드</a>
 
 ```js
-var data = ' \
-  "국산"\t "국산"\t "5"\t "르노삼성"\t "2"\t "QM6"\t "3"\t "이온 실버"\t "2016/01/01"\t "71"\t "3470"\t "중형SUV"\t "휘발유"\t "images/502.png"\t "images/502.png" \
-  ';
+var data = '\
+"국산"\t"국산"\t"5"\t"르노삼성"\t"2"\t"QM6"\t"3"\t"이온 실버"\t"2016/01/01"\t"71"\t"3470"\t"중형SUV"\t"휘발유"\t"images/502.png"\t"images/502.png"\
+';
 
-dataProvider.fillCsvData(data, 
-  {fillMode: "append", quoted: true, delimiter: "\t"});
+dataProvider.fillCsvData(data, {fillMode:"append", quoted: true, delimiter:"\t"});
 ```
 
 [LocalDataProvider.fillJsonData()](http://help.realgrid.com/api/LocalDataProvider/fillJsonData/)함수의 인자는 `data`와 [DataFillOptions](http://help.realgrid.com/api/types/DataFillOptions/)객체인 `options`가 있습니다.
@@ -71,37 +68,32 @@ dataProvider.fillCsvData(data,
 <script>
 
 $('#fillCsvData1').click(function() {
-var data = ' \
-  국산, 국산, 2, 기아, 15, 더 뉴 K9, 9, 미드나이트 블랙, 2016/01/01, 16, 8620, 대형, 휘발유, images/215.png, images/215.png \n\r \
-  국산, 국산, 5, 르노삼성, 2, QM6, 3, 이온 실버, 2016/01/01, 71, 3470, 중형SUV, 휘발유, images/502.png, images/502.png \
-  ';
+var data = '\
+국산,국산,2,기아,15,더 뉴 K9,9,미드나이트 블랙,2016/01/01,16,8620,대형,휘발유,images/215.png, images/215.png\n\
+국산,국산,5,르노삼성,2,QM6,3,이온 실버,2016/01/01,71,3470,중형SUV,휘발유,images/502.png, images/502.png\
+';
 
-  dataProvider.fillCsvData(data);
+dataProvider.fillCsvData(data);
 });
 
 $('#fillCsvData2').click(function() {
-  var data = ' \
-    "국산", "국산", "2", "기아", "15", "더 뉴 K9", "9", "미드나이트 블랙", "2016/01/01", 16, 8620, "대형", "휘발유", "images/215.png", "images/215.png" \n\r \
-    "국산", "국산", "5", "르노삼성", "2", "QM6", "3", "이온 실버", "2016/01/01", 71, 3470, "중형SUV", "휘발유", "images/502.png", "images/502.png" \
-    ';
-
-  dataProvider.fillCsvData(data, {fillMode: "append", quoted: true});
+var data = '\
+"국산","국산","2","기아","15","더 뉴 K9","9","미드나이트 블랙","2016/01/01", 16, 8620,"대형","휘발유","images/215.png","images/215.png"\n\
+"국산","국산","5","르노삼성","2","QM6","3","이온 실버","2016/01/01", 71, 3470,"중형SUV","휘발유","images/502.png","images/502.png"';
+  dataProvider.fillCsvData(data, {fillMode:"append", quoted: true});
 });
 
 $('#fillCsvData3').click(function() {
-  var data = ' \
-    "head1", "head2", "head3", "head4", "head5", "head6", "head7", "head8" \n\r \
-    "국산", "국산", "2", "기아", "15", "더 뉴 K9", "9", "미드나이트 블랙", "2016/01/01", 16, 8620, "대형", "휘발유", "images/215.png", "images/215.png" \
-    ';
+var data = '\
+"head1","head2","head3","head4","head5","head6","head7","head8"\n\
+"국산","국산","2","기아","15","더 뉴 K9","9","미드나이트 블랙","2016/01/01", 16, 8620,"대형","휘발유","images/215.png","images/215.png"';
 
-  dataProvider.fillCsvData(data, {fillMode: "append", quoted: true, start: 1});
+  dataProvider.fillCsvData(data, {fillMode:"append", quoted: true, start: 1});
 });
 
 $('#fillCsvData4').click(function() {
-  var data = ' \
-    "국산"\t "국산"\t "5"\t "르노삼성"\t "2"\t "QM6"\t "3"\t "이온 실버"\t "2016/01/01"\t 71\t 3470\t "중형SUV"\t "휘발유"\t "images/502.png"\t "images/502.png" \
-    ';
+  var data = '"국산"\t"국산"\t"5"\t"르노삼성"\t"2"\t"QM6"\t"3"\t"이온 실버"\t"2016/01/01"\t 71\t 3470\t"중형SUV"\t"휘발유"\t"images/502.png"\t"images/502.png"';
 
-  dataProvider.fillCsvData(data, {fillMode: "append", quoted: true, delimiter: "\t"});
+  dataProvider.fillCsvData(data, {fillMode:"append", quoted: true, delimiter:"\t"});
 });
 </script>
