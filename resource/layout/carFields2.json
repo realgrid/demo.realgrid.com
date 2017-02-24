@@ -16,7 +16,8 @@
     "fieldName": "color"
 }, {
     "fieldName": "salesDay",
-    "dataType": "datetime"
+    "dataType": "datetime",
+    "datatimeFormat": "yyyy/MM/dd"
 }, {
     "fieldName": "salesQty",
     "dataType": "number"
