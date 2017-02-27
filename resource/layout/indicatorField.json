@@ -6,7 +6,8 @@
 }, {
     "fieldName": "EmployeeID"
 }, {
-    "fieldName": "OrderDate"
+    "fieldName": "OrderDate",
+    "dataType": "datetime"
 }, {
     "fieldName": "CompanyName"
 }, {
