@@ -7,7 +7,7 @@ devboxfile: CellButton-devbox.md
 published: true
 categories:
   - 셀 구성요소
-tags: ['CellButton', 'button']
+tags: ['CellButton', 'button', '버튼']
 ---
 
 셀 버튼은 `action`, `popup`, `image` 중 하나로 지정할 수 있습니다.
