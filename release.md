@@ -31,7 +31,6 @@ grid.setSortingOptions({
     textAlignment:"far"
 });
 ```
-
 1. [DisplayOptions](http://help.realgrid.com/api/types/DisplayOptions/)
   - 선택된 셀의 row를 표시할수 있는 rowFocus가 추가되었습니다.
   - DisplayOptions.rowFocusVisible 을 true로 변경하면 선택된 row의 배경색이 지정된 색상으로 표시됩니다.
@@ -42,7 +41,6 @@ grid.setDisplayOptions({
 })
 ```
   - DisplayOptions.rowFocusMask는 "data","row","fill"의 값을 가질수 있습니다.
-
 1. [dataProvider.addField](http://help.realgrid.com/api/DataProvider/addField/)와 [grid.addColumn](http://help.realgrid.com/api/GridBase/addColumn/), [grid.removeColumn](http://help.realgrid.com/api/GridBase/removeColumn/)이 추가되었습니다.
   - 그리드를 생성하고 난후 필드를 추가하거나 또는 컬럼을 추가해야 하는 경우 사용할수 있도록 addField, addColumn, removeColumn이 추가되었습니다.
 ```js
@@ -56,7 +54,6 @@ grid.addColumn({
     ...
 })
 ```
-
 1. `날짜등의 특정포맷에 대한 Mask기능`
   - LineCellEditor와 DateCellEditor에서 사용할수 있는 mask속성이 추가되었습니다.
   - Cell 편집시에 적용되는 속성이며 표시되는 값을 변경하는 경우 datetimeFormat또는 displayRegExp등을 이용해서 변경해야 합니다.
@@ -79,10 +76,13 @@ grid.setColumns([
 ])
 ```
   - 자세한 내용은 [Mask](http://help.realgrid.com/api/types/Mask/)를 참조하세요.
-
 1. 그리드 빈공간의 배경색을 변경할수 있도록 개선되었습니다.
   - 그리드의 body.empty.background의 색상을 지정하여 그리드 빈영역의 배경색을 지정할 수 있도록 개선되었습니다.
+<<<<<<< HEAD
   - 그리드에 표시되는 데이터가 한건도 없는 경우 사용자에게 메세지를 표시할수 있도록 DisplayOptions.showEmptyMessage가 추가되었습니다.
+=======
+  - 그리드에 표시되는 데이터가 한건도 없는 경우 사용자에게 메세지를 표시할수 있도록 DisplayOptions.showEmptyMessage가 추가되었습니다.  
+>>>>>>> e2f5a008e5446b491d55ec38fd014384e6119a65
 ```js
 grid.setDisplayOptions({
     showEmptyMessage:true, 
@@ -100,22 +100,16 @@ grid.setStyles({
     }
 });
 ```
-
 1. [DisplayOptions](http://help.realgrid.com/api/types/DisplayOptions/)
   - 포커스된 셀의 background를 변경할 수 있도록 focusBackground 속성이 추가되었습니다.
-
 1. [SearchCellEditor](http://help.realgrid.com/api/types/SearchCellEditor/)에서 버튼 클릭 이벤트 추가
 - searchCellEditor의 editButton을 클릭했을때 발생하는 [onSearchCellButtonClick](http://help.realgrid.com/api/GridBase/onSearchCellButtonClick/) 이벤트가 추가되었습니다.
-
 1. [onColumnPropertyChanged](http://help.realgrid.com/api/GridBase/onColumnPropertyChanged/)
   - 사용자가 컬럼의 width를 변경하거나 위치를 변경하는 경우 발생하는 onColumnPropertyChanged 이벤트가 추가되었습니다.
-
 1. [dataProvider.getFields](http://help.realgrid.com/api/DataProvider/getFields/)
   - dataProvider.getFields()를 호출했을때 field 정보에 calculatedCallback과 calculatedExpression이 나오지 않는 현상이 개선되었습니다.
-
 1. [SparkLineRenderer](http://help.realgrid.com/api/types/SparkLineRenderer/)
   - SparkLineRenderer의 pointer에 색상을 지정할수 있도록 개선되었습니다.
-
 1. merge된 cell의 툴팁 표시를 행별로 표시
   - merge된 셀의 tooltip이 각셀 별로 표시되도록 개선되었습니다.
 
