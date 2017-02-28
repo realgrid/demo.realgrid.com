@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.21'
+title: '최신버전 1.1.22'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,126 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.22 (2017년 2월)
+
+---
+
+#### 기능 개선
+1. [SortingOptions](http://help.realgrid.com/api/types/SortingOptions/)
+  - 컬럼정렬시 정렬순서를 표시하는 기능이 추가되었습니다.
+  - SortingOptions.showSortOrder 를 true로 변경하면 Sort표시 오른쪽에 정렬순서가 표시됩니다.
+  - SortingOptins.sortOrderStyles를 이용하여 폰트를 변경할수 있습니다.
+```js
+grid.setSortingOptions({showSortOrder:true, sortOrderStyles:{font:"굴림체", fontSize:10, fontBold:true, foreground:"#ffff8888", textAlignment:"far"});
+```
+
+1. [DisplayOptions](http://help.realgrid.com/api/types/DisplayOptions/)
+  - 선택된 셀의 row를 표시할수 있는 rowFocus가 추가되었습니다.
+  - DisplayOptions.rowFocusVisible 을 true로 변경하면 선택된 row의 배경색이 지정된 색상으로 표시됩니다.
+```js
+  grid.setDisplayOptions({rowFocusVisible:true, rowFocusBackground:"#340000ff"})
+```
+  - DisplayOptions.rowFocusMask는 "data","row","fill"의 값을 가질수 있습니다.
+
+1. [dataProvider.addField](http://help.realgrid.com/api/DataProvider/addField/)와 [grid.addColumn](http://help.realgrid.com/api/GridBase/addColumn/), [grid.removeColumn](http://help.realgrid.com/api/GridBase/removeColumn/)이 추가되었습니다.
+  - 그리드를 생성하고 난후 필드를 추가하거나 또는 컬럼을 추가해야 하는 경우 사용할수 있도록 addField, addColumn, removeColumn이 추가되었습니다.
+```js
+  dataprovider.addField({fieldName:"fieldName", dataType:"text"});
+  grid.addColumn({fieldName:"fieldName",name:"name", ...})
+```
+
+1. `날짜등의 특정포맷에 대한 Mask기능`
+  - LineCellEditor와 DateCellEditor에서 사용할수 있는 mask속성이 추가되었습니다.
+  - Cell 편집시에 적용되는 속성이며 표시되는 값을 변경하는 경우 datetimeFormat또는 displayRegExp등을 이용해서 변경해야 합니다.
+```js
+grid.setColumns([
+{
+  fieldName:"fieldName",
+  name:"name",
+  editor:{
+    type:"date",
+    mask:{
+      editMask:"9999-99-99",
+      includedFormat:true //
+    }
+  },
+  styles:{
+    datetimeFormat:"yyyy-MM-dd"
+  }
+}])
+```
+  - 자세한 내용은 [Mask](http://help.realgrid.com/api/types/Mask/)를 참조하세요.
+
+1. 그리드 빈공간의 배경색을 변경할수 있도록 개선되었습니다.
+  - 그리드의 body.empty.background의 색상을 지정하여 그리드 빈영역의 배경색을 지정할 수 있도록 개선되었습니다.
+  - 그리드에 표시되는 데이터가 한건도 없는 경우 사용자에게 메세지를 표시할수 있도록 DisplayOptions.showEmptyMessage가 추가되었습니다.
+```js
+grid.setDisplayOptions({showEmptyMessage:true, emptyMessage:"자료가 없습니다"});
+grid.setStyles({body:{empty:{background:"#2100ff00", textAlignment:"center", lineAlignment:"center", fontSize:15, fontBold:true}}});
+```
+
+1. [DisplayOptions](http://help.realgrid.com/api/types/DisplayOptions/)
+  - 포커스된 셀의 background를 변경할 수 있도록 focusBackground 속성이 추가되었습니다.
+
+1. [SearchCellEditor](http://help.realgrid.com/api/types/SearchCellEditor/)에서 버튼 클릭 이벤트 추가
+- searchCellEditor의 editButton을 클릭했을때 발생하는 [onSearchCellButtonClick](http://help.realgrid.com/api/GridBase/onSearchCellButtonClick/) 이벤트가 추가되었습니다.
+
+1. [onColumnPropertyChanged](http://help.realgrid.com/api/GridBase/onColumnPropertyChanged/)
+  - 사용자가 컬럼의 width를 변경하거나 위치를 변경하는 경우 발생하는 onColumnPropertyChanged 이벤트가 추가되었습니다.
+
+1. [dataProvider.getFields](http://help.realgrid.com/api/DataProvider/getFields/)
+  - dataProvider.getFields()를 호출했을때 field 정보에 calculatedCallback과 calculatedExpression이 나오지 않는 현상이 개선되었습니다.
+
+1. [SparkLineRenderer](http://help.realgrid.com/api/types/SparkLineRenderer/)
+  - SparkLineRenderer의 pointer에 색상을 지정할수 있도록 개선되었습니다.
+
+1. merge된 cell의 툴팁 표시를 행별로 표시
+  - merge된 셀의 tooltip이 각셀 별로 표시되도록 개선되었습니다.
+
+#### 오류 수정
+1. `getDisplayValues`
+  - datetime Column의 styles에 datetimeFormat이 없을때 grid.getDisplayValues() 를 호출하는 경우 발생하는 오류를 수정하였습니다.
+
+1. `footer.text 에 \n 적용 안됨`
+  - footer.text에 \n이 있어도 여러줄로 표시되지 않는 현상이 개선되었습니다.
+
+1. `컬럼 그룹안의 컬럼은 onColumnHeaderDblClicked 이벤트가 발생 안함`
+  - 컬럼 그룹안의 컬럼을 Double Click했을때 onColumnHeaderDblClicked 이벤트가 발생하지 않는 현상이 수정되었습니다.
+
+1. `컬럼 그룹핑 상태에서 footer가 여러 줄일 때`
+  - footer가 여러줄일때 그룹컬럼의 하위 컬럼의 footer가 동일한 값으로 나오는 현상이 개선되었습니다.
+
+1. `shift + insert key로 행 추가시`
+  - shift+insert key로 행을 추가시 grid.onRowInserting event의 itemIndex가 실제 추가되는 행의 itemIndex가 나오도록 수정되었습니다.
+
+1. `모바일에서 포커스가 다른 위치에 표시되는 현상`
+  - 모바일에서 확대를 했을때 touch된 셀이 아닌 다른 셀이 선택되는 현상을 수정하였습니다.
+
+1. `데이터를 복원할때 groupFooter의 sum값이 변경되지 않는 현상`
+  - [restoreMode](http://help.realgrid.com/api/types/RestoreMode/)가 "auto" 또는 "explicit"일때 데이터를 복원하여도 groupFooter의 값이 변경되지 않는 현상이 수정되었습니다.
+
+1. `그리드의 외각선이 사라지는 현상`
+  - 화면에 2개의 그리드가 수평으로 배치되었을때 두번째 그리드의 오른쪽 외각선이 사라지는 현상이 개선되었습니다.
+
+1. `fillXmlData 자식노드 유형의 xml 데이터 입력오류`
+  - [fillXmlData](http://help.realgrid.com/api/LocalDataProvider/fillXmlData/)를 이용하여 data를 입력할때 값이 xml attributes가 아닌 node에 있을때 값이 누락되는 현상이 수정되었습니다.
+
+1. `fitStyle:"fill"일때 mergeRule 사용시 라인 틀어짐`
+  - DisplayOptions.fitStyle이 "fill"인 경우 column의 mergeRule을 적용시 셀의 경계선이 틀어지는 현상이 개선되었습니다.
+
+1. `gridView.getCellApplyStyles`
+  - [grid.setCellStyle](http://help.realgrid.com/api/GridBase/setCellStyle/)로 스타일을 지정한 셀의 editable과 readOnly속성이 [grid.getCellApplyStyles](http://help.realgrid.com/api/GridBase/getCellApplyStyles/)에서 누락되는 현상을 수정하였습니다.
+
+1. `Column.editable이 false일 때 셀에 style로 editable:true 지정시 붙여넣기 문제`
+  - Column.editable이 false인 컬럼에 setCellStyle로 editable을 true로 지정시 붙여넣기가 되지 않는 현상이 수정되었습니다.
+
+1. `columnGrouping상태에서 자식컬럼을 빼내면 footer영역의 높이가 달라지는 현상`
+  - 컬럼그룹핑상태에서 하위컬럼의 부모를 변경하는 경우 footer의 높이가 달라지는 현상이 개선되었습니다.
+
+1. `setCheckableExpression`
+  - [grid.setStyles](http://help.realgrid.com/api/GridBase/setStyles/)등 스타일을 변경하고 [grid.setCheckableExpression](http://help.realgrid.com/api/GridBase/setCheckableExpression/)을 호출하는 경우 checkable이 적용되지 않는 현상이 수정되었습니다.
+
 
 ## 1.1.21 (2016년 12월)
 
