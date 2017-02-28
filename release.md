@@ -78,11 +78,7 @@ grid.setColumns([
   - 자세한 내용은 [Mask](http://help.realgrid.com/api/types/Mask/)를 참조하세요.
 1. 그리드 빈공간의 배경색을 변경할수 있도록 개선되었습니다.
   - 그리드의 body.empty.background의 색상을 지정하여 그리드 빈영역의 배경색을 지정할 수 있도록 개선되었습니다.
-<<<<<<< HEAD
-  - 그리드에 표시되는 데이터가 한건도 없는 경우 사용자에게 메세지를 표시할수 있도록 DisplayOptions.showEmptyMessage가 추가되었습니다.
-=======
   - 그리드에 표시되는 데이터가 한건도 없는 경우 사용자에게 메세지를 표시할수 있도록 DisplayOptions.showEmptyMessage가 추가되었습니다.  
->>>>>>> e2f5a008e5446b491d55ec38fd014384e6119a65
 ```js
 grid.setDisplayOptions({
     showEmptyMessage:true, 
