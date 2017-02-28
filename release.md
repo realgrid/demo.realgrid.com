@@ -21,58 +21,84 @@ permalink: /release/
   - 컬럼정렬시 정렬순서를 표시하는 기능이 추가되었습니다.
   - SortingOptions.showSortOrder 를 true로 변경하면 Sort표시 오른쪽에 정렬순서가 표시됩니다.
   - SortingOptins.sortOrderStyles를 이용하여 폰트를 변경할수 있습니다.
-
 ```js
-grid.setSortingOptions({showSortOrder:true, sortOrderStyles:{font:"굴림체", fontSize:10, fontBold:true, foreground:"#ffff8888", textAlignment:"far"});
+grid.setSortingOptions({
+    showSortOrder:true, 
+    sortOrderStyles:{font:"굴림체", 
+    fontSize:10, 
+    fontBold:true, 
+    foreground:"#ffff8888", 
+    textAlignment:"far"
+});
 ```
 
 1. [DisplayOptions](http://help.realgrid.com/api/types/DisplayOptions/)
   - 선택된 셀의 row를 표시할수 있는 rowFocus가 추가되었습니다.
   - DisplayOptions.rowFocusVisible 을 true로 변경하면 선택된 row의 배경색이 지정된 색상으로 표시됩니다.
-
 ```js
-  grid.setDisplayOptions({rowFocusVisible:true, rowFocusBackground:"#340000ff"})
+grid.setDisplayOptions({
+    rowFocusVisible:true, 
+    rowFocusBackground:"#340000ff"
+})
 ```
   - DisplayOptions.rowFocusMask는 "data","row","fill"의 값을 가질수 있습니다.
 
 1. [dataProvider.addField](http://help.realgrid.com/api/DataProvider/addField/)와 [grid.addColumn](http://help.realgrid.com/api/GridBase/addColumn/), [grid.removeColumn](http://help.realgrid.com/api/GridBase/removeColumn/)이 추가되었습니다.
   - 그리드를 생성하고 난후 필드를 추가하거나 또는 컬럼을 추가해야 하는 경우 사용할수 있도록 addField, addColumn, removeColumn이 추가되었습니다.
-
 ```js
-  dataprovider.addField({fieldName:"fieldName", dataType:"text"});
-  grid.addColumn({fieldName:"fieldName",name:"name", ...})
+dataprovider.addField({
+    fieldName:"fieldName", 
+    dataType:"text"
+});
+grid.addColumn({
+    fieldName:"fieldName",
+    name:"name", 
+    ...
+})
 ```
 
 1. `날짜등의 특정포맷에 대한 Mask기능`
   - LineCellEditor와 DateCellEditor에서 사용할수 있는 mask속성이 추가되었습니다.
   - Cell 편집시에 적용되는 속성이며 표시되는 값을 변경하는 경우 datetimeFormat또는 displayRegExp등을 이용해서 변경해야 합니다.
-
 ```js
 grid.setColumns([
 {
-  fieldName:"fieldName",
-  name:"name",
-  editor:{
-    type:"date",
-    mask:{
-      editMask:"9999-99-99",
-      includedFormat:true //
+    fieldName:"fieldName",
+    name:"name",
+    editor:{
+        type:"date",
+        mask:{
+            editMask:"9999-99-99",
+            includedFormat:true
+        }
+    },
+    styles:{
+        datetimeFormat:"yyyy-MM-dd"
     }
-  },
-  styles:{
-    datetimeFormat:"yyyy-MM-dd"
-  }
-}])
+}
+])
 ```
   - 자세한 내용은 [Mask](http://help.realgrid.com/api/types/Mask/)를 참조하세요.
 
 1. 그리드 빈공간의 배경색을 변경할수 있도록 개선되었습니다.
   - 그리드의 body.empty.background의 색상을 지정하여 그리드 빈영역의 배경색을 지정할 수 있도록 개선되었습니다.
   - 그리드에 표시되는 데이터가 한건도 없는 경우 사용자에게 메세지를 표시할수 있도록 DisplayOptions.showEmptyMessage가 추가되었습니다.
-  
 ```js
-grid.setDisplayOptions({showEmptyMessage:true, emptyMessage:"자료가 없습니다"});
-grid.setStyles({body:{empty:{background:"#2100ff00", textAlignment:"center", lineAlignment:"center", fontSize:15, fontBold:true}}});
+grid.setDisplayOptions({
+    showEmptyMessage:true, 
+    emptyMessage:"자료가 없습니다"
+});
+grid.setStyles({
+    body:{
+        empty:{
+            background:"#2100ff00", 
+            textAlignment:"center", 
+            lineAlignment:"center", 
+            fontSize:15, 
+            fontBold:true
+        }
+    }
+});
 ```
 
 1. [DisplayOptions](http://help.realgrid.com/api/types/DisplayOptions/)
