@@ -1,15 +1,15 @@
 ---
 layout: page
-title: 그룹핑 API
-order: 2
+title: 아이템 모델
+order: 5
 devbox: true
-devboxfile: GroupingApi-dbox.md
+devboxfile: ItemModelApi-devbox.md
 categories:
   - 행 그룹
-tags: ['grouping','rowGroup','행그룹','그룹']
+tags: ['item', '모델', 'model']
 ---
 
-코드를 이용하여 rowGroup을 추가하거나 해제하고 현재 그룹핑된 정보를 찾아올수 있도록 함수들을 제공합니다.
+그리드 아이템(Item)은 DataProvider의 한 행이나, RowGrouping된 그룹의 헤더나 푸터 등이 그리드나 트리에서 한 라인으로 표시되는 표시 모델입니다.
 
 <script>
   var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
