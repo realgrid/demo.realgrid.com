@@ -70,6 +70,18 @@ gridView.setSelectOptions({
 });
 ```
 
+#### 선택된 셀의 행 표시
+
+[DisplayOptions](http://help.realgrid.com/api/types/DisplayOptions/).rowFocusVisible 을 True로 설정하여 선택된 셀의 행을 표시할 수 있습니다. 위에 설명된 선택 스타일들과 중첩으로 사용 가능하며 반드시 rowFocusBackground 속성에 색상값을 지정해야 합니다.
+<a class="btn primary small round lowercase" id="btnSetRowFocusVisible">rowFocusVisible</a>
+
+```js
+gridView.setDisplayOptions({
+  rowFocusVisible:true, 
+  rowFocusBackground:"#340000ff"
+});
+```
+
 <script>
   $('#btnSetBlock').click(function() {
     gridView.setSelectOptions({
@@ -109,4 +121,10 @@ gridView.setSelectOptions({
     });
   });
 
+  $('#btnSetRowFocusVisible').click(function() {
+    gridView.setDisplayOptions({
+      rowFocusVisible:true, 
+      rowFocusBackground:"#340000ff"
+    });
+  });
 </script>

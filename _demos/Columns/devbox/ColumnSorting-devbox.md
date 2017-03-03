@@ -124,6 +124,25 @@ gridView.setSortingOptions({
 gridView.refresh();
 ```
 
+#### 정렬 순서 표시
+
+[SortingOptions](http://help.realgrid.com/api/types/SortingOptions/){:target="_blank"}.showSortOrder 값을 True로 설정하면 Sort핸들 오른쪽에 정렬순서가 표시됩니다. 
+
+<a class="btn primary small round lowercase" id="btnSetShowSortOrder">setShowSortOrder</a>
+
+```js
+gridView.setSortingOptions({
+  showSortOrder: true, 
+  sortOrderStyles: {
+    font:"굴림체", 
+    fontSize:10, 
+    fontBold:true, 
+    foreground:"#ffff8888", 
+    textAlignment:"far"
+  }
+});
+```
+
 <script>
 function createColumnList(grid) {
   var names = grid.getColumnNames();
@@ -256,6 +275,19 @@ $("#btnSetHandleImage").click(function() {
   });
 
   gridView.refresh();
+});
+
+$("#btnSetShowSortOrder").click(function() { 
+  gridView.setSortingOptions({
+    showSortOrder: true, 
+    sortOrderStyles: {
+      font:"굴림체", 
+      fontSize:10, 
+      fontBold:true, 
+      foreground:"#ffff8888", 
+      textAlignment:"far"
+    }
+  });
 });
 
 </script>
