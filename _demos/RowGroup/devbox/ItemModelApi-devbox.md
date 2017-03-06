@@ -42,11 +42,11 @@ childIndex: 0,   // 부모 모델내의 순서
 #### 아이템 모델 가져오기
 
 <input type="checkbox" id="chkExtendedModel"> 
-extended
+extended(확장정보 포함 여부)
 
  
 <a class="btn primary small round lowercase" id="btnGetModel">getModel</a>  
-아이템 index에 해당하는 아이템모델을 리턴 합니다.  
+[getModel()](http://help.realgrid.com/api/GridBase/getModel/)함수는 아이템 index에 해당하는 아이템모델을 리턴 합니다.  
 ```js
 var extended = $("#chkExtendedModel").is(":checked");
 var itemIndex = gridView.getCurrent().itemIndex;
@@ -55,7 +55,7 @@ alert(JSON.stringify(item));
 ```
 
 <a class="btn primary small round lowercase" id="btnGetParentModel">getParentModel</a>  
-아이템 모델의 부모 아이템 모델을 리턴 합니다.  
+[getParentModel()](http://help.realgrid.com/api/GridBase/getParentModel/)함수는 아이템 모델의 부모 아이템 모델을 리턴 합니다.  
 ```js
 var extended = $("#chkExtendedModel").is(":checked");
 var idx = gridView.getCurrent();
@@ -69,7 +69,7 @@ if (parent) {
 ```
 
 <a class="btn primary small round lowercase" id="btnGetRootModel">getRootModel</a>  
-아이템 모델의 최상위 조상 아이템 모델을 리턴 합니다.  
+[getRootModel()](http://help.realgrid.com/api/GridBase/getRootModel/)함수는 아이템 모델의 최상위 조상 아이템 모델을 리턴 합니다.  
 ```js
 var extended = $("#chkExtendedModel").is(":checked");
 var idx = gridView.getCurrent();
@@ -84,7 +84,7 @@ if (root) {
 ```
  
 <a class="btn primary small round lowercase" id="btnGetChildModels">getChildModels</a>  
-아이템 모델의 바로 아래 자식 아이템 모델들을 리턴 합니다. 
+[getChildModels()](http://help.realgrid.com/api/GridBase/getChildModels/)함수는 아이템 모델의 바로 아래 자식 아이템 모델들을 리턴 합니다. 
 ```js
 var extended = $("#chkExtendedModel").is(":checked");
 var itemIndex = gridView.getCurrent().itemIndex;
@@ -96,7 +96,7 @@ if (item) {
 ```
 
 <a class="btn primary small round lowercase" id="btnGetChildModel">getChildModel</a>  
-아이템 모델의 자식 아이템 모델을 리턴 합니다.  
+[getChildModel()](http://help.realgrid.com/api/GridBase/getChildModel/)함수는 아이템 모델의 자식 아이템 모델을 리턴 합니다.  
 ```js
 var extended = $("#chkExtendedModel").is(":checked");
 var itemIndex = gridView.getCurrent().itemIndex;
@@ -108,7 +108,7 @@ if (group && group.count > 0) {
 ```
  
 <a class="btn primary small round lowercase" id="btnGetModels">getModels</a>  
-지정한 아이템 index들에 해당하는 아이템 모델들을 배열로 리턴 합니다. 
+[getModels()](http://help.realgrid.com/api/GridBase/getModels/)함수는 지정한 아이템 index들에 해당하는 아이템 모델들을 배열로 리턴 합니다. 
 ```js
 var extended = $("#chkExtendedModel").is(":checked");
 var items = gridView.getModels([0, 1, 2], extended);
@@ -117,7 +117,7 @@ alert(JSON.stringify(s));
 ```
  
 <a class="btn primary small round lowercase" id="btnGetModelOfRow">getModelOfRow</a>  
-지정한 데이터 행에 해당하는 아이템 모델을 리턴 합니다. 
+[getModelOfRow()](http://help.realgrid.com/api/GridBase/getModelOfRow/)함수는 지정한 데이터 행에 해당하는 아이템 모델을 리턴 합니다. 
 ```js
 var extended = $("#chkExtendedModel").is(":checked");
 var row = gridView.getCurrent().dataRow;
@@ -126,7 +126,7 @@ alert(JSON.stringify(item));
 ```
  
 <a class="btn primary small round lowercase" id="btnGetModelsOfRows">getModelsOfRows</a>  
-지정한 데이터 행들에 해당하는 아이템 모델들을 배열로 리턴 합니다. 
+[getModelsOfRows()](http://help.realgrid.com/api/GridBase/getModelsOfRows/)함수는 지정한 데이터 행들에 해당하는 아이템 모델들을 배열로 리턴 합니다. 
 ```js
 var extended = $("#chkExtendedModel").is(":checked");
 var items = gridView.getModelsOfRows([0, 1, 2],extended);
@@ -135,7 +135,7 @@ alert(JSON.stringify(s));
 ```
  
 <a class="btn primary small round lowercase" id="btnGetGroupSummary">getGroupSummary</a>  
-getGroupSummary	지정한 그룹아이템 모델의 합계 정보를 리턴 합니다.  
+[getGroupSummary](http://help.realgrid.com/api/GridBase/getGroupSummary/)	지정한 그룹아이템 모델의 합계 정보를 리턴 합니다.  
 ```js
 var idx = gridView.getCurrent();
 var item = gridView.getModelAs(idx.itemIndex, "row");
