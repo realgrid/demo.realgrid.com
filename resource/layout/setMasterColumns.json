@@ -1,0 +1,81 @@
+[
+    {
+        "fieldName": "OrderID",
+        "name": "OrderID",
+        "required": true,
+        "requiredLevel": "error",
+        "requiredMessage": "OrderID는 반드시 입력해야 합니다.",
+        "header": "OrderID",
+        "width": 70,
+        "styles": {
+            "textAlignment": "center"
+        }
+         
+    },
+    {
+        "fieldName": "CustomerID",
+        "name": "CustomerID",
+        "required": true,
+        "requiredLevel": "info",
+        "requiredMessage": "CustomerID는 반드시 입력해야 합니다.",
+        "header": "CustomerID",
+        "width": 80,
+        "styles": {
+            "textAlignment": "center"
+        }
+    },
+    {
+        "fieldName": "CompanyName",
+        "name": "CompanyName",
+        "header": "CompanyName",
+        "width": 160
+    },
+    {
+        "fieldName": "EmployeeID",
+        "name": "EmployeeID",
+        "header": "EmployeeID",
+        "lookupDisplay": true,
+        "values": ["1", "2", "3", "4", "5", "6"],
+        "labels": ["Davolio", "Fuller", "Leverling", "Peacock", "Buchanan", "Suyama"],
+        "editor": {
+            "type": "dropDown"
+        },
+        "styles": {
+            "textAlignment": "center"
+        }
+    },
+    {
+        "fieldName": "OrderDate",
+        "name": "OrderDate",
+        "header": "OrderDate",
+        "editor": {
+            "datetimeFormat": "yyyy-MM-dd"
+        },
+        "styles": {
+            "textAlignment": "center",
+            "datetimeFormat": "yyyy/MM/dd"
+        }
+    },
+    {
+        "fieldName": "ShipName",
+        "name": "ShipName",
+        "header": "ShipName",
+        "width": 160
+    },
+    {
+        "fieldName": "ShipAddress",
+        "name": "ShipAddress",
+        "header": "ShipAddress",
+        "width": 160
+    },
+    {
+        "fieldName": "ShipCity",
+        "name": "ShipCity",
+        "header": "ShipCity"
+    },
+    {
+        "fieldName": "ShipCountry",
+        "name": "ShipCountry",
+        "header": "ShipCountry"
+    }
+]

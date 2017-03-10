@@ -1,0 +1,30 @@
+[
+    {
+        "fieldName": "OrderID",
+        "dataType": "number"
+    }, {
+        "fieldName": "CustomerID",
+        "dataType": "text"
+    }, {
+        "fieldName": "CompanyName",
+        "dataType": "text"
+    }, {
+        "fieldName": "EmployeeID",
+        "dataType": "number"
+    }, {
+        "fieldName": "OrderDate",
+        "dataType": "datetime"
+    }, {
+        "fieldName": "ShipName",
+        "dataType": "text"
+    }, {
+        "fieldName": "ShipAddress",
+        "dataType": "text"
+    }, {
+        "fieldName": "ShipCity",
+        "dataType": "text"
+    }, {
+        "fieldName": "ShipCountry",
+        "dataType": "text"
+    }
+]

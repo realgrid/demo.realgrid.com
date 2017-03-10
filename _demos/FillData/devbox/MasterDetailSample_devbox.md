@@ -1,18 +1,15 @@
----
-layout: page
-title: 마스터 디테일 예
-order: 10
-devbox: true
-devboxfile: MasterDetailSample_devbox.md
-published: true
-categories:
-  - 데이터 가져오기
-tags: ['filldata', 'sample', 'master', 'detail']
----
+#### Master, Detail 설정
 
-간단하게 구현한 Master, Detail 화면입니다.
+Master의 key는 `"OrderID"`이며, Detail의 key는 `"OrderID"`,`"ProductName"` 입니다.  
+Detail의 "OrderID" 는 저장시 자동으로 입력되도록 코딩되어 있습니다.  
+소스에서 dpDetail.onRowInserting를 확인하시기 바랍니다.
 
-<script>
+- `삽입/추가`: 원하는 위치에서 [ctrl] + [insert] key or 맨 마지막 행에서 [↓] key(down arrow) 
+- `삭제`: [ctrl] + [Del] key, Master의 경우 바로 삭제, Detail의 경우 softDeleting이 적용되었습니다.
+
+```js
+var mainGrid, detailGrid, dpMain, dpDetail;
+ 
 var masterData = [
     ["10248", "VINET", "Vins et alcools Chevalier", "5", "1996-07-04", "Vins et alcools Chevalier", "59 rue de l'Abbaye", "Reims", "France"],
     ["10249", "TOMSP", "Toms Spezialitäten", "6", "1996-07-05", "Toms Spezialitäten", "Luisenstr. 48", "Münster", "Germany"],
@@ -40,17 +37,38 @@ var detailData = [
     { OrderID: 10253, ProductName: "Gorgonzola Telino", UnitPrice: 10, Quantity: 20 },
     { OrderID: 10253, ProductName: "Chartreuse verte", UnitPrice: 14.4, Quantity: 42 }
 ];
-
-
-var onGridSuccessDataSetDetail = function(data, textStatus, jqXHR) {
-	setMasterOptions(dpMain, mainGrid);  
-	setMasterCallback();
-	dpMain.setRows(masterData);
-	setDetailOptions(dpDetail, detailGrid);
-	setDetailCallback();
-}
-
-
+ 
+$(function () {
+    $("#btnMasterSave").click(onbtnMasterSave);
+    $("#btnDetailSave").click(onbtnDetailSave);
+ 
+    RealGridJS.setTrace(false);
+    RealGridJS.setRootContext("/img/realgridjs");
+ 
+    // Master 
+    dpMain = new RealGridJS.LocalDataProvider();
+    mainGrid = new RealGridJS.GridView("mainGrid");
+    mainGrid.setDataProvider(dpMain);
+ 
+    setMasterField(dpMain);
+    setMasterColumn(mainGrid);
+    setMasterOptions(dpMain, mainGrid);   
+    setMasterCallback();
+ 
+    // detail
+    dpDetail = new RealGridJS.LocalDataProvider();
+    detailGrid = new RealGridJS.GridView("detailGrid");
+    detailGrid.setDataProvider(dpDetail);
+ 
+    setDetailField(dpDetail);
+    setDetailColumn(detailGrid);
+    setDetailOptions(dpDetail, detailGrid);
+    setDetailCallback();
+ 
+    dpMain.setRows(masterData);
+    mainGrid.setCurrent({ itemIndex: 0 });
+});
+ 
 function setMasterCallback() {
     mainGrid.onCurrentRowChanged = function (grid, oldRow, newRow) {
         console.log("mainGrid.onCurrentRowChanged");
@@ -62,17 +80,12 @@ function setMasterCallback() {
             grid.setColumnProperty("OrderID", "editable", isNew);
         detailControl(newRow);
     };
- 
-    mainGrid.onEditCommit = function (grid, index, oldValue, newValue) {
- 
-    };
     mainGrid.onCurrentChanging = function (grid, oldIndex, newIndex) {
         // detail을 확인해서 수정중이거나. 수정후 저장된것이 있으면 종료..
         if (oldIndex.itemIndex != newIndex.itemIndex && !chkDetail()) {
             return false;
         }
     };
- 
     mainGrid.onSorting = function (grid) {
         if (!chkDetail()) {
             return false;
@@ -100,74 +113,6 @@ function setMasterCallback() {
     };
 };
  
-
- 
- 
-function setMasterOptions(provider, grid) {
-    provider.setOptions({
-        restoreMode: "auto"
-    });
- 
-    grid.setOptions({
-        edit: {
-            insertable: true,
-            appendable: true,
-            deletable: true,
-            upateable: true,
-            commitWhenExitLast: true,
-            crossWhenExitLast: true,
-            enterToTab: true,
-        },
-        sort: {
-            keepFocusedRow: true
-        },
-        footer: {
-            visible: false
-        }
-    })
-};
- 
-
- 
-function onbtnMasterSave(event) {
-	console.log("저장")
-    mainGrid.commit();
-    //마스터 저장 생략.
-    dpMain.clearRowStates();
-};
- 
-function onbtnMasterAdd(event) {
-    var row = dpMain.addRow({});
-    mainGrid.setCurrent({ dataRow: row })
-    mainGrid.setFocus();
-};
-
-function setGridStyles() {
-    var skins = {
-        selection:{
-            background:"#50ffd400", 
-            border:"#ffffd400,1px"
-        },
-        body:{
-            background:"#fffafbfc",
-            foreground:"#ff000000"
-        },
-        header:{
-            background:"linear,#ffe4f2fb,#ffddeefa,90",
-            fontBold:"true"
-        },
-        indicator:{
-            background:"#d8ecfa",
-            foreground:"#ff3a85ba"
-        }
-    };
-
-    mainGrid.setStyles(skins);
-
-    detailGrid.setStyles(skins);
-}
-
-
 function setDetailCallback() {
     detailGrid.onCurrentRowChanged = function (grid, oldRow, newRow) {
         var isNew = (newRow < 0) || dpMain.getRowState(newRow) === "created";
@@ -194,8 +139,63 @@ function setDetailCallback() {
         console.log("Detail Row삭제: " + row);
     };
 };
+ 
+function setMasterField(provider) {
+    var fields = [
+        ...
+    ];
 
-///detail
+    provider.setFields(fields);
+};
+function setMasterColumn(grid) {
+    var columns = [
+        ...
+    ];
+ 
+    grid.setColumns(columns);
+};
+ 
+function setMasterOptions(provider, grid) {
+    provider.setOptions({
+        restoreMode: "auto"
+    });
+ 
+    grid.setOptions({
+        edit: {
+            insertable: true,
+            appendable: true,
+            deletable: true,
+            upateable: true,
+            commitWhenExitLast: true,
+            crossWhenExitLast: true,
+            enterToTab: true,
+        },
+        sort: {
+            keepFocusedRow: true
+        },
+        footer: {
+            visible: false
+        }
+    })
+};
+ 
+function setDetailField(provider) {
+    var fields = [
+        ...
+    ];
+
+    provider.setFields(fields);
+
+};
+function setDetailColumn(grid) {
+    // OrderID는 자동으로 입력됨, ProductName의 경우 신규만 가능, 수정은 불가능하게 처리.
+    var columns = [
+        ...
+    ];
+ 
+    grid.setColumns(columns);
+};
+ 
 function setDetailOptions(provider, grid) {
     provider.setOptions({ softDeleting: true });
     grid.setOptions({
@@ -212,7 +212,6 @@ function setDetailOptions(provider, grid) {
  
 function detailControl(masterRow) {
     dpDetail.clearRows();
- 
  
     if (masterRow >= 0) {
         var mstKey = dpMain.getValue(masterRow, "OrderID");
@@ -237,7 +236,6 @@ function chkDetail() {
 };
  
 function onbtnDetailSave(evt) {
-	console.log("저장")
     detailGrid.commit();
  
     var states = dpDetail.getAllStateRows();
@@ -285,43 +283,17 @@ function onbtnDetailSave(evt) {
         // 생성후 삭제.
         dpDetail.clearRowStates(true);
     };
- 
 };
-
-</script>
-
-
-<a class="btn primary small round lowercase" id="btnMasterSave" onclick="onbtnMasterSave();">저장</a>
-
-{% include realgrid.html
-
-  gridVar="mainGrid"
-  dpVar="dpMain"
-  gridId="main"
-
-  fieldSet="setMasterFields"
-  columnSet="setMasterColumns"
-  dpOptionSet="dataProviderOption1"
-  gridOptionSet="DefaultGridOption"
-  styleSet="style1"
-
-  gridWidth="100%"
-  gridHeight="300px" %}
-
-<a class="btn primary small round lowercase" id="btnDetailSave" onclick="onbtnDetailSave()">저장</a>
-
-{% include realgrid.html
-
-  gridVar="detailGrid"
-  dpVar="dpDetail"
-  gridId="detail"
-
-  fieldSet="setDetailFields"
-  columnSet="setDetailColumns"
-  styleSet="style1"
-
-  dataSet="firRowHeightData.json"
-  successDataSet="onGridSuccessDataSetDetail"
-
-  gridWidth="100%"
-  gridHeight="300px" %}
+ 
+function onbtnMasterSave(event) {
+    mainGrid.commit();
+    //마스터 저장 생략.
+    dpMain.clearRowStates();
+};
+ 
+function onbtnMasterAdd(event) {
+    var row = dpMain.addRow({});
+    mainGrid.setCurrent({ dataRow: row })
+    mainGrid.setFocus();
+};
+```

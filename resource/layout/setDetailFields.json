@@ -1,0 +1,22 @@
+[
+    {
+        "fieldName": "OrderID",
+        "dataType": "number"
+    },
+    {
+        "fieldName": "ProductName",
+        "dataType": "text"
+    },
+    {
+        "fieldName": "ProductName",
+        "dataType": "text"
+    },
+    {
+        "fieldName": "UnitPrice",
+        "dataType": "number"
+    },
+    {
+        "fieldName": "Quantity",
+        "dataType": "number"
+    }
+]

@@ -1,0 +1,40 @@
+[
+    {
+        "fieldName": "OrderID",
+        "name": "OrderID",
+        "header": "OrderID",
+        "width": 70,
+        "editable": false,
+        "readOnly": true,
+        "styles": {
+            "textAlignment": "center"
+        }
+    },
+    {
+        "fieldName": "ProductName",
+        "name": "ProductName",
+        "required": true,
+        "requiredLevel": "info",
+        "requiredMessage": "ProductName는 반드시 입력해야 합니다.",
+        "header": "ProductName",
+        "width": 200
+    },
+    {
+        "fieldName": "UnitPrice",
+        "name": "UnitPrice",
+        "header": "UnitPrice",
+        "styles": {
+            "textAlignment": "far",
+            "numberFormat": "#,##0.00"
+        }
+    },
+    {
+        "fieldName": "Quantity",
+        "name": "Quantity",
+        "header": "Quantity",
+        "styles": {
+            "textAlignment": "far",
+            "numberFormat": "#,##0"
+        }
+    }
+]
