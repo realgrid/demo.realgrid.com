@@ -1,0 +1,135 @@
+<html>
+<head>
+	<title>RealGridJS sample page</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script src="/lib/realgrid/realgridjs-lic.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.wa/realgridjs_eval.1.1.22.min.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.wa/realgridjs-api.1.1.22.js"></script>
+	<script src="/lib/jquery/jquery-1.11.2.min.js"></script>
+	<script language="javascript">
+	var dataProvider;
+	var gridView;
+	var firstFocus = true;
+	$(document).ready( function(){
+	    RealGridJS.setTrace(false);
+	    RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.22/");
+	    
+	    dataProvider = new RealGridJS.LocalDataProvider();
+	    dataProvider.setFields([{
+	            fieldName: "name",
+				defaultValue: "홍길동"
+	        }, {
+	            fieldName: "company",
+				defaultValue: "주식회사"
+	        }, {
+	            fieldName: "email",
+				defaultValue: "anonymous@somthing.com"
+	        }, {
+	        	fieldName: "EmployeeID",
+	        	defaultValue: "사원 번호"
+	        }, {
+	        	fieldName: "OrderID",
+	        	defaultValue: "주문 번호"
+	        }, {
+	        	fieldName: "CustomerID",
+	        	defaultValue: "고객 번호"
+	        }]);
+	    gridView = new RealGridJS.GridView("realgrid", true);
+	    gridView.setDataSource(dataProvider);   
+	    gridView.setColumns([{
+	            fieldName: "name",
+	            name: "name",
+	            width: 70,
+	            styles: {
+	                textAlignment: "center"
+	            },
+	            header: {text: "이름"},
+	            renderer: {
+	            	type: "link",
+				    url: "https://www.google.co.kr/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#newwindow=1&q=",
+				    requiredFields: "company",
+				    showUrl: false
+	            }
+	        }, {
+	            fieldName: "company",
+	            name: "company",
+	            width: 150,
+	            styles: {
+	                textAlignment: "center",
+	                textWrap: "normal"
+	            },
+	            header: {text: "회사"}
+	        }, {
+	           fieldName: "email",
+	            name: "email",
+	            width: 200,
+	            header: {text: "e-mail"}
+	        }, {
+	           fieldName: "EmployeeID",
+	            name: "EmployeeID",
+	            width: 150,
+	            styles: {
+	                textAlignment: "center",
+	                textWrap: "normal"
+	            },
+	            header: {text: "사원"}
+	        }, {
+	           fieldName: "OrderID",
+	            name: "OrderID",
+	            width: 150,
+	            styles: {
+	                textAlignment: "center",
+	                textWrap: "normal"
+	            },
+	            header: {text: "주문"}
+	        }, {
+	           fieldName: "CustomerID",
+	            name: "CustomerID",
+	            width: 150,
+	            styles: {
+	                textAlignment: "center",
+	                textWrap: "normal"
+	            },
+	            header: {text: "고객"}
+	        }]);
+	    gridView.setOptions({
+	    	panel: { visible: false },
+	        edit: { 
+	            insertable: false,
+	            appendable: false
+	        }
+	    });
+		
+		dataProvider.setRowCount(10, true);
+
+	function disableAria(container) {
+		var inputs = $("#"+container).find("input:text");
+		var obj = $(inputs[1]);
+		obj.attr("aria-hidden", "true");
+	}
+
+	</script>
+</head>
+<body>
+
+	<div id="actions" style="margin-bottom:4px">
+        <span id="loadResult" style="display:none"></span>
+        <a href="../FunctionCombination/index.html">Home</a>
+        <input id="txtMain" style="width: 100px;"/>
+        <input id="txtSub" style="width: 80px;display: none"/>
+        <input id="txtMin" style="width: 60px;display: none"/>
+  	</div>
+
+<div id="realgrid" style="height:383px;width:950px;" title="리얼그리드"></div>
+
+</body>
+</html>
+
+<!--
+센차
+http://examples.sencha.com/extjs/6.0.1/examples/
+<div id="docs-aria-speakable" class="docs-a11y-ariascreenreader-speakable docs-offscreen" aria-live="assertive" role="region" aria-atomic="true" aria-hidden="false" aria-relevant="additions">11/25/2014;  D167 </div>
+<div class="cell-input" tabindex="0" role="textbox" contenteditable="true" dir="ltr" aria-activedescendant="fake-activedescendant-:47" aria-owns="fake-activedescendant-:47">11/25/2014<br></div>
+-->
+
+
