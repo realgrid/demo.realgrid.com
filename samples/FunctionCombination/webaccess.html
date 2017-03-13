@@ -10,7 +10,7 @@
 	var dataProvider;
 	var gridView;
 	var firstFocus = true;
-	$(document).ready( function(){
+	$(document).ready( function() {
 	    RealGridJS.setTrace(false);
 	    RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.22/");
 	    
@@ -92,21 +92,15 @@
 	            },
 	            header: {text: "고객"}
 	        }]);
-	    gridView.setOptions({
-	    	panel: { visible: false },
-	        edit: { 
-	            insertable: false,
-	            appendable: false
-	        }
-	    });
 		
 		dataProvider.setRowCount(10, true);
 
-	function disableAria(container) {
-		var inputs = $("#"+container).find("input:text");
-		var obj = $(inputs[1]);
-		obj.attr("aria-hidden", "true");
-	}
+		function disableAria(container) {
+			var inputs = $("#"+container).find("input:text");
+			var obj = $(inputs[1]);
+			obj.attr("aria-hidden", "true");
+		}
+	});
 
 	</script>
 </head>
