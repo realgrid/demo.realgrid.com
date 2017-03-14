@@ -15,85 +15,359 @@
 	    RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.22/");
 	    
 	    dataProvider = new RealGridJS.LocalDataProvider();
-	    dataProvider.setFields([{
-	            fieldName: "name",
-				defaultValue: "홍길동"
-	        }, {
-	            fieldName: "company",
-				defaultValue: "주식회사"
-	        }, {
-	            fieldName: "email",
-				defaultValue: "anonymous@somthing.com"
-	        }, {
-	        	fieldName: "EmployeeID",
-	        	defaultValue: "사원 번호"
-	        }, {
-	        	fieldName: "OrderID",
-	        	defaultValue: "주문 번호"
-	        }, {
-	        	fieldName: "CustomerID",
-	        	defaultValue: "고객 번호"
-	        }]);
+	    dataProvider.setOptions({
+	        datetimeFormat: "yyyy-MM-dd a hh:mm:ss",
+	        amText: "오전",
+	        pmText: "오후"
+	    });
+	    dataProvider.setFields([
+		    {
+		        "fieldName": "OrderID",
+		        "dataType": "text"
+		    },
+		    {
+		        "fieldName": "CustomerID"
+		    },
+		    {
+		        "fieldName": "EmployeeID"
+		    },
+		    {
+		        "fieldName": "OrderDate",
+		        "dataType": "datetime"
+		    },
+		    {
+		        "fieldName": "CompanyName"
+		    },
+		    {
+		        "fieldName": "Country"
+		    },
+		    {
+		        "fieldName": "CountryKor"
+		    },
+		    {
+		        "fieldName": "Phone"
+		    },
+		    {
+		        "fieldName": "ProductName"
+		    },
+		    {
+		        "fieldName": "QuantityPerUnit"
+		    },
+		    {
+		        "fieldName": "Quantity",
+		        "dataType": "number"
+		    },
+		    {
+		        "fieldName": "UnitPrice",
+		        "dataType": "number"
+		    }
+		]);
 	    gridView = new RealGridJS.GridView("realgrid", true);
 	    gridView.setDataSource(dataProvider);   
-	    gridView.setColumns([{
-	            fieldName: "name",
-	            name: "name",
-	            width: 70,
-	            styles: {
-	                textAlignment: "center"
-	            },
-	            header: {text: "이름"},
-	            renderer: {
-	            	type: "link",
-				    url: "https://www.google.co.kr/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#newwindow=1&q=",
-				    requiredFields: "company",
-				    showUrl: false
-	            }
-	        }, {
-	            fieldName: "company",
-	            name: "company",
-	            width: 150,
-	            styles: {
-	                textAlignment: "center",
-	                textWrap: "normal"
-	            },
-	            header: {text: "회사"}
-	        }, {
-	           fieldName: "email",
-	            name: "email",
-	            width: 200,
-	            header: {text: "e-mail"}
-	        }, {
-	           fieldName: "EmployeeID",
-	            name: "EmployeeID",
-	            width: 150,
-	            styles: {
-	                textAlignment: "center",
-	                textWrap: "normal"
-	            },
-	            header: {text: "사원"}
-	        }, {
-	           fieldName: "OrderID",
-	            name: "OrderID",
-	            width: 150,
-	            styles: {
-	                textAlignment: "center",
-	                textWrap: "normal"
-	            },
-	            header: {text: "주문"}
-	        }, {
-	           fieldName: "CustomerID",
-	            name: "CustomerID",
-	            width: 150,
-	            styles: {
-	                textAlignment: "center",
-	                textWrap: "normal"
-	            },
-	            header: {text: "고객"}
-	        }]);
+	    gridView.setColumns([
+		    	{
+		        "name": "EmployeeID",
+		        "fieldName": "EmployeeID",
+		        "width": "150",
+		        "button": "image",
+		        "imageButtons": {
+		            "width": 45,
+		            "height": 13,
+		            "images": [
+		                {
+		                    "name": "팝업버튼",
+		                    "up": "/resource/image/btnImages/popup_normal.png",
+		                    "hover": "/resource/image/btnImages/popup_hover.png",
+		                    "down": "/resource/image/btnImages/popup_click.png"
+		                },
+		                {
+		                    "name": "조회버튼",
+		                    "up": "/resource/image/btnImages/search_normal.png",
+		                    "hover": "/resource/image/btnImages/search_hover.png",
+		                    "down": "/resource/image/btnImages/search_click.png"
+		                }
+		            ]
+		        },
+		        "styles": {
+		            "textAlignment": "center"
+		        },
+		        "header": {
+		            "text": "imageButton"
+		        }
+		    },
+		    {
+		        "name": "EmployeeID2",
+		        "fieldName": "EmployeeID",
+		        "width": "150",
+		        "button": "action",
+		        "styles": {
+		            "textAlignment": "center"
+		        },
+		        "header": {
+		            "text": "buttonAction"
+		        }
+		    },
+		    {
+		        "name": "OrderID",
+		        "fieldName": "OrderID",
+		        "editor": {
+		            "maxLength": 5
+		        },
+		        "width": "90",
+		        "styles": {
+		            "textAlignment": "center"
+		        },
+		        "textInputCase": "upper",
+		        "header": {
+		            "text": "Text editor"
+		        }
+		    },
+		    {
+		        "name": "CompanyName",
+		        "fieldName": "CompanyName",
+		        "width": "200",
+		        "editor": {
+		            "type": "multiline",
+		            "textCase": "upper"
+		        },
+		        "styles": {
+		            "textAlignment": "near",
+		            "textWrap": "normal"
+		        },
+		        "header": {
+		            "text": "Multiline Edit"
+		        }
+		    },
+		    {
+		        "name": "Quantity",
+		        "fieldName": "Quantity",
+		        "width": "100",
+		        "sortable": false,
+		        "editor": {
+		            "type": "number",
+		            "textAlignment": "far",
+		            "editFormat": "#,##0.##",
+		            "multipleChar": "+"
+		        },
+		        "styles": {
+		            "textAlignment": "far",
+		            "numberFormat": "#,##0.##"
+		        },
+		        "header": {
+		            "text": "Number Edit"
+		        }
+		    },
+		    {
+		        "name": "CustomerID",
+		        "fieldName": "CustomerID",
+		        "width": "150",
+		        "sortable": false,
+		        "lookupDisplay": true,
+		        "values": [
+		            "VINET",
+		            "HANAR",
+		            "SUPRD",
+		            "VICTE",
+		            "THREE",
+		            "SEVEN"
+		        ],
+		        "labels": [
+		            "<VINET>",
+		            "<HANAR>",
+		            "<SUPRD>",
+		            "<VICTE>",
+		            "<THREE>",
+		            "<SEVEN>"
+		        ],
+		        "editor": {
+		            "type": "dropDown",
+		            "dropDownCount": 4
+		        },
+		        "styles": {
+		            "textAlignment": "center"
+		        },
+		        "header": {
+		            "text": "DropDown Edit"
+		        }
+		    },
+		    {
+		        "name": "CustomerID2",
+		        "fieldName": "CustomerID",
+		        "width": "150",
+		        "sortable": false,
+		        "editor": {
+		            "type": "dropDown",
+		            "dropDownCount": 4,
+		            "domainOnly": true,
+		            "textReadOnly": true,
+		            "values": [
+		                "VINET",
+		                "HANAR",
+		                "SUPRD",
+		                "VICTE",
+		                "THREE",
+		                "SEVEN"
+		            ],
+		            "labels": [
+		                "<VINET>",
+		                "<HANAR>",
+		                "<SUPRD>",
+		                "<VICTE>",
+		                "<THREE>",
+		                "<SEVEN>"
+		            ]
+		        },
+		        "styles": {
+		            "textAlignment": "center"
+		        },
+		        "header": {
+		            "text": "Domain Only"
+		        }
+		    },
+		    {
+		        "name": "CustomerID3",
+		        "fieldName": "CustomerID",
+		        "width": "150",
+		        "sortable": false,
+		        "editor": {
+		            "type": "search",
+		            "searchLength": 1,
+		            "searchDelay": 1000,
+		            "useCtrlEnterKey": true,
+		            "useEnterKey": true
+		        },
+		        "styles": {
+		            "textAlignment": "center"
+		        },
+		        "header": {
+		            "text": "Search Editor "
+		        }
+		    },
+		    {
+		        "name": "CountryKor",
+		        "fieldName": "Country",
+		        "width": "150",
+		        "sortable": false,
+		        "lookupDisplay": true,
+		        "values": [
+		            "Austria",
+		            "Belgium",
+		            "Brazil",
+		            "Finland",
+		            "France",
+		            "Germany",
+		            "Ireland",
+		            "Italy",
+		            "Mexico",
+		            "Spain",
+		            "Sweden",
+		            "Switzerland",
+		            "UK",
+		            "USA",
+		            "Venezuela"
+		        ],
+		        "labels": [
+		            "오스트리아",
+		            "벨기에",
+		            "브라질",
+		            "핀란드",
+		            "프랑스",
+		            "독일",
+		            "아일랜드",
+		            "이탈리아",
+		            "멕시코",
+		            "스페인",
+		            "스웨덴",
+		            "스위스",
+		            "영국",
+		            "미국",
+		            "베네수엘라"
+		        ],
+		        "editor": {
+		            "type": "dropDown",
+		            "dropDownCount": 5,
+		            "partialMatch": true
+		        },
+		        "styles": {
+		            "textAlignment": "center"
+		        },
+		        "header": {
+		            "text": "partialMatch"
+		        }
+		    },
+		    {
+		        "name": "OrderDate",
+		        "fieldName": "OrderDate",
+		        "width": "180",
+		        "sortable": false,
+		        "editor": {
+		            "type": "date",
+		            "datetimeFormat": "yyyy.MM.dd"
+		        },
+		        "styles": {
+		            "textAlignment": "center",
+		            "datetimeFormat": "yyyy.MM.dd"
+		        },
+		        "header": {
+		            "text": "Date Edit"
+		        }
+		    },
+		    {
+		        "name": "Country",
+		        "fieldName": "Country",
+		        "width": "100",
+		        "styles": {
+		            "textAlignment": "center"
+		        },
+		        "header": {
+		            "text": "Country"
+		        }
+		    },
+		    {
+		        "name": "Phone",
+		        "fieldName": "Phone",
+		        "width": "100",
+		        "styles": {
+		            "textAlignment": "near"
+		        },
+		        "header": {
+		            "text": "Phone"
+		        }
+		    },
+		    {
+		        "name": "ProductName",
+		        "fieldName": "ProductName",
+		        "width": "200",
+		        "styles": {
+		            "textAlignment": "near"
+		        },
+		        "header": {
+		            "text": "Product Name"
+		        }
+		    }
+		]);
 		
-		dataProvider.setRowCount(10, true);
+		loadData(dataProvider);
+
+		gridView.setDisplayOptions({rowHeight:30});
+		gridView.setColumnProperty("EmployeeID", "buttonVisibility", "always");
+		gridView.setColumnProperty("EmployeeID2", "buttonVisibility", "always");
+		gridView.setColumnProperty("Country", "renderer", {
+		    type: "link",
+		    url: "http://www.countryreports.org/country/${Country}.htm",
+		    requiredFields: "Country",
+		    showUrl: true
+		});
+		gridView.onCellButtonClicked = function (grid, itemIndex, column) {
+          alert("CellButton Clicked: itemIndex=" + itemIndex + ", fieldName=" + column.fieldName);
+	    };
+
+	    gridView.onImageButtonClicked = function (grid, itemIndex, column, buttonIndex, name) {
+	          alert("onImageButtonClicked: " + itemIndex + ", " + column.name+", " + buttonIndex + ", " + name);
+	    };
+		gridView.onLinkableCellClicked = function (grid, index, url) {
+		    window.open(url, '_newtab');
+		};
 
 		function disableAria(container) {
 			var inputs = $("#"+container).find("input:text");
@@ -102,6 +376,19 @@
 		}
 	});
 
+	function loadData(provider) {
+	    $.getJSON("/resource/data/DefaultDataSet.json", function (data) {
+	        provider.setRows(data);
+	    })
+	    .done(function () {
+	        gridView.setFocus();
+	    })
+	    .fail(function (jqxhr, textStatus, error) {
+	        var err = textStatus + ', ' + error;
+	        console && console.log("jQuery getJSON() Failed: " + err);
+	        alert("jQuery getJSON() Failed: " + err);
+	    });
+	}
 	</script>
 </head>
 <body>
