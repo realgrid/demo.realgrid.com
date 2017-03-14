@@ -49,7 +49,7 @@
 	    gridView = new RealGridJS.GridView("realgrid", true);
 	    gridView.setDataSource(dataProvider);   
 	    gridView.setColumns([
-		    	{
+		    {
 		        "name": "EmployeeID",
 		        "fieldName": "EmployeeID",
 		        "width": "150",
@@ -351,6 +351,31 @@
 	        alert("jQuery getJSON() Failed: " + err);
 	    });
 	}
+
+	function mainGrid() {
+		var layout = [
+			"EmployeeID","EmployeeID2","OrderID","CompanyName","Quantity","CustomerID","CustomerID2","CustomerID3","CountryKor","OrderDate","Country"
+		];
+		gridView.setColumnLayout(layout);
+
+		gridView.groupBy([]);
+		gridView.setDisplayOptions({rowHeight:30});
+	};
+
+	function columnGroup() {
+		gridView.setColumnLayout([{name:"button",orientation: "horizontal",width:250,columns:["EmployeeID","EmployeeID2"]},"OrderID","CompanyName","Quantity",{name:"dropdown",orientation: "vertical",width:100,columns:["CustomerID","CustomerID2","CustomerID3"]},"CountryKor","OrderDate","Country"]);
+		gridView.setDisplayOptions({rowHeight:60});
+	};
+
+	function rowGrouping(){
+		var layout = [
+			"EmployeeID","EmployeeID2","OrderID","CompanyName","Quantity","CustomerID","CustomerID2","CustomerID3","CountryKor","OrderDate","Country"
+		];
+		gridView.setColumnLayout(layout);
+
+		gridView.groupBy(["OrderID","CompanyName"]);
+		gridView.setDisplayOptions({rowHeight:30});
+	};
 	</script>
 </head>
 <body>
@@ -361,6 +386,11 @@
         <input id="txtMain" style="width: 100px;"/>
         <input id="txtSub" style="width: 80px;display: none"/>
         <input id="txtMin" style="width: 60px;display: none"/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" id="btnMainGrid" onclick="mainGrid()" value="일반 그리드"/>
+        <input type="button" id="btnColumnGroup" onclick="columnGroup()" value="columnGrouping"/>
+        <input type="button" id="btnRowGroup" onclick="rowGrouping()" value="columnGrouping"/>
   	</div>
 
 <div id="realgrid" style="height:383px;width:950px;" title="리얼그리드"></div>
