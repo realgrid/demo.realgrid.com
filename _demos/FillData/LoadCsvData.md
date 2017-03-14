@@ -12,6 +12,15 @@ tags: ['filldata', 'csv']
 
 RealGrid는 [LocalDataProvider.fillCsvData()](http://help.realgrid.com/api/LocalDataProvider/fillCsvData/) 함수를 이용해 CSV 포멧의 데이터를 읽어 올 수 있습니다. 
 
+
+<script>
+  var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
+    dataProvider.setRows(data);
+  }
+  var onDoneDataSet = function() {
+  }
+</script>
+
 {% include realgrid.html
 
   gridVar="gridView"
@@ -21,9 +30,8 @@ RealGrid는 [LocalDataProvider.fillCsvData()](http://help.realgrid.com/api/Local
   fieldSet="carFields2"
   columnSet="carColumns2"
   dpOptionSet="dataProviderOption1"
-  gridOptionSet="gridOption1"
+  gridOptionSet="DefaultGridOption"
   styleSet="style1"
 
-  showToolbox=true
   gridWidth="100%"
   gridHeight="300px" %}

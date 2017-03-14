@@ -1,4 +1,3 @@
-
 #### CSV 데이터    
 
 콤마(comma)로 구분된 CSV 데이터를 RealGrid의 DataProvider에 입력하기 위해서는 [LocalDataProvider.fillCsvData()](http://help.realgrid.com/api/LocalDataProvider/fillCsvData/)함수는 이용할 수 있습니다. CSV 데이터의 행과 행을 구분하기 위헤 CR, LF, CRLF 중 하나가 포함되어 있어야 합니다.
