@@ -331,11 +331,16 @@
 		    window.open(url, '_newtab');
 		};
 
-		function disableAria(container) {
-			var inputs = $("#"+container).find("input:text");
-			var obj = $(inputs[1]);
-			obj.attr("aria-hidden", "true");
-		}
+		var CustomerNames = ["ALFKI", "ANATR", "ANTON", "AROUT", "BERGS", "BLAUS", "BLONP", "BOLID", "BONAP", "BOTTM", "BSBEV", "CACTU", "CENTC", "CHOPS", "COMMI", "CONSH", "DRACD", "DUMON", "EASTC", "ERNSH", "FAMIA", "FISSA", "FOLIG", "FOLKO", "FRANK", "FRANR", "FRANS", "FURIB", "GALED", "GODOS", "GOURL", "GREAL", "GROSR", "HANAR", "HILAA", "HUNGC", "HUNGO", "ISLAT", "KOENE", "LACOR", "LAMAI", "LAUGB", "LAZYK", "LEHMS", "LETSS", "LILAS", "LINOD", "LONEP", "MAGAA", "MAISD", "MEREP", "MORGK", "NORTS", "OCEAN", "OLDWO", "OTTIK", "PARIS", "PERIC", "PICCO", "PRINI", "QUEDE", "QUEEN", "QUICK", "RANCH", "RATTC", "REGGC", "RICAR", "RICSU", "ROMEY", "SANTG", "SAVEA", "SEVES", "SIMOB", "SPECD", "SPLIR", "SUPRD", "THEBI", "THECR", "TOMSP", "TORTU", "TRADH", "TRAIH", "VAFFE", "VICTE", "VINET", "WANDK", "WARTH", "WELLI", "WHITC", "WILMK", "WOLZA"];
+
+		gridView.onEditSearch = function (grid, index, text) {
+		    console.log("onEditSearch:" + index.itemIndex + "," + index.column + ", " + text);
+		    var items = CustomerNames.filter(function (str) {
+		        return str.indexOf(text) == 0;
+		    });
+		    console.log(items);
+		    grid.fillEditSearchItems(index.column, text, items);
+		};
 	});
 
 	function loadData(provider) {
