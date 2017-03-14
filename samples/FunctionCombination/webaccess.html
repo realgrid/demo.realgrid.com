@@ -1,0 +1,378 @@
+<html>
+<head>
+	<title>RealGridJS sample page</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script src="/lib/realgrid/realgridjs-lic.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.wa/realgridjs_eval.1.1.22.min.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.wa/realgridjs-api.1.1.22.js"></script>
+	<script src="/lib/jquery/jquery-1.11.2.min.js"></script>
+	<script language="javascript">
+	var dataProvider;
+	var gridView;
+	var firstFocus = true;
+	$(document).ready( function() {
+	    RealGridJS.setTrace(false);
+	    RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.22/");
+	    
+	    dataProvider = new RealGridJS.LocalDataProvider();
+	    dataProvider.setOptions({
+	        datetimeFormat: "yyyy-MM-dd a hh:mm:ss",
+	        amText: "오전",
+	        pmText: "오후"
+	    });
+	    dataProvider.setFields([
+		    {
+		        "fieldName": "OrderID",
+		        "dataType": "text"
+		    },
+		    {
+		        "fieldName": "CustomerID"
+		    },
+		    {
+		        "fieldName": "EmployeeID"
+		    },
+		    {
+		        "fieldName": "OrderDate",
+		        "dataType": "datetime"
+		    },
+		    {
+		        "fieldName": "CompanyName"
+		    },
+		    {
+		        "fieldName": "Country"
+		    },
+		    {
+		        "fieldName": "Quantity",
+		        "dataType": "number"
+		    }
+		]);
+	    gridView = new RealGridJS.GridView("realgrid", true);
+	    gridView.setDataSource(dataProvider);   
+	    gridView.setColumns([
+		    	{
+		        "name": "EmployeeID",
+		        "fieldName": "EmployeeID",
+		        "width": "150",
+		        "button": "image",
+		        "imageButtons": {
+		            "width": 45,
+		            "height": 13,
+		            "images": [
+		                {
+		                    "name": "팝업버튼",
+		                    "up": "/resource/image/btnImages/popup_normal.png",
+		                    "hover": "/resource/image/btnImages/popup_hover.png",
+		                    "down": "/resource/image/btnImages/popup_click.png"
+		                },
+		                {
+		                    "name": "조회버튼",
+		                    "up": "/resource/image/btnImages/search_normal.png",
+		                    "hover": "/resource/image/btnImages/search_hover.png",
+		                    "down": "/resource/image/btnImages/search_click.png"
+		                }
+		            ]
+		        },
+		        "styles": {
+		            "textAlignment": "center"
+		        },
+		        "header": {
+		            "text": "imageButton"
+		        }
+		    },
+		    {
+		        "name": "EmployeeID2",
+		        "fieldName": "EmployeeID",
+		        "width": "150",
+		        "button": "action",
+		        "styles": {
+		            "textAlignment": "center"
+		        },
+		        "header": {
+		            "text": "buttonAction"
+		        }
+		    },
+		    {
+		        "name": "OrderID",
+		        "fieldName": "OrderID",
+		        "editor": {
+		            "maxLength": 5
+		        },
+		        "width": "90",
+		        "styles": {
+		            "textAlignment": "center"
+		        },
+		        "textInputCase": "upper",
+		        "header": {
+		            "text": "Text editor"
+		        }
+		    },
+		    {
+		        "name": "CompanyName",
+		        "fieldName": "CompanyName",
+		        "width": "200",
+		        "editor": {
+		            "type": "multiline",
+		            "textCase": "upper"
+		        },
+		        "styles": {
+		            "textAlignment": "near",
+		            "textWrap": "normal"
+		        },
+		        "header": {
+		            "text": "Multiline Edit"
+		        }
+		    },
+		    {
+		        "name": "Quantity",
+		        "fieldName": "Quantity",
+		        "width": "100",
+		        "sortable": false,
+		        "editor": {
+		            "type": "number",
+		            "textAlignment": "far",
+		            "editFormat": "#,##0.##",
+		            "multipleChar": "+"
+		        },
+		        "styles": {
+		            "textAlignment": "far",
+		            "numberFormat": "#,##0.##"
+		        },
+		        "header": {
+		            "text": "Number Edit"
+		        }
+		    },
+		    {
+		        "name": "CustomerID",
+		        "fieldName": "CustomerID",
+		        "width": "150",
+		        "sortable": false,
+		        "lookupDisplay": true,
+		        "values": [
+		            "VINET",
+		            "HANAR",
+		            "SUPRD",
+		            "VICTE",
+		            "THREE",
+		            "SEVEN"
+		        ],
+		        "labels": [
+		            "<VINET>",
+		            "<HANAR>",
+		            "<SUPRD>",
+		            "<VICTE>",
+		            "<THREE>",
+		            "<SEVEN>"
+		        ],
+		        "editor": {
+		            "type": "dropDown",
+		            "dropDownCount": 4
+		        },
+		        "styles": {
+		            "textAlignment": "center"
+		        },
+		        "header": {
+		            "text": "DropDown Edit"
+		        }
+		    },
+		    {
+		        "name": "CustomerID2",
+		        "fieldName": "CustomerID",
+		        "width": "150",
+		        "sortable": false,
+		        "editor": {
+		            "type": "dropDown",
+		            "dropDownCount": 4,
+		            "domainOnly": true,
+		            "textReadOnly": true,
+		            "values": [
+		                "VINET",
+		                "HANAR",
+		                "SUPRD",
+		                "VICTE",
+		                "THREE",
+		                "SEVEN"
+		            ],
+		            "labels": [
+		                "<VINET>",
+		                "<HANAR>",
+		                "<SUPRD>",
+		                "<VICTE>",
+		                "<THREE>",
+		                "<SEVEN>"
+		            ]
+		        },
+		        "styles": {
+		            "textAlignment": "center"
+		        },
+		        "header": {
+		            "text": "Domain Only"
+		        }
+		    },
+		    {
+		        "name": "CustomerID3",
+		        "fieldName": "CustomerID",
+		        "width": "150",
+		        "sortable": false,
+		        "editor": {
+		            "type": "search",
+		            "searchLength": 1,
+		            "searchDelay": 1000,
+		            "useCtrlEnterKey": true,
+		            "useEnterKey": true
+		        },
+		        "styles": {
+		            "textAlignment": "center"
+		        },
+		        "header": {
+		            "text": "Search Editor "
+		        }
+		    },
+		    {
+		        "name": "CountryKor",
+		        "fieldName": "Country",
+		        "width": "150",
+		        "sortable": false,
+		        "lookupDisplay": true,
+		        "values": [
+		            "Austria",
+		            "Belgium",
+		            "Brazil",
+		            "Finland",
+		            "France",
+		            "Germany",
+		            "Ireland",
+		            "Italy",
+		            "Mexico",
+		            "Spain",
+		            "Sweden",
+		            "Switzerland",
+		            "UK",
+		            "USA",
+		            "Venezuela"
+		        ],
+		        "labels": [
+		            "오스트리아",
+		            "벨기에",
+		            "브라질",
+		            "핀란드",
+		            "프랑스",
+		            "독일",
+		            "아일랜드",
+		            "이탈리아",
+		            "멕시코",
+		            "스페인",
+		            "스웨덴",
+		            "스위스",
+		            "영국",
+		            "미국",
+		            "베네수엘라"
+		        ],
+		        "editor": {
+		            "type": "dropDown",
+		            "dropDownCount": 5,
+		            "partialMatch": true
+		        },
+		        "styles": {
+		            "textAlignment": "center"
+		        },
+		        "header": {
+		            "text": "partialMatch"
+		        }
+		    },
+		    {
+		        "name": "OrderDate",
+		        "fieldName": "OrderDate",
+		        "width": "180",
+		        "sortable": false,
+		        "editor": {
+		            "type": "date",
+		            "datetimeFormat": "yyyy.MM.dd"
+		        },
+		        "styles": {
+		            "textAlignment": "center",
+		            "datetimeFormat": "yyyy.MM.dd"
+		        },
+		        "header": {
+		            "text": "Date Edit"
+		        }
+		    },
+		    {
+		        "name": "Country",
+		        "fieldName": "Country",
+		        "width": "100",
+		        "styles": {
+		            "textAlignment": "center"
+		        },
+		        "header": {
+		            "text": "LinkCellRenderer"
+		        }
+		    }
+		]);
+		
+		loadData(dataProvider);
+
+		gridView.setDisplayOptions({rowHeight:30});
+		gridView.setColumnProperty("EmployeeID", "buttonVisibility", "always");
+		gridView.setColumnProperty("EmployeeID2", "buttonVisibility", "always");
+		gridView.setColumnProperty("Country", "renderer", {
+		    type: "link",
+		    url: "http://www.countryreports.org/country/${Country}.htm",
+		    requiredFields: "Country",
+		    showUrl: true
+		});
+		gridView.onCellButtonClicked = function (grid, itemIndex, column) {
+          alert("CellButton Clicked: itemIndex=" + itemIndex + ", fieldName=" + column.fieldName);
+	    };
+
+	    gridView.onImageButtonClicked = function (grid, itemIndex, column, buttonIndex, name) {
+	          alert("onImageButtonClicked: " + itemIndex + ", " + column.name+", " + buttonIndex + ", " + name);
+	    };
+		gridView.onLinkableCellClicked = function (grid, index, url) {
+		    window.open(url, '_newtab');
+		};
+
+		function disableAria(container) {
+			var inputs = $("#"+container).find("input:text");
+			var obj = $(inputs[1]);
+			obj.attr("aria-hidden", "true");
+		}
+	});
+
+	function loadData(provider) {
+	    $.getJSON("/resource/data/DefaultDataSet.json", function (data) {
+	        provider.setRows(data);
+	    })
+	    .done(function () {
+	        gridView.setFocus();
+	    })
+	    .fail(function (jqxhr, textStatus, error) {
+	        var err = textStatus + ', ' + error;
+	        console && console.log("jQuery getJSON() Failed: " + err);
+	        alert("jQuery getJSON() Failed: " + err);
+	    });
+	}
+	</script>
+</head>
+<body>
+
+	<div id="actions" style="margin-bottom:4px">
+        <span id="loadResult" style="display:none"></span>
+        <a href="../FunctionCombination/index.html">Home</a>
+        <input id="txtMain" style="width: 100px;"/>
+        <input id="txtSub" style="width: 80px;display: none"/>
+        <input id="txtMin" style="width: 60px;display: none"/>
+  	</div>
+
+<div id="realgrid" style="height:383px;width:950px;" title="리얼그리드"></div>
+
+</body>
+</html>
+
+<!--
+센차
+http://examples.sencha.com/extjs/6.0.1/examples/
+<div id="docs-aria-speakable" class="docs-a11y-ariascreenreader-speakable docs-offscreen" aria-live="assertive" role="region" aria-atomic="true" aria-hidden="false" aria-relevant="additions">11/25/2014;  D167 </div>
+<div class="cell-input" tabindex="0" role="textbox" contenteditable="true" dir="ltr" aria-activedescendant="fake-activedescendant-:47" aria-owns="fake-activedescendant-:47">11/25/2014<br></div>
+-->
+
+
