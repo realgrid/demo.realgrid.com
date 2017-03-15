@@ -29,6 +29,9 @@
 		        "fieldName": "CustomerID"
 		    },
 		    {
+		        "fieldName": "CustomerID2"
+		    },
+		    {
 		        "fieldName": "EmployeeID"
 		    },
 		    {
@@ -44,6 +47,9 @@
 		    {
 		        "fieldName": "Quantity",
 		        "dataType": "number"
+		    },
+		    {
+		    	"fieldName": "ShipCountry"
 		    }
 		]);
 	    gridView = new RealGridJS.GridView("realgrid", true);
@@ -142,8 +148,8 @@
 		        }
 		    },
 		    {
-		        "name": "CustomerID",
-		        "fieldName": "CustomerID",
+		        "name": "CustomerNames",
+		        "fieldName": "CustomerID2",
 		        "width": "150",
 		        "sortable": false,
 		        "lookupDisplay": true,
@@ -175,74 +181,28 @@
 		        }
 		    },
 		    {
-		        "name": "CustomerID2",
-		        "fieldName": "CustomerID",
-		        "width": "150",
-		        "sortable": false,
-		        "editor": {
-		            "type": "dropDown",
-		            "dropDownCount": 4,
-		            "domainOnly": true,
-		            "textReadOnly": true,
-		            "values": [
-		                "VINET",
-		                "HANAR",
-		                "SUPRD",
-		                "VICTE",
-		                "THREE",
-		                "SEVEN"
-		            ],
-		            "labels": [
-		                "<VINET>",
-		                "<HANAR>",
-		                "<SUPRD>",
-		                "<VICTE>",
-		                "<THREE>",
-		                "<SEVEN>"
-		            ]
-		        },
-		        "styles": {
-		            "textAlignment": "center"
-		        },
-		        "header": {
-		            "text": "Domain Only"
-		        }
-		    },
-		    {
-		        "name": "CustomerID3",
-		        "fieldName": "CustomerID",
-		        "width": "150",
-		        "sortable": false,
-		        "editor": {
-		            "type": "search",
-		            "searchLength": 1,
-		            "searchDelay": 1000,
-		            "useCtrlEnterKey": true,
-		            "useEnterKey": true
-		        },
-		        "styles": {
-		            "textAlignment": "center"
-		        },
-		        "header": {
-		            "text": "Search Editor "
-		        }
-		    },
-		    {
-		        "name": "CountryKor",
+		        "name": "Country",
 		        "fieldName": "Country",
-		        "width": "150",
-		        "sortable": false,
-		        "lookupDisplay": true,
+		        "width": "100",
+		        "styles": {
+		            "textAlignment": "center"
+		        },
 		        "values": [
+		            "Argentina",
 		            "Austria",
 		            "Belgium",
 		            "Brazil",
+		            "Canada",
+		            "Denmark",
 		            "Finland",
 		            "France",
 		            "Germany",
 		            "Ireland",
 		            "Italy",
 		            "Mexico",
+		            "Norway",
+		            "Poland",
+		            "Portugal",
 		            "Spain",
 		            "Sweden",
 		            "Switzerland",
@@ -250,33 +210,49 @@
 		            "USA",
 		            "Venezuela"
 		        ],
-		        "labels": [
-		            "오스트리아",
-		            "벨기에",
-		            "브라질",
-		            "핀란드",
-		            "프랑스",
-		            "독일",
-		            "아일랜드",
-		            "이탈리아",
-		            "멕시코",
-		            "스페인",
-		            "스웨덴",
-		            "스위스",
-		            "영국",
-		            "미국",
-		            "베네수엘라"
+		        "editor": {
+		            "type": "dropDown"
+		        },
+		        "header": {
+		            "text": "lookupTree1"
+		        }
+		    },
+		    {
+		        "name": "CustomerID2",
+		        "fieldName": "CustomerID",
+		        "type": "data",
+		        "width": "150",
+		        "lookupSourceId": "customers",
+		        "lookupKeyFields": [
+		            "Country",
+		            "CustomerID"
 		        ],
 		        "editor": {
-		            "type": "dropDown",
-		            "dropDownCount": 5,
-		            "partialMatch": true
+		            "type": "dropDown"
 		        },
 		        "styles": {
 		            "textAlignment": "center"
 		        },
 		        "header": {
-		            "text": "partialMatch"
+		            "text": "lookupTree2"
+		        }
+		    },
+		    {
+		        "name": "CustomerID3",
+		        "fieldName": "CustomerID",
+		        "type": "data",
+		        "width": "200",
+		        "lookupDisplay": "true",
+		        "lookupSourceId": "customers",
+		        "lookupKeyFields": [
+		            "Country",
+		            "CustomerID"
+		        ],
+		        "styles": {
+		            "textAlignment": "center"
+		        },
+		        "header": {
+		            "text": "lookupTree3"
 		        }
 		    },
 		    {
@@ -297,8 +273,8 @@
 		        }
 		    },
 		    {
-		        "name": "Country",
-		        "fieldName": "Country",
+		        "name": "ShipCountry",
+		        "fieldName": "ShipCountry",
 		        "width": "100",
 		        "styles": {
 		            "textAlignment": "center"
@@ -314,10 +290,10 @@
 		gridView.setDisplayOptions({rowHeight:30});
 		gridView.setColumnProperty("EmployeeID", "buttonVisibility", "always");
 		gridView.setColumnProperty("EmployeeID2", "buttonVisibility", "always");
-		gridView.setColumnProperty("Country", "renderer", {
+		gridView.setColumnProperty("ShipCountry", "renderer", {
 		    type: "link",
-		    url: "http://www.countryreports.org/country/${Country}.htm",
-		    requiredFields: "Country",
+		    url: "http://www.countryreports.org/country/${ShipCountry}.htm",
+		    requiredFields: "ShipCountry",
 		    showUrl: true
 		});
 		gridView.onCellButtonClicked = function (grid, itemIndex, column) {
@@ -341,6 +317,68 @@
 		    console.log(items);
 		    grid.fillEditSearchItems(index.column, text, items);
 		};
+
+		//lookupTree
+		var source = {
+		    "id": "customers",
+		    "levels": 2,
+		    "keys": [
+		      ["France", "VINET"],
+		      ["France", "VICTE"],
+		      ["Germany", "TOMSP"],
+		      ["Brazil", "HANAR"]
+		    ],
+		    "values": [
+		      "Vins et alcools Chevalier",
+		      "Victuailles en stock",
+		      "Toms Spezialitäten",
+		      "Hanari Carnes"
+		    ]
+		  };
+
+		  gridView.addLookupSource(source);
+
+		  gridView.onEditCommit = function (id, index, oldValue, newValue) {
+		    if (index.field == "Country") {
+		      lookupDataChange(newValue);
+		    }
+		  };
+
+		  gridView.onCurrentChanged = function (grid, newIndex) {
+		    if (newIndex && newIndex.dataRow > -1) {
+		      var keyValue = grid.getValue(newIndex.itemIndex, "Country");
+		      lookupDataChange(keyValue);
+		    }
+		  };
+
+		  var oldKey = null;
+		  function lookupDataChange(keyValue) {
+		    if (oldKey != keyValue) {
+		      var params = { country: keyValue };
+
+		      $.getJSON("/resource/data/AllCustomerByCountry.json", function (data) {
+		        lookupData = [];
+		        for(var j = 0; j < data.length; j++){
+		          if (data[j].Country == params.country){
+		            lookupData.push(data[j])
+		          }
+		        } 
+		        var lookups = [];
+		        for (var i in lookupData) {
+		          if (!gridView.existsLookupData("customers", [lookupData[i].Country, lookupData[i].CustomerID])) {
+		            var lookup = [lookupData[i].Country, lookupData[i].CustomerID, lookupData[i].CompanyName];
+		            lookups.push(lookup);
+		          }
+		        }
+
+		        gridView.fillLookupData("customers", {
+		          rows: lookups
+		        });
+		      });
+
+		      oldKey = keyValue;
+		    }
+		  }
 	});
 
 	function loadData(provider) {
@@ -358,28 +396,29 @@
 	}
 
 	function mainGrid() {
+		gridView.setDisplayOptions({rowHeight:30});
+
 		var layout = [
-			"EmployeeID","EmployeeID2","OrderID","CompanyName","Quantity","CustomerID","CustomerID2","CustomerID3","CountryKor","OrderDate","Country"
+			"EmployeeID","EmployeeID2","OrderID","CompanyName","Quantity","CustomerNames","Country","CustomerID2","CustomerID3","OrderDate","ShipCountry"
 		];
 		gridView.setColumnLayout(layout);
 
 		gridView.groupBy([]);
-		gridView.setDisplayOptions({rowHeight:30});
 	};
 
 	function columnGroup() {
-		gridView.setColumnLayout([{name:"button",orientation: "horizontal",width:250,columns:["EmployeeID","EmployeeID2"]},"OrderID","CompanyName","Quantity",{name:"dropdown",orientation: "vertical",width:100,columns:["CustomerID","CustomerID2","CustomerID3"]},"CountryKor","OrderDate","Country"]);
-		gridView.setDisplayOptions({rowHeight:60});
+		gridView.setDisplayOptions({rowHeight:80});
+		gridView.setColumnLayout([{name:"button",orientation: "horizontal",width:250,columns:["EmployeeID","EmployeeID2"]},"OrderID","CompanyName","Quantity","CustomerNames",{name:"lookupTree",orientation: "vertical",width:200,columns:["Country","CustomerID2","CustomerID3"]},"OrderDate","ShipCountry"]);
 	};
 
 	function rowGrouping(){
+		gridView.setDisplayOptions({rowHeight:30});
 		var layout = [
-			"EmployeeID","EmployeeID2","OrderID","CompanyName","Quantity","CustomerID","CustomerID2","CustomerID3","CountryKor","OrderDate","Country"
+			"EmployeeID","EmployeeID2","OrderID","CompanyName","Quantity","CustomerNames","Country","CustomerID2","CustomerID3","OrderDate","ShipCountry"
 		];
 		gridView.setColumnLayout(layout);
 
 		gridView.groupBy(["OrderID","CompanyName"]);
-		gridView.setDisplayOptions({rowHeight:30});
 	};
 	</script>
 </head>
