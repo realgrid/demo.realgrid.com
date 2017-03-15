@@ -18,6 +18,11 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 }
 var onDoneDataSet = function() {
 	gridView.setDisplayOptions({rowHeight:50})
+
+  gridView.setColumnProperty("OrderID2", "renderer", {type:"code128"});
+
+  gridView.setColumnProperty("Country2", "renderer", {type:"code128"});
+  gridView.setColumnProperty("Country2", "styles", {figureBackground: "#ff111111"});
 }
 </script>
 

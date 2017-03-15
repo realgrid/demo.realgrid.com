@@ -3,7 +3,7 @@
 그리드뷰(GridView) 또는 트리뷰(TreeView)에서 이미지를 사용하려면 먼저, [ImageList](http://help.realgrid.com/api/types/ImageList/)객체를 이용해 이미지파일의 경로를 목록으로 만들어야 합니다.
 
 ```js
-var imgs = new RealGridJS.ImageList("images1", "/demo/resource/image/icon/");
+var imgs = new RealGridJS.ImageList("images1", "/resource/image/icon/");
     imgs.addUrls([
         "be.png",
         "br.png",
@@ -42,11 +42,9 @@ gridView.registerImageList(imgs);
 
 `LEFT` 컬럼에 이미지 리스트의 iconIndex가 0인 아이콘을 동일하게 표시합니다.
 
-<a class="btn primary small round lowercase" id="btnSetIcon">아이콘 표시</a>
-
 ```js
 //아이콘 리스트 및 이름 생성
-var imgs = new RealGridJS.ImageList("images1", "/demo/resource/image/icon/");
+var imgs = new RealGridJS.ImageList("images1", "/resource/image/icon/");
     imgs.addUrls([
         "be.png",
         "br.png",
@@ -136,32 +134,9 @@ renderer: {
 
 
 <script>
-$('#btnSetIcon').click(function() {
-	var imgs = new RealGridJS.ImageList("images1", "/demo/resource/image/icon/");
-    imgs.addUrls([
-        "be.png",
-        "br.png",
-        "fr.png",
-        "de.png",
-        "us.png"
-    ]);
-
-	gridView.registerImageList(imgs);
-	gridView.setColumnProperty("left","imageList", "images1");
-	gridView.setColumnProperty("left","renderer",{type:"icon"});
-	gridView.setColumnProperty("left","styles", {
-	    textAlignment: "near",
-	    iconIndex: 0,
-	    iconLocation: "left",
-	    iconAlignment: "center",
-	    iconOffset: 4,
-	    iconPadding: 4
-	});
-});
-
 $('#btnSetDynamicIconRight').click(function() {
 	//아이콘 리스트 및 이름 생성
-	var imgs = new RealGridJS.ImageList("images1", "/demo/resource/image/icon/");
+	var imgs = new RealGridJS.ImageList("images1", "/resource/image/icon/");
 	    imgs.addUrls([
 	        "be.png",
 	        "br.png",
@@ -215,7 +190,7 @@ $('#btnSetDynamicIconRight').click(function() {
 
 $('#btnSetDynamicIconTop').click(function() {
 	//아이콘 리스트 및 이름 생성
-	var imgs = new RealGridJS.ImageList("images1", "/demo/resource/image/icon/");
+	var imgs = new RealGridJS.ImageList("images1", "/resource/image/icon/");
 	    imgs.addUrls([
 	        "be.png",
 	        "br.png",
@@ -269,7 +244,7 @@ $('#btnSetDynamicIconTop').click(function() {
 
 $('#btnSetDynamicIconBottom').click(function() {
 	//아이콘 리스트 및 이름 생성
-	var imgs = new RealGridJS.ImageList("images1", "/demo/resource/image/icon/");
+	var imgs = new RealGridJS.ImageList("images1", "/resource/image/icon/");
 	    imgs.addUrls([
 	        "be.png",
 	        "br.png",
@@ -323,7 +298,7 @@ $('#btnSetDynamicIconBottom').click(function() {
 
 $('#btnSetDynamicIconCenter').click(function() {
 	//아이콘 리스트 및 이름 생성
-	var imgs = new RealGridJS.ImageList("images1", "/demo/resource/image/icon/");
+	var imgs = new RealGridJS.ImageList("images1", "/resource/image/icon/");
 	    imgs.addUrls([
 	        "be.png",
 	        "br.png",
@@ -376,7 +351,7 @@ $('#btnSetDynamicIconCenter').click(function() {
 });
 
 $('#btnTextVisible').click(function() {
-	var imgs = new RealGridJS.ImageList("images1", "/demo/resource/image/icon/");
+	var imgs = new RealGridJS.ImageList("images1", "/resource/image/icon/");
 	    imgs.addUrls([
 	        "be.png",
 	        "br.png",

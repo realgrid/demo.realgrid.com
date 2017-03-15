@@ -85,7 +85,7 @@ gridView.setColumnProperty("UnitPrice2", "dynamicStyles", [{
 
 #### 체크박스의 체크여부에 따른 렌더러 적용
 
-체크박스에 체크상태인 행에 shape renderer를 적용 합니다.
+`체크박스에 체크된 행`에 shape renderer를 적용 합니다.
 
 `UnitPrice1`, `Quantity1` 컬럼에 체크 시 적용되는 `shape` 렌더러를 확인해 보세요.
 

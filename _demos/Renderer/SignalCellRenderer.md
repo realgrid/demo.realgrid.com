@@ -18,7 +18,9 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
   dataProvider.setRows(data);
 }
 var onDoneDataSet = function() {
+  gridView.setColumnProperty("EmployeeID2", "renderer", {type:"signal", barCount:10});
 
+  gridView.setColumnProperty("EmployeeID2", "styles", {figureState: "value"});
 }
 </script>
 

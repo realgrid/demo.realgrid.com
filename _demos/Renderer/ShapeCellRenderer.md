@@ -17,7 +17,14 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
   dataProvider.setRows(data);
 }
 var onDoneDataSet = function() {
+  gridView.setColumnProperty("OrderID", "renderer", {type:"shape"});
 
+  gridView.setColumnProperty("OrderID", "styles", {
+      figureBackground: "#ff008800",
+      figureName: "ellipse",
+      iconLocation: "right",
+      paddingRight: 6
+  });
 }
 </script>
 

@@ -38,20 +38,18 @@ renderer: {
 
 추가로 styles 속성의 `contentFit` 설정으로 이미지의 위치가 크기를 설정합니다. 
 
-<a class="btn primary small round lowercase" id="btnSetImageNormalFlag1">이미지 표시</a>
+<a class="btn primary small round lowercase" id="btnSetImageNormalFlag3">이미지 표시</a>
 
 ```js
 //이미지 렌더러 설정
-gridView.setColumnProperty("NormalFlag1", "renderer", {type: "image", sommthing: true});
+gridView.setColumnProperty("NormalFlag3", "renderer", {type: "image", sommthing: true});
 
 //이미지의 위치와 크기가 결정
-gridView.setColumnproperty("NormalFlag1", "styles", {contentFit: "none"});
+gridView.setColumnproperty("NormalFlag3", "styles", {contentFit: "both"});
 ```
 
 <script>
-$('#btnSetImageNormalFlag1').click(function() {
-	gridView.setColumnProperty("NormalFlag1", "renderer", {type: "image", sommthing: true})
-	gridView.setColumnProperty("NormalFlag2", "renderer", {type: "image", sommthing: true})
+$('#btnSetImageNormalFlag3').click(function() {
 	gridView.setColumnProperty("NormalFlag3", "renderer", {type: "image", sommthing: true})
 	gridView.setColumnProperty("NormalFlag4", "renderer", {type: "image", sommthing: true})
 	gridView.setColumnProperty("NormalFlag5", "renderer", {type: "image", sommthing: true})

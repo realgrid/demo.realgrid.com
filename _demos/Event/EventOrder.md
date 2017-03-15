@@ -15,7 +15,7 @@ tags: ['event', '이벤트']
 <script>
 var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
     var events = 0;
-    field = dataProvider.getFields();
+    field = dataProvider.getOrgFieldNames();
 
     gridView.onCurrentChanging = function (grid, oldIndex, newIndex) {
         addLog("grid.onCurrentChanging: " + "(" + oldIndex.itemIndex + ", " + oldIndex.column + ") => (" + newIndex.itemIndex + ", " + newIndex.column + ")");
@@ -192,7 +192,7 @@ var onDoneDataSet = function() {
 
 function findField(field, fieldName) {
     for (var i = 0; i < field.length; i++) {
-        if (field[i].orgFieldName == fieldName)
+        if (field[i] == fieldName)
             return i;
     }
     return -1;

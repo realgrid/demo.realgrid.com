@@ -9,9 +9,6 @@
 
 `Code128` 컬럼에 Code128 Barcode를 적용시킵니다.  
 
-<a class="btn primary small round lowercase" id="btnCode128">바코드 적용</a>
-
-
 ```js
 gridView.setColumnProperty("OrderID2", "renderer", {type:"code128"});
 
@@ -30,13 +27,6 @@ gridView.setColumnProperty("CustomerID2", "styles", {figureBackground: "#ff00008
 
 
 <script>
-$('#btnCode128').click(function() {
-	gridView.setColumnProperty("OrderID2", "renderer", {type:"code128"});
-
-	gridView.setColumnProperty("Country2", "renderer", {type:"code128"});
-	gridView.setColumnProperty("Country2", "styles", {figureBackground: "#ff111111"});
-});
-
 $('#btnCode39').click(function() {
 	gridView.setColumnProperty("CustomerID2", "renderer", {type:"code39"});
 	gridView.setColumnProperty("CustomerID2", "styles", {figureBackground: "#ff000088"});

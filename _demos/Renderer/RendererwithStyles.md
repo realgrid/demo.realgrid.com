@@ -10,7 +10,8 @@ categories:
 tags: ['렌더러', 'renderer']
 ---
 
-그리드의 addCellRenderers() 함수로 데이터셀 렌더러 정보들을 미리 추가하고, 컬럼 동적 스타일의 renderer 값을 이용하면, 같은 컬럼에서 값에 따라 다른 렌더러를 사용하여 셀을 표시할 수 있습니다.
+그리드의 addCellRenderers() 함수로 데이터셀 렌더러 정보들을 미리 추가하고, 컬럼 동적 스타일의 renderer 값을 이용하면, 같은 컬럼에서 값에 따라 다른 렌더러를 사용하여 셀을 표시할 수 있습니다.  
+`오른쪽 예제에 버튼을 클릭해서 동적 렌더러를 실행해 보세요.`
 
 <script>
 var onGridSuccessDataSet = function(data, textStatus, jqXHR) {

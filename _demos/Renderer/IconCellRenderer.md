@@ -18,6 +18,27 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 }
 var onDoneDataSet = function() {
 	gridView.setDisplayOptions({rowHeight:50});
+  
+  var imgs = new RealGridJS.ImageList("images1", "/resource/image/icon/");
+    imgs.addUrls([
+        "be.png",
+        "br.png",
+        "fr.png",
+        "de.png",
+        "us.png"
+    ]);
+
+  gridView.registerImageList(imgs);
+  gridView.setColumnProperty("left","imageList", "images1");
+  gridView.setColumnProperty("left","renderer",{type:"icon"});
+  gridView.setColumnProperty("left","styles", {
+      textAlignment: "near",
+      iconIndex: 0,
+      iconLocation: "left",
+      iconAlignment: "center",
+      iconOffset: 4,
+      iconPadding: 4
+  });
 }
 </script>
 

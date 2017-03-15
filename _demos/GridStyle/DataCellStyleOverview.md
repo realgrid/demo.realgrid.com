@@ -10,7 +10,8 @@ categories:
 tags: ['style', '스타일']
 ---
 
-리얼그리드에서 데이터 셀의 표시 방식은 기본적으로 컬럼 스타일로 지정할 수 있습니다.
+리얼그리드에서 데이터 셀의 표시 방식은 기본적으로 컬럼 스타일로 지정할 수 있습니다.  
+`오른쪽 예제의 버튼을 클릭해서 그리드에 스타일을 추가해 보세요.`
 
 <script>
   var onGridSuccessDataSet = function(data, textStatus, jqXHR) {

@@ -27,9 +27,8 @@ styles: {
 
 #### 시그널 렌더러 표시하기
 
-버튼 클릭시 `Employee ID 2` 컬럼에 기본 설정의 시그널을 표시합니다.  
+`Employee ID 2` 컬럼에 기본 설정의 시그널을 표시합니다.  
 
-<a class="btn primary small round lowercase" id="btnSignalEmployee">시그널 표시하기</a>
 
 ```js
 gridView.setColumnProperty("EmployeeID2", "renderer", {type:"signal", barCount:10});
@@ -68,12 +67,6 @@ gridView.setColumnProperty("Quantity2", "dynamicStyles", [
 ```
 
 <script>
-$('#btnSignalEmployee').click(function() {
-	gridView.setColumnProperty("EmployeeID2", "renderer", {type:"signal", barCount:10});
-
-	gridView.setColumnProperty("EmployeeID2", "styles", {figureState: "value"});
-});
-
 $('#btnSignalQuantity').click(function() {
 	gridView.setColumnProperty("Quantity2", "renderer", {type:"signal", barCount:20});
 

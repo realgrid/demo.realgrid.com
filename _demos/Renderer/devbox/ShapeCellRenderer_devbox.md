@@ -30,9 +30,7 @@ styles: {
 
 #### 도형 표시하기
 
-버튼 클릭시 `OrderID` 컬럼에 원 도형을 표시합니다.  
-
-<a class="btn primary small round lowercase" id="btnSetShapeOrderID">도형 표시하기</a>
+`OrderID` 컬럼에 원 도형을 표시합니다.  
 
 ```js
 gridView.setColumnProperty("OrderID", "renderer", {type:"shape"});
@@ -105,16 +103,6 @@ gridView.setColumnProperty("UnitPrice", "dynamicStyles", [{
 ```
 
 <script>
-$('#btnSetShapeOrderID').click(function() {
-	gridView.setColumnProperty("OrderID", "renderer", {type:"shape"});
-
-	gridView.setColumnProperty("OrderID", "styles", {
-	    figureBackground: "#ff008800",
-	    figureName: "ellipse",
-	    iconLocation: "right",
-	    paddingRight: 6
-	});
-});
 
 $('#btnSetShapeCustomerID').click(function() {
 	gridView.setColumnProperty("CustomerID", "renderer", {type:"shape"});

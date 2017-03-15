@@ -10,7 +10,8 @@ categories:
 tags: ['렌더러', 'renderer']
 ---
 
-Link 셀 렌더러는 컬럼에 Hyperlink형태로 표현하고 클릭할 때 다른 페이지를 띄우거나 팝업처리 등을 구현할 수 있습니다.
+Link 셀 렌더러는 컬럼에 Hyperlink형태로 표현하고 클릭할 때 다른 페이지를 띄우거나 팝업처리 등을 구현할 수 있습니다.  
+`오른쪽 예제에 버튼을 클릭해서 링크 렌더러를 적용해 보세요.`
 
 <script>
 var onGridSuccessDataSet = function(data, textStatus, jqXHR) {

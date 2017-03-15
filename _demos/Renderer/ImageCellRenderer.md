@@ -19,6 +19,9 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 var onDoneDataSet = function() {
 	gridView.setDisplayOptions({rowHeight:70});
 	gridView.setFooter({visible:false})
+
+  gridView.setColumnProperty("NormalFlag1", "renderer", {type: "image", sommthing: true})
+  gridView.setColumnProperty("NormalFlag2", "renderer", {type: "image", sommthing: true})
 }
 </script>
 
