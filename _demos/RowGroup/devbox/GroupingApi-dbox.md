@@ -1,5 +1,4 @@
-*rowGroup API*
-
+#### rowGroup API
 
 * `groupBy`: 지정한 필드 개수 만큼의 레벨로 Row Grouping을 실행합니다. 인자로 빈 배열이거나 null을 지정하면 Grouping을 해제합니다.
 * `isGrouped`: 그리드가 RowGrouping 인지 확인합니다. (Grouping이면 true를 반환합니다.)
@@ -38,8 +37,11 @@
 ```js
   alert(gridView.getGroupFields());
 ```
+
+<input type="checkbox" id="chkOrgFieldName" checked="checked"/><label for="chkOrgFieldName">OrgFieldName</label>
+
 <a class="btn primary small round lowercase" id="btnGetGroupFieldNames">getGroupFieldNames</a>
-<label for="chkOrgFieldName">OrgFieldName<input type="checkbox" id="chkOrgFieldName" checked="checked"/></label>
+
 ```js
   alert(gridView.getGroupFieldNames($("#chkOrgFieldName").is(":checked")));
 ```

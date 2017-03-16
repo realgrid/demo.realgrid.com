@@ -76,7 +76,8 @@ alert(columns.length);
 ```
 
 컬럼의 tag 속성 값은 다양한 용도로 사용할 수 있는 사용자 지정 값으로 중복하여 지정 할 수 있습니다. [`GridBase.columnsByTag()`](http://help.realgrid.com/api/GridBase/columnsByTag/){:target="_blank"} 함수는 매개변수로 지정한 tag 값을 갖는 모든 컬럼들을 배열로 리턴 합니다. 
-결과가 하나로 예상 되는경우는 [`GridBase.columnByTag()`](http://help.realgrid.com/api/GridBase/columnByTag/){:target="_blank"} 함수를 사용합니다.
+결과가 하나로 예상 되는경우는 [`GridBase.columnByTag()`](http://help.realgrid.com/api/GridBase/columnByTag/){:target="_blank"} 함수를 사용합니다.  
+
 <a class="btn primary small round lowercase" id="btnColumnsByTag">columnsByTag</a>  
 
 ```js

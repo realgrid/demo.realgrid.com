@@ -37,7 +37,8 @@ gridView.setFocus();
 #### 컬럼 레이아웃 등록, 사용하기
 [registerColumnLayouts()](http://help.realgrid.com/api/GridBase/registerColumnLayouts/){:target="_blank"} 함수로 실행 시간에 지정할 컬럼 layout들을 미리 저장한 후, setColumnLayout() 함수로 layout 이름을 지정해서 변경할 수 있습니다.
 
-layout1, layout2로 컬럼 레이아웃을 만들어 봅니다.
+layout1, layout2로 컬럼 레이아웃을 만들어 봅니다.  
+
 <a class="btn primary small round lowercase" id="btnRegisterColumnLayouts">layout1, layout2 만들기</a>
 
 ```js

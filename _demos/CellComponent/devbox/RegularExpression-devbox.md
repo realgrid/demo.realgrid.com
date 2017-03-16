@@ -8,7 +8,7 @@ DataColumn의 `displayRegExp`에 찾으려는 정규식 패턴을 지정하고 `
 - `displayReplace` - 문자열 변경시(마스킹 등) 사용할 패턴을 지정합니다.
 - [DataColumn](http://help.realgrid.com/api/types/DataColumn/)링크를 참조하세요.
 
-<a class="btn primary small round lowercase" id="userID">사용자 Id 컬럼 마스킹 처리</a>
+사용자Id 컬럼에 정규식 표현을 설정합니다.
 
 ```js
 //displayReplace에 대체문자열 사용
@@ -60,12 +60,6 @@ gridView.setColumns(columns);
 ```
 
 <script>
-$('#userID').click(function() {
-    gridView.setColumnProperty("userid","displayRegExp", /^([a-z0-9]{3})([a-z0-9]+)$/)
-    gridView.setColumnProperty("userid","displayReplace", "$1***")
-    gridView.setColumnProperty("userid", "styles", {background:"#ffffff99"})
-});
-
 $('#email').click(function() {
     gridView.setColumnProperty("email","displayRegExp", /^([a-zA-Z0-9._%+-]+)(@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4})$/)
     gridView.setColumnProperty("email","displayReplace", function (match, p1, p2, offset, string) {

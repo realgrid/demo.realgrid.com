@@ -4,6 +4,7 @@ title: 아이템 모델
 order: 5
 devbox: true
 devboxfile: ItemModelApi-devbox.md
+published: true
 categories:
   - 행 그룹
 tags: ['item', '모델', 'model']

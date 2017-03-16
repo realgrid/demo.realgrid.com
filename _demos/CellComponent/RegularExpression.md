@@ -21,6 +21,10 @@ tags: ['RegularExpression', '정규식', '마스킹']
 
   var onSuccessGridOptionSet = function() {
     gridView.setEditOptions({editable:false})
+    
+    gridView.setColumnProperty("userid","displayRegExp", /^([a-z0-9]{3})([a-z0-9]+)$/)
+    gridView.setColumnProperty("userid","displayReplace", "$1***")
+    gridView.setColumnProperty("userid", "styles", {background:"#ffffff99"})
   }
 </script>
 

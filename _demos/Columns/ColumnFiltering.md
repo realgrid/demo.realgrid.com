@@ -95,6 +95,59 @@ tags: ['Filtering', '필터링', '필터']
 	    }
 	});
 
+	var column = gridView.columnByName('CustomerID');
+if (column) {
+    var filters = [{
+        name: "VINET",
+        criteria: "value = 'VINET'"
+    }, {
+        name: "VICTE",
+        criteria: "value = 'VICTE'"
+    }, {
+        name: "HANAR",
+        criteria: "value = 'HANAR'"
+    }, {
+        name: "'VICTE' or 'HANAR'",
+        criteria: "(value = 'VICTE') or (value = 'HANAR')"
+    }, {
+        name: "HANAR: value > 'HANAR'",
+        criteria: "value > 'HANAR'"
+    }, {
+        name: "SUPRD",
+        criteria: "value = 'SUPRD'"
+    }, {
+        name: "SUPRD: value <> 'SUPRD'",
+        criteria: "value <> 'SUPRD'"
+    }, {
+        name: "not equal CustomerID2",
+        criteria: "value <> values['CustomerID2']" // CustomerID와 CustomerID2가 상이한 경우
+    }, {
+        name: "W: value like 'L%'",
+        criteria: "value like 'L%'"
+    }, {
+        name: "W: value not like 'L%'",
+        criteria: "value not like 'L%'"
+    }, {
+        name: "S: value like '%S'",
+        criteria: "value like '%S'"
+    }, {
+        name: "S: value not like '%S'",
+        criteria: "value not like '%S'"
+    }, { 
+        name: "TC: value match 'TC'",
+        criteria: "value match 'TC'" // 문자열에 TC가 포함된 경우
+    }, {
+        name: "match '^RATTC$|^SUPRD$'",
+        criteria: "value match '^RATTC$|^SUPRD$'" //RATTC, SUPRD 중 하나인 경우
+    }, { 
+        name: "TC: value not match 'TC'",
+        criteria: "value not match 'TC'" // 문자열에 TC가 포함되지 않는 경우
+    }];
+
+    gridView.setColumnFilters('CustomerID', filters);
+
+};
+
   }
 </script>
 

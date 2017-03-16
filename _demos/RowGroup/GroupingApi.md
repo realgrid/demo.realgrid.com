@@ -4,6 +4,7 @@ title: 그룹핑 API
 order: 2
 devbox: true
 devboxfile: GroupingApi-dbox.md
+published: true
 categories:
   - 행 그룹
 tags: ['grouping','rowGroup','행그룹','그룹']
