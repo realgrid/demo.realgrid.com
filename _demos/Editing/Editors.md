@@ -34,6 +34,8 @@ tags: ['editing', '편집', '편집기', 'editor']
     gridView.setValue(3, "Quantity", 150.0);
     gridView.setValue(3, "Quantity", 10.62);
 
+    dataProvider.clearRowStates();
+
   }
 </script>
 
