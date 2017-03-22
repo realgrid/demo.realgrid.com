@@ -153,7 +153,7 @@ gridView.setCheckBar({
 ```
 
 #### Checkable 제어
-아래와 같은 수식을 사용하여 체크바에 체크 가능 여부를 제어할 수 있습니다. [expression 참고](http://demo.realgrid.com/Demo/ExpressionConcept){:target="_blank"}  
+아래와 같은 수식을 사용하여 체크바에 체크 가능 여부를 제어할 수 있습니다. [expression 참고](http://help.realgrid.com/api/features/Expression/){:target="_blank"}  
 `state = 'c'`: 새로 추가된 행만 체크 가능   
 `values['OrderID'] = '10248'`: OrderID필드값이 10248인 행만 체크 가능   
 `row < 10`: itemIndex가 10 이하인 행만 체크 가능    
