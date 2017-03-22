@@ -27,6 +27,13 @@ tags: ['editing', '편집', '편집기', 'editor']
         grid.fillEditSearchItems(index.column, text, items);
     };
 
+    gridView.setValue(0, "Quantity", 1200.12);
+    gridView.setValue(1, "Quantity", 123433.144);
+    gridView.setValue(2, "Quantity", 200.12);
+    gridView.setValue(3, "Quantity", 423453.92);
+    gridView.setValue(3, "Quantity", 150.0);
+    gridView.setValue(3, "Quantity", 10.62);
+
   }
 </script>
 

@@ -79,6 +79,52 @@ editor.editFormat을 "#,##0.##"로 지정한 경우 소수점이하 자리는 �
 ...
 ```
 
+일부 국가에서는 천단위 구분기호 ','와 소수점 '.'을 반대로 사용하는 경우가 있습니다.(천단위 구분기호 '.', 소수점 ',')  
+이 경우 format 문자열을 ; 으로 구분하여 첫번째는 숫자를 표현하는 형식을 두번째는 소숫점 기호를 세번째는 천단위 구분기호를 지정합니다. 
+
+```
+numberFormat: "#,##0.##;,;."   //12345.67 인 경우 12.345,56 으로 표시
+```
+
+입력시 에디터에도 같은 포맷을 가지려면 동일하게 지정하면 됩니다.
+
+```
+editFormat: "#,##0.##;,;."   //12345.67 인 경우 12.345,56 으로 표시
+```
+
+<a class="btn primary small round lowercase" id="btnNumberFormat">천단위 구분기호, 소수점 기호 변경하기  
+</a>
+
+```js
+var column = [
+...
+{
+  "name": "Quantity",
+  "fieldName": "Quantity",
+  "width": "100",
+  "sortable": false,
+  "editor": {
+    "type": "number",
+    "textAlignment": "far",
+    "editFormat": "#,##0.##;,;.",
+    "multipleChar": "+",
+  },
+  "styles": {
+    "textAlignment": "far",
+    "numberFormat": "#,##0.##;,;."
+  },
+  "header": {
+    "text": "Number Edit",
+    "styles": {
+        "background": "linear,#22ffd500,#ffffd500,90"
+    }
+  }
+}
+...
+];
+```
+
+
 #### [드롭다운 편집기](http://help.realgrid.com/api/types/DropDownCellEditor/){:target="_blank"}   
 [드롭다운 편집기](http://help.realgrid.com/api/types/DropDownCellEditor/){:target="_blank"}  는 `values`속성으로 지정된 목록 중 한 값을 선택합니다. 또한, `labels`에 `values` 대신 드롭다운 리스트에 표시될 텍스트들을 지정할 수 있습니다.   
 `labels`의 항목 수가 values 항목 수 이상이어야 하고, 에디터에 `values`를 지정하지 않으면 컬럼에 지정된 `values`, `labels` 목록이나 `lookupSource`의 목록을 대신 사용합니다.  
@@ -248,6 +294,23 @@ gridView.onEditSearch = function (grid, index, text) {
     var state = $(':radio[name="rbRowStateCount"]:checked').val();
     var count = dataProvider.getRowStateCount(state);
     alert(count);
+  });
+
+  $('#btnNumberFormat').click(function() {
+    var col = gridView.columnByName("Quantity");
+    col.editor = {
+      "type": "number",
+      "textAlignment": "far",
+      "editFormat": "#,##0.##;,;.",
+      "multipleChar": "+",
+    };
+
+    col.styles = {
+      "textAlignment": "far",
+      "numberFormat": "#,##0.##;,;."
+    };
+
+    gridView.setColumn(col);
   });
 
 </script>
