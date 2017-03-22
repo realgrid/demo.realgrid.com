@@ -432,6 +432,8 @@
 		      oldKey = keyValue;
 		    }
 		  }
+
+		  gridView.setEditOptions({checkWhenSpace:true,exitGridWhenTab:"row"});
 	});
 
 	function loadData(provider) {
@@ -501,6 +503,16 @@
 
 		gridView.groupBy(["OrderID","CompanyName"]);
 	};
+
+	function selectChange(){
+		if($("#selBox option:selected").val() == "none"){
+			gridView.setEditOptions({exitGridWhenTab:"none"});
+		}else if($("#selBox option:selected").val() == "row"){
+			gridView.setEditOptions({exitGridWhenTab:"row"});
+		}else if($("#selBox option:selected").val() == "grid"){
+			gridView.setEditOptions({exitGridWhenTab:"grid"});
+		}
+	}
 	</script>
 </head>
 <body>
@@ -519,8 +531,18 @@
         <input type="button" id="btnRowGroup" onclick="rowGrouping()" value="행 그룹"/>
   	</div>
 
-<div id="realgrid" style="height:383px;width:950px;" title="리얼그리드"></div>
+	<div id="realgrid" style="height:383px;width:950px;" title="리얼그리드"></div>
 
+	<input type="checkbox" name="chk_space" value="check"> SPACE 입력 시 체크가 됩니다.(단 그리드에서 탭키로 빠져나온 포커스가 체크박스에 있을 시에만 동작합니다.)<br/>
+	<select name="selBox" id="selBox" onChange="selectChange()">
+		<option vlaue="row">row</option>
+		<option value="grid">grid</option>
+		<option value="none">none</option>
+	</select>
+	그리드에서 탭키로 이동할 동작을 설정합니다.<br/>
+	none: 그리드 외부로 포커스 이동이 불가능 합니다.<br/>
+	row: 행과 상관없이 첫번째 컬럼과 마지막 컬럼에서 tab 또는 Shift + tab으로 포커스 이동이 가능합니다.<br/>
+	grid: 그리드의 처음(첫 행의 첫 번째컬럼)과 끝(마지막 행의 마지막 컬럼)에서만 tab 또는 Shift + tab으로 포커스 이동이 가능합니다.
 </body>
 </html>
 
