@@ -33,11 +33,13 @@ gridView.setColumns([{
 footer와 같이 summary mode를 **"statistical"**로 지정해야 분산, 표준편차 값이 표시 됩니다.
 
 <a class="btn primary small round lowercase" id="btnSetStatistical">Statistical 모드 적용</a>
+
 ```js
   gridView.setOptions({"summaryMode" : "statistical"});
 ```
 
 <a class="btn primary small round lowercase" id="btnSetAggregate">Aggregate 모드 적용</a>
+
 ```js
   gridView.setOptions({"summaryMode" : "aggregate"});
 ```
@@ -45,6 +47,7 @@ footer와 같이 summary mode를 **"statistical"**로 지정해야 분산, 표�
 
 <a class="btn primary small round lowercase" id="btnSetNone">None 모드 적용</a>  
 컬럼의 합계를 계산하지 않습니다.
+
 ```js
   gridView.setOptions({"summaryMode" : "none"});
 ```

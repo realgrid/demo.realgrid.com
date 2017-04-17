@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.22'
+title: '최신버전 1.1.23'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,92 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.23 (2017년 4월)
+
+---
+
+#### 기능 개선 
+1. [TextWrap](http://help.realgrid.com/api/types/TextWrap/)
+  - ellipse속성이 추가되었습니다.
+  - column.styles.textWrap를 "ellipse"로 지정시 Data의 길이가 column의 넓이보다 긴 경우 보이지 않는 Data를 "..."으로 표시합니다.
+1. [getColumnProperty](http://help.realgrid.com/api/GridBase/getColumnProperty/)
+  - columnByName 또는 getColumnProperty에서 styles 속성과 dynamicStyles 속성을 가져오도록 개선되었습니다.
+  - Column.styles에 정의된 속성만 가져오기를 원하는 grid.getColumnProperty(column, "styles", false)를 이용하면 Column.styles에 정의된 속성만 가져옵니다.
+  - getColumnProperty를 이용해서 Column.editorOptions속성을 가져올수 있도록 개선되었습니다.
+1. [PasteOptions](http://help.realgrid.com/api/types/PasteOptions/)
+  - 하나의 셀을 복사후 여러개의 셀에 붙여넣기 할수 있도록 PasteOptions.selectBlockPaste이 추가되었습니다.
+  - SelectOptions.sytle이 "block"인 경우만 적용됩니다.
+  ```js
+    grid.setPasteOptions({
+      selectBlockPaste:true
+    })
+  ```
+  - Column.Editor의 type이 "number"이면서 editFormat이 있거나 또는 styles.numberFormat이 있는 경우 소수점 자릿수를 제한할수 있도록 PasteOptions.applyNumberFormat이 추가되었습니다.
+  ```js
+    grid.setPasteOptions({
+      applyNumberFormat:true
+    }) 
+  ```
+1. [Field](http://help.realgrid.com/api/types/DataField/).calculateExpression에서 다른 계산필드를 참조할수 있도록 개선
+  - 계산필드에서 다른 계산필드를 참조할수 있도록 개선되었습니다(선행필드만 참조가능합니다). 
+1. Shift+Click 기능이 추가
+  - Shift+Click을 이용하여 selection을 변경할수 있도록 개선되었습니다.
+1. Column의 Header오른쪽을 더블클릭하여 Column의 넓이를 변경 개선
+  - Column의 넓이를 계산할 때 Column.header의 text와 Column.footer의 text를 포함하여 계산하도록 개선되었습니다.
+1. DataCell의 귀퉁이에 작은 삼각형의 표시할수 있도록 edgeMark 추가
+  - styles.figureName에 "leftTop", "leftBottom", "rightTop", "rightBottom" 중에 하나를 지정하면 해당위치에 작은 삼각형이 표시됩니다. 
+  - 자세한 내용은 [데모](http://demo.realgrid.com/CellComponent/EdgeMark/)와 [Help](http://help.realgrid.com/api/types/EdgeMark/)를 참조하세요.
+1. [stateBar](http://help.realgrid.com/api/types/StateBar/)의 상태별 색상 변경
+  - 행들의 상태를 표시하는 stateBar의 배경색을 상태에 따라 색상을 변경할수 있도록 updatedStyles, createdStyles, deletedStyles, createAndDeletedStyles 속성이 추가되었습니다.
+  - 자세한 내용은 [데모](http://demo.realgrid.com/GridComponent/StateBar/)를 참조하세요.
+1. [ExportOptions](http://help.realgrid.com/api/types/GridExportOptions/)
+  - Export시 전체 data를 출력할수 있는 pagingAllItems 옵션이 추가 되었습니다.
+  ```js
+  grid.export({
+    type:"excel",
+    target:"local",
+    pagingAllItems:true
+  });
+```  
+1. [CellButton.image](http://help.realgrid.com/api/types/CellButton/)
+  - 하나의 셀에 여러개의 버튼이 표시될때 각 버튼의 넓이와 버튼간격을 지정할수 있도록 개선되었습니다.
+  - imageGap속성으로 이미지의 간격을 지정하고 margin속성은 마지막 이미지와 Cell의 오른쪽 경계의 간격을 지정합니다.
+  ```js
+    var imageButtons = [ {
+        name:"팝업",
+        up:"./image/popup_normal.png",
+        hover:"./image/popup_hover.png",
+        down:"./image/popup_click.png",
+        width:20  // 버튼별로 넓이를 지정.
+      },{
+        name:"조회",
+        up:"./image/search_normal.png",
+        hover:"./image/search_hover.png",
+        down:"./image/search_click.png",
+        width:30  // 버튼별로 넓이를 지정.
+      }];  
+    grid.setColumns([
+      {fieldName:"fieldName", name:"columnName",button:"image", imageButtons:{images:imageButtons, margin:3, imageGap:2}}
+    ])
+  ```
+  - [셀버튼]({{ '/CellComponent/CellButton/' | prepend: site.baseurl }})페이지에서 데모를 참조하세요.
+
+#### 오류 수정
+1. `getStyles`
+  - gridView.getStyles("all")을 호출했을때 발생하는 오류를 수정하였습니다.
+1. `rowGrouping상태일때 ColumnGroup의 rowGroup.footer`
+  - rowGrouping상태일때 ColumnGroup의 rowGroup.footer의 높이가 달라지는 현상을 수정하였습니다.
+1. `dynamicStyles가 적용된 그리드를 export`
+  - dynamicStyles가 적용된 그리드를 export한 파일을 엑셀로 열었을때 일부파일이 열리지 않는 현상을 수정하였습니다.
+1. `PasteOptions.selectionBase`
+  - PasteOptions.selectionBase를 true인 상태에서 붙여넣기 할때 선택된 영역의 첫번째 컬럼이 ColumnGroup인 경우 발생하는 오류를 수정하였습니다.
+1. `grid.setHeader`
+   - Column.Header에 fixedHeight이 설정되었을때 grid.setHeader({heightFill:"default"})를 실행했을때 ColumnHeader의 높이가 달라는 현상을 수정하였습니다.
+1. `TreeView export`
+  - dynamicStyle이 적용된 tree에서 하위 노드를 펼쳤다가 접은 후 Excel Export하는 경우 발생하는 오류를 수정하였습니다.
+1. `IE에서 dropdown Column에 붙여넣기`
+  - IE에서 dropdown컬럼의 textReadOnly속성이 true일때 해당 컬럼에 붙여넣기가 되지 않는 현상이 수정되었습니다.
 
 ## 1.1.22 (2017년 2월)
 

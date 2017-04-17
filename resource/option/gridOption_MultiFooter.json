@@ -1,5 +1,5 @@
 {
-   "summaryMode": "RealGridJS.SummaryMode.AGGREGATE",
+   "summaryMode": "statistical",
    "panel":{
       "visible":false
    },
@@ -10,7 +10,9 @@
       "minHeight":30
    },
    "footer": {
-      "visible": true
+      "visible": true,
+      "count": 2,
+      "height": 50
    },
    "edit":{
       "insertable":true,
