@@ -109,6 +109,20 @@ gridView.setStateBar({
 });
 ```
 
+<a class="btn primary small round lowercase" id="btnStateStyles">상태별 배경색</a>
+
+```js
+gridView.setStateBar({
+    mark:"text",
+    styles:{font:"나눔고딕코딩"},
+    stateStyles:{ 
+        "updated":{"background":"#FF00FF00", font:"나눔고딕코딩"},
+        "created":{"background":"#44FF22FF", figureBackground:"#88888888", font:"굴림체"},
+        "deleted":{"background":"#44000000", foreground:"#FF88FF88", font:"바탕체"}
+    }
+});
+```
+
 
 <script>
 
@@ -165,5 +179,17 @@ gridView.setStateBar({
       footImageUrl: "{{"/resource/image/common/" | prepend: site.baseurl}}" + "/dot_arrow2_bottom.gif"  
     });
   });  
+
+  $('#btnStateStyles').click(function() {
+    gridView.setStateBar({
+      mark:"text",
+      styles:{font:"나눔고딕코딩"},
+      stateStyles:{ 
+          "updated":{"background":"#FF00FF00", font:"나눔고딕코딩"},
+          "created":{"background":"#44FF22FF", figureBackground:"#88888888", font:"굴림체"},
+          "deleted":{"background":"#44000000", foreground:"#FF88FF88", font:"바탕체"}
+      }
+    });
+  });
 
 </script>
