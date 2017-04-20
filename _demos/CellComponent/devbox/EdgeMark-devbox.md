@@ -49,7 +49,7 @@ var dStyles = [{
   criteria: "value = '5'",
   styles: {
     "textAlignment": "center",
-    "figureName": "rightTop", 
+    "figureName": "rightBottom", 
     "figureBackground": "#FF0000FF", 
     "figureSize": "7"
   }
