@@ -1,5 +1,3 @@
-컬럼그룹선택 <select id="groupList"></select>
-
 #### 컬럼의 일렬배치
 [linearizeColumns()](http://help.realgrid.com/api/GridBase/linearizeColumns/%20-%20layout){:target="_blank"} 함수를 호출해서 컬럼 그룹들을 모두 제거하고 데이터 값을 표시하는 컬럼들만 일렬로 배치합니다.
 
