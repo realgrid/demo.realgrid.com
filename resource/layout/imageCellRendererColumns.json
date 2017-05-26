@@ -27,6 +27,10 @@
     },
     "styles": {
         "contentFit": "none"
+    },
+    "renderer": {
+        "type": "image", 
+        "sommthing": true
     }
 }, {
     "name": "NormalFlag2",
@@ -37,6 +41,10 @@
     },
     "styles": {
         "contentFit": "center"
+    },
+    "renderer": {
+        "type": "image", 
+        "sommthing": true
     }
 }, {
     "name": "NormalFlag3",
