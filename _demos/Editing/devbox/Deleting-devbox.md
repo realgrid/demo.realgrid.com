@@ -87,7 +87,7 @@ dataProvider.removeRow(curr.dataRow);
   });
 
   $('#btnHideDeletedRows').click(function() {
-    dataProvider.setOptions({
+    gridView.setOptions({
       hideDeletedRows: $("#chkHideDeletedRows").is(":checked")
     })
   });
