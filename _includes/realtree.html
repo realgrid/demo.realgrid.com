@@ -11,6 +11,7 @@
 <div class="toolbox">
   <div class="buttonbox">
     {% comment %} showCodes() 는 include/head.html 에 있음. {% endcomment %}
+    <a class="btn tertiary small lowercase active" id="btnDevbox" onclick="setDevbox()">설명 보이기</a>
     <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.treeId }}field')">필드</a>
     <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.treeId }}column')">컬럼</a>
     <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.treeId }}dpoption')">Provider 옵션</a>
@@ -249,4 +250,17 @@
         {% endif %}
 
     });
+  function setDevbox() {
+      if($('#devbox')[0].clientHeight > 0){
+        $("#devbox").hide();
+        document.getElementById("btnDevbox").className = "btn tertiary small lowercase";
+        $(".with-devbox").attr("style","margin-right: 0%");
+        gridView.resetSize(); 
+      }else{
+        $("#devbox").show();
+        document.getElementById("btnDevbox").className = "btn tertiary small lowercase active";
+        $(".with-devbox").attr("style","margin-right: 40%");
+        gridView.resetSize();
+      }
+    }
 </script>
