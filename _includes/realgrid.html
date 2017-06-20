@@ -37,9 +37,6 @@
     var {{ include.dpVar }};
 
     $(document).ready( function(){
-        $.ajaxSetup({
-          async: false
-        });
         RealGridJS.setRootContext("{{ realgrid_folder | prepend: site.baseurl }}");
 
         {{ include.dpVar }} = new RealGridJS.LocalDataProvider();
@@ -80,6 +77,10 @@
             });
         {% endif %}
 
+        $.ajaxSetup({
+          async: false
+        });
+
         {% if include.columnSet %}
             {% capture columnfile %}/resource/layout/{{ include.columnSet }}.json{% endcapture %}
 
@@ -113,6 +114,10 @@
                 {% endif %}
             });
         {% endif %}
+
+        $.ajaxSetup({
+          async: true
+        });
 
         {% if include.dpOptionSet %}
             {% capture optionfile %}/resource/option/{{ include.dpOptionSet }}.json{% endcapture %}
