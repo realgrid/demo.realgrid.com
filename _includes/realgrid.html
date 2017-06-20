@@ -37,6 +37,9 @@
     var {{ include.dpVar }};
 
     $(document).ready( function(){
+        $.ajaxSetup({
+          async: false
+        });
         RealGridJS.setRootContext("{{ realgrid_folder | prepend: site.baseurl }}");
 
         {{ include.dpVar }} = new RealGridJS.LocalDataProvider();
@@ -259,7 +262,6 @@
                 alert("jQuery ajax() Failed: " + err);
               {% endif %}
             });
-;
         {% endif %}
 
     });
