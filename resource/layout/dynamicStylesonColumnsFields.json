@@ -1,53 +1,100 @@
+
 [{
-    "fieldName": "term"
-}, {
-    "fieldName": "category"
-}, {
-    "fieldName": "1997",
-    "dataType": "number"
-}, {
-    "fieldName": "1998",
-    "dataType": "number"
-}, {
-    "fieldName": "1999",
-    "dataType": "number"
-}, {
-    "fieldName": "2000",
-    "dataType": "number"
-}, {
-    "fieldName": "2001",
-    "dataType": "number"
-}, {
-    "fieldName": "2002",
-    "dataType": "number"
-}, {
-    "fieldName": "2003",
-    "dataType": "number"
-}, {
-    "fieldName": "2004",
-    "dataType": "number"
-}, {
-    "fieldName": "2005",
-    "dataType": "number"
-}, {
-    "fieldName": "2006",
-    "dataType": "number"
-}, {
-    "fieldName": "2007",
-    "dataType": "number"
-}, {
-    "fieldName": "2008",
-    "dataType": "number"
-}, {
-    "fieldName": "2009",
-    "dataType": "number"
-}, {
-    "fieldName": "2010",
-    "dataType": "number"
-}, {
-    "fieldName": "2011",
-    "dataType": "number"
-}, {
-    "fieldName": "2012",
-    "dataType": "number"
-}]
+        "fieldName": "term",
+        "width": 80,
+        "equalBlank": true,
+        "header": { "text": "Term" }
+    }, {
+        "name": "category",
+        "fieldName": "category",
+        "width": 100,
+        "styles": { "textAlignment": "far" },
+        "dynamicStyles": [{
+            "criteria": "value like '%damage%'",
+            "styles": "background=#11ff0000"
+        }],
+        "header": { "text": "Category" }
+    }, {
+        "fieldName": "1997",
+        "width": 50,
+        "dynamicStyles": [{
+            "criteria": "value ='524'",
+            "styles": "background=#ffff0000"
+        }],
+        "header": { "text": "1997" }
+    }, {
+        "fieldName": "1998",
+        "width": 50,
+        "styles": "colStyles",
+        "header": { "text": "1998" }
+    }, {
+        "fieldName": "1999",
+        "width": 50,
+        "styles": "colStyles",
+        "header": { "text": "1999" }
+    }, {
+        "fieldName": "2000",
+        "width": 50,
+        "styles": "colStyles",
+        "header": { "text": "2000" }
+    }, {
+        "fieldName": "2001",
+        "width": 50,
+        "styles": "colStyles",
+        "header": { "text": "2001" }
+    }, {
+        "fieldName": "2002",
+        "width": 50,
+        "styles": "colStyles",
+        "header": { "text": "2002" }
+    }, {
+        "fieldName": "2003",
+        "width": 50,
+        "styles": "colStyles",
+        "header": { "text": "2003" }
+    }, {
+        "fieldName": "2004",
+        "width": 50,
+        "styles": "colStyles",
+        "header": { "text": "2004" }
+    }, {
+        "fieldName": "2005",
+        "width": 50,
+        "styles": "colStyles",
+        "header": { "text": "2005" }
+    }, {
+        "fieldName": "2006",
+        "width": 50,
+        "styles": "colStyles",
+        "header": { "text": "2006" }
+    }, {
+        "fieldName": "2007",
+        "width": 50,
+        "styles": "colStyles",
+        "header": { "text": "2007" }
+    }, {
+        "fieldName": "2008",
+        "width": 50,
+        "styles": "colStyles",
+        "header": { "text": "2008" }
+    }, {
+        "fieldName": "2009",
+        "width": 50,
+        "styles": "colStyles",
+        "header": { "text": "2009" }
+    }, {
+        "fieldName": "2010",
+        "width": 50,
+        "styles": "colStyles",
+        "header": { "text": "2010" }
+    }, {
+        "fieldName": "2011",
+        "width": 50,
+        "styles": "colStyles",
+        "header": { "text": "2011" }
+    }, {
+        "fieldName": "2012",
+        "width": 50,
+        "styles": "colStyles",
+        "header": { "text": "2012" }
+    }]
