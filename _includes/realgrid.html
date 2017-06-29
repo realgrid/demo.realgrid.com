@@ -80,17 +80,8 @@
         {% if include.columnSet %}
             {% capture columnfile %}/resource/layout/{{ include.columnSet }}.json{% endcapture %}
 
-            $.ajaxSetup({
-              async: false
-            });
-
             $.getJSON("{{ columnfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.gridVar }}.setColumns(data);
-
-                console.log("비동기 재설정");
-                $.ajaxSetup({
-                  async: true
-                });
 
                 $('.codeview.{{ include.gridId }}column').html(
                   JSON.stringify(data, null, 4)
@@ -119,8 +110,6 @@
                 {% endif %}
             });
         {% endif %}
-
-       
 
         {% if include.dpOptionSet %}
             {% capture optionfile %}/resource/option/{{ include.dpOptionSet }}.json{% endcapture %}
@@ -270,6 +259,7 @@
                 alert("jQuery ajax() Failed: " + err);
               {% endif %}
             });
+;
         {% endif %}
 
     });

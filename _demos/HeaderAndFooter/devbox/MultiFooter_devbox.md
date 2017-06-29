@@ -84,45 +84,6 @@ footer.expression = ["sum", "avg", "stdev"];
 gridView.setColumnProperty("Quantity", "footer", footer);  
 ```
 
-*멀티 푸터 스타일 설정*
-
-버튼 클릭 시 "Quantity" 컬럼의 footer행 별로 스타일을 설정할 수 있습니다.
-
-<a class="btn primary small round lowercase" id="btnSetMultiFooterStyles">동적 컬럼 푸터 스타일</a>
-
-```js
-gridView.setColumnProperty("Quantity","footer", {
-    styles:[{
-        background:"#ffffff00",
-        textAlignment:"far",
-        numberFormat:"#,##0.#"
-    },{
-        background:"#ff00ffff",
-        textAlignment:"far",
-        numberFormat:"#,##0.##"
-    },{
-        background:"#ff11ff55",
-        textAlignment:"far",
-        numberFormat:"#,##0.###"
-    }]
-});
-```
-
-모든 푸터 행에 스타일을 설정할 수 있습니다.
-
-<a class="btn primary small round lowercase" id="btnSetMultiFooterStyleRows">전체 푸터 행 스타일</a>
-
-```js
-gridView.setFooter({styles:[{
-        background:"#ffffff00"
-    },{
-        background:"#ff00ffff"
-    },{
-        background:"#ff11ff55"
-    }]
-})
-```
-
 <script>
 
   $('#btnSetFooter').click(function() {
@@ -142,35 +103,6 @@ gridView.setFooter({styles:[{
     footer.expression = ["sum", "avg", "stdev"];
 
     gridView.setColumnProperty("Quantity", "footer", footer);      
-  });
-
-  $('#btnSetMultiFooterStyles').click(function() {
-    gridView.setColumnProperty("Quantity","footer", {
-        styles:[{
-            background:"#ffffff00",
-            textAlignment:"far",
-            numberFormat:"#,##0.#"
-        },{
-            background:"#ff00ffff",
-            textAlignment:"far",
-            numberFormat:"#,##0.##"
-        },{
-            background:"#ff11ff55",
-            textAlignment:"far",
-            numberFormat:"#,##0.###"
-        }]
-    });
-  });
-
-  $('#btnSetMultiFooterStyleRows').click(function() {
-    gridView.setFooter({styles:[{
-            background:"#ffffff00"
-        },{
-            background:"#ff00ffff"
-        },{
-            background:"#ff11ff55"
-        }]
-    })
   });
 
 

@@ -54,49 +54,6 @@ gridView.setRowGroup({
 });
 ```
 
-#### Footer 상단표시
-
-*Footer 상단표시*
-
-<a class="btn primary small round lowercase" id="btnSetSummary">상단에 보이기</a> 
-
-```js
-gridView.setHeader({summary:{visible:true}});
-gridView.setFooter({visible:false});
-```
-
-*상단 Footer 스타일*
-
-<a class="btn primary small round lowercase" id="btnSetSummaryStyles">스타일 설정</a> 
-
-```js
-gridView.setStyles({header:{summary:{background:"#ffdee2e7"}}});
-```
-
-*상단 Footer 값 설정*
-
-header.summary에 footer와 같은 속성 설정   
-[컬럼 푸터](http://demo.realgrid.com/HeaderAndFooter/ColumnFooter/)데모를 참조하세요.
-
-```js
-...
-"header": {
-    "text": "Quantity",
-    "summary": {
-        "styles": {
-            "textAlignment": "far",
-            "numberFormat": "#,##0",
-            "suffix": " $",
-            "font": "Arial,12"
-        },
-        "text": "Variance",
-        "expression": "sum"
-    }
-},
-...
-```
-
-
 
 #### 제한 사항
 
@@ -128,13 +85,4 @@ function expanderChange(e) {
         mergeExpander: $(':radio[name="expander"]:checked').val()
     });
 }
-
-$('#btnSetSummary').click(function() {
-    gridView.setHeader({summary:{visible:true}});
-    gridView.setFooter({visible:false});
-});
-
-$('#btnSetSummaryStyles').click(function() {
-    gridView.setStyles({header:{summary:{background:"#ffdee2e7"}}});
-});
 </script>

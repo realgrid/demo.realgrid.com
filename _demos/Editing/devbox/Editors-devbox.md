@@ -259,33 +259,6 @@ gridView.onEditSearch = function (grid, index, text) {
   }
 }
 ...
-
-```
-
-minDate, maxDate를 지정하여 특정기간만 선택할 수 있습니다.
-
-<a class="btn primary small round lowercase" id="btnSetDateEditor">날짜 선택 범위 지정</a>
-
-```js
-gridView.setColumnProperty("OrderDate","editor", {
-  "type": "date",
-  "datetimeFormat": "yyyy.MM.dd",
-  "minDate": new Date("2017-06-1"), 
-  "maxDate": new Date("2017-06-30")
-});
-```
-
-
-#### editor의 textAlignment를 변경
-
-*편집 정렬*
-
-Text editor컬럼에 편집시 가운데 정렬을 설정합니다.
-
-<a class="btn primary small round lowercase" id="btnSetEditor">편집 정렬</a>
-
-```js
-gridView.setColumnProperty("OrderID","editor",{textAlignment:"center"});
 ```
 
 <script>
@@ -338,19 +311,6 @@ gridView.setColumnProperty("OrderID","editor",{textAlignment:"center"});
     };
 
     gridView.setColumn(col);
-  });
-
-  $('#btnSetDateEditor').click(function() {
-    gridView.setColumnProperty("OrderDate","editor", {
-      "type": "date",
-      "datetimeFormat": "yyyy.MM.dd",
-      "minDate": new Date("2017-06-1"), 
-      "maxDate": new Date("2017-06-30")
-    });
-  });
-
-  $('#btnSetEditor').click(function() {
-    gridView.setColumnProperty("OrderID","editor",{textAlignment:"center"});
   });
 
 </script>

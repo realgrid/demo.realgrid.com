@@ -29,7 +29,7 @@ var onDoneDataSet = function() {
   gridId="realgrid"
 
   fieldSet="rowGroupingField"
-  columnSet="mergedRowGroupingColumn"
+  columnSet="rowGroupingColumn"
   dpOptionSet="dataProviderOption1"
   gridOptionSet="gridOption1"
   styleSet="style1"

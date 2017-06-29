@@ -79,6 +79,7 @@
           {% if category != 'null' %}
             <div class="heading-toc">{{ category }}</div>
           {% endif %}
+
           <ul class="list-toc">
             {% assign sorted_by_orderno = site.demos | sort: "order" %}
             {% for demo in sorted_by_orderno %}

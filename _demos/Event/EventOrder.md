@@ -83,37 +83,28 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
     };
  
     gridView.onGetEditValue = function (grid, index, editResult) {
-        addLog("grid.onGetEditValue: " + JSON.stringify(editResult));
+        addLog("onGetEditValue: " + JSON.stringify(editResult));
     };
  
     gridView.onSorting = function (grid, field, directions) {
-        addLog("grid.onSorting: " + JSON.stringify(field) + ", " + JSON.stringify(directions));
+        addLog("onSorting: " + JSON.stringify(field) + ", " + JSON.stringify(directions));
     };
  
     gridView.onSortingChanged = function (grid) {
-        addLog("grid.onSortingChanged");
+        addLog("onSortingChanged");
     };
  
     gridView.onFiltering = function (grid) {
-        addLog("grid.onFiltering");
+        addLog("onFiltering");
     };
  
     gridView.onFilteringChanged = function (grid) {
-        addLog("grid.onFilteringChanged");
+        addLog("onFilteringChanged");
     };
  
     gridView.onTopItemIndexChanged = function (grid, itemIndex) {
-        addLog("grid.onTopItemIndexChanged! Top " + itemIndex);
+        addLog("onTopItemIndexChanged! Top " + itemIndex);
     }
-
-    gridView.onRowsPasted =  function (grid, items) {
-        addLog("grid.onRowsPasted" + items);
-    };
-
-    gridView.onEditRowPasted = function(grid, itemIndex, dataRow, fields, oldValues, newValues){
-        var text = "grid.onEditRowPasted : itemIndex = "+itemIndex+", oldValues = "+ oldValues.toString() +", newValues = "+newValues.toString();
-        addLog(text);
-    };
  
     dataProvider.onValueChanged = function (provider, row, field) {
         addLog("dp.onValueChanged:" + row + "," + field);
