@@ -17,6 +17,15 @@ tags: ['Selecting', '선택', '영역선택', '선택영역']
     dataProvider.setRows(data);
   }
   var onDoneDataSet = function() {
+    gridView.setDisplayOptions({
+      rowHoverMask:{
+        visible:true,
+        styles:{
+          background:"#2065686b"
+        },
+        hoverMask:"cell"
+      }
+    });
   }
 </script>
 

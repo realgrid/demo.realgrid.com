@@ -31,43 +31,40 @@ permalink: /release/
 
 1. [ExportOptions](http://help.realgrid.com/api/types/GridExportOptions/)
   - Export시 visible이 false인 컬럼도 표시될수 있도록 allColumns속성이 추가되었습니다.
-  ```js
-  grid.exportGrid({
-    type:"excel",
-    target:"local",
-    allColumns:true
-  });
-  ```
+```js
+grid.exportGrid({
+  type:"excel",
+  target:"local",
+  allColumns:true
+});
+```
 1. [DateCellEditor](http://help.realgrid.com/api/types/DateCellEditor/)에서 선택가능한 범위지정.
   - DateCellEditor에서 minDate, maxDate를 지정하여 특정기간만 선택가능하도록 개선되었습니다.
-  ```js
-  grid.setColumns([
-    { fieldName:"date",
-      name:"date",
-      editor:{
-        type:"date",
-        minDate:new Date(2017, 05, 1), 
-        maxDate:new Date(2017, 05, 30) //"2017-08-31"와 같이 문자열로도 지정가능.
-      }
+```js
+grid.setColumns([{ 
+    fieldName:"date",
+    name:"date",
+    editor:{
+      type:"date",
+      minDate:new Date(2017, 05, 1), 
+      maxDate:new Date(2017, 05, 30) //"2017-08-31"와 같이 문자열로도 지정가능.
     }
-  ])
-  ```
+}])
+```
   자세한 내용은 [Editors]({{ '/Editing/Editors/' | prepend: site.baseurl }})를 참조하세요.
 
 1. `Editor TextAlignment`
   - editor의 textAlignment 를 변경할수 있도록 개선되었습니다.
-  ```js
-  grid.setColumns([
-    { 
-      fieldName:"text",
-      name:"text",
-      editor:{
-        type:"text",
-        textAlignment:"far"
-      }
+```js
+grid.setColumns([{ 
+    fieldName:"text",
+    name:"text",
+    editor:{
+      type:"text",
+      textAlignment:"far"
     }
-  ])
-  ```
+}])
+```
   자세한 내용은 [Editors]({{ '/Editing/Editors/' | prepend: site.baseurl }})를 참조하세요.  
 
 1. [BarCellRenderer](http://help.realgrid.com/api/types/BarCellRenderer/)
@@ -75,18 +72,17 @@ permalink: /release/
 
 1. [MultiCheckCellEditor](http://help.realgrid.com/api/types/MultiCheckCellEditor/)
   - MultiCheckCellEditor에서 전체 선택,해제 CheckBox를 표시하는 showAllCheck 속성이 추가되었습니다.
-  ```js
-  grid.setColumns([
-    { fieldName:"text",
-      name:"text",
-      editor:{
-        type:"multiCheck",
-        showAllCheck:true,
-        allCheckText:"전체선택"
-      }
-    }
-  ])
-  ```
+```js
+grid.setColumns([{ 
+  fieldName:"text",
+  name:"text",
+  editor:{
+    type:"multiCheck",
+    showAllCheck:true,
+    allCheckText:"전체선택"
+  }
+}])
+```
   자세한 내용은 [데모]({{ '/Editing/MultiCheckCellEditor/' | prepend: site.baseurl }})를 참조하세요.
 
 1. `Column Move`
@@ -101,19 +97,19 @@ permalink: /release/
   자세한 내용은 [데모]({{ '/HeaderAndFooter/MultiFooter/' | prepend: site.baseurl }})를 참조하세요.
 
 1. `DisplayOptions`
-  - 사용자가 마우스를 움직일때 마우스 위치에 해당하는 DataRow를 보여줄수 있도록 [rowHoverMask](help 추가.)속성이 추가 되었습니다.
-  ```js 
-  grid.setDisplayOptions({
+  - 사용자가 마우스를 움직일때 마우스 위치에 해당하는 DataRow를 보여줄수 있도록 [rowHoverMask](http://help.realgrid.com/api/types/RowHoverMask/)속성이 추가 되었습니다.
+```js 
+grid.setDisplayOptions({
     rowHoverMask:{
-      visible:true,
-      styles:{
-        background:"#2065686b"
-      },
-      hoverMask:"row"
+        visible:true,
+        styles:{
+            background:"#2065686b"
+        },
+        hoverMask:"row"
     }
-  })
-  ```js
-  자세한 내용은 [데모](데모 추가)를 참조하세요.
+})
+```
+  자세한 내용은 [데모]({{ '/GridComponent/Selecting/' | prepend: site.baseurl }})를 참조하세요.
 
 ### 오류 수정
 1. `dataProvider.getFields`
@@ -189,7 +185,7 @@ permalink: /release/
   - 자세한 내용은 [데모](http://demo.realgrid.com/GridComponent/StateBar/)를 참조하세요.
 1. [ExportOptions](http://help.realgrid.com/api/types/GridExportOptions/)
   - Export시 전체 data를 출력할수 있는 pagingAllItems 옵션이 추가 되었습니다.
-  ```js
+```js
   grid.export({
     type:"excel",
     target:"local",
@@ -199,24 +195,24 @@ permalink: /release/
 1. [CellButton.image](http://help.realgrid.com/api/types/CellButton/)
   - 하나의 셀에 여러개의 버튼이 표시될때 각 버튼의 넓이와 버튼간격을 지정할수 있도록 개선되었습니다.
   - imageGap속성으로 이미지의 간격을 지정하고 margin속성은 마지막 이미지와 Cell의 오른쪽 경계의 간격을 지정합니다.
-  ```js
-    var imageButtons = [ {
-        name:"팝업",
-        up:"./image/popup_normal.png",
-        hover:"./image/popup_hover.png",
-        down:"./image/popup_click.png",
-        width:20  // 버튼별로 넓이를 지정.
-      },{
-        name:"조회",
-        up:"./image/search_normal.png",
-        hover:"./image/search_hover.png",
-        down:"./image/search_click.png",
-        width:30  // 버튼별로 넓이를 지정.
-      }];  
-    grid.setColumns([
-      {fieldName:"fieldName", name:"columnName",button:"image", imageButtons:{images:imageButtons, margin:3, imageGap:2}}
-    ])
-  ```
+```js
+  var imageButtons = [ {
+      name:"팝업",
+      up:"./image/popup_normal.png",
+      hover:"./image/popup_hover.png",
+      down:"./image/popup_click.png",
+      width:20  // 버튼별로 넓이를 지정.
+    },{
+      name:"조회",
+      up:"./image/search_normal.png",
+      hover:"./image/search_hover.png",
+      down:"./image/search_click.png",
+      width:30  // 버튼별로 넓이를 지정.
+    }];  
+  grid.setColumns([
+    {fieldName:"fieldName", name:"columnName",button:"image", imageButtons:{images:imageButtons, margin:3, imageGap:2}}
+  ])
+```
   - [셀버튼]({{ '/CellComponent/CellButton/' | prepend: site.baseurl }})페이지에서 데모를 참조하세요.
 
 #### 오류 수정
