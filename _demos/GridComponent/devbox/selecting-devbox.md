@@ -84,9 +84,16 @@ gridView.setDisplayOptions({
 
 #### rowHoverMask
 
-현재 마우스가 위치한 지점의 hoverMask속성에 따른 영역의 배경색상을 표시할 수 있습니다.  
+현재 마우스가 위치한 지점의 hoverMask속성에 따른 영역의 배경색상을 표시할 수 있습니다.    
 
-<a class="btn primary small round lowercase" id="btnSetRowHoverMask">행 단위 hoverMask 설정</a>
+<input type="radio" name="hoverMask" value="cell" checked="checked">
+<label style="vertical-align:middle">cell</label>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="hoverMask" value="data">
+<label style="vertical-align:middle">data</label>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="hoverMask" value="row">
+<label style="vertical-align:middle">row</label>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="hoverMask" value="fill">
+<label style="vertical-align:middle">fill</label>&nbsp;&nbsp;&nbsp;&nbsp;
 
 ```js
 gridView.setDisplayOptions({
@@ -95,12 +102,14 @@ gridView.setDisplayOptions({
     styles:{
       background:"#2065686b"
     },
-    hoverMask:"row"
+    hoverMask: $(':radio[name="hoverMask"]:checked').val()
   }
 });
 ```
 
 <script>
+  $(":radio[name='hoverMask']").change(setRowHoverMask);
+
   $('#btnSetBlock').click(function() {
     gridView.setSelectOptions({
       style: 'block'
@@ -146,14 +155,14 @@ gridView.setDisplayOptions({
     });
   });
 
-  $('#btnSetRowHoverMask').click(function() {
+  $('#setRowHoverMask').click(function() {
     gridView.setDisplayOptions({
       rowHoverMask:{
         visible:true,
         styles:{
           background:"#2065686b"
         },
-        hoverMask:"row"
+        hoverMask: $(':radio[name="hoverMask"]:checked').val()
       }
     });
   });
