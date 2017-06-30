@@ -86,30 +86,28 @@ gridView.setDisplayOptions({
 
 현재 마우스가 위치한 지점의 hoverMask속성에 따른 영역의 배경색상을 표시할 수 있습니다.    
 
-<input type="radio" name="hoverMask" value="cell" checked="checked">
-<label style="vertical-align:middle">cell</label>&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="radio" name="hoverMask" value="data">
-<label style="vertical-align:middle">data</label>&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="radio" name="hoverMask" value="row">
-<label style="vertical-align:middle">row</label>&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="radio" name="hoverMask" value="fill">
-<label style="vertical-align:middle">fill</label>&nbsp;&nbsp;&nbsp;&nbsp;
+<select id="selHoverMask">
+  <option selected="selected" value="row">row</option>
+  <option value="data">data</option>
+  <option value="cell">cell</option>
+  <option value="fill">fill</option>
+</select>
+<a class="btn primary small round lowercase" id="btnSetRowHoverMask">적용</a>
 
 ```js
+var hoverMaskValue = $('#selHoverMask').val();
 gridView.setDisplayOptions({
   rowHoverMask:{
     visible:true,
     styles:{
       background:"#2065686b"
     },
-    hoverMask: $(':radio[name="hoverMask"]:checked').val()
+    hoverMask: hoverMaskValue
   }
 });
 ```
 
 <script>
-  $(":radio[name='hoverMask']").change(setRowHoverMask);
-
   $('#btnSetBlock').click(function() {
     gridView.setSelectOptions({
       style: 'block'
@@ -155,14 +153,15 @@ gridView.setDisplayOptions({
     });
   });
 
-  $('#setRowHoverMask').click(function() {
+  $('#btnSetRowHoverMask').click(function() {
+    var hoverMaskValue = $('#selHoverMask').val();
     gridView.setDisplayOptions({
       rowHoverMask:{
         visible:true,
         styles:{
           background:"#2065686b"
         },
-        hoverMask: $(':radio[name="hoverMask"]:checked').val()
+        hoverMask: hoverMaskValue
       }
     });
   });
