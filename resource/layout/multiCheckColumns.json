@@ -35,6 +35,8 @@
     "valueSeparator": ",",
     "editor" : {
         "type": "multicheck",
+        "showAllCheck":true,
+        "allCheckText":"전체선택",
         "dropDownCount": 4,
         "acceptText": "확인",
         "cancelText": "취소",
@@ -59,6 +61,8 @@
     "lookupDisplay": true,
     "editor": {
         "type": "multicheck",
+        "showAllCheck":true,
+        "allCheckText":"전체선택",
         "textReadOnly": true,
         "acceptText": "확인",
         "cancelText": "취소",

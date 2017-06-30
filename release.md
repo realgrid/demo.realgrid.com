@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.23'
+title: '최신버전 1.1.24'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,139 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.24 (2017년 6월)
+
+---
+
+#### 기능 개선 
+1. `MergedRowGroup의 Footer 상단표시`
+  - `MergedRowGroup` 상태에서 Footer를 그룹의 상단에 표시할수 있도록 개선되었습니다.  
+  - 자세한 내용은 [MergedRowGrouping]({{ '/RowGroup/MergedRowGrouping/' | prepend: site.baseurl }}) 데모를 참조하세요.  
+
+1. [DataColumn](http://help.realgrid.com/api/types/DataColumn/)  
+  - DataType이 Number인 컬럼의 값이 0 인경우 다른 문자로 표시할수 있도록 zeroText 속성이 추가되었습니다.  
+  - 사용자가 컬럼의 넓이를 변경할때 최소넓이와 최대넓이를 지정할수 있도록 minWidth, maxWidth 속성이 추가되었습니다.   
+
+1. [DisplayOptions](http://help.realgrid.com/api/types/DisplayOptions/)  
+  - 데이터가 없는 셀에서도 Tooltip이 표시될 수 있도록 displayOptions.emptyShowTooltip 속성이 추가되었습니다.  
+  - DisplayOptions.emptyShowTooltip을 true로 설정하면 데이터가 없는 셀에서도 [onShowToolip](http://help.realgrid.com/api/GridBase/onShowTooltip/) 이벤트가 발생되며 이벤트에서 리턴된 문자열을 tooltip으로 표시합니다.
+
+1. [ExportOptions](http://help.realgrid.com/api/types/GridExportOptions/)
+  - Export시 visible이 false인 컬럼도 표시될수 있도록 allColumns속성이 추가되었습니다.
+```js
+grid.exportGrid({
+  type:"excel",
+  target:"local",
+  allColumns:true
+});
+```
+1. [DateCellEditor](http://help.realgrid.com/api/types/DateCellEditor/)에서 선택가능한 범위지정.
+  - DateCellEditor에서 minDate, maxDate를 지정하여 특정기간만 선택가능하도록 개선되었습니다.
+```js
+grid.setColumns([{ 
+    fieldName:"date",
+    name:"date",
+    editor:{
+      type:"date",
+      minDate:new Date(2017, 05, 1), 
+      maxDate:new Date(2017, 05, 30) //"2017-08-31"와 같이 문자열로도 지정가능.
+    }
+}])
+```
+  자세한 내용은 [Editors]({{ '/Editing/Editors/' | prepend: site.baseurl }})를 참조하세요.
+
+1. `Editor TextAlignment`
+  - editor의 textAlignment 를 변경할수 있도록 개선되었습니다.
+```js
+grid.setColumns([{ 
+    fieldName:"text",
+    name:"text",
+    editor:{
+      type:"text",
+      textAlignment:"far"
+    }
+}])
+```
+  자세한 내용은 [Editors]({{ '/Editing/Editors/' | prepend: site.baseurl }})를 참조하세요.  
+
+1. [BarCellRenderer](http://help.realgrid.com/api/types/BarCellRenderer/)
+  - BarCellRenderer와 [SignalBarCellRenderer](http://help.realgrid.com/api/types/SignalBarCellRenderer/)에서 Value가 음수인경우 절대값으로 표시되도록 하는 absoluteValue 속성이 추가되었습니다.
+
+1. [MultiCheckCellEditor](http://help.realgrid.com/api/types/MultiCheckCellEditor/)
+  - MultiCheckCellEditor에서 전체 선택,해제 CheckBox를 표시하는 showAllCheck 속성이 추가되었습니다.
+```js
+grid.setColumns([{ 
+  fieldName:"text",
+  name:"text",
+  editor:{
+    type:"multiCheck",
+    showAllCheck:true,
+    allCheckText:"전체선택"
+  }
+}])
+```
+  자세한 내용은 [데모]({{ '/Editing/MultiCheckCellEditor/' | prepend: site.baseurl }})를 참조하세요.
+
+1. `Column Move`
+  - Column Header를 Drag하여 Column의 위치를 변경할때 그리드 영역을 벗어나면 가로스크롤이 되어 표시되지 않는 영역으로 이동할 수 있도록 개선되었습니다.
+
+1. `Footer`
+  - footer가 여러행인경우 각 행별로 스타일을 적용할수 있도록 개선되었습니다.
+  - Footer.styles를 지정할때 array로 스타일을 지정하면 각 Footer별로 스타일이 지정됩니다.
+  ```js
+    grid.setFooter({styles:[{background:"#8800ee00"},{background:"#8800eeee"}]})
+  ```
+  자세한 내용은 [데모]({{ '/HeaderAndFooter/MultiFooter/' | prepend: site.baseurl }})를 참조하세요.
+
+1. `DisplayOptions`
+  - 사용자가 마우스를 움직일때 마우스 위치에 해당하는 DataRow를 보여줄수 있도록 [rowHoverMask](http://help.realgrid.com/api/types/RowHoverMask/)속성이 추가 되었습니다.
+```js 
+grid.setDisplayOptions({
+    rowHoverMask:{
+        visible:true,
+        styles:{
+            background:"#2065686b"
+        },
+        hoverMask:"row"
+    }
+})
+```
+  자세한 내용은 [데모]({{ '/GridComponent/Selecting/' | prepend: site.baseurl }})를 참조하세요.
+
+### 오류 수정
+1. `dataProvider.getFields`
+  - dataProvider.getFields함수를 이용해서 field의 속성을 가져올때 orgFieldName속성이 누락되는 현상을 수정하였습니다.
+
+1. `gridView.onEditRowChanged`
+  - gridView.onEditRowChanged이벤트 사용시 키보드 도는 마우스로 행을 변경하면 이벤트가 2번 발생되는 현상이 수정되었습니다.
+
+1. `gridView.setValues`
+  - dataProvider.setRowCount등을 이용해서 빈행을 생성후 gridView.setValues를 이용해서 값을 입력할때 발생하는 오류를 수정하였습니다.
+
+1. `gridView.getColumns`
+  - gridView.getColumns를 이용해서 컬럼 정보를 가져올때 header, footer 속성이 포함되도록 수정되었습니다.
+
+1. `gridView.getDisplayOptions`
+  - 그리드 행높이가 기본일때 gridView.getDisplayOptions().rowHeight가 0으로 나오는 현상을 수정하였습니다.
+
+1. `gridView.collapseParent`
+  - RowGroup.expandedAdornments가 "summary"인 상태에서 gridView.collapseParent(itemIndex, true)를 호출하여 item을 접을때 하위 item이 접히지 않는 현상이 수정되었습니다.
+
+1. `gridView.setColumnLayout`
+  - gridView.saveColumnLayout()을 이용해서 현재 Column상태를 저장한후 gridView.setColumnLayout을 이용해서 Column상태를 되돌릴때 ColumnGroup의 하위 column의 넓이가 변경되는 현상이 수정되었습니다.
+
+1. `columnHeader`
+  - 그리드에 GroupPanel영역이 없을때 Column.Header의 Hovering색상이 유지되는 현상이 수정되었습니다.
+
+1. `MultiCheckCellEditor`
+  - MultiCheckCellEditor의 속성중 domainOnly를 true로 했을때 값을 선택할수 없는 현상이 수정되었습니다.
+
+1. `ColumnGroup`
+  - ColumnGroup.orientation이 Vertical이면서 visible이 false인 하위 컬럼이 있는 경우 정상적으로 표시되지 않는 현상을 수정하였습니다.
+
+1. `FixedOptions.movable`
+  - FixedOptions.movable이 true일때 고정되지 않은 컬럼을 고정영역으로 옮길수 없는 현상을 수정하였습니다.
 
 ## 1.1.23 (2017년 4월)
 
@@ -52,7 +185,7 @@ permalink: /release/
   - 자세한 내용은 [데모](http://demo.realgrid.com/GridComponent/StateBar/)를 참조하세요.
 1. [ExportOptions](http://help.realgrid.com/api/types/GridExportOptions/)
   - Export시 전체 data를 출력할수 있는 pagingAllItems 옵션이 추가 되었습니다.
-  ```js
+```js
   grid.export({
     type:"excel",
     target:"local",
@@ -62,24 +195,24 @@ permalink: /release/
 1. [CellButton.image](http://help.realgrid.com/api/types/CellButton/)
   - 하나의 셀에 여러개의 버튼이 표시될때 각 버튼의 넓이와 버튼간격을 지정할수 있도록 개선되었습니다.
   - imageGap속성으로 이미지의 간격을 지정하고 margin속성은 마지막 이미지와 Cell의 오른쪽 경계의 간격을 지정합니다.
-  ```js
-    var imageButtons = [ {
-        name:"팝업",
-        up:"./image/popup_normal.png",
-        hover:"./image/popup_hover.png",
-        down:"./image/popup_click.png",
-        width:20  // 버튼별로 넓이를 지정.
-      },{
-        name:"조회",
-        up:"./image/search_normal.png",
-        hover:"./image/search_hover.png",
-        down:"./image/search_click.png",
-        width:30  // 버튼별로 넓이를 지정.
-      }];  
-    grid.setColumns([
-      {fieldName:"fieldName", name:"columnName",button:"image", imageButtons:{images:imageButtons, margin:3, imageGap:2}}
-    ])
-  ```
+```js
+  var imageButtons = [ {
+      name:"팝업",
+      up:"./image/popup_normal.png",
+      hover:"./image/popup_hover.png",
+      down:"./image/popup_click.png",
+      width:20  // 버튼별로 넓이를 지정.
+    },{
+      name:"조회",
+      up:"./image/search_normal.png",
+      hover:"./image/search_hover.png",
+      down:"./image/search_click.png",
+      width:30  // 버튼별로 넓이를 지정.
+    }];  
+  grid.setColumns([
+    {fieldName:"fieldName", name:"columnName",button:"image", imageButtons:{images:imageButtons, margin:3, imageGap:2}}
+  ])
+```
   - [셀버튼]({{ '/CellComponent/CellButton/' | prepend: site.baseurl }})페이지에서 데모를 참조하세요.
 
 #### 오류 수정

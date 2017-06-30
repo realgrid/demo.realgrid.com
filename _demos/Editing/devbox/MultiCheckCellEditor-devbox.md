@@ -9,12 +9,16 @@ showButtons는 accept, cancel 버튼의 표시 여부를 지정 합니다.
 values, labels는 array 타입의 문자열 데이터를 지정 합니다. 
 각 value를 구분하기 위한 구분자 지정은 editor의 속성이 아닌 column.valueSeperator에서 지정하며 기본값은 ',' 입니다. 
 
+1.1.24버전에서 전체선택 기능이 추가되었으며 Ctrl + a 키 입력 시 전체가 선택됩니다.
+
 ```js
 var columns = [{
     ...
     "valueSeparator": ",",
     "editor" : {
         "type": "multicheck",
+        "showAllCheck":true,
+        "allCheckText":"전체선택",
         "dropDownCount": 4,
         "acceptText": "확인",
         "cancelText": "취소",
