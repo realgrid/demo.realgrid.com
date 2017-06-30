@@ -17,6 +17,8 @@ rowGrouping 상태일 때 그룹의 펼침 또는 접힘 상태에 따라 그룹
 <label style="vertical-align:middle">HEADER</label>&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="radio" name="expanded" value="both">
 <label style="vertical-align:middle">BOTH</label>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="expanded" value="summary">
+<label style="vertical-align:middle">SUMMARY</label>&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="radio" name="expanded" value="none">
 <label style="vertical-align:middle">NONE</label>
 
@@ -53,49 +55,6 @@ gridView.setRowGroup({
     mergeExpander: $(':radio[name="expander"]:checked').val()
 });
 ```
-
-#### Footer 상단표시
-
-*Footer 상단표시*
-
-<a class="btn primary small round lowercase" id="btnSetSummary">상단에 보이기</a> 
-
-```js
-gridView.setHeader({summary:{visible:true}});
-gridView.setFooter({visible:false});
-```
-
-*상단 Footer 스타일*
-
-<a class="btn primary small round lowercase" id="btnSetSummaryStyles">스타일 설정</a> 
-
-```js
-gridView.setStyles({header:{summary:{background:"#ffdee2e7"}}});
-```
-
-*상단 Footer 값 설정*
-
-header.summary에 footer와 같은 속성 설정   
-[컬럼 푸터](http://demo.realgrid.com/HeaderAndFooter/ColumnFooter/)데모를 참조하세요.
-
-```js
-...
-"header": {
-    "text": "Quantity",
-    "summary": {
-        "styles": {
-            "textAlignment": "far",
-            "numberFormat": "#,##0",
-            "suffix": " $",
-            "font": "Arial,12"
-        },
-        "text": "Variance",
-        "expression": "sum"
-    }
-},
-...
-```
-
 
 
 #### 제한 사항
