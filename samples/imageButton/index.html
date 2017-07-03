@@ -1,0 +1,89 @@
+<html>
+<head>
+	<title>RealGridJS ImageButton sample page</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script src="/lib/realgrid/realgridjs-lic.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.24/realgridjs_eval.1.1.24.min.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.24/realgridjs-api.1.1.24.js"></script>
+	<script src="/lib/jquery/jquery-1.11.2.min.js"></script>
+	<script language="javascript">
+	var dataProvider;
+	var gridView;
+	var firstFocus = true;
+	$(document).ready( function(){
+	    RealGridJS.setTrace(false);
+	    RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.24/");
+	    
+	    dataProvider = new RealGridJS.LocalDataProvider();
+	    dataProvider.setFields([{
+	            fieldName: "field1",
+	        }, {
+	        	fieldName: "field2"
+	        }]);
+	    gridView = new RealGridJS.GridView("realgrid");
+	    gridView.setDataSource(dataProvider);  
+
+	    var columns = [{
+		    fieldName: "field1",
+		    name: "column1",
+		    width: 200,
+		    renderer: {
+		        type: "imageButton",
+		        showTooltip: true,
+		        text: "",
+		        imageUrl: "/resource/image/btnImages/search_normal.png",
+		        hoverUrl: "/resource/image/btnImages/search_hover.png",
+		        activeUrl: "/resource/image/btnImages/search_click.png"
+		    },     
+		    header: { "text": "Image Button" },
+		    styles: { "textAlignment": "center", "font": "Tahoma" }
+		}, {
+        name: "column2",
+        fieldName: "field2",
+        width: "150",
+        button: "image",
+        buttonVisibility: "always",
+        imageButtons: {
+            width: 45,
+            height: 13,
+            images: [
+                {
+                    "name": "팝업버튼",
+                    "up": "/resource/image/btnImages/popup_normal.png",
+                    "hover": "/resource/image/btnImages/popup_hover.png",
+                    "down": "/resource/image/btnImages/popup_click.png"
+                },
+                {
+                    "name": "조회버튼",
+                    "up": "/resource/image/btnImages/search_normal.png",
+                    "hover": "/resource/image/btnImages/search_hover.png",
+                    "down": "/resource/image/btnImages/search_click.png"
+                }
+            ]
+        },
+        styles: {
+            "textAlignment": "center"
+        },
+        header: {
+            "text": "imageButtons"
+        }
+    }];
+
+		gridView.setColumns(columns); 
+
+		dataProvider.setRowCount(10, true);
+		gridView.setDisplayOptions({rowHeight  : "40"});
+
+		gridView.onImageButtonClicked = function (grid, itemIndex, column, buttonIndex, name) {
+          alert("itemIndex: " + itemIndex + ", column: " + column.name + ", buttonIndex: " + buttonIndex);
+        }
+
+	});
+
+
+	</script>
+</head>
+<body>
+<div id="realgrid" style="height:383px;width:950px;" title="리얼그리드"></div>
+</body>
+</html>
