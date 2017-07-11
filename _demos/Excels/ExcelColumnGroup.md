@@ -10,7 +10,7 @@ categories:
 tags: ['excel', 'export', 'group']
 ---
 
-컬럼 그룹핑된 구조대로 출력하거나, ExportOptions.linear 속성을 true로 지정하면 컬럼들을 선형으로 펼쳐서 출력할 수 있습니다. 기본값은 false입니다. 
+컬럼 그룹핑된 구조대로 출력하거나, ExportOptions.linear 속성을 true로 지정하면 컬럼들을 선형으로 펼쳐서 출력할 수 있습니다.
 
 <script>
 var onGridSuccessDataSet = function(data, textStatus, jqXHR) {

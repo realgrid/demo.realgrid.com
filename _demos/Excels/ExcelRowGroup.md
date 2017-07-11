@@ -10,7 +10,7 @@ categories:
 tags: ['excel', 'export', 'group']
 ---
 
-그리드가 Row 그룹핑된 상태일 때, ExportOptions.allItems 속성을 통해 감춰진 그룹 행들을 출력에서 제외 시키거나 포함시킬 수 있습니다. 기본값은 true입니다.
+그리드가 Row 그룹핑된 상태일 때, ExportOptions.allItems 속성을 통해 감춰진 그룹 행들을 출력에서 제외 시키거나 포함시킬 수 있습니다.
 
 <script>
 var onGridSuccessDataSet = function(data, textStatus, jqXHR) {

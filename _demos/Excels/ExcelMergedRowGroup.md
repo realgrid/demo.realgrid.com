@@ -10,8 +10,8 @@ categories:
 tags: ['excel', 'export', 'mergedRowGroup', 'rowGroup', 'merge']
 ---
 
-병합모드로 Row 그룹핑된셀들을 병합된 채로 출력하거나, ExportOptions.separateRows 속성을 true로 지정해서 풀려진 상태로도 출력할 수 있습니다. 기본값은 false입니다.  
-또, ExportOptions.allItems 속성을 false나 true로 지정해서 감춰진 행들을 출력하거나 제외시킬 수 있습니다. 기본값은 true입니다.
+병합모드로 Row 그룹핑된셀들을 병합된 채로 출력하거나, ExportOptions.separateRows 속성을 true로 지정해서 풀려진 상태로도 출력할 수 있습니다.   
+또, ExportOptions.allItems 속성을 false나 true로 지정해서 감춰진 행들을 출력하거나 제외시킬 수 있습니다.
 
 
 <script>
