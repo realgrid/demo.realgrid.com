@@ -67,7 +67,7 @@
     "footer": {
         "styles": { 
             "textAlignment": "far",
-            "numberFormat": "0,000",
+            "numberFormat": "#,##0",
             "suffix": " $",
             "font": "Arial,12"
         },
@@ -109,7 +109,7 @@
     "footer": {
         "styles": {
             "textAlignment": "far",
-            "numberFormat": "0,000",
+            "numberFormat": "#,##0",
             "suffix": " $",
             "font": "Arial,12"
         },
