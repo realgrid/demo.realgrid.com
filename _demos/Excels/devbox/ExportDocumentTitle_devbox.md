@@ -43,7 +43,6 @@ gridView.exportGrid({
             lineAlignment: "center",
             background: "#08f90000"
         },
-        spaceTop: 1,
         spaceBottom: 0,
         height: 60
     },
@@ -88,7 +87,7 @@ $('#btnExportGrid').click(function() {
                 lineAlignment: "center",
                 background: "#08f90000"
             },
-            spaceTop: 1,
+            //spaceTop: 1,
             spaceBottom: 0,
             height: 60
         },
