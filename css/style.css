@@ -3189,7 +3189,7 @@ body.sidebar-visible .content {
 .sidebar .topcap {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-  padding-top: 1rem;
+  padding-top: 3rem;
   padding-bottom: 1rem;
 }
 @media screen and (min-width: 600px) {
@@ -3210,10 +3210,14 @@ body.sidebar-visible .content {
   margin-top: -0.5rem;
 }
 .sidebar .wrapper-search {
-  display: none;
+  background: #f8f8f8;
+  display: block;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+  padding-top: 0.5rem;
   margin-bottom: .75rem;
+  position: fixed;
+  z-index: 150;
 }
 @media screen and (min-width: 600px) {
   .sidebar .wrapper-search {
