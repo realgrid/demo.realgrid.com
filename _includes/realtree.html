@@ -74,8 +74,17 @@
         {% if include.columnSet %}
             {% capture columnfile %}/resource/layout/{{ include.columnSet }}.json{% endcapture %}
 
+            $.ajaxSetup({
+              async: false
+            });
+
             $.getJSON("{{ columnfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.treeVar }}.setColumns(data);
+
+                console.log("비동기 재설정");
+                $.ajaxSetup({
+                  async: true
+                });
 
                 $('.codeview.{{ include.treeId }}column').html(
                   JSON.stringify(data, null, 4)
