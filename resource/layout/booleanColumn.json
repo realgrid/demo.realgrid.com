@@ -10,6 +10,7 @@
         "textAlignment": "near"
     }
 }, {
+    "name": "Boolean1",
     "fieldName": "Boolean1",
     "width": "120",
     "header": {
@@ -23,7 +24,7 @@
         "booleanFormat": "거짓:참"
     }
 }, {
-    "name": "FieldLoadCase",
+    "name": "Boolean2",
     "fieldName": "Boolean2",
     "width": "100",
     "header": {
@@ -36,7 +37,7 @@
         "booleanFormat": "Falsity:Truth:False"
     }
 }, {
-    "name": "RenderingTest",
+    "name": "Boolean3",
     "fieldName": "Boolean3",
     "width": "120",
     "header": {
@@ -49,7 +50,7 @@
         "booleanFormat": "0:1"
     }
 }, {
-    "name": "EditorTest",
+    "name": "Boolean4",
     "fieldName": "Boolean4",
     "width": "120",
     "header": {

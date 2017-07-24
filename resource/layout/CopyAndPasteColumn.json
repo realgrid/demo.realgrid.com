@@ -1,4 +1,5 @@
 [{
+    "name": "Country",
     "fieldName": "Country",
     "width": "80",
     "defaultValue": "Seoul",
@@ -28,6 +29,7 @@
         "text": "Customer ID"
     }
 }, {
+    "name": "CompanyName",
     "fieldName": "CompanyName",
     "width": "160",
     "styles": { 
@@ -43,6 +45,7 @@
         }
     }
 },  {
+    "name": "OrderID",
     "fieldName": "OrderID",
     "width": "70",
     "styles": { 
@@ -52,8 +55,10 @@
         "text": "Order ID"
     }
 }, {
+    "name": "OrderDate",
     "fieldName": "OrderDate"
 }, {
+    "name": "ProductName",
     "fieldName": "ProductName",
     "width": "160",
     "readOnly": true,
@@ -67,11 +72,13 @@
         "text": "Product"
     }
 }, {
+    "name": "Shipped",
     "fieldName": "Shipped",
     "editor": {
         "booleanFormat": "0:1:0"
     }
 }, {
+    "name": "QuantityPerUnit",
     "fieldName": "QuantityPerUnit",
     "width": "140",
     "styles": {
@@ -81,6 +88,7 @@
         "text": "Unit"
     }
 }, {
+    "name": "Quantity",
     "fieldName": "Quantity",
     "width": "60",
     "styles": {
@@ -91,6 +99,7 @@
         "text": "Quantity"
     }
 }, {
+    "name": "UnitPrice",
     "fieldName": "UnitPrice",
     "width": "80",
     "styles": {

@@ -1,4 +1,5 @@
 [{
+        "name": "country",
         "fieldName": "country",
         "width": 80,
         "styles": { "textAlignment": "near" },

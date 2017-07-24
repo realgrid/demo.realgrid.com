@@ -1,9 +1,11 @@
 [{
+    "name": "continent",
     "fieldName": "continent",
     "width": 80,
     "styles": { "textAlignment": "near" },
     "header": { "text": "Continent" }
 }, {
+    "name": "country",
     "fieldName": "country",
     "width": 80,
     "styles": { "textAlignment": "near" },

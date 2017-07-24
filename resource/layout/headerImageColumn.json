@@ -1,5 +1,5 @@
 [{
-        "name": "Country Column",
+        "name": "Country",
         "fieldName": "Country",
         "width": 90,
         "tag": "grouping",
@@ -12,7 +12,7 @@
             "imageUrl": "../../images/realgridsmall.png"
         }
     }, {
-        "name": "CompanyName Column",
+        "name": "CompanyName",
         "fieldName": "CompanyName",
         "width": 160,
         "tag": "grouping",
@@ -39,6 +39,7 @@
             "groupExpression": "varp['UnitPrice']"
         }
     }, {
+        "name": "OrderID",
         "fieldName": "OrderID",
         "width": 90,
         "tag": "grouping",
@@ -51,6 +52,7 @@
             "imageUrl": "../../images/realgridsmall.png"
         }
     }, {
+        "name": "QuantityPerUnit",
         "fieldName": "QuantityPerUnit",
         "width": 120,
         "styles": {
@@ -69,6 +71,7 @@
             "text": "합계 =>"
         }
     }, {
+        "name": "Quantity",
         "fieldName": "Quantity",
         "width": 80,
         "styles": {
@@ -95,6 +98,7 @@
             "groupExpression": "sum"
         }
     }, {
+        "name": "CustomerID",
         "fieldName": "CustomerID",
         "width": 130,
         "tag": "grouping",
@@ -114,7 +118,7 @@
             "text": "분산 =>"
         }
     }, {
-        "name": "unitPrice Column",
+        "name": "unitPrice",
         "fieldName": "UnitPrice",
         "width": 100,
         "styles": {

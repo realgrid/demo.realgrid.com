@@ -1,39 +1,47 @@
 [{
+    "name": "id",
     "fieldName": "id",
     "width": 50,
     "header": { "text": "No" },
     "styles": { "textAlignment": "center", "font": "Tahoma" }
 }, {
+    "name": "userid",
     "fieldName": "userid",
     "width": 90,
     "header": { "text": "사용자 Id" },
     "styles": { "textAlignment": "center", "font": "Tahoma" }
 }, {
+    "name": "company",
     "fieldName": "company",
     "width": 90,
     "header": { "text": "회사" },
     "styles": { "textAlignment": "center", "font": "Tahoma" }
 }, {
+    "name": "first_name",
     "fieldName": "first_name",
     "width": 100,
     "header": { "text": "이름" },
     "styles": { "textAlignment": "center", "font": "Tahoma" }
 }, {
+    "name": "last_name",
     "fieldName": "last_name",
     "width": 100,
     "header": { "text": "성" },
     "styles": { "textAlignment": "center", "font": "Tahoma" }
 }, {
+    "name": "gender",
     "fieldName": "gender",
     "width": 100,
     "header": { "text": "성별" },
     "styles": { "textAlignment": "center", "font": "Tahoma" }
 }, {
+    "name": "email",
     "fieldName": "email",
     "width": 150,
     "header": { "text": "E-Mail" },
     "styles": { "textAlignment": "center", "font": "Tahoma" }
 }, {
+    "name": "birthday",
     "fieldName": "birthday",
     "width": 90,
     "header": { "text": "생년월일" },
@@ -46,6 +54,7 @@
         "datetimeFormat": "yyyy/MM/dd"
     }
 }, {
+    "name": "pay",
     "fieldName": "pay",
     "width": 90,
     "header": { "text": "급여" },

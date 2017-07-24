@@ -1,14 +1,17 @@
 [{
+    "name": "category",
     "fieldName": "category",
     "width": 300,
     "styles": { "textAlignment": "far" },
     "header": { "text": "Category" }
 }, {
+    "name": "target",
     "fieldName": "target",
     "width": 70,
     "styles": { "textAlignment": "far" },
     "header": { "text": "Target" }
 }, {
+    "name": "actual",
     "fieldName": "actual",
     "width": 70,
     "styles": { "textAlignment": "far" },

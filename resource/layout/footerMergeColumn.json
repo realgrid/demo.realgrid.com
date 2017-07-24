@@ -1,5 +1,5 @@
 [{
-        "name": "Country Column",
+        "name": "Country",
         "fieldName": "Country",
         "width": 100,
         "tag":"grouping",
@@ -13,7 +13,7 @@
             "groupText": "Country Footer"
         }
     }, {
-        "name": "CompanyName Column",
+        "name": "CompanyName",
         "fieldName": "CompanyName",
         "width": 140,
         "tag":"grouping",
@@ -27,7 +27,7 @@
             "groupText": "Company Footer"
         }
     }, {
-        "name": "Order Column",
+        "name": "OrderID",
         "fieldName": "OrderID",
         "width": 80,
         "tag":"grouping",
@@ -41,7 +41,7 @@
             "groupText": "Order Footer"
         }
     }, {
-        "name": "QuantityPerUnit Column",
+        "name": "QuantityPerUnit",
         "fieldName": "QuantityPerUnit",
         "width": 160,
         "styles": {
@@ -58,6 +58,7 @@
             "text": "합계 =>"
         }
     }, {
+        "name": "Quantity",
         "fieldName": "Quantity",
         "width": 80,
         "styles": {
@@ -82,7 +83,7 @@
             "groupExpression": "sum"
         }
     }, {
-        "name": "Customer Column",
+        "name": "CustomerID",
         "fieldName": "CustomerID",
         "width": 100,
         "tag":"grouping",
@@ -100,7 +101,7 @@
             "text": "분산 =>"
         }
     }, {
-        "name": "UnitPrice Column",
+        "name": "UnitPrice",
         "fieldName": "UnitPrice",
         "width": 80,
         "styles": {

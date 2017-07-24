@@ -1,5 +1,6 @@
 [
     {
+        "name": "OrderID",
         "fieldName": "OrderID",
         "name": "OrderID",
         "required": true,
@@ -13,6 +14,7 @@
          
     },
     {
+        "name": "CustomerID",
         "fieldName": "CustomerID",
         "name": "CustomerID",
         "required": true,
@@ -25,12 +27,14 @@
         }
     },
     {
+        "name": "CompanyName",
         "fieldName": "CompanyName",
         "name": "CompanyName",
         "header": "CompanyName",
         "width": 160
     },
     {
+        "name": "EmployeeID",
         "fieldName": "EmployeeID",
         "name": "EmployeeID",
         "header": "EmployeeID",
@@ -45,6 +49,7 @@
         }
     },
     {
+        "name": "OrderDate",
         "fieldName": "OrderDate",
         "name": "OrderDate",
         "header": "OrderDate",
@@ -57,23 +62,27 @@
         }
     },
     {
+        "name": "ShipName",
         "fieldName": "ShipName",
         "name": "ShipName",
         "header": "ShipName",
         "width": 160
     },
     {
+        "name": "ShipAddress",
         "fieldName": "ShipAddress",
         "name": "ShipAddress",
         "header": "ShipAddress",
         "width": 160
     },
     {
+        "name": "ShipCity",
         "fieldName": "ShipCity",
         "name": "ShipCity",
         "header": "ShipCity"
     },
     {
+        "name": "ShipCountry",
         "fieldName": "ShipCountry",
         "name": "ShipCountry",
         "header": "ShipCountry"

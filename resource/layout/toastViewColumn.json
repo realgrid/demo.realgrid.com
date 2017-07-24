@@ -1,13 +1,16 @@
 [{
+    "name": "ItemId",
     "fieldName": "ItemId",
     "width": 80,
     "header": { "text": "ItemId" }
 }, {
+    "name": "ItemName",
     "fieldName": "ItemName",
     "width": 100,
     "header": { "text": "항목명" },
     "styles": { "textAlignment": "near" }
 }, {
+    "name": "RequestType",
     "fieldName": "RequestType",
     "width": 80,
     "header": { "text": "분야" },
@@ -20,36 +23,43 @@
     }],
     "styles": { "textAlignment": "near" }
 }, {
+    "name": "ServiceName",
     "fieldName": "ServiceName",
     "width": 150,
     "header": { "text": "유형명" },
     "styles": { "textAlignment": "near" }
 }, {
+    "name": "ServiceCode",
     "fieldName": "ServiceCode",
     "width": 150,
     "header": { "text": "서비스코드" },
     "styles": { "textAlignment": "near" }
 }, {
+    "name": "Standard",
     "fieldName": "Standard",
     "width": 150,
     "header": { "text": "표준" },
     "styles": { "textAlignment": "near" }
 }, {
+    "name": "LowBounds",
     "fieldName": "LowBounds",
     "width": 80,
     "header": { "text": "하위 값" },
     "styles": { "textAlignment": "near" }
 }, {
+    "name": "HighBounds",
     "fieldName": "HighBounds",
     "width": 80,
     "header": { "text": "상위 값" },
     "styles": { "textAlignment": "near" }
 }, {
+    "name": "CheckUnit",
     "fieldName": "CheckUnit",
     "width": 80,
     "header": { "text": "단위" },
     "styles": { "textAlignment": "near" }
 }, {
+    "name": "CheckUnit",
     "fieldName": "CheckPrice",
     "width": 90,
     "header": { "text": "수수료" },

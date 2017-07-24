@@ -1,5 +1,6 @@
 [
     {
+        "name": "OrderID",
         "fieldName": "OrderID",
         "name": "OrderID",
         "header": "OrderID",
@@ -11,6 +12,7 @@
         }
     },
     {
+        "name": "ProductName",
         "fieldName": "ProductName",
         "name": "ProductName",
         "required": true,
@@ -20,6 +22,7 @@
         "width": 200
     },
     {
+        "name": "UnitPrice",
         "fieldName": "UnitPrice",
         "name": "UnitPrice",
         "header": "UnitPrice",
@@ -29,6 +32,7 @@
         }
     },
     {
+        "name": "Quantity",
         "fieldName": "Quantity",
         "name": "Quantity",
         "header": "Quantity",

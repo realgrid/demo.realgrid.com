@@ -1,4 +1,5 @@
 [{
+        "name": "term",
         "fieldName": "term",
         "width": 80,
         "equalBlank": true,
@@ -14,81 +15,97 @@
         }],
         "header": { "text": "Category" }
     }, {
+        "name": "1997",
         "fieldName": "1997",
         "width": 50,
         "styles": "colStyles",
         "header": { "text": "1997" }
     }, {
+        "name": "1998",
         "fieldName": "1998",
         "width": 50,
         "styles": "colStyles",
         "header": { "text": "1998" }
     }, {
+        "name": "1999",
         "fieldName": "1999",
         "width": 50,
         "styles": "colStyles",
         "header": { "text": "1999" }
     }, {
+        "name": "2000",
         "fieldName": "2000",
         "width": 50,
         "styles": "colStyles",
         "header": { "text": "2000" }
     }, {
+        "name": "2001",
         "fieldName": "2001",
         "width": 50,
         "styles": "colStyles",
         "header": { "text": "2001" }
     }, {
+        "name": "2002",
         "fieldName": "2002",
         "width": 50,
         "styles": "colStyles",
         "header": { "text": "2002" }
     }, {
+        "name": "2003",
         "fieldName": "2003",
         "width": 50,
         "styles": "colStyles",
         "header": { "text": "2003" }
     }, {
+        "name": "2004",
         "fieldName": "2004",
         "width": 50,
         "styles": "colStyles",
         "header": { "text": "2004" }
     }, {
+        "name": "2005",
         "fieldName": "2005",
         "width": 50,
         "styles": "colStyles",
         "header": { "text": "2005" }
     }, {
+        "name": "2006",
         "fieldName": "2006",
         "width": 50,
         "styles": "colStyles",
         "header": { "text": "2006" }
     }, {
+        "name": "2007",
         "fieldName": "2007",
         "width": 50,
         "styles": "colStyles",
         "header": { "text": "2007" }
     }, {
+        "name": "2008",
         "fieldName": "2008",
         "width": 50,
         "styles": "colStyles",
         "header": { "text": "2008" }
     }, {
+        "name": "2009",
         "fieldName": "2009",
         "width": 50,
         "styles": "colStyles",
         "header": { "text": "2009" }
     }, {
+        "name": "2010",
         "fieldName": "2010",
         "width": 50,
         "styles": "colStyles",
         "header": { "text": "2010" }
     }, {
+        "name": "2011",
         "fieldName": "2011",
         "width": 50,
         "styles": "colStyles",
         "header": { "text": "2011" }
     }, {
+        "name": "2012",
         "fieldName": "2012",
         "width": 50,
         "styles": "colStyles",
