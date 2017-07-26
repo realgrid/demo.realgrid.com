@@ -81,11 +81,11 @@
           {% endif %}
           <ul class="list-toc">
             {% assign sorted_by_orderno = site.demos | sort: "order" %}
-            {% for demo in sorted_by_orderno %}
-              {% assign democat = demo.categories[0] | downcase %}
-              {% assign cat = category[0] | downcase %}
+            {%- for demo in sorted_by_orderno -%}
+              {%- assign democat = demo.categories[0] | downcase -%}
+              {%- assign cat = category[0] | downcase -%}
 
-              {% if jekyll.environment != 'development' and demo.published != true %}{% continue %}{% endif %}
+              {%- if jekyll.environment != 'development' and demo.published != true -%}{% continue %}{%- endif -%}
 
               {% if cat == democat %}
               <li class="item-toc {% if page.title == demo.title %}current{% endif %}">
@@ -97,9 +97,9 @@
                   </span>
                 </a>
               </li>
-              {% endif %}
+              {%- endif -%}
 
-            {% endfor %}
+            {%- endfor -%}
           </ul>
 
         </li>
