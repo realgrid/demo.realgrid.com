@@ -1,10 +1,5 @@
 [
    {
-        "fieldName": "RowIndex",
-        "width": 50,
-        "header": { "text": "Row" },
-          "styles": { "textAlignment": "far", "font": "맑은 고딕" }
-    }, {
         "fieldName": "ItemId",
         "width": 80,
         "header": { "text": "ItemId" },
