@@ -10,8 +10,8 @@ grid.setRowGroup({
 
 grdMain.setFooter({
     mergeCells: [
-            ["QuantityPerUnit Column", "Country Column", "CompanyName Column", "Order Column"],
-            ["UnitPrice Column", "Customer Column"]
+            ["QuantityPerUnit", "Country", "CompanyName", "OrderID"],
+            ["UnitPrice", "CustomerID"]
         ]
 });
 ```
@@ -27,8 +27,8 @@ grdMain.setFooter({
   gridView.setFooter({
             mergeCells:
                 [
-                    ["QuantityPerUnit Column", "Country Column", "CompanyName Column", "Order Column"],
-                    ["UnitPrice Column", "Customer Column"]
+                    ["QuantityPerUnit", "Country", "CompanyName", "OrderID"],
+                    ["UnitPrice", "CustomerID"]
                 ]
         });
 ```
@@ -45,8 +45,8 @@ Help 사이트의 [summary Mode](http://help.realgrid.com/api/types/SummaryMode/
     gridView.setFooter({
                 mergeCells:
                     [
-                        ["QuantityPerUnit Column", "Country Column", "CompanyName Column", "Order Column"],
-                        ["UnitPrice Column", "Customer Column"]
+                        ["QuantityPerUnit", "Country", "CompanyName", "OrdeID"],
+                        ["UnitPrice", "CustomerID"]
                     ]
             });
   });

@@ -5,7 +5,7 @@
 
 ```js
 var columns = [{
-    "name": "Country Column",
+    "name": "Country",
     "fieldName": "Country",
     "width": 90,
     "header": {
@@ -21,7 +21,7 @@ var columns = [{
 
 ```js
   gridView.setColumnProperty(
-    "Country Column",
+    "Country",
     "header",
     { imageLocation: "right" }
   );
@@ -30,11 +30,11 @@ var columns = [{
 <script>
 
   $('#btnSetImageLocationRight').click(function() {
-    gridView.setColumnProperty("Country Column", "header", {imageLocation: "right"});
+    gridView.setColumnProperty("Country", "header", {imageLocation: "right"});
   });
 
   $('#btnSetImageLocationLeft').click(function() {
-    gridView.setColumnProperty("Country Column", "header", {imageLocation: "left"});
+    gridView.setColumnProperty("Country", "header", {imageLocation: "left"});
   });
 
 </script>
