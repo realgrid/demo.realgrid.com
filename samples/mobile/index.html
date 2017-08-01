@@ -1,0 +1,189 @@
+<html>
+<head>
+	<title>RealGridJS ImageButton sample page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="/lib/realgrid/realgridjs-lic.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs_eval.1.1.25.min.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs-api.1.1.25.js"></script>
+	<script src="/lib/jquery/jquery-1.11.2.min.js"></script>
+	<script language="javascript">
+	var dataProvider;
+	var gridView;
+	var firstFocus = true;
+	$(document).ready( function(){
+	    RealGridJS.setTrace(false);
+	    RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.25/");
+	    
+	    dataProvider = new RealGridJS.LocalDataProvider();
+	    dataProvider.setFields([{
+	            fieldName: "field1",
+	        }, {
+	        	fieldName: "field2"
+	        }, {
+	        	fieldName: "field3"
+	        }, {
+	        	fieldName: "field4"
+	        }, {
+	        	fieldName: "field5"
+	        }, {
+	        	fieldName: "field6"
+	        }, {
+	        	fieldName: "field7"
+	        }]);
+	    gridView = new RealGridJS.GridView("realgrid");
+	    gridView.setDataSource(dataProvider);  
+
+	    var columns = [{
+		    fieldName: "field1",
+		    name: "column1",
+		    width: 200,
+		    renderer: {
+		        type: "imageButton",
+		        showTooltip: true,
+		        text: "",
+		        imageUrl: "/resource/image/btnImages/search_normal.png",
+		        hoverUrl: "/resource/image/btnImages/search_hover.png",
+		        activeUrl: "/resource/image/btnImages/search_click.png"
+		    },     
+		    header: { "text": "Image Button" },
+		    styles: { "textAlignment": "center", "font": "Tahoma" }
+		}, {
+        name: "column2",
+        fieldName: "field2",
+        width: "150",
+        button: "image",
+        buttonVisibility: "always",
+        imageButtons: {
+            width: 45,
+            height: 13,
+            images: [
+                {
+                    "name": "팝업버튼",
+                    "up": "/resource/image/btnImages/popup_normal.png",
+                    "hover": "/resource/image/btnImages/popup_hover.png",
+                    "down": "/resource/image/btnImages/popup_click.png"
+                },
+                {
+                    "name": "조회버튼",
+                    "up": "/resource/image/btnImages/search_normal.png",
+                    "hover": "/resource/image/btnImages/search_hover.png",
+                    "down": "/resource/image/btnImages/search_click.png"
+                }
+            ]
+        },
+        styles: {
+            "textAlignment": "center"
+        },
+        header: {
+            "text": "imageButtons"
+        }
+    }, {
+    	name: "column3",
+    	fieldName: "field3",
+    	header:{
+    		text: "button"
+    	},
+    	width: "100",
+    	button:"action"
+    }, {
+    	name: "column4",
+    	fieldName: "field4",
+    	header: {
+    		text: "popupButton"
+    	},
+    	width: "100",
+    	button:"popup",
+    	popupMenu: "menu1",
+    }, {
+    	name: "column5",
+    	fieldName: "field5",
+    	header: {
+    		text: "dropdown"
+    	},
+    	lookupDisplay: true,
+        values: [
+            "VINET",
+            "HANAR",
+            "SUPRD",
+            "VICTE",
+            "THREE",
+            "SEVEN"
+        ],
+        labels: [
+            "<VINET>",
+	        "<HANAR>",
+	        "<SUPRD>",
+	        "<VICTE>",
+	        "<THREE>",
+	        "<SEVEN>"
+        ],
+        editor: {
+        	type:"dropdown"
+        },
+    	width: "100"
+    }];
+
+		gridView.setColumns(columns); 
+
+		dataProvider.setRowCount(10, true);
+		gridView.setDisplayOptions({rowHeight  : "40"});
+
+		gridView.onImageButtonClicked = function (grid, itemIndex, column, buttonIndex, name) {
+          alert("itemIndex: " + itemIndex + ", column: " + column.name + ", buttonIndex: " + buttonIndex);
+        }
+
+        var menu = [{
+		    label: "menu1 입니다.",
+		    enabled: true,
+		    children: [{
+		        label: "submenu1 입니다."
+		    }, {
+		        label: "submenu2 입니다."
+		    }]
+		}, {
+		    label: "menu2 입니다",
+		    enabled: false
+		}, {
+		    label: "-"
+		}, {
+		    label: "menu3 입니다",
+		    type: "check", //check 설정
+		    checked: true, //check 상태
+		    tag: "check_menu"
+		}, {
+		    label: "group menu", //group 및 radio
+		    children: [{
+		        label: "group1 - 첫번째",
+		        type: "radio",
+		        group: "group1",
+		        checked: true
+		    }, {
+		        label: "group1 - 두번째",
+		        type: "radio",
+		        group: "group1"
+		    }, {
+		        label: "group1 - 세번째",
+		        type: "radio",
+		        group: "group1"
+		    }]
+		}];
+
+		gridView.addPopupMenu("menu1", menu);
+
+		gridView.onMenuItemClicked = function (grid, data, index) {
+		    alert(data.label);
+		};
+
+		gridView.onCellButtonClicked = function (grid, itemIndex, column) {
+		    alert("CellButton Clicked: itemIndex=" + itemIndex + ", fieldName=" + column.fieldName);
+		};
+
+	});
+
+
+	</script>
+</head>
+<body>
+<div id="realgrid" style="height:383px;width:100%;" title="리얼그리드"></div>
+</body>
+</html>
