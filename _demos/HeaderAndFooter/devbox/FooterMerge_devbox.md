@@ -8,7 +8,7 @@ grid.setRowGroup({
     footerCellMerge: true
 });
 
-grdMain.setFooter({
+gridView.setFooter({
     mergeCells: [
             ["QuantityPerUnit", "Country", "CompanyName", "OrderID"],
             ["UnitPrice", "CustomerID"]
