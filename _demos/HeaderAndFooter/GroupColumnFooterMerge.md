@@ -26,6 +26,10 @@ Footer의 경우 병합할 컬럼들을 array형태로 지정하여 병합할 �
             }
         }
     });	
+    
+    gridView.setColumnProperty("OrderID", "footer", {text: "OrderID", styles:{textAlignment:"center"}})
+    gridView.setColumnProperty("CustomerID", "footer", {text: "CustomerID", styles:{textAlignment:"center"}})
+    gridView.setColumnProperty("EmployeeID", "footer", {text: "EmployeeID", styles:{textAlignment:"center"}})
   }
 </script>
 
