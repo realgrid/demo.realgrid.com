@@ -119,7 +119,7 @@ gridView.checkRows([1,2], true);
 gridView.checkRows([1,2], false);  
 ```
 
-#### Head/Foot
+#### Head/Foot `(Only JS Support)`
 체크바의 헤드와 풋 영역에 글자나 이미지를 표시할 수 있습니다.  
 아래 속성을 사용하려면 showAll속성의 값은 false 이어야 합니다.
 

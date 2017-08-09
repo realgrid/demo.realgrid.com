@@ -71,7 +71,7 @@ gridView.onCellButtonClicked = function (grid, itemIndex, column) {
 };
 ```
 
-이미지 버튼 클릭 이벤트
+이미지 버튼 클릭 이벤트 `(Only JS Support)`
 
 - [onImageButtonClicked](http://help.realgrid.com/api/GridBase/onImageButtonClicked/)
 

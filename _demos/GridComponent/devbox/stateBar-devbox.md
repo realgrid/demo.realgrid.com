@@ -45,7 +45,7 @@ dataProvider.setRowState(curr.dataRow, rowState)
 ```
 
 
-#### 표시형태 변경하기
+#### 표시형태 변경하기 `(Only JS Support)`
 기본적으로 각 행의 상태는 아이콘으로 표시 됩니다. 그라나 필요에 따라 text로 보여주기를 원할때도 있습니다.
 이런 경우 stateBar.mark 속성에 text를 지정하고 stateTexts 속성에 각 상태별 문자를 지정하면 됩니다.   
 
@@ -79,7 +79,7 @@ gridView.setIndicator({
 });
 ```
 
-#### Head/Foot
+#### Head/Foot `(Only JS Support)`
 상태 바의 헤드와 풋 영역에 글자나 이미지를 표시할 수 있습니다.
 
 - `headText`: head 영역에 표시할 text를 지정한다.    

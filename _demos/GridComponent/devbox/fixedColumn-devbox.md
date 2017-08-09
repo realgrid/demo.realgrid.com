@@ -9,7 +9,7 @@ gridView.setFixedOptions({
 });
 ```
 
-#### 오른쪽 열 고정
+#### 오른쪽 열 고정 `(Only JS Support)`
 [FixedOptions](http://help.realgrid.com/api/types/FixedOptions/)의 속성중 rightColCount를 지정하여 마지막 열부터 열 고정을 할 수 있습니다.  
 
 <a class="btn primary small round lowercase" id="btnSetRightColCount">오른쪽 열 고정</a>

@@ -74,7 +74,7 @@ gridView.setIndicator({
 });
 ```
 
-#### Head/Foot
+#### Head/Foot `(Only JS Support)`
 인디케이터의 헤드와 풋 영역에 글자나 이미지를 표시할 수 있습니다.
 
 - `headText`: head 영역에 표시할 text를 지정한다.    

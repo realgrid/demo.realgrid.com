@@ -15,7 +15,7 @@
   }]);
 ```
 
-#### 컨텍스트 메뉴 호출시 발생하는 콜백함수
+#### 컨텍스트 메뉴 호출시 발생하는 콜백함수 `(Only JS Support)`
 현재 [GridView.onContextMenuPopup()](http://help.realgrid.com/api/GridBase/onContextMenuPopup/)에는 아무것도 설정되어 있지 않기 때문에 그리드의 어느 영역에서나 마우스 오른쪽 버튼을 클릭하게되면 컨텍스트 메뉴가 팝업 됩니다.  
 만약 onContextMenuPopup()에서 false를 리턴하게 되면 컨텍스트 메뉴 호출이 취소됩니다.  
 헤더영역에서 호출시 팝업되지 않게 설정해보도록 하겠습니다.
