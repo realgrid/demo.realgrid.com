@@ -30,6 +30,8 @@
 	        	fieldName: "field6"
 	        }, {
 	        	fieldName: "field7"
+	        }, {
+	        	fieldName: "field8"
 	        }]);
 	    gridView = new RealGridJS.GridView("realgrid");
 	    gridView.setDataSource(dataProvider);  
@@ -122,6 +124,21 @@
         	type:"dropdown"
         },
     	width: "100"
+    }, {
+    	name: "column6",
+    	fieldName: "field8",
+    	header:{
+    		text:"checkCellRenderer"
+    	},
+    	width:"150",
+    	 "renderer": {
+            "type": "check",
+            "editable": true,
+            "startEditOnClick": true,
+            "trueValues": "True",
+            "falseValues": "False",
+            "labelPosition": "right"
+        },
     }];
 
 		gridView.setColumns(columns); 
