@@ -1,0 +1,218 @@
+<html>
+<head>
+	<title>RealGridJS Treee ImageButton sample page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<script src="/lib/realgrid/realgridjs-lic.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs_eval.1.1.25.min.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs-api.1.1.25.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.25/jszip.min.js"></script>
+	<script src="/lib/jquery/jquery-1.11.2.min.js"></script>
+	<script>
+  var treeView;
+  var dataProvider;
+  var rows = [
+	    ["ko","국내"]
+	    ,["ko.co", "컴퓨터"]
+	    ,["ko.co.001", "인텔 SSD 520 120GB", 63900]
+	    ,["ko.co.002", "LED 게이밍키보드", 29700]
+	    ,["ko.co.003", "팩스무선레이저복합기", 119000]
+	    ,["ko.bo", "서적"]
+	    ,["ko.bo.001", "미움받을 용기", 13410]
+	    ,["ko.bo.002", "기탄 세계명작동화50권", 69000]
+	    ,["ov", "해외"]
+	    ,["ov.ha", "가전"]
+	    ,["ov.ha.001", "32G Amazon phone", 130]
+	    ,["ov.ha.002", "TDK- Wireless Speaker", 49.99]
+	    ,["ov.ha.003", "대륙의 실수 QCY QY5s", 18.59]
+	    ,["ov.tv", "TV/영상"]
+	    ,["ov.tv.001", "LG 55LF6000", 498]
+	    ,["ov.tv.002", "Samsung Smart LED FHD 60\"", 897.99]
+	];
+
+  $(document).ready( function() {
+
+    RealGridJS.setTrace(false);
+    RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.25/");
+    
+    dataProvider = new RealGridJS.LocalTreeDataProvider();
+    treeView = new RealGridJS.TreeView("realgrid");
+    treeView.setDataSource(dataProvider);
+
+    dataProvider.setFields([{
+      	fieldName: "tree"
+    }, {
+      	fieldName: "product"
+    }, {
+      	fieldName: "price"
+    }, {
+        fieldName: "field1",
+    }, {
+    	fieldName: "field2"
+    }, {
+    	fieldName: "field3"
+    }, {
+    	fieldName: "field4"
+    }, {
+    	fieldName: "field5"
+    }, {
+    	fieldName: "field6"
+    }, {
+    	fieldName: "field7"
+    }]);
+
+    treeView.setColumns([{
+		name: "product",
+		fieldName: "product",
+		width: 200
+    }, {
+		name: "price",
+		fieldName: "price"
+    }, {
+	    fieldName: "field1",
+	    name: "column1",
+	    width: 200,
+	    renderer: {
+	        type: "imageButton",
+	        showTooltip: true,
+	        text: "",
+	        imageUrl: "/resource/image/btnImages/search_normal.png",
+	        hoverUrl: "/resource/image/btnImages/search_hover.png",
+	        activeUrl: "/resource/image/btnImages/search_click.png"
+	    },     
+	    header: { "text": "Image Button" },
+	    styles: { "textAlignment": "center", "font": "Tahoma" }
+	}, {
+        name: "column2",
+        fieldName: "field2",
+        width: "150",
+        button: "image",
+        buttonVisibility: "always",
+        imageButtons: {
+            width: 45,
+            height: 13,
+            images: [
+                {
+                    "name": "팝업버튼",
+                    "up": "/resource/image/btnImages/popup_normal.png",
+                    "hover": "/resource/image/btnImages/popup_hover.png",
+                    "down": "/resource/image/btnImages/popup_click.png"
+                },
+                {
+                    "name": "조회버튼",
+                    "up": "/resource/image/btnImages/search_normal.png",
+                    "hover": "/resource/image/btnImages/search_hover.png",
+                    "down": "/resource/image/btnImages/search_click.png"
+                }
+            ]
+        },
+        styles: {
+            "textAlignment": "center"
+        },
+        header: {
+            "text": "imageButtons"
+        }
+    }, {
+    	name: "column3",
+    	fieldName: "field3",
+    	header:{
+    		text: "button"
+    	},
+    	width: "100",
+    	button:"action"
+    }, {
+    	name: "column4",
+    	fieldName: "field4",
+    	header: {
+    		text: "popupButton"
+    	},
+    	width: "100",
+    	button:"popup",
+    	popupMenu: "menu1",
+    }, {
+    	name: "column5",
+    	fieldName: "field5",
+    	header: {
+    		text: "dropdown"
+    	},
+    	lookupDisplay: true,
+        values: [
+            "VINET",
+            "HANAR",
+            "SUPRD",
+            "VICTE",
+            "THREE",
+            "SEVEN"
+        ],
+        labels: [
+            "<VINET>",
+	        "<HANAR>",
+	        "<SUPRD>",
+	        "<VICTE>",
+	        "<THREE>",
+	        "<SEVEN>"
+        ],
+        editor: {
+        	type:"dropdown"
+        },
+    	width: "100"
+    }]);
+
+    dataProvider.setRows(rows, "tree");
+	treeView.setDisplayOptions({rowHeight:30}); 
+
+	treeView.onImageButtonClicked = function (grid, itemIndex, column, buttonIndex, name) {
+      alert("itemIndex: " + itemIndex + ", column: " + column.name + ", buttonIndex: " + buttonIndex);
+    }
+
+    var menu = [{
+	    label: "menu1 입니다.",
+	    enabled: true,
+	    children: [{
+	        label: "submenu1 입니다."
+	    }, {
+	        label: "submenu2 입니다."
+	    }]
+	}, {
+	    label: "menu2 입니다",
+	    enabled: false
+	}, {
+	    label: "-"
+	}, {
+	    label: "menu3 입니다",
+	    type: "check", //check 설정
+	    checked: true, //check 상태
+	    tag: "check_menu"
+	}, {
+	    label: "group menu", //group 및 radio
+	    children: [{
+	        label: "group1 - 첫번째",
+	        type: "radio",
+	        group: "group1",
+	        checked: true
+	    }, {
+	        label: "group1 - 두번째",
+	        type: "radio",
+	        group: "group1"
+	    }, {
+	        label: "group1 - 세번째",
+	        type: "radio",
+	        group: "group1"
+	    }]
+	}];
+
+	treeView.addPopupMenu("menu1", menu);
+
+	treeView.onMenuItemClicked = function (grid, data, index) {
+		    alert(data.label);
+		};
+
+	treeView.onCellButtonClicked = function (grid, itemIndex, column) {
+	    alert("CellButton Clicked: itemIndex=" + itemIndex + ", fieldName=" + column.fieldName);
+	};
+  })
+</script>
+</head>
+<body>
+<div id="realgrid" style="height:383px;width:100%;" title="리얼그리드"></div>
+</body>
+</html>

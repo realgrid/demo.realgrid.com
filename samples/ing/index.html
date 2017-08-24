@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;">
+<title>1.그룹컬럼</title>
+
+<script src="/lib/realgrid/realgridjs-lic.js"></script>
+<script src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs_eval.1.1.25.min.js"></script>
+<script src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs-api.1.1.25.js"></script>
+<script src="/lib/realgrid/realgridjs_eval.1.1.25/jszip.min.js"></script>
+<script src="/lib/jquery/jquery-1.11.2.min.js"></script>
+
+<script type="text/javascript">
+
+	var gridView;
+	var dataProvider;
+	var loading;
+
+
+	window.onload = function () {
+		console.log("==> RealGrid loaded.");
+		RealGridJS.setTrace(false);
+    	RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.25/");
+	 
+	    // set variables
+	    dataProvider = new RealGridJS.LocalDataProvider();
+	    gridView = new RealGridJS.GridView("realgrid", true);
+	    gridView.setDataSource(dataProvider);
+		
+	    setFields(dataProvider);
+	    setColumns(gridView);
+	    setOptions(gridView);
+		
+	    loadData(dataProvider);
+
+	    var rows = [
+	    	["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+			["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"]
+		];
+
+		dataProvider.setRows(rows);
+	   
+	};
+	
+	function setFields(provider) {
+		var fields = [{
+			"fieldName": "col1"
+		}, {
+		    "fieldName": "col2"
+		}, {
+		    "fieldName": "col3"
+		}, {
+		    "fieldName": "col4"
+		}, {
+		    "fieldName": "col5"
+		}, {
+		    "fieldName": "col6"
+		}, {
+		    "fieldName": "col7"
+		}, {
+		    "fieldName": "col8"
+		}, {
+		    "fieldName": "col9"
+		}, {
+		    "fieldName": "col10"
+		}, {
+		    "fieldName": "col11"
+		}, {
+		    "fieldName": "col12"
+		}, {
+		    "fieldName": "col13"
+		}, {
+		    "fieldName": "col14"
+		}, {
+		    "fieldName": "col15"
+		}]
+		provider.setFields(fields);
+	};
+	
+	function setColumns(grid) {
+        
+	    var columns = [{
+	        "type": "group",
+	        "name": "group1",
+	        "header": {
+	            "visible": false
+	        },
+	        "orientation": "vertical",
+	        "width": 80,
+	        "columns": [{
+	            "fieldName": "col1",
+	            "name": "col1",
+	            "width": 80,
+	            "header": { "text": "지점" },
+	            "styles": { "textAlignment": "center", "font": "Tahoma" },
+	        }, {
+	            "fieldName": "col2",
+	            "name": "col2",
+	            "width": 80,
+	            "header": { "text": "상태" },
+	            "styles": { "textAlignment": "center", "font": "Tahoma" }
+	        }]
+	    }, {
+	        "type": "group",
+	        "name": "group2",
+	        "header": {
+	            "visible": false
+	        },
+	        "orientation": "vertical",
+	        "width": 80,
+	        "columns": [{
+	            "fieldName": "col3",
+	            "name": "col3",
+	            "width": 80,
+	            "header": { "text": "FC명" },
+	            "styles": { "textAlignment": "center", "font": "Tahoma" },
+	        }, {
+	            "fieldName": "col4",
+	            "name": "col4",
+	            "width": 80,
+	            "header": { "text": "유해항목" },
+	            "styles": { "textAlignment": "center", "font": "Tahoma" }
+	        }]
+	    }, {
+	        "type": "group",
+	        "name": "group3",
+	        "header": {
+	            "visible": false
+	        },
+	        "orientation": "vertical",
+	        "width": 80,
+	        "columns": [{
+	            "fieldName": "col5",
+	            "name": "col5",
+	            "width": 80,
+	            "header": { "text": "FC코드" },
+	            "styles": { "textAlignment": "center", "font": "Tahoma" },
+	        }, {
+	            "fieldName": "col6",
+	            "name": "col6",
+	            "width": 80,
+	            "header": { "text": "영업정지일" },
+	            "styles": { "textAlignment": "center", "font": "Tahoma" }
+	        }]
+	    }, {
+	        "type": "group",
+	        "name": "group4",
+	        "header": {
+	            "visible": false
+	        },
+	        "orientation": "vertical",
+	        "width": 80,
+	        "columns": [{
+	            "fieldName": "col7",
+	            "name": "col7",
+	            "width": 80,
+	            "header": { "text": "신분" },
+	            "styles": { "textAlignment": "center", "font": "Tahoma" },
+	        }, {
+	            "fieldName": "col8",
+	            "name": "col8",
+	            "width": 80,
+	            "header": { "text": "해촉예정일" },
+	            "styles": { "textAlignment": "center", "font": "Tahoma" }
+	        }]
+	    }, {
+	        "type": "group",
+	        "name": "group5",
+	        "header": {
+	            "visible": false
+	        },
+	        "orientation": "vertical",
+	        "width": 160,
+	        "columns": [{
+	            "type": "group",
+	            "name": "group6",
+	            "header": {
+	                "visible": false
+	            },
+	            "orientation": "horizontal",
+	            "width": 160,
+	            "columns": [{
+	                "fieldName": "col9",
+	                "name": "col9",
+	                "width": 80,
+	                "header": { "text": "-BP금액" },
+	                "styles": { "textAlignment": "center", "font": "Tahoma" }
+	            }, {
+	                "fieldName": "col10",
+	                "name": "col10",
+	                "width": 80,
+	                "header": { "text": "가압류금액" },
+	                "styles": { "textAlignment": "center", "font": "Tahoma" }
+	            }]
+	        }, {
+	            "fieldName": "col11",
+	            "name": "col11",
+	            "width": 160,
+	            "header": { "text": "Penalty" },
+	            "styles": { "textAlignment": "center", "font": "Tahoma" }
+	        }]
+
+	    }, {
+	        "type": "group",
+	        "name": "group7",
+	        "header": {
+	            "visible": false
+	        },
+	        "orientation": "vertical",
+	        "width": 240,
+	        "columns": [{
+	            "type": "group",
+	            "name": "group8",
+	            "header": {
+	                "visible": false
+	            },
+	            "orientation": "horizontal",
+	            "width": 240,
+	            "columns": [{
+	                "fieldName": "col12",
+	                "name": "col12",
+	                "width": 80,
+	                "header": { "text": "본인채무건수" },
+	                "styles": { "textAlignment": "center", "font": "Tahoma" }
+	            }, {
+	                "fieldName": "col13",
+	                "name": "col13",
+	                "width": 80,
+	                "header": { "text": "본인채무금액" },
+	                "styles": { "textAlignment": "center", "font": "Tahoma" }
+	            }, {
+	                "fieldName": "col14",
+	                "name": "col14",
+	                "width": 80,
+	                "header": { "text": "보증인채무액" },
+	                "styles": { "textAlignment": "center", "font": "Tahoma" }
+	            }]
+	        }, {
+	            "fieldName": "col15",
+	            "name": "col15",
+	            "width": 240,
+	            "header": { "text": "조치내용" },
+	            "styles": { "textAlignment": "center", "font": "Tahoma" }
+	        }]
+
+	    }];
+        
+	    grid.setColumns(columns);
+	}
+			
+
+	function setOptions(grid) {
+		grid.setOptions({
+			select: {
+				style: RealGridJS.SelectionStyle.SINGLE_ROW
+			},
+			footer: {
+			    visible: false
+			},
+			stateBar: {
+			    visible: false
+			},
+			checkBar: {
+			    visible: false
+			},
+			panel: {
+			    visible: false
+			}
+		});
+	}
+	
+
+	function loadData(provider) {
+	    //data load
+
+	    dataProvider.setRowCount(10);
+	}
+	 
+
+///////////////////////////////////////////////////////////////////////////////
+
+	
+
+</script>
+</head>
+<body>
+	<div style="width: 100%; height: 90%; position: fixed;">
+		<div id="realgrid" style="width: 100%; height: 100%"></div>
+	</div>
+</body>
+</html>
