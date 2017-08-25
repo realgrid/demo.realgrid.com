@@ -30,6 +30,15 @@
 	        	fieldName: "field6"
 	        }, {
 	        	fieldName: "field7"
+	        }, {
+	        	fieldName: "field8",
+	        	dataType: "number"
+	        }, {
+	        	fieldName: "field9",
+	        	dataType: "datetime",
+	        	datetimeFormat:"yyyyMMdd"
+	        }, {
+	        	fieldName: "field10"
 	        }]);
 	    gridView = new RealGridJS.GridView("realgrid");
 	    gridView.setDataSource(dataProvider);  
@@ -122,6 +131,33 @@
         	type:"dropdown"
         },
     	width: "100"
+    }, {
+    	name: "column8",
+    	fieldName: "field8",
+    	header: {
+    		text: "number"
+    	},
+        editor: {
+        	type:"number"
+        },
+        styles:{
+        	numberFormat:"#,##0",
+        	textAlignment:"far"
+        },
+    	width: "100"
+    }, {
+    	name: "column9",
+    	fieldName: "field9",
+    	header: {
+    		text: "datetime"
+    	},
+    	width: "100",
+    	editor:{
+    		type:"date"
+    	},
+    	styles:{
+    		datetimeFormat:"yyyy-MM-dd"
+    	}
     }];
 
 		gridView.setColumns(columns); 
@@ -179,12 +215,54 @@
 		    alert("CellButton Clicked: itemIndex=" + itemIndex + ", fieldName=" + column.fieldName);
 		};
 
+		var data = [
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"},
+			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"VINET","field8":"123456789","field9":"20170831"}
+		];
+		dataProvider.fillJsonData(data)
+
 	});
 
 
 	</script>
 </head>
 <body>
+<h3>모바일 테스트를 위한 페이지입니다.</h3>
+<h4>각 컬럼명에 맞는 기능들을 테스트할 수 있습니다.</h4>
+
 <div id="realgrid" style="height:383px;width:100%;" title="리얼그리드"></div>
 </body>
 </html>

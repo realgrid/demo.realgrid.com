@@ -16,9 +16,22 @@
 	    ,["ko.co.001", "인텔 SSD 520 120GB", 63900]
 	    ,["ko.co.002", "LED 게이밍키보드", 29700]
 	    ,["ko.co.003", "팩스무선레이저복합기", 119000]
+        ,["ko.co.004", "인텔 SSD 520 120GB", 63900]
+        ,["ko.co.005", "data", 10000]
+        ,["ko.co.006", "data", 10000]
+        ,["ko.co.007", "data", 10000]
+        ,["ko.co.008", "data", 10000]
+        ,["ko.co.009", "data", 10000]
+        ,["ko.co.010", "data", 10000]
+        ,["ko.co.011", "data", 10000]
+        ,["ko.co.012", "data", 10000]
 	    ,["ko.bo", "서적"]
 	    ,["ko.bo.001", "미움받을 용기", 13410]
 	    ,["ko.bo.002", "기탄 세계명작동화50권", 69000]
+        ,["ko.bo.003", "data", 10000]
+        ,["ko.bo.004", "data", 10000]
+        ,["ko.bo.005", "data", 10000]
+        ,["ko.bo.006", "data", 10000]
 	    ,["ov", "해외"]
 	    ,["ov.ha", "가전"]
 	    ,["ov.ha.001", "32G Amazon phone", 130]
@@ -43,7 +56,8 @@
     }, {
       	fieldName: "product"
     }, {
-      	fieldName: "price"
+      	fieldName: "price",
+        dataType:"number"
     }, {
         fieldName: "field1",
     }, {
@@ -55,9 +69,11 @@
     }, {
     	fieldName: "field5"
     }, {
-    	fieldName: "field6"
+        fieldName: "field6",
+        dataType:"number"
     }, {
-    	fieldName: "field7"
+        fieldName: "field7",
+        dataType:"datetime"
     }]);
 
     treeView.setColumns([{
@@ -66,7 +82,14 @@
 		width: 200
     }, {
 		name: "price",
-		fieldName: "price"
+		fieldName: "price",
+        header:{
+            text:"number"
+        },
+        editor:{
+            type:"number",
+            textAlignment:"far"
+        }
     }, {
 	    fieldName: "field1",
 	    name: "column1",
@@ -155,6 +178,33 @@
         	type:"dropdown"
         },
     	width: "100"
+    },{
+        name: "column6",
+        fieldName: "field6",
+        header: {
+            text: "number"
+        },
+        editor: {
+            type:"number"
+        },
+        styles:{
+            numberFormat:"#,##0",
+            textAlignment:"far"
+        },
+        width: "100"
+    }, {
+        name: "column7",
+        fieldName: "field7",
+        header: {
+            text: "datetime"
+        },
+        width: "100",
+        editor:{
+            type:"date"
+        },
+        styles:{
+            datetimeFormat:"yyyy-MM-dd"
+        }
     }]);
 
     dataProvider.setRows(rows, "tree");
@@ -213,6 +263,10 @@
 </script>
 </head>
 <body>
+<h3>모바일 트리 그리드 테스트를 위한 페이지입니다.</h3>
+<h4>각 컬럼명에 맞는 기능들을 테스트할 수 있습니다.</h4>
+
+
 <div id="realgrid" style="height:383px;width:100%;" title="리얼그리드"></div>
 </body>
 </html>
