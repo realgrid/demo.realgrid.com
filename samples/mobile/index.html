@@ -41,6 +41,9 @@
 	        	datetimeFormat:"yyyyMMdd"
 	        }, {
 	        	fieldName: "field10"
+	        }, {
+	        	fieldName: "field11",
+	        	dataType: "number"
 	        }]);
 	    gridView = new RealGridJS.GridView("realgrid");
 	    gridView.setDataSource(dataProvider);  
@@ -175,10 +178,23 @@
     	width: "100",
     	editor:{
     		type:"date",
+    		yearNavigation: true,
     		datetimeFormat:"yyyy-MM-dd"
     	},
     	styles:{
     		datetimeFormat:"yyyy-MM-dd"
+    	}
+    },{
+    	name: "column10",
+    	fieldName: "field10",
+    	header: {
+    		text: "textSort"
+    	}
+    },{
+    	name: "column11",
+    	fieldName: "field11",
+    	header: {
+    		text: "numberSort"
     	}
     }];
 
@@ -238,43 +254,7 @@
 		    addLog("CellButton Clicked: itemIndex=" + itemIndex + ", fieldName=" + column.fieldName);
 		};
 
-		var data = [
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"},
-			{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":"123456789","field9":"20170831"}
-		];
+		var data = [{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"01.jan","field11":5},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"05.may","field11":15},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"01.jan","field11":11},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"07.jul","field11":5},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"03.mar","field11":8},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"02.feb","field11":10},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"08.aug","field11":19},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"01.jan","field11":21},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"05.may","field11":1},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"03.mar","field11":3},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"05.may","field11":8},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"01.jan","field11":23},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"04.apr","field11":18},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"06.jun","field11":22},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"09.sep","field11":15},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"12.dec","field11":19},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"05.may","field11":5},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"06.jun","field11":5},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"02.feb","field11":0},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"07.jul","field11":5},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"11.nov","field11":22},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"12.dec","field11":15},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"06.jun","field11":18},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"12.dec","field11":10},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"05.may","field11":5},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"03.mar","field11":4},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"05.may","field11":9},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"09.sep","field11":9},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"06.jun","field11":0},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"09.sep","field11":11},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"12.dec","field11":15},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"05.may","field11":18},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"06.jun","field11":10},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"02.feb","field11":5},{"field1":"","field2":"text2","field3":"text3","field4":"text4","field5":"Austria","field8":123456789,"field9":"2017-08-30T15:00:00.000Z","field10":"07.jul","field11":4}];
 		dataProvider.fillJsonData(data);
 
 		gridView.setEditOptions({editable:true});
