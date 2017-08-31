@@ -1,8 +1,12 @@
 [{
+    "fieldName": "ImageButton"
+}, {
     "fieldName": "OrderID",
     "dataType": "text"
 }, {
     "fieldName": "CustomerID"
+}, {
+    "fieldName": "CustomerID2"
 }, {
     "fieldName": "EmployeeID"
 }, {

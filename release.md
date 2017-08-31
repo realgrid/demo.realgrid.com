@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.24'
+title: '최신버전 1.1.25'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,248 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.25 (2017년 8월)
+
+---
+
+#### 기능 개선
+1. [searchCell](http://help.realgrid.com/api/GridBase/searchCell/)  
+  - gridView.searchCell을 이용해서 date형식의 자료를 찾을때 일부만 입력하여 검색가능하도록 개선되었습니다.
+  - 구분자는 ".", "-", "/"를 사용할수 있으며 구분자없이 "201708"형태로도 검색가능합니다.
+```js
+  gridView.serachCell({fields:["dateField1", "dateField2"], value:"2017-08", partialMatch:true})
+```
+
+1. [NumberCellEditor](http://help.realgrid.com/api/types/NumberCellEditor/)
+  - numberCellEditor에서 숫자 중간에 입력하는 경우 caret이 끝으로 이동하지 않도록 개선되었습니다.
+
+1. [clearInvalidCellList](http://help.realgrid.com/api/GridBase/clearInvalidCellList/)
+  - validation이 실패한 셀의 목록을 초기화 할수 있는 clearInvalidCellList함수가 추가되었습니다.
+
+1. [ColumnHeader](http://help.realgrid.com/api/types/ColumnHeader/)
+  - ColumnHeader의 image를 클릭시 발생하는 onColumnHeaderImageClicked 이벤트가 추가되었습니다.
+
+1. [onBodyEmptyClicked](http://help.realgrid.com/api/GridBase/onBodyEmptyClicked/)
+  - 그리드의 빈 영역을 클릭했을때 발생하는 onBodyEmptyClicked 이벤트와 onBodyEmptyDblClicked이벤트가 추가되었습니다.
+
+1. [DynamicStyle](http://help.realgrid.com/api/types/DynamicStyle/)
+  - 변경된 cell의 style을 변경할수 있도록 [Expression](http://help.realgrid.com/api/features/Expression/)에 "changedcell" 조건이 추가 되었습니다.
+  - changedcell조건을 사용하기 위해서는 DataProvider.restoreMode속성이 "explicit"이거나 또는 "auto"이어야 합니다.
+```js
+dataProvider.setOptions({restoreMode:"explicit"});
+gridView.setStyles({
+    body:{
+      cellDynamicStyles:[{criteria:"changedcell", styles:{figureName:"leftTop", figureBackground:"#FF00ebeb", figureSize:"20%"}}];
+    }
+});
+```
+  - Column별로 style을 변경하는 경우 column.dynamicStyles를 이용합니다.
+```js
+  gridView.setColumnProperty("columnName", "dynamicStyles", [{criteria:"changedcell", styles:{figureName:"leftTop", figureBackground:"#FF00ebeb", figureSize:"20%"}}]);
+```
+  - 자세한 내용은 [DynamicStylesonColumns]({{ '/GridStyle/DynamicStylesonColumns/' | prepend: site.baseurl }})데모를 참조하세요.
+
+1. [GridExportOptions](http://help.realgrid.com/api/types/GridExportOptions/)
+  - 그리드를 Excel로 Export할때 checkBar에 체크된 행만 Export할수 있도록 `GridExportOptions.onlyCheckedItems` 속성이 추가 되었습니다.
+  - 그리드가 RowGrouping상태이거나 TreeGrid의 경우에는 적용되지 않습니다.
+  - Column.Header.subText가 있는 경우 subText도 출력되도록 수정되었습니다. (subTextStyle의 경우는 적용되지 않습니다)
+
+1. [GridView.collapseAll](http://help.realgrid.com/api/GridView/collapseAll/)
+  - 그리드가 rowGrouping상태일때 모든 Group을 접도록 하는 collapseAll 함수가 추가되었습니다.
+```js
+  gridView.collapseAll(true);
+```
+  - 특정 Level까지의 Group을 펼치도록 하는 expandAll함수가 추가되었습니다.
+```js
+  var fieldName = gridView.getCurrent().fieldName;
+  var level = gridView.getGroupFieldNames().indexOf(fieldName.toUpperCase());
+  level >= 0 && gridView.expandAll(level+1);
+```
+
+1. [DataColumn](http://help.realgrid.com/api/types/DataColumn/)
+  - DataColumn.equalBlank가 true이고 셀이 merge된 상태에서 세로스크롤시 텍스트가 사라지지 않고 계속 표시되도록 수정되었습니다.
+
+1. `Mobile Edit`
+  - MobileGrid에서도 제한적인 편집이 가능하도록 수정되었습니다.
+  - cell을 doubleTouch하면 편집상태로 변경이 됩니다.
+  - dropdownEditor, dateEditor의 경우 cell을 선택후 editButton을 touch하면 편집상태로 변경됩니다.
+
+1. [DisplayOptions](http://help.realgrid.com/api/types/DisplayOptions/)
+  - DisplayOptions.rowFocusOption 속성이 추가 되었습니다.
+```js
+gridView.setDisplayOptions({
+    rowFocusOption:{
+      visible:true,
+      rowFocusMask:"row",
+      styles:{
+        background:"11008484",
+        border:"#441212Fb,2"
+      }
+    }
+});
+```
+  - 이전버전의 `DisplayOptions.rowFocusVisible`, `DisplayOptions.rowFocusMask`, `DisplayOptions.rowFocusBackground`를 대체하는 속성입니다.
+
+1. [DisplayOptions](http://help.realgrid.com/api/types/DisplayOptions/)
+  - progressView의 스타일을 사용자가 지정할수 있도록 DisplayOptions.useCssStyleProgress 속성이 추가 되었습니다.
+  - progressView가 생성되기전에 useCssStyleProgress를 true로 설정해야 적용됩니다.
+```js
+  gridView.setDisplayOptions({useCssStyleProgress:true});
+  gridView.showProgress();
+  gridView.setProgress(min, max, position, "progress Message");
+```
+- 자세한 내용은 [CSSStyles]({{ '/GridStyle/CSSStyles/' | prepend: site.baseurl }})데모를 참조하세요.
+
+1. [onGridActivated](http://help.realgrid.com/api/GridBase/onGridActivated)
+  - 그리드를 클릭하거나 gridView.setFocus()를 이용하여 그리드에 포커스를 이동시키면 발생하는 onGridActivated 이벤트가 추가되었습니다.
+```js
+gridView.onGridActivated = function(grid) {
+    window.activeGrid = grid;
+}
+```
+  - RealGridJS.getActiveGrid 함수가 추가되었습니다. 화면에 여러개의 그리드가 있는 경우 마지막으로 포커스를 가진 그리드를 반환합니다.
+  - div tag를 이용해서 tab화면을 구성한 경우 tab을 변경하여도 그리드가 focus를 가지기 전까지는 이벤트가 발생하지 않습니다.
+
+1. [ImageButtonsCellRenderer](http://help.realgrid.com/api/types/ImageButtonsCellRenderer/)가 추가되었습니다.
+  - 조건에 따라 서로다른 이미지 버튼을 보여줄수 있는 ImageButtonosCellRenderer가 추가되었습니다.
+```js
+var imageButtons1 = [{
+    name:"zoomin",
+    up:"./image/zoomin.png",
+    width:16
+}];
+var imageButtons2 = [{
+    name:"zoomout",
+    up:"./image/zoomout.png",
+    width:16
+}];
+gridView.addCellRenderers([{
+        "id":"buttons1",
+        "type":"imageButtons",
+        "images": imageButtons1
+    },{
+        "id":"buttons2",
+        "type":"imageButtons",
+        "images": imageButtons2
+}]);
+gridView.setColumns([{
+    name:"column1",
+    fieldName:"field1",
+    dynamicStyles:[{
+         criteria:["value = 'A'", "value = 'B'"],
+         styles:["renderer=buttons1", "renderer=buttons2"]
+    }]
+}]);
+```
+자세한 내용은 [셀 버튼]({{ '/CellComponent/CellButton/' | prepend: site.baseurl }})데모를 참조하세요.
+
+1. [DataProvider.searchData](http://help.realgrid.com/api/LocalDataProvider/searchData/)
+  - gridView.searchItem과 유사한 역활을 하는 dataProvider.searchDataRow함수가 추가 되었습니다.  
+  - gridView.searchCell과 유사한 역활을 하는 dataProvider.serachData함수가 추가 되었습니다.  
+  자세한 내용은 [트리뷰 노드 검색하기]({{ '/Tree/TreeSearchRow/' | prepend: site.baseurl }})데모를 참조하세요. 
+
+1. [GropingOptions](http://help.realgrid.com/api/types/GroupingOptions/)
+  - rowGroup을 해제할수 있는 removeButton 속성이 추가되었습니다.
+```js
+gridView.setGroupingOptions({
+    removeButton:{
+      visible:true,
+      color:"#FF00FFF0",
+      hoveredColor:"#FFFF000F",
+      size:12
+    }
+});
+```
+  - removeButton.visible이 true인 경우 groupPanel의 ColumnView의 오른쪽에 "X"표시가 생성되며 클릭시 해당 column은 rowGroup에서 제외됩니다.
+
+1. [ColumnHeader](http://help.realgrid.com/api/types/ColumnHeader/)
+  - column의 Header에 popupButton이 추가되었습니다.
+  - popupMenu를 그리드에 추가한후 popupMenu명을 Column.Header.popup에 등록한후 사용할수 있습니다.
+  - Column.Header.popup을 직접 정의하여 사용할수 있습니다.
+```js
+var menu = [{
+    label: "menu1 입니다.",
+    enabled: true,
+    children: [{
+         label: "submenu1 입니다.",
+         callback:function(grid, index){console.log(index)}
+    }, {
+         label: "submenu2 입니다."
+    }]
+    }, {
+         label: "menu2 입니다",
+         enabled: false
+}];
+gridView.addPopupMenu("menu1", menu);
+gridView.setColumns([{
+    name:"column1", fieldName:"fieldName1",
+    header:{
+         popupMenu:"menu1"
+    }
+},{
+    name:"column2", fieldName:"fieldName2",
+    header:{
+         popupMenu:[{label:"popupMenu", callback:function(grid, index){console.log("test")}}]
+    }
+}]);
+```
+  - [ColumnHeaderOptions](http://help.realgrid.com/api/types/ColumnHeaderOptions/)에 popupMenu관련 속성이 추가 되었습니다.
+  - popupMenuColor: popupMenuButton의 색상을 입력합니다.
+  - hoveredPopupMenuColor: MouseOver시 popupMenuButton의 색상을 입력합니다.
+  - popupMenuWidth: popupMenuButton의 넓이를 입력합니다.
+```js
+gridView.setColumnHeaderOptions({
+    popupMenuWidth:12,
+    popupMenuColor:"#ff696969",
+    hoveredPopupMenuColor:"#FFFF0000"
+});
+```
+
+
+#### 오류 수정
+1. `searchCell`
+  - gridView.searchCell을 이용해서 찾기시 "undefined"를 찾으면 value가 undefined인 cell이 검색되는 현상을 수정하였습니다.
+
+1. `checkBar`
+  - checkBar의 check를 클릭하였을때 그리드가 스크롤되는 현상을 수정하였습니다.
+
+1. `dataProvider.getUpdatedCells`
+  - [dataProvider.getUpdatedCells](http://help.realgrid.com/api/DataProvider/getUpdatedCells/)를 이용해서 수정된 cell을 가져올때 수정된 행을 모두 가져오지 못하는 오류를 수정하였습니다.
+
+1. `gridExport.documentTitle`
+  - 1.1.24버전에서 gridExport.documentTitle.spaceTop을 설정했을때 발생하는 오류를 수정하였습니다.
+
+1. `selectOptionis.style`
+  - selectOptions.style이 "rows"일때 아래쪽에서 위로 범위 설정후 마우스 우클릭시 범위 설정이 해제되는 오류를 수정하였습니다.
+
+1. `displayOptions.rowHeight`
+  - displayOptions.rowHeight의 값을 잘못된 값으로 설정시 그리드가 깨지는 오류를 수정하였습니다.
+
+1. `Mobile TreeGrid`
+  - Mobile TreeGrid에서 화면 touch를 이용해서 스크롤할때 이동되지 않는 오류를 수정하였습니다.
+
+1. `GridExport`
+  - DataField의 DataType이 number이고 Column.styles.numberFormat이 `"#,##0;,;."`인 컬럼을 Excel로 Export하는 경우 음수인 Data가 Excel에서 정상적으로 보이지 않는 오류를 수정하였습니다.
+
+1. `DataField.defaultValue`
+  - DataField.defaultValue가 설정되어있어도 insert 또는 append시 적용되지 않는 오류가 수정되었습니다.
+
+1. `paste`
+  - 편집 불가 상태의 cell에 열단위 붙여넣기를 했을때 붙여넣기가 되지 않는 현상을 수정하였습니다.
+
+1. `onCurrentChanged`
+  - 그리드가 포커스를 가지고 있지 않은 상태에서 그리드의 (0,0) cell이 아닌 다른 cell을 클릭시 onCurrentChanged이벤트가 2번 발생하는 현상을 수정하였습니다.
+
+1. `showSortOrder`
+  - sortOrder가 간혹 사라지는 현상이 수정되었습니다.
+
+1. `onHideEditor`
+  - onHideEditor 이벤트가 발생하는 않는 오류를 수정하였습니다.
+
+1. [ActualTargetBulletRenderer](http://help.realgrid.com/api/types/ActualTargetBulletRenderer/)
+  - actualTargetBulletRenderer의 dynamicStyles가 적용되지 않는 오류가 수정되었습니다. 
+
 
 ## 1.1.24 (2017년 6월)
 

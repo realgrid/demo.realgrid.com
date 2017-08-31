@@ -29,12 +29,54 @@ gridView.setEditorOptions({
 gridView.setFilteringOptions({selector: {useCssStyle: true}});
 ```
 
+#### 프로그레스바 CSS Styles
+
+버튼 클릭 시 progressBar를 표시합니다.
+
+<a class="btn primary small round lowercase" id="btnShowProgress">progressBar 표시</a>
+
+```js
+//showProgress 함수 실행 전 적용
+//progressBar에 CSS 스타일 적용 여부
+gridView.setDisplayOptions({useCssStyleProgress:true});
+
+gridView.setProgress(min, max, position, "progress Message");
+gridView.showProgress();
+```
+
+<a class="btn primary small round lowercase" id="btnCloseProgress">progressBar 닫기</a>
+
+```js
+gridView.closeProgress();
+```
+
 #### CSS Styles
 
 아래는 CSS Styles 데모에서 사용된 CSS 속성들입니다.  
 
 ```js
 <style type="text/css">
+    /*                  */
+    /*      Progress    */
+    /*                  */
+    .rg-progress {
+        background-color: rgba(0, 111, 245, 0.05);
+        border: 1px solid #ddd;
+    }
+    .rg-progress-bar {
+        background : linear-gradient(#aaa, #ccc);
+        border : 1px solid #333;
+    }
+    .rg-progress-progress {
+        background : linear-gradient(#fff, #ddd);
+        border-right : 1px solid #333;
+    }
+    .rg-progress-message {
+        font-size : 11px;
+        font-family : Tahoma;
+        font-weight : bold;
+    }
+
     /*                  */
     /*      Filter      */
     /*                  */
@@ -515,3 +557,15 @@ gridView.setFilteringOptions({selector: {useCssStyle: true}});
     }
 </style>
 ```
+
+<script>
+  $('#btnShowProgress').click(function() {
+    gridView.setDisplayOptions({useCssStyleProgress:true});
+    gridView.showProgress();
+    gridView.setProgress(0, 100, 50, "progress Message");
+  });
+
+  $('#btnCloseProgress').click(function() {
+    gridView.closeProgress();
+  });
+</script>

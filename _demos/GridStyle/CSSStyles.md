@@ -16,6 +16,26 @@ ContextMenu는 PopupMenu와 CSS 스타일을 공유 합니다.
 
 <style type="text/css">
     /*                  */
+    /*      Progress    */
+    /*                  */
+    .rg-progress {
+        background-color: rgba(0, 111, 245, 0.05);
+        border: 1px solid #d0f;
+    }
+    .rg-progress-bar {
+        background : linear-gradient(#aaa, #ccc);
+        border : 1px solid #d00;
+    }
+    .rg-progress-progress {
+        background : linear-gradient(#fff, #f3d);
+        border-right : 1px solid #ff0;
+    }
+    .rg-progress-message {
+        font-size : 11px;
+        font-family : Tahoma;
+        font-weight : bold;
+    }
+    /*                  */
     /*      Filter      */
     /*                  */
     .rg-filterselector {

@@ -1,11 +1,24 @@
 [{
+    "name": "ImageButton",
+    "fieldName": "ImageButton",
+    "width": "100",
+    "dynamicStyles":[{
+         "criteria":["value = '팝업'", "value = '조회'"],
+         "styles":["renderer=buttons1", "renderer=buttons2"]
+    }],
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "동적 버튼"
+    }
+}, {
     "name": "EmployeeID",
     "fieldName": "EmployeeID",
     "width": "150",
     "button": "image",
     "imageButtons": {
         "width": 45,
-        "height": 13,
         "images": [{
             "name": "팝업버튼",
             "up": "/resource/image/btnImages/popup_normal.png",

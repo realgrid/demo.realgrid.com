@@ -36,9 +36,41 @@ tags: ['CellButton', 'button', '버튼']
           alert("CellButton Clicked: itemIndex=" + itemIndex + ", fieldName=" + column.fieldName);
       };
 
-      gridView.onImageButtonClicked = function (grid, itemIndex, column, buttonIndex, name) {
-          alert("onImageButtonClicked: " + itemIndex + ", " + column.name+", " + buttonIndex + ", " + name);
-      };
+    var imageButtons1 = [{
+      "name": "팝업버튼",
+      "up": "/resource/image/btnImages/popup_normal.png",
+      "hover": "/resource/image/btnImages/popup_hover.png",
+      "down": "/resource/image/btnImages/popup_click.png",
+      "width":50
+    }];
+    var imageButtons2 = [{
+      "name": "조회버튼",
+      "up": "/resource/image/btnImages/search_normal.png",
+      "hover": "/resource/image/btnImages/search_hover.png",
+      "down": "/resource/image/btnImages/search_click.png",
+      "width":50
+    }];
+    gridView.addCellRenderers([{
+     "id":"buttons1",
+     "type":"imageButtons",
+     "images": imageButtons1,
+     "margin":10
+     },{
+     "id":"buttons2",
+     "type":"imageButtons",
+     "images": imageButtons2,
+     "margin":10
+    }]);
+
+    gridView.onImageButtonClicked = function (grid, itemIndex, column, buttonIndex, name) {
+        alert("onImageButtonClicked: " + itemIndex + ", " + column.name+", " + buttonIndex + ", " + name);
+    };
+
+    var data = ["팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회"]
+
+    for(var i = 0; i < data.length; i++){
+      dataProvider.setValue(i,"ImageButton",data[i])
+    }
   }
 </script>
 
@@ -60,19 +92,3 @@ tags: ['CellButton', 'button', '버튼']
 
   gridWidth="100%"
   gridHeight="300px" %}
-
-<!-- 비교해 보고 나중에 지우세요.
-  include realgrid.html
-  gridVar="gridView"
-  dpVar="dataProvider"
-  fieldSet="cellButtonField"
-  columnSet="cellButtonColumn"
-  dpOptionSet="dataProviderOption1"
-  gridOptionSet="gridOption1"
-  doneDataSet="onDoneDataSet"
-  styleSet="style1"
-  dataSet="griddata1"
-  gridId="realgrid"
-  gridWidth="100%"
-  gridHeight="300px"
--->

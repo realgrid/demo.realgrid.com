@@ -5,6 +5,7 @@
 <a class="btn primary small round lowercase" id="btnButtonAlwaysShowButton">버튼 항상 표시</a>
 
 ```js
+gridView.setColumnProperty("ImageButton", "alwaysShowButton", "true");
 gridView.setColumnProperty("EmployeeID", "alwaysShowButton", "true");
 gridView.setColumnProperty("OrderID", "alwaysShowButton", "true");
 gridView.setColumnProperty("CustomerID", "alwaysShowButton", "true");
@@ -21,6 +22,7 @@ gridView.setColumnProperty("CustomerID", "alwaysShowButton", "true");
 <a class="btn primary small round lowercase" id="btnButtonAlways">항상 표시</a>
 
 ```js
+gridView.setColumnProperty("ImageButton", "buttonVisibility", "always");
 gridView.setColumnProperty("EmployeeID", "buttonVisibility", "always");
 gridView.setColumnProperty("OrderID", "buttonVisibility", "always");
 gridView.setColumnProperty("CustomerID", "buttonVisibility", "always");
@@ -29,6 +31,7 @@ gridView.setColumnProperty("CustomerID", "buttonVisibility", "always");
 <a class="btn primary small round lowercase" id="btnButtonDefault">hovering, 포커스 상태만 표시</a>
 
 ```js
+gridView.setColumnProperty("ImageButton", "buttonVisibility", "default");
 gridView.setColumnProperty("EmployeeID", "buttonVisibility", "default");
 gridView.setColumnProperty("OrderID", "buttonVisibility", "default");
 gridView.setColumnProperty("CustomerID", "buttonVisibility", "default");
@@ -37,6 +40,7 @@ gridView.setColumnProperty("CustomerID", "buttonVisibility", "default");
 <a class="btn primary small round lowercase" id="btnButtonVisible">포커스 상태만 표시</a>
 
 ```js
+gridView.setColumnProperty("ImageButton", "buttonVisibility", "visible");
 gridView.setColumnProperty("EmployeeID", "buttonVisibility", "visible");
 gridView.setColumnProperty("OrderID", "buttonVisibility", "visible");
 gridView.setColumnProperty("CustomerID", "buttonVisibility", "visible");
@@ -45,6 +49,7 @@ gridView.setColumnProperty("CustomerID", "buttonVisibility", "visible");
 <a class="btn primary small round lowercase" id="btnButtonHidden">표시 안함</a>
 
 ```js
+gridView.setColumnProperty("ImageButton", "buttonVisibility", "hidden");
 gridView.setColumnProperty("EmployeeID", "buttonVisibility", "hidden");
 gridView.setColumnProperty("OrderID", "buttonVisibility", "hidden");
 gridView.setColumnProperty("CustomerID", "buttonVisibility", "hidden");
@@ -81,32 +86,89 @@ gridView.onImageButtonClicked = function (grid, itemIndex, column, buttonIndex, 
 };
 ```
 
+#### 동적 이미지 버튼
+
+조건에 따라 서로다른 이미지 버튼을 보여줄수 있습니다.
+
+```js
+//이미지 버튼 생성
+var imageButtons1 = [{
+  "name": "팝업버튼",
+  "up": "/resource/image/btnImages/popup_normal.png",
+  "hover": "/resource/image/btnImages/popup_hover.png",
+  "down": "/resource/image/btnImages/popup_click.png",
+  "width":50
+}];
+var imageButtons2 = [{
+  "name": "조회버튼",
+  "up": "/resource/image/btnImages/search_normal.png",
+  "hover": "/resource/image/btnImages/search_hover.png",
+  "down": "/resource/image/btnImages/search_click.png",
+  "width":50
+}];
+
+//이미지 버튼 추가
+gridView.addCellRenderers([{
+  "id":"buttons1",
+  "type":"imageButtons",
+  "images": imageButtons1,
+  "margin":10
+},{
+  "id":"buttons2",
+  "type":"imageButtons",
+  "images": imageButtons2,
+  "margin":10
+}]);
+
+//컬럼 설정
+{
+  "name": "ImageButton",
+  "fieldName": "ImageButton",
+  "width": "100",
+  "dynamicStyles":[{
+    "criteria":["value = '팝업'", "value = '조회'"],
+    "styles":["renderer=buttons1", "renderer=buttons2"]
+  }],
+  "styles": {
+   "textAlignment": "near"
+  },
+  "header": {
+    "text": "동적 버튼"
+  }
+}
+```
+
 <script>
   $('#btnButtonAlwaysShowButton').click(function() {
+    gridView.setColumnProperty("ImageButton", "alwaysShowButton", "true");
     gridView.setColumnProperty("EmployeeID", "alwaysShowButton", "true");
     gridView.setColumnProperty("OrderID", "alwaysShowButton", "true");
     gridView.setColumnProperty("CustomerID", "alwaysShowButton", "true");
   });
 
   $('#btnButtonAlways').click(function() {
+    gridView.setColumnProperty("ImageButton", "buttonVisibility", "always");
     gridView.setColumnProperty("EmployeeID", "buttonVisibility", "always");
     gridView.setColumnProperty("OrderID", "buttonVisibility", "always");
     gridView.setColumnProperty("CustomerID", "buttonVisibility", "always");
   });
 
   $('#btnButtonDefault').click(function() {
+    gridView.setColumnProperty("ImageButton", "buttonVisibility", "default");
     gridView.setColumnProperty("EmployeeID", "buttonVisibility", "default");
     gridView.setColumnProperty("OrderID", "buttonVisibility", "default");
     gridView.setColumnProperty("CustomerID", "buttonVisibility", "default");
   });
 
   $('#btnButtonVisible').click(function() {
+    gridView.setColumnProperty("ImageButton", "buttonVisibility", "visible");
     gridView.setColumnProperty("EmployeeID", "buttonVisibility", "visible");
     gridView.setColumnProperty("OrderID", "buttonVisibility", "visible");
     gridView.setColumnProperty("CustomerID", "buttonVisibility", "visible");
   });
 
   $('#btnButtonHidden').click(function() {
+    gridView.setColumnProperty("ImageButton", "buttonVisibility", "hidden");
     gridView.setColumnProperty("EmployeeID", "buttonVisibility", "hidden");
     gridView.setColumnProperty("OrderID", "buttonVisibility", "hidden");
     gridView.setColumnProperty("CustomerID", "buttonVisibility", "hidden");
