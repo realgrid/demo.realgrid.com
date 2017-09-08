@@ -75,6 +75,7 @@ gridView.setStyles({
 
 1. `Mobile Edit`
   - MobileGrid에서도 제한적인 편집이 가능하도록 수정되었습니다.
+  - MobileGrid의 setEditOptions.editable의 Default값은 false입니다.(true설정 시 Mobile편집 가능)
   - cell을 doubleTouch하면 편집상태로 변경이 됩니다.
   - dropdownEditor, dateEditor의 경우 cell을 선택후 editButton을 touch하면 편집상태로 변경됩니다.
 

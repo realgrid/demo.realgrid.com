@@ -37,7 +37,7 @@ gridView.exportGrid({
 <script>
 $('#btnExportGrid').click(function() {
 	var excelType = $(':radio[name="excelType"]:checked').val() == "2007";
-	var allitems = $("#chkAllItems").is(":checked");
+	var allItems = $("#chkAllItems").is(":checked");
 
 	gridView.exportGrid({
 	    type: "excel",
