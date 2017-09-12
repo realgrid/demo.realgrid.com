@@ -1,0 +1,253 @@
+<html>
+<head>
+	<title>범죄예방정보화센터 teams</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<script src="/lib/realgrid/realgridjs-lic.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs_eval.1.1.25.min.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs-api.1.1.25.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.25/jszip.min.js"></script>
+	<script src="/lib/jquery/jquery-1.11.2.min.js"></script>
+	<script language="javascript">
+	var dataProvider;
+	var gridView;
+
+	$(document).ready( function(){
+	    RealGridJS.setTrace(false);
+	    RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.25/");
+	    
+	    dataProvider = new RealGridJS.LocalDataProvider();
+	    dataProvider.setFields([{
+	            fieldName: "field1"
+	        }, {
+	        	fieldName: "field2"
+	        }, {
+	        	fieldName: "field3",
+                dataType: "datetime",
+                datetimeFormat:"yyyy/MM/dd"
+	        }, {
+	        	fieldName: "field4"
+	        }, {
+	        	fieldName: "field5",
+                dataType: "datetime",
+                datetimeFormat:"yyyy/MM/dd"
+	        }, {
+	        	fieldName: "field6"
+	        }, {
+	        	fieldName: "field7"
+	        }, {
+	        	fieldName: "field8"
+	        }, {
+	        	fieldName: "field9"
+	        }, {
+	        	fieldName: "field10"
+	        }, {
+                fieldName: "field11",
+                dataType: "datetime",
+                datetimeFormat:"yyyy/MM/dd"
+            }, {
+                fieldName: "field12",
+                dataType: "datetime",
+                datetimeFormat:"yyyy/MM/dd"
+            }, {
+                fieldName: "field13"
+            }, {
+                fieldName: "field14"
+            }]);
+	    gridView = new RealGridJS.GridView("realgrid");
+	    gridView.setDataSource(dataProvider);  
+
+	    var columns = [{
+            name: "column1",
+            fieldName: "field1",
+            header: {
+                text: "No"
+            },
+            width: "50",
+            styles: {
+                textAlignment: "center"
+            }
+        },{
+            name: "column2",
+            fieldName: "field2",
+            header: {
+                text: "상담자구분"
+            },
+            width: "100",
+            styles: {
+                textAlignment: "center"
+            }
+        },{
+            name: "column3",
+            fieldName: "field3",
+            header: {
+                text: "상담/관찰일"
+            },
+            width: "100",
+            styles: {
+                textAlignment: "center"
+            }
+        },{
+            name: "column4",
+            fieldName: "field4",
+            header: {
+                text: "성명"
+            },
+            width: "80",
+            styles: {
+                textAlignment: "center"
+            }
+        },{
+            name: "column5",
+            fieldName: "field5",
+            header: {
+                text: "입원일"
+            },
+            width: "100",
+            styles: {
+                textAlignment: "center"
+            }
+        },{
+            name: "column6",
+            fieldName: "field6",
+            header: {
+                text: "생활반"
+            },
+            width: "200",
+            styles: {
+                textAlignment: "center"
+            }
+        },{
+            name: "column7",
+            fieldName: "field7",
+            header: {
+                text: "비행명"
+            },
+            width: "200",
+            styles: {
+                textAlignment: "center"
+            }
+        },{
+            name: "column8",
+            fieldName: "field8",
+            header: {
+                text: "대상자구분"
+            },
+            width: "100",
+            styles: {
+                textAlignment: "center"
+            }
+        },{
+            name: "column9",
+            fieldName: "field9",
+            header: {
+                text: "상담형태"
+            },
+            width: "100",
+            styles: {
+                textAlignment: "center"
+            }
+        },{
+            name: "column10",
+            fieldName: "field10",
+            header: {
+                text: "실시자"
+            },
+            width: "100",
+            styles: {
+                textAlignment: "center"
+            }
+        },{
+            name: "column11",
+            fieldName: "field11",
+            header: {
+                text: "등록일"
+            },
+            width: "100",
+            styles: {
+                textAlignment: "center"
+            }
+        },{
+            name: "column12",
+            fieldName: "field12",
+            header: {
+                text: "변경일"
+            },
+            width: "100",
+            styles: {
+                textAlignment: "center"
+            }
+        },{
+            name: "column13",
+            fieldName: "field13",
+            header: {
+                text: "결재상태"
+            },
+            width: "100",
+            styles: {
+                textAlignment: "center"
+            }
+        },{
+            name: "column14",
+            fieldName: "field14",
+            header: {
+                text: "기관"
+            },
+            width: "200",
+            styles: {
+                textAlignment: "center"
+            }
+        },];
+
+		gridView.setColumns(columns); 
+
+        gridView.setStyles({
+            grid:{
+                font:"궁서체"
+            },
+            body:{
+                dynamicStyles:[{
+                    criteria:"(row mod 2) = 0",
+                    styles:{
+                        background:"#fff5f5f5"
+                    }
+                }, {
+                    criteria:"(row mod 2) = 1", 
+                    styles:{
+                        background:"#ffffffff"
+                    }
+                }]
+            },
+            header:{
+                background:"#ffe6ebef"
+            }
+        })
+
+        gridView.setIndicator({visible:false});
+        gridView.setStateBar({visible:false});
+        gridView.setPanel({visible:false});
+
+		var data = [{"field1":"1","field2":"비담임","field3":"2017/09/11","field4":"","field5":"2017/06/26","field6":"예술분장2반(4호실)","field7":"","field8":"학생","field9":"","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
+            {"field1":"2","field2":"담임","field3":"2017/09/11","field4":"","field5":"2017/04/11","field6":"예술분장1반(3호실)","field7":"","field8":"학생","field9":"","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
+            {"field1":"3","field2":"담임","field3":"2017/09/11","field4":"","field5":"2017/05/29","field6":"예술분장1반(3호실)","field7":"","field8":"보호자","field9":"대면상담","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
+            {"field1":"4","field2":"비담임","field3":"2017/09/11","field4":"","field5":"2017/03/20","field6":"바리스타3반(7호실)","field7":"","field8":"보호자","field9":"통신상담","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
+            {"field1":"5","field2":"담임","field3":"2017/09/11","field4":"","field5":"2017/06/12","field6":"바리스타3반(7호실)","field7":"","field8":"보호자","field9":"대면상담","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
+            {"field1":"6","field2":"담임","field3":"2017/09/11","field4":"","field5":"2017/06/12","field6":"예술분장4반(6호실)","field7":"","field8":"보호자","field9":"대면상담","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
+            {"field1":"7","field2":"담임","field3":"2017/09/11","field4":"","field5":"2017/08/21","field6":"예술분장3반(5호실)","field7":"","field8":"보호자","field9":"대면상담","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
+            {"field1":"8","field2":"담임","field3":"2017/09/11","field4":"","field5":"2017/07/13","field6":"바리스타1반(1호실)","field7":"","field8":"보호자","field9":"대면상담","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
+            {"field1":"9","field2":"비담임","field3":"2017/09/11","field4":"","field5":"2017/05/29","field6":"예술분장1반(3호실)","field7":"","field8":"보호자","field9":"대면상담","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
+            {"field1":"10","field2":"비담임","field3":"2017/09/11","field4":"","field5":"2017/06/22","field6":"바리스타3반(7호실)","field7":"","field8":"보호자","field9":"대면상담","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"}
+        ]
+		dataProvider.fillJsonData(data);
+
+	});
+
+
+	</script>
+</head>
+<body>
+<br/>
+<h3>범죄예방정보화센터 teams 그리드 화면을 RealGrid로 구현한 화면입니다.</h3>
+※ 검색결과
+<div id="realgrid" style="height:383px;width:100%"></div>
+</body>
+</html>
