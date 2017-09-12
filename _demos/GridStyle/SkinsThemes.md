@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 그리드 태마
+title: 그리드 태마(Skin)
 order: 11
 devbox: true
 devboxfile: SkinsThemes_devbox.md
