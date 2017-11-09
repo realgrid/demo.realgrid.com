@@ -1,6 +1,6 @@
-컬럼그룹선택 <select id="groupList"></select>
-
 #### 컬럼 배치방향
+
+컬럼그룹선택 <select id="groupList"></select>
 
 컬럼 그룹에 포함된 자식 컬럼들의 배치 방향을 수평 혹은 수직으로 바꿀 수 있습니다.
 
@@ -17,6 +17,15 @@ if (group) {
 ```
 
 #### 헤더 표시 여부
+
+컬럼그룹선택 
+<select id="groupList2">
+  <option value="GroupOrder">GroupOrder</option>
+  <option value="GroupIds">GroupIds</option>
+  <option value="GroupSales">GroupSales</option>
+  <option value="GroupProduct">GroupProduct</option>
+  <option value="GroupUnit">GroupUnit</option>
+</select>
 
 그룹 헤더를 감추거나 표시할 수 있습니다.
 
@@ -47,6 +56,15 @@ if (group) {
 ```
 
 #### 그룹 너비 변경
+
+컬럼그룹선택
+<select id="groupList3">
+  <option value="GroupOrder">GroupOrder</option>
+  <option value="GroupIds">GroupIds</option>
+  <option value="GroupSales">GroupSales</option>
+  <option value="GroupProduct">GroupProduct</option>
+  <option value="GroupUnit">GroupUnit</option>
+</select>
 
 그룹의 너비를 변경합니다.
 
@@ -94,7 +112,7 @@ $("#btnToggleOrientation").click(function() {
 });
 
 $("#btnToggleHeaderVisible").click(function() { 
-  var colName = $("#groupList").val();     
+  var colName = $("#groupList2").val();     
   var group = colName ? gridView.columnByName(colName) : null;
   if (group) {
       var header = gridView.getColumnProperty(group, "header");
@@ -104,7 +122,7 @@ $("#btnToggleHeaderVisible").click(function() {
 });
 
 $("#btnToggleHideChildHeaders").click(function() { 
-  var colName = $("#groupList").val();     
+  var colName = $("#groupList2").val();     
   var group = colName ? gridView.columnByName(colName) : null;
   if (group) {
       var hide = !gridView.getColumnProperty(group, "hideChildHeaders");
@@ -113,7 +131,7 @@ $("#btnToggleHideChildHeaders").click(function() {
 });
 
 $("#btnIncWidth").click(function() { 
-  var colName = $("#groupList").val();     
+  var colName = $("#groupList3").val();     
   var group = colName ? gridView.columnByName(colName) : null;
   if (group) {
       var width = gridView.getColumnProperty(group, "displayWidth") + 10;
@@ -121,7 +139,7 @@ $("#btnIncWidth").click(function() {
   }
 });
 $("#btnDecWidth").click(function() { 
-  var colName = $("#groupList").val();     
+  var colName = $("#groupList3").val();     
   var group = colName ? gridView.columnByName(colName) : null;
   if (group) {
       var width = gridView.getColumnProperty(group, "displayWidth") - 10;

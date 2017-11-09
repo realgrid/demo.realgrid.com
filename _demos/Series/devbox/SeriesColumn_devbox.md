@@ -53,3 +53,25 @@
     }
 }
 ```
+
+#### 시리즈 컬럼 구분자 변경
+
+valueSeparator 속성을 사용해서 시리즈 컬럼의 구분자를 동적으로 변경할 수 있습니다.
+
+<a class="btn primary small round lowercase" id="btnValueSeparator">시리즈 컬럼 구분자 변경</a>
+
+```js
+gridView.setColumnProperty("colSeries","renderer",{
+    type:"seriesText",
+    valueSeparator:"~"
+})
+```
+
+<script>
+$("#btnValueSeparator").click(function() { 
+    gridView.setColumnProperty("colSeries","renderer",{
+        type:"seriesText",
+        valueSeparator:"~"
+    })
+});
+</script>

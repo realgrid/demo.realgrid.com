@@ -1,0 +1,141 @@
+[{
+    "name": "OrderID",
+    "fieldName": "OrderID",
+    "type": "data",
+    "width": "90",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Order ID"
+    }
+}, {
+    "name": "CustomerID",
+    "fieldName": "CustomerID",
+    "type": "data",
+    "width": "130",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Customer ID"
+    }
+}, {
+    "name": "EmployeeID",
+    "fieldName": "EmployeeID",
+    "type": "data",
+    "width": "100",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Employee ID"
+    }
+}, {
+    "name": "OrderDate",
+    "fieldName": "OrderDate",
+    "type": "data",
+    "width": "130",
+    "styles": {
+        "textAlignment": "center",
+        "datetimeFormat": "yyyy-MM"
+    },
+    "header": {
+        "text": "Order Date",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    }
+}, {
+    "name": "CompanyName",
+    "fieldName": "CompanyName",
+    "type": "data",
+    "width": "200",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Company Name"
+    }
+}, {
+    "name": "Country",
+    "fieldName": "Country",
+    "type": "data",
+    "width": "100",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "Country"
+    }
+}, {
+    "name": "Phone",
+    "fieldName": "Phone",
+    "type": "data",
+    "width": "100",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Phone"
+    }
+}, {
+    "name": "ProductName",
+    "fieldName": "ProductName",
+    "type": "data",
+    "width": "200",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Product Name"
+    }
+}, {
+    "name": "QuantityPerUnit",
+    "fieldName": "QuantityPerUnit",
+    "type": "data",
+    "width": "100",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Quantity / Unit"
+    }
+}, {
+    "name": "Quantity",
+    "fieldName": "Quantity",
+    "type": "data",
+    "width": "100",
+    "styles": {
+        "textAlignment": "far"
+    },
+    "header": {
+        "text": "Quantity"
+    },
+    "footer": {
+        "expression": "sum",
+        "styles": {
+            "textAlignment": "far",
+            "numberFormat": "#,000"
+        }
+    }
+}, {
+    "name": "UnitPrice",
+    "fieldName": "UnitPrice",
+    "type": "data",
+    "width": "100",
+    "styles": {
+        "textAlignment": "far"
+    },
+    "header": {
+        "text": "Unit Price"
+    },
+    "footer": {
+        "expression": "avg",
+        "styles": {
+            "textAlignment": "far",
+            "numberFormat": "0.00",
+            "prefix": "AVG = "
+        }
+    }
+}]

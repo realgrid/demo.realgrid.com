@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.25'
+title: '최신버전 1.1.26'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,315 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.26 (2017년 11월)
+
+---
+
+#### 기능 개선
+1. [contextMenu]({{ '/GridComponent/ContextMenu/' | prepend: site.baseurl }})
+  - contextMenu 또는 PopupMenu의 item이 많은 경우 화면에 보여지는 item의 갯수를 변경할수 있도록 displayOptions.popupDropdownCount 속성이 추가 되었습니다.
+
+1. [copyOptions](http://help.realgrid.com/api/types/CopyOptions/)
+  - Ctrl+C를 이용해서 복사할때 화면에 보여지는 대로 복사할수 있는 copyOptions.copyDisplayText속성이 추가 되었습니다.
+
+1. [CheckBar](http://help.realgrid.com/api/types/CheckBar/)
+  - checkBar Cell의 styles을 동적으로 변경할수 있도록 dynamicStyles 속성이 추가 되었습니다.
+
+1. [exportGrid](http://help.realgrid.com/api/GridBase/exportGrid/)
+  - 여러개의 그리드를 excel로 Export할수 있도록 RealGridJS.exportGrid 함수가 추가되었습니다.
+```js
+RealGridJS.exportGrid({
+  type:"excel",
+  target:"local",
+  fileName:"test.xlsx",
+  showProgress:false,
+  done: function() {
+  },
+  exportGrids:[
+  {
+      grid:grid1,
+      sheetName:"test1"
+  }, {
+      grid:grid2,
+      sheetName:"test2"
+  }
+  ]
+})
+```
+  - [GridExportOptions](http://help.realgrid.com/api/types/GridExportOptions/)에 "sheetName" 속성이 추가되었습니다.
+  - 자세한 내용은 [ExcelMultiExport]({{ '/Excels/ExcelMultiExport/' | prepend: site.baseurl }})를 참조하세요.
+
+1. [BTDateCellEditor]({{ '/Editing/BTDateCellEditor/' | prepend: site.baseurl }})
+  - [BootStrap DatePicker](https://bootstrap-datepicker.readthedocs.io/en/latest/)를 이용한 Editor가 추가되었습니다.
+```js
+<script type="text/javascript"  src="./scripts/bootstrap-datepicker.js"></script>
+<script type="text/javascript"  src="./scripts/bootstrap-datepicker.ko.min.js"></script>
+```
+```js
+var btOptions = {
+    startView: 1,
+    minViewMode: 1,
+    todayBtn: "linked",
+    todayHighlight: true,
+    language:"ko",
+}
+```
+```js
+gridView.setColumns([
+  { 
+    name:"column1",
+    fieldName:"field1",
+    editor:{
+        type:"btDate",
+        btOptions:btOptions,
+        datetimeFormat:"yyyy-MM-dd"
+    }
+  }
+])
+```
+
+1. [getColumnProperty](http://help.realgrid.com/api/GridBase/getColumnProperty/)
+  - getColumnProperty함수를 이용해서 column의 editor속성을 가져올수 있도록 개선되었습니다.
+  - 기존함수와의 호환성을 위해서 "editorOptions"를 이용하여 editor의 속성을 가져올수 있습니다.
+```js
+  var editor = gridView.getColumnProperty("columnName", "editorOptions");
+```
+  - getColumns함수와 columnByName함수 등에서도 editorOptions속성으로 column Editor정보를 가져올수 있습니다.
+
+1. [mask](http://help.realgrid.com/api/types/Mask/)
+  - column Editor의 editMask를 "0000-00-00" 등과 같이 공백을 허용하지 않는 형식으로 지정했지만 data가 없는 경우 null로 처리하기 위해서 allowEmpty속성 추가
+```js
+gridView.setColumns([
+{ 
+  name:"columnName", fieldName:"fieldName",
+  editor:{
+      type:"date",
+      mask:{editMask:"0000-00-00", allowEmpty:true}
+  }
+}
+])
+```
+
+1. div element를 이용한 그리드 생성
+  - div element의 id를 이용해서 그리드를 생성하는 것 외에 div element를 전달하여 그리드를 생성할수 있도록 개선되었습니다.
+```js
+var gridView, dataProvider;
+window.onload = function() {
+  var div = document.getElementById("divId");
+  // 또는 
+  var div = $("#bizPageName #gridView");
+  div = div.length > 0 div[0] : null;
+  if (div) {
+    gridView = new RealGridJS.GridView(div);
+  }
+}
+```
+
+1. [buttonVisibility](http://help.realgrid.com/api/types/ButtonVisibility/)
+  - button의 visible을 function의 결과값으로 변경할수 있도록 개선 되었습니다.
+```js
+gridView.setColumns([
+{ 
+  name:"columnName",
+  field:"fieldName",
+  button:"action",
+  buttonVisibility:function(grid, index, focused, mouseEntered) {
+      var value = grid.getValue(index.itemIndex, index.column);
+      return value == "버튼" && (focused || mouseEntered)
+  }
+}])
+```
+
+1. [ColumnFooter](http://help.realgrid.com/api/types/ColumnFooter/)
+  - ColumnFooter.callback함수의 인자에 grid가 추가되었습니다.
+  - ColumnFooter.groupCallback함수의 인자에 grid와 groupModel이 추가 되었습니다.
+```js
+gridView.setColumns([
+{ 
+  name:"column",
+  fieldName:"field",
+  footer:{
+      callback:function(column, footerIndex, grid) {
+      },
+      groupCallback:function(itemIndex, column, grid, groupModel) {
+      }
+  }
+}
+])
+```
+
+1. [SeriesColumn]({{ '/Series/SeriesColumn/' | prepend: site.baseurl }})
+  - SeriesColumn에 표시되는 데이터의 구분자를 변경할수 있도록 valueSeparator 속성이 추가되었습니다.
+```js
+gridView.setColumns([
+{ 
+  name:"colSeries",
+  fieldNames:"field1,field2,field3,field4",
+  renderer:{
+      type:"seriesText",
+      valueSeparator:"~"
+  } 
+}
+])
+```
+
+1. [getCheckedRows](http://help.realgrid.com/api/GridView/getCheckedRows/)
+  - [paging](http://help.realgrid.com/api/features/Paging/)어 있는 그리드에서 현재 보여지고 있는 페이지 아닌 다른 페이지에 있는 Item이 체크되어있는 경우 체크되어있는 전체 dataRow를 가져올수 있도록 allRows인자가 추가되었습니다.
+
+1. [onColumnHeaderClicked](http://help.realgrid.com/api/GridBase/onColumnHeaderClicked/)
+  - 컬럼 헤더를 클릭했을때 마우스 좌, 우 클릭을 구분할수 있도록 onColumnHeaderClicked함수의 인자로 rightClicked가 추가 되었습니다.
+
+1. [DateCellEditor](http://help.realgrid.com/api/types/DateCellEditor/)
+  - dateEditor에 년주차를 표시할수 있도록 showWeeks 속성이 추가되었습니다.
+  - 년주차를 선택할수 있는 weekSelectable속성이 추가되었습니다.
+  - dateEditor에서 시작 요일을 변경할수 있는 startWeek 속성이 추가되었습니다.
+```js
+dataProvider.setFields([
+  {name:"text", dataType:"text"}
+]);
+gridView.setColumns([
+{ 
+  name:"column",
+  fieldName:"text",
+  editor:{
+      type:"date",
+      showWeeks:true,
+      weekSelectable:true
+  }
+}
+]);
+```
+  - dataType이 "date"인 컬럼의 경우 weekSelectable을 true로하여도 년주차를 선택할수 없습니다.
+  - dataType이 "text"이고 editor의 weekSelectable이 true인경우 년주차 또는 일자를 선택하면 "201742"와 같은 형태로 선택값이 return됩니다.
+  - CSS를 이용하는 경우 년주차Cell의 style을 변경할수 있도록 "rg-cal-year-weeks" class가 추가 되었습니다.
+
+1. [searchCell](http://help.realgrid.com/api/GridBase/searchCell/)
+  - field의 순서와 컬럼의 순서가 다르거나 하나의 필드가 여러개의 컬럼에 연결된 경우 지정된 컬럼의 순서대로 cell을 검색할수 있도록 [SearchOptions](http://help.realgrid.com/api/types/SearchOptions/)에 columns가 추가되었습니다.
+  - option에 fields가 있는 경우 columns는 무시됩니다.
+```js
+  var columns = gridView.getColumnNames(true,true,true);
+  var current = gridView.getCurrent();
+  var startFieldIndex = columns.indexOf(current.column)+1;
+  var startItemIndex = current.itemIndex;
+  var value = "검색조건";
+  gridView.searchCell({columns:columns, value:value, startItemIndex:startItemIndex, startFieldIndex:startFieldIndex});
+```
+
+1. [exportGrid](http://help.realgrid.com/api/GridBase/exportGrid/)
+  - gridView의 data를 csv파일로 내보낼수 있는 기능이 추가되었습니다.
+```js
+  gridView.exportGrid({type:"csv", target:"local", fileName:"test.csv"});
+```
+  - csv파일로 export할때 columnGroup은 해제되어 표시됩니다.
+  - "remote"를 이용하는 경우 response header의 "Context-Type"을 "text/csv"로 변경하여야 합니다.
+
+1. [ImageButtonsCellRenderer](http://help.realgrid.com/api/types/ImageButtonsCellRenderer/)
+  - imageButtonsCellRenderer가 표시하는 버튼의 위치를 변경할수 있도록 alignment속성이 추가되었습니다.
+  - button별로 cursor를 변경할수 있도록 cursor속성이 추가되었습니다.
+```js
+  var imageButtons = [
+    { name:"조회",
+      up:"./image/search_normal.png",
+      hover:"./image/search_hover.png",
+      down:"./image/search_click.png",
+      cursor:"pointer",
+      width:45
+    }
+  ];
+  gridView.setColumns([
+    { name:"column",
+      fieldName:"fieldName",
+      renderer:{type:"imageButtons", editable:false, alignment:"center"}
+    }
+  ])
+```
+  - alignment가 "near"또는 "center"인경우는 editor를 사용할수 없습니다.
+
+1. [DataColumn](http://help.realgrid.com/api/types/DataColumn/)
+  - column button의 cursor를 변경할수 있도록 buttonCursor 속성이 추가되었습니다.
+```js
+  gridView.setColumns([
+    { name:"column",
+      fieldName:"fieldName",
+      button:"action",
+      buttonCursor:"pointer"
+    }
+  ])
+```
+
+1. [getColumnNames](http://help.realgrid.com/api/GridBase/getColumnNames/)
+  - 화면에 보이는 컬럼만 가져오도록 하는 visibleOnly인자가 추가되었습니다.
+  - 사용자가 컬럼의 순서를 변경한 경우 화면에 보이는 순서대로 컬럼명을 가져올수 있도록 ordered인자가 추가 되었습니다.
+
+1. [PasteOptions](http://help.realgrid.com/api/types/PasteOptions/)
+  - 대량데이터를 붙여넣기 할때 gridView가 refresh되면서 시간이 오래 걸리는 현상을 개선하기 위해서 noDataEvent속성이 추가 되었습니다.
+  - pasteOptions.noDataEvent를 true로 설정하고 여러줄의 Data를 붙여넣기 하는 경우 붙여넣기를 하는 중에는 refresh되지 않습니다.
+
+1. [NumberCellEditor](http://help.realgrid.com/api/types/NumberCellEditor/)
+  - numberCellEditoir에서 정수부의 최대길이를 지정할수 있는 maxIntegerLength 속성이 추가되었습니다.
+```js
+gridView.setColumns([
+{ 
+    name:"column",
+    fieldName:"field",
+    editor:{  
+          type:"number",
+          editFormat:"#,##0.00",
+          maxIntegerLength:5
+    }
+}
+]);
+```
+
+#### 오류 수정 
+1. [HeaderSummary](http://help.realgrid.com/api/types/HeaderSummary/)
+  - headerSummary의 속성을 설정하는 순서에 따라 일부 속성이 적용되지 않는 오류를 수정하였습니다.
+```js
+  gridView.setHeader({
+    summary:{
+      visible:true,
+      mergeCells:["column1","column2","column3"],
+      styles:{background:"#40c0c000"}
+    }
+  })
+```
+
+1. [DateCellEditor](http://help.realgrid.com/api/types/DateCellEditor/)
+  - dataType이 "text"인 column의 editor가 dateEditor이면서 mask가 설정되어있을때 정상적으로 입력되지 않는 오류를 수정하였습니다.
+```js
+  gridView.setColumns([
+    { name:"column",
+      fieldName:"textField",
+      editor:{
+        type:"date",
+        mask:{
+          editMask:"9999-99-99"
+        },
+        datetimeFormat:"yyyyMMdd"
+      }
+    }
+  ])
+```
+
+1. [CheckCellRenderer](http://help.realgrid.com/api/types/CheckCellRenderer/)
+  - 하나의 셀을 선택후 shift키를 누른상태에서 checkCellRenderer를 가지는 컬럼의 셀을 마우스로 클릭하는 이전에 선택된 셀의 값이 변경되는 현상을 수정하였습니다.
+
+1. [SaveColumnLayout](http://help.realgrid.com/api/GridBase/saveColumnLayout/)
+  - 첫번째 컬럼이 숨겨져있을때 컬럼의 위치를 이동하고 saveColumnLayout함수를 이용하여 column정보를 가져오면 컬럼의 순서가 달라지는 현상을 수정하였습니다.
+
+1. 모바일그리드 
+  - 모바일 그리드에서 마지막 행이 표시될때 스크롤 하면 페이지가 스크롤 되도록 개선되었습니다.
+
+1. [Cell Editor](http://help.realgrid.com/api/features/Cell%20Editor/)
+  - Chrome Brower에서 searchEditor가 활성화 된 상태에서 엔터키 입력시 onEditSearch 이벤트의 text인자에 비정상적인 값이 넘어오는 현상을 수정하였습니다.
+
+1. [DataColumn](http://help.realgrid.com/api/types/DataColumn/)
+  - [displayOptions](http://help.realgrid.com/api/types/DisplayOptions/).hintDuration이 설정된 상태에서 column.cursor를 지정하여 컬럼별로 커서를 변경하는 경우 hintDuration만큼 지연되어 변경되는 현상을 수정하였습니다.
+
+1. [ColumnFooter](http://help.realgrid.com/api/types/ColumnFooter/)
+  - rowGrouping상태이면서 rowGroup이 접혀져 있는 그리드를 엑셀로 export시 footer.groupCallback 함수의 footerIndex가 -1로 전달되어 footer를 찾지못하는 현상이 있습니다.
+  - footer의 GroupModel을 groupCallback의 인자로 추가 하여 group의 값을 참조할수 있도록 수정하였습니다.
 
 ## 1.1.25 (2017년 8월)
 

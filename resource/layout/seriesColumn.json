@@ -14,7 +14,7 @@
     "name": "colSeries",
     "type": "series",
     "fieldNames": "2000,2002,2004,2006,2008,2010",
-    "width": 120,
+    "width": 170,
     "header": { "text": "Series" },
     "styles": { 
         "background": "#0800ff00",

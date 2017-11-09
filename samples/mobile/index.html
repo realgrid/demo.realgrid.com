@@ -3,9 +3,9 @@
 	<title>RealGridJS ImageButton sample page</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 	<script src="/lib/realgrid/realgridjs-lic.js"></script>
-	<script src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs_eval.1.1.25.min.js"></script>
-	<script src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs-api.1.1.25.js"></script>
-	<script src="/lib/realgrid/realgridjs_eval.1.1.25/jszip.min.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.26/realgridjs_eval.1.1.26.min.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.26/realgridjs-api.1.1.26.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.26/jszip.min.js"></script>
 	<script src="/lib/jquery/jquery-1.11.2.min.js"></script>
 	<script language="javascript">
 	var dataProvider;
@@ -15,7 +15,7 @@
 
 	$(document).ready( function(){
 	    RealGridJS.setTrace(false);
-	    RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.25/");
+	    RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.26/");
 	    
 	    dataProvider = new RealGridJS.LocalDataProvider();
 	    dataProvider.setFields([{
@@ -60,7 +60,11 @@
 		        hoverUrl: "/resource/image/btnImages/search_hover.png",
 		        activeUrl: "/resource/image/btnImages/search_click.png"
 		    },     
-		    header: { "text": "ImageButton" },
+		    header: { 
+                "text": "ImageButton", 
+                "imageLocation": "right",
+                "imageUrl": "../../images/realgridsmall.png"
+            },
 		    styles: { "textAlignment": "center", "font": "Tahoma" }
 		}, {
         name: "column2",
@@ -189,7 +193,8 @@
     	fieldName: "field10",
     	header: {
     		text: "textSort"
-    	}
+    	},
+        width:30
     },{
     	name: "column11",
     	fieldName: "field11",
@@ -207,6 +212,16 @@
 			addLog("itemIndex: " + itemIndex + ", column: " + column.name + ", buttonIndex: " + buttonIndex + ", name: " + name);
           //alert("itemIndex: " + itemIndex + ", column: " + column.name + ", buttonIndex: " + buttonIndex + ", name:" + name);
         }
+
+        gridView.onColumnHeaderImageClicked =  function (grid, column) {
+            addLog("column: " + column.name); 
+        };
+
+        gridView.onColumnHeaderDblClicked =  function (grid, column) {
+            if (column.name == "column10") {
+                gridView.fitColumnWidth('column10', 0, 0, false);
+            }
+        };
 
         var menu = [{
 		    label: "menu1 입니다.",

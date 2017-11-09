@@ -121,7 +121,7 @@ gridView.addCellRenderers([{
 }]);
 
 //컬럼 설정
-{
+var columns = [{
   "name": "ImageButton",
   "fieldName": "ImageButton",
   "width": "100",
@@ -135,7 +135,10 @@ gridView.addCellRenderers([{
   "header": {
     "text": "동적 버튼"
   }
-}
+}];
+
+gridView.setColumns(columns);
+
 ```
 
 <script>

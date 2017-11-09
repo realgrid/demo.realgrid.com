@@ -112,7 +112,7 @@
             header: {
                 text: "생활반"
             },
-            width: "200",
+            width: "120",
             styles: {
                 textAlignment: "center"
             }
@@ -199,32 +199,48 @@
         },];
 
 		gridView.setColumns(columns); 
+        gridView.setSortingOptions({
+            handleBorderColor: "#ff000000",
+            handleColor: "#ff000000",
+            hoveredHandleColor: "#ff000000"
+        })
 
         gridView.setStyles({
             grid:{
-                font:"궁서체"
+                font: "Arial",
+                fontSize:12,
+                border:"#ff000000,1",
+                foreground:"#ff515151"
             },
             body:{
                 dynamicStyles:[{
                     criteria:"(row mod 2) = 0",
                     styles:{
-                        background:"#fff5f5f5"
+                        background:"#ffffffff"
                     }
                 }, {
                     criteria:"(row mod 2) = 1", 
                     styles:{
-                        background:"#ffffffff"
+                        background:"#fff5f5f5"
                     }
                 }]
             },
             header:{
-                background:"#ffe6ebef"
+                background:"#ffe6ebef",
+                borderRight:"#ffd2d2d2,1",
+                borderBottom:"#ffd2d2d2,1"
+            },
+            checkBar:{
+                borderRight:"#ffd2d2d2,1",
+                borderBottom:"#ffd2d2d2,1"
             }
         })
 
         gridView.setIndicator({visible:false});
         gridView.setStateBar({visible:false});
+        gridView.setFooter({visible:false});
         gridView.setPanel({visible:false});
+
 
 		var data = [{"field1":"1","field2":"비담임","field3":"2017/09/11","field4":"","field5":"2017/06/26","field6":"예술분장2반(4호실)","field7":"","field8":"학생","field9":"","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
             {"field1":"2","field2":"담임","field3":"2017/09/11","field4":"","field5":"2017/04/11","field6":"예술분장1반(3호실)","field7":"","field8":"학생","field9":"","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
@@ -235,7 +251,17 @@
             {"field1":"7","field2":"담임","field3":"2017/09/11","field4":"","field5":"2017/08/21","field6":"예술분장3반(5호실)","field7":"","field8":"보호자","field9":"대면상담","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
             {"field1":"8","field2":"담임","field3":"2017/09/11","field4":"","field5":"2017/07/13","field6":"바리스타1반(1호실)","field7":"","field8":"보호자","field9":"대면상담","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
             {"field1":"9","field2":"비담임","field3":"2017/09/11","field4":"","field5":"2017/05/29","field6":"예술분장1반(3호실)","field7":"","field8":"보호자","field9":"대면상담","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
-            {"field1":"10","field2":"비담임","field3":"2017/09/11","field4":"","field5":"2017/06/22","field6":"바리스타3반(7호실)","field7":"","field8":"보호자","field9":"대면상담","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"}
+            {"field1":"10","field2":"비담임","field3":"2017/09/11","field4":"","field5":"2017/06/22","field6":"바리스타3반(7호실)","field7":"","field8":"보호자","field9":"대면상담","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
+            {"field1":"11","field2":"비담임","field3":"2017/09/11","field4":"","field5":"2017/06/26","field6":"예술분장2반(4호실)","field7":"","field8":"학생","field9":"","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
+            {"field1":"12","field2":"담임","field3":"2017/09/11","field4":"","field5":"2017/04/11","field6":"예술분장1반(3호실)","field7":"","field8":"학생","field9":"","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
+            {"field1":"13","field2":"담임","field3":"2017/09/11","field4":"","field5":"2017/05/29","field6":"예술분장1반(3호실)","field7":"","field8":"보호자","field9":"대면상담","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
+            {"field1":"14","field2":"비담임","field3":"2017/09/11","field4":"","field5":"2017/03/20","field6":"바리스타3반(7호실)","field7":"","field8":"보호자","field9":"통신상담","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
+            {"field1":"15","field2":"담임","field3":"2017/09/11","field4":"","field5":"2017/06/12","field6":"바리스타3반(7호실)","field7":"","field8":"보호자","field9":"대면상담","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
+            {"field1":"16","field2":"담임","field3":"2017/09/11","field4":"","field5":"2017/06/12","field6":"예술분장4반(6호실)","field7":"","field8":"보호자","field9":"대면상담","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
+            {"field1":"17","field2":"담임","field3":"2017/09/11","field4":"","field5":"2017/08/21","field6":"예술분장3반(5호실)","field7":"","field8":"보호자","field9":"대면상담","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
+            {"field1":"18","field2":"담임","field3":"2017/09/11","field4":"","field5":"2017/07/13","field6":"바리스타1반(1호실)","field7":"","field8":"보호자","field9":"대면상담","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
+            {"field1":"19","field2":"비담임","field3":"2017/09/11","field4":"","field5":"2017/05/29","field6":"예술분장1반(3호실)","field7":"","field8":"보호자","field9":"대면상담","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"},
+            {"field1":"20","field2":"비담임","field3":"2017/09/11","field4":"","field5":"2017/06/22","field6":"바리스타3반(7호실)","field7":"","field8":"보호자","field9":"대면상담","field10":"","field11":"2017/09/11","field12":"2017.09.11","field13":"결재상신","field14":"OO소년원"}
         ]
 		dataProvider.fillJsonData(data);
 
@@ -248,6 +274,6 @@
 <br/>
 <h3>범죄예방정보화센터 teams 그리드 화면을 RealGrid로 구현한 화면입니다.</h3>
 ※ 검색결과
-<div id="realgrid" style="height:383px;width:100%"></div>
+<div id="realgrid" style="height:383px;width:880px"></div>
 </body>
 </html>
