@@ -1,7 +1,7 @@
 <script> 
   $(document).ready( function() {
 
-    $('input[type="text"]').keyup(function(){
+    $('input[id="desktop-search-input"]').keyup(function(){
 
       var that = this, $allListElements = $('ul[class="list-toc"] > li');
 
@@ -14,8 +14,8 @@
       $allListElements.hide();
       $matchingListElements.show();
 
+    });
   });
-});
 </script>
 
 <div class="sidebar">
