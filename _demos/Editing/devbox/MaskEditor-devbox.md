@@ -61,3 +61,24 @@ mask: `"0000-0000"` 로 입력하는 경우 입력된 형식에 맞춰 편집기
     ...
 }
 ```
+
+#### TimeCellEditor 마스크 편집기
+
+텍스트타입 형태로된 시간 편집기를 구현할 수 있습니다.
+
+```js
+{
+    ...
+    "editor": {
+        "textAlignment": "center",
+        "mask":{
+            "definitions": {"b":"[0-2]","c":"[0-3]","d":"[0-5]","e":"[0-9]"},
+            "editMask":"bc:de:de",  
+            "includedFormat":true,
+            "placeHolder":"00:00:00",
+            "overWrite": true
+        }
+    }
+    ...
+}
+```

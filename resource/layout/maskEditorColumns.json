@@ -51,6 +51,30 @@
 			"datetimeFormat":"yyyy-MM-dd"
 		}
     }, {
+        "name": "time",
+        "fieldName": "time",
+        "width": 120,
+        "header": { 
+            "text": "TimeCellEditor",
+            "styles": {
+                "background": "linear,#22ffd500,#ffffd500,90"
+            }
+        },
+        "styles": {
+            "textAlignment": "center",
+            "font": "arial"
+        },
+        "editor": {
+            "textAlignment": "center",
+            "mask":{
+                "definitions": {"b":"[0-2]","c":"[0-3]","d":"[0-5]","e":"[0-9]"},
+                "editMask":"bc:de:de",  
+                "includedFormat":true,
+                "placeHolder":"00:00:00",
+                "overWrite": true
+            }
+        }
+    },{
         "name": "userid",
         "fieldName": "userid",
         "width": 80,

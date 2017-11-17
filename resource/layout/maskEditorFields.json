@@ -17,4 +17,6 @@
     "fieldName": "email"
 }, {
     "fieldName": "phone"
+}, {
+    "fieldName": "time"
 }]
