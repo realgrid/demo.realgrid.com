@@ -1,8 +1,13 @@
 #### 행 병합 그루핑
 
+ RowGroup.mergeMode 속성을 true로 설정하면 행 Grouping 시 묶여진 컬럼 셀들을 병합셀로 표시합니다.
+
+```js
+gridView.setRowGroup({mergeMode:true})
+```
+
  [행 그룹핑](/demo/RowGroup/RowGrouping/)과 마찬가지로 그룹마다 Header나 Footer를 추가하여 표시할 수 있습니다.  
  마찬가지로, 그룹 헤더에 표시할 텍스트는 `rowGroup.headerStatement` 속성으로 지정하고, 각 Footer 셀에 표시할 값은 `Column.footer.groupExpression`으로 지정할 수 있습니다. 
-
 
 #### RowGroup 설정
 

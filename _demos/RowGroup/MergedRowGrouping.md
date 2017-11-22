@@ -10,7 +10,7 @@ categories:
 tags: ['grouping', 'merge', '병합']
 ---
 
-그리드 rowGroup.merged 속성을 true로 설정하면, 행 Grouping 시 묶여진 컬럼 셀들을 병합셀로 표시합니다. 
+행 Grouping 시 묶여진 컬럼 셀들을 병합셀로 표시합니다. 
 
 <script>
 var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
