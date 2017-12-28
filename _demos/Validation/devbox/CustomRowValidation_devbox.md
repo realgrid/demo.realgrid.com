@@ -42,7 +42,7 @@ gridView.onValidateRow = function(grid, itemIndex, dataRow, inserting, values) {
 }
 ```
 
-레벨, 메시지, 에러 상태 등에 대해서는 [Row Validation](/demo/Validation/RowValidation/)을 참조하세요.
+레벨, 메시지, 에러 상태 등에 대해서는 [Row Validation](http://demo.realgrid.com/Validation/RowValidation/)을 참조하세요.
 
 
 <script>

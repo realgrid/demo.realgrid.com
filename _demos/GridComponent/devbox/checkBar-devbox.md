@@ -189,6 +189,21 @@ gridView.setCheckableExpression("row < 10", true);
 gridView.resetCheckables();
 ```
 
+#### 선택된 행 값 가져오기
+
+<a class="btn primary small round lowercase" id="btnGetCheckedRows">선택된 rowId 값 가져오기</a>
+
+```js
+var rows = gridView.getCheckedRows(true);
+alert(rows);
+```
+
+<a class="btn primary small round lowercase" id="btnGetCheckedItems">선택된 itemIndex 값 가져오기</a>
+
+```js
+var items = gridView.getCheckedItems();
+alert(items);
+```
 
 <script>
 
@@ -297,5 +312,23 @@ gridView.resetCheckables();
   $('#btnResetCheckables').click(function() {
     gridView.resetCheckables(); 
   });   
+
+  $('#btnGetCheckedRows').click(function() {
+    var rows = gridView.getCheckedRows(true);
+    if(rows.length == 0){
+      alert("선택된 행이 없습니다.");
+    }else {
+      alert("선택된 행의 dataRow값은: " + rows + "입니다.");
+    }
+  });
+
+  $('#btnGetCheckedItems').click(function() {
+    var items = gridView.getCheckedItems();
+    if(items.length == 0){
+      alert("선택된 행이 없습니다.");
+    }else {
+      alert("선택된 행의 itemIndex값은: " + items + "입니다.");
+    }
+  });
 
 </script>

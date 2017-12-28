@@ -10,8 +10,8 @@ categories:
 tags: ['editing', '편집', '편집기', 'editor', '달력', '주차']
 ---
 
-YYYYWW, YYYY-WW, YYYYWW -> YYYY-WW 컬럼은 주차 선택 기능이 설정된 컬럼이며 각 데이터 형태에 따라 바인딩 하는 방식과 그리드에 표시하는 방식을 설정할 수 있습니다.  
-YYYYWW -> YYYY-WW 컬럼은 YYYYWW 형태의 데이터를 그리드에서 마스크 편집기 기능을 사용해서 YYYY-WW 형태로 표시합니다.
+yyyyWW, yyyy-WW, yyyyWW -> yyyy-WW 컬럼은 주차 선택 기능이 설정된 컬럼이며 각 데이터 형태에 따라 바인딩 하는 방식과 그리드에 표시하는 방식을 설정할 수 있습니다.  
+yyyyWW -> yyyy-WW 컬럼은 yyyyWW 형태의 데이터를 그리드에서 마스크 편집기 기능을 사용해서 yyyy-WW 형태로 표시합니다.
 
 
 <script>

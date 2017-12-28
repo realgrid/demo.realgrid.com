@@ -38,13 +38,13 @@ tags: ['editing', '편집', '편집기', 'editor', '달력','월']
   dpVar="dataProvider"
   gridId="realgrid"
 
-  fieldSet="DefaultField"
-  columnSet="BTDataColumns"
+  fieldSet="BTDateFields"
+  columnSet="BTDateColumns"
   dpOptionSet="dataProviderOption1"
   gridOptionSet="DefaultGridOption"
   styleSet="style1"
 
-  dataSet="DefaultDataSet.json"
+  dataSet="BTDateData.json"
   successDataSet="onGridSuccessDataSet"
   doneDataSet="onDoneDataSet"
 

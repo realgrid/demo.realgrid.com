@@ -36,7 +36,7 @@
     "fieldName": "dateTime1",
     "width": "110",
     "header": {
-        "text": "YYYYWW",
+        "text": "yyyyWW",
         "styles": {
             "background": "linear,#22ffd500,#ffffd500,90"
         }
@@ -56,7 +56,7 @@
     "fieldName": "dateTime2",
     "width": "110",
     "header": {
-        "text": "YYYY-WW",
+        "text": "yyyy-WW",
         "styles": {
             "background": "linear,#22ffd500,#ffffd500,90"
         }
@@ -79,7 +79,7 @@
     "fieldName": "dateTime3",
     "width": "160",
     "header": {
-        "text": "YYYYWW -> YYYY-WW",
+        "text": "yyyyWW -> yyyy-WW",
         "styles": {
             "background": "linear,#22ffd500,#ffffd500,90"
         }

@@ -17,6 +17,8 @@ tags: ['LookupTree']
 <script>
 var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
   dataProvider.setRows(data);
+
+  
 }
 
 var onDoneDataSet = function() {
@@ -38,6 +40,8 @@ var onDoneDataSet = function() {
   };
 
   gridView.addLookupSource(source);
+
+  console.log("laddLookupSource")
 
   gridView.onEditCommit = function (id, index, oldValue, newValue) {
     if (index.field == "Country") {
@@ -80,7 +84,6 @@ var onDoneDataSet = function() {
       oldKey = keyValue;
     }
   }
-
 }
 </script>
 
@@ -98,7 +101,10 @@ var onDoneDataSet = function() {
 
   dataSet="griddata1.json"
   successDataSet="onGridSuccessDataSet"
+
   doneDataSet="onDoneDataSet"
+
+
 
   gridWidth="100%"
   gridHeight="300px" %}
