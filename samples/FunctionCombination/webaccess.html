@@ -20,10 +20,16 @@
 	        amText: "오전",
 	        pmText: "오후"
 	    });
+
 	    dataProvider.setFields([
+	    	{
+	    		"fieldName": "ImageButton"
+	    	},
+	    	{
+	    		"fieldName": "ImageButtons"
+	    	},
 		    {
-		        "fieldName": "OrderID",
-		        "dataType": "text"
+		        "fieldName": "OrderID"
 		    },
 		    {
 		        "fieldName": "CustomerID"
@@ -55,32 +61,45 @@
 	    gridView = new RealGridJS.GridView("realgrid", true);
 	    gridView.setDataSource(dataProvider);   
 	    gridView.setColumns([
+			{
+				"name": "ImageButton",
+				"fieldName": "ImageButton",
+				"width": 50,
+				"renderer": {
+					"type": "imageButton",
+					"text": "",
+					"name": "팝업",
+					"imageUrl": "/resource/image/btnImages/popup_normal.png",
+					"hoverUrl": "/resource/image/btnImages/popup_hover.png",
+					"activeUrl": "/resource/image/btnImages/popup_click.png",
+				},
+				"editable": false,
+				"styles": {
+					"textAlignment": "near"
+				},
+				"header": {
+					"text": "팝업 버튼"
+				}
+			},
 		    {
-		        "name": "EmployeeID",
-		        "fieldName": "EmployeeID",
-		        "width": "150",
+		        "name": "ImageButtons",
+		        "fieldName": "ImageButtons",
+		        "width": 50,
+		        "buttonVisibility": "always",
 		        "button": "image",
 		        "imageButtons": {
 		            "width": 45,
 		            "height": 13,
 		            "images": [
 		                {
-		                    "name": "팝업버튼",
-		                    "up": "/resource/image/btnImages/popup_normal.png",
-		                    "hover": "/resource/image/btnImages/popup_hover.png",
-		                    "down": "/resource/image/btnImages/popup_click.png"
-		                },
-		                {
-		                    "name": "조회버튼",
+		                    "name": "조회",
 		                    "up": "/resource/image/btnImages/search_normal.png",
 		                    "hover": "/resource/image/btnImages/search_hover.png",
 		                    "down": "/resource/image/btnImages/search_click.png"
 		                }
 		            ]
 		        },
-		        "styles": {
-		            "textAlignment": "center"
-		        },
+		        "editable": false,
 		        "header": {
 		            "text": "직원 조회"
 		        }
@@ -339,7 +358,13 @@
 		]);
 		
 		loadData(dataProvider);
+/*
+		var data = ["팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회","팝업","조회"]
 
+	    for(var i = 0; i < data.length; i++){
+	      dataProvider.setValue(i,"ImageButton",data[i])
+	    }
+*/
 		gridView.setDisplayOptions({rowHeight:30});
 		gridView.setColumnProperty("EmployeeID", "buttonVisibility", "always");
 		gridView.setColumnProperty("EmployeeID2", "buttonVisibility", "always");
@@ -354,7 +379,11 @@
 	    };
 
 	    gridView.onImageButtonClicked = function (grid, itemIndex, column, buttonIndex, name) {
+	    	if(buttonIndex == undefined){
+	    		alert("onImageButtonClicked: " + itemIndex + ", " + column.name);
+	    	}else{
 	          alert("onImageButtonClicked: " + itemIndex + ", " + column.name+", " + buttonIndex + ", " + name);
+	    	}
 	    };
 		gridView.onLinkableCellClicked = function (grid, index, url) {
 		    window.open(url, '_newtab');
