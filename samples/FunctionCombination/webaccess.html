@@ -3,8 +3,8 @@
 	<title>RealGridJS sample page</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<script src="/lib/realgrid/realgridjs-lic.js"></script>
-	<script src="/lib/realgrid/realgridjs_eval.wa/realgridjs_eval.1.1.22.min.js"></script>
-	<script src="/lib/realgrid/realgridjs_eval.wa/realgridjs-api.1.1.22.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.wa/realgridjs_eval.1.1.26.min.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.wa/realgridjs-api.1.1.26.js"></script>
 	<script src="/lib/jquery/jquery-1.11.2.min.js"></script>
 	<script language="javascript">
 	var dataProvider;
@@ -42,6 +42,9 @@
 		        "dataType": "datetime"
 		    },
 		    {
+		    	"fieldName": "CustomerID2"
+		    },
+		    {
 		        "fieldName": "CompanyName"
 		    },
 		    {
@@ -71,6 +74,7 @@
 					"activeUrl": "/resource/image/btnImages/popup_click.png",
 				},
 				"editable": false,
+				"readOnly": true,
 				"styles": {
 					"textAlignment": "near"
 				},
@@ -97,6 +101,7 @@
 		            ]
 		        },
 		        "editable": false,
+		        "readOnly": true,
 		        "header": {
 		            "text": "직원"
 		        }
@@ -109,6 +114,7 @@
 		        "styles": {
 		            "textAlignment": "center"
 		        },
+		        "editable": false,
 		        "header": {
 		            "text": "직원 번호"
 		        }
