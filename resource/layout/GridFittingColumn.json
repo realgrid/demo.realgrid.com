@@ -1,4 +1,63 @@
 [{
+    "type": "group",
+    "name": "GroupOrder",
+    "orientation": "vertical",
+    "width": 250,
+    "visible": false,
+    "columns": [
+        {
+            "type": "group",
+            "name": "GroupIds",
+            "columns": [
+                {
+                    "name": "OrderID",
+                    "fieldName": "OrderID",
+                    "type": "data",
+                    "width": "90",
+                    "styles": {
+                        "textAlignment": "center"
+                    },
+                    "header": {
+                        "text": "Order"
+                    }
+                },
+                {
+                    "name": "CustomerID",
+                    "fieldName": "CustomerID",
+                    "width": "130",
+                    "styles": {
+                        "textAlignment": "center"
+                    },
+                    "header": {
+                        "text": "Customer ID"
+                    }
+                },
+                {
+                    "name": "EmployeeID",
+                    "fieldName": "EmployeeID",
+                    "width": "100",
+                    "styles": {
+                        "textAlignment": "center"
+                    },
+                    "header": {
+                        "text": "Employee ID"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "OrderDate",
+            "fieldName": "OrderDate",
+            "width": "130",
+            "styles": {
+                "textAlignment": "center"
+            },
+            "header": {
+                "text": "Order Date"
+            }
+        }
+    ]
+},{
     "name": "OrderID",
     "fieldName": "OrderID",
     "type": "data",
@@ -8,18 +67,6 @@
     },
     "header": {
         "text": "Order ID"
-    }
-}, {
-    "name": "CustomerID",
-    "fieldName": "CustomerID",
-    "type": "data",
-    "width": "130",
-    "fillWidth": 1,
-    "styles": {
-        "textAlignment": "center"
-    },
-    "header": {
-        "text": "Customer ID"
     }
 }, {
     "name": "EmployeeID",
@@ -32,17 +79,6 @@
     },
     "header": {
         "text": "Employee ID"
-    }
-}, {
-    "name": "OrderDate",
-    "fieldName": "OrderDate",
-    "type": "data",
-    "width": "110",
-    "styles": {
-        "textAlignment": "center"
-    },
-    "header": {
-        "text": "Order Date"
     }
 }, {
     "name": "CompanyName",

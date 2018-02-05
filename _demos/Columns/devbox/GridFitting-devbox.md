@@ -42,6 +42,21 @@ gridView.setDisplayOptions({
 });
 ```
 
+#### 그룹컬럼 보기
+버튼 클릭 시 그룹컬럼이 그리드에 표시됩니다.
+
+<a class="btn primary small round lowercase" id="btnGroupColumnVisible">그룹컬럼 보이기</a>
+
+```js
+var groupVisible = gridView.getColumnProperty("GroupOrder","visible");
+
+if(groupVisible){
+  gridView.setColumnPropert("GroupOrder", "visible", false);
+} else {
+  gridView.setColumnPropert("GroupOrder","visible", true);
+}
+```
+
 
 <script>
 
@@ -67,6 +82,18 @@ $("#btnFill").click(function() {
   gridView.setDisplayOptions({
     fitStyle: "fill"
   });
+});
+
+$("#btnGroupColumnVisible").click(function() { 
+  var groupVisible = gridView.getColumnProperty("GroupOrder","visible");
+
+  if(groupVisible){
+    gridView.setColumnProperty("GroupOrder", "visible", false);
+    document.getElementById("btnGroupColumnVisible").innerHTML = "그룹컬럼 보이기"
+  } else {
+    gridView.setColumnProperty("GroupOrder","visible", true);
+    document.getElementById("btnGroupColumnVisible").innerHTML = "그룹컬럼 숨기기"
+  }
 });
 </script>
 

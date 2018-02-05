@@ -32,6 +32,87 @@
         "text": "Employee ID"
     }
 }, {
+    "name": "dateTime1",
+    "fieldName": "dateTime1",
+    "width": "110",
+    "header": {
+        "text": "yyyyMM",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    },
+    "editor": {
+        "type": "btdate",
+        "btOptions": {
+            "startView": 1,
+            "minViewMode": 1,
+            "todayBtn": "linked",
+            "language": "kr",
+            "todayHighlight": true,
+            "language": "ko"
+        },
+        "datetimeFormat": "yyyyMM",
+        "textReadOnly": true,
+        "mask": {
+            "editMask": "999999"
+        }
+    }
+}, {
+    "name": "dateTime2",
+    "fieldName": "dateTime2",
+    "width": "110",
+    "header": {
+        "text": "yyyy-MM",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    },
+    "editor": {
+        "type": "btdate",
+        "btOptions": {
+            "startView": 1,
+            "minViewMode": 1,
+            "todayBtn": "linked",
+            "language": "kr",
+            "todayHighlight": true,
+            "language": "ko"
+        },
+        "textReadOnly": true,
+        "datetimeFormat": "yyyy-MM",
+        "mask": {
+            "editMask": "9999-99",
+            "includedFormat": true
+        }
+    }
+}, {
+    "name": "dateTime3",
+    "fieldName": "dateTime3",
+    "width": "160",
+    "header": {
+        "text": "yyyyMM -> yyyy-MM",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    },
+    "displayRegExp": "([0-9]{4})([0-9]{2})$",
+    "displayReplace": "$1-$2",
+    "editor": {
+        "type": "btdate",
+        "btOptions": {
+            "startView": 1,
+            "minViewMode": 1,
+            "todayBtn": "linked",
+            "language": "kr",
+            "todayHighlight": true,
+            "language": "ko"
+        },
+        "datetimeFormat": "yyyyMM",
+        "textReadOnly": true,
+        "mask": {
+            "editMask": "9999-99"
+        }
+    }
+}, {
     "name": "OrderDate",
     "fieldName": "OrderDate",
     "type": "data",

@@ -70,7 +70,7 @@ nav_links:
     url: http://demo.realgrid.com
     partial: illustration-demo
     active: true
-  - title: Tutorials
+  - title: Tutorials  
     url: http://help.realgrid.com/tutorial
     partial: illustration-tutorial
   - title: API Docs
