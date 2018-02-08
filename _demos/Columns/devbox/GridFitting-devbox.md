@@ -1,3 +1,18 @@
+#### 그룹컬럼 보기 
+버튼 클릭으로 그룹 컬럼이 표시된 상태에서 컬럼 너비 자동 조정 기능을 적용시켜 보시기 바랍니다.  
+버튼 클릭 시 그룹컬럼이 그리드에 표시됩니다. 
+
+<a class="btn primary small round lowercase" id="btnGroupColumnVisible">그룹컬럼 보이기</a>
+
+```js
+var groupVisible = gridView.getColumnProperty("GroupOrder","visible");
+
+if(groupVisible){
+  gridView.setColumnPropert("GroupOrder", "visible", false);
+} else {
+  gridView.setColumnPropert("GroupOrder","visible", true);
+}
+```
 
 #### none
 채우기를 하지 않습니다.
@@ -41,22 +56,6 @@ gridView.setDisplayOptions({
   fitStyle: "fill"
 });
 ```
-
-#### 그룹컬럼 보기
-버튼 클릭 시 그룹컬럼이 그리드에 표시됩니다.
-
-<a class="btn primary small round lowercase" id="btnGroupColumnVisible">그룹컬럼 보이기</a>
-
-```js
-var groupVisible = gridView.getColumnProperty("GroupOrder","visible");
-
-if(groupVisible){
-  gridView.setColumnPropert("GroupOrder", "visible", false);
-} else {
-  gridView.setColumnPropert("GroupOrder","visible", true);
-}
-```
-
 
 <script>
 

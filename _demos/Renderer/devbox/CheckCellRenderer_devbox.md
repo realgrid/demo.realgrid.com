@@ -41,6 +41,21 @@
 }
 ```
 
+`1.1.27 이상 버전에서 figureBorder check의 테두리 색상만 변경 되도록 수정`
+
+`line` - box의 테두리 색상
+
+<a class="btn primary small round lowercase" id="setRendererStyles">체크 렌더러 테두리 색상 변경</a>
+
+```js
+gridView.setColumnProperty("EmployeeID1","styles", {
+    "textAlignment": "center",
+    "line":"#ff00ffff,1",
+    "figureBorder":"#ffff0000,1",
+    "figureBackground": "#ffff0000"
+})
+```
+
 #### 렌더러 속성
 
 `falseValues` - false로 판단되는 값들을 콤마로 분리하여 지정합니다.  
@@ -69,3 +84,14 @@
     ...
 }
 ```
+
+<script>
+    $('#setRendererStyles').click(function() {
+        gridView.setColumnProperty("EmployeeID1","styles", {
+            "textAlignment": "center",
+            "line":"#ff00ffff,1",
+            "figureBorder":"#ffff0000,1",
+            "figureBackground": "#ffff0000"
+        })
+    });
+</script>

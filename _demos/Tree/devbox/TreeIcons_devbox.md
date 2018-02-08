@@ -138,6 +138,38 @@ treeView.onTreeItemCollapsed = function (tree, itemIndex, rowId) {
 }
 ```
 
+#### expander 이미지로 바꾸기
+
+트리를 접거나 펼칠때 expander 이미지를 아래 두 함수를 사용해서 변경할 수 있습니다.
+
+* expandImage
+* collapseImage
+
+
+<a class="btn primary small round lowercase" id="setExpandImage">expand 이미지 변경</a>
+
+expand 표시를 해당 경로의 이미지 파일로 변경합니다.
+
+```js
+treeView.setTreeOptions({expandImage:"/resource/image/smallflag/icon_folder_col.png"})
+```
+
+<a class="btn primary small round lowercase" id="setCollapseImage">collapse 이미지 변경</a>
+
+collapse 표시를 해당 경로의 이미지 파일로 변경합니다.
+
+```js
+treeView.setTreeOptions({collapseImage:"/resource/image/smallflag/icon_folder_exp.png"})
+```
+
+<a class="btn primary small round lowercase" id="setLineVisible">트리 라인 숨기기</a>
+
+트리의 라인을 표시하지 않습니다.
+
+```js
+treeView.setTreeOptions({lineVisible:false})
+```
+
 <script>
   $('#setIcons').click(function() {
     var imageList = new RealGridJS.ImageList("images", "{{"/resource/image/smallflag/" | prepend: site.baseurl}}");
@@ -200,6 +232,18 @@ treeView.onTreeItemCollapsed = function (tree, itemIndex, rowId) {
         treeDataProvider.setIconIndex(rowId, 3);
       }
     }
+  });
+
+  $('#setExpandImage').click(function() {
+    treeView.setTreeOptions({expandImage:"/resource/image/smallflag/icon_folder_col.png"});
+  });
+
+  $('#setCollapseImage').click(function() {
+    treeView.setTreeOptions({collapseImage:"/resource/image/smallflag/icon_folder_exp.png"});
+  });
+
+  $('#setLineVisible').click(function() {
+    treeView.setTreeOptions({lineVisible:false});
   });
 
 </script>

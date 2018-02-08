@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.26'
+title: '최신버전 1.1.27'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,205 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.27 (2018년 2월)
+
+---
+
+#### 기능 개선
+
+1. `dataProvider Export`
+  - dataProvider의 Data를 csv파일로 생성할수 있는 기능이 추가되었습니다.
+  - dataProviderExportOptions
+    target: "remote" | "local"
+    url: remote를 이용해서 파일을 생성하는 경우 url을 지정합니다.  
+    fileName: 저장하는 file명을 지정합니다.  
+    start: 시작 dataRow를 지정합니다. (LocalTreeDataProvider의 경우 전체행만 가능)  
+    count: export하려는 건수를 지정합니다.  
+    lfText: data에 줄바꿈이 있는 경우 변경할 문자를 지정합니다.  
+    crText: data에 줄바꿈이 있는 경우 변경할 문자를 지정합니다.  
+    exportFields: export할 field를 배열로 지정합니다.  
+    hideFileds: export하지 않을 field를 배열로 지정합니다.  
+    includeFieldName: fieldName을 포함할것인지 지정합니다. default는 false입니다.  
+  - exportFields가 지정된 경우 hideFields는 무시됩니다.  
+```js
+dataProvider.exportToCsv({
+  target:"local",
+  fileName:"dataProvider.csv",
+  exportFields:['field1','field2','field3'],
+  includeFieldNames:true
+})
+````
+  - 자세한 내용은 [ExportToCsv](http://help.realgrid.com/Excels/ExportToCsv/)데모를 참조하세요.
+
+1. [TreeOptions](http://help.realgrid.com/api/types/TreeOptions/)
+  - Expander가 표시되는 형태를 사용자의 이미지로도 표시할수 있도록 expandImage, collapseImage속성이 추가되었습니다.
+```js
+treeVeiw.setTreeOptions({
+  expandImage:"./images/treeExpand.png", 
+  collapseImage:"./images/collapseImage.png", 
+  lineVisible:false
+});
+```
+
+1. [CheckCellRenderer](http://help.realgrid.com/api/types/CheckCellRenderer/)
+  - CheckCellRenderer의 shape속성이 `box`일때 테두리의 색상을 변경할수 있도록 수정되었습니다.
+  - styles.line에 색상을 지정하여 checkBox의 색상을 변경할수 있습니다.
+```js
+gridView.setColumns([{
+  fieldName:"fieldName", 
+  name:"colName", 
+  editable:false,
+  renderer:{
+      type:"check", 
+      shape:"box", 
+      editable:true
+  },
+  styles:{
+      line:"#FF00FF00"
+  }
+}]);
+```
+
+1. [SparkLineRenderer]({{ '/Series/SparkLineRenderer/' | prepend: site.baseurl }})
+  - SparkLineColumn이 있는 그리드를 Excel로 Export시 SparkLineColumn도 정상적으로 Export되도록 수정되었습니다.
+  - GridExportOptions.exportSeriseColumn 속성이 추가되었습니다. true로 설정시 sparkLineColumn이 Excel로 export되며 false로 설정시 sparkLineColumn이 공백으로 export됩니다. 
+    default는 false입니다.
+  - `Excel2010`부터 사용가능한 기능이기 때문에 이전버전의 엑셀에서는 빈 컬럼으로 보여집니다.
+```js
+gridView.exportGrid({
+  type:"excel",
+  target:"local",
+  exportSeriseColumn:true
+})
+```
+
+1. [PasteOptions](http://help.realgrid.com/api/types/PasteOptions/)
+  - Validation이 설정된 그리드에서 여러행을 붙여넣기시 Validation Error가 발생하는 경우 console에 표시되는 error를 표시하지 않도록 하는 `throwValidationError` 속성이 추가되었습니다.
+  - 기본값은 true이며 false로 설정시 Validation Error가 발생하여도 console에 Error가 표시되지 않습니다.
+
+1. [CheckBar](http://help.realgrid.com/api/types/CheckBar/)
+  - checkBar에서 checkItem을 선택후 shift를 누른상태에서 다른 checkItem을 클릭하면 범위내에 있는 checkItem의 check상태가 처음선택된 checkItem의 선택되도록 수정되었습니다.
+
+1. [GroupingOptions](http://help.realgrid.com/api/types/GroupingOptions/)
+  - GroupPanel의 ColumnView 왼쪽에 표시되는 removeButton과 Text의 간격을 변경하는 `buttonGap`속성이 추가되었습니다.
+```js
+  gridView.setGroupingOptions({removeBotton:{visible:true, buttonGap:4}})
+```
+  - text가 ColumnView의 넓이보다 긴 경우에만 적용됩니다.
+
+1. [HideRow](http://demo.realgrid.com/DataManager/hideRow/)
+  - dataProvider의 dataRow를 그리드에서 표시하지 않도록 하는 기능이 추가되었습니다.
+  - dataProvider.hideRows함수를 이용하여 특정 dataRow를 화면에 표시되지 않도록 하거나 dataProvider.showHiddenRows함수를 이용하여 다시 화면에 표시되도록 할수 있습니다.
+  - dataProvider.getHiddenRows 또는 dataProvider.isHiddenRow함수를 이용하여 숨겨진 dataRow들을 확인할수 있습니다.
+  - dataProvider.resetHiddenRows함수를 이용하여 hideRows를 초기화 할수 있습니다.
+```js
+/* dataRow를 숨길때 */
+dataProvider.hideRows([0,1]);
+/* dataRow를 다시 표시할때 */
+dataProvider.showHiddenRows([0,1]);
+/* 숨겨진 dataRow확인 */
+dataProvider.getHiddenRows(); 
+/* 숨겨진 dataRow가 배열로 return됩니다. */
+dataProvider.isHiddenRow(0);
+/* hideDataRow 초기화 */
+dataProvider.resetHiddenRows();
+```
+  - options.sortMode:"explicit"인경우 또는 options.filterMode:"explicit"인경우에는 showDataRows를 실행하면 sort또는 filter가 실행됩니다.
+  - 자세한 내용은 [HideRow](http://demo.realgrid.com/DataManager/hideRow/)데모를 참조하세요
+
+1. [ExportGrid](http://help.realgrid.com/api/GridBase/exportGrid/)
+  - 그리드를 Excel로 Export시 현재 행높이가 적용되도록 수정되었습니다.
+
+1. [ToolTip]({{'/CellComponent/Tooltip/' | prepend: site.baseurl }})
+  - 컬럼의 너비보다 Text의 길이가 긴 경우에만 tooltip이 표시되도록 하는 tooltipEllipseTextOnly 속성이 추가되었습니다.
+```js
+gridView.setColumns([{
+  fieldName:"fieldName",
+  name:"colName",
+  renderer:{
+      type:"text", 
+      showTooltip:true, 
+      tooltipEllipseTextOnly:true
+  }
+}]);
+```
+
+1. Styles.numberFormat
+  - styles.numberFormat을 이용해서 소수를 표시할때 반올림하여 표시되는 것을 절사 또는 올림으로 표시할수 있도록 개선되었습니다.
+  - "f": 지정된 소수점이하 자리를 절사, "c": 지정된 소수점이하 자리를 올림하여 표시합니다.
+  - 실제 Data는 변경되지 않고 보여지는 값만 변경됩니다. 
+```js
+gridView.setColumns([
+  {fieldName:"fieldNmae", name:"columnName", styles:{numberFormat:"#,##0.00;.;,;f"}}
+  또는 
+  {fieldName:"fieldName", name:"columnName", styles:{numberFormat:"#,##0.00;f"}}
+])
+```
+1. 일부 브라우저에서 BackSpace입력시 이전페이지로 이동하는 현상을 개선하였습니다.
+  - readOnly인 셀에서 backSpace를 입력시 IE 브라우저의 기본동작인 "이전페이지 이동"이 실행되지 않도록 변경되었습니다.
+
+1. [ImageButtonsCellRenderer](http://help.realgrid.com/api/types/ImageButtonsCellRenderer/)
+  - button을 위아래로 배치할수 있는 lineAlignment속성이 추가되었습니다.
+  - button의 높이가 다르면서 lineAlignment가 far또는 near인경우 높이를 지정할수 있는 height속성이 추가되었습니다. 
+
+```js
+var imageButtons = [ {
+  name:"팝업",
+  up:"./image/popup_normal.png",
+  hover:"./image/popup_hover.png",
+  down:"./image/popup_click.png",
+  cursor:"pointer",
+  width:25
+},{
+  name:"조회",
+  up:"./image/search_normal.png",
+  hover:"./image/search_hover.png",
+  down:"./image/search_click.png",
+  width:25
+}];
+
+gridView.setColumns([{
+  fieldName:"fieldName",
+  name:"colName",
+  renderer:{
+    type:"imageButtons",
+    images:imageButtons,
+    height:20
+  }
+}]);
+```
+
+#### 오류 수정
+
+1. [Footer](http://help.realgrid.com/api/types/Footer/)
+  - 그리드 Footer의 셀을 merge할때 10개 이상의 컬럼이 merge되지 않는 현상을 수정하였습니다.
+
+1. [ColumnGrouping]({{ '/Columns/ColumnGrouping/' | prepend: site.baseurl }})
+  - ColumnGrouping상태에서 숨겨진 컬럼이 있는 경우 복사, 붙여넣기를 하면 숨겨진 컬럼까지 복사되거나 붙여넣기 되는 현상을 수정하였습니다.
+
+1. [ColumnFooter]{http://help.realgrid.com/api/types/ColumnFooter/}
+  - ColumnFooter에 date가 표시되는 그리드를 excel로 export할때 발생하는 오류를 수정하였습니다.
+
+1. [SeriesTextCellRenderer](http://help.realgrid.com/api/types/SeriesTextCellRenderer/)
+  - 시리즈 컬럼에 값이 즉시 반영되지 않는 오류가 수정되었습니다.
+
+1. [CheckBar]({{ '/GridComponent/CheckBar/' | prepend: site.baseurl }})
+  - Paging되어있는 그리드에서 gridView.checkRow, gridView.checkRow로 CheckBar의 체크를 변경시 현재 페이지가 아닌 DataRow를 지정시 체크가 변경되지 않는 오류가 수정되었습니다.
+  - 현재 페이지가 아닌 경우에도 gridView.isCheckedRow를 이용해서 체크여부를 가져올수 있도록 수정되었습니다.
+
+1. [ExcelMultiExport](http://demo.realgrid.com/Excels/ExcelMultiExport/)
+  - RealGridJS.exportGrid를 이용해서 여러개의 그리드를 excel로 export할때 lookupDisplay 속성을 true로 해도 적용되지 않는 현상이 수정되었습니다.
+
+1. [RestoreMode](http://help.realgrid.com/api/types/RestoreMode/)
+  - Tree그리드에서 restoreMode가 "explicit" 또는 "auto"인 상태에서 데이터를 변경후 restoreUpdatedRows를 이용해서 이전 값으로 복구하는 경우 자식행도 이전 값으로 복구되는 현상을 수정하였습니다.
+
+1. `크롬브라우저에서 클릭시 스크롤 위치 오류`
+  - 크롬브라우저에서 그리드의 `div`태그를 감싸고 있는 `div`가 여러개 중첩되어있고 overflow가 발생한 경우 그리드를 클릭하면 그리드의 스크롤 위치가 변경되는 현상이 개선되었습니다.
+
+1. [DateCellEditor](http://help.realgrid.com/api/types/DateCellEditor/)
+  - dateEditor에서 잘못된 날짜를 입력했을때 공백이 표시되지 않고 원하지 않는 날짜가 입력되는 현상을 수정하였습니다.
+
 
 ## 1.1.26 (2017년 11월)
 
@@ -160,8 +359,7 @@ gridView.setColumns([
       type:"seriesText",
       valueSeparator:"~"
   } 
-}
-])
+}])
 ```
 
 1. [getCheckedRows](http://help.realgrid.com/api/GridView/getCheckedRows/)

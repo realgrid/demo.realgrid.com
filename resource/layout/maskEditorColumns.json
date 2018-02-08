@@ -71,7 +71,8 @@
                 "editMask":"bc:de:de",  
                 "includedFormat":true,
                 "placeHolder":"00:00:00",
-                "overWrite": true
+                "overWrite": true,
+                "allowEmpty": true
             }
         }
     },{

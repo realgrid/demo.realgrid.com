@@ -24,12 +24,12 @@ github_username:  realgrid
 incremental: false
 
 # 최신버전
-release_date: 2017-11-09T18:20:00Z
-release_version: 1.1.26
+release_date: 2018-02-08T18:20:00Z
+release_version: 1.1.27
 
 # RealGrid
 realgrid_product: eval # 무조건 eval product를 여기서 쓸일은 없겠지?
-realgrid_version: 1.1.26 # 이 버전을 바꾸면 모든 데모 페이지의 버전을 바꿀 수 있다.
+realgrid_version: 1.1.27 # 이 버전을 바꾸면 모든 데모 페이지의 버전을 바꿀 수 있다.
 
 # Build settings
 markdown: kramdown
