@@ -1,31 +1,10 @@
----
-layout: page
-title: 하이차트 연동 컬럼 필터링
-order: 2
-devbox: true
-devboxfile: ColumnFiltering_devbox.md
-published: true
-categories:
-  - 차트 및 리포트 연동
-tags: ['연동', 'interface']
----
+#### RealGrid와 HighCharts를 연계
 
-RealGrid와 HighCharts를 사용하여 연계한 예제입니다.   
-RealGrid의 Column Filter를 변경하면 발생하는 onFilteringChanged이벤트를 통해 필터링된 데이터를 Highcharts에 적용되도록 구현하였습니다.  
-Year 컬럼의 필터를 변경해여 차트가 변경되는것을 확인하세요.
+HighCharts는 [http://www.highcharts.com/download](http://www.highcharts.com/download) 페이지에서 다운 받을수 있습니다.  
 
-<script type="text/javascript" src="/lib/highcharts/highcharts.js"></script>
-<script>
-var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
-  gridEvents(gridView, dataProvider);
-  dataProvider.setRows(data);
-  setTimeout(setFilter(), 300);
-}
+#### 그리드 필터 설정
 
-var onDoneDataSet = function() {
-
-}
-
+```js
 function setFilter() {
     var filters = [];
     var vals = dataProvider.getDistinctValues("year");
@@ -40,7 +19,11 @@ function setFilter() {
     col.filters = filters;
     gridView.setColumn(col);
 }
+```
 
+#### 필터 목록 변경 및 데이터 행 변경 이벤트
+
+```js
 function gridEvents(grid, provider) {
     provider.onRowCountChanged = function () {
         setHiChart(dataProvider)
@@ -73,12 +56,17 @@ function gridEvents(grid, provider) {
         });
     }
 }
+```
 
+#### 차트 생성 함수
+
+```js
 function setHiChart(provider) {
-	var categories = [];
-	for(var i = 0; i < gridView.getItemCount(); i++){
-		categories.push(gridView.getValue(i, "Year"));
-	}
+    //필터 결과에 맞는 categories 목록 생성
+    var categories = [];
+    for(var i = 0; i < gridView.getItemCount(); i++){
+        categories.push(gridView.getValue(i, "Year"));
+    }
 	
     var diVal = provider.getFieldValues("DIncome");
     $.each(diVal, function (k, v) {
@@ -158,25 +146,4 @@ function setHiChart(provider) {
         }
     });
 }
-</script>
-
-<div id="container" style="height:400px;"></div>
-
-{% include realgrid.html
-
-  gridVar="gridView"
-  dpVar="dataProvider"
-  gridId="realgrid"
-
-  fieldSet="highchartsFields"
-  columnSet="highchartsColumns"
-  dpOptionSet="dataProviderOption1"
-  gridOptionSet="gridOption1"
-  styleSet="style1"
-
-  dataSet="총생산소득.json"
-  successDataSet="onGridSuccessDataSet"  
-  doneDataSet="onDoneDataSet"
-
-  gridWidth="100%"
-  gridHeight="300px" %}
+```

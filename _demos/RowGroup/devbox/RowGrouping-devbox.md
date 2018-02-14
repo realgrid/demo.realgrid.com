@@ -77,6 +77,17 @@ gridView.setRowGroup({
 그룹 헤더에 표시하는 텍스트는 GridBase.[setRowGroup](http://help.realgrid.com/api/GridBase/setRowGroup/) 함수에 전달되는 설정 개체의 `headerStatement` 값으로 지정합니다.   
 `headerStatement`의 기본값은 `"${groupField}: ${groupValue} - ${rowCount} rows"` 입니다.
 
+headerStatement 속성으로는 아래와 같은 값들을 설정할 수 있습니다.
+
+* groupField  
+* fieldHeader  
+* groupColumn 
+* columnHeader
+* columnFooter
+* groupValue 
+* rowCount  
+* sum, max, min, avg
+
 headerStatement: 
 <select id="selHeaderStatement">
   <option selected="selected">${groupField}: ${groupValue} - ${rowCount} rows</option>

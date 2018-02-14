@@ -1,33 +1,10 @@
----
-layout: page
-title: 하이차트 연동 행 선택
-order: 3
-devbox: true
-devboxfile: RowSelecting_devbox.md
-published: true
-categories:
-  - 차트 및 리포트 연동
-tags: ['연동', 'interface']
----
+#### RealGrid와 HighCharts를 연계
 
-RealGrid와 HighCharts를 사용하여 연계한 예제입니다.   
-각 행의 Checkbar를 선택/해제하면 선택된 행만 Line Chart에 표시가 됩니다. 또한 Focus된 행을 별도의 Pie Chart로 표시됩니다.
+HighCharts는 [http://www.highcharts.com/download](http://www.highcharts.com/download) 페이지에서 다운 받을수 있습니다.  
 
-<script type="text/javascript" src="/lib/highcharts/highcharts.js"></script>
-<script>
-var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
-  gridEvents(gridView, dataProvider)
-  dataProvider.onRowCountChanged = function () {
-    setHiChart(dataProvider);
-  }
+#### pie 타입 차트 생성
 
-  dataProvider.setRows(data);
-}
-
-var onDoneDataSet = function() {
-
-}
-
+```js
 function setHiChart(provider) {
     var categories = provider.getFieldValues("year");
     var diVal = provider.getFieldValues("DIncome");
@@ -135,7 +112,11 @@ function setHiChart(provider) {
         }
     });
 }
+```
 
+#### 이벤트 설정
+
+```js
 function gridEvents(grid, provider) {
     grid.onCurrentChanged = function (grid, index) {
         var chart = $("#container").highcharts();
@@ -165,7 +146,11 @@ function gridEvents(grid, provider) {
         }
     }
 }
+```
 
+#### setPie 설정 함수
+
+```js
 function setPie(chart, index) {
     index = index ? index : gridView.getCurrent();
     var rowValue = dataProvider.getJsonRow(index.dataRow);
@@ -179,25 +164,4 @@ function setPie(chart, index) {
     });
     chart.series[4].setData(hcData);
 }
-</script>
-
-<div id="container" style="height:400px;"></div>
-
-{% include realgrid.html
-
-  gridVar="gridView"
-  dpVar="dataProvider"
-  gridId="realgrid"
-
-  fieldSet="highchartsFields"
-  columnSet="highchartsColumns"
-  dpOptionSet="dataProviderOption1"
-  gridOptionSet="gridOption1"
-  styleSet="style1"
-
-  dataSet="총생산소득.json"
-  successDataSet="onGridSuccessDataSet"  
-  doneDataSet="onDoneDataSet"
-
-  gridWidth="100%"
-  gridHeight="300px" %}
+```

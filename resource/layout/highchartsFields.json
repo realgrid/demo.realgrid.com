@@ -1,0 +1,16 @@
+[{
+    "fieldName": "Year",
+    "dataType": "text"
+}, {
+    "fieldName": "GDP",
+    "dataType": "number"
+}, {
+    "fieldName": "GNI",
+    "dataType": "number"
+}, {
+    "fieldName": "PGNI",
+    "dataType": "number"
+}, {
+    "fieldName": "DIncome",
+    "dataType": "number"
+}]

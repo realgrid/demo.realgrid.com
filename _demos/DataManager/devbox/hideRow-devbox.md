@@ -2,10 +2,10 @@
 
 아래는 그리드 행을 숨기기 위한 함수들 입니다.
 
-* [hideRows](http://help.realgrid.com/api/DataProvider/hideRows/)
-* [showHiddenRows](http://help.realgrid.com/api/DataProvider/showHiddenRows/)
-* [getHiddenRows](http://help.realgrid.com/api/DataProvider/getHiddenRows/)
-* [isHiddenRow](http://help.realgrid.com/api/DataProvider/isHiddenRows/)
+* [hideRows()](http://help.realgrid.com/api/DataProvider/hideRows/)
+* [showHiddenRows()](http://help.realgrid.com/api/DataProvider/showHiddenRows/)
+* [getHiddenRows()](http://help.realgrid.com/api/DataProvider/getHiddenRows/)
+* [isHiddenRow()](http://help.realgrid.com/api/DataProvider/isHiddenRow/)
 
 
 <a class="btn primary small round lowercase" id="btnHideRows">hideRows 실행</a>
@@ -43,7 +43,7 @@ alert(dataProvider.isHiddenRow(5));
 
 #### 숨긴 모든 행 다시 표시
 
-* [resetHiddenRows](http://help.realgrid.com/api/DataProvider/resetHiddenRows/)
+* [resetHiddenRows()](http://help.realgrid.com/api/DataProvider/resetHiddenRows/)
 
 <a class="btn primary small round lowercase" id="btnResetHiddenRows">숨겨진 행 초기화</a>
 
@@ -67,7 +67,7 @@ dataProvider.resetHiddenRows();
     });
 
     $('#btnIsHiddenRow').click(function() {
-    	alert(dataProvider.isHiddenRow(3));
+    	alert(dataProvider.isHiddenRow(5));
     });
 
     $('#btnResetHiddenRows').click(function() {

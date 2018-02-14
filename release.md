@@ -40,7 +40,7 @@ dataProvider.exportToCsv({
   includeFieldNames:true
 })
 ````
-  - 자세한 내용은 [ExportToCsv](http://help.realgrid.com/Excels/ExportToCsv/)데모를 참조하세요.
+  - 자세한 내용은 [ExportToCsv](http://demo.realgrid.com/Excels/ExportToCsv/)데모를 참조하세요.
 
 1. [TreeOptions](http://help.realgrid.com/api/types/TreeOptions/)
   - Expander가 표시되는 형태를 사용자의 이미지로도 표시할수 있도록 expandImage, collapseImage속성이 추가되었습니다.
@@ -110,9 +110,9 @@ dataProvider.hideRows([0,1]);
 dataProvider.showHiddenRows([0,1]);
 /* 숨겨진 dataRow확인 */
 dataProvider.getHiddenRows(); 
-/* 숨겨진 dataRow가 배열로 return됩니다. */
+/* 숨겨진 dataRow확인 */
 dataProvider.isHiddenRow(0);
-/* hideDataRow 초기화 */
+/* 숨겨진 dataRow를 모두 다시 표시 */
 dataProvider.resetHiddenRows();
 ```
   - options.sortMode:"explicit"인경우 또는 options.filterMode:"explicit"인경우에는 showDataRows를 실행하면 sort또는 filter가 실행됩니다.
@@ -188,7 +188,7 @@ gridView.setColumns([{
 1. [ColumnGrouping]({{ '/Columns/ColumnGrouping/' | prepend: site.baseurl }})
   - ColumnGrouping상태에서 숨겨진 컬럼이 있는 경우 복사, 붙여넣기를 하면 숨겨진 컬럼까지 복사되거나 붙여넣기 되는 현상을 수정하였습니다.
 
-1. [ColumnFooter]{http://help.realgrid.com/api/types/ColumnFooter/}
+1. [ColumnFooter](http://help.realgrid.com/api/types/ColumnFooter/)
   - ColumnFooter에 date가 표시되는 그리드를 excel로 export할때 발생하는 오류를 수정하였습니다.
 
 1. [SeriesTextCellRenderer](http://help.realgrid.com/api/types/SeriesTextCellRenderer/)

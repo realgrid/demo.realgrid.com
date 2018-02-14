@@ -1,0 +1,55 @@
+[{
+    "name": "Year",
+    "fieldName": "Year",
+    "width": "80",
+    "styles": {
+        "textAlignment": "near"
+    },
+    "header": {
+        "text": "Year"
+    }
+}, {
+    "name": "GDP",
+    "fieldName": "GDP",
+    "width": "160",
+    "styles": {
+        "textAlignment": "far",
+        "numberFormat": "#,##0.00"
+    },
+    "header": {
+        "text": "GDP ($100 milion)"
+    }
+}, {
+    "name": "GNI",
+    "fieldName": "GNI",
+    "width": "160",
+    "styles": {
+        "textAlignment": "far",
+        "numberFormat": "#,##0.00"
+    },
+    "header": {
+        "text": "GNI ($100 milion)"
+    }
+}, {
+    "name": "PGNI",
+    "fieldName": "PGNI",
+    "width": "160",
+    "styles": {
+        "textAlignment": "far",
+        "numberFormat": "#,##0.00"
+    },
+    "header": {
+        "text": "PGNI ($)"
+    }
+}, {
+    "name": "DIncome",
+    "fieldName": "DIncome",
+    "width": "160",
+    "styles": {
+        "textAlignment": "far",
+        "numberFormat": "#,##0.00"
+    },
+    "header": {
+        "text": "DIncome ($)"
+    }
+}]

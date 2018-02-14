@@ -1,38 +1,10 @@
----
-layout: page
-title: 하이차트 연동 컬럼 선택
-order: 1
-devbox: true
-devboxfile: ColumnSelecting_devbox.md
-published: true
-categories:
-  - 차트 및 리포트 연동
-tags: ['연동', 'interface']
----
+#### RealGrid와 HighCharts를 연계
 
-RealGrid와 HighCharts를 사용하여 연계한 예제입니다.   
-컬럼 해더의 CheckBox를 클릭하면 발생하는 그리드의 이벤트함수 onColumnCheckedChanged를 사용하여 Highcharts의 컬럼을 숨기거나 보이도록 하였습니다.
+HighCharts는 [http://www.highcharts.com/download](http://www.highcharts.com/download) 페이지에서 다운 받을수 있습니다.  
 
-<script type="text/javascript" src="/lib/highcharts/highcharts.js"></script>
-<script>
-var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
-  var columnNames = ["GDP", "GNI", "PGNI", "DIncome"];
+#### 차트 생성 함수
 
-  for (var i = 0; i < columnNames.length; i++){
-  	gridView.setColumnProperty(columnNames[i],"header",{
-        "checkLocation": "left",
-        "checked": true});
-    gridView.setColumnProperty(columnNames[i],"checked",true);
-  }
-
-  gridEvents(gridView, dataProvider);
-
-  dataProvider.setRows(data);
-}
-var onDoneDataSet = function() {
-
-}
-
+```js
 function setHiChart(provider) {
     var categories = provider.getFieldValues("year");
     var diVal = provider.getFieldValues("DIncome");
@@ -111,13 +83,11 @@ function setHiChart(provider) {
         }
     });
 }
+```
 
-function setColumnColor(name, color, check) {
-    var col = gridView.columnByName(name);
-    col.styles = check ? { background: color.replace("#", "#39") } : { background: null };
-    gridView.setColumn(col);
-}
+#### 컬럼 헤더 체크 및 데이터 행 변경 이벤트
 
+```js
 function gridEvents(grid, provider) {
     grid.onColumnCheckedChanged = function (grid, column, checked) {
         var colName = column.name;
@@ -134,25 +104,14 @@ function gridEvents(grid, provider) {
         setHiChart(dataProvider);
     }
 }
-</script>
+```
 
-<div id="container" style="height:400px;"></div>
+#### 헤더 체크 상태에 따른 컬럼 색상 설정
 
-{% include realgrid.html
-
-  gridVar="gridView"
-  dpVar="dataProvider"
-  gridId="realgrid"
-
-  fieldSet="highchartsFields"
-  columnSet="highchartsColumns"
-  dpOptionSet="dataProviderOption1"
-  gridOptionSet="gridOption1"
-  styleSet="style1"
-
-  dataSet="총생산소득.json"
-  successDataSet="onGridSuccessDataSet"  
-  doneDataSet="onDoneDataSet"
-
-  gridWidth="100%"
-  gridHeight="300px" %}
+```js
+function setColumnColor(name, color, check) {
+    var col = gridView.columnByName(name);
+    col.styles = check ? { background: color.replace("#", "#39") } : { background: null };
+    gridView.setColumn(col);
+}
+```
