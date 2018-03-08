@@ -107,8 +107,4 @@
     "name": "fuel",
     "header": "연료",
     "width": 60
-}, {
-    "fieldName": "판매월",
-    "name": "판매월",
-    "width": 60
 }]

@@ -1,6 +1,6 @@
 #### 필터링 설정
 
-판매분기, 브랜드명의 조건으로 필터링합니다. 
+판매분기, 브랜드명의 조건으로 [필터링](http://help.realgrid.com/pivotApi/RealPivot/filter/)합니다. 
 
 <a class="btn primary small round lowercase" id="btnSetFilter1">필터링 옵션 적용</a>
 

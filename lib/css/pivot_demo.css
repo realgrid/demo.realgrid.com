@@ -5,3 +5,11 @@
 .document-formatting img {
 	padding: 0;
 }
+
+.realpivot-title-menu {
+	display: inline-block;
+}
+
+.realpivot-title-setup {
+	display: inline-block;
+}

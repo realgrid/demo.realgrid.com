@@ -1,6 +1,7 @@
 #### 피벗 컨텍스트 메뉴 설정
 
-피벗 데이터 로드 시 진행 상태를 표시합니다.
+왼쪽 최상단에 위치한 버튼을 클릭할때 표시할 메뉴를 지정합니다.  
+[http://help.realgrid.com/pivotApi/RealPivot/setContextMenu/](http://help.realgrid.com/pivotApi/RealPivot/setContextMenu/)
 
 <a class="btn primary small round lowercase" id="btnSetContextMenu">컨텍스트 메뉴 적용</a>
 
@@ -13,7 +14,11 @@ pivot.setContextMenu([{
 }, {
     text: "엑셀저장",
     callback: function(){
-        pivot.exportGrid();
+        pivot.exportGrid({
+            target: "local",
+            fileName: "RealPivotExport.xlsx",
+            expandAll: true
+        });
     }
 }]);
 ```
@@ -29,7 +34,11 @@ $('#btnSetContextMenu').click(function() {
     }, {
         text: "엑셀저장",
         callback: function(){
-            pivot.exportGrid();
+            pivot.exportGrid({
+                target: "local",
+                fileName: "RealPivotExport.xlsx",
+                expandAll: true
+            });
         }
     }]);
 });

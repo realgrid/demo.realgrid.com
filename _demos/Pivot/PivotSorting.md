@@ -12,13 +12,15 @@ tags: ['pivot', 'sort']
 
 Pivot의 정렬 기능을 사용해서 label 또는 value 값을 정렬할 수 있습니다.
 
-<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.0.4/css/default.css">
-<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.0.4/css/demo_css.css">
+<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.8.0/css/default.css">
+<link rel="stylesheet" type="text/css" href="/lib/css/pivot_demo.css">
 <script type="text/javascript" src="/lib/jquery/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs_eval.1.1.25.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs-api.1.1.25.js"></script>
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.0.4/realpivot_eval.0.0.4.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs_eval.1.1.27.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs-api.1.1.27.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.8.0/messages/realpivot-messages.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.8.0/realpivot_eval.0.8.0.min.js"></script>
+<script type="text/javascript" src='/lib/realpivot/realpivot_eval.0.8.0/domutils.js'></script>
 
 <div id="realpivot" style="width:100%;height:500px;"></div>
 

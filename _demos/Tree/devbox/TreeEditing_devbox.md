@@ -52,11 +52,11 @@ treeDataProvider.insertChildRow(
 <a class="btn primary small round lowercase" id="updateStrictRow">'마카오'를 '홍콩'으로 수정</a>
 
 ```js
-// '일본'을 'Japan'으로 수정, '일본'의 rowId=3
-reeDataProvider.updateRow(3, [0, "Japan"]);
+// '일본'을 'Japan'으로 수정, '일본'의 rowId=4
+treeDataProvider.updateRow(4, [0, "Japan"]);
 
-// '마카오'를 '홍콩'으로 수정, '마카오'의 rowId=4
-treeDataProvider.updateStrictRow(4, {Col0: "홍콩"});
+// '마카오'를 '홍콩'으로 수정, '마카오'의 rowId=3
+treeDataProvider.updateStrictRow(3, {Col0: "홍콩"});
 ```
 
 #### 삭제

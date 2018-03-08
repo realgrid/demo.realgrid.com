@@ -4,7 +4,7 @@ title: 피벗 필드 재설정
 order: 5
 devbox: true
 devboxfile: PivotSetting_devbox.md
-published: true
+published: false
 categories:
   - 피벗(RealPivot)
 tags: ['pivot', 'setting']
@@ -12,13 +12,15 @@ tags: ['pivot', 'setting']
 
 Pivot의 columns, rows, values 값을 직접 설정해서 Pivot 화면을 구성할 수 있습니다.
 
-<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.0.4/css/default.css">
-<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.0.4/css/demo_css.css">
+<link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.8.0/css/default.css">
+<link rel="stylesheet" type="text/css" href="/lib/css/pivot_demo.css">
 <script type="text/javascript" src="/lib/jquery/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="/lib/realgrid/realgridjs-lic.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs_eval.1.1.25.min.js"></script>
-<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs-api.1.1.25.js"></script>
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.0.4/realpivot_eval.0.0.4.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs_eval.1.1.27.min.js"></script>
+<script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs-api.1.1.27.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.8.0/messages/realpivot-messages.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.8.0/realpivot_eval.0.8.0.min.js"></script>
+<script type="text/javascript" src='/lib/realpivot/realpivot_eval.0.8.0/domutils.js'></script>
 
 <div id="realpivot" style="width:100%;height:500px;"></div>
 
