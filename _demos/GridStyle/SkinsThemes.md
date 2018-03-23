@@ -1,18 +1,18 @@
 ---
 layout: page
-title: 그리드 태마(Skin)
+title: 그리드 테마(Skin)
 order: 11
 devbox: true
 devboxfile: SkinsThemes_devbox.md
 published: true
 categories:
   - 그리드 스타일
-tags: ['Style', '태마', 'theme']
+tags: ['Style', '테마', 'theme']
 ---
 
 <script type="text/javascript" src="/lib/realgrid/RealGridSkins.js"></script>
 
-그리드에 미리 설정한 스타일 속성값으로 원하는 그리드 태마를 동적으로 적용할 수 있습니다.
+그리드에 미리 설정한 스타일 속성값으로 원하는 그리드 테마를 동적으로 적용할 수 있습니다.
 
 <script>
   var onGridSuccessDataSet = function(data, textStatus, jqXHR) {

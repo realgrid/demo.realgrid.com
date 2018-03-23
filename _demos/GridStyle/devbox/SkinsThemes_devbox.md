@@ -1,7 +1,7 @@
 
-#### 태마 설정하기
+#### 테마 설정하기
 
-태마 선택: 
+테마 선택: 
 <select id="selGridTheme">
 	<option selected="selected">basicBlueSkin</option>
 	<option>OfficeBlueSkin</option>
@@ -44,7 +44,7 @@
 	<option>generalDarkGraySkin</option>
 </select>
 
-<a class="btn primary small round lowercase" id="btnSetTheme">태마 적용</a>
+<a class="btn primary small round lowercase" id="btnSetTheme">테마 적용</a>
 
 
 ```js
