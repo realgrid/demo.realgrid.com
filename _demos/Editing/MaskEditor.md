@@ -17,8 +17,6 @@ tags: ['editor','mask']
     dataProvider.setRows(data);
   }
   var onDoneDataSet = function() {
-    gridView.setColumnProperty("time","displayRegExp", /^([0-9]{2})([0-9]{2})([0-9]{2})$/)
-    gridView.setColumnProperty("time","displayReplace", "$1:$2:$3")
   }
 </script>
 
