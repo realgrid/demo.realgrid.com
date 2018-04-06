@@ -1,4 +1,4 @@
-#### 트리노드 펼치기(expand) & 접기(collapse)
+#### 트리노드 펼치기(expand) & 접기(collapse) `(Only JS Support)`
 
 `TreeView`에는 트리 노드를 접고 펼치기 위한 함수들이 있습니다.
 

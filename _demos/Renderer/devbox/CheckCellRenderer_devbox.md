@@ -43,7 +43,7 @@
 
 `1.1.27 이상 버전에서 figureBorder check의 테두리 색상만 변경 되도록 수정`
 
-`line` - box의 테두리 색상
+`line` - box의 테두리 색상 
 
 <a class="btn primary small round lowercase" id="setRendererStyles">체크 렌더러 테두리 색상 변경</a>
 

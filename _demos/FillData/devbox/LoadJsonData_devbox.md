@@ -1,5 +1,4 @@
-
-#### JSON 데이터    
+#### JSON 데이터 `(Only JS Support)`
 
 RealGrid의 DataProvider에 입력할 수 있는 JSON 포멧의 데이터는 배열(Array)형 데이터와 동일한 구조를 갖습니다. 즉, 
 

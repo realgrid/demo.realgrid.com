@@ -1,5 +1,4 @@
-
-#### 원격(Remote) 데이터 로드
+#### 원격(Remote) 데이터 로드 `(Only JS Support)`
 
 [jQuery.ajax()](http://api.jquery.com/jquery.ajax/)함수를 이용해 원격 데이터를 가져오는
 코드를 작성해 보겠습니다.

@@ -1,4 +1,4 @@
-#### CSS Styles 적용
+#### CSS Styles 적용 `(Only JS Support)`
 
 필터를 제외한 각 에디터에 CSS 스타일을 사용하기 위해서는 
 

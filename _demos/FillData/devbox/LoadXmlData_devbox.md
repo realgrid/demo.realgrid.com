@@ -1,5 +1,4 @@
-
-#### XML 데이터    
+#### XML 데이터 `(Only JS Support)`
 
 RealGrid의 DataProvider에 XML 포멧의 데이터를 입력 할 수 있습니다. XML데이터의 유형은 아래와 같이 `attribute`를 활용하거나 `childNode`를 활용하는 방법, 모두 가능하며 두 방법을 조합하여 사용할 수도 있습니다.
 

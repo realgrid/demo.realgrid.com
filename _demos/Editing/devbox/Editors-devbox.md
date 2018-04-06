@@ -1,9 +1,9 @@
 #### [라인 편집기](http://help.realgrid.com/api/types/LineCellEditor/){:target="_blank"}
 [라인 편집기](http://help.realgrid.com/api/types/LineCellEditor/){:target="_blank"}는 한 줄 텍스트를 입력할 수 있는 기본 에디터입니다.
 
-<input type="radio" name="rbTextCase" value="created" checked="checked"> normal
-<input type="radio" name="rbTextCase" value="updated"> upper
-<input type="radio" name="rbTextCase" value="deleted"> lower
+<input type="radio" name="rbTextCase" value="normal" checked="checked"> normal
+<input type="radio" name="rbTextCase" value="upper"> upper
+<input type="radio" name="rbTextCase" value="lower"> lower
 
 <a class="btn primary small round lowercase" id="btnTextCase">TextCase
 </a>

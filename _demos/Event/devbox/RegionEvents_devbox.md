@@ -26,18 +26,21 @@ gridView.setCheckBar({
 현재 데모에 적용된 `클릭`, `더블클릭` 이벤트들입니다.
 
 ```js
+//flash 지원
 gridView.onColumnHeaderClicked = function (grid, column) {
     addLog("onColumnHeaderClicked: " + "(" + column.name + ")");
-};
+}
 gridView.onColumnHeaderDblClicked = function (grid, column) {
     addLog("onColumnHeaderDblClicked: " + "(" + column.name + ")");
 };
 gridView.onColumnCheckedChanged = function (grid, column, checked) {
     addLog("onColumnCheckedChanged: " + "(" + column.name + ", " + checked + ")");
 };
+//flash 지원
 gridView.onDataCellClicked = function (grid, index) {
     addLog("onDataCellClicked: " + JSON.stringify(index));
 };
+//flash 지원
 gridView.onDataCellDblClicked = function (grid, index) {
     addLog("onDataCellDblClicked: " + JSON.stringify(index));
 };
@@ -47,12 +50,15 @@ gridView.onFooterCellClicked = function (grid, column) {
 gridView.onFooterCellDblClicked = function (grid, column) {
     addLog("onFooterCellDblClicked : " + "(" + column.name + ")");
 };
+//flash 지원
 gridView.onItemChecked = function (grid, itemIndex, checked) {
     addLog("onItemChecked: " + itemIndex + ", " + checked);
 };
+//flash 지원
 gridView.onItemsChecked = function (grid, items, checked) {
     addLog("onItemsChecked: " + items + ", " + checked);
 };
+//flash 지원
 gridView.onItemAllChecked = function (grid, checked) {
     addLog("onItemAllChecked: " + checked);
 };

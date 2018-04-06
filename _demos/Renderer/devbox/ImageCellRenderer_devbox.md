@@ -1,6 +1,6 @@
 #### 이미지 렌더러 설정
 
-[ImageCellRenderer](http://help.realgrid.com/api/types/ImageCellRenderer/)]는 데이터 셀의 값을 이미지 url로 해석해서 그 이미지를 내려받고 표시합니다.
+[ImageCellRenderer](http://help.realgrid.com/api/types/ImageCellRenderer/)는 데이터 셀의 값을 이미지 url로 해석해서 그 이미지를 내려받고 표시합니다.
 
 컬럼 스타일 `contentFit` 값으로 이미지의 위치와 크기가 결정됩니다. 
 

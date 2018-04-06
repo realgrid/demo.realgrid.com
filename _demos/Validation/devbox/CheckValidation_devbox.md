@@ -1,4 +1,5 @@
-#### 유효성 설정
+#### 유효성 설정 
+
 Quantity 컬럼과 CustomerID 컬럼에 유효성 설정을 합니다.
 
 <a class="btn primary small round lowercase" id="btnSetValidation">컬럼 유효성 설정</a>
@@ -37,7 +38,7 @@ gridView.setColumn(column);
 ```
 
 
-#### 일괄 유효성 확인
+#### 일괄 유효성 확인 `(Only JS Support)`
 
 [gridView.checkValidateCells(itemIndices)](http://help.realgrid.com/api/GridBase/checkValidateCells/)을 사용하여 로드된 데이터에 대하여 일괄 유효성 확인을 할 수 있습니다.  
 유효성 확인 후 실패 목록을 반환 합니다.   

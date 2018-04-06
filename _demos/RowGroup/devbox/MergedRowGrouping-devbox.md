@@ -23,7 +23,7 @@ rowGrouping 상태일 때 그룹의 펼침 또는 접힘 상태에 따라 그룹
 <input type="radio" name="expanded" value="both">
 <label style="vertical-align:middle">BOTH</label>&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="radio" name="expanded" value="summary">
-<label style="vertical-align:middle">SUMMARY</label>&nbsp;&nbsp;&nbsp;&nbsp;
+<label style="vertical-align:middle">SUMMARY<font size="2" color="red">(Only JS Support)</font></label>&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="radio" name="expanded" value="none">
 <label style="vertical-align:middle">NONE</label>
 

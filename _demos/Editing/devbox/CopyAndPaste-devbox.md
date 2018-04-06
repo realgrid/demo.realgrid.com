@@ -31,9 +31,9 @@ gridView.setCopyOptions({
 <input type="checkbox" id="chkSelectionBase">selectionBase: true면 focus 셀이 포함된 선택 영역의 처음 셀부터 붙여넣기 시작  
 <input type="checkbox" id="chkStopOnError">stopOnError: Validation이 실패하거나 형변환이 실패하면 나머지 붙여넣기를 중지하고 예외를 발생  
 <input type="checkbox" id="chkNoEditEvent">noEditEvent: 단일행을 붙여넣기 할때 Cell마다 발생하는 onEditRowChanged가 발생하지 않는다.  
-<input type="checkbox" id="chkEventEachRow">eventEachRow: 복수행을 붙여넣기 할때 각 행마다 onEditRowPasted이벤트가 발생    
-<input type="checkbox" id="chkCheckReadOnly">checkReadOnly: readOnly이거나 editable이 false인 Column은 paste대상에서 제외  
-<input type="checkbox" id="chkCheckDomainOnly">checkDomainOnly: DropDown Editor의 domainOnly가 true인 컬럼에 붙여넣기 할때 values에 없는 값은 붙여넣기 되지 않음    
+<input type="checkbox" id="chkEventEachRow">eventEachRow<font size="2" color="red">(Only JS Support)</font>: 복수행을 붙여넣기 할때 각 행마다 onEditRowPasted이벤트가 발생    
+<input type="checkbox" id="chkCheckReadOnly">checkReadOnly<font size="2" color="red">(Only JS Support)</font>: readOnly이거나 editable이 false인 Column은 paste대상에서 제외  
+<input type="checkbox" id="chkCheckDomainOnly">checkDomainOnly<font size="2" color="red">(Only JS Support)</font>: DropDown Editor의 domainOnly가 true인 컬럼에 붙여넣기 할때 values에 없는 값은 붙여넣기 되지 않음    
 
 <a class="btn primary small round lowercase" id="btnSetPasteOptions">setPasteOptions()
 </a>

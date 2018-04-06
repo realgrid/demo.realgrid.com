@@ -1,4 +1,4 @@
-#### calculateExpression 설정
+#### calculateExpression 설정 `(Only JS Support)`
 
 자동으로 계산될 필드는 `calculateExpression`를 사용해서 `calculateField`로 설정할 수 있습니다.
 Calculate Field와 연결된 컬럼은 readOnly가 됩니다.

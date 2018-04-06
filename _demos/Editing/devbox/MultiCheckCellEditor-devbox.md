@@ -1,4 +1,4 @@
-#### MultiCheckCellEditor 설정하기
+#### MultiCheckCellEditor 설정하기 `(Only JS Support)`
 
 [MultiCheckCellEditor](http://help.realgrid.com/api/types/MultiCheckCellEditor/)를 사용하기 위해서는 Editor의 type을 `"multiCheck"`로 지정하여 사용합니다. 
 

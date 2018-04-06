@@ -1,4 +1,4 @@
-#### 월 선택 달력
+#### 월 선택 달력 `(Only JS Support)`
 
 컬럼의 editor.type 속성의 "btdate" 설정과 btOptions 속성 그리고 bootstrap을 사용한 월 선택 달력 기능을 설정한 Order Date컬럼 컬럼을 확인해 보세요.  
 

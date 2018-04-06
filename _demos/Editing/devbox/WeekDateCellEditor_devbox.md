@@ -1,4 +1,4 @@
-#### 주차 선택 달력
+#### 주차 선택 달력 `(Only JS Support)`
 
 yyyyWW -> yyyy-WW 컬럼은 필드가 text타입이며 [마스크 편집기](http://demo.realgrid.com/Editing/MaskEditor/) 기능과 [정규식 표현](http://demo.realgrid.com/CellComponent/RegularExpression/) 방법으로 주차 편집 컬럼을 생성할 수 있습니다.
 

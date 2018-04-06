@@ -1,4 +1,4 @@
-#### 헤더 추가 문자열
+#### 헤더 추가 문자열 `(Only JS Support)`
 
 - `subText`: 컬럼 헤더에 추가로 표시할 문자열을 지정합니다.
 - `subTextGap`: 헤더 text와의 간격을 pixel 단위로 설정합니다.

@@ -1,4 +1,4 @@
-#### 헤더 합계
+#### 헤더 합계 `(Only JS Support)`
 
 - `header.summary.visible`: 속성값을 true로 설정하면 footer와 같은 기능을 가진 bar를 시작 위치에 표시 합니다.
 

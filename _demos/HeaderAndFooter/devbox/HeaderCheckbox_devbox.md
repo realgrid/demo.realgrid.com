@@ -1,4 +1,4 @@
-#### 컬럼 헤더 체크박스 위치
+#### 컬럼 헤더 체크박스 위치 `(Only JS Support)`
 
 - `checkLocation`: 헤더 체크박스의 위치를 지정합니다.
 
@@ -18,7 +18,7 @@ var columns = [{
 }
 ```
 
-#### 컬럼 헤더 체크 선택
+#### 컬럼 헤더 체크 선택 `(Only JS Support)`
 - `column.checked`: 컬럼 헤더에 체크를 선택합니다.
 
 <a class="btn primary small round lowercase" id="btnSetColumnUnChecked">헤더 체크 해제하기</a>

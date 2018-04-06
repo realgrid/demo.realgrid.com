@@ -1,4 +1,4 @@
-#### 멀티 푸터
+#### 멀티 푸터 `(Only JS Support)`
 
 - `footer.count`: 지정한 수 만큼 그리드 하단에 footer를 표시합니다.
 - `footer.height`: footer의 전체 높이를 지정합니다.

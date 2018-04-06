@@ -1,4 +1,4 @@
-#### 마스크 편집기
+#### 마스크 편집기 `(Only JS Support)`
 
 텍스트와 날짜 필드의 편집기에 마스크를 적용할 수 있습니다.  
 (숫자 필드는 [editFormat](http://demo.realgrid.com/Editing/Editors/) 사용)   

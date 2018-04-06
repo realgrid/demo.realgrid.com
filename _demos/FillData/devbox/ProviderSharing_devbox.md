@@ -1,5 +1,4 @@
-
-#### 1 DataProvider - 2 GridView
+#### 1 DataProvider - 2 GridView `(Only JS Support)`
 
 GridView와 DataProvider를 연결하기 위해서는 [GridBase.setDataSource()](http://help.realgrid.com/api/GridBase/setDataSource/) 또는 [setDataProvider()](http://help.realgrid.com/api/GridBase/setDataProvider/)함수를 사용합니다.
 
