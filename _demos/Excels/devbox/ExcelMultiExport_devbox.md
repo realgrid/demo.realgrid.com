@@ -1,4 +1,4 @@
-#### 다중 그리드 Excel 내보내기
+#### 다중 그리드 Excel 내보내기 `(Only JS Support)`
 
 excel export시 2개 이상의 그리드를 파일 옵션은 공통으로 설정하며 exportGrids 속성으로 각 시트를 설정합니다.
 

@@ -1,4 +1,4 @@
-#### exportToCsv 내보내기
+#### exportToCsv 내보내기 `(Only JS Support)`
 
 
 <a class="btn primary small round lowercase" id="exportToCsv">exportToCsv 실행</a>

@@ -1,4 +1,4 @@
-####  Excel문서에 제목 추가하기
+####  Excel문서에 제목 추가하기 `(Only JS Support)`
 
 [exportGrid()](http://help.realgrid.com/api/GridBase/exportGrid/) 함수를 사용해서 Excel 문서를 내려 받을 때
 [GridExportOptions](http://help.realgrid.com/api/types/GridExportOptions/)의 *documentTitle*, *documentSubtitle*, *documentTail* 속성을 이용하여 Excel문서에 *제목*, *부제*, *꼬릿말*을 추가할 수 있습니다.
