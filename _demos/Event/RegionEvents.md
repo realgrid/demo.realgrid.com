@@ -107,6 +107,12 @@ var onDoneDataSet = function() {
     gridView.onRowGroupPanelDblClicked = function (grid, column) {
         addLog("onRowGroupPanelDblClicked : " + "(" + column.name + ")");
     };
+    gridView.onBodyEmptyClicked =  function (grid) {
+        addLog("onBodyEmptyClicked");
+    };
+    gridView.onBodyEmptyDblClicked =  function (grid) {
+        addLog("onBodyEmptyDblClicked");
+    };
 
     function addLog(log) {
 	    var prevLog = $("#eventLog").val();
