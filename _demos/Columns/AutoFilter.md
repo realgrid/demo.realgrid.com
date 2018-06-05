@@ -23,7 +23,6 @@ var onDoneDataSet = function() {
 	//사용자 필터 이벤트
 	gridView.onFilterActionClicked = function (grid, column, action, x, y) {
 	  
-	  console.log("onFilterActionClicked");
 	  if (action == "CustomFilter") {
 	    var offset = $("#realgrid").offset();
 

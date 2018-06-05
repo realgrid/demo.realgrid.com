@@ -92,7 +92,6 @@ ul.tab li.current{
 	$(function() {
 		$('ul.tab li').click(function() {
 			var activeTab = $(this).attr('data-tab');
-			console.log(this)
 			$('ul.tab li').removeClass('current');
 			$('.tabcontent').removeClass('current');
 			$(this).addClass('current');
@@ -101,7 +100,6 @@ ul.tab li.current{
 	});
 	function imageMap(dataTab, num){
 		var activeTab = dataTab
-		console.log(activeTab)
 			$('ul.tab li').removeClass('current');
 			$('.tabcontent').removeClass('current');
 			$('ul.tab li')[num].setAttribute( 'class', 'current' )

@@ -48,7 +48,7 @@ gridView.onValidateRow = function(grid, itemIndex, dataRow, inserting, values) {
 <script>
 $('#btnOnValidateRow').click(function() {
 	gridView.onValidateRow = function(grid, itemIndex, dataRow, inserting, values) {
-	    console.log("onValidateRow:" + itemIndex + "," + dataRow + "," + inserting + "," + values.Quantity + "," + values.UnitPrice);
+	    //console.log("onValidateRow:" + itemIndex + "," + dataRow + "," + inserting + "," + values.Quantity + "," + values.UnitPrice);
 	 
 	    var error = {};
 	 
@@ -66,7 +66,6 @@ $('#btnOnValidateRow').click(function() {
 	 
 	    //validate Unit Price
 	    if (values.UnitPrice < 30) {
-	        console.log("values.UnitPrice < 30");
 	        error.level = RealGridJS.ValidationLevel.ERROR;
 	        error.message = "UnitPrice 30 이상이어야 합니다.'";
 	    } else if (values.UnitPrice > 70) {

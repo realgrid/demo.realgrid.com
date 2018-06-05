@@ -42,10 +42,10 @@ tags: ['StateBar', '상태', 'state', '행번호']
 
   	dataProvider.onRowStateChanged = function (provider, row) {
       var state = dataProvider.getRowState(row);
-      console.log("row = " + row + ", state = " + state);
+      //console.log("row = " + row + ", state = " + state);
     }
     dataProvider.onRowStatesCleared = function (provider, row) {
-      console.log("rowStates cleared.");
+      //console.log("rowStates cleared.");
     }
     
   }

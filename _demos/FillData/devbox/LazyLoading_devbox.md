@@ -75,7 +75,7 @@ $('#onTopItemIndexChanged').click(function() {
   gridView.onTopItemIndexChanged = function(grid, item) {
     if (item > scrollItem) {
       scrollItem += 50;
-      console.log(scrollItem);
+      //console.log(scrollItem);
       loadNext();
     }
   }

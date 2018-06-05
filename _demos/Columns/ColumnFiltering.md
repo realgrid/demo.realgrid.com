@@ -20,7 +20,6 @@ tags: ['Filtering', '필터링', '필터']
   }
   var onDoneDataSet = function() {
 	gridView.onFilterActionClicked = function (grid, column, action, x, y) {
-	  console.log("onFilterActionClicked");
 	  if (action == "autoFilter") {
 	   var offset = $("#realgrid").offset();
 
@@ -63,7 +62,6 @@ tags: ['Filtering', '필터링', '필터']
 	      filterExpr += " or ";
 	    filterExpr += "(value = '" + filterItems[i].value + "')";
 	  };
-	  console.log(filterExpr);
 	  var filters = {
 	    name: "auto_result",
 	    criteria: filterExpr,
@@ -80,7 +78,6 @@ tags: ['Filtering', '필터링', '필터']
 	});
     
     gridView.onFilterActionClicked = function (grid, column, action, x, y) {
-	  console.log("onFilterActionClicked");
 	  if (action == "autoFilter") {
 	    var offset = $("#realgrid").offset();
 

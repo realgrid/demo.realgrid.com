@@ -129,7 +129,7 @@ function setHiChart(provider) {
  
                 },
                 click: function (e) {
-                    console.log(e);
+                    //console.log(e);
                 }
             }
         }

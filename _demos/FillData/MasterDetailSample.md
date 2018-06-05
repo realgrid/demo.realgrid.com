@@ -53,7 +53,7 @@ var onGridSuccessDataSetDetail = function(data, textStatus, jqXHR) {
 
 function setMasterCallback() {
     mainGrid.onCurrentRowChanged = function (grid, oldRow, newRow) {
-        console.log("mainGrid.onCurrentRowChanged");
+        //console.log("mainGrid.onCurrentRowChanged");
  
         var isNew = (newRow < 0) || dpMain.getRowState(newRow) === "created";
  
@@ -90,12 +90,12 @@ function setMasterCallback() {
     };
     dpMain.onRowsDeleted = function (provider, rows) {
         //master 레코드 삭제 처리
-        console.log("Master Rows삭제: " + rows);
+        //console.log("Master Rows삭제: " + rows);
         detailControl(mainGrid.getCurrent().dataRow);
     };
     dpMain.onRowDeleted = function (provider, row) {
         //master 레코드 삭제 처리
-        console.log("Master Row삭제: " + row);
+        //console.log("Master Row삭제: " + row);
         detailControl(mainGrid.getCurrent().dataRow);
     };
 };
@@ -130,7 +130,7 @@ function setMasterOptions(provider, grid) {
 
  
 function onbtnMasterSave(event) {
-	console.log("저장")
+	//console.log("저장")
     mainGrid.commit();
     //마스터 저장 생략.
     dpMain.clearRowStates();
@@ -191,7 +191,7 @@ function setDetailCallback() {
         values[idx] = OrderID;
     };
     dpDetail.onRowDeleted = function (provider, row) {
-        console.log("Detail Row삭제: " + row);
+        //console.log("Detail Row삭제: " + row);
     };
 };
 

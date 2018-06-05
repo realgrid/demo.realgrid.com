@@ -3,9 +3,9 @@
 	<title>RealGridJS ImageButton sample page</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 	<script src="/lib/realgrid/realgridjs-lic.js"></script>
-	<script src="/lib/realgrid/realgridjs_eval.1.1.26/realgridjs_eval.1.1.26.min.js"></script>
-	<script src="/lib/realgrid/realgridjs_eval.1.1.26/realgridjs-api.1.1.26.js"></script>
-	<script src="/lib/realgrid/realgridjs_eval.1.1.26/jszip.min.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs_eval.1.1.25.min.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.25/realgridjs-api.1.1.25.js"></script>
+	<script src="/lib/realgrid/realgridjs_eval.1.1.25/jszip.min.js"></script>
 	<script src="/lib/jquery/jquery-1.11.2.min.js"></script>
 	<script language="javascript">
 	var dataProvider;
@@ -15,7 +15,7 @@
 
 	$(document).ready( function(){
 	    RealGridJS.setTrace(false);
-	    RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.26/");
+	    RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.25/");
 	    
 	    dataProvider = new RealGridJS.LocalDataProvider();
 	    dataProvider.setFields([{
@@ -270,7 +270,7 @@
 		};
 
 		var data = [{"field1":"","field2":"10276","field3":"Germany","field4":"VINET","field5":"Austria","field8":123456789,"field9":"1996-07-04","field10":"Belgium","field11":5},{"field1":"","field2":"10276","field3":"Brazil","field4":"VINET","field5":"Austria","field8":123456789,"field9":"1996-07-04","field10":"Belgium","field11":15},{"field1":"","field2":"10277","field3":"Brazil","field4":"VINET","field5":"Austria","field8":123456789,"field9":"1996-07-04","field10":"Brazil","field11":11},{"field1":"","field2":"10277","field3":"Brazil","field4":"TOMSP","field5":"Austria","field8":123456789,"field9":"1996-07-05","field10":"Brazil","field11":5},{"field1":"","field2":"10278","field3":"France","field4":"TOMSP","field5":"Austria","field8":123456789,"field9":"1996-07-05","field10":"Brazil","field11":8},{"field1":"","field2":"10278","field3":"France","field4":"HANAR","field5":"Austria","field8":123456789,"field9":"1996-07-08","field10":"Switzerland","field11":10},{"field1":"","field2":"10278","field3":"France","field4":"HANAR","field5":"Austria","field8":123456789,"field9":"1996-07-08","field10":"Switzerland","field11":19},{"field1":"","field2":"10278","field3":"Belgium","field4":"HANAR","field5":"Austria","field8":123456789,"field9":"1996-07-08","field10":"Switzerland","field11":21},{"field1":"","field2":"10279","field3":"Belgium","field4":"VICTE","field5":"Austria","field8":123456789,"field9":"1996-07-08","field10":"Switzerland","field11":1},{"field1":"","field2":"10280","field3":"Belgium","field4":"VICTE","field5":"Austria","field8":123456789,"field9":"1996-07-08","field10":"Switzerland","field11":3},{"field1":"","field2":"10280","field3":"Brazil","field4":"VICTE","field5":"Austria","field8":123456789,"field9":"1996-07-08","field10":"Switzerland","field11":8},{"field1":"","field2":"10280","field3":"Brazil","field4":"SUPRD","field5":"Austria","field8":123456789,"field9":"1996-07-09","field10":"Switzerland","field11":23},{"field1":"","field2":"10281","field3":"Brazil","field4":"SUPRD","field5":"Austria","field8":123456789,"field9":"1996-07-09","field10":"Brazil","field11":18},{"field1":"","field2":"10281","field3":"Switzerland","field4":"SUPRD","field5":"Austria","field8":123456789,"field9":"1996-07-09","field10":"Brazil","field11":22},{"field1":"","field2":"10281","field3":"Switzerland","field4":"HANAR","field5":"Austria","field8":123456789,"field9":"1996-07-10","field10":"Venezuela","field11":15},{"field1":"","field2":"10282","field3":"Switzerland","field4":"HANAR","field5":"Austria","field8":123456789,"field9":"1996-07-10","field10":"Venezuela","field11":19},{"field1":"","field2":"10282","field3":"Switzerland","field4":"HANAR","field5":"Austria","field8":123456789,"field9":"1996-07-10","field10":"Venezuela","field11":5},{"field1":"","field2":"10283","field3":"Switzerland","field4":"CHOPS","field5":"Austria","field8":123456789,"field9":"1996-07-11","field10":"Austria","field11":5},{"field1":"","field2":"10283","field3":"Switzerland","field4":"CHOPS","field5":"Austria","field8":123456789,"field9":"1996-07-11","field10":"Sweden","field11":0},{"field1":"","field2":"10283","field3":"Switzerland","field4":"CHOPS","field5":"Austria","field8":123456789,"field9":"1996-07-11","field10":"Sweden","field11":5},{"field1":"","field2":"10283","field3":"Brazil","field4":"RICSU","field5":"Austria","field8":123456789,"field9":"1996-07-12","field10":"France","field11":22},{"field1":"","field2":"10284","field3":"Brazil","field4":"RICSU","field5":"Austria","field8":123456789,"field9":"1996-07-12","field10":"France","field11":15},{"field1":"","field2":"10284","field3":"Venezuela","field4":"RICSU","field5":"Austria","field8":123456789,"field9":"1996-07-12","field10":"Finland","field11":18},{"field1":"","field2":"10284","field3":"Venezuela","field4":"RICSU","field5":"Austria","field8":123456789,"field9":"1996-07-12","field10":"Germany","field11":10},{"field1":"","field2":"10284","field3":"Venezuela","field4":"WELLI","field5":"Austria","field8":123456789,"field9":"1996-07-15","field10":"Germany","field11":5},{"field1":"","field2":"10287","field3":"Germany","field4":"WELLI","field5":"Austria","field8":123456789,"field9":"1996-07-15","field10":"Germany","field11":4},{"field1":"","field2":"10288","field3":"Venezuela","field4":"HILAA","field5":"Austria","field8":123456789,"field9":"1996-07-16","field10":"Venezuela","field11":9},{"field1":"","field2":"10288","field3":"Venezuela","field4":"HILAA","field5":"Austria","field8":123456789,"field9":"1996-07-16","field10":"Venezuela","field11":9},{"field1":"","field2":"10289","field3":"USA","field4":"HILAA","field5":"Austria","field8":123456789,"field9":"1996-07-16","field10":"USA","field11":0},{"field1":"","field2":"10289","field3":"USA","field4":"ERNSH","field5":"Austria","field8":123456789,"field9":"1996-07-17","field10":"Spain","field11":11},{"field1":"","field2":"10290","field3":"Finland","field4":"ERNSH","field5":"Austria","field8":123456789,"field9":"1996-07-17","field10":"Spain","field11":15},{"field1":"","field2":"10290","field3":"Finland","field4":"ERNSH","field5":"Austria","field8":123456789,"field9":"1996-07-17","field10":"Spain","field11":18},{"field1":"","field2":"10290","field3":"Sweden","field4":"CENTC","field5":"Austria","field8":123456789,"field9":"1996-07-18","field10":"Spain","field11":10},{"field1":"","field2":"10290","field3":"Spain","field4":"CENTC","field5":"Austria","field8":123456789,"field9":"1996-07-18","field10":"Venezuela","field11":5},{"field1":"","field2":"Spain","field3":"Spain","field4":"OTTIK","field5":"Austria","field8":123456789,"field9":"1996-07-19","field10":"Venezuela","field11":4}]
-		dataProvider.fillJsonData(data);
+		dataProvider.fillJsonData(data,{count:5});
 
 		gridView.setEditOptions({editable:true});
 
@@ -331,5 +331,33 @@ longTap:
 Event Log&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onclick="clearLog()" value="지우기"/>
 <textarea id="eventLog" style="width:100%; height:200px; border: 2px solid #5d8cc9"></textarea>
 <div id="realgrid" style="height:383px;width:100%;" title="리얼그리드"></div>
+<h3>1.1.25버전 모바일 테스트를 위한 페이지입니다.</h3>
+
+<H3>테스트 케이스</H3>
+<H4>ISSUE: 702</H4>
+1. 각 컬럼의 버튼이 정상적으로 표시되는지 확인<br/>
+2. 각 버튼의 동작(클릭)이 되는지 확인<br/>
+
+<H4>ISSUE: 943</H4>
+1. 편집 기능이 정상적으로 되는지 확인<br/>
+2. imageButton, editButton, dataButton 버튼 기능 확인<br/>
+3. longTap 시간 설정<br/>
+4. doubleTap interval 시간 설정<br/>
+
+<h4>신규 모바일 옵션</h4>
+longTap:
+<select id="selLongTab">
+  <option selected="selected">300</option>
+  <option>500</option>
+  <option>1000</option>
+  <option>2000</option>
+</select>
+&nbsp;&nbsp;doubleTap:
+<select id="selDoubleTab">
+  <option selected="selected">300</option>
+  <option>500</option>
+  <option>1000</option>
+  <option>2000</option>
+</select>
 </body>
 </html>

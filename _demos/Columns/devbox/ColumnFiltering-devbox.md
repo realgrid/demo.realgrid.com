@@ -287,7 +287,6 @@ function applyAutoFilter() {
       filterExpr += " or ";
     filterExpr += "(value = '" + filterItems[i].value + "')";
   };
-  console.log(filterExpr);
   var filters = {
     name: "auto_result",
     criteria: filterExpr,

@@ -41,8 +41,6 @@ var onDoneDataSet = function() {
 
   gridView.addLookupSource(source);
 
-  console.log("laddLookupSource")
-
   gridView.onEditCommit = function (id, index, oldValue, newValue) {
     if (index.field == "Country") {
       lookupDataChange(newValue);

@@ -190,7 +190,6 @@ $('#btnGetModel').click(function() {
     var extended = $("#chkExtendedModel").is(":checked");
     var itemIndex = gridView.getCurrent().itemIndex;
     var item = gridView.getModel(itemIndex, extended);
-    console.log(JSON.stringify(item));
     alert(JSON.stringify(item));
 });
  
@@ -199,7 +198,6 @@ $('#btnGetParentModel').click(function() {
     var idx = gridView.getCurrent();
     var item = gridView.getModel(idx.itemIndex);
     var parent = gridView.getParentModel(item,extended);
-    console.log(JSON.stringify(parent));
     alert(JSON.stringify(item));
     if (parent) {
         idx.itemIndex = parent.itemIndex;
@@ -212,7 +210,6 @@ $('#btnGetRootModel').click(function() {
     var idx = gridView.getCurrent();
     var item = gridView.getModel(idx.itemIndex);
     var root = gridView.getRootModel(item, extended);
-    console.log(JSON.stringify(root));
     alert(JSON.stringify(root));
     if (root) {
         idx.itemIndex = root.itemIndex;
@@ -226,7 +223,6 @@ $('#btnGetChildModels').click(function() {
     var item = gridView.getModel(itemIndex);
     if (item) {
         var children = gridView.getChildModels(item,extended);
-        console.log(JSON.stringify(children));
         alert(JSON.stringify(children));
     }
 });
@@ -237,7 +233,6 @@ $('#btnGetChildModel').click(function() {
     var group = gridView.getModelAs(itemIndex, "group");
     if (group && group.count > 0) {
         var item = gridView.getChildModel(group, 0, extended);
-        console.log(JSON.stringify(item));
         alert(JSON.stringify(item));
     }
 });
@@ -246,7 +241,6 @@ $('#btnGetModels').click(function() {
     var extended = $("#chkExtendedModel").is(":checked");
     var items = gridView.getModels([0, 1, 2], extended);
     var s = JSON.stringify(items);
-    console.log(s);
     alert(JSON.stringify(s));
 });
  
@@ -254,7 +248,6 @@ $('#btnGetModelOfRow').click(function() {
     var extended = $("#chkExtendedModel").is(":checked");
     var row = gridView.getCurrent().dataRow;
     var item = gridView.getModelOfRow(row,extended);
-    console.log(JSON.stringify(item));
     alert(JSON.stringify(item));
 });
  
@@ -262,7 +255,6 @@ $('#btnGetModelsOfRows').click(function() {
     var extended = $("#chkExtendedModel").is(":checked");
     var items = gridView.getModelsOfRows([0, 1, 2],extended);
     var s = JSON.stringify(items);
-    console.log(s);
     alert(JSON.stringify(s));
 });
  
@@ -276,7 +268,6 @@ $('#btnGetGroupSummary').click(function() {
         if (group && idx.fieldIndex >= 0) {
             var summary = gridView.getGroupSummary(group, idx.fieldIndex);
             if (summary) {
-                console.log(JSON.stringify(summary));
                 alert(JSON.stringify(summary));
             }
         }

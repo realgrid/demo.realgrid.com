@@ -56,7 +56,6 @@ RealGrid의 기반 클래스인 GridBase의
 <script>
 $('#loadRemoteData').click(function() {
   treeDataProvider.onLoadCompleted = function (provider) {
-        console.log("Data loaded.");
     }
 
   treeView.showProgress();
