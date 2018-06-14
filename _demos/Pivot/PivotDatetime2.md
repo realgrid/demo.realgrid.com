@@ -2,10 +2,9 @@
 layout: page
 title: 피벗 날짜 타입2
 order: 7
-published: true
 categories:
   - 피벗(RealPivot)
-tags: ['pivot', 'datetime', '날짜']
+tags: []
 ---
 
 
@@ -69,88 +68,86 @@ $(document).ready( function() {
 
     pivot.setFieldMapping([{
         name: "국가",
-        sourceField: "국가"
+        sourceField: "국가",
+        valueEnable: false
     },{
         name: "브랜드명",
-        sourceField: "브랜드명"
+        sourceField: "브랜드명",
+        valueEnable: false
     },{
         name: "판매분기",
         sourceField: "판매날짜",
         dateType:"quarter",
-        fieldHeader:"분기",
-        displayFormat: "${value}사분기",
-        summaryFormat: "${value}사분기 합"
+        fieldHeader:"판매분기",
+        displayFormat: "${value + 1}사분기",
+        summaryFormat: "요약",
+        valueEnable: false
     },{
         name: "판매년도",
         sourceField: "판매날짜",
         dateType: "year",
-        fieldHeader: "년도",
-        displayFormat: "${value}년도",
-        summaryFormat: "${value}년도 합"
+        fieldHeader: "판매년도",
+        displayFormat: "${value + 1}년도",
+        summaryFormat: "요약",
+        valueEnable: false
     },{
         name: "판매월",
         sourceField: "판매날짜",
         dateType: "month",
-        fieldHeader: "월",
-        displayFormat: "${value}월",
-        summaryFormat: "${value}월 합"
+        fieldHeader: "판매월",
+        displayFormat: "${value + 1}월",
+        summaryFormat: "요약",
+        valueEnable: false
     },{
         name: "판매일",
         sourceField: "판매날짜",
         dateType: "day",
-        fieldHeader: "일",
-        displayFormat: "${value}일",
-        summaryFormat: "${value}일 합"
+        fieldHeader: "판매일",
+        displayFormat: "${value + 1}일",
+        summaryFormat: "요약",
+        valueEnable: false
     },{
         name: "판매주",
         sourceField: "판매날짜",
         dateType: "weekofmonth",
-        fieldHeader: "주",
-        displayFormat: "${value}주",
-        summaryFormat: "${value}주 합"
+        fieldHeader: "판매월주차",
+        displayFormat: "${value + 1}주차",
+        summaryFormat: "요약",
+        valueEnable: false
     },{
         name: "half",
         sourceField: "판매날짜",
         dateType: "half",
-        fieldHeader: "주",
-        displayFormat: "${value}주",
-        summaryFormat: "${value}주 합"
+        fieldHeader: "판매반기",
+        displayFormat: "${value + 1}주",
+        summaryFormat: "요약",
+        valueEnable: false
     },{
         name: "weekofyear",
         sourceField: "판매날짜",
         dateType: "weekofyear",
-        fieldHeader: "주",
-        displayFormat: "${value}주",
-        summaryFormat: "${value}주 합"
-    },{
-        name: "판매요일",
-        sourceField: "판매날짜",
-        dateType: "weekday",
-        fieldHeader: "요일",
-        displayLabels: { 
-            0: "일요일",
-            1: "월요일",
-            2: "화요일",
-            3: "수요일",
-            4: "목요일",
-            5: "금요일",
-            6: "토요일"
-        },
-        summaryFormat: "${value}주 합"
+        fieldHeader: "판매연주차",
+        displayFormat: "${value + 1}주",
+        summaryFormat: "요약",
+        valueEnable: false
     },{
         name: "판매수량",
         sourceField: "판매수량",
-        numberFormat:"#,##0"
+        numberFormat:"#,##0",
+        labelEnable: false
     },{
         name: "차량가격",
         sourceField: "차량가격",
-        numberFormat:"#,##0"
+        numberFormat:"#,##0",
+        labelEnable: false
     },{
         name:"차종",
-        sourceField:"차종"
+        sourceField:"차종",
+        valueEnable: false
     },{
         name:"연료",
-        sourceField:"연료"
+        sourceField:"연료",
+        valueEnable: false
     }]);
 
     pivot.setPivotFields({

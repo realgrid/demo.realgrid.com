@@ -1,16 +1,16 @@
 ---
 layout: page
-title: 피벗 필드 재설정
-order: 5
+title: 피벗 숫자포맷
+order: 14
 devbox: true
-devboxfile: PivotSetting_devbox.md
-published: false
+devboxfile: PivotNumberFormat_devbox.md
+published: true
 categories:
   - 피벗(RealPivot)
-tags: ['pivot', 'setting']
+tags: ['pivot', 'numberFormat']
 ---
 
-Pivot의 columns, rows, values 값을 직접 설정해서 Pivot 화면을 구성할 수 있습니다.
+피벗 데이터 로드 시 프로그레드바를 표시합니다.
 
 <link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.9.0/css/default_blue.css">
 <link rel="stylesheet" type="text/css" href="/lib/css/pivot_demo.css">
@@ -20,6 +20,7 @@ Pivot의 columns, rows, values 값을 직접 설정해서 Pivot 화면을 구성
 <script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs-api.1.1.27.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.9.0/messages/realpivot-messages.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.9.0/realpivot_eval.0.9.0.min.js"></script>
+
 
 <div id="realpivot" style="width:100%;height:500px;"></div>
 
@@ -32,6 +33,7 @@ $(document).ready( function() {
     dataProvider = new RealGridJS.LocalDataProvider();
     pivot = new RealPivot("realpivot");
     pivot.setDataProvider(dataProvider);
+    pivot.setDisplayOptions({showProgress:true});
 
     var fields = [{
         fieldName:"국산/수입"

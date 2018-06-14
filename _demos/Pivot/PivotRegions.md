@@ -2,10 +2,10 @@
 layout: page
 title: 피벗 영역
 order: 8
-published: true
+published: false
 categories:
   - 피벗(RealPivot)
-tags: ['pivot', 'Regions']
+tags: []
 ---
 
 상세 영역 보기는 아래의 탭을 클릭하거나 최상위 요소탭 pivot 화면의 영역을 선택하면 해당 영역에 대한 상세 정보를 볼 수 있습니다.

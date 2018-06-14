@@ -80,8 +80,6 @@
 
             $.getJSON("{{ columnfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.treeVar }}.setColumns(data);
-
-                console.log("비동기 재설정");
                 $.ajaxSetup({
                   async: true
                 });
