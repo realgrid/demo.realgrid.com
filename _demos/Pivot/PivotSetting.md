@@ -80,7 +80,7 @@ $(document).ready( function() {
         sourceField: "판매날짜",
         dateType:"quarter",
         fieldHeader:"판매분기",
-        displayFormat: "${value + 1}사분기",
+        displayFormat: "${value}사분기",
         summaryFormat: "요약",
         valueEnable: false
     },{
@@ -88,7 +88,7 @@ $(document).ready( function() {
         sourceField: "판매날짜",
         dateType: "year",
         fieldHeader: "판매년도",
-        displayFormat: "${value + 1}년도",
+        displayFormat: "${value}년도",
         summaryFormat: "요약",
         valueEnable: false
     },{
@@ -96,7 +96,7 @@ $(document).ready( function() {
         sourceField: "판매날짜",
         dateType: "month",
         fieldHeader: "판매월",
-        displayFormat: "${value + 1}월",
+        displayFormat: "${value}월",
         summaryFormat: "요약",
         valueEnable: false
     },{
@@ -104,7 +104,7 @@ $(document).ready( function() {
         sourceField: "판매날짜",
         dateType: "day",
         fieldHeader: "판매일",
-        displayFormat: "${value + 1}일",
+        displayFormat: "${value}일",
         summaryFormat: "요약",
         valueEnable: false
     },{
@@ -112,7 +112,7 @@ $(document).ready( function() {
         sourceField: "판매날짜",
         dateType: "weekofmonth",
         fieldHeader: "판매월주차",
-        displayFormat: "${value + 1}주차",
+        displayFormat: "${value}주차",
         summaryFormat: "요약",
         valueEnable: false
     },{
@@ -120,7 +120,7 @@ $(document).ready( function() {
         sourceField: "판매날짜",
         dateType: "half",
         fieldHeader: "판매반기",
-        displayFormat: "${value + 1}주",
+        displayFormat: "${value}주",
         summaryFormat: "요약",
         valueEnable: false
     },{
@@ -128,7 +128,7 @@ $(document).ready( function() {
         sourceField: "판매날짜",
         dateType: "weekofyear",
         fieldHeader: "판매연주차",
-        displayFormat: "${value + 1}주",
+        displayFormat: "${value}주",
         summaryFormat: "요약",
         valueEnable: false
     },{

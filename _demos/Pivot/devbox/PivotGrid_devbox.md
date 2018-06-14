@@ -3,12 +3,12 @@
 <a class="btn primary small round lowercase" id="btnDrawPivot">변경내용을 피벗에 적용</a>
 
 ```js
-pivot.drawView();
+pivot.buildPivot();
 ```
 
 
 <script>
 $('#btnDrawPivot').click(function() {
-	pivot.drawView();
+	pivot.buildPivot();
 });
 </script>
