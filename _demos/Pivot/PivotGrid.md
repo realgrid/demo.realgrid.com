@@ -8,9 +8,7 @@ categories:
 tags: ['pivot', 'grid', '피벗']
 ---
 
-그리드의 데이터를 Pivot으로 표현합니다.
-
-
+동일한 DataProvider로 GridView와 PivotView로 표현한 예제입니다.
 
 <link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.9.0/css/default_blue.css">
 <link rel="stylesheet" type="text/css" href="/lib/css/pivot_demo.css">

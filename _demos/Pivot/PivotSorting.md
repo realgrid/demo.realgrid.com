@@ -10,7 +10,7 @@ categories:
 tags: ['pivot', 'sort']
 ---
 
-Pivot의 정렬 기능을 사용해서 label 또는 value 값을 정렬할 수 있습니다.
+라벨값 또는 특정 조건의 값을 기준으로 피벗을 정렬할 수 있습니다.
 
 <link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.9.0/css/default_blue.css">
 <link rel="stylesheet" type="text/css" href="/lib/css/pivot_demo.css">

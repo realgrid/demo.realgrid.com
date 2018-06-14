@@ -10,7 +10,7 @@ categories:
 tags: ['pivot', 'filter']
 ---
 
-Pivot의 필터링 기능을 적용시켜서 원하는 조건으로 데이터를 조회합니다.
+원본데이터에서 조건을 만족하는 데이터만 피벗으로 구성할 수 잇습니다.
 
 <link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.9.0/css/default_blue.css">
 <link rel="stylesheet" type="text/css" href="/lib/css/pivot_demo.css">
