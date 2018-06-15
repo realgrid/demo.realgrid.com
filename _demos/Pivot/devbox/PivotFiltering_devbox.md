@@ -3,9 +3,7 @@ conditions속성으로 필터 조건을 지정하고 [operation](http://help.rea
 conditions에는 criteria로 식을 지정하거나, values에 특정 값을 지정할 수 있습니다.  
 
 
-이사분기 이상이고 브랜드명이 '기아', 현대'인 데이터로 필터링 합니다. 
-
-<a class="btn primary small round lowercase" id="btnSetFilter1">필터링</a>
+ <a class="btn primary small round lowercase" id="btnSetFilter1">이사분기 이상이고 차종이 기아,현대로 필터링</a>
 
 ```js
 pivot.filter({
@@ -17,9 +15,7 @@ pivot.filter({
 });
 ```
 
-판매월이 9월 이후이고 차종이 중형인 데이터로 필터링합니다.
-
-<a class="btn primary small round lowercase" id="btnSetFilter2">필터링</a>
+<a class="btn primary small round lowercase" id="btnSetFilter2">판매월이 9월이후이고 중형으로 필터링</a>
 
 ```js
 pivot.filter({

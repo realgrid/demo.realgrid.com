@@ -1,17 +1,64 @@
-#### 피벗 툴팁 설정
+#### 툴팁 표시 설정
 
-피벗 툴팁 적용 버튼 클릭 시 pivot 화면에 툴팁 기능을 적용시킵니다.
+피벗에서 값 셀과 라빌 셀에 각각 툴팁을 표시할 수 있습니다.
 [http://help.realgrid.com/pivotApi/types/DisplayOptions/](http://help.realgrid.com/pivotApi/types/DisplayOptions/)
 
-<a class="btn primary small round lowercase" id="btnSetPivotTooltip">피벗 툴팁 적용</a>
+<a class="btn primary small round lowercase" id="btnSetTooltip">값 툴팁 표시</a>
 
 ```js
-pivot.setDisplayOptions({showTooltip:true})
+pivot.setDisplayOptions({
+	showTooltip:true
+});
 ```
 
+<a class="btn primary small round lowercase" id="btnSetLabelTooltip">라벨 툴팁 표시</a>
+
+```js
+pivot.setDisplayOptions({
+	showLabelTooltip:true
+});
+```
+
+툴팁은 마우스 포인터가 셀에 일정 시간 머무르면 표시하도록 되어있습니다. 기본값은 200(millisecond)입니다.
+<a class="btn primary small round lowercase" id="btnSetTooltipDelay">툴팁 지연시간 1초로 변경</a>
+
+```js
+pivot.setDisplayOptions({
+	tooltipDelay: 1000
+});
+```
+
+#### 툴팁 내용 커스트마이징
+
+피벗에서는 툴팁의 내용을 개발자가 변경할 수 있도록 값 셀의 [onTooltip](http://help.realgrid.com/pivotApi/RealPivot/onTooltip/) 콜백 과 라벨 셀의 [onLabelTooltip](http://help.realgrid.com/pivotApi/RealPivot/onLabelTooltip/) 콜백을 제공합니다.
+
+<a class="btn primary small round lowercase" id="btnSetCallback">툴팁 콜백 지정</a>
+
+```js
+pivot.onTooltip = function (view, index, s) {
+    return "사용자 지정 툴팁입니다."; 
+}
+pivot.onLabelTooltip = function (view, index, s) {
+    return "사용자 지정 라벨 툴팁입니다."
+}
+```
 
 <script>
-	$('#btnSetPivotTooltip').click(function() {
-		pivot.setDisplayOptions({showTooltip:true})
+	$('#btnSetTooltip').click(function() {
+		pivot.setDisplayOptions({showTooltip:true});
+    });
+	$('#btnSetLabelTooltip').click(function() {
+		pivot.setDisplayOptions({showLabelTooltip:true});
+    });
+	$('#btnSetTooltipDelay').click(function() {
+		pivot.setDisplayOptions({tooltipDelay: 1000});
+    });
+	$('#btnSetCallback').click(function() {
+		pivot.onTooltip = function (view, index, s) {
+		    return "사용자 지정 툴팁입니다."; 
+		}
+		pivot.onLabelTooltip = function (view, index, s) {
+		    return "사용자 지정 라벨 툴팁입니다."
+		}
     });
 </script>

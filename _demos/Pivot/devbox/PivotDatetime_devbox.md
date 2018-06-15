@@ -5,7 +5,7 @@
   <option value="type1">판매년도</option>
   <option value="type2">판매년도 - 판매분기</option>
   <option value="type3">판매년도 - 판매분기 - 판매월</option>
-  <option value="type4">판매년도 - 판매분기 - 판매월 - 판매월주차</option>
+  <option value="type4">판매년도 - 판매월 - 판매월주차</option>
 </select>
 
 
@@ -53,7 +53,7 @@ $('#btnSetPivotFields').click(function() {
 		});
 	}else if(typeValue == "type4"){
 		pivot.setPivotFields({
-		    columns: ["판매년도","판매분기","판매월","판매월주차"],
+		    columns: ["판매년도","판매월","판매월주차"],
 		    rows: ["국가","브랜드명"],
 		    values: [{
 		        name: "차량가격",

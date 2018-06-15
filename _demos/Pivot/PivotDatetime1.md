@@ -22,8 +22,7 @@ tags: ['pivot', 'datetime', '날짜']
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.9.0/realpivot_eval.0.9.0.min.js"></script>
 
 
-pivot의 날짜 데이터를 판매년도 - 판매분기 - 판매월 기준으로 column을 구성하였습니다.  
-pivot setup 화면에서 컬럼필드 구성설정으로 기준을 변경할 수 있습니다.
+피벗에서는 하나의 날짜 필드를 년도,반기,분기,월,년주차,월주차,일,시 로 각각 구성할 수 있습니다.
 <div id="realpivot" style="width:100%;height:500px;"></div>
 
 

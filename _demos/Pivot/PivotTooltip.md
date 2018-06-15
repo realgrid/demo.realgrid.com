@@ -10,7 +10,7 @@ categories:
 tags: ['pivot', 'tooltip']
 ---
 
-피벗 body 영역에 마우스 호버 시 해당 셀의 정보를 툴팁으로 보여줍니다.
+피벗 셀에 마우스 호버링 시 관련 정보를 툴팁으로 표시합니다.
 
 <link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.9.0/css/default_blue.css">
 <link rel="stylesheet" type="text/css" href="/lib/css/pivot_demo.css">
