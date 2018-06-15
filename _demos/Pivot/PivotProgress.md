@@ -4,7 +4,7 @@ title: 피벗 프로그레스바
 order: 9
 devbox: true
 devboxfile: PivotProgress_devbox.md
-published: true
+published: false
 categories:
   - 피벗(RealPivot)
 tags: ['pivot', 'progress']

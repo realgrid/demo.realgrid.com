@@ -19,7 +19,7 @@ pivot.setDisplayOptions({
 });
 ```
 
-툴팁은 마우스 포인터가 셀에 일정 시간 머무르면 표시하도록 되어있습니다. 기본값은 200(millisecond)입니다.
+툴팁은 마우스 포인터가 셀에 일정 시간 머무르면 표시하도록 되어있습니다. 기본값은 200(millisecond)입니다.<br/>
 <a class="btn primary small round lowercase" id="btnSetTooltipDelay">툴팁 지연시간 1초로 변경</a>
 
 ```js

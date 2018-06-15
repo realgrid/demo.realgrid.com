@@ -10,7 +10,7 @@ categories:
 tags: ['pivot', 'numberFormat']
 ---
 
-피벗 데이터 로드 시 프로그레드바를 표시합니다.
+numberFormat 기능을 사용해서 pivot에 표시될 데이터를 정수, 소수 형태로 설정할 수 있습니다.
 
 <link rel="stylesheet" type="text/css" href="/lib/realpivot/realpivot_eval.0.9.0/css/default_blue.css">
 <link rel="stylesheet" type="text/css" href="/lib/css/pivot_demo.css">

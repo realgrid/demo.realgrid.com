@@ -21,8 +21,10 @@ tags: ['pivot']
 
 <a class="btn primary small round lowercase" id="btnStep1">1. dataProvider, pivot 객체 생성 및 연결</a>
 <a class="btn primary small round lowercase" id="btnStep2">2. dataProvider field생성 및 pivot fieldMapping</a>
-<a class="btn primary small round lowercase" id="btnStep3">3. 데이터 불러오기</a>
+<a class="btn primary small round lowercase" id="btnStep3">3. 데이터 불러오기 및 그리기</a>
+<!--
 <a class="btn primary small round lowercase" id="btnStep4">4. pivot 그리기</a>
+-->
 <div id="realpivot" style="width:100%;height:500px;"></div>
 
 <script>
@@ -202,20 +204,22 @@ $('#btnStep3').click(function() {
         },
         complete: function(data){
           $("#btnStep3").css("background-color","silver");
-          $('#btnStep4').show();
-          step++
+          //$('#btnStep4').show();
+          //step++
         }
     });
-  }else {
+  }
+  /*else {
     alert("STEP" + step + "을 진행해 주세요.")
   }
+  */
 });
-
+/*
 $('#btnStep4').click(function() {
     pivot.drawView();
     $(".realpivot-title-menu").css("display","inline-block")
     $(".realpivot-title-setup").css("display","inline-block")
 });
-
+*/
 
 </script>

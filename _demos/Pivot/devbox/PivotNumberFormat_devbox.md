@@ -1,12 +1,47 @@
 #### 피벗 숫자포맷
 
+pivot setup화면의 값필드 설정 시 직접 변경할 수 있습니다.<br/>
 
-버튼 클릭 시 소수점 첫째자리 까지 표시됩니다.
+버튼 클릭 시 소수점 첫째자리 까지 표시됩니다.<br/>
 <a class="btn primary small round lowercase" id="btnSetNumberFormat1">소수점 첫째자리 표시</a>
 
-버튼 클릭 시 소수점 첫째자리 까지 표시됩니다.
+```js
+pivot.setFieldMapping([
+	{
+	    name: "판매수량",
+	    sourceField: "판매수량",
+	    numberFormat:"#,##0.0",
+	    labelEnable: false
+	},{
+	    name: "차량가격",
+	    sourceField: "차량가격",
+	    numberFormat:"#,##0.0",
+	    labelEnable: false
+	},
+	...
+]);
+```
+
+
+버튼 클릭 시 소수점 첫째자리 까지 표시됩니다.<br/>
 <a class="btn primary small round lowercase" id="btnSetNumberFormat2">소수점 둘째자리 표시</a>
 
+```js
+pivot.setFieldMapping([
+	{
+	    name: "판매수량",
+	    sourceField: "판매수량",
+	    numberFormat:"#,##0.00",
+	    labelEnable: false
+	},{
+	    name: "차량가격",
+	    sourceField: "차량가격",
+	    numberFormat:"#,##0.00",
+	    labelEnable: false
+	},
+	...
+]);
+```
 
 <script>
 $('#btnSetNumberFormat1').click(function() {

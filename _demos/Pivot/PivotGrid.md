@@ -22,10 +22,8 @@ tags: ['pivot', 'grid', '피벗']
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.0.9.0/realpivot_eval.0.9.0.min.js"></script>
 <script type="text/javascript" src="/lib/realgrid/RealGridSkins.js"></script>
 
-<font size="6">RealGrid</font>
-<div id="realgrid" style="width:100%;height:500px;"></div><br/>
-<font size="6">RealPivot</font>
-<div id="realpivot" style="width:100%;height:500px;"></div>
+<div id="realgrid" style="width:100%;height:250px;"></div>
+<div id="realpivot" style="width:100%;height:400px;"></div>
 
 <script>
 var gridView;
