@@ -1,7 +1,7 @@
 #### 툴팁 표시 설정
 
 피벗에서 값 셀과 라빌 셀에 각각 툴팁을 표시할 수 있습니다.
-[http://help.realgrid.com/pivotApi/types/DisplayOptions/](http://help.realgrid.com/pivotApi/types/DisplayOptions/)
+[setDisplayOptions()](http://help.realgrid.com/pivotApi/types/DisplayOptions/)
 
 <a class="btn primary small round lowercase" id="btnSetTooltip">값 툴팁 표시</a>
 

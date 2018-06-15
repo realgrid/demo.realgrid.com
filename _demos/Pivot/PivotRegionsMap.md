@@ -31,7 +31,7 @@ pivot 이미지 영역에 마우스를 올리면 해당 영역의 className과 �
 </script>
 <!-- pivot -->
 <div id="container" style="width:1019px; height:503px;">
-	<img class="map" src="/resource/image/pivot_images/pivot_imagemap.png" id="imagemap" alt="" usemap="#Map" width="1019px" height="503px"/>
+	<img class="map" src="/resource/image/pivot_images/pivot_imagemap3.png" id="imagemap" alt="" usemap="#Map" width="1019px" height="503px"/>
 	<map name="Map" id="Map">
 
 	    <area alt="" title="" href="#contextMenu" shape="rect" coords="5,3,21,21" id="contextMenu" class="realpivot-title-menu"/>
