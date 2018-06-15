@@ -16,7 +16,7 @@ pivot.sort({
       method: "label",
       labels: [  
         { name: "판매분기", direction: "descending"},
-        { name: "월", direction: "descending"}
+        { name: "판매월", direction: "descending"}
      ]
   },
   row: {
@@ -65,7 +65,7 @@ pivot.sort({
       method: "label",
       labels: [  
         { name: "판매분기", direction: "descending"},
-        { name: "월", direction: "descending"}
+        { name: "판매월", direction: "descending"}
      ]
   },
   row: {
@@ -90,7 +90,7 @@ $('#btnLabelSort').click(function() {
 	      method: "label",
 	      labels: [  
 	        { name: "판매분기", direction: "descending"},
-	        { name: "월", direction: "descending"}
+	        { name: "판매월", direction: "descending"}
 	     ]
 	  },
 	  row: {
@@ -127,7 +127,7 @@ $('#btnComplexSort').click(function() {
 	      method: "label",
 	      labels: [  
 	        { name: "판매분기", direction: "descending"},
-	        { name: "월", direction: "descending"}
+	        { name: "판매월", direction: "descending"}
 	     ]
 	  },
 	  row: {

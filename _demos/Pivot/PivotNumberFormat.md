@@ -4,7 +4,7 @@ title: 피벗 숫자포맷
 order: 14
 devbox: true
 devboxfile: PivotNumberFormat_devbox.md
-published: false
+published: true
 categories:
   - 피벗(RealPivot)
 tags: ['pivot', 'numberFormat']

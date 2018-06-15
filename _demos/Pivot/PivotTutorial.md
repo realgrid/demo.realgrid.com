@@ -169,6 +169,19 @@ $('#btnStep2').click(function() {
         valueEnable: false
     }]);
 
+    pivot.setPivotFields({
+        columns: ["판매분기","판매월"],
+        rows: ["브랜드명","차종"],
+        values: [{
+            name: "차량가격",
+            expression: "sum"
+        }, {
+            name: "판매수량",
+            expression: "sum"
+        }]
+    });
+
+
     pivot.drawView();
     $("#btnStep2").css("background-color","silver");
     $('#btnStep3').show();
