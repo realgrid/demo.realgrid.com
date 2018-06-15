@@ -9,9 +9,9 @@ pivot.setContextMenu([{
     text: "엑셀저장",
     callback: function(){
         pivot.exportGrid({
+            type: "excel",
             target: "local",
-            fileName: "RealPivotExport.xlsx",
-            expandAll: true
+            fileName: "RealPivotExport.xlsx"
         });
     }
 }]);
@@ -24,9 +24,9 @@ $('#btnSetContextMenu').click(function() {
         text: "엑셀저장",
         callback: function(){
             pivot.exportGrid({
+                type: "excel",
                 target: "local",
-                fileName: "RealPivotExport.xlsx",
-                expandAll: true
+                fileName: "RealPivotExport.xlsx"
             });
         }
     }]);
