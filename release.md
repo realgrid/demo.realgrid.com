@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.27'
+title: '최신버전 1.1.28'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,220 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+
+## 1.1.28 (2018년 6월)
+
+---
+
+#### 기능 개선
+
+1. `numberFormat` 
+  - 숫자를 절대값으로 표현할수 있는 기능이 추가 되었습니다.
+```js
+gridView.setColumns([{
+    name:"colName",
+    fieldName:"fieldName",
+    dynamicStyles:[{
+        criteria:"value < 0",
+        styles:{prefix:"[", suffix:"]", foreground:"#FFFF0000", numberFormat:"#,##0;.;,;a" // 또는 numberFormat:"#,##0;a"}
+    }]
+}])
+```
+  - 값이 음수인경우 글자색과 prefix, suffix를 지정하고 보여지는 값은 절대값으로 보여지도록 사용할수 있습니다.
+
+1. [CheckBar](http://help.realgrid.com/api/types/CheckBar/)
+  - CheckBar의 check표시를 Image를 이용해서 할수 있도록 개선되었습니다.
+  - CheckBox.drawCheckBox 속성이 추가 되었습니다. `false`이면 CheckBox의 테두리를 그리지 않습니다.
+```js
+  gridView.setCheckBar({checkImageUrl:"./images/check.png", unCheckImageUrl:"./images/unCheck.png", drawCheckBox:false});
+```
+
+1.  [EditOptioins](http://help.realgrid.com/api/types/EditOptions/)
+  - 그리드의 첫번째 컬럼에 해당하는 셀에 포커스가 있는 상태에서 Shift+Tab키를 입력하면 이전행의 마지막 셀로 포커스가 이동하도록 개선되었습니다.
+  - editOptions.crossWhenExitLast가 true인경우 적용됩니다.
+
+1. [DropDownCellEditor](http://help.realgrid.com/api/types/DropDownCellEditor/)
+  - DataColumn의 values와 labels의 값을 별도로 입력하던것을 한번에 입력가능하도록 `lookupData`속성이 추가되었습니다.
+```js
+var lookupDatas = [
+    {value:"001", label:"일"},
+    {value:"002", label:"이"},
+    {value:"003", label:"삼"}
+];
+gridView.setColumns([{
+    name:"colName",
+    fieldName:"fieldName",
+    lookupData:{value:"value", label:"label", list:lookupDatas},
+    // 또는 
+    lookupData:lookupDatas,
+    editor:{type:"dropdown"}
+}])
+```
+  - value와 label에 해당하는 JSON객체의 name을 지정합니다.
+  - value에 해당하는 JSON객체의 name이 "value" 또는 "code"이고 label에 해당하는 JSON객체의 name이 "label" 또는 "text"인 경우에는 "value"와 "label"속성을 생략하고 lookupData에 JSON 배열을 지정할수 있습니다.
+
+1. [DynamicStyle](http://help.realgrid.com/api/types/DynamicStyle/)
+  - dynamicStyles.criteria를 RealGrid의 판정식이 아닌 javascript function으로 사용할수 있도록 개선되었습니다.
+  - 하나의 셀이 그려지기 직전에 호출되기 때문에 화면에 셀이 많고 function내에서 실행되는 코드가 느린경우 그리드의 실행속도도 느려지게 됩니다.
+```js
+gridView.setColumns([{
+    name:"colName",
+    fieldName:"fieldName",
+    dynamicStyles:function(grid, index, value) {
+        if (value === "1" || value === "2") {
+            var gubun = grid.getValue(index.itemIndex, "gubunField");
+            if (gubun === "A") {
+                return {foreground:"#FFFF0000"}
+            }
+        }
+    }
+}]);
+```
+  - column.footer.dynamicStyles의 criteria를 function으로 지정하는 경우 index에 footerIndex가 추가됩니다.
+  - 자세한 내용은 [데모]({{ '/GridStyle/DynamicStylesonColumns/' | prepend: site.baseurl }})를 참조하세요
+
+1.  [IconRenderer](http://help.realgrid.com/api/types/IconCellRenderer/)
+  - iconCellRenderer의 icon을 지정하는 styles.iconIndex에 url을 입력할수 있도록 개선되었습니다.
+```js
+gridView.setColumns([{
+    name:"colName",
+    fieldName:"fieldName",
+    styles:{iconIndex:'./images/icon.png'},
+    renderer:{type:"icon"}
+}])
+```
+  - dynamicStyles를 이용하여 조건에 따라서 iconUrl을 변경할수 있습니다.
+```js
+var func = function(grid, index, value) {
+    switch(value) {
+    case "1" : return {iconIndex:"./images/case1.png"};
+    case "2" : return {iconIndex:"./images/case2.png"};
+    case "3" : return {iconIndex:"./images/case3.png"};
+    ...
+    }
+};
+gridView.setColumns([{
+    name:"colName",
+    fieldName:"fieldName",
+    dynamicStyles:func,
+    renderer:{type:"icon"}
+}])
+```
+
+1. [RowGroupOptions](http://help.realgrid.com/api/types/RowGroupOptions/)
+  - RowGroupOptions.headerCallback의 인자에 grid가 추가되었습니다.
+```js  
+  gridView.setRowGroup({headerCallback:function(groupModel, grid) { console.log(arguments) }});
+```
+
+1. `CSV Export`
+  - Grid를 Excel csv파일로 export시 column의 정규식을 적용하여 export되도록 수정되었습니다.
+
+1. [GridExportOptions](http://help.realgrid.com/api/types/GridExportOptions/)
+  - `Text` 필드를 Excel로 Export시 수행되는 Callback함수가 추가 되었습니다.
+```js
+gridView.exportGrid({
+    type:"excel",
+    target:"local",
+    textCallback: function(itemIndex, column, value) {
+        return value;
+    }
+});
+```
+  - exportOptions.lookupDisplay가 true인경우 lookup이 적용된 text가 `value`로 전달됩니다.
+  - column.displayRegExp가 설정되어 있는 경우 정규식이 적용된 text가 `value`로 전달됩니다.
+
+1.  [MultiIconCellRenderer](http://help.realgrid.com/api/types/MultiIconCellRenderer/)
+  - 셀에 여러개의 icon과 Text를 표시할수 있는 Renderer가 추가되었습니다.
+```js
+gridView.setColumns([{
+    name:"colName",
+    fieldName:"fieldName",
+    renderer:{
+      type:"multiIcon",
+      renderCallback:function(grid, index, value) {
+          var icons = [];
+          if (value === "1") {
+              icons.push('./images/icon1.png');
+          };
+          if (value === "2") {
+              icons.push('./images/icon2.png');
+          }
+      }
+    }
+}])
+```
+  - 자세한 내용은 [데모]({{ '/Renderer/MultiIconCellRenderer/' | prepend: site.baseurl }})를 참조하세요
+  
+1. `TreeView Check`
+  - TreeView의 Check가 Column Filtering시 해제되는 현상이 개선되었습니다.
+  - TreeView를 정렬하거나 Filtering했을때 Checkable이 유지되지 않고 재 설정되는 현상을 수정하였습니다.
+
+1.  [fitColumnWidth](http://demo.realgrid.com/Columns/GridFitting/)
+  - TreeView의 첫번째 컬럼의 너비를 자동조정했을때 TreeExpander의 넓이가 계산되지 않는 현상이 개선되었습니다.
+
+1. `TreeView의 개별행높이 지정`
+  - treeView에서도 개별행높이를 변경할수 있도록 개선되었습니다.
+
+1. [EditMask](http://help.realgrid.com/api/types/Mask/)
+  - editMask가 설정된 셀편집기에 붙여넣기를 할때 복사된 문자열에 상관없이 editMask에 따라 붙여넣기가 되도록 개선되었습니다.
+
+1. [fitRowHeight](http://help.realgrid.com/api/GridBase/fitRowHeight/)
+  - gridView.fitRowHeight를 이용해서 row의 높이를 변경할때 IconRenderer를 사용하는 Column을 제외하고 높이가 계산되는 현상이 개선되었습니다.
+
+1.  [fillCsvData](http://help.realgrid.com/api/LocalDataProvider/fillCsvData/)
+  - csv의 data에 줄바꿈이 있는 경우에도 data를 정상적으로 가져오도록 수정되었습니다.
+
+1.  [ExportGrid](http://help.realgrid.com/api/GridBase/exportGrid/)
+  - DataType이 Number인 컬럼을 Excel로 Export할때 값이 없는 경우 공백문자가 출력되지 않도록 변경되었습니다.
+
+1.  [ColumnFilter](http://help.realgrid.com/api/types/ColumnFilter/)
+  - ColumnFilter의 criteria에 데이터행의 상태를 가지는 "state"변수가 추가되었습니다.
+
+#### 오류 수정
+
+1. [mask](http://help.realgrid.com/api/types/Mask/)
+  - editor.mask에 placeHolder가 설정되고 includedFormat이 true일때 입력된 값이 placeHolder와 동일한경우 입력값이 사라지는 현상을 수정하였습니다.
+  
+1. [fitRowHeightAll](http://help.realgrid.com/api/GridBase/fitRowHeightAll/)
+  - Grid에 컬럼을 설정하기 전에 gridView.fitRowHeightAll를 호출하는 경우 오류가 발생하는 현상을 수정하였습니다.
+
+1. [RowGrouping]({{ '/RowGroup/RowGrouping/' | prepend: site.baseurl }})
+  - RowGrouping 상태에서 dataProvider.removeRow(1)를 실행하여 row를 삭제하는 경우 간헐적으로 오류가 발행하는 현상을 수정하였습니다.
+
+1. [ColumnGroup](http://help.realgrid.com/api/types/ColumnGroup/)
+  - ColumnGroup에 포함되어있는 컬럼의 넓이를 마우스를 이용하여 변경할때 컬럼의 넓이가 0이하로 줄어들면 사라지는 현상을 수정하였습니다.
+
+1. [PopupMenu](http://demo.realgrid.com/CellComponent/PopupMenu/)
+  - popupMenu 또는 contextMenu가 열린상태에서 선택된 menuItem이 없는 상태에서 Enter또는 Space키를 입력하면 오류가 발생하는 현상을 수정하였습니다.
+
+1. [ColumnHeader.tooltip](http://help.realgrid.com/api/types/ColumnHeader/)
+  - column.header.tooltip의 높이가 그리드 영역보다 크고 row가 없는 경우 발행하는 오류를 수정하였습니다.
+
+1. [LookupTree]({{ '/CellComponent/LookupTree/' | prepend: site.baseurl}})
+  - LookupTree설정시 ordered가 true이고 LookupTree의 level이 3인경우 3level의 Label값이 중복되서 나오는 현상을 수정하였습니다.
+  - ordered속성은 dropdown에 보여지는 값이 입력된 순서대로 보여지도록 하는 속성입니다.
+
+1. `TreeView Filtering일때 insertChildRow`
+  - TreeView가 Filtering상태일때 treeDataProvider.insertChildRow를 사용하여 row를 추가하는 경우 발생하는 오류를 수정하였습니다.
+  - 추가된 Node가 Filtering에의해서 TreeView에서 보이지 않는 경우 발생하는 오류 입니다.
+
+1. `column.header.text`
+  - column.header.text가 문자가 아닌 숫자인 경우 화면에 표시되지 않는 현상을 수정하였습니다.
+  - excel로 export할때 정상적으로 export되지 않는 오류를 수정하였습니다.
+
+1.  [DataColumn](http://help.realgrid.com/api/types/DataColumn/)
+  - Column의 셀을 병합할때 200행 이후의 셀들은 병합되지 않는 현상을 수정하였습니다.
+
+1.  [CheckBar](http://help.realgrid.com/types/CheckBar/)
+  - checkBar에 check를 한후 dataProvider.setRowCount를 실행하는 경우 check가 지워지는 현상을 수정하였습니다.
+
+1.  [setColumn](http://help.realgrid.com/api/GridBase/setColumn/)
+  - gridView.columnByName("colName")으로 가져온 column의 editor를 변경후 gridView.setColumn(colInfo)을 사용했을때 column의 editor가 변경되지 않는 오류를 수정하였습니다.
+
+1.  [onCurrentChanging](http://help.realgrid.com/api/GridBase/onCurrentChanging/)
+  - gridView.onCurrentChanging event에서 false를 return한후 그리드를 스크롤 했을때 선택영역이 사라지는 현상을 수정하였습니다.
 
 ## 1.1.27 (2018년 2월)
 

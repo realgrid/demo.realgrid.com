@@ -1,13 +1,13 @@
 ---
 layout: page
-title: 'Pivot 최신버전 0.9.0'
+title: 'Pivot 최신버전 1.0.0'
 published: true
 description: ""
 ---
 
 Pivot 최신 버전 이력
 
-## 0.9.0 (2018년 6월 15일)
+## 1.0.0 (2018년 6월 15일)
 
 - 데이터 수집 속도가 개선되었습니다.
 - 전반적인 Pivot Rendering 속도가 개선되었습니다.

@@ -61,6 +61,20 @@ gridView.setColumnProperty("columnName", "dynamicStyles", [{
 }]);
 ```
 
+#### 동적 스타일 함수로 지정
+
+`1997`컬럼에 동적 스타일을 함수형태로 지정합니다.
+
+<a class="btn primary small round lowercase" id="btnSetColumnDynamicFunctionStyles">동적 컬럼 스타일 변경</a>
+
+```js
+gridView.setColumnProperty("1997","dynamicStyles",function(grid, index, value) {
+    if (value > 1000) {
+        return {foreground:"#FFFF0000"}
+    }
+})
+```
+
 
 <script>
   $('#btnSetDynamicStyles').click(function() {
@@ -93,5 +107,13 @@ gridView.setColumnProperty("columnName", "dynamicStyles", [{
             cellDynamicStyles:[{criteria:"changedcell", styles:{figureName:"leftTop", figureBackground:"#FF00ebeb", figureSize:"30%"}}]
         }
     });
+  });
+
+  $('#btnSetColumnDynamicFunctionStyles').click(function() {
+    gridView.setColumnProperty("1997","dynamicStyles",function(grid, index, value) {
+        if (value > 1000) {
+            return {foreground:"#FFFF0000"}
+        }
+    })
   });
 </script>
