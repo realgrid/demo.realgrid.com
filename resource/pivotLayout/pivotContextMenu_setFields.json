@@ -1,0 +1,31 @@
+[{
+    "fieldName":"국산/수입"
+},{
+    "fieldName":"국가"
+},{
+    "fieldName":"브랜드번호"
+},{
+    "fieldName":"브랜드명"
+},{
+    "fieldName":"모델번호"
+},{
+    "fieldName":"모델명"
+},{
+    "fieldName":"색상번호"
+},{
+    "fieldName":"색상"
+},{
+    "fieldName":"판매날짜",
+    "dataType":"datetime",
+    "datetimeFormat":"yyyy-MM-dd"
+},{
+    "fieldName":"판매수량",
+    "dataType":"number"
+},{
+    "fieldName":"차량가격",
+    "dataType":"number"
+},{
+    "fieldName":"차종"
+},{
+    "fieldName":"연료"
+}]

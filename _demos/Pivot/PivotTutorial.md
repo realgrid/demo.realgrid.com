@@ -17,7 +17,7 @@ tags: ['pivot']
 <script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs_eval.1.1.27.min.js"></script>
 <script type="text/javascript" src="/lib/realgrid/realgridjs_eval.1.1.27/realgridjs-api.1.1.27.js"></script>
 <script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.0/messages/realpivot-messages.js"></script>
-<script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.0realpivot_eval.1.0.0.min.js"></script>
+<script type="text/javascript" src="/lib/realpivot/realpivot_eval.1.0.0/realpivot_eval.1.0.0.min.js"></script>
 
 <a class="btn primary small round lowercase" id="btnStep1">1. dataProvider, pivot 객체 생성 및 연결</a>
 <a class="btn primary small round lowercase" id="btnStep2">2. dataProvider field생성 및 pivot fieldMapping</a>

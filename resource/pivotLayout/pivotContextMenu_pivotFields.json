@@ -1,0 +1,11 @@
+{
+    "columns": ["판매년도","판매월"],
+    "rows": ["국가","브랜드명","차종"],
+    "values": [{
+        "name": "차량가격",
+        "expression": "sum"
+    }, {
+        "name": "판매수량",
+        "expression": "sum"
+    }]
+}

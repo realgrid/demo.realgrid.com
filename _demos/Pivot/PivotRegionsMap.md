@@ -120,10 +120,9 @@ line-height: 1.0em"
 <!-- setup -->
 <!--
 <div id="setupContainer" style="width:1021px; height:503px;">
-	<img class="setupBox" src="/resource/image/pivot_images/pivot_setupImagemap.png" id="" alt="" usemap="#Map" width="1021px" height="503px"/>
+	<img class="setupBox" src="/resource/image/pivot_images/pivot_setupImagemap.png" id="" alt="" usemap="#Map2" width="1021px" height="503px"/>
 </div>
 -->
-
 <script>
 $("#contextMenu").mouseover( function(event){
 	classLog(event.currentTarget.className)

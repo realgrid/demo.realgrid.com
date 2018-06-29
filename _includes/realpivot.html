@@ -1,0 +1,293 @@
+{% if site.realgrid_product == 'eval' %}
+    {% capture realgrid_product %}_eval{% endcapture %}
+{% else %}
+    {% capture realgrid_product %}_eval{% endcapture %}
+{% endif %}
+
+{% capture realgrid_folder %}/lib/realgrid/realgridjs{{ realgrid_product }}.{{ site.realgrid_version }}{% endcapture %}
+
+<div id="{{ include.pivotId }}" class="realpivot" style="width:{{ include.pivotWidth }}; height:{{ include.pivotHeight }}"></div>
+{% unless include.showToolbox == false %}
+<div class="toolbox">
+  <div class="buttonbox">
+    {% comment %} showCodes() 는 include/head.html 에 있음. {% endcomment %}
+    <a class="btn tertiary small lowercase active" id="btnDevbox" onclick="setDevbox()">설명 보이기</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.pivotId }}field')">필드</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.pivotId }}fieldMapping')">필드매핑</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.pivotId }}pivotFields')">피벗필드</a>
+    <a class="btn tertiary small lowercase" onclick="showCodes(event, '{{ include.pivotId }}pivotOptions')">피벗옵션</a>
+  </div>
+  <pre class="codeview {{ include.pivotId }}field"></pre>
+  <pre class="codeview {{ include.pivotId }}fieldMapping"></pre>
+  <pre class="codeview {{ include.pivotId }}pivotFields"></pre>
+  <pre class="codeview {{ include.pivotId }}pivotOptions"></pre>
+</div>
+{% endunless %}
+
+{% comment %}
+  TODO:
+    - tree, grid 하나의 파일로?
+    - 툴박스 열고 닫기 위한 변수명, 클래스명을 명료하게
+{% endcomment %}
+
+<script>
+    var {{ include.pivotVar }};
+    var {{ include.dpVar }};
+
+    $(document).ready( function(){
+        {{ include.dpVar }} = new RealGridJS.LocalDataProvider();
+        {{ include.pivotVar }} = new RealPivot("{{ include.pivotId }}");
+        {{ include.pivotVar }}.setDataProvider({{ include.dpVar }});
+
+        {% if include.fieldSet %}
+            {% capture fieldfile %}/resource/pivotLayout/{{ include.fieldSet }}.json{% endcapture %}
+
+            $.ajaxSetup({
+              async: false
+            });
+
+            $.getJSON("{{ fieldfile | prepend: site.baseurl }}?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
+                {{ include.dpVar }}.setFields(data);
+                $.ajaxSetup({
+                  async: true
+                });
+
+                $('.codeview.{{ include.pivotId }}field').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                {% if include.successFieldSet %}
+                  {{ include.successFieldSet }}(data, textStatus, jqXHR);
+                {% endif %}
+            })
+            .done(function (data, textStatus, jqXHR) {
+
+                {% if include.doneFieldSet %}
+                  {{ include.doneFieldSet }}(data, textStatus, jqXHR);
+                {% endif %}
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                {% if include.failFieldSet %}
+                  {{ include.failFieldSet }}(jqxhr, textStatus, error);
+                {% else %}
+                  var msg = "{{ include.pivotVar }} failFieldSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                {% endif %}
+            });
+        {% endif %}
+
+        {% if include.fieldMappingSet %}
+            {% capture fieldMappingfile %}/resource/pivotLayout/{{ include.fieldMappingSet }}.json{% endcapture %}
+
+            $.ajaxSetup({
+              async: false
+            });
+
+            $.getJSON("{{ fieldMappingfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
+                {{ include.pivotVar }}.setFieldMapping(data);
+                   $.ajaxSetup({
+                    async: true
+                  });
+
+                $('.codeview.{{ include.pivotId }}fieldMapping').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                {% if include.successfieldMappingSet %}
+                  {{ include.successfieldMappingSet }}(data, textStatus, jqXHR);
+                {% endif %}
+            })
+            .done(function (data, textStatus, jqXHR) {
+
+                {% if include.donefieldMappingSet %}
+                  {{ include.donefieldMappingSet }}(data, textStatus, jqXHR);
+                {% endif %}
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                {% if include.failColumnSet %}
+                  {{ include.failColumnSet }}(jqxhr, textStatus, error);
+                {% else %}
+                  var msg = "{{ include.pivotVar }} failColumnSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                {% endif %}
+            });
+        {% endif %}
+
+       
+
+        {% if include.pivotFieldsSet %}
+            {% capture pivotFieldsfile %}/resource/pivotLayout/{{ include.pivotFieldsSet }}.json{% endcapture %}
+
+            $.ajaxSetup({
+              async: false
+            });
+
+            $.getJSON("{{ pivotFieldsfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
+                {{ include.pivotVar }}.setPivotFields(data);
+                $.ajaxSetup({
+                  async: true
+                });
+
+                $('.codeview.{{ include.pivotId }}pivotFields').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                {% if include.successDpOptionSet %}
+                  {{ include.successDpOptionSet }}(data, textStatus, jqXHR);
+                {% endif %}
+            })
+            .done(function (data, textStatus, jqXHR) {
+
+                {% if include.doneDpOptionSet %}
+                  {{ include.doneDpOptionSet }}(data, textStatus, jqXHR);
+                {% endif %}
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                {% if include.failDpOptionSet %}
+                  {{ include.failDpOptionSet }}(jqxhr, textStatus, error);
+                {% else %}
+                  var msg = "{{ include.pivotVar }} failDpOptionSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                {% endif %}
+            });
+        {% endif %}
+
+        {% if include.pivotOptionSet %}
+            {% capture optionfile %}/resource/option/{{ include.pivotOptionSet }}.json{% endcapture %}
+
+            $.getJSON("{{ optionfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
+                {{ include.pivotVar }}.setOptions(data);
+
+                $('.codeview.{{ include.pivotId }}viewoption').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                {% if include.successPivotOptionSet %}
+                  {{ include.successPivotOptionSet }}(data, textStatus, jqXHR);
+                {% endif %}
+            })
+            .done(function (data, textStatus, jqXHR) {
+
+                {% if include.donePivotOptionSet %}
+                  {{ include.donePivotOptionSet }}(data, textStatus, jqXHR);
+                {% endif %}
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                {% if include.failPivotOptionSet %}
+                  {{ include.failPivotOptionSet }}(jqxhr, textStatus, error);
+                {% else %}
+                  var msg = "{{ include.pivotVar }} failGridOptionSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                {% endif %}
+            });
+        {% endif %}
+
+        {% if include.styleSet %}
+            {% capture stylefile %}/resource/style/{{ include.styleSet }}.json{% endcapture %}
+
+            $.getJSON("{{ stylefile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
+                {{ include.pivotVar }}.setStyles(data);
+
+                $('.codeview.{{ include.gridId }}style').html(
+                  JSON.stringify(data, null, 4)
+                );
+
+                {% if include.successStyleSet %}
+                  {{ include.successStyleSet }}(data, textStatus, jqXHR);
+                {% endif %}
+            })
+            .done(function (data, textStatus, jqXHR) {
+
+                {% if include.doneStyleSet %}
+                  {{ include.doneStyleSet }}(data, textStatus, jqXHR);
+                {% endif %}
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ', ' + error;
+
+                {% if include.failStyleSet %}
+                  {{ include.failStyleSet }}(jqxhr, textStatus, error);
+                {% else %}
+                  var msg = "{{ include.pivotVar }} failStyleSet: " + err;
+                  console && console.log(msg);
+                  alert(msg);
+                {% endif %}
+            });
+        {% endif %}
+
+
+        {% if include.dataSet %}
+            {% if include.showProgress %}
+              {{ include.pivotVar }}.showProgress();
+            {% endif %}
+            {% capture datafile %}/resource/data/{{ include.dataSet }}{% endcapture %}
+            $.ajax({
+              type: "GET",
+              url:"{{ datafile | prepend: site.baseurl }}?__time__=" + new Date().getTime(),
+              success: function(data, textStatus, jqXHR) {
+                {% if include.successDataSet %}
+                  {{ include.successDataSet }}(data, textStatus, jqXHR);
+                {% else %}
+                  {{ include.dpVar }}.setRows(data);
+                {% endif %}
+              }
+              {% if include.showProgress %}
+              ,xhr: function () {
+                var xhr = new window.XMLHttpRequest();
+                xhr.addEventListener("progress", function (evt) {
+                    if (evt.lengthComputable) {
+                        {{ include.pivotVar }}.setProgress(0, evt.total, evt.loaded);
+                    }
+                }, false);
+                return xhr;
+              }
+              {% endif %}
+            })
+            .done( function(data, textStatus, jqXHR) {
+              //{{ include.pivotVar }}.setFocus();
+              {% if include.doneDataSet %}
+                {{ include.doneDataSet }}(data, textStatus, jqXHR);
+              {% endif %}
+              {% if include.showProgress %}
+                {{ include.pivotVar }}.closeProgress();
+              {% endif %}
+            })
+            .fail( function(jqxhr, textStatus, error) {
+              var err = textStatus + ', ' + error;
+              {% if include.failDataSet %}
+                {{ include.failDataSet }}(jqxhr, textStatus, error);
+              {% else %}
+                console && console.log("jQuery ajax() Failed: " + err);
+                alert("jQuery ajax() Failed: " + err);
+              {% endif %}
+            });
+        {% endif %}
+
+    });
+
+  function setDevbox() {
+    if($('#devbox')[0].clientHeight > 0){
+      $("#devbox").hide();
+      document.getElementById("btnDevbox").className = "btn tertiary small lowercase";
+      $(".with-devbox").attr("style","margin-right: 0%");
+      pivot.resetSize(); 
+    }else{
+      $("#devbox").show();
+      document.getElementById("btnDevbox").className = "btn tertiary small lowercase active";
+      $(".with-devbox").attr("style","margin-right: 40%");
+      pivot.resetSize(); 
+    }
+  }
+</script>
