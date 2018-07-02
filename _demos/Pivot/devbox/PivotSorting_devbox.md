@@ -52,9 +52,9 @@ pivot.sort({
   row: {
       method: "value",
       fieldName: "판매수량", 
-      direction: "descending"
+      direction: "descending",
       conditions: [{
-      	name: "판매분기", value: 0
+      	name: "판매년도", value: 2016
       }]
   }
 });
@@ -77,17 +77,13 @@ pivot.sort({
   row: {
       method: "value",
       fieldName: "판매수량", 
-      direction: "descending"
+      direction: "descending",
       conditions: [{
-      	name: "판매분기", value: 0
+      	name: "판매년도", value: 2016
       }]
   }
 });
 ```
-
-#### API LINK
- 
-
 
 <script>
 $('#btnLabelSort').click(function() {
@@ -121,7 +117,7 @@ $('#btnValueSort').click(function() {
 	      fieldName: "판매수량", 
 	      direction: "descending",
 	      conditions: [{
-	      	name: "판매분기", value: 0
+	      	name: "판매년도", value: 2016
 	      }]
 	  }
 	});
@@ -141,7 +137,7 @@ $('#btnComplexSort').click(function() {
 	      fieldName: "판매수량", 
 	      direction: "descending",
 	      conditions: [{
-	      	name: "판매분기", value: 0
+	      	name: "판매년도", value: 2016
 	      }]
 	  }
 	});

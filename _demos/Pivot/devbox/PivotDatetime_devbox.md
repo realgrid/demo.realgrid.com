@@ -53,7 +53,7 @@ $('#btnSetPivotFields').click(function() {
 		});
 	}else if(typeValue == "type4"){
 		pivot.setPivotFields({
-		    columns: ["판매년도","판매월","판매월주차"],
+		    columns: ["판매년도","판매월","판매주"],
 		    rows: ["국가","브랜드명"],
 		    values: [{
 		        name: "차량가격",
