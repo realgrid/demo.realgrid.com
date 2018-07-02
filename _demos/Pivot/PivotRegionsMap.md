@@ -22,17 +22,13 @@ pivot 이미지 영역에 마우스를 올리면 해당 영역의 className과 �
 <script type="text/javascript">
 	$(function() {
 		$('.map').maphilight({fade: true});
-	});
-	/*
-	$(function() {
 		$('.setupBox').maphilight({fade: true});
 	});
-	*/
 </script>
 <!-- pivot -->
 <div id="container" style="width:1019px; height:503px;">
-	<img class="map" src="/resource/image/pivot_images/pivot_imagemap3.png" id="imagemap" alt="" usemap="#Map" width="1019px" height="503px"/>
-	<map name="Map" id="Map">
+	<img class="map" src="/resource/image/pivot_images/pivot_imagemap3.png" id="imagemap" alt="" usemap="#Map2" width="1019px" height="503px"/>
+	<map name="Map2" id="Map2">
 
 	    <area alt="" title="" href="#contextMenu" shape="rect" coords="5,3,21,21" id="contextMenu" class="realpivot-title-menu"/>
 	    <area alt="" title="" href="#pivotSetup" shape="rect" coords="22,3,40,20" id="pivotSetup" class="realpivot-title-setup"/>
@@ -118,11 +114,97 @@ line-height: 1.0em"
 </div>
 
 <!-- setup -->
-<!--
+
 <div id="setupContainer" style="width:1021px; height:503px;">
-	<img class="setupBox" src="/resource/image/pivot_images/pivot_setupImagemap.png" id="" alt="" usemap="#Map2" width="1021px" height="503px"/>
+	<img class="setupBox" src="/resource/image/pivot_images/pivot_setupImagemap.png" id="imagemap2" alt="" usemap="#Map" width="1021px" height="503px"/>
+	<map name="Map" id="Map">
+		
+		<area alt="" title="" href="#" shape="rect" coords="191,30,830,86" id="realpivot-setup-head" class="realpivot-setup-head"/>
+
+		<area alt="" title="" href="#" shape="rect" coords="211,106,229,125" id="realpivot-setup-section-title-field" class="realpivot-setup-section-title-field"/>
+		<area alt="" title="" href="#" shape="rect" coords="231,106,286,123" id="realpivot-setup-section-title1" class="realpivot-setup-section-title"/>
+		<area alt="" title="" href="#" shape="rect" coords="211,105,347,125" id="realpivot-setup-section-title2" class="realpivot-setup-section-title"/>
+
+		<area alt="" title="" href="#" shape="rect" coords="358,106,377,123" id="realpivot-setup-section-title-column" class="realpivot-setup-section-title-column"/>
+		<area alt="" title="" href="#" shape="rect" coords="377,107,433,123" id="realpivot-setup-section-title3" class="realpivot-setup-section-title"/>
+		<area alt="" title="" href="#" shape="rect" coords="357,106,579,124" id="realpivot-setup-section-title4" class="realpivot-setup-section-title"/>
+
+		<area alt="" title="" href="#" shape="rect" coords="588,107,607,123" id="realpivot-setup-section-title-row1" class="realpivot-setup-section-title-row"/>
+		<area alt="" title="" href="#" shape="rect" coords="608,107,654,124" id="realpivot-setup-section-title-row2" class="realpivot-setup-section-title"/>
+		<area alt="" title="" href="#" shape="rect" coords="588,106,810,124" id="realpivot-setup-section-title5" class="realpivot-setup-section-title"/>
+
+		<area alt="" title="" href="#" shape="rect" coords="212,129,331,154" id="realpivot-setup-field1" class="realpivot-setup-field"/>
+		<area alt="" title="" href="#" shape="rect" coords="212,157,331,184" id="realpivot-setup-field2" class="realpivot-setup-field"/>
+		<area alt="" title="" href="#" shape="rect" coords="212,184,331,211" id="realpivot-setup-field3" class="realpivot-setup-field"/>
+		<area alt="" title="" href="#" shape="rect" coords="212,213,331,240" id="realpivot-setup-field4" class="realpivot-setup-field"/>
+		<area alt="" title="" href="#" shape="rect" coords="212,242,331,267" id="realpivot-setup-field5" class="realpivot-setup-field"/>
+		<area alt="" title="" href="#" shape="rect" coords="212,269,331,295" id="realpivot-setup-field6" class="realpivot-setup-field"/>
+		<area alt="" title="" href="#" shape="rect" coords="212,298,331,322" id="realpivot-setup-field7" class="realpivot-setup-field"/>
+		<area alt="" title="" href="#" shape="rect" coords="212,326,331,351" id="realpivot-setup-field8" class="realpivot-setup-field"/>
+		<area alt="" title="" href="#" shape="rect" coords="212,353,331,379" id="realpivot-setup-field9" class="realpivot-setup-field"/>
+		<area alt="" title="" href="#" shape="rect" coords="209,127,347,378" id="realpivot-setup-section-merged" class="realpivot-setup-section-merged"/>
+		<area alt="" title="" href="#" shape="rect" coords="209,106,349,393" id="realpivot-setup-cell-all" class="realpivot-setup-cell realpivot-setup-cell-all"/>
+
+		<!-- 컬럼, 행 필드-->
+		<area alt="" title="" href="#" shape="rect" coords="545,130,561,152" id="realpivot-setup-field-sort-asc1" class="realpivot-setup-field-sort-asc"/>
+		<area alt="" title="" href="#" shape="rect" coords="545,157,561,183" id="realpivot-setup-field-sort-asc2" class="realpivot-setup-field-sort-asc"/>
+
+		<area alt="" title="" href="#" shape="rect" coords="563,131,576,153" id="realpivot-setup-field-remove1" class="realpivot-setup-field-remove"/>
+		<area alt="" title="" href="#" shape="rect" coords="563,157,576,183" id="realpivot-setup-field-remove2" class="realpivot-setup-field-remove"/>
+
+		<area alt="" title="" href="#" shape="rect" coords="776,130,792,152" id="realpivot-setup-field-sort-asc3" class="realpivot-setup-field-sort-asc"/>
+		<area alt="" title="" href="#" shape="rect" coords="776,159,792,181" id="realpivot-setup-field-sort-desc" class="realpivot-setup-field-sort-desc"/>
+
+		<area alt="" title="" href="#" shape="rect" coords="794,131,806,154" id="realpivot-setup-field-remove3" class="realpivot-setup-field-remove"/>
+		<area alt="" title="" href="#" shape="rect" coords="794,160,806,182" id="realpivot-setup-field-remove4" class="realpivot-setup-field-remove"/>
+
+		<!-- 값 필드 -->
+		<area alt="" title="" href="#" shape="rect" coords="490,277,532,296" id="realpivot-setup-field-value1" class="realpivot-setup realpivot-setup-field-value"/>
+		<area alt="" title="" href="#" shape="rect" coords="490,306,532,327" id="realpivot-setup-field-value2" class="realpivot-setup realpivot-setup-field-value"/>
+		<area alt="" title="" href="#" shape="rect" coords="537,278,562,298" id="realpivot-setup-field-value3" class="realpivot-setup btn-default btn-small realpivot-setup-field-value"/>
+		<area alt="" title="" href="#" shape="rect" coords="536,307,561,328" id="realpivot-setup-field-value4" class="realpivot-setup btn-default btn-small realpivot-setup-field-value"/>
+		<area alt="" title="" href="#" shape="rect" coords="563,279,576,296" id="realpivot-setup-field-remove5" class="realpivot-setup-field-remove"/>
+		<area alt="" title="" href="#" shape="rect" coords="563,306,576,326" id="realpivot-setup-field-remove6" class="realpivot-setup-field-remove"/>
+
+		<area alt="" title="" href="#" shape="rect" coords="362,131,575,154" id="realpivot-setup-field10" class="realpivot-setup-field"/>
+		<area alt="" title="" href="#" shape="rect" coords="360,159,576,184" id="realpivot-setup-field11" class="realpivot-setup-field"/>
+		<area alt="" title="" href="#" shape="rect" coords="592,131,806,154" id="realpivot-setup-field12" class="realpivot-setup-field"/>
+		<area alt="" title="" href="#" shape="rect" coords="592,158,806,182" id="realpivot-setup-field13" class="realpivot-setup-field"/>
+		<area alt="" title="" href="#" shape="rect" coords="361,276,576,300" id="realpivot-setup-field14" class="realpivot-setup-field"/>
+		<area alt="" title="" href="#" shape="rect" coords="361,303,576,329" id="realpivot-setup-field15" class="realpivot-setup-field"/>
+
+		<area alt="" title="" href="#" shape="rect" coords="358,254,376,270" id="realpivot-setup-section-title-value" class="realpivot-setup-section-title-value"/>
+		<area alt="" title="" href="#" shape="rect" coords="377,253,420,270" id="realpivot-setup-section-title6" class="realpivot-setup-section-title"/>
+		<area alt="" title="" href="#" shape="rect" coords="590,251,605,270" id="realpivot-setup-section-title-filter" class="realpivot-setup-section-title-filter"/>
+		<area alt="" title="" href="#" shape="rect" coords="607,251,664,270" id="realpivot-setup-section-title7" class="realpivot-setup-section-title"/>
+		<area alt="" title="" href="#" shape="rect" coords="761,246,811,270" id="realpivot-setup-field-filter" class="realpivot-setup realpivot-setup-field-filter"/>
+
+		<area alt="" title="" href="#" shape="rect" coords="358,247,578,270" id="realpivot-setup-section-title8" class="realpivot-setup-section-title"/>
+		<area alt="" title="" href="#" shape="rect" coords="590,247,811,270" id="realpivot-setup-section-title9" class="realpivot-setup-section-title"/>
+
+		<area alt="" title="" href="#" shape="rect" coords="358,126,578,233" id="realpivot-setup-section1" class="realpivot-setup-section"/>
+		<area alt="" title="" href="#" shape="rect" coords="588,126,809,231" id="realpivot-setup-section2" class="realpivot-setup-section"/>
+		<area alt="" title="" href="#" shape="rect" coords="357,271,578,378" id="realpivot-setup-section3" class="realpivot-setup-section"/>
+		<area alt="" title="" href="#" shape="rect" coords="588,271,810,379" id="realpivot-setup-section4" class="realpivot-setup-section"/>
+
+		<area alt="" title="" href="#" shape="rect" coords="357,106,580,393" id="realpivot-setup-cell-normal1" class="realpivot-setup-cell realpivot-setup-cell-normal"/>
+		<area alt="" title="" href="#" shape="rect" coords="587,106,811,393" id="realpivot-setup-cell-normal2" class="realpivot-setup-cell realpivot-setup-cell-normal"/>
+
+		<!-- 적용, 취소 -->
+		<area alt="" title="" href="#" shape="rect" coords="460,424,508,457" id="realpivot-setup-set" class="btn-primary realpivot-setup"/>
+		<area alt="" title="" href="#" shape="rect" coords="512,424,559,457" id="realpivot-setup-cancel" class="btn-primary realpivot-setup"/>
+		<area alt="" title="" href="#" shape="rect" coords="191,408,829,472" id="realpivot-setup-foot" class="realpivot-setup-foot"/>
+
+		<area alt="" title="" href="#" shape="rect" coords="189,28,831,474" id="realpivot-setup" class="realpivot-setup"/>
+	</map>
 </div>
--->
+
+<div id="setupEventLog" style="width:100%; height:50px; border: 0px solid #5d8cc9; 
+text-align:center;
+font-size: 2.0em;
+line-height: 1.0em"
+>
+
 <script>
 $("#contextMenu").mouseover( function(event){
 	classLog(event.currentTarget.className)
@@ -295,6 +377,199 @@ function classLog(className){
 	document.getElementById("eventLog").innerHTML = className
 };
 
+/* setup */
+$("#realpivot-setup").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-head").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-section-title1").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-section-title2").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-section-title3").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-section-title4").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-section-title5").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-section-title6").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-section-title7").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-section-title8").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-section-title9").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-section-title-field").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-section-title-column").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-section-title-row1").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-section-title-row2").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+
+$("#realpivot-setup-field1").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field2").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field3").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field4").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field5").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field6").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field7").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field8").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field9").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-section-merged").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-cell-all").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+
+$("#realpivot-setup-field10").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field11").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field12").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field13").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-cell-normal1").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+
+$("#realpivot-setup-field14").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field15").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-cell-normal2").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+
+$("#realpivot-setup-field-sort-asc1").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field-sort-asc2").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field-sort-asc3").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field-sort-desc").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field-remove1").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field-remove2").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field-remove3").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field-remove4").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field-remove5").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field-remove6").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field-value1").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field-value2").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field-value3").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field-value4").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+
+$("#realpivot-setup-section-title-value").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field-value4").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-section-title-filter").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field-value4").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-field-filter").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+
+$("#realpivot-setup-section1").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-section2").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-section3").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-section4").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+
+$("#realpivot-setup-set").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+$("#realpivot-setup-cancel").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+
+$("#realpivot-setup-foot").mouseover( function(event){
+	setupClassLog(event.currentTarget.className)
+});
+
+function setupClassLog(className){
+	document.getElementById("setupEventLog").innerHTML = className
+};
 
 
 </script>
