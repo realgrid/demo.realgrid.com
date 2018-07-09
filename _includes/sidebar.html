@@ -15,14 +15,16 @@
 
     });
 
-    $('.tab1').click(function() {
+    $('#RealGrid').click(function() {
         $('.toc').show();
         $('.tocPivot').hide();
+        gridTab();
     });
 
-    $('.tab2').click(function() {
+    $('#RealPivot').click(function() {
         $('.toc').hide();
         $('.tocPivot').show();
+        pivotTab();
     });
 
     if((window.location.hash == "#RealGrid") || (window.location.pathname.indexOf("Pivot") == -1)){
@@ -34,13 +36,6 @@
         $('.tocPivot').show();
         pivotTab();
     } 
-
-    $(".tab1").click(function() {
-        gridTab();
-    });
-    $(".tab2").click(function() {
-        pivotTab();
-    });
 
   });
 
@@ -65,16 +60,11 @@
   <div class="wrapper-search">
   <!-- tab -->
     <div class="tab-wrap">
-      <ul>
-        <li><a class="tab1">tab1</a></li>
-        <li><a class="tab2">tab2</a></li>
-      </ul>
-
       <div>
-        <article id="RealGrid">
+        <article id="RealGrid" style="cursor:pointer">
           <h1 id="gridText">RealGrid</h1>
         </article>
-        <article id="RealPivot">
+        <article id="RealPivot" style="cursor:pointer">
           <h1 id="pivotText">RealPivot</h1>
         </article>
       </div>
