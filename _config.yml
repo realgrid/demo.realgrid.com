@@ -14,7 +14,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: RealGrid DEMO
-subtitle: RealGrid 데모보기
+subtitle: RealGrid  데모보기
+pivotsubtitle: RealPivot 데모보기
 email: support@realgrid.com
 description: RealGrid 데모사이트 입니다.
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -99,5 +100,7 @@ sidebar_categories:
   성능:
   이벤트:
   트리뷰(TreeView):
-  피벗(RealPivot):
   차트 및 리포트 연동:
+
+sidebar_categories_pivot:
+  피벗(RealPivot):

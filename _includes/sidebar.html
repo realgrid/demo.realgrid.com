@@ -1,6 +1,5 @@
 <script> 
   $(document).ready( function() {
-
     $('input[id="desktop-search-input"]').keyup(function(){
 
       var that = this, $allListElements = $('ul[class="list-toc"] > li');
@@ -15,12 +14,72 @@
       $matchingListElements.show();
 
     });
+
+    $('.tab1').click(function() {
+        $('.toc').show();
+        $('.tocPivot').hide();
+    });
+
+    $('.tab2').click(function() {
+        $('.toc').hide();
+        $('.tocPivot').show();
+    });
+
+    if((window.location.hash == "#RealGrid") || (window.location.pathname.indexOf("Pivot") == -1)){
+        $('.toc').show();
+        $('.tocPivot').hide();
+        gridTab();
+    }else if((window.location.hash == "#RealPivot") || (window.location.pathname.indexOf("Pivot") > -1)){
+        $('.toc').hide();
+        $('.tocPivot').show();
+        pivotTab();
+    } 
+
+    $(".tab1").click(function() {
+        gridTab();
+    });
+    $(".tab2").click(function() {
+        pivotTab();
+    });
+
   });
+
+  function gridTab(){
+      document.getElementById("RealGrid").style.color = "#35aea2"
+      document.getElementById("RealPivot").style.color = null
+
+      document.getElementById("gridText").style.fontSize = "17px"
+      document.getElementById("pivotText").style.fontSize = "15px"
+  }
+
+  function pivotTab(){
+      document.getElementById("RealGrid").style.color = null
+      document.getElementById("RealPivot").style.color = "#35aea2"
+
+      document.getElementById("gridText").style.fontSize = "15px"
+      document.getElementById("pivotText").style.fontSize = "17px"
+  }
 </script>
 
 <div class="sidebar">
-
   <div class="wrapper-search">
+  <!-- tab -->
+    <div class="tab-wrap">
+      <ul>
+        <li><a class="tab1">tab1</a></li>
+        <li><a class="tab2">tab2</a></li>
+      </ul>
+
+      <div>
+        <article id="RealGrid">
+          <h1 id="gridText">RealGrid</h1>
+        </article>
+        <article id="RealPivot">
+          <h1 id="pivotText">RealPivot</h1>
+        </article>
+      </div>
+    </div>
+  <!-- -->
     <div class="input-symbol small round">
       <input type="text" placeholder="Search Demo" id="desktop-search-input" />
       <span class="icon-search"></span>
@@ -30,7 +89,12 @@
 
   <div class="sidebar-content">
     <div class="topcap">
-      <span class="title-sidebar">{{ site.subtitle }}</span>
+
+
+    <!--
+      <span class="title-sidebar" style="cursor:pointer;width:220px">{{ site.subtitle }}</span><br/>
+      <span class="title-pivot-sidebar" style="cursor:pointer;width:220px">RealPivot 데모보기</span>
+    -->
       {% if config.versions.length > 1 %}
         <span class="select version-sidebar nochrome">
           <select class="version-select">
@@ -42,7 +106,7 @@
       {% endif %}
     </div>
 
-    <ul class="toc">
+    <ul class="toc" id="toc">
         <li>
             <ul class="list-toc release">
                 {% assign sorted_by_orderno = site.pages | sort: "order" %}
@@ -75,6 +139,72 @@
         </li>
 
         {% for category in site.sidebar_categories %}
+        <li>
+          {% if category != 'null' %}
+            <div class="heading-toc">{{ category }}</div>
+          {% endif %}
+          <ul class="list-toc">
+            {% assign sorted_by_orderno = site.demos | sort: "order" %}
+            {%- for demo in sorted_by_orderno -%}
+              {%- assign democat = demo.categories[0] | downcase -%}
+              {%- assign cat = category[0] | downcase -%}
+
+              {%- if jekyll.environment != 'development' and demo.published != true -%}{% continue %}{%- endif -%}
+
+              {% if cat == democat %}
+              <li class="item-toc {% if page.title == demo.title %}current{% endif %}">
+                <a href="{{ demo.url | prepend: site.baseurl }}"
+                class="{% if page.title == demo.title %}current{% endif %} sidebar-link {% if demo.published != true %}sidebar-link-unpub{% endif %}">
+                  <span>{{ demo.title }}</span>
+                  <span style="display: none;">
+                  {{ demo.tags | join: ', '}}
+                  </span>
+                </a>
+              </li>
+              {%- endif -%}
+
+            {%- endfor -%}
+          </ul>
+
+        </li>
+        {% endfor %}
+
+    </ul>
+
+    <!-- pivot list-->
+    <ul class="tocPivot" id="tocPivot" style="display:none">
+        <li>
+            <ul class="list-toc release">
+                {% assign sorted_by_orderno = site.pages | sort: "order" %}
+                {% for path in sorted_by_orderno %}
+                    {% if path.title %}
+                    <li class="item-toc {% if page.title == path.title %}current {% endif %}">
+                        <a href="{{ path.url | prepend: site.baseurl }}"
+                          class="sidebar-link {% if path.published != true %}sidebar-link-unpub{% endif %} {% if page.title == path.title %}current{% endif %}">
+                            <span>{{ path.title }}</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+
+                {% if jekyll.environment == 'development' %}
+                    <!-- _posts폴더의 post는 개발시에만 메뉴에 표시됩니다. -->
+                    {% assign sorted_by_orderno = site.posts | sort: "order" %}
+                    {% for path in sorted_by_orderno %}
+                        {% if path.title %}
+                        <li class="item-toc {% if page.title == path.title %}current {% endif %}">
+                            <a href="{{ path.url | prepend: site.baseurl }}"
+                              class="sidebar-link {% if path.published != true %}sidebar-link-unpub{% endif %} {% if page.title == path.title %}current{% endif %}">
+                                <span>{{ path.title }}</span>
+                            </a>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </ul>
+        </li>
+
+        {% for category in site.sidebar_categories_pivot %}
         <li>
           {% if category != 'null' %}
             <div class="heading-toc">{{ category }}</div>
