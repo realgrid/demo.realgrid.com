@@ -107,6 +107,45 @@ gridView.setDisplayOptions({
 });
 ```
 
+#### 선택 영역 합계 가져오기
+
+버튼 클릭 시 선택된 영역의 합계가 alert창에 표시됩니다.
+
+<a class="btn primary small round lowercase" id="btnGetSelectionData">합계 가져오기</a>
+
+```
+var selInfo = grid.getSelection();
+var calcColumn = ["Quantity", "UnitPrice"];
+
+console.log("Selection: ", JSON.stringify(selInfo));
+
+if (!selInfo) {
+    return;
+};
+
+var datas = grid.getSelectionData();
+var totCnt = 0;
+var cnt = 0;
+var sum = 0;
+for (var i = 0 ; i < datas.length; i++) {
+    var keys = Object.keys(datas[i]);
+    for (var j = 0; j < keys.length; j++) {
+        totCnt++;
+        if (calcColumn.indexOf(keys[j]) > -1) {
+            sum += datas[i][keys[j]];
+            cnt++;
+        }
+    }
+};
+
+var avg = sum / cnt;
+console.log("Total Cell Count: " + totCnt.toLocaleString());
+console.log("Avg: " + (isNaN(avg) ? 0 : avg).toLocaleString());
+console.log("Count: " + cnt.toLocaleString());
+console.log("Sum: " + sum.toLocaleString());
+alert("Sum: " + sum.toLocaleString());
+```
+
 <script>
   $('#btnSetBlock').click(function() {
     gridView.setSelectOptions({
@@ -164,5 +203,38 @@ gridView.setDisplayOptions({
         hoverMask: hoverMaskValue
       }
     });
+  });
+
+  $('#btnGetSelectionData').click(function() {
+    var selInfo = gridView.getSelection();
+    var calcColumn = ["Quantity", "UnitPrice"];
+
+    console.log("Selection: ", JSON.stringify(selInfo));
+
+    if (!selInfo) {
+        return;
+    };
+
+    var datas = gridView.getSelectionData();
+    var totCnt = 0;
+    var cnt = 0;
+    var sum = 0;
+    for (var i = 0 ; i < datas.length; i++) {
+        var keys = Object.keys(datas[i]);
+        for (var j = 0; j < keys.length; j++) {
+            totCnt++;
+            if (calcColumn.indexOf(keys[j]) > -1) {
+                sum += datas[i][keys[j]];
+                cnt++;
+            }
+        }
+    };
+
+    var avg = sum / cnt;
+    console.log("Total Cell Count: " + totCnt.toLocaleString());
+    console.log("Avg: " + (isNaN(avg) ? 0 : avg).toLocaleString());
+    console.log("Count: " + cnt.toLocaleString());
+    console.log("Sum: " + sum.toLocaleString());
+    alert("Sum: " + sum.toLocaleString());
   });
 </script>

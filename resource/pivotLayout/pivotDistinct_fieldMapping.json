@@ -1,0 +1,44 @@
+[{
+    "name": "제조사",
+    "sourceField": "제조사",
+    "fieldHeader": "제조사",
+    "valueEnable": true
+}, {
+    "name": "모델",
+    "sourceField": "모델",
+    "fieldHeader": "모델",
+    "valueEnable": true
+}, {
+    "name": "판매량",
+    "sourceField": "판매량",
+    "fieldHeader": "판매량",
+    "valueEnable": true
+}, {
+    "name": "전월대비",
+    "sourceField": "전월대비",
+    "fieldHeader": "전월대비",
+    "summaryFormat": "${value} 합",
+    "valueEnable": true
+}, {
+    "name": "판매년",
+    "fieldHeader": "판매년",
+    "sourceField": "판매날짜",
+    "dateType": "year",
+    "displayFormat": "${value}년",
+    "valueEnable": true
+}, {
+    "name": "판매분기",
+    "fieldHeader": "판매분기",
+    "sourceField": "판매날짜",
+    "dateType": "quarter",
+    "displayFormat": "${value}사분기",
+    "summaryFormat": "요약",
+    "valueEnable": true
+}, {
+    "name": "판매월",
+    "fieldHeader": "판매월",
+    "sourceField": "판매날짜",
+    "dateType": "month",
+    "displayFormat": "${value}월",
+    "valueEnable": true
+}]

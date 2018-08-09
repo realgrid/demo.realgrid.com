@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 'Pivot 최신버전 1.0.0'
+title: 'Pivot 최신버전 1.0.1'
 published: true
 description: ""
 ---
@@ -16,22 +16,22 @@ Pivot 최신 버전 이력
 #### 기능 개선
 
 1. 포커스
-  - [DisplayOptions.showFocus](http://help.realgrid.com/pivotApi/types/DisplayOptions/){_blank} 속성으로 포커스를 표시하고 키보드로 이동할 수 있습니다.
+  - [DisplayOptions.showFocus](http://help.realgrid.com/pivotApi/types/DisplayOptions/){:target="_blank"} 속성으로 포커스를 표시하고 키보드로 이동할 수 있습니다.
   - 다음과 같이 setDisplayOptions() 함수를 통해 포커스를 활성화할 수 있습니다.
 ```js
 pivot.setDisplayOptions({
 	showFocus: true
 });
 ```
-  - 포커스가 이동될때 [onCurrentChanged()](http://help.realgrid.com/pivotApi/RealPivot/onCurrentChanged/){_blank} 콜백이 발생합니다.  
+  - 포커스가 이동될때 [onCurrentChanged()](http://help.realgrid.com/pivotApi/RealPivot/onCurrentChanged/){:target="_blank"}  콜백이 발생합니다.  
   - `CSS` `realpivot-focus` class가 추가되었습니다.
 
 1. 셀 복사
   - 선택된 셀의 값을 Ctrl+C 단축키를 통해 클립보드로 복사할 수 있게 되었습니다.
-  - [CopyOptions.copyDisplayText](http://help.realgrid.com/pivotApi/types/CopyOptions/){_blank} 속성이이 true이면 표시된 텍스트가 복사되고, false이면 원시 데이터가 복사됩니다.
+  - [CopyOptions.copyDisplayText](http://help.realgrid.com/pivotApi/types/CopyOptions/){:target="_blank"}  속성이이 true이면 표시된 텍스트가 복사되고, false이면 원시 데이터가 복사됩니다.
 
 1. 컨텍스트 메뉴
-  - 마우스 우측 버튼 클릭시 표시되는 컨텍스트 메뉴를 [setContextMenu()](http://help.realgrid.com/pivotApi/RealPivot/setContextMenu/){_blank}를 통해 대체할 수 있습니다.
+  - 마우스 우측 버튼 클릭시 표시되는 컨텍스트 메뉴를 [setContextMenu()](http://help.realgrid.com/pivotApi/RealPivot/setContextMenu/){:target="_blank"} 를 통해 대체할 수 있습니다.
 ```js
 pivot.setContextMenu([{
     text: "menu1",
@@ -46,7 +46,7 @@ pivot.setContextMenu([{
     callback: function () { alert("menu3 click"); }
 }]);
 ```  
-  - [getContextMenu()](http://help.realgrid.com/pivotApi/RealPivot/getContextMenu/){_blank}를 호출하여 설정된 컨텍스트 메뉴를 가져올 수 있습니다.
+  - [getContextMenu()](http://help.realgrid.com/pivotApi/RealPivot/getContextMenu/){:target="_blank"} 를 호출하여 설정된 컨텍스트 메뉴를 가져올 수 있습니다.
   - 상단 Menu Icon을 통해 표시되는 메뉴에 관한 기능은 setGlobalContextMenu(), getGlobalContextMenu()로 이름이 변경되었습니다.
   
 1. Setup UI

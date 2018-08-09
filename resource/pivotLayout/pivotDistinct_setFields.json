@@ -1,0 +1,14 @@
+[{
+    "fieldName": "모델"
+}, {
+    "fieldName": "판매날짜",
+    "dataType": "datetime",
+    "datetimeFormat": "yyyy-MM"
+}, {
+    "fieldName": "판매량",
+    "dataType": "number"
+}, {
+    "fieldName": "전월대비"
+}, {
+    "fieldName": "제조사"
+}]

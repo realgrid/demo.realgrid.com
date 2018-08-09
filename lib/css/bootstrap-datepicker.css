@@ -12,9 +12,7 @@
   border-radius: 4px;
   direction: ltr;
 }
-.datepicker-inline {
-  width: 220px;
-}
+
 .datepicker.datepicker-rtl {
   direction: rtl;
 }

@@ -1,0 +1,11 @@
+{
+	"columns": ["판매년", "판매분기", "판매월"],
+    "rows": ["제조사", "모델"],
+    "values": [{
+        "name": "판매량",
+        "expression": "sum"
+    }, {
+        "name": "전월대비",
+        "expression": "distinct"
+    }]
+}

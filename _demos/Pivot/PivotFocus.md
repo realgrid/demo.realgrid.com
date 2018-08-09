@@ -1,19 +1,22 @@
 ---
 layout: page
-title: 피벗 필드 재설정
-order: 5
+title: 피벗 포커스
+order: 14
 devbox: true
-devboxfile: PivotSetting_devbox.md
-published: false
+devboxfile: PivotFocus_devbox.md
+published: true
 categories:
   - 피벗(RealPivot)
-tags: ['pivot', 'setting']
+tags: ['pivot', '포커스', 'focus']
 ---
 
-Pivot의 columns, rows, values 값을 직접 설정해서 Pivot 화면을 구성할 수 있습니다.
+pivot 화면에 포커스를 setDisplayOpyions() 함수의 showFocus 속성으로 설정할 수 있습니다.
 
 <script>
 var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
+    pivot.onCurrentChanged = function (pivot, index) {
+        console.log(index); 
+    }
     dataProvider.setRows(data);
     pivot.drawView();
 }

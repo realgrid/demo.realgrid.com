@@ -159,9 +159,9 @@ var onSuccessColumnSet = function(data, textStatus, jqXHR) {
   dpVar="dataProvider"
   pivotId="realpivot"
 
-  fieldSet="pivotContextMenu_setFields"
-  fieldMappingSet="pivotContextMenu_fieldMapping"
-  pivotFieldsSet="pivotContextMenu_pivotFields"
+  fieldSet="pivot_setFields"
+  fieldMappingSet="pivot_fieldMapping"
+  pivotFieldsSet="pivot_pivotFields"
 
   dataSet="pivotDataSet.json"
   successDataSet="onGridSuccessDataSet"
