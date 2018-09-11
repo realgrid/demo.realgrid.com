@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.28'
+title: '최신버전 1.1.29'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,223 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.29 (2018년 8월)
+
+---
+
+#### 기능 개선
+1. [ColumnFilter](http://help.realgrid.com/api/types/ColumnFilter/)
+  - ColumnFilter를 화면에서 보이지 않도록 하는 hideColumnFilters 함수가 추가되었습니다.
+  - ColumnFilter.visible 속성이 추가되었습니다. default는 true이며 false로 설정시 화면에서 보여지지 않습니다.
+  - filter의 active는 visible상태에 상관없이 적용됩니다.
+```js
+gridView.hideColumnFilters("columnnName", ["filterNames"], true);
+gridView.addColumnFilters("columnName", 
+[ 
+  {
+      name:"filter1", 
+      text:"filter1", 
+      criteria:"value like 'test%'", 
+      visible:true
+  }, {
+      name:"filter2",
+      text:"filter2",
+      criteria:"value like 'aaa%'",
+      visible:false,
+      active:true
+  }
+]
+);
+```
+  - hideAllColumnFilters 함수가 추가되었습니다.
+  - 자세한 내용은 [[데모]]({{ '/Columns/ColumnFiltering/' | prepend: site.baseurl }}) 를 참조하세요.
+
+1. [DisplayOptions](http://help.realgrid.com/api/types/DisplayOptions/)
+  - 그리드의 WheelEvent를 외부로 전파하지 하지 않도록 하는 wheelEventPropagate 속성이 추가되었습니다.
+  - DisplayOptions.wheelEventPropagate 속성을 false로 설정시 그리드 외부로 스크롤이 전달되지 않습니다.
+  - 그리드의 처음행 또는 마지막행이 보여지는 상태에서 스크롤을 했을때 브라우저 스크롤을 막는 경우 사용합니다.
+
+1. [FilterSelectorOptions](http://help.realgrid.com/api/types/FilterSelectorOptions/)
+  - ColumnFilter를 검색할수 있는 showSearchInput 속성이 추가되었습니다.
+  - ColumnFilter를 선택시 여러개의 filter를 선택후 filtering이 실행되도록 하는 accept버튼이 추가되었습니다.
+  - [FilteringOptions](http://help.realgrid.com/api/types/FilteringOptions/) filter를 검색후 선택했을때 화면에 보이지 않는 filter의 check를 유지하도록 하는 clearWhenSearchCheck 속성이 추가되었습니다.
+  - clearWhenSearchCheck속성이 true인경우 FilterSelector화면에 보이지 않는 filter는 check가 해제됩니다.
+```js
+  gridView.setFilteringOptions({
+    clearWhenSearchCheck: true,
+    selector:{
+      showSearchInput: true,
+      showButtons: true, 
+      acceptText:"선택",
+      cancelText:"취소"
+    }
+  })
+```  
+  - 자세한 내용은 [[데모]]({{ '/Columns/ColumnFiltering/' | prepend: site.baseurl }}) 를 참조하세요.
+
+1. [isFiltered](http://help.realgrid.com/api/GridBase/isFiltered/)
+  - Column의 filter가 실행중인지 확인하는 isFiltered 함수가 추가되었습니다.
+```js
+  var isFiltered = gridView.isFiltered("columnName");
+  var isFiltered = gridView.isFiltered();
+```
+
+1. [setEditValue](http://help.realgrid.com/api/GridBase/setEditValue/)
+  - 그리드 편집기가 활성화 된 상태일때 editor의 값을 변경할수 있는 setEditValue 함수가 추가되었습니다.
+  - 셀이 readOnly이거나 editable이 false인경우 editor의 값이 변경되지 않습니다.
+  - editor가 표시되지 않는 checkCellRenderer인경우 사용할수 없습니다.
+```js
+  gridView.setEditValue("test", startEdit);
+```
+  - startEdit 인자가 true인경우 편집중인 아닌경우 편집상태로 변경하고 editor의 값을 변경합니다.
+
+1. [LinkCellRenderer](http://help.realgrid.com/api/types/LinkCellRenderer/)
+  - LinkeCellRenderer를 사용하는 셀에 url값이 없는 경우 마우스 포인터가 변경되지 않도록 수정되었습니다.
+
+1. [DataColumn](http://help.realgrid.com/api/types/DataColumn/)
+  - DataColumn.lookupDisplay가 true일때 해당컬럼을 화면에 보여지는 값으로 정렬하도록 하는 sortByLabel속성이 추가되었습니다.
+```js
+  gridView.setColumn({
+    name: "columnName",
+    fieldName: "fieldName",
+    lookupDisplay: true,
+    values: ['1','2','3','4','5','6'],
+    labels: ['일','이','삼','사','오','육'],
+    sortByLabel: true
+  })
+```
+  - value값으로 정렬할때보다 약간의 속도 저하가 있을수 있습니다.
+
+1. [onCurrentChanging](http://help.realgrid.com/api/GridBase/onCurrentChanging/)
+  - 셀이 편집중인 경우 포커스의 이동을 제한할수 있도록 onCurrentChanging Event의 발생순서를 변경할수 있는 grid.changingMode 속성이 추가 되었습니다.
+  - default는 ChangingMode.NORMAL 이며 기존과 동일하게 editCommit후 onCurrentChanging Event가 발생됩니다.
+  - changingMode가 ChangingMode.BEFORE_EDITCOMMIT인 경우 editor commit이전에 onCurrentChaning이벤트가 호출됩니다. 이벤트의 결과값으로 false를 return하면 포커스 이동은 취소되고 편집중인 셀의 편집상태는 유지됩니다.
+```js
+  function validationValue(grid, index, value) {
+    // value값 검증.
+    return value검증 ? true : false;
+  }
+  gridView.setOptions({changingMode:RealGridJS.ChangingMode.BEFORE_EDITCOMMIT});
+  gridView.onCurrentChanging = function(grid, oldIndex, newIndex) {
+    if (grid.isEditing()) {
+      var editValue = grid.getEditValue();
+      return validationValue(grid, newIndex, editValue);
+    }
+  }
+```
+
+1. [ActualTargetBulletRenderer](http://help.realgrid.com/api/types/ActualTargetBulletRenderer/)
+  - actualTargetBulletRenderer의 actual, target값에 numberFormat이 적용되도록 개선되었습니다.
+
+1. [DisplayOptions](http://help.realgrid.com/api/types/DisplayOptions/)
+  - 그리드의 스크롤바를 숨길수 있는 DisplayOptions.hscrollBar, DisplayOptions.vscrollBar 속성이 추가 되었습니다.
+
+1. [StateBar](http://help.realgrid.com/api/types/StateBar/)
+  - 행의 상태를 표시하는 StateBar 상태에 따른 이미지를 표시할수 있도록 stateImages 속성이 추가되었습니다.
+```js
+  gridView.setStateBar({
+    mark:"image",
+    stateImages:{
+      "updated":"./images/state_updated.png",
+      "created":"./images/state_created.png",
+      "deleted":"./images/state_deleted.png",
+      "createAndDeleted":"./images/state_createAndDeleted.png"
+    }
+  });
+```
+  - 행의 편집상태를 표시하는 [Indicator](http://help.realgrid.com/api/types/Indicator/)에 stateImages속성과 mark속성이 추가 되었습니다.
+```js
+  gridView.setIndicator({
+    mark:"image",
+    stateImages:{
+      "focused":"./images/indicator_focused.png",
+      "inserting":"./images/indicator_inserting.png",
+      "updating":"./images/indicator_updating.png",
+      "appending":"./images/indicator_appending.png"
+    }
+  });
+```
+
+1. [BTDateCellEditor](http://help.realgrid.com/api/types/BTDateCellEditor/)
+  - BTDateCellEditor.commitOnSelect 속성이 추가 되었습니다.
+
+1. `NumberFormat`
+  - DataColumn.displayMinusZero 속성이 추가 되었습니다. 
+  - displayMinusZero 속성이 false인 경우 numberFromat의 소수점이하 자리수가 Data의 소수점이하 자리수보다 작아서 "-0.00"으로 표시되는 경우 "0.00"으로 표시합니다.
+
+1. [ImageButtonCellRenderer](http://help.realgrid.com/api/types/ImageButtonCellRenderer/)
+  - cursor속성이 추가되었습니다.
+  - mouse hover시 underline이 표시되지 않도록 하는 hoveredUnderline 속성이 추가되었습니다.
+
+1. [onFilteringChanged](http://help.realgrid.com/api/GridBase/onFilteringChanged/)
+  - onFilteringChanged 이벤트의 인자에 column이 추가되었습니다.
+  - gridView.setColumns시 발생되는 onFilteringChanged 이벤트의 경우 column의 값이 undefined입니다.
+```js
+  gridView.onFilteringChanged = function(grid, column) {
+    console.log(column && column.name);
+    if (column && column.name == "maker") {
+      var activeFilters = grid.getActiveColumnFilters("maker");
+      var modelFilters = grid.getColumnFilters("model");
+      var filter, makers = [];
+      var hideFilters = [];
+      var visibleFitlers = [];
+      for (var i = 0, cnt = activeFilters.length; i < cnt ; i++) {
+        filter = activeFilters[i];
+        makers.push(filter.text);
+      }
+      grid.beginUpdate();
+      try {
+        for (var i = 0, cnt = modelFilters.length; i < cnt ; i++) {
+          filter = modelFilters[i];
+          if (makers.length > 0 && makers.indexOf(filter.description) < 0) {
+            hideFilters.push(filter.name);
+          } else {
+            visibleFitlers.push(filter.name);
+          }
+        }
+        grid.activateAllColumnFilters("model", false);
+        grid.hideColumnFilters("model", hideFilters, true);
+        grid.hideColumnFilters("model", visibleFitlers, false);
+      } finally {
+        grid.endUpdate();
+      }
+    }
+  }
+```
+  - "maker"컬럼의 Filter를 변경했을때 선택된 maker의 model만 "model"컬럼의 Filter에 표시되도록 하는 샘플 코드입니다.
+
+#### 오류 수정
+1. [lookupColumn]({{ '/CellComponent/LookupColumn/' | prepend: site.baseurl }})
+  - column.values에 공백('')이 입력되지 않는 오류가 수정되었습니다.
+
+1. [checkBar]({{ '/GridComponent/CheckBar/' | prepend: site.baseurl }})
+  - checkBar Head와 Cell의 check이미지의 위치가 1px틀어지는 것을 수정하였습니다.
+
+1. [excelFormat](http://help.realgrid.com/api/types/DataColumn/)
+  - setCellStyle 또는 dynamicStyle이 적용되어있는 Cell을 excel로 export할때 excelFormat이 사라지는 현상을 수정하였습니다.
+
+1. [rowHeight](http://help.realgrid.com/api/GridBase/setRowHeight/)
+  - 그리드의 넓이가 그리드의 높이보다 작은경우 setRowHeight를 실행했을때 넓이보다 커지지 않는 오류를 수정하였습니다.
+
+1. [editor]({{ '/Editing/Editors/' | prepend: site.baseurl }})
+  - 현재 선택된 Cell의 값이 null일때 gridView.setValue를 하고 키보드를 이용해서 delete키 입력후 enter키를 입력했을때 setValue로 입력한 값이 보이는 현상이 수정되었습니다.
+
+1. `TreeView`
+  - 트리그리드에서 최상위 노드가 1개인 경우 Sort가 안되는 현상이 수정되었습니다.
+  - 트리그리드에서 첫번째행에 포커스가 있는 상태에서 Data를 다시 Load했을때 onCurrentRowChanged이벤크가 발생하지 않는 오류를 수정하였습니다.
+
+1. [orderBy](http://help.realgrid.com/api/GridBase/orderBy/)
+  - gridView.orderBy api에서 sortDirs인자값이 잘못된 경우 아이콘 표시가 반대로 되는 현상을 수정하였습니다.
+
+1. [getDistinctValues](http://help.realgrid.com/api/DataProvider/getDistinctValues/)
+  - dataProvider.getDistinctValues의 count인자를 1로 넘겼을때 2건의 자료가 return되는 오류를 수정하였습니다.
+
+1. [dataField](http://help.realgrid.com/api/types/DataField/)
+  - dataProvider.addField를 이용해서 추가한 dataField의 calculateExpression또는 calculateCallback이 적용되지 않는 오류가 수정되었습니다.
+
+1. [filtering](http://help.realgrid.com/api/features/Filtering/)
+  - focus가 첫번째 행에 있는 상태에서 columnFiltering을 하면 filter Selector화면이 닫히는 현상을 수정하였습니다.
 
 
 ## 1.1.28 (2018년 6월)
@@ -1075,7 +1292,7 @@ grid.setDisplayOptions({
 ```
   자세한 내용은 [데모]({{ '/GridComponent/Selecting/' | prepend: site.baseurl }})를 참조하세요.
 
-### 오류 수정
+#### 오류 수정
 1. `dataProvider.getFields`
   - dataProvider.getFields함수를 이용해서 field의 속성을 가져올때 orgFieldName속성이 누락되는 현상을 수정하였습니다.
 

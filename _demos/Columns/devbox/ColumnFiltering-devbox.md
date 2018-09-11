@@ -249,8 +249,46 @@ function closeAutoFilter() {
     <input type="button" id="applyAutoFilter" value="Apply" onclick="applyAutoFilter();" class="button gray medium3" />
     <input type="button" id="cancelAutoFilter" value="Cancel" onclick="closeAutoFilter();" class="button gray medium3" />
 </div>
-  
 ```
+
+
+#### 컬럼 필터 숨기기
+
+CustomerID에 설정된 필터 목록 중 "VINET" 을 숨깁니다.
+
+<a class="btn primary small round lowercase" id="btnHideColumnFilters">컬럼 필터 값 숨기기</a>
+
+```js
+gridView.hideColumnFilters("CustomerID", ["VINET"], true);
+```
+
+CustomerID에 설정된 필터 전체 목록을 숨깁니다.
+
+<a class="btn primary small round lowercase" id="btnHideAllColumnFilters">컬럼 필터 값 숨기기</a>
+
+```js
+gridView.hideAllColumnFilters("CustomerID",true);
+```
+
+#### 필터 검색 기능 설정
+
+ColumnFilter를 검색할수 있는 입력 상자가 추가됩니다.  
+필터링 설정 후 적용시킬 수 있는 선택 및 취소 버튼이 추가됩니다.
+
+<a class="btn primary small round lowercase" id="btnShowSearchInput">컬럼 검색 상자 추가</a>
+
+```js
+gridView.setFilteringOptions({
+  clearWhenSearchCheck: true,
+  selector:{
+    showSearchInput: true,
+    showButtons: true, 
+    acceptText:"선택",
+    cancelText:"취소"
+  }
+})
+```  
+
 
 <script>
 var autoFiltercolumn;
@@ -384,6 +422,26 @@ $("#btnSetFilterAction").click(function() {
  
     $("#btnFilter").attr("disabled", "disabled");
     $("#txtFilter").text("'CustomerId' 컬럼에 필터가 설정됐습니다.");  
+});
+
+$("#btnHideColumnFilters").click(function() { 
+  gridView.hideColumnFilters("CustomerID", ["VINET"], true);
+});
+
+$("#btnHideAllColumnFilters").click(function() { 
+  gridView.hideAllColumnFilters("CustomerID",true);
+});
+
+$("#btnShowSearchInput").click(function() { 
+  gridView.setFilteringOptions({
+    clearWhenSearchCheck: true,
+    selector:{
+      showSearchInput: true,
+      showButtons: true, 
+      acceptText:"선택",
+      cancelText:"취소"
+    }
+  })
 });
 
 

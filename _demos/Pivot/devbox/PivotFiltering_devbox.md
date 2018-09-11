@@ -1,5 +1,5 @@
 #### 필터링 설정
-conditions속성으로 필터 조건을 지정하고 [operation](http://help.realgrid.com/api/types/FilteringOptions/)속성에 조건간의 연산방식을 지정합니다.
+conditions속성으로 필터 조건을 지정하고 [operation](http://help.realgrid.com/api/types/FilteringOptions/){:target="_blank"}속성에 조건간의 연산방식을 지정합니다.
 conditions에는 criteria로 식을 지정하거나, values에 특정 값을 지정할 수 있습니다.  
 
 

@@ -5,7 +5,7 @@
 
 피벗에서 데이터를 정렬하는 방법은 다음과 같습니다.
 
-1. [setFieldMapping()](http://help.realgrid.com/pivotApi/RealPivot/setFieldMapping/){:target="_blank"}호출 시 [PivotField](/pivotApi/types/PivotField/){:target="_blank"}의 [sortDir속성](http://help.realgrid.com/pivotApi/types/SortDirection/){:target="_blank"}을 기본 정렬을 지정하는 방법 (라벨 정렬만 해당)
+1. [setFieldMapping()](http://help.realgrid.com/pivotApi/RealPivot/setFieldMapping/){:target="_blank"}호출 시 [PivotField](http://help.realgrid.com/pivotApi/types/PivotField/){:target="_blank"}의 [sortDir속성](http://help.realgrid.com/pivotApi/types/SortDirection/){:target="_blank"}을 기본 정렬을 지정하는 방법 (라벨 정렬만 해당)
 
 2. [sort()](http://help.realgrid.com/pivotApi/RealPivot/sort/){:target="_blank"} 함수로 정렬하는 방법 (라벨정렬과 값정렬 모두 해당)
 3. 피벗내 Setup UI를 이용한 방법

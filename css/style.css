@@ -1766,8 +1766,11 @@ label {
   line-height: 20px;
   font-weight: 700;
   clear: both;
-  display: block;
+  /*display: block;*/
   margin-bottom: .25em;
+}
+label.text-center {
+  display:block;
 }
 label.hidden {
   display: none;
