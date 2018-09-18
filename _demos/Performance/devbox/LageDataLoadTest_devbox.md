@@ -47,7 +47,7 @@ $.ajax({
 <script>
 
 $('#fillCsvData1').click(function() {
-  gridView.showProgress();
+  //gridView.showProgress();
 
   var startTime = new Date().getTime();
   $.ajax({
@@ -65,14 +65,14 @@ $('#fillCsvData1').click(function() {
           $("#btnLoad").removeAttr("disabled");
       },
       complete: function (data) {
-          gridView.closeProgress();
+          //gridView.closeProgress();
       },
       xhr: function () {
           var xhr = new window.XMLHttpRequest();
           //Download progress
           xhr.addEventListener("progress", function (evt) {
               if (evt.lengthComputable) {
-                  gridView.setProgress(0, evt.total, evt.loaded);
+                  //gridView.setProgress(0, evt.total, evt.loaded);
               }
           }, false);
           return xhr;
