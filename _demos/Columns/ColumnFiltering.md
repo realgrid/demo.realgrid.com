@@ -87,7 +87,7 @@ tags: ['Filtering', '필터링', '필터']
 
 	gridView.setFilteringOptions({
 	    selector: {
-	        maxWidth: 130,
+	        //maxWidth: 130,
 	        maxHeight: 200
 	    }
 	});
