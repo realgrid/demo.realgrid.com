@@ -1601,7 +1601,7 @@ input:not([type="checkbox"]):not([type="number"]):not([type="radio"]):not([type=
 input[type="number"] {
   font-size: 14px;
   line-height: 20px;
-  padding: .7111em 1em;
+  /*padding: .7111em 1em;*//*필터 검색 두껍게 표시로 인한 주석처리*/
   background: #ffffff;
   border: none;
   box-sizing: border-box;
