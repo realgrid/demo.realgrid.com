@@ -26,64 +26,39 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
 
     pivot.onCurrentChanged = function (grid, index) {
 
-        var attrs = Object.keys(index.columns);
-        var level = attrs.filter(function (item) { return item == "__sum" || item == "valueField" ? false : true; }).length;
+      var attrs = Object.keys(index.columns);
+      var level = attrs.filter(function (item) { return item == "__sum" || item == "valueField" ? false : true; }).length;
 
-        var values = pivot.getAllValues(false).판매량;
-        // 선택한 행에 대한 값 가져오기
-        var rowFields = pivot.getRowFieldNames();
-        for (var i = 0; i < rowFields.length; i++) {
-            var fld = rowFields[i];
+      if(level == 0){
+        level = 1
+      } 
 
-            if (index.rows.hasOwnProperty(fld)) {
-                values = values.rows[index.rows[fld]];
-            } else {
-                break;
+      var columnLabels = pivot.getColumnLabels();
+      var columnList = getLevelLabels(columnLabels, 1, level)
+
+      var vals = []
+      var len = Object.keys(pivot.getRowValues("판매량", index.rows).descendants).length;
+      for (var i = 0; i < len; i++){
+          if(Object.keys(pivot.getRowValues("판매량", index.rows).descendants)[i].split(":::").length == level){
+              var key = Object.keys(pivot.getRowValues("판매량", index.rows).descendants)[i];
+              vals.push(pivot.getRowValues("판매량", index.rows).descendants[key])
+          }
+      }
+
+      setHighChart(dataProvider, vals, index, columnList);
+    }
+
+    function getLevelLabels(columnChilds, level, targetLevel) {
+        var list = [];
+        for (var i = 0, len = columnChilds.length; i < len; i++) {
+            if(level == targetLevel){
+                list.push(columnChilds[i].label)
+            } else if(level < targetLevel && columnChilds[i].hasOwnProperty("childs")) {
+                var levelLabels = getLevelLabels(columnChilds[i].childs, level + 1, targetLevel)
+                list.push.apply(list, levelLabels);
             }
         }
-
-        // 키+값을 매칭
-        var keys = [];
-        var vals = [];
-        var columnLabels = [];
-        switch(level) {
-            case 0:
-            case 1:
-                $.each(values.cols, function (attr1, obj1) { // 년도 Loop
-                    keys.push([attr1]);
-                    vals.push(obj1.value);
-                });
-                columnLabels.push(pivot.getColumnLabels()[0].label);
-                break;
-            case 2:
-                $.each(values.cols, function (attr1, obj1) { // 년도 Loop
-                    $.each(obj1.cols, function (attr2, obj2) { // 분기 Loop
-                        keys.push([attr1, attr2]);
-                        vals.push(obj2.value);
-                    });
-                });
-                for(var i = 0; i < Object.keys(pivot.getColumnLabels()[0].childs).length; i++){
-                    columnLabels.push(pivot.getColumnLabels()[0].childs[i].label);
-                }
-                break;
-            case 3:
-                $.each(values.cols, function (attr1, obj1) { // 년도 Loop
-                    $.each(obj1.cols, function (attr2, obj2) { // 분기 Loop
-                        $.each(obj2.cols, function (attr3, obj3) {  // 월 Loop
-                            keys.push([attr1, attr2, attr3]);
-                            vals.push(obj3.value);
-                        });
-                    });
-                });
-                for(var i = 0; i < Object.keys(pivot.getColumnLabels()[0].childs).length; i++){
-                    for(var j = 0; j < Object.keys(pivot.getColumnLabels()[0].childs[i].childs).length; j++){
-                        columnLabels.push(pivot.getColumnLabels()[0].childs[i].childs[j].label);
-                    }
-                }
-                break;
-        }
-
-        setHighChart(dataProvider, vals, index, columnLabels);
+        return list;
     }
 }
 var onDoneDataSet = function() {
@@ -94,7 +69,7 @@ var onSuccessColumnSet = function(data, textStatus, jqXHR) {
 }  
 
 
-function setHighChart(provider, vals, index, columnLabels) {
+function setHighChart(provider, vals, index, columnList) {
     var subtitle;
 
     if(Object.keys(index.rows)[0] == "__sum"){
@@ -122,7 +97,7 @@ function setHighChart(provider, vals, index, columnLabels) {
             x: -20
         },
         xAxis: {
-            categories: columnLabels,
+            categories: columnList,
             crosshair: true
         },
         yAxis: [{
@@ -171,6 +146,6 @@ function setHighChart(provider, vals, index, columnLabels) {
   doneDataSet="onDoneDataSet"
 
   pivotWidth="100%"
-  pivotHeight="500px" %}
+  pivotHeight="370px" %}
 
-<div id="container" style="height:400px;"></div>
+<div id="container" style="height:300px;"></div>
