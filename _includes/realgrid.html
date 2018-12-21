@@ -230,6 +230,7 @@
             {% capture datafile %}/resource/data/{{ include.dataSet }}{% endcapture %}
             $.ajax({
               type: "GET",
+              async : true,
               url:"{{ datafile | prepend: site.baseurl }}?__time__=" + new Date().getTime(),
               success: function(data, textStatus, jqXHR) {
                 {% if include.successDataSet %}

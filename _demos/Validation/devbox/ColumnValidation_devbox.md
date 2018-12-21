@@ -60,6 +60,17 @@ validations = [{
 column = gridView.columnByName("CustomerID");
 column.validations = validations;
 gridView.setColumn(column);
+
+//다른 컬럼 값 참조(1.1.30버전 이상)
+validations = [{
+    criteria: "values['UnitPrice'] > 10",
+    message: "UnitPrice는 10보다 커야합니다.",
+    mode: "always",
+    level: "error"
+}];
+column = gridView.columnByName("Quantity");
+column.validations = validations;
+gridView.setColumn(column);
 ```
 
 <script>
@@ -92,6 +103,17 @@ $('#btnSetValidation').click(function() {
 	    level: "error"
 	}];
 	column = gridView.columnByName("CustomerID");
+	column.validations = validations;
+	gridView.setColumn(column);
+
+	//다른 컬럼 값 참조(1.1.30버전 이상)
+	validations = [{
+	    criteria: "values['UnitPrice'] > 10",
+	    message: "UnitPrice는 10보다 커야합니다.",
+	    mode: "always",
+	    level: "error"
+	}];
+	column = gridView.columnByName("Quantity");
 	column.validations = validations;
 	gridView.setColumn(column);
 });

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.29'
+title: '최신버전 1.1.30'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,168 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.30 (2018년 10월)
+
+---
+
+#### 기능 개선
+1. [GridOptions.resizeDelay](http://help.realgrid.com/api/types/GridOptions/#resizeDelay)
+  - 그리드 DIV의 넓이 또는 높이가 '100%'일때 IE에서 Browser의 크기변경시 resetSize가 실행되면서 깜박거리는 현상이 줄이기 위한 gridOptions.resizeDelay속성이 추가되었습니다.
+  - default는 undefined이며 resizeDelay가 설정되면 resize가 종료된후 resizeDelay에 지정된 시간이후에 resetSize가 실행됩니다.
+```js
+gridView.setOptions({resizeDelay:250});  
+```
+
+1. [GridOptions.keepNullFocus](http://help.realgrid.com/api/types/GridOptions/#keepNullFocus)
+  - dataProvider에 setRows를 하거나 그리드를 refresh했을때 첫번째 셀에 자동으로 포커스가 생기지 않도록 하는 `keepNullFocus`속성이 추가되었습니다.
+  - 그리드가 activeElement인 경우 keepNullFocus가 true여도 포커스가 표시됩니다.
+```js
+gridView.setOptions({keepNullFocus:true});
+```
+
+1. [getLeftPos](http://help.realgrid.com/api/GridBase/getLeftPos/), [setLeftPos](http://help.realgrid.com/api/GridBase/setLeftPos/)
+  - 그리드의 가로위치를 가져올수 있는 getLeftPos 함수와 그리드의 가로위치를 변경할수 있는 setLeftPos함수가 추가되었습니다.
+
+1. [Filtering](http://help.realgrid.com/api/features/Filtering/)
+  - [setColumnFilters](http://help.realgrid.com/api/GridBase/setColumnFilters/) 또는 [clearColumnFilters](http://help.realgrid.com/api/GridBase/clearColumnFilters/) 등 컬럼 필터가 재지정될때 itemCount가 변경되지 않는 경우 선택된 셀이 변경되지 않도록 수정되었습니다.
+
+1. [DataColumn.equalBlankExpression](http://help.realgrid.com/api/types/DataColumn/#equalBlankExpression)
+  - 컬럼의 이전행과 동일한 값을 가지는 셀을 하나로 묶을때 다른 컬럼의 값을 참조할수 있도록 [equalBlankExpression] 조건이 추가되었습니다.
+```js
+gridView.setColumnProperty("columnnName", "equalBlankExpression","values['col1']+value");
+```
+
+1. [ColumnFilter](http://help.realgrid.com/api/types/ColumnFilter/)
+  - [FilterSelector](http://help.realgrid.com/api/types/selector/)의 검색창에서 ctrl+enter를 입력시 호출되는 [userFilterAddCallback](http://help.realgrid.com/api/types/selector/#userFilterAddCallback) 속성이 추가되었습니다.
+  - 전달되는 인자는 grid, column, text입니다.
+  - column: 현재 filter selector가 popup된 컬럼입니다.
+  - text: 사용자 입력한 문자열입니다.
+```js
+gridView.setFilteringOptions({
+    selector:{
+            userFilterAddCallback: function(grid, column, text) {
+                return {
+                    name: "filter_"+column.name+"_"+text,
+                    text: text,
+                    criteria: "value like '"+text+"%'",
+                    active: true,
+                }
+            }
+    }
+});
+```
+
+1. [mergeRule]({{ '/CellComponent/CellMerging/' | prepend: site.baseurl }})
+  - mergeRule을 이용해서 셀 병합시 선행컬럼을 참조할수 있는 'prevvalues' 수식이 추가 되었습니다.
+```js
+gridView.setColumn({
+    name:"columnName",
+    fieldName:"fieldName",
+    mergeRule:{
+            criteria:"prevvalues+value"
+    }
+})
+```
+  - 병합될 컬럼의 왼쪽에 있는 컬럼들의 값이 동일한 경우에 병합됩니다.
+
+1. [GridOptions.backgroundImage](http://help.realgrid.com/api/types/GridOptions/#backgroundImage)
+  - 그리드에 배경이미지를 그릴수 있는 기능이 추가되었습니다.
+```js
+gridView.setOptions({
+  backgroundImage:{
+      imageUrl:"./image/realgrid.jpg", 
+      alpha:0.2, 
+      location:"center", 
+      padding:2
+  }
+})
+```
+  - imageUrl: 배경으로 사용할 이미지의 url을 입력합니다.
+  - alpha: 투명도를 지정합니다.
+  - location: 배경의 위치를 지정합니다. [BackgroundImageLocation](http://help.realgrid.com/api/types/BackgroundImageLocation/) 참조
+  - padding: 여백을 지정합니다. padding 또는 paddingLeft, paddingRight, paddingTop, paddingBottom을 이용해서 지정합니다.
+
+1. [CellRenderer](http://help.realgrid.com/api/features/Cell%20Renderer/)
+  - mouse hover시 text에 밑줄을 표시하는 hoveredUnderline 속성이 추가되었습니다.
+```js
+gridView.setColumns([{
+  name:"columnName",
+  fieldName:"fieldName",
+  renderer:{
+      type:"text",
+      hoveredUnderline:true
+  }
+}])
+```
+
+1. [fitStyle](http://help.realgrid.com/api/types/GridFitStyle/)
+  - grid의 fitStyle을 "fill"로 변경했을때 그룹컬럼에 속해있는 컬럼들의 경우 fillWidth가 지정되어있어도 모든컬럼의 넓이가 배분되던것을 fillWidth가 지정된 컬럼의 넓이만 배분되도록 변경되었습니다.
+
+1. [Mask](http://help.realgrid.com/api/types/Mask/#restrictNull)
+  - 에디터에 mask가 설정되어있을때 앞자리를 입력하지 않으면 다음으로 이동할수 없도록 하는 `restrictNull` 속성이 추가되었습니다.
+```js
+    gridView.setColumnProperty("columnName","editor", {type:"text", mask:{editMask:"0000-99-00",restrictNull:true, allowEmpty:true}})
+```
+
+1. [onValidateColumn](http://help.realgrid.com/api/GridBase/onValidateColumn/#itemIndex)
+  - onValidateColumn 이벤트에서 다른 field의 값을 확인 할수 있도록 itemIndex인자가 추가되었습니다.
+
+1. [DateCellEditor](http://help.realgrid.com/api/types/DateCellEditor/#defaultShowDate)
+  - Date Editor가 popup될때 선택되는 날짜를 지정하는 defaultShowDate 속성이 추가되었습니다.
+  - "normal": 기존과 동일하게 셀에 data가 있는 경우 해당하는 날짜가 표시되고 data가 없는 경우 이전에 표시된 날짜가 선택된 상태로 popup됩니다.
+  - "today": 항상 현재일자가 선택된 상태로 popup됩니다.
+  - "todayWhenNull": 셀에 data가 있는 경우 해당하는 날짜가 표시되고 data가 없는 경우 현재일자가 표시됩니다.
+  - defaultShowDate에 일자를 지정하면 data가 없는 셀에서 지정된 날짜로 popup됩니다.
+
+1. [EditValidation](http://help.realgrid.com/api/features/Edit%20Validation/)
+  - columnValidation의 criteria에서 다른 컬럼을 참조할수 있도록 [values](http://help.realgrid.com/api/features/Expression/#values) 조건이 추가 되었습니다.
+```js
+gridView.setColumnProperty("columnName", "validations", [{
+  criteria:"((values['test1'] = 'A') and (value >= 10)) or (values['test1'] <> 'A') ",
+  level:"error",
+  message:"test1이 'A'인 경우 10 이상의 값을 입력해야 합니다."
+}])
+```
+
+1. [DropdownCellEditor](http://help.realgrid.com/api/types/DropDownCellEditor/#displayLabels)
+  - dropdownEditor의 dropdownList에서 value와 label을 동시에 보여줄수 있도록 displayLabels속성이 변경되었습니다.
+```js
+gridView.setColumnProperty("columnName", "editor", {
+    type:"dropdown",
+    separator: " ",
+    itemColumned: false,
+    displayLabels: "valueLabel"
+})
+```
+  - separator: value와 label을 구분하는 문자열을 입력합니다. default는 " - " 입니다.
+  - itemColumned: 처음 항목의 넓이를 동일하게 표시하도록 합니다.
+  - [DropDownValueLabel](http://help.realgrid.com/api/types/DropDownValueLabel/): dropdownList에 표시될 항목을 지정합니다.
+
+
+#### 오류 수정
+1. [ImageButtonsCellRenderer](http://help.realgrid.com/api/types/ImageButtonsCellRenderer/)
+  - 컬럼의 buttonVisibility가 "hidden"이어서 버튼이 숨겨져 있을때 버튼의 위치에서 커서가 변경되고 클릭이 발생되는 현상이 수정되었습니다.
+  
+1. [onShowTooltip](http://help.realgrid.com/api/GridBase/onShowTooltip/)
+  - 그룹컬럼에 속한 컬럼에 mergeRule이 적용되어 있을때 onShowTooltip 이벤트의 Arguments중 index의 column이 GroupColumn으로 넘어오는 현상이 수정되었습니다.
+
+1. `iFrame내에서 그리드가 스크롤되는 현상`
+  - iFrame내에서 그리드를 사용할때 iFrame이 그리드보다 작거나 스크롤 되어 그리드가 일부만 보이는 상태에서 그리드를 클릭하면 그리드의 위치가 변경되는 현상이 개선되었습니다.
+
+1. [setCellStyle](http://help.realgrid.com/api/GridBase/setCellStyle/)
+  - setCellStyle(s) 등으로 적용된 스타일이 moveRow 사용시 잘못된 위치에 표시는 현상이 수정되었습니다.
+
+1. [DropdownCellEditor](http://help.realgrid.com/api/types/DropDownCellEditor/)
+  - dropdown Editor에서 dropdownList가 popup되지 않은 상태에서 Data를 삭제후 commit했을때 Data가 삭제되지 않는 현상이 수정되었습니다.
+
+1. `화면 갱신시 오류`
+  - dataProvider.setValue 또는 gridView.setValue시 일부 셀이 갱신되지 않고 이전 값이 표시되는 현상이 수정되었습니다.
+
+1. [editMask](http://help.realgrid.com/api/types/Mask/)
+  - chrome Browser에서 editor에 Mask속성을 설정한 상태에서 편집시 backspace키를 계속 입력시 caret의 위치가 끝으로 이동하는 현상이 수정되었습니다.
+
+
 
 ## 1.1.29 (2018년 8월)
 

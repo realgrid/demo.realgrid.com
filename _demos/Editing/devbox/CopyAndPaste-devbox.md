@@ -10,6 +10,7 @@
 ```js
 gridView.setCopyOptions({
   singleMode: $("#chkSingleMode").is(":checked"),
+  enabled: $("#chkEnabled").is(":checked"),
   datetimeFormat: "yyyy/MM/dd",
   booleanFormat:"N;Y"
 });
@@ -58,10 +59,10 @@ gridView.setPasteOptions({
 });
 ```
 <script>
-
   $('#btnSetCopyOptions').click(function() {
     gridView.setCopyOptions({
       singleMode: $("#chkSingleMode").is(":checked"),
+      enabled: $("#chkEnabled").is(":checked"),
       datetimeFormat: "yyyy/MM/dd",
       booleanFormat:"N;Y"
     });
