@@ -23,9 +23,9 @@ gridView.setHeader(
 ```
 
 #### 헤더의 높이 계산 방식 선택 `(Only JS Support)`
-컬럼이 수직으로 배치될 때 전체 헤더 높이를 수직으로 배치된 컬럼 수에 따라 자동으로 높이를 배분하는 방법과 각각의 컬럼의 높이를 고정하는 방법을 headerHeightFill 속성으로 선택 사용할 수 있습니다.
+컬럼이 수직으로 배치될 때 전체 헤더 높이를 수직으로 배치된 컬럼 수에 따라 자동으로 높이를 배분하는 방법과 각각의 컬럼의 높이를 고정하는 방법을 heightFill 속성으로 선택 사용할 수 있습니다.
 
-- `headerHeightFill`: 헤더의 높이 계산 방식을 지정하는 상수
+- `heightFill`: 헤더의 높이 계산 방식을 지정하는 상수
 - `default`: 헤더의 높이를 자동으로 계산한다.
 - `fixed`: 헤더의 높이를 고정한다.
 
@@ -33,7 +33,7 @@ gridView.setHeader(
 
 ```js
 gridView.setHeader(
-  {headerHeightFill : "default"}
+  {heightFill : "default"}
 );
 ```
 
@@ -41,7 +41,7 @@ gridView.setHeader(
 
 ```js
 gridView.setHeader(
-  {headerHeightFill : "fixed"}
+  {heightFill : "fixed"}
 );
 ```
 
@@ -63,13 +63,13 @@ gridView.setHeader(
 
   $('#btnSetHeaderHeightFillDefault').click(function() {
     gridView.setHeader(
-      {headerHeightFill : "default"}
+      {heightFill : "default"}
     );
   });
 
   $('#btnSetHeaderHeightFillFixed').click(function() {
     gridView.setHeader(
-      {headerHeightFill : "fixed"}
+      {heightFill : "fixed"}
     );
   });
 
