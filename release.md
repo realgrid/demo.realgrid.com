@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.30'
+title: '최신버전 1.1.31'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,178 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.31 (2019년 1월)
+
+---
+
+#### 기능 개선
+1. [DynamicStyle](http://help.realgrid.com/api/types/DynamicStyle/)
+  - dynamicStyle에서 셀의 editable과 readOnly를 지정할수 있도록 개선되었습니다.
+  - 셀의 cursor를 변경할수 있도록 개선되었습니다.
+```js  
+gridView.setColumns([{
+  name:"columnName",
+  fieldName:"fieldName",
+  dynamicStyles:function(grid, index, value) {
+    var ret = {};
+    var s = grid.getValue(index.itemIndex, "column1");
+    ret["editable"] = s === "1" || s === "2";
+    ret["readOnly"] = s === "2";
+    ret["cursor"] = s === "3" ? "move" : "auto";
+    return ret;
+  }
+}]);
+```
+  - editor의 속성을 변경할수 있도록 개선되었습니다.
+  - 아래의 코드는 "kind" field의 값에 따라 법인번호 또는 사업자번호형식으로 입력받도록 editor의 속성을 변경합니다.
+```js
+gridView.setColumns([{
+  name:"columnName",
+  fieldName:"fieldName",
+  dynamicStyles:function(grid, index, value) {
+    var kind = grid.getValue(index.itemIndex, "kind");
+    var ret = {};
+    switch (kind) {
+      case '0' :  // 법인번호.
+        ret.editor = {
+          type:"text", 
+          mask:{
+            editMask:"000000-000000", allowEmpty:true, includedFormat:false   
+          }
+        };
+        break;
+      case '1' :  // 사업자번호
+        ret.editor = {
+          type:"text",
+          mask:{
+            editMask:"000-00-00000", allowEmpty:true, includedFormat:false
+          }
+        }
+        break;
+    }
+    return ret;
+  }
+}]);
+```
+  - 자세한 내용은 [동적 스타일 데모](/GridStyle/DynamicStyles/)를 참조하세요.
+
+1. [DataColumn](http://help.realgrid.com/api/types/DataColumn/)
+  - 그리드에 표시되는 값을 변경할수 있는 displayCallback이 추가되었습니다.
+  - column.styles에 numberFormat, datetimeFormat 등이 있는 경우에는 displayCallback은 무시됩니다.
+  - 정규식(column.displayRegExp,displayReplace)이 있는 경우 displayCallback은 무시됩니다.
+  - excel로 export하는 경우 exportOptions.numberCallback, datetimeCallback, booleanCallback이 있는 경우 displayCallback은 무시됩니다.
+```js
+gridView.setColumns([{
+  name:"columnName",
+  fieldName:"fieldName",
+  displayCallback:function(grid, index, value) {
+    var kind = grid.getValue(index.item, "kind");
+    switch(kind) {
+      case "0" :
+        return value && value.length > 6 ? value.substr(0,6)+'-'+value.substr(6,7) : value;
+      case "1" :
+        return value && value.length == 10 ? value.substr(0,3)+'-'+value.substr(3,2)+'-'+value.substr(5,5) : value;
+    }
+    return value;
+  }
+}])
+```
+  - 자세한 내용은 [동적 스타일 데모](/GridStyle/DynamicStyles/)를 참조하세요.
+
+1. [Excel Export]({{'/Excels/ExcelExport/' | prepend: site.baseurl}})
+  - excel Export시 컬럼을 화면에 보이는 컬럼을 export하지 않거나 또는 화면에 보이지 않는 컬럼을 export할수 있도록 [GridExportOptions](http://help.realgrid.com/api/types/GridExportOptions/)에 showColumns, hideColumns속성이 추가되었습니다.
+  - `showColumns`에는 visible이 false이지만 excel로 export하고자 하는 컬럼을 배열로 지정합니다.
+  - `hideColumns`에는 화면에 보이지만 excel로 export하지 않을 컬럼을 지정합니다.
+```js
+gridView.exportGrid({
+  type:"excel",
+  target:"local",
+  showColumns:["column1"],
+  hideColumns:["column2"]
+});
+```
+
+1. [CheckBar](http://help.realgrid.com/api/types/CheckBar/)
+  - 그리드 행을 체크했을때 checkBar.head의 체크상태를 연동시킬수 있는 syncHeadCheck속성이 추가되었습니다.
+  - 모든 행이 체크된 경우 checkBar.head도 체크상태로 변경됩니다.
+  - 체크가 해제되는 경우 head의 check상태가 해제됩니다.
+
+1. [NumberCellEditor](http://help.realgrid.com/api/types/NumberCellEditor/)
+  - numberCellEditor에서 space key를 입력시 입력값을 삭제할수 있도록 하는 `blankWhenSpace`속성이 추가되었습니다.
+
+1. [CheckableExpression](http://help.realgrid.com/api/GridBase/setCheckableExpression/)
+  - 그리드의 [setPaging](http://help.realgrid.com/api/GridView/setPaging/)을 이용하여 Paging모드로 변경하고 checkableExpression을 사용했을때 그리드의 현재 페이지에만 적용되되는 현상을 개선하였습니다.
+  
+1. [getRowHeight](http://help.realgrid.com/api/GridBase/getRowHeight/)
+  - 그리드 행의 높이를 확인할수 있는 getRowHeight api가 추가되었습니다.
+
+1. [RowGroupOptions](http://help.realgrid.com/api/types/RowGroupOptions/)
+  - MergedRowGroup시 일부 그룹에만 footer를 표시할수 있도록 createFooterCallback 속성이 추가되었습니다.
+  - createFooterCallback의 return값이 true인경우에만 해당 group의 footer를 화면에 표시합니다.
+  - RowGroup.mergeMode가 true인경우에만 사용할수 있습니다.
+```js
+gridView.setRowGroup({
+  mergeMode:true,
+  createFooterCallback: function(grid, group) {
+    if (group.level === 1) {
+      return true; // 그룹의 level이 1인경우 footer를 표시.
+    };
+    if (group.level === 2) {
+      return false; // 그룹의 level이 2인경우 footer를 표시하지 않음.
+    };
+    if (group.level === 3) {
+      var division = grid.getDataSource().getValue(group.firstItem.dataRow, "division");
+      return division === "1"  // field값에 따라 footer를 표시하거나 표시하지 않음.
+    };
+    return true;  // 그외의 경우 표시함.
+  }
+});
+```
+
+1. [DisplayOptions](http://help.realgrid.com/api/types/DisplayOptions/)
+   - 그리드의 테두리를 일부만 그릴수 있도록 drawBorderLeft, drawBorderRight, drawBorderTop, drawBorderBottom속성이 추가되었습니다.
+   - drawBorderLeft 속성을 false로 지정시 왼쪽테두리를 그리지 않습니다.  
+```js
+  gridView.setStyles({grid:{border:"#FF0FCFCF,2"}});
+  gridView.setDisplayOptions({
+    drawBorderLeft:false,
+    drawBorderRight:false
+  })
+```   
+
+#### 오류 수정
+1. [ColumnGroup](({{ '/Columns/ColumnGrouping/' | prepend: site.baseurl }})
+  - ColumnGroup의 하위 컬럼에 MergeRule이 적용되어있고 column.styles.background의 alpha값이 FF가 아닌 경우 셀의 잔상이 보여지는 현상이 수정되었습니다.
+
+1. [fitColumnWidth](http://help.realgrid.com/api/GridBase/fitColumnWidth/)
+  - Column.styles.textWrap이 "normal"일때 grid.fitColumnWidth를 이용해서 컬럼의 너비를 변경했을때 줄바꿈이 정상적으로 되지 않는 현상이 수정되었습니다.
+
+1. [DataColumn](http://help.realgrid.com/api/types/DataColumn/)
+  - Column.mergeRule에 의해서 병합된 column을 rowGrouping한 상태에서 첫번째 그룹의 셀을 선택후 그룹을 접었을때 merge된 셀의 잔상이 보여지는 현상이 수정되었습니다.
+
+1. [CellButton]({{'/CellComponent/CellButton/' | prepend: site.baseurl}})
+  - Column.buttonVisibility가 `always`이면서 그리드의 마지막행이 일부만 보여지고 있을때 마지막행의 버튼을 클릭하는 경우 [onImageButtonClicked](http://help.realgrid.com/api/GridBase/onImageButtonClicked/)이벤트의 itemIndex에 잘못된 index가 전달되는 현상을 수정하였습니다.
+
+1. [LinkCellRenderer](http://help.realgrid.com/api/types/LinkCellRenderer/)
+  - LinkCellRenderer가 적용된 컬럼의 경우 fitColumnWidth를 이용한 자동 너비변경이 안되는 오류를 수정하였습니다.
+
+1. [exportGrid]({{ '/Excels/ExcelMultiExport/' | prepend: site.baseurl }})
+  - RealGridJS.exportGrid를 이용해서 여러개의 그리드를 export한 파일을 최초 편집시 선택된 시트 외 다른 시트의 값이 동시에 변경되는 현상이 수정되었습니다.
+  - 여러개의 그리드를 하나의 엑셀파일로 export한경우 Mac OS에서 읽지 못하는 현상을 수정하였습니다.
+  - [LookupTree]({{ '/CellComponent/LookupTree/' | prepand: site.baseurl }})를 사용한 컬럼이 있는 그리드에서 rowGrouping한후 그룹을 접은 상태에서 export할때 발생하는 오류를 수정하였습니다.
+  - Merged RowGroup에서  ExcelExport시 footerCellMerge를 사용했을때 footer의 merge가 잘못되는 현상을 수정하였습니다.
+
+1. [Styles]({{ '/GridStyle/StyleProperties/' | prepend: site.baseurl}})
+  - style의 fontUnderline을 true로 설정했을때 셀 MouseOver후 underline이 사라지는 현상을 수정하였습니다.
+
+1. [HeaderSummary](http://help.realgrid.com/api/types/HeaderSummary/)
+  - header.summary의 높이가 변경되지 않는 현상을 수정하였습니다.
+
+1. `readOnly 상태의 컬럼이 스페이스바 키로 편집이 되는 현상`
+  - readOnly인 셀을 선택한후 스페이스키를 입력하면 편집이 되는 현상을 수정하였습니다.
+
+
 
 ## 1.1.30 (2018년 10월)
 

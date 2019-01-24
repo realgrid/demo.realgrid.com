@@ -1,0 +1,70 @@
+[{
+    "name": "column1",
+    "fieldName": "field1",
+    "width": 120,
+    "header": {
+        "text": "동적편집여부",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }  
+    },
+    "editor": {
+        "type": "dropdown",
+        "values": ["편집가능", "편집불가"],
+        "labels": ["편집가능", "편집불가"]
+    }
+},{
+    "name": "column2",
+    "fieldName": "field2",
+    "width": 120,
+    "header": {
+        "text": "동적편집",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    }
+},{
+    "name": "column3",
+    "fieldName": "field3",
+    "width": 120,
+    "header": {
+        "text": "동적커서설정",
+        "styles": {
+            "background": "linear,#222aff2a,#2aff2a,90"
+        }
+    },
+    "editor": {
+        "type": "dropdown",
+        "values": ["default", "crosshair", "pointer", "move"],
+        "labels": ["default", "crosshair", "pointer", "move"]
+    }
+},{
+    "name": "column4",
+    "fieldName": "field4",
+    "width": 120,
+    "header": {
+        "text": "동적커서",
+        "styles": {
+            "background": "linear,#222aff2a,#2aff2a,90"
+        }
+    }
+},{
+    "name": "column5",
+    "fieldName": "field5",
+    "width": 120,
+    "header": {
+        "text": "편집유형설정"
+    },
+    "editor": {
+        "type": "dropdown",
+        "values": ["법인번호", "사업자번호"],
+        "labels": ["법인번호", "사업자번호"]
+    }
+},{
+    "name": "column6",
+    "fieldName": "field6",
+    "width": 120,
+    "header": {
+        "text": "동적편집"
+    }
+}]

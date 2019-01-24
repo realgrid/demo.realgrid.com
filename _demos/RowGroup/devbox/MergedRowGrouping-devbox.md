@@ -69,6 +69,23 @@ gridView.setRowGroup({
 * Grouping 된 컬럼은 순서대로 그리드 앞쪽 순서대로 배치됩니다.
 * Grouping 된 컬럼은 위치를 변경할 수 없습니다.
 
+#### 일부 그룹 푸터 표시
+
+MergedRowGroup시 createFooterCallback 속성으로 일부 그룹에만 footer를 표시할수 있도록 설정할 수 있습니다.
+
+<a class="btn primary small round lowercase" id="btnCreateFooterCallback">그룹래밸3이상 푸터제거</a>  
+
+```
+gridView.setRowGroup({
+  mergeMode:true,
+  createFooterCallback: function(grid, group) {
+     if (group.level > 2) {
+       return false; 
+     };
+     return true;  // 그외의 경우 표시함.
+  }
+});
+```
 
 <script>
 $(":radio[name='expanded']").change(expandedAdornmentsChange);
@@ -100,5 +117,17 @@ $('#btnSetSummary').click(function() {
 
 $('#btnSetSummaryStyles').click(function() {
     gridView.setStyles({header:{summary:{background:"#ffdee2e7"}}});
+});
+
+$('#btnCreateFooterCallback').click(function() {
+    gridView.setRowGroup({
+  mergeMode:true,
+  createFooterCallback: function(grid, group) {
+     if (group.level > 2) {
+       return false; 
+     };
+     return true;  // 그외의 경우 표시함.
+  }
+});
 });
 </script>
