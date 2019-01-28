@@ -40,7 +40,7 @@
     }
 },{
     "name": "column4",
-    "fieldName": "field4",
+    "fieldName": "field3",
     "width": 120,
     "header": {
         "text": "동적커서",
