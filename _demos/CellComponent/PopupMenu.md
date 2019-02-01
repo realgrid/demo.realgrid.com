@@ -55,6 +55,24 @@ Javascript 설정으로 컬럼 셀에 팝업메뉴를 추가할 수 있습니다
       }];
       gridView.addPopupMenu("menu1", menu);
 
+      
+      var menu = [{
+       label: "menu1 입니다.",
+       enabled: true,
+       children: [{
+        label: "submenu1 입니다.",
+        callback:function(grid, index){console.log(index)}
+       }, {
+        label: "submenu2 입니다."
+       }]
+       }, {
+        label: "menu2 입니다",
+        enabled: false
+      }];
+      gridView.addPopupMenu("menu2", menu);
+
+      gridView.setColumnProperty("OrderID","header",{popupMenu:"menu2"});
+
       gridView.onMenuItemClicked = function (grid, data, index) {
           alert(data.label);
       };
