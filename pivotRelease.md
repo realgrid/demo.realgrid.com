@@ -8,6 +8,80 @@ description: ""
 Pivot 최신 버전 이력
 
 
+
+## 1.0.3 (2019년 2월)
+
+---
+
+#### 기능 개선
+
+1. Focus 가이드 표시
+  - [DisplayOptions](http://help.realgrid.com/pivotApi/types/GroupOptions/#showFocusGuide){:target="_blank"}의 showFocusGuide 속성이 추가되었습니다. showFocus와 showFocusGuide가 true이면 선택된 셀의 가로와 세로에 배경색을 표시할 수 있습니다.  
+  - 다음과 같이 setDisplayOptions() 함수를 통해 사용 할 수 있습니다.  
+```js
+pivot.setDisplayOptions({
+  showFocus: true,
+  showFocusGuide: true
+});
+```
+  - `CSS` `realpivot-focus-guide` class가 추가되었습니다.
+
+1. 메모리 최적화
+  - 컬럼과 행의 수가 대량일 때 Memory Overflow로 동작이 멈추는 현상이 있어 메모리 사용량을 최적화 하였습니다.
+
+1. 값필드 가로 맞춤 설정
+  - 이전 버전까지 expression이 "distinct"인 경우 중앙, 그 외의 경우 우측으로 가로 정렬로 고정되어 있었는데, 값 필드 별로 정렬 방식을 지정할 수 있게 하였습니다. 
+  - [PivotField.valueAlignment](http://help.realgrid.com/pivotApi/types/PivotField/#valueAlignment){:target="_blank"} 속성을 "near", "center", "far"로 지정하여 맞춤 설정 할 수 있습니다.
+  - 설정 화면에서 값 설정의 맞춤 방식 선택 박스가 추가 되었습니다.
+  - `CSS` realpivot-cell 하위의 `span.near`, `span.center` class가 추가되었습니다.
+
+1. 커스텀 날짜 표현
+  - 필드의 [dateType](http://help.realgrid.com/pivotApi/types/DateValueType/){:target="_blank"}을 "custom"으로 설정 하면 [PivotField.dateFormat](http://help.realgrid.com/pivotApi/types/PivotField/){:target="_blank"}에 맞추어 표시합니다. 
+  - 포맷에 사용하는 문자열은 Data Provider와 동일합니다.
+  
+1. 스크롤 UI 개선
+  - 스크롤 버튼을 누르고 있는 동안 계속적으로 스크롤되도록 개선하였습니다.
+  - 스크롤 바를 드래그해서 이동하는 중에 마이스 포인터가 Pivot을 벗어나도 가능하도록 개선하였습니다.
+
+1. 공백을 &amp;nbsp;로 치환
+  - Pivot은 HTML Dom방식이라 앞뒤 공백이나 연속되는 공백이 화면상에 표시 되지 않았습니다.
+  - [DisplayOptions](http://help.realgrid.com/pivotApi/types/GroupOptions/#keepLabelSpace){:target="_blank"}의 keepLabelSpace 속성이 true이면 라벨상의 모든 공백을 &amp;nbsp;로 치환하여 표시합니다.
+
+1. 라벨 prefix/suffix
+  - 필드의 displayFormat, summaryFormat에 사용되는 문자열이 특정 웹서버에서 예약어로 사용되어 사용하기 어려운 경우가 있었습니다.
+  - [PivotField.labelPrefix](http://help.realgrid.com/pivotApi/types/PivotField/#labelPrefix){:target="_blank"}, [PivotField.labelSuffix](http://help.realgrid.com/pivotApi/types/PivotField/#labelSuffix){:target="_blank"}를 사용 해 displayFormat과 유사한 동작을 하도록 하였습니다. 
+  - 요약을 위한 [PivotField.summaryPrefix](http://help.realgrid.com/pivotApi/types/PivotField/#summaryPrefix){:target="_blank"}, [PivotField.summarySuffix](http://help.realgrid.com/pivotApi/types/PivotField/#summarySuffix){:target="_blank"}도 추가하였습니다.
+  - [format 사용예]
+```js
+    pivot.setFieldMapping([{
+        ...
+        displayFormat: "${value}년도",
+        summaryFormat: "${value}년도 합",
+        ...
+    }]);
+```    
+  - [prefix/suffix 사용예]
+```js
+    pivot.setFieldMapping([{
+        ...
+        labelSuffix:"년도",
+        summarySuffix:"년도 합",
+        ...
+    }]);
+```    
+
+#### 오류 수정
+
+1. form 태그
+  - form 태그 안에 피벗 컨테이너가 있는 경우 설정화면의 버튼이 커밋 버튼으로 오동작하는 문제를 수정하였습니다.
+
+1. 필드 정렬
+  - 필드의 sortDir 속성을 기본 정의하지 않았을 때 제대로 정렬되지 않는 문제를 수정하였습니다.
+
+1. 컬럼 필드가 없을때 설정 화면 오류
+  - 컬럼 필드가 없을때 설정화면에서 값 필드의 정렬 방식 선택 UI에서 오류가 발생하는 문제를 수정하였습니다.
+
+
 ## 1.0.2 (2018년 10월)
 
 ---
@@ -19,7 +93,7 @@ Pivot 최신 버전 이력
   - 다음과 같이 setGroupOptions() 함수를 통해 사용 할 수 있게 되었습니다.
 ```js
 pivot.setGroupOptions({
-  columnExpand: 1
+  columnExpand: 1,
   rowExpand: -1
 });
 ```
