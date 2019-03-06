@@ -52,6 +52,12 @@ dynamicStyles로 편집여부, 동적커서, 동적편집기, 동적색상 등�
   }
 
   var onDoneDataSet = function() {
+    gridView.onCellEdited =  function (grid, itemIndex, dataRow, field) {
+        if (field == 4) { 
+            gridView.setValue(itemIndex,"field6","")
+        }
+    };
+    
     gridView.setColumnProperty("column2","dynamicStyles",function(grid, index, value) {
        var ret = {};
        var col1Value = grid.getValue(index.itemIndex, "field1");

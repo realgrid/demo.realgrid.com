@@ -80,4 +80,10 @@
     "name":"연료",
     "sourceField":"연료",
     "valueEnable": false
+}, {
+    "name": "판매날짜",
+    "fieldHeader": "판매날짜",
+    "sourceField": "판매날짜",
+    "dateType": "custom",
+    "dateFormat":"yyyy-MM-dd"
 }]

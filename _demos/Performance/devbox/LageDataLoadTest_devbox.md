@@ -11,8 +11,6 @@ csv 형태의 50만건 데이터를 불러옵니다. RealGrid는 행의 제한�
 <a class="btn primary small round lowercase" id="fillCsvData1">대량 데이터 로드</a>
 
 ```js
-gridView.showProgress();
-
 var startTime = new Date().getTime();
 $.ajax({
     url: "/resource/data/TooLargeDataSet.csv?__time__=" + startTime,
@@ -29,16 +27,10 @@ $.ajax({
         $("#btnLoad").removeAttr("disabled");
     },
     complete: function (data) {
-        gridView.closeProgress();
+
     },
     xhr: function () {
         var xhr = new window.XMLHttpRequest();
-        //Download progress
-        xhr.addEventListener("progress", function (evt) {
-            if (evt.lengthComputable) {
-                gridView.setProgress(0, evt.total, evt.loaded);
-            }
-        }, false);
         return xhr;
     }
 });

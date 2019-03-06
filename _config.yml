@@ -34,7 +34,7 @@ realgrid_version: 1.1.31 # 이 버전을 바꾸면 모든 데모 페이지의 �
 
 # RealPivot
 realpivot_product: eval
-realpivot_version: 1.0.2
+realpivot_version: 1.0.3
 
 # Build settings
 markdown: kramdown
@@ -105,6 +105,7 @@ sidebar_categories:
   이벤트:
   트리뷰(TreeView):
   차트 및 리포트 연동:
+  기타:
 
 sidebar_categories_pivot:
   피벗(RealPivot):

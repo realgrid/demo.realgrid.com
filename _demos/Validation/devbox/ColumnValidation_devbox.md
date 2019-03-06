@@ -68,7 +68,7 @@ validations = [{
     mode: "always",
     level: "error"
 }];
-column = gridView.columnByName("Quantity");
+column = gridView.columnByName("UnitPrice");
 column.validations = validations;
 gridView.setColumn(column);
 ```
@@ -113,7 +113,7 @@ $('#btnSetValidation').click(function() {
 	    mode: "always",
 	    level: "error"
 	}];
-	column = gridView.columnByName("Quantity");
+	column = gridView.columnByName("UnitPrice");
 	column.validations = validations;
 	gridView.setColumn(column);
 });

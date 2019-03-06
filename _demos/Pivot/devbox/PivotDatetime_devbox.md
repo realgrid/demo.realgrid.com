@@ -10,10 +10,26 @@
 
 
 적용 버튼 클릭 시 선택된 날짜 기준으로 pivot화면을 재구성합니다.<br/>
-<a class="btn primary small round lowercase" id="btnSetPivotFields">적용</a>
+<a class="btn primary small round lowercase" id="btnSetPivotFields1">적용</a>
+
+#### 날짜 포맷
+
+직접 날짜 포맷을 지정해서 라벨값에 표시되도록 설정할 수 있습니다.  
+
+<a class="btn primary small round lowercase" id="btnSetPivotFields2">적용</a>
+
+```
+{
+    name: "판매날짜",
+    fieldHeader: "판매날짜",
+    sourceField: "판매날짜",
+    dateType: "custom",
+    dateFormat:"yyyy-MM-dd"
+}
+```
 
 <script>
-$('#btnSetPivotFields').click(function() {
+$('#btnSetPivotFields1').click(function() {
 	var typeValue = $("#typeList").val();     
 	if (typeValue == "type1") {
 	    pivot.setPivotFields({
@@ -120,4 +136,18 @@ $('#btnSetPivotFields4').click(function() {
 	});
 });
 */
+
+$('#btnSetPivotFields2').click(function() {
+    pivot.setPivotFields({
+	    columns: ["판매날짜"],
+	    rows: ["국가","브랜드명"],
+	    values: [{
+	        name: "차량가격",
+	        expression: "sum"
+	    }, {
+	        name: "판매수량",
+	        expression: "sum"
+	    }]
+	});
+});
 </script>

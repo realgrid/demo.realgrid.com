@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Context Menu</title>
+
+    <script src="/lib/realgrid/realgridjs-lic.js"></script>
+    <script src="/lib/realgrid/realgridjs_eval.1.1.31/realgridjs_eval.1.1.31.min.js"></script>
+    <script src="/lib/realgrid/realgridjs_eval.1.1.31/realgridjs-api.1.1.31.js"></script>
+    <script src="/lib/realgrid/realgridjs_eval.1.1.31/jszip.min.js"></script>
+    <script src="/lib/jquery/jquery-1.11.2.min.js"></script>
+
+<script type="text/javascript">
+
+    var gridView;
+    var dataProvider;
+    var toggle = false;
+
+    window.onload = function () {
+        console.log("==> RealGrid loaded.");
+
+        RealGridJS.setRootContext("/lib/realgrid/realgridjs_eval.1.1.31/");
+        dataProvider = new RealGridJS.LocalDataProvider();
+        gridView = new RealGridJS.GridView("realgrid");
+        gridView.setDataSource(dataProvider);
+
+        setFields(dataProvider);
+        setColumns(gridView);
+        setOptions(gridView);
+
+        setContextMenu(gridView);
+
+        loadData(dataProvider);
+    };
+
+    function setContextMenu(grid) {
+
+       grid.onContextMenuItemClicked = function (grid, data, index) {
+           if (data.tag == 'excel') {
+               grid.exportGrid({
+                   type: "excel",
+                   target: "local",
+                   fileName: "gridExportSample.xlsx"
+               });
+           } else if (data.tag == 'filter' && index.column) {
+               createColumnFilter(grid, index.column);
+           } else if (data.tag == 'visibleTrue') {
+               var columns = grid.getColumns();
+
+               for (var i in columns) {
+                   grid.setColumnProperty(columns[i].name, "visible", true);
+               }
+               toggle = false;
+               setHeaderCellContextMenu(grid, toggle);
+           } else if (data.tag == 'visibleFalse') {
+               grid.setColumnProperty(index.column, "visible", false);
+
+               toggle = true;
+               setHeaderCellContextMenu(grid, toggle);
+           } else if (data.tag == 'fixedCol') {
+               var count = grid.getColumnProperty(index.column, "displayIndex") + 1;
+               grid.setFixedOptions({ colCount: count });
+           } else if (data.tag == 'fixedRow') {
+               var count = index.itemIndex + 1;
+               grid.setFixedOptions({ rowCount: count });
+           } else if (data.tag == 'fixedCancel') {
+               grid.setFixedOptions({ colCount: 0, rowCount: 0 });
+           };
+       }
+
+       grid.onContextMenuPopup = function (grid, x, y, elementName) {
+           if (elementName == 'HeaderCell') {
+               setHeaderCellContextMenu(grid, toggle);
+           } else if (elementName == 'DataCell') {
+               setDataCellContextMenu(grid);
+           } else {
+               return false;
+           }
+       };
+
+       setDataCellContextMenu(grid);
+   }
+
+   function setHeaderCellContextMenu(grid, val) {
+       var contextMenu = [{
+           label: '엑셀 내보내기',
+           tag: 'excel'
+       }, {
+           label: '필터 만들기',
+           tag: 'filter'
+       }, {
+           label: "-"
+       }, {
+           label: '컬럼 숨기기',
+           tag: 'visibleFalse'
+       }, {
+           label: '컬럼 모두 보이기',
+           tag: 'visibleTrue',
+           enabled: val
+       }];
+
+       grid.setContextMenu(contextMenu);
+   }
+
+   function setDataCellContextMenu(grid) {
+       var contextMenu = [{
+           label: '엑셀 내보내기',
+           tag: 'excel'
+       }, {
+           label: "-"
+       }, {
+           label: '열 고정',
+           tag: 'fixedCol'
+       }, {
+           label: '행 고정',
+           tag: 'fixedRow'
+       }, {
+           label: '고정 취소',
+           tag: 'fixedCancel'
+       }];
+
+       grid.setContextMenu(contextMenu);
+   }
+
+    function setFields(provider) {
+        var fields = [{
+            "fieldName": "id"
+        }, {
+            "fieldName": "userid"
+        }, {
+            "fieldName": "company"
+        }, {
+            "fieldName": "first_name"
+        }, {
+            "fieldName": "last_name"
+        }, {
+            "fieldName": "gender"
+        }, {
+            "fieldName": "email"
+        }, {
+            "fieldName": "city"
+        }, {
+            "fieldName": "ip_address"
+        }, {
+            "fieldName": "birthday"
+        }, {
+            "fieldName": "pay",
+            "dataType": "number"
+        }, {
+            "fieldName": "card_number"
+        }, {
+            "fieldName": "card_type"
+        }]
+        provider.setFields(fields);
+    };
+
+    function setColumns(grid) {
+
+        var columns = [{
+            "fieldName": "userid",
+            "name": "userid",
+            "width": 80,
+            "header": { "text": "사용자 Id" },
+            "styles": { "textAlignment": "center", "font": "Tahoma" }
+        }, {
+            "fieldName": "company",
+            "name": "company",
+            "width": 80,
+            "header": { "text": "회사" },
+            "styles": { "textAlignment": "center", "font": "Tahoma" }
+        }, {
+            "fieldName": "first_name",
+            "name": "first_name",
+            "width": 80,
+            "header": { "text": "이름" },
+            "styles": { "textAlignment": "center", "font": "Tahoma" }
+        }, {
+            "fieldName": "last_name",
+            "name": "last_name",
+            "width": 80,
+            "header": { "text": "성" },
+            "styles": { "textAlignment": "center", "font": "Tahoma" }
+        }, {
+            "fieldName": "gender",
+            "name": "gender",
+            "width": 80,
+            "header": { "text": "성별" },
+            "styles": { "textAlignment": "center", "font": "Tahoma" }
+        }, {
+            "fieldName": "email",
+            "name": "email",
+            "width": 80,
+            "header": { "text": "E-Mail" },
+            "styles": { "textAlignment": "center", "font": "Tahoma" }
+        }, {
+            "fieldName": "city",
+            "name": "city",
+            "width": 80,
+            "header": { "text": "시" },
+            "styles": { "textAlignment": "center", "font": "Tahoma" }
+        }, {
+            "fieldName": "ip_address",
+            "name": "ip_address",
+            "width": 80,
+            "header": { "text": "IP Address" },
+            "styles": { "textAlignment": "center", "font": "Tahoma" }
+        }, {
+            "fieldName": "birthday",
+            "name": "birthday",
+            "width": 80,
+            "header": { "text": "생년월일" },
+            "styles": {
+                "textAlignment": "center",
+                "font": "Tahoma",
+                "datetimeFormat": "yyyy/MM/dd"
+            }
+        }, {
+            "fieldName": "pay",
+            "name": "pay",
+            "width": 80,
+            "header": { "text": "급여" },
+            "editor": {
+                "type": "number"
+            },
+            "styles": {
+                "textAlignment": "far",
+                "font": "Tahoma",
+                "numberFormat": "#,##0.##"
+            },
+            "footer": {
+                "expression": "sum",
+                "styles": {
+                    "textAlignment": "far",
+                    "font": "Tahoma",
+                    "numberFormat": "#,##0.##"
+                }
+            }
+        }, {
+            "fieldName": "card_type",
+            "name": "card_type",
+            "width": 80,
+            "header": { "text": "카드종류" },
+            "styles": { "textAlignment": "center", "font": "Tahoma" }
+        }];
+
+        grid.setColumns(columns);
+    }
+
+
+    function setOptions(grid) {
+        grid.setOptions({
+            stateBar: {
+                visible: true
+            },
+            checkBar: {
+                visible: true
+            },
+            select: {
+                style: RealGridJS.SelectionStyle.ROWS
+            },
+            footer: {
+                visible: true
+            },
+            display: {
+               //itStyle: "even"
+            }
+        });
+
+        grid.setFilteringOptions({
+            clearWhenSearchCheck: true,
+            selector: {
+                showSearchInput: true,
+                showButtons: true,
+                acceptText: "확인",
+                cancelText: "취소"
+            }
+        });
+    }
+
+
+    function loadData(provider) {
+        $.ajax({
+            url: "http://demo.realgrid.com/resource/data/regularExpressionData.json?__time__=" + new Date().getTime(),
+            success: function (data) {
+                dataProvider.fillJsonData(data, {count: 500});
+            },
+            error: function (xhr, status, error) {
+            },
+            complete: function (data) {
+                gridView.setFocus();
+            },
+            xhr: function () {
+                var xhr = new window.XMLHttpRequest();
+                //Download progress
+                xhr.addEventListener("progress", function (evt) {
+                    if (evt.lengthComputable) {
+                        gridView.setProgress(0, evt.total, evt.loaded);
+                    }
+                }, false);
+                return xhr;
+            }
+        });
+    }
+
+
+
+
+    ///////////////////////////////////////////////////////////////////////////////
+
+    function getContextColumnObject() {
+        var retValue = [];
+
+        var columns = gridView.getColumns();
+
+        for (var i = 0; i < columns.length; i++) {
+            var obj = {};
+
+            obj['label'] = columns[i].header.text;
+            obj['tag'] = columns[i].name;
+            obj['type'] = 'check';
+            obj['checked'] = true;
+            obj['group'] = 'columnVisible';
+
+            retValue.push(obj);
+        }
+
+        return retValue;
+    }
+
+    function createColumnFilter(grid, colName) {
+        var fieldName = grid.getColumnProperty(colName, "fieldName");
+        var distinctValues = dataProvider.getDistinctValues(fieldName);
+        var filters = [];
+
+        for (var i = 0; i < distinctValues.length; i++) {
+            filters.push({ name: distinctValues[i], criteria: "value = " + "'" + distinctValues[i] + "'" });
+        }
+
+        gridView.setColumnFilters(colName, filters);
+    }
+
+    function btnFitColumnWidth() {
+        gridView.fitColumnWidth(null, 200, 10, true)
+    }
+
+    function btnAddColumn() {
+       var column = gridView.columnByName('card_number');
+
+       if (!column) {
+           gridView.addColumn({
+               "fieldName": "card_number",
+               "name": "card_number",
+               "width": 80,
+               "header": { "text": "신용카드" },
+               "styles": { "textAlignment": "center", "font": "Tahoma" }
+           });
+       }
+    }
+
+</script>
+</head>
+<body>
+     <div id="realgrid" style="width: 1024px; height: 500px"></div>
+
+   <button onclick="btnFitColumnWidth()">컬럼너비 자동지정</button>
+   <button onclick="btnAddColumn()">컬럼 추가</button>
+</body>
+</html>

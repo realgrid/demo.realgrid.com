@@ -206,7 +206,7 @@ input,
 optgroup,
 select,
 textarea,
-input:not([type="checkbox"]):not([type="number"]):not([type="radio"]):not([type=submit]):not([type=file]),
+input:not([type="checkbox"]):not([type="number"]):not([type="radio"]):not([type=submit]):not([type=file]):not([type="button"]),
 input[type="number"] {
   color: inherit;
   /* 1 */
@@ -1597,7 +1597,7 @@ pre {
   text-align: center;
 }
 textarea,
-input:not([type="checkbox"]):not([type="number"]):not([type="radio"]):not([type=submit]):not([type=file]),
+input:not([type="checkbox"]):not([type="number"]):not([type="radio"]):not([type=submit]):not([type=file]):not([type="button"]),
 input[type="number"] {
   font-size: 14px;
   line-height: 20px;

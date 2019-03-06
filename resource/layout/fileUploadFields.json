@@ -1,0 +1,22 @@
+[{
+    "fieldName": "id"
+}, {
+    "fieldName": "userid"
+}, {
+    "fieldName": "birthday",
+    "dataType": "datetime"
+}, {
+    "fieldName": "card_number"
+}, {
+    "fieldName": "company"
+}, {
+    "fieldName": "first_name"
+}, {
+    "fieldName": "last_name"
+}, {
+    "fieldName": "email"
+}, {
+    "fieldName": "phone"
+},{
+    "fieldName": "fileUpload"
+}]
