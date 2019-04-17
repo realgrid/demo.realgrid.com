@@ -71,14 +71,6 @@ gridView.setStateBar({
 }); 
 ```
 
-<a class="btn primary small round lowercase" id="btnSetZeroBaseFalse">1부터 시작</a>
-
-```js
-gridView.setIndicator({
-  zeroBase: false  
-});
-```
-
 #### Head/Foot `(Only JS Support)`
 상태 바의 헤드와 풋 영역에 글자나 이미지를 표시할 수 있습니다.
 
