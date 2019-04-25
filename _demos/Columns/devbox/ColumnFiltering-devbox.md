@@ -289,6 +289,44 @@ gridView.setFilteringOptions({
 })
 ```  
 
+#### 필터 조건 함수로 설정
+
+필터링 조건을 함수형태로 설정합니다.
+
+<a class="btn primary small round lowercase" id="btnSetFilterFunc">컬럼 검색 상자 추가</a>
+
+```js
+var filterFunc = function(dataProvider, dataRow, fieldName , filter, value) {
+    if(filter.tag == 1 && value == "VINET"){
+      return true;
+    }else if(filter.tag == 2 && value == "VICTE"){
+      return true;
+     }else if(filter.tag == 3 && value == "HANAR"){
+      return true;
+     }else{
+      return false;
+    }
+  }
+  var filters = [
+    { 
+   name:"filter1",
+   text:"VINET",
+   tag:1,
+   criteria:filterFunc
+    },{ 
+   name:"filter2",
+   text:"VICTE",
+   tag:2,
+   criteria:filterFunc
+    },{ 
+   name:"filter3",
+   text:"HANAR",
+   tag:3,
+   criteria:filterFunc
+    }
+  ]
+  gridView.setColumnFilters("CustomerID", filters);
+```
 
 <script>
 var autoFiltercolumn;
@@ -442,6 +480,39 @@ $("#btnShowSearchInput").click(function() {
       cancelText:"취소"
     }
   })
+});
+
+$("#btnSetFilterFunc").click(function() { 
+  var filterFunc = function(dataProvider, dataRow, fieldName , filter, value) {
+    if(filter.tag == 1 && value == "VINET"){
+      return true;
+    }else if(filter.tag == 2 && value == "VICTE"){
+      return true;
+     }else if(filter.tag == 3 && value == "HANAR"){
+      return true;
+     }else{
+      return false;
+    }
+  }
+  var filters = [
+    { 
+   name:"filter1",
+   text:"VINET",
+   tag:1,
+   criteria:filterFunc
+    },{ 
+   name:"filter2",
+   text:"VICTE",
+   tag:2,
+   criteria:filterFunc
+    },{ 
+   name:"filter3",
+   text:"HANAR",
+   tag:3,
+   criteria:filterFunc
+    }
+  ]
+  gridView.setColumnFilters("CustomerID", filters);
 });
 
 

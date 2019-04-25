@@ -3,8 +3,15 @@
     "fieldName": "OrderID",
     "type": "data",
     "width": "90",
+    "renderer": {
+        "type": "shape"
+    },
     "styles": {
-        "textAlignment": "center"
+        "textAlignment": "center",
+        "figureBackground": "#ff008800",
+        "figureName": "ellipse",
+        "iconLocation": "right",
+        "paddingRight": 6
     },
     "header": {
         "text": "Order ID",

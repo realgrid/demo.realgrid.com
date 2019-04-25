@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.31'
+title: '최신버전 1.1.32'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,204 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.32 (2019년 4월)
+
+---
+
+#### 기능 개선
+1. [DataColumn](http://help.realgrid.com/api/types/DataColumn/)
+  - lookupValue 또는 lookupSource를 사용하는 셀에서 Data가 lookup에 없는 경우 지정된 Text로 보여지도록 하는 textOfInvalid 속성이 추가 되었습니다.
+  - [expression](http://help.realgrid.com/api/features/Expression/)에 lookupexists가 추가 되었습니다.
+```js
+gridView.setColumns([{
+  name:"colName",
+  fieldName:"fieldName",
+  lookupDisplay:true,
+  values:["1","2","3"],
+  labels:["일","이","삼"],
+  textOfInvalid:"수정필요",
+  dynamicStyles:[{
+    criteria:"not lookupexists",
+    styles:{foreground:"#FFFFFFFF", background:"#FF919bad"}
+  }]
+},
+...])
+```
+
+1. `IE에서 붙여넣기`
+  - IE에서 선택된 셀이 readOnly이거나 textReadOnly인 경우에도 붙여넣기가 가능하도록 개선되었습니다.
+
+1. [CheckCellRenderer](http://help.realgrid.com/api/types/CheckCellRenderer/)
+  - CheckCellRenderer를 편집기로 이용할때 컬럼의 readOnly가 true인 경우 수정되지 않도록 변경되었습니다.
+```js
+gridView.setColumns([{
+  name:"colName",
+  fieldName:"fieldName",
+  editable:false,
+  renderer:{type:"check", editable:true},
+  dynamicStyles:function(grid, index, value) {
+    if (grid.getValue(index.itemIndex, "fieldName") === "test") {
+      return {readOnly:true}
+    }
+  }
+},
+...])
+```  
+
+1. [GridExportOptions](http://help.realgrid.com/api/types/GridExportOptions/)
+  - displayOptions.fitStyle이 지정되었을때 실제 화면에 보이는 컬럼너비대로 출력하는 `applyFitStyle` 속성이 추가되었습니다.
+
+1. [panel](http://help.realgrid.com/api/types/Panel/)
+  - 그리드 Group Panel의 `borderBottom`과 `paddingLeft`가 적용되도록 수정되었습니다.
+```js
+gridView.setStyles({panel:{paddingLeft:20, borderBottom:"#FF828282,2px"}});
+```
+
+1. `ScrollBar Styles`
+  - scrollBar의 스타일을 변경할수 있도록 개선되었습니다.
+```js
+gridView.setStyles({"scrollBar":{
+    "background":"#fff0f0f0",
+    "thumb":{
+      "background":"#ffc0c0c0",
+      "hoveredBackground":"#ffa0a0a0",
+      "selectedBackground":"#ff808080"
+    },
+    button:{
+      "background":"#fff0f0f0",
+      "hoveredBackground":"#ffd0c0d0",
+      "selectedBackground":"#ff808080",
+      "foreground":"#ff333333",
+      "hoveredForeground":"#ff333333",
+      "selectedForeground":"#ffffffff"
+    }
+  }
+});
+gridView.setOptions({"scrollThumbRadius":8});
+```
+
+1. [EditMask](http://help.realgrid.com/api/types/Mask/)
+  - Editor에 mask가 설정되어있는 경우 한글입력이 제한되도록 변경되었습니다.
+  - editMask에 해당하지 않는 문자는 붙여넣기에서 제외되도록 하는 `applyEditMask` 속성이 추가되었습니다. 
+  - dynamicStyles를 이용해서 mask를 변경하는 경우 append되는 셀의 editMask는 적용되지 않습니다.
+```js
+gridView.setColumnProperty("colName", "editor", {
+  type:"text",
+  mask:{
+    editMask:"0000-0000-0000",
+    allowEmpty:true      
+  }
+});
+gridView.setPasteOptions({applyEditMask:true});
+```  
+
+1. [ColumnFilter](http://help.realgrid.com/api/types/ColumnFilter/)
+  - 그리드에 정해진 criteria변수만으로 filtering이 어려운 경우 사용자함수를 이용해서 filtering을 할수 있도록 개선되었습니다.
+```js
+var filterFunc = function(dataProvider, dataRow, fieldName , filter, value) {
+  function checkSocialNumber(gubun , socialNo) {
+      // 주민번호/사업자번호 검증로직.
+  };
+  var tag = filter.tag;
+  switch (tag) {
+      case 1 : return checkSocialNumber(1, value);
+      case 2 : return checkSocialNumber(2, value);
+      case 3 : return !checkSocialNumber(1, value);
+      case 4 : return !checkSocialNumber(2, value);
+  }
+}
+```
+```js
+var filters = [
+  { 
+    name: "filter1",
+    text:"주민번호 정상",
+    tag:1,
+    criteria:filterFunc
+  }, {
+    name:"filter2",
+    text:"사업자번호 정상",
+    tag:2,
+    criteria:filterFunc
+  }, { 
+    name: "filter3",
+    text:"주민번호 오류",
+    tag:3,
+    criteria:filterFunc
+  }, {
+    name:"filter4",
+    text:"사업자번호 오류",
+    tag:4,
+    criteria:filterFunc
+  }
+]
+grid.setColumnFilters("socialNo", filters)
+```  
+  - 자세한 내용은 [데모](http://demo.realgrid.com/Columns/ColumnFiltering/)를 참조하세요.
+
+1. [getContainer](http://help.realgrid.com/api/GridBase/getContainer/)
+  - 그리드의 DIV를 가져오는 `getContainer`함수가 추가되었습니다.
+
+1. [checkValidateCells](http://help.realgrid.com/api/GridBase/checkValidateCells/)
+  - checkValidateCells를 이용해서 전체데이타를 검증할때 보이지 않는 행도 검사할수 있도록 `visibleOnly` 인자가 추가되었습니다.
+  - checkValidateCells의 itemIndices 인자는 `null`, visibleOnly는 true인경우 전체행을 대상으로 오류를 확인합니다.
+```js
+  gridView.checkValidateCells(null, true);
+```
+
+1. [ExportGrid](http://help.realgrid.com/api/GridBase/exportGrid/)
+  - 그리드를 excel로 export할때 data가 없는 셀은 data를 출력하지 않도록 변경되었습니다. 
+
+1. [fitColumnWidth](http://help.realgrid.com/api/GridBase/fitColumnWidth/)
+  - gridView.fitColumnWidth를 이용해서 컬럼의 너비를 변경할때 summary가 있는 경우 summary의 너비도 포함하도록 변경하였습니다.
+
+1. [fillEditSearchItems](http://help.realgrid.com/api/GridBase/fillEditSearchItems/)
+  - [SearchCellEditor](http://help.realgrid.com/api/types/SearchCellEditor/)에 검색된 자료가 많은 경우 editor가 느리게 생성되는 경우 일부만 표시하여 editor를 빠르게 생성할수 있도록 수정되었습니다.
+  - 서버에서 모든 자료를 가져온후 list에 보여지는 건수만 제한합니다.
+  - initCount:최초 화면에 보여질 Data 건수
+  - moreItemCount: 더보기 버튼을 클릭했을때 추가할 건수
+  - moreText: 더보기 버튼의 caption
+  - reInquery: 사용자가 editor에 문자를 추가했을때 다시 검색하지 않고 list에서 찾기
+```js
+var searchEditor = {
+  type:"search", 
+  initCount:50, 
+  moreItemCount:50,
+  moreText:"more",
+  reInquery:false}
+};
+gridView.setColumnProperty("colName", "editor", searchEditor)
+```
+
+1. [pasteOptions](http://help.realgrid.com/api/types/CellEditor/)
+  - editor에 maxLength가 지정된 경우 maxLength만큼만 붙여넣기가 되도록 하는 applyMaxLength 속성이 추가 되었습니다.
+  - 붙여넣기 하는 data의 길이가 editor의 maxLength보다 긴경우 maxLength이후의 문자는 붙여넣기가 되지 않습니다.
+
+
+#### 오류 수정
+1. [removeRow](http://help.realgrid.com/api/LocalDataProvider/removeRow/)
+  - onItemChecked 이벤트 또는 onCellButtonClicked 이벤트 내부에서 마지막 행을 삭제시 오류가 발생하는 현상을 수정하였습니다.
+
+1. [HeaderSummary](http://help.realgrid.com/api/types/HeaderSummary/)
+  - 그리드가 생성된 이후 headerSummary의 mergeCells를 변경했을때 즉시 갱신되지 않는 현상을 수정하였습니다.
+
+1. [RowGrouping](http://help.realgrid.com/api/features/Row%20Grouping/)
+  - rowGrouping을 한 상태에서 rowGrouping이 된 컬럼을 수정시 간헐적으로 발생하는 오류를 수정하였습니다.
+
+1. [붙여넣기]({{'/Editing/CopyAndPaste/' | prepend: site.baseurl}})
+  - pasteOptions.checkReadOnly가 true일때 추가중인 행에 붙여넣기를 하면 오류가 발생하는 현상을 수정하였습니다.
+
+1. [ExportGrid](http://help.realgrid.com/api/GridBase/exportGrid/)
+  - rowGroup.mergeMode가 true이고 모든 컬럼이 rowGrouping된 상태일때 excel로 export하면 excel 파일을 열때 발생하는 오류를 수정하였습니다.
+
+1. [CellMerging]({{'/CellComponent/CellMerging/' | prepend: site.baseurl}})
+  - column.mergeRule의 criteria가 "value"가 아닐때 간헐적으로 발생하는 오류를 수정하였습니다.
+
+1. [Footer](http://help.realgrid.com/api/types/Footer/)
+  - [grid.setFooter](http://help.realgrid.com/api/GridBase/setFooter/)를 이용해서 Footer의 mergeCells를 포함하여 두가지 이상의 속성을 변경하는 경우 즉시 갱신되지 않는 오류를 수정하였습니다.
+
+
 
 ## 1.1.31 (2019년 1월)
 

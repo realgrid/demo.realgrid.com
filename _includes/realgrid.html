@@ -46,6 +46,10 @@
         {% if include.fieldSet %}
             {% capture fieldfile %}/resource/layout/{{ include.fieldSet }}.json{% endcapture %}
 
+            $.ajaxSetup({
+              async: false
+            });
+
             $.getJSON("{{ fieldfile | prepend: site.baseurl }}?__time__=" + new Date().getTime(), function (data, textStatus, jqXHR) {
                 {{ include.dpVar }}.setFields(data);
 
@@ -80,15 +84,10 @@
         {% if include.columnSet %}
             {% capture columnfile %}/resource/layout/{{ include.columnSet }}.json{% endcapture %}
 
-            $.ajaxSetup({
-              async: false
-            });
+
 
             $.getJSON("{{ columnfile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.gridVar }}.setColumns(data);
-                $.ajaxSetup({
-                  async: true
-                });
 
                 $('.codeview.{{ include.gridId }}column').html(
                   JSON.stringify(data, null, 4)
@@ -193,6 +192,9 @@
 
             $.getJSON("{{ stylefile | prepend: site.baseurl }}", function (data, textStatus, jqXHR) {
                 {{ include.gridVar }}.setStyles(data);
+                $.ajaxSetup({
+                  async: true
+                });
 
                 $('.codeview.{{ include.gridId }}style').html(
                   JSON.stringify(data, null, 4)

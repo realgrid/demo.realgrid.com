@@ -17,9 +17,13 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
   dataProvider.setRows(data);
 }
 var onDoneDataSet = function() {
+  
+}
+var onSuccessGridOptionSet = function() {
   gridView.setPanel({visible: true})
   gridView.setRowGroup({mergeMode:true, expandedAdornments: "footer", collapsedAdornments:"footer"})
 }
+
 </script>
 
 {% include realgrid.html
@@ -37,6 +41,7 @@ var onDoneDataSet = function() {
   dataSet="CustomOrders.json"
   successDataSet="onGridSuccessDataSet"  
   doneDataSet="onDoneDataSet"
+  successGridOptionSet="onSuccessGridOptionSet"
 
   gridWidth="100%"
   gridHeight="300px" %}

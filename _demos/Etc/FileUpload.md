@@ -4,13 +4,15 @@ title: 파일 업로드
 order: 1
 devbox: true
 devboxfile: FileUpload_devbox.md
-published: true
+published: false
 categories:
   - 기타
 tags: ['업로드', '파일', 'upload', 'file']
 ---
 
-그리드에 실제 파일을 올릴 수는 없으며 파일 첨부 기능과 같이 동작하도록 구현 할 수 있습니다.
+그리드에 실제 파일이 올라가는것은 아니며 파일 첨부 기능과 같이 동작하도록 구현 할 수 있습니다.
+
+`그리드는 클라이언트단 까지만 지원할 수 있으며 서버 모듈은 직접 구현해서 사용해주셔야 합니다.`
 
 <script>
   var selectFiles = {};
@@ -23,8 +25,7 @@ tags: ['업로드', '파일', 'upload', 'file']
         var input = document.createElement("input");
         input.type="file"
         input.onchange = function(event) {
-          var file = event.currentTarget.files[0];
-          var dataRow = grid.getDataRow(itemIndex);      
+          var file = event.currentTarget.files[0];     
           grid.setValue(itemIndex, "fileUpload", file.name);
           selectFiles[file.name] = file;
         };
