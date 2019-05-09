@@ -141,6 +141,37 @@ gridView.setColumns(columns);
 
 ```
 
+#### 이미지 버튼 정렬
+
+[alignment](http://help.realgrid.com/api/types/ImageButtonsCellRenderer/)속성으로 셀 안의 버튼의 위치를 지정할 수 있습니다.   
+“near”, “center” 지정시 셀의 값이 표시되지 않습니다. 
+
+버튼 클릭 시 EmployeeID 컬럼의 버튼이 가운데 정렬됩니다.  
+<a class="btn primary small round lowercase" id="btnButtonAlignment">이미지 버튼 가운데 정렬</a>
+
+
+```
+gridView.setColumnProperty("EmployeeID","renderer",{
+  "type": "imageButtons", 
+  "editable": false, 
+  "imageGap":30,
+  "margin":30,
+  "images": [{
+    "name": "팝업버튼",
+    "up": "/resource/image/btnImages/popup_normal.png",
+    "hover": "/resource/image/btnImages/popup_hover.png",
+    "down": "/resource/image/btnImages/popup_click.png"
+  }, {
+    "name": "조회버튼",
+    "up": "/resource/image/btnImages/search_normal.png",
+    "hover": "/resource/image/btnImages/search_hover.png",
+    "down": "/resource/image/btnImages/search_click.png"
+  }],
+  "alignment": "center" //버튼 정렬 near, far
+})
+```
+
+
 <script>
   $('#btnButtonAlwaysShowButton').click(function() {
     gridView.setColumnProperty("ImageButton", "alwaysShowButton", "true");
@@ -175,6 +206,27 @@ gridView.setColumns(columns);
     gridView.setColumnProperty("EmployeeID", "buttonVisibility", "hidden");
     gridView.setColumnProperty("OrderID", "buttonVisibility", "hidden");
     gridView.setColumnProperty("CustomerID", "buttonVisibility", "hidden");
+  });
+
+  $('#btnButtonAlignment').click(function() {
+    gridView.setColumnProperty("EmployeeID","renderer",{
+      "type": "imageButtons", 
+      "editable": false, 
+      "imageGap":30,
+      "margin":30,
+      "images": [{
+        "name": "팝업버튼",
+        "up": "/resource/image/btnImages/popup_normal.png",
+        "hover": "/resource/image/btnImages/popup_hover.png",
+        "down": "/resource/image/btnImages/popup_click.png"
+      }, {
+        "name": "조회버튼",
+        "up": "/resource/image/btnImages/search_normal.png",
+        "hover": "/resource/image/btnImages/search_hover.png",
+        "down": "/resource/image/btnImages/search_click.png"
+      }],
+      "alignment": "center" //버튼 정렬 near, far
+    })
   });
 
 </script>

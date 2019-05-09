@@ -97,7 +97,7 @@ function applyAutoFilter() {
 		name: "auto_result",
 		criteria: filterExpr,
 		active: true,
-		hidden:true
+		visible:false
 	};
 
 	gridView.addColumnFilters("CustomerID", filters, true);

@@ -53,7 +53,7 @@ alert(JSON.stringify(log));
 
 #### 유효성 확인 실패 목록
 
-gridView.checkValidateCells(itemIndices)](http://help.realgrid.com/api/GridBase/checkValidateCells/) 후에 오류 값들을 수정하고 잘못된 값들이 있는지 다시 확인할 때 [gridView.getInvalidCellList()](http://help.realgrid.com/api/GridBase/getInvalidCellList/)를 사용 합니다.  
+[gridView.checkValidateCells(itemIndices)](http://help.realgrid.com/api/GridBase/checkValidateCells/) 후에 오류 값들을 수정하고 잘못된 값들이 있는지 다시 확인할 때 [gridView.getInvalidCellList()](http://help.realgrid.com/api/GridBase/getInvalidCellList/)를 사용 합니다.  
   
 유효성 확인 실패된 행을 수정하고 버튼을 클릭하여 수정한 행이 제외되었는지 확인하세요.   
 
@@ -62,6 +62,17 @@ gridView.checkValidateCells(itemIndices)](http://help.realgrid.com/api/GridBase/
 ```js
 var log = gridView.getInvalidCellList();
 alert(JSON.stringify(log));
+```
+
+#### 검증실패 목록 초기화
+
+값 검증에 실패한 셀 정보들을 삭제한다.  
+[gridView.checkValidateCells(itemIndices)](http://help.realgrid.com/api/GridBase/checkValidateCells/) 를 먼저 실행한 후 가져온 검증에 실패한 데이터의 목록을 지울때 사용합니다.
+
+<a class="btn primary small round lowercase" id="btnClearInvalidCellList">getInvalidCellList()</a>
+
+```
+gridView.clearInvalidCellList();
 ```
 
 <script>
@@ -106,5 +117,9 @@ alert(JSON.stringify(log));
 $('#btnGetInvalidCellList').click(function() {
 var log = gridView.getInvalidCellList();
 alert(JSON.stringify(log));
+});
+
+$('#btnClearInvalidCellList').click(function() {
+    gridView.clearInvalidCellList();
 });
 </script>
