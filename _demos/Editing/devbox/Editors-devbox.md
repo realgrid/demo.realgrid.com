@@ -43,6 +43,18 @@ styles의 textWrap 속성을 반드시 지정해주어야 하며 `explicit` 인 
 ...
 ```
 
+<a class="btn primary small round lowercase" id="btnAltEnterNewLine">altEnterNewLine</a>
+
+altEnterNewLine속성을 true로 설정하면 alt+enter키 입력시 줄바꿈을 합니다.
+
+```
+gridView.setColumnProperty("CompanyName","editor", {
+    "type": "multiline",
+    "textCase": "upper",
+    altEnterNewLine:true
+})
+```
+
 #### [숫자 편집기](http://help.realgrid.com/api/types/NumberCellEditor/){:target="_blank"}
 [숫자 편집기](http://help.realgrid.com/api/types/NumberCellEditor/){:target="_blank"}는 숫자를 입력할 수 있는 편집기 입니다.   
 
@@ -264,6 +276,7 @@ gridView.onEditSearch = function (grid, index, text) {
 
 minDate, maxDate를 지정하여 특정기간만 선택할 수 있습니다.
 
+
 <a class="btn primary small round lowercase" id="btnSetDateEditor">날짜 선택 범위 지정</a>
 
 ```js
@@ -275,6 +288,29 @@ gridView.setColumnProperty("OrderDate","editor", {
 });
 ```
 
+<a class="btn primary small round lowercase" id="btnSetHolidays">달력에 휴일 지정</a>
+
+```
+var holidays = [ {
+    type : "day", // 요일을 지정합니다.
+    days : [0,6], // 일요일,토요일
+    styles : {foreground:"#FFFF0000"}, // 배경색과 폰트색을 지정합니다.
+    tooltips : ["일요일","토요일"], // tooltip
+    enabled : true  // false인경우 선택할수 없습니다.
+  }, {
+    type : "date", // 기념일 또는 특정일자를 지정합니다.
+    dates : ["01-01","03-01","05-05","08-15"], // 기념일.
+    styles:{foreground:"#FF000000"},
+    tooltips : ["신정","삼일절","어린이날","광복절"]
+  }, {
+    type:"date",  // 동일한 type을 중복해서 지정할수 있습니다.
+    dates:["2019-05-06"],
+    styles:{foreground:"#FFFF0000", background:"#10FF0000"},
+    tooltips:["어린이날 대체휴무"]
+  }
+];
+gridView.setColumnProperty("OrderDate","editor",{type:"date",holidays:holidays})
+```
 
 #### editor의 textAlignment를 변경
 
@@ -349,8 +385,38 @@ gridView.setColumnProperty("OrderID","editor",{textAlignment:"center"});
     });
   });
 
+  $('#btnSetHolidays').click(function() {
+    var holidays = [ {
+        type : "day", // 요일을 지정합니다.
+        days : [0,6], // 일요일,토요일
+        styles : {foreground:"#FFFF0000"}, // 배경색과 폰트색을 지정합니다.
+        tooltips : ["일요일","토요일"], // tooltip
+        enabled : true  // false인경우 선택할수 없습니다.
+      }, {
+        type : "date", // 기념일 또는 특정일자를 지정합니다.
+        dates : ["01-01","03-01","05-05","08-15"], // 기념일.
+        styles:{foreground:"#FF000000"},
+        tooltips : ["신정","삼일절","어린이날","광복절"]
+      }, {
+        type:"date",  // 동일한 type을 중복해서 지정할수 있습니다.
+        dates:["2019-05-06"],
+        styles:{foreground:"#FFFF0000", background:"#10FF0000"},
+        tooltips:["어린이날 대체휴무"]
+      }
+    ];
+    gridView.setColumnProperty("OrderDate","editor",{type:"date",holidays:holidays})
+  });
+
   $('#btnSetEditor').click(function() {
     gridView.setColumnProperty("OrderID","editor",{textAlignment:"center"});
+  });
+
+  $('#btnAltEnterNewLine').click(function() {
+    gridView.setColumnProperty("CompanyName","editor", {
+            "type": "multiline",
+            "textCase": "upper",
+            "altEnterNewLine":true
+        })
   });
 
 </script>

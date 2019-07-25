@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.32'
+title: '최신버전 1.1.33'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,114 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.33 (2019년 7월)
+
+---
+
+#### 기능 개선
+
+1. [pasteOptions](http://help.realgrid.com/api/types/PasteOptions/)
+  - pasteOptions에 convertLookupLabel속성이 추가되었습니다.
+  - true로 설정하면 `dropdown`편집기에 label값을 붙여넣는 경우 value로 변환해서 저장됩니다.
+  - 자세한 내용은 [데모]({{'http://demo.realgrid.com/Editing/CopyAndPaste/' | prepend:siteurl}})를 참조하세요.
+
+1.  [expression](http://help.realgrid.com/api/features/Expression/)
+  - column.footer.expression에 `datacount`와 `dataavg`가 추가되었습니다.
+  - `datacount`와 `dataavg`는 data가 있는 cell을 대상으로 계산합니다.
+```js
+gridView.setColumns([
+  {name:"colName1", fieldName:"field1", footer:{expression:"datacount", groupExpression:"datacount"}},
+  {name:"colName2", fieldName:"field2", footer:{expression:"dataavg", groupExpression:"dataavg"}}
+])
+```
+
+1. [getChildColumnNames](http://help.realgrid.com/api/GridBase/getChildColumnNames/)
+  - GroupColumn의 하위 컬럼명을 가져오는 getChildColumnNames api가 추가되었습니다.
+  - [columnByName](http://help.realgrid.com/api/GridBase/columnByName/)으로 GroupColumn정보를 가져오는 경우 columns속성을 이용해서 하위 컬럼을 확인할수 있습니다.
+```js
+var childCols = gridView.getChildColumnNames('colGroup');
+var groupCol = gridView.columnByName('colGroup');
+```
+
+1. [DateCellEditor](http://help.realgrid.com/api/types/DateCellEditor/)
+  - dateCellEditor에 휴일을 표시할수 있는 holidays속성이 추가되었습니다.
+```js
+var holidays = [ {
+  type : "day", // 요일을 지정합니다.
+  days : [0,6], // 일요일,토요일
+  styles : {foreground:"#FFFF00FF"}, // 배경색과 폰트색을 지정합니다.
+  tooltips : ["일요일","토요일"], // tooltip
+  enabled : true  // false인경우 선택할수 없습니다.
+}, {
+  type : "date", // 기념일 또는 특정일자를 지정합니다.
+  dates : ["01-01","03-01","05-05","08-15"], // 기념일.
+  styles:{foreground:"#FF0000FF"},
+  tooltips : ["신정","삼일절","어린이날","광복절"]
+}, {
+  type:"date",  // 동일한 type을 중복해서 지정할수 있습니다.
+  dates:["2019-05-06"],
+  styles:{foreground:"#FFF0F0FF", background:"#88FF00FF"},
+  tooltips:["어린이날 대체휴무"]
+}
+];
+gridView.setColumns([{
+  name:"colName",
+  field:"dateField",
+  editor:{
+      type:"date",
+      holidays:holidays
+  }
+}])
+```
+  - 자세한 내용은 [데모](http://demo.realgrid.com/Editing/Editors/)를 참조하세요.
+
+1. [MultiLineCellEditor](http://help.realgrid.com/api/types/MultiLineCellEditor/)
+  - multilineEditor에 altEnterNewLine 속성이 추가되었습니다.
+  - altEnterNewLine속성을 true로 설정하면 alt+enter키 입력시 줄바꿈을 합니다.
+
+1. `TreeView`
+  - treeView.options에 sortMode속성이 추가되었습니다.
+  - "explicit"으로 설정시 정렬된 컬럼의 data를 수정했을때 즉시 정렬되지않습니다.
+
+1. `Mobile Tooltip`
+  - mobile기기에서도 tooltip을 사용할수 있도록 [moblieOptions](http://help.realgrid.com/api/types/MobileOptions/).showTooltip 속성이 추가되었습니다.
+
+#### 오류 수정
+
+1. [fitRowHeight](http://help.realgrid.com/api/GridBase/fitRowHeight/)
+  - 개별행의 높이를 변경가능할때 fitRowHeight를 이용해서 높이자동계산을 할때 일부 잘못계산되는 현상을 수정하였습니다.
+
+1. 행 추가 후 포커스 이동 시 잔상이 남아있는 현상
+  - api를 이용해서 dataProvider.insertRow후 gridView.setCurrent를 실행했을때 간헐적으로 이전행의 data가 보이는 현상을 수정하였습니다.
+
+1. [CellMerging]({{'/CellComponent/CellMerging/' | prepend: site.baseurl}})
+  - 병합된 컬럼의 editor가 `dropdown`이거나 `date`인경우 edit button클릭시 다른 행에 dropdown이 표시되는 현상을 수정하였습니다.
+
+1. `TreeView`
+  - treeView에서 dynamicStyles로 동적 편집기 설정이 정상적으로 되지 않는 오류를 수정하였습니다.
+
+1. [MergedRowGrouping]({{'/RowGroup/MergedRowGrouping/' | prepend: site.baseurl}})
+  - 행병합그룹핑에서 [createFooterCallback](http://help.realgrid.com/api/types/RowGroupOptions/)을 이용해서 footer의 일부만 표시할때 행을 접었다가 다시 펼칠때 펼쳐지지 않는 현상을 수정하였습니다.
+
+1. [hideRows](http://help.realgrid.com/api/DataProvider/hideRows/)
+  - 그리드의 filterMode와 sortMode가 "explicit"일때 dataProvider.hideRows를 했을때 일부 정상적으로 작동하지 않는 현상을 수정하였습니다.
+
+1. `Clipboard 복사`
+  - IE에서 0 또는 false값을 복시 오류가 발생하는 현상을 수정하였습니다.
+
+1. [NumberCellEditor](http://help.realgrid.com/api/types/NumberCellEditor/)
+  - numberCellEditor.numberFormat에 소수점 이하 자리를 지정했을때 일부 데이타가 반올림되어 편집기에 표시되는 현상을 수정하였습니다.
+
+1. [fillCsvData](http://help.realgrid.com/api/LocalDataProvider/fillCsvData/)
+  - fillCsvData의 options.fillMode가 "append"일때 발생하는 오류를 수정하였습니다.
+
+1. [ExcelExport]({{'/Excels/ExcelRowGroup/' | prepend:site.baseurl}})
+  - column의 dynamicStyles에 function을 설정한 후 RowGrouping상태에서 일부 Group을 접고 export하는 경우 발생하는 오류를 수정하였습니다.
+
+1. [RowGrouping]({{'/RowGroup/RowGrouping/' | prepend:site.baseurl}}})
+  - 행그룹핑에서 값이 없는 경우 Grouping 된 Row가 3행이하일때와 3행이상일때 다르게 표시되는 현상을 개선하였습니다.
+
 
 ## 1.1.32 (2019년 4월)
 

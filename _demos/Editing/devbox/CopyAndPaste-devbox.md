@@ -35,6 +35,7 @@ gridView.setCopyOptions({
 <input type="checkbox" id="chkEventEachRow">eventEachRow<font size="2" color="red">(Only JS Support)</font>: 복수행을 붙여넣기 할때 각 행마다 onEditRowPasted이벤트가 발생    
 <input type="checkbox" id="chkCheckReadOnly">checkReadOnly<font size="2" color="red">(Only JS Support)</font>: readOnly이거나 editable이 false인 Column은 paste대상에서 제외  
 <input type="checkbox" id="chkCheckDomainOnly">checkDomainOnly<font size="2" color="red">(Only JS Support)</font>: DropDown Editor의 domainOnly가 true인 컬럼에 붙여넣기 할때 values에 없는 값은 붙여넣기 되지 않음    
+<input type="checkbox" id="chkConvertLookupLabel">convertLookupLabel<font size="2" color="red">(Only JS Support)</font>: DropDown Editor에 labels값 붙여넣기 시 values값으로 변환 
 
 <a class="btn primary small round lowercase" id="btnSetPasteOptions">setPasteOptions()
 </a>
@@ -56,6 +57,7 @@ gridView.setPasteOptions({
   eventEachRow: $("#chkEventEachRow").is(":checked"),
   checkReadOnly: $("#chkCheckReadOnly").is(":checked"),
   checkDomainOnly: $("#chkCheckDomainOnly").is(":checked")
+  convertLookupLabel: $("#chkConvertLookupLabel").is(":checked")
 });
 ```
 <script>
@@ -85,6 +87,7 @@ gridView.setPasteOptions({
       eventEachRow: $("#chkEventEachRow").is(":checked"),
       checkReadOnly: $("#chkCheckReadOnly").is(":checked"),
       checkDomainOnly: $("#chkCheckDomainOnly").is(":checked")
+      convertLookupLabel: $("#chkConvertLookupLabel").is(":checked")
     });
   });  
 

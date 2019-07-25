@@ -207,6 +207,7 @@
 
 		dataProvider.setRowCount(10, true);
 		gridView.setDisplayOptions({rowHeight  : "40"});
+        gridView.setEditOptions({enterToEdit:true});
 
 		gridView.onImageButtonClicked = function (grid, itemIndex, column, buttonIndex, name) {
 			addLog("itemIndex: " + itemIndex + ", column: " + column.name + ", buttonIndex: " + buttonIndex + ", name: " + name);
