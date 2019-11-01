@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.33'
+title: '최신버전 1.1.34'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,87 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.34 (2019년 10월)
+
+---
+
+#### 기능 개선
+
+1. [ColumnHeader](http://help.realgrid.com/api/types/ColumnHeader/)
+  - mobile기기에서 column의 header를 터치하면 tooltip이 보여지도록 개선되었습니다.
+
+1. [Styles]({{ '/GridStyle/StyleProperties/' | prepend: site.baseurl}})
+  - gridView.columnByName을 이용해서 Column의 정보를 가져올때 footer, header의 스타일정보도 가져올수 있도록 개선되었습니다.
+
+1. [getStyles](http://help.realgrid.com/api/GridBase/getStyles/)
+  - gridView.body에 설정한 dynamicStyles, cellDynamicStyle의 정보를 가져올수 있도록 수정되었습니다.
+  - dynamicStyles를 function으로 지정한 경우에는 그리드 내부에서 관리되는 형태로 출력됩니다.
+
+1. [onCellPasting](http://help.realgrid.com/api/GridBase/onCellPasting/)
+  - 붙여넣기를 할때 Cell별로 호출되는 onCellPasting event가 추가되었습니다.
+  - onCellPasting이벤트에서 true를 return하는 경우 셀이 readOnly여도 붙여넣기가 됩니다.
+  - false를 return하는 경우 readOnly에 상관없이 붙여넣기가 되지 않습니다.
+  - undefined를 return하면 pasteOptions.checkReadOnly가 true인경우 cell의 editable이 false이거나 readOnly가 true인경우 붙여넣기가 되지 않습니다.
+```js
+gridView.onCellPasting = function (grid, index, value) {
+  if (index.column === 'column2')
+  var val1 = grid.getValue(index.itemIndex, 'column1');
+  switch (val1) {
+      case 1 :
+        return false;
+      case 2 :
+        return true;
+  }
+}
+```
+
+1. [onCopy](http://help.realgrid.com/api/GridBase/onCopy/)
+  - 사용자가 ctrl+c 키를 입력했을때 발생하는 onCopy event가 추가 되었습니다.
+```js
+gridView.onCopy = function(grid, range, event) {
+  var data = JSON.stringify(grid.getSelectionData());
+  if (data) {
+      data = 'onCopy\r\n'+data;
+    if (window.clipboardData) {
+        window.clipboardData.setData("Text", data);
+    } else {
+        event.clipboardData.setData('text/plain', data);
+    }
+  }
+  return false;
+}
+```  
+  - false를 return하면 복사를 하지 않습니다.
+  - window.clipboardData 또는 event.clipboardData를 이용해서 임의의 data를 입력할수 있습니다.
+
+1. [copyOptions](http://help.realgrid.com/api/types/CopyOptions/)
+  - 그리드를 복사할때 Column Header의 Text를 추가할수 있도록 includeHeaderText 속성이 추가되었습니다.
+
+1. [IconCellRenderer](http://help.realgrid.com/api/types/IconCellRenderer/)
+  - iconLocation이 RIGHT인경우 text가 icon을 덮었쓰는 현상을 개선하였습니다.
+
+1. `touch scroll`
+  - 터치 스크린이 있는 노트북, 테블릿에서 화면터치를 이용한 스크롤이 되도록 개선하였습니다.
+
+
+#### 오류 수정
+
+1. [EditorOptions](http://help.realgrid.com/api/types/EditorOptions/)
+  - editorOptions.applyCellFont가 true일때 동적으로 editable이 변경되는 셀에서 editor가 정상적으로 표시되지 않는 현상을 수정하였습니다.
+
+1. [exportGrid](http://help.realgrid.com/api/GridBase/exportGrid/)
+  - Excel로 export시 hideColumns를 이용해서 ColumnGroup의 하위 Column을 모두 숨기는 경우 발생하는 오류를 수정하였습니다.
+
+1. [getDistinctValues](http://help.realgrid.com/api/DataProvider/getDistinctValues/)
+  - getDistinctValues를 사용할때 간헐적으로 발생하는 오류를 수정하였습니다.
+
+1. [Sorting](http://help.realgrid.com/api/features/Sorting/)
+  - Data가 duplicate된 Column을 정렬시 Stack overflow가 발생하는 현상을 수정하였습니다.
+
+1. [exportGrid](http://help.realgrid.com/api/GridBase/exportGrid/)
+  - excelFormulaStatement가 적용된 cell을 export시 cell에 값이 없는 경우 excelFormulaStatement가 적용되지 않는 오류를 수정하였습니다.
+
 
 ## 1.1.33 (2019년 7월)
 

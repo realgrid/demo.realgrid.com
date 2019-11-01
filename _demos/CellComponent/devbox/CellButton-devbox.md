@@ -154,18 +154,18 @@ gridView.setColumns(columns);
 gridView.setColumnProperty("EmployeeID","renderer",{
   "type": "imageButtons", 
   "editable": false, 
-  "imageGap":30,
-  "margin":30,
   "images": [{
     "name": "팝업버튼",
     "up": "/resource/image/btnImages/popup_normal.png",
     "hover": "/resource/image/btnImages/popup_hover.png",
-    "down": "/resource/image/btnImages/popup_click.png"
+    "down": "/resource/image/btnImages/popup_click.png",
+    "width": 45
   }, {
     "name": "조회버튼",
     "up": "/resource/image/btnImages/search_normal.png",
     "hover": "/resource/image/btnImages/search_hover.png",
-    "down": "/resource/image/btnImages/search_click.png"
+    "down": "/resource/image/btnImages/search_click.png",
+    "width": 45
   }],
   "alignment": "center" //버튼 정렬 near, far
 })
@@ -211,19 +211,19 @@ gridView.setColumnProperty("EmployeeID","renderer",{
   $('#btnButtonAlignment').click(function() {
     gridView.setColumnProperty("EmployeeID","renderer",{
       "type": "imageButtons", 
-      "editable": false, 
-      "imageGap":30,
-      "margin":30,
+      "editable": false,
       "images": [{
         "name": "팝업버튼",
         "up": "/resource/image/btnImages/popup_normal.png",
         "hover": "/resource/image/btnImages/popup_hover.png",
-        "down": "/resource/image/btnImages/popup_click.png"
+        "down": "/resource/image/btnImages/popup_click.png",
+        "width": 45
       }, {
         "name": "조회버튼",
         "up": "/resource/image/btnImages/search_normal.png",
         "hover": "/resource/image/btnImages/search_hover.png",
-        "down": "/resource/image/btnImages/search_click.png"
+        "down": "/resource/image/btnImages/search_click.png",
+        "width": 45
       }],
       "alignment": "center" //버튼 정렬 near, far
     })

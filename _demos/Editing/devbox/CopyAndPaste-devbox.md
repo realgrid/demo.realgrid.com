@@ -56,7 +56,7 @@ gridView.setPasteOptions({
   noEditEvent: $("#chkNoEditEvent").is(":checked"),
   eventEachRow: $("#chkEventEachRow").is(":checked"),
   checkReadOnly: $("#chkCheckReadOnly").is(":checked"),
-  checkDomainOnly: $("#chkCheckDomainOnly").is(":checked")
+  checkDomainOnly: $("#chkCheckDomainOnly").is(":checked"),
   convertLookupLabel: $("#chkConvertLookupLabel").is(":checked")
 });
 ```
@@ -86,7 +86,7 @@ gridView.setPasteOptions({
       noEditEvent: $("#chkNoEditEvent").is(":checked"),
       eventEachRow: $("#chkEventEachRow").is(":checked"),
       checkReadOnly: $("#chkCheckReadOnly").is(":checked"),
-      checkDomainOnly: $("#chkCheckDomainOnly").is(":checked")
+      checkDomainOnly: $("#chkCheckDomainOnly").is(":checked"),
       convertLookupLabel: $("#chkConvertLookupLabel").is(":checked")
     });
   });  
