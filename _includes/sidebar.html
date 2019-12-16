@@ -211,7 +211,12 @@
               <li class="item-toc {% if page.title == demo.title %}current{% endif %}">
                 <a href="{{ demo.url | prepend: site.baseurl }}"
                 class="{% if page.title == demo.title %}current{% endif %} sidebar-link {% if demo.published != true %}sidebar-link-unpub{% endif %}">
-                  <span>{{ demo.title }}</span>
+                  <span>
+                    {{ demo.title }} 
+                    {% if demo.ico %}
+                      <img src="/images/ico_new.png">
+                    {%- endif -%}
+                  </span>
                   <span style="display: none;">
                   {{ demo.tags | join: ', '}}
                   </span>

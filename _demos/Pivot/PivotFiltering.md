@@ -10,7 +10,7 @@ categories:
 tags: ['pivot', 'filter']
 ---
 
-원본데이터에서 조건을 만족하는 데이터만 피벗으로 구성할 수 잇습니다.
+원본데이터에서 조건을 만족하는 데이터만 피벗으로 구성할 수 있습니다.
 
 <script>
 var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
