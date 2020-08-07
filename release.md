@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.34'
+title: '최신버전 1.1.35'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,153 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+
+## 1.1.35 (2020년 08월)
+
+---
+
+#### 기능 개선
+
+1. [ExcelExport]({{ '/Excels/ExcelExport/' | prepend: site.baseurl}})
+  - [LinkCellRenderer](http://help.realgrid.com/api/types/LinkCellRenderer/)를 사용한 셀을 export할때 url도 export하도록 하는 [GridExportOptions](http://help.realgrid.com/api/types/GridExportOptions/).exportLink 속성이 추가되었습니다.
+```js
+gridView.exportGrid({type:"excel", target:"local", exportLink:true})
+```
+
+1. [CheckBar](http://help.realgrid.com/api/types/CheckBar/)
+  - checkBar.disableCheckImageUrl속성과 checkbar.disableUnCheckImageUrl 속성이 추가되었습니다.
+  - checkable이 false일때 표시되는 이미지의 url을 지정합니다.
+```js
+grid.setCheckBar({
+    disableCheckImageUrl: "./images/disableCheckImage.png",
+    disableUnCheckImageUrl: "./images/disableUnCheckImageUrl.png"
+})
+```  
+
+1. `safari`에서 가상키보드
+  - iPad/iPhone safari의 userAgent가 변경됨에 따라 모바일을 체크하는 부분을 변경하였습니다.
+  - 모바일 safari에서 그리드를 클릭했을때 가상키보드가 생성되는 현상이 개선되었습니다.
+
+1. [moveRow](http://help.realgrid.com/api/LocalDataProvider/moveRow/)
+  - dataProvider.moveRow를 이용해서 행을 이동할때 check상태도 함께 이동되도록 개선되었습니다.
+
+1. [FilterSelectorOptions]http://help.realgrid.com/api/types/FilterSelectorOptions/)
+  - filter Selector가 그리드 외부에 생성될수 있도록 viewGridInside속성이 추가되었습니다.
+  - enterCallback속성이 추가되었습니다. default는 false입니다.
+  - true로 설정하면 search창에서 enter키를 입력했을때 userFilterAddCallback이 실행됩니다.
+
+1. `styles`
+  - fontLineThrough속성이 추가되었습니다.
+
+1. [DisplayOptions](http://help.realgrid.com/api/types/DisplayOptions/)
+  - liveScroll이 false일때 topItem의 정보를 표시하는 tipView가 추가되었습니다.
+  - scrollBar의 thumb를 마우스로 이동시 위치정보를 표시하는 view가 그리드 오른쪽 상단에 표시됩니다.  
+```css
+.rg-scroll-tip-view {
+  border: 1px solid red;
+  background: white;
+  font-size: 12px;
+  white-space: nowrap;
+  border-radius: 4px;
+}
+```
+```js
+grid.setDisplayOptions({
+    scrollMessageCallback:function(grid, vertical, itemIndex) {
+      if (vertical === "vertical") {
+        var dataRow = grid.getDataRow(itemIndex); 
+        if (dataRow >= 0) {
+          return "<span style='color:red'>"+grid.getDataSource().getValue(dataRow, "keyFieldName")+"</span>"
+        }
+      }
+    }
+});
+```
+
+1. [SearchOptions](http://help.realgrid.com/api/types/SearchOptions/)
+  - dataComparer속성이 추가되었습니다.
+  - 사용자가 검색조건을 작성하고 조건에 해당하면 true를 return합니다.
+```js
+  grid.grid.searchCell({ 
+    fields:["field1", "field2"], 
+    value:"검색 조건",
+    dataComparer: function(dataRow, fieldIndex, data, search) {
+      // dataType에 따라 분리 필요.
+      // number/ datetime의 경우 replace/indexOf에서 오류 발생.
+      if (value && (search = String(search))) {
+        value = value.replace(/[" "]/gi, "");  // 공백제거
+        search = search.replace(/[" "]/gi, "");
+        return (value.indexOf(search) >= 0 || search.indexOf(value) >= 0);
+      }
+    }
+})
+```
+
+1. [TreeView]({{'/Tree/TreeDataModel/' | prepend: site.baseurl}})
+  - treeView에서 노드를 접거나 펼칠때 기존에 선택된 행이 유지되도록 수정되었습니다.
+  - 선택된 행이 화면에서 사라지는 경우 접거나 펼쳐지는 노드로 포커스가 이동되도록 수정되었습니다.
+
+1. [ImageButtonCellRenderer](http://help.realgrid.com/api/types/ImageButtonCellRenderer/), [ImageButtonsCellRenderer](http://help.realgrid.com/api/types/ImageButtonsCellRenderer/)
+  - button에 마우스가 올라가면 tooltip이 표시되도록 개선되었습니다.
+```js
+grid.setColumns([{
+    name:"column1",
+    fieldName:"fieldName",
+    renderer:{
+        type:"imageButtons",
+        images:[{
+            name:"button1",
+            up:"./images/button_up.png",
+            tooltip:"버튼을 클릭하세요",
+            showTooltip: true
+        }]
+    }
+}]);
+```
+
+
+#### 오류 수정
+1. [checkRow](http://help.realgrid.com/api/GridBase/checkRow/)
+  - 행이 편집중일때 checkRow를 이용해서 체크를 변경할수 없는 현상을 수정하였습니다.
+
+1. [ColumnFooter](http://help.realgrid.com/api/types/ColumnFooter/)의 excel export
+  - footer.groupCallback의 return값이 문자인경우 export되지 않는 현상을 수정하였습니다.
+
+1. [ColumnHeader](http://help.realgrid.com/api/types/ColumnHeader/).subText
+  - header.subTextLocation이 "none"이거나 null인경우 export되지 않는 현상을 수정하였습니다.
+
+1. `column.fillWidth`
+  - 그룹컬럼의 자식컬럼에 fillWidth가 있을때 그룹컬럼의 헤더경계를 더블클릭했을때 그룹컬럼이 사라지는 현상을 수정하였습니다.
+
+1. [keepNullFocus](http://help.realgrid.com/api/types/GridOptions/)
+  - keepNullFocus가 true일때 그리드에 포커스를 주지 않고 스크롤후 checkBar의 check를 변경했을때 첫번째 행으로 포커스가 이동하는 현상을 수정하였습니다.
+
+1. [maxLengthToNextCell](http://help.realgrid.com/api/types/EditOptions/)
+  - mask 편집기의 includeFormat이 true일때 editOptions.maxLengthToNextCell이 true로 설정되면 값 입력시 바로 다음셀로 넘어가는 현상을 수정하였습니다.
+
+1. `TreeDataProvider`
+  - `restoreMode`가 true일때 dataType이 date인 field를 setVaue를 이용해서 값을 변경시 rowState가 "none"으로 변경되는 현상을 수정하였습니다.
+  - dateFormat이 "yyyyMMdd"인 field에 setValue를 이용해서 값을 넣으면 format이 적용되지 않는 현상을 수정하였습니다.
+
+1. [TreeDataProvider.setValue](http://help.realgrid.com/api/TreeDataProvider/setValue/)
+  - field의 dataType이 `datetime`일때 format에 상과없이 string으로 값을 입력시 date형태로 변환되지 않는 오류를 수정하였습니다.
+
+1. [ColumnGroup](http://help.realgrid.com/api/types/ColumnGroup/)
+  - 컬럼그룹이 있는 경우 rowStylesFirst가 true일때 fixed 속성이 적용안되는 현상을 수정하였습니다.
+
+1. `TreeView`
+  - 데이터 재조회한 후 포커스를 이전위치로 이동시킬 때 현재 화면의 포커스 표시 여부에 따라 스크롤 위치가 달라지는 현상을 수정하였습니다.
+
+1. `mobile Focus`
+  - mobile의 일부 브라우저에서 가상키보드 생성시 그리드가 포커스를 가져가는 현상을 수정하였습니다.
+
+1. `numberFormat`
+  - sytles.numberFormat에 floor을 지정한 경우 일부 잘못된 값이 표시되는 현상을 수정하였습니다.\
+
+1. `editFormat`
+  - numberEditor의 editFormat에서 소수점 이하 자릿수가 큰경우 편집시 소수가 일부 짤려서 표시되는 현상을 수정하였습니다.
+
 
 ## 1.1.34 (2019년 10월)
 

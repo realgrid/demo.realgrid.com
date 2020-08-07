@@ -283,8 +283,8 @@ minDate, maxDate를 지정하여 특정기간만 선택할 수 있습니다.
 gridView.setColumnProperty("OrderDate","editor", {
   "type": "date",
   "datetimeFormat": "yyyy.MM.dd",
-  "minDate": new Date("2017-06-1"), 
-  "maxDate": new Date("2017-06-30")
+  "minDate": new Date("1996-07-1"), 
+  "maxDate": new Date("1996-07-30")
 });
 ```
 
@@ -380,8 +380,8 @@ gridView.setColumnProperty("OrderID","editor",{textAlignment:"center"});
     gridView.setColumnProperty("OrderDate","editor", {
       "type": "date",
       "datetimeFormat": "yyyy.MM.dd",
-      "minDate": new Date("2017-06-1"), 
-      "maxDate": new Date("2017-06-30")
+      "minDate": new Date("1996-07-1"), 
+      "maxDate": new Date("1996-07-30")
     });
   });
 

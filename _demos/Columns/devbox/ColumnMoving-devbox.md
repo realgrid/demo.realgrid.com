@@ -55,7 +55,7 @@ function selectColumn() {
         if (columns) {
             for (i = 0; i < columns.length; i++) {
                 var column = columns[i];
-                column.tag = undefined;
+                column.tag = null;
                 column.header = {};
                 column.header.styles = {
                     borderLeft: undefined,

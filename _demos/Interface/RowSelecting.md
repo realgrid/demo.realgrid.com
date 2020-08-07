@@ -179,6 +179,29 @@ function setPie(chart, index) {
     });
     chart.series[4].setData(hcData);
 }
+
+function setCheckValueToChart(values) {
+    var year = [], gdp = [], gni = [], pgni = [], dincome = [];
+
+    $.each(values, function (k, v) {
+        year.push(v.Year);
+        gdp.push(v.GDP);
+        gni.push(v.GNI);
+        pgni.push(v.PGNI);
+        dincome.push(v.DIncome ? v.DIncome : null);
+    });
+
+    var chart = $("#container").highcharts();
+    if (!chart)
+        return;
+    chart.xAxis[0].setCategories(year);
+    chart.series[0].setData(gdp);
+    chart.series[1].setData(gni);
+    chart.series[2].setData(pgni);
+    chart.series[3].setData(dincome);
+
+    setPie(chart, gridView.getCurrent());
+}
 </script>
 
 <div id="container" style="height:400px;"></div>
