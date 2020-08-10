@@ -39,6 +39,7 @@ borderLeft 등과 같은 선 속성의 값은 "#aarrggbb,1" 형식으로 색상�
 |**fontBold**|	Boolean|	텍스트를 굵게 표시할 지를 지정합니다. 기본값은 false입니다.|
 |**fontItalic**|	Boolean|	텍스트를 기울여서 표시할 지를 지정합니다. 기본값은 false입니다.|
 |**fontUnderline**|	Boolean|	텍스트 아래 밑줄을 표시할 것인 지를 지정합니다. 기본값은 false입니다.|
+|**fontLinethrough**|	Boolean|	취소선을 표시합니다. RealGridJS 1.1.35 이상 지원|
 |**font**|	String|	위의 폰트 속성들을 한꺼번에 지정합니다. 예를 들어 "Arial,11,bold" 라고 지정하면 fontFamily는 "Arial", fontSize는 11, 그리고 fontBold가 true가 됩니다. 첫번째와 두번째 폰트 이름 및 크기는 반드시 지정합니다. bold, italic, underline은 지정하면 true가 됩니다.|
 |**foreground**|	Fill|	텍스트의 색상을 지정합니다.|
 |**textAlignment**|	Alignment|	텍스트의 수평 정렬 상태를 지정합니다. "near", "center", "far" 중 한 값을 지정합니다.|
@@ -68,3 +69,4 @@ borderLeft 등과 같은 선 속성의 값은 "#aarrggbb,1" 형식으로 색상�
 |**figureSize**|	Dimension|	도형 등의 크기를 지정합니다. "20" 처럼 고정 값으로 지정하거나, "50%" 처럼 셀의 크기에 대한 비율값으로 지정할 수 있습니다.|
 |**figureName**|	String|	표시되는 도형 등의 종류가 하나 이상일 때 표시할 도형의 이름을 지정합니다.|
 |**figureState**|	String|	상태를 갖는 복잡한 도형일 경우 그 상태값을 지정합니다.|
+
