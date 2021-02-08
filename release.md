@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.35'
+title: '최신버전 1.1.36'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,55 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.36 (2020년 11월)
+
+---
+
+### 기능 개선
+
+1. [ExcelExport]({{ '/Excels/ExcelExport/' | prepend: site.baseurl}})
+  - 숨겨진 column을 excel로 export할때 mergeRule이 설정되어있어도 merge가 되지 않는 현상을 개선하였습니다.
+  - 숨겨진 groupColumn을 excel export할때 style이 적용되지 않는 현상을 개선하였습니다.
+
+1. [DataColumn](http://help.realgrid.com/api/types/DataColumn/)
+  - ColumnFilter가 설정된 Column의 header에 표시되는 filter-icon을 표시하지 않도록 하는 `filterIconVisible` 속성이 추가되었습니다.
+```js
+gridView.setColumn([{
+  name: "column",
+  fieldName: "field",
+  filters:[{
+      ...
+  }],
+  filterIconVisible: false
+}])
+```
+
+1. `Mac의 touch pad`에서 스크롤
+  - Mac의 touch pad를 이용해서 스크롤을 했을때 수직/수평 스크롤이 동시에 일어나는 현상을 일부 개선하였습니다.
+
+1. [MobileOptions](http://help.realgrid.com/api/types/MobileOptions/)
+  - ColumnHeader를 touch후 drag했을때 범위선택또는 그리드 스크롤을 선택할수 있도록 headerToScroll속성이 추가되었습니다.
+  - mobileOptions.headerToScroll을 true로 설정하면 ColumnHeader를 drag시 그리드가 스크롤 됩니다.
+
+
+### 오류 수정
+
+1. [DataColumn](http://help.realgrid.com/api/types/DataColumn/)
+  - 연결된 field의 dataType이 `number`인 컬럼의 required속성을 true로 설정했을때 `0`을 입력하지 못하는 현상이 수정되었습니다.
+
+1. [ColumnFilter](http://help.realgrid.com/api/types/ColumnFilter/)
+  - TreeView의 ColumnFilter.criteria에 funtion을 설정후 filtering을 했을때 오류가 발생하는 현상을 수정하였습니다.
+
+1. [fillXmlData](http://help.realgrid.com/api/LocalDataProvider/fillXmlData/)
+  - `fillXmlData`를 이용해서 data를 load할때 값이 없는 속성의 경우 false로 변환되는 현상을 수정하였습니다.
+
+1. [PasteOptions](http://help.realgrid.com/api/types/PasteOptions/)
+  - pasteOptions.eventEachRow가 true이면서 여러행을 붙여넣기할때 행추가되는 경우 발생하는 오류를 수정하였습니다.
+
+1. [fitRowHeight](http://help.realgrid.com/api/GridBase/fitRowHeight/)
+  - displayOptions.fitStyle이 "none"이 아닐때 fitRowHeight를 호출하는 경우 높이가 잘못 계산되는 현상을 수정하였습니다.
+
 
 
 ## 1.1.35 (2020년 08월)

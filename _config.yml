@@ -25,12 +25,12 @@ github_username:  realgrid
 incremental: false
 
 # 최신버전
-release_date: 2019-10-31T18:20:00Z
-release_version: 1.1.34
+release_date: 2020-11-19T18:20:00Z
+release_version: 1.1.36
 
 # RealGrid
 realgrid_product: eval # 무조건 eval product를 여기서 쓸일은 없겠지?
-realgrid_version: 1.1.34 # 이 버전을 바꾸면 모든 데모 페이지의 버전을 바꿀 수 있다.
+realgrid_version: 1.1.36 # 이 버전을 바꾸면 모든 데모 페이지의 버전을 바꿀 수 있다.
 
 # RealPivot
 realpivot_product: eval
