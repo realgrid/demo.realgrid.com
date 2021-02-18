@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.36'
+title: '최신버전 1.1.37'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,30 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.37 (2021년 02월)
+
+---
+
+### 기능 개선
+
+1. `numberFormat`의 소수점 올림/버림 설정이 소수점 첫번째 자리에도 적용되도록 개선되었습니다.
+  - `numberFormat`이 `#,##0;;;f`인 경우 소수점을 버린값으로 출력됩니다.
+
+### 오류 수정
+
+1. [ExcelExport]({{ '/Excels/ExcelExport/' | prepend: site.baseurl}})
+  - link 타입 컬럼을 export시 font size가 설정된 스타일과 다른 현상을 수정하였습니다.
+
+1. `fitRowHeight`로 자동행 높이 조절시 일부 글자가 표시안되는 현상을 수정하였습니다.
+  - styles.textWrap가 `normal`일때 fitRowHeight로 자동행높이 조절시 일부 글자가 표시되지 않는 현상을 수정하였습니다.
+
+1. [onRowsPasted](https://help.realgrid.com/api/GridBase/onRowsPasted/)
+  - 여러줄을 붙여넣기후 발생되는 onRowsPasted의 items인자에 `-1`만 넘어오는 현상을 수정하였습니다.
+
+1. [getItemIndex](https://help.realgrid.com/api/GridBase/getItemIndex/)
+  - treeView에서 편집중인 행의 dataRow를 이용해서 getItemIndex를 호출하는 경우 -1이 return되는 현상을 수정하였습니다.
+
 
 ## 1.1.36 (2020년 11월)
 
