@@ -1,13 +1,19 @@
 ---
 layout: page
-title: 'Pivot 최신버전 1.0.3'
+title: 'Pivot 최신버전 1.0.8'
 published: true
 description: ""
 ---
 
 Pivot 최신 버전 이력
 
+## 1.0.8 (2021 4월)
 
+1. GlobalContextMenu 로 destroy() 사용 시 오류가 개선되었습니다.  
+
+1. formType: "grid" 인 경우 excel export시 오류가 개선되었습니다.  
+
+1. setPivotFields() 사용 시 피벗 화면이 틀어지는 현상이 개선되었습니다.
 
 ## 1.0.3 (2019년 2월)
 

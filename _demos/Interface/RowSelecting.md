@@ -22,6 +22,8 @@ var onGridSuccessDataSet = function(data, textStatus, jqXHR) {
   }
 
   dataProvider.setRows(data);
+  gridView.checkRows([0,4,9,14,19,24,34,39]);
+  gridView.refresh();
 }
 
 var onDoneDataSet = function() {
@@ -156,6 +158,14 @@ function gridEvents(grid, provider) {
         });
         setCheckValueToChart(values);
     }
+
+    gridView.onItemsChecked = function(grid, items, checked) {
+        var values = [];
+        $.each(items, function () {
+            values.push(grid.getValues(this));
+        });
+        setCheckValueToChart(values);
+    };
  
     grid.onItemAllChecked = function (grid, checked) {
         if (checked) {

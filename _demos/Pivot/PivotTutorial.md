@@ -31,7 +31,7 @@ $('#btnStep1').click(function() {
   if(step == 1){
     dataProvider = new RealGridJS.LocalDataProvider();
     pivot = new RealPivot("realpivot");
-    pivot.setOptions({header:{menuButtonVisible:false,setupButtonVisible:false}})
+    pivot.setOptions({header:{menuButtonVisible:true,setupButtonVisible:true}});
     pivot.setDataProvider(dataProvider);
     pivot.drawView();
     $("#btnStep1").css("background-color","silver");
@@ -190,8 +190,6 @@ $('#btnStep3').click(function() {
         url: "/resource/data/pivotDataSet.json",
         success: function (data) {
             dataProvider.fillJsonData(data,{count:5000});
-            $(".realpivot-title-menu").css("display","inline-block")
-            $(".realpivot-title-setup").css("display","inline-block")
         },
         complete: function(data){
           $("#btnStep3").css("background-color","silver");
@@ -208,8 +206,6 @@ $('#btnStep3').click(function() {
 /*
 $('#btnStep4').click(function() {
     pivot.drawView();
-    $(".realpivot-title-menu").css("display","inline-block")
-    $(".realpivot-title-setup").css("display","inline-block")
 });
 */
 
