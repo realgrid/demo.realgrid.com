@@ -1,0 +1,52 @@
+[{
+    "name": "OrderID",
+    "fieldName": "OrderID",
+    "width": "150",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "alphabet만 입력가능",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    },
+    "editor": {
+        "type": "line",
+        "inputCharacters": "A-Za-z" 
+    }
+}, {
+    "name": "CustomerID",
+    "fieldName": "CustomerID",
+    "width": "150",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "alphabet은 입력불가",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    },
+    "editor": {
+        "type": "line",
+        "ignoreCharacters": "A-Za-z" 
+    }
+}, {
+    "name": "EmployeeID",
+    "fieldName": "EmployeeID",
+    "width": "150",
+    "styles": {
+        "textAlignment": "center"
+    },
+    "header": {
+        "text": "한글만 입력가능",
+        "styles": {
+            "background": "linear,#22ffd500,#ffffd500,90"
+        }
+    },
+    "editor": {
+        "type": "line",
+        "inputCharacters": "ㄱ-힣"
+    }
+}]

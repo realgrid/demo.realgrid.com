@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.37'
+title: '최신버전 1.1.38'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,61 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.38 (2021년 06월)
+
+---
+
+### 기능 개선
+
+1. [DataColumn](http://help.realgrid.com/api/types/DataColumn/)
+  - [fitRowHeight](http://help.realgrid.com/api/GridBase/fitRowHeight/)로 자동행높이 조절시 일부 컬럼을 제외할수 있도록 exceptRowHeight 속성이 추가되었습니다. default는 `false`입니다.
+
+1. [DisplayOptions](http://help.realgrid.com/api/types/DisplayOptions/)
+  - 그리드 Container Div의 style.display 속성이 변경될때 그리드의 크기를 자동으로 변경하는 watchDisplayChange 속성이 추가되었습니다. default는 `true`입니다.
+
+1. [LineCellEditor](http://help.realgrid.com/api/types/LineCellEditor/)
+  - 특정 문자들만 입력하거나 입력을 제한하도록 하는 inputCharacters속성과 ignoreCharacters속성이 추가 되었습니다.
+  - 특정문자들만 입력받을때는 inputCharacters속성에 입력받을 문자를 입력합니다.
+  - 특정문자를 제외하는 경우 ignoreCharacters속성에 제한할 문자를 입력합니다.
+  - 자세한 내용은 [문자 입력 제한](http://demo.realgrid.com/Editing/LineCellEditor/)를 참조하세요.  
+
+```js
+gridView.setColumn([{
+  name: "column1",
+  fieldName: "field1",
+  editor:{
+    type:"line",
+    inputCharacters: "A-Za-z"  // alphabet만 입력가능
+  }
+}, {
+  name: "column2",
+  fieldName: "field2",
+  editor:{
+    type:"line",
+    ignoreCharacters: "A-Za-z"  // alphabet은 입력 불가.
+  }
+}]);
+
+```
+
+### 오류 수정
+
+1. IE에서 editable이 fase이면서 값이 없는 셀에서 복사가 되지 않는 현상을 수정하였습니다.
+
+1. [ExcelExport]({{ '/Excels/ExcelExport/' | prepend: site.baseurl}})
+  - 그리드 상단 합계 영역에 표시되는 값이 엑셀로 출력되지 않는 현상을 수정하였습니다.
+  - groupFooter에 dynamicStyle이 적용되었을때 엑셀로 출력시 적용되지 않는 현상을 수정하였습니다.
+
+1. [DropdownCellEditor](http://help.realgrid.com/api/types/DropDownCellEditor/)
+  - dropdown 편집기의 domainOnly가 true이면서 입력된 값이 없는 경우 다른셀을 클릭해도 닫히지 않는 현상을 수정하였습니다.
+
+1. [CheckBar](http://help.realgrid.com/api/types/CheckBar/)
+  - syncHeadCheck 속성이 true일때 행의 선택 여부와 상관없이 모든 행의 checkable이 false인 경우 checkBar의 head에 선택이 표시되는 현상이 수정되었습니다.
+
+1. [EditOptioins](http://help.realgrid.com/api/types/EditOptions/)
+  - enterToTab과 enterToEdit 가 동시에 적용되었을때 행의 마지막 셀에서 `enter`를 입력했을때 editor가 사라지지 않는 현상을 수정하였습니다.
+
 
 ## 1.1.37 (2021년 02월)
 
