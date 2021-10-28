@@ -19,10 +19,10 @@ UbiReport는 플랫폼에 상관없이 다양하고 편리하게 리포트를 �
 </span>
 
 1. 그리드의 컬럼 그룹핑과 연계하여 구현한 페이지입니다.  
-[Column Grouping with UbiReport](http://ubireport.realgrid.com:8080/realgrid/columnGrouping4.html)
+[Column Grouping with UbiReport](http://www.ubireport.com/realgrid/columnGrouping4.html)
 
 2. 그리드의 스타일과 연계하여 구현한 페이지입니다.  
-[Styles with UbiReport](http://ubireport.realgrid.com:8080/realgrid/dynamicStylesonRows4.html)
+[Styles with UbiReport](http://www.ubireport.com/realgrid/dynamicStylesonRows4.html)
 
 **RealGrid 화면**
 

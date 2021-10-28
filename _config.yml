@@ -25,12 +25,12 @@ github_username:  realgrid
 incremental: false
 
 # 최신버전
-release_date: 2021-07-02T18:20:00Z
-release_version: 1.1.38
+release_date: 2021-10-28T18:20:00Z
+release_version: 1.1.39
 
 # RealGrid
 realgrid_product: eval # 무조건 eval product를 여기서 쓸일은 없겠지?
-realgrid_version: 1.1.38 # 이 버전을 바꾸면 모든 데모 페이지의 버전을 바꿀 수 있다.
+realgrid_version: 1.1.39 # 이 버전을 바꾸면 모든 데모 페이지의 버전을 바꿀 수 있다.
 
 # RealPivot
 realpivot_product: eval
@@ -79,10 +79,10 @@ nav_links:
     url: http://help.realgrid.com/tutorial
     partial: illustration-tutorial
   - title: API Docs
-    url: http://help.realgrid.com/apis
+    url: https://help.realgrid.com/apis
     partial: illustration-docs
   - title: Forums
-    url: http://forum.realgrid.com
+    url: https://forum.realgrid.com
     partial: illustration-forums
     target: _new
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.38'
+title: '최신버전 1.1.39'
 published: true
 permalink: /release/
 ---
@@ -12,6 +12,28 @@ permalink: /release/
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
 
+## 1.1.39 (2021년 10월)
+
+### 기능개선
+
+1. [ItemModelApi]({{ '/RowGroup/ItemModelApi/' | prepend: site.baseurl}})
+  - [expandGroup](http://help.realgrid.com/api/GridView/expandGroup/) 또는 [collapseGroup](http://help.realgrid.com/api/GridView/collapseGroup/)으로 그룹을 접거나 펼칠때 itemIndex에 해당하는 model이 group이 아닌 경우 model의 parent가 접거나 펼쳐지도록 개선.
+
+1. [editOptions](http://help.realgrid.com/api/types/EditOptions/)
+  - editOptions.updatable이 false여도 rowState가 `created`인 행은 편집가능하도록 개선
+
+1. `numberFormat`의 소수점 버림/올림시 시 소숫점 이하 표시방식 변경.
+  - numberFormat이 `#,##0.####;f`일때 일부 값에서 `0.0000`으로 표시되던 것을 `0`으로 표시되도록 변경
+
+### 오류 수정
+
+1. [TreeView]({{ '/Tree/TreeDataModel/' | prepend: site.baseurl}}')
+  - 엑셀로 export시 [footer](http://help.realgrid.com/api/types/ColumnFooter/).callback으로 반환된 문자열이 누락되는 현상 수정
+
+1. `syncHeadCheck`
+  - checkBar.syncHeadCheck 가 `true`일때 첫번째 item의 checkBox를 체크하면 checkBar의 header가 체크되는 현상 수정.
+
+  
 ## 1.1.38 (2021년 06월)
 
 ---
