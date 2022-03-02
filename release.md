@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.39'
+title: '최신버전 1.1.40'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,24 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.40 (2022년 2월) 
+
+### 기능개선
+1. [CheckBar](http://help.realgrid.com/api/types/CheckBar/)
+  - `exclusive`가 true일때 선택되지 않은 item도 이미지로 표시되도록 하는 `unCheckRadioImageUrl` 속성 추가
+
+### 오류수정
+1. [TreeView]({{'/RowGroup/TreeView/' | prepend:site.baseurl}}})
+  - `onTreeItemCollapsing`, `onTreeItemExpanding` 이벤트에서 `false`를 return해도 접거나 펼치는 동작이 수행되는 현상 수정
+
+1. [RowGrouping]({{'/RowGroup/RowGrouping/' | prepend:site.baseurl}}})
+  - grouping 관련 스타일이 설정된 상태에서 excel로 export하면 발생하는 오류 수정
+  - getRowGroup()으로 가져온 값을 다시 setRowGroup했을때 발생하는 오류 수정
+
+1. [TreeView]({{'/RowGroup/TreeView/' | prepend:site.baseurl}}})
+  - `onTreeItemCollapsed`이벤트가 발생하지 않는 현상 수정.
+
 
 ## 1.1.39 (2021년 10월)
 
