@@ -12,6 +12,29 @@ permalink: /release/
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
 
+## 1.1.41 (2022년 6월)
+
+### 기능개선
+1. [numberEditor](http://help.realgrid.com/api/types/NumberCellEditor/)
+  - `numberEditor.maxLengthExceptComma`속성이 true이면 입력된 값에서 `,`를 제외하고 입력된 문자의 길이가 `maxLength`와 같으면 다음 셀로 이동하도록 개선.
+
+1. [TreeView]({{'/RowGroup/TreeView/' | prepend:site.baseurl}}})
+  - 대량의 data를 load시 시간이 오래 걸리는 현상을 개선.
+
+1. [numberEditor](http://help.realgrid.com/api/types/NumberCellEditor/)
+  - editor가 표시되지 않는 상태에서 한글 입력시 기존 내용이 지워지는 현상을 개선.
+  
+### 오류수정
+1. [numberEditor](http://help.realgrid.com/api/types/NumberCellEditor/)
+  - numberEditor에 `editFormat`이 적용되면 -0으로 시작되는 소수점 값을 입력할수 없는 현상 수정.
+
+1. [editOptions](http://help.realgrid.com/api/types/EditOptions/)
+  - `numberEditor`에 한글이 입력된 이후에는 `maxLengthToNextCell`속성이 적용되지 않는 현상 수정.
+
+1. [numberEditor](http://help.realgrid.com/api/types/NumberCellEditor/)
+  - `maxIntegerLength`속성이 설정된 셀에서 다른셀로 이동을 해도 해당속성이 계속 적용되는 현상 수정  
+
+
 ## 1.1.40 (2022년 2월) 
 
 ### 기능개선
