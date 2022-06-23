@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.40'
+title: '최신버전 1.1.41'
 published: true
 permalink: /release/
 ---
@@ -35,7 +35,7 @@ permalink: /release/
   - `maxIntegerLength`속성이 설정된 셀에서 다른셀로 이동을 해도 해당속성이 계속 적용되는 현상 수정  
 
 
-## 1.1.40 (2022년 2월) 
+## 1.1.40 (2022년 3월)  
 
 ### 기능개선
 1. [CheckBar](http://help.realgrid.com/api/types/CheckBar/)
