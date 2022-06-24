@@ -18,7 +18,7 @@ permalink: /release/
 1. [numberEditor](http://help.realgrid.com/api/types/NumberCellEditor/)
   - `numberEditor.maxLengthExceptComma`속성이 true이면 입력된 값에서 `,`를 제외하고 입력된 문자의 길이가 `maxLength`와 같으면 다음 셀로 이동하도록 개선.
 
-1. [TreeView]({{'/RowGroup/TreeView/' | prepend:site.baseurl}}})
+1. [TreeView](https://demo.realgrid.com/Tree/TreeDataModel/)
   - 대량의 data를 load시 시간이 오래 걸리는 현상을 개선.
 
 1. [numberEditor](http://help.realgrid.com/api/types/NumberCellEditor/)
