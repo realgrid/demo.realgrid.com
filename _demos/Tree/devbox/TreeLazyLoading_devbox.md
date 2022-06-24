@@ -25,7 +25,7 @@ treeView.onTreeItemExpanding = function (tree, itemIndex, rowId) {
   if (treeDataProvider.getChildCount(rowId) <= 0) {
     $.ajax({
       type: "GET",
-      url: "http://" + location.host + "{{'/resource/data/' | prepend: site.baseurl}}treedata5.txt?__time__=" + new Date().getTime(),
+      url: "https//" + location.host + "{{'/resource/data/' | prepend: site.baseurl}}treedata5.txt?__time__=" + new Date().getTime(),
       dataType: "text",
       success: function (data) {
         treeDataProvider.fillCsvData(data,
@@ -65,7 +65,7 @@ treeView.onTreeItemExpanding = function (tree, itemIndex, rowId) {
       if (treeDataProvider.getChildCount(rowId) <= 0) {
         $.ajax({
           type: "GET",
-          url: "http://" + location.host + "{{'/resource/data/' | prepend: site.baseurl}}treedata5.1.txt?__time__=" + new Date().getTime(),
+          url: "https://" + location.host + "{{'/resource/data/' | prepend: site.baseurl}}treedata5.1.txt?__time__=" + new Date().getTime(),
           dataType: "text",
           success: function (data) {
             treeDataProvider.fillCsvData(data,
