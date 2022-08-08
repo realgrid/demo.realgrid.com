@@ -6,6 +6,108 @@ description: ""
 ---
 
 Pivot 최신 버전 이력
+## 1.0.9 (2022 8월)
+
+---
+
+#### 기능 개선
+1. [getPivotFields](http://help.realgrid.com/pivotApi/types/getPivotFields){:target="_blank"}
+  - 피벗 그리드를 구성하는 필드들을 가져오는 getPivotFields()함수가 추가되었습니다.
+```js
+var setupFields = pivot.getSetupFields();
+```
+
+1. 셀에 값이 없는 경우 표시되는 [emptyValue](http://help.realgrid.com/pivotApi/types/PivotField/#emptyValue){:target="_blank"}속성이 추가되었습니다.
+  - `blankFillValue`보다 우선해서 적용됩니다.
+
+1. rowLabel 또는 columnLabel 영역에 html tag를 적용후 excel export하면 html tag가 그대로 출력되는 현상이 개선되었습니다.
+
+// api 수정 필요. // 데모 추가 필요.
+1. [columnSizeCallback](http://help.realgrid.com/pivotApi/DisplayOptions/#columnSizeCallback){:target="_blank"}
+  - column의 너비를 변경할수 있는 columnSizeCallback이 추가되었습니다.
+  - `0`을 return시 화면에는 보이지 않지만 excel export시에는 너비가 `0`으로 출력됩니다.
+
+// api 추가 필요.
+1. [getFilter](http://help.realgrid.com/pivotApi/getFilter){:target="_blank"}
+  - 현재 설정된 filter 정보를 가져오는 api가 추가되었습니다.
+
+1. 행/컬럼/셀의 raw data
+  - 행/컬럼/셀의 값을 계산할때 사용된 data의 dataRow를 확인 할수 있도록 개선되었습니다.
+  - 셀의 값을 가져오는 [getCellValues](http://help.realgrid.com/pivotApi/getCellValues){:target="_blank"} api가 추가되었습니다.
+  - 현재 선택된 셀의 값을 가져오는 [getCellValuesAt](){} api가 추가되었습니다.
+  - [getRowValues](){}의 결과값에 ``가 추가되었습니다.
+  - [getColumnValues](){}의 결과값에 ``가 추가되었습니다.
+
+1. 현재 선택된 셀의 index
+  - 현재 선택된 셀의 index를 가져오는 [](){} api가 추가되었습니다.
+
+1. 피벗 크기 변경
+  - 브라우저의 크기가 변경되거나 피벗 컨테이너의 display속성이 변경되었을때 피벗의 크기가 변경되도록 하는 [](){} 속성이 추가되었습니다.
+  - 브라우저의 크기가 줄어들때 `body`영역에 스크롤이 생기지 않도록 하기위해서는 피벗 컨테이너의 overflow style을 `hidden`으로 해야합니다.
+
+1. expression이 `min`일때 정상적으로 계산되지 않는 현상이 개선되었습니다.
+
+1. 정렬
+  - value를 이용한 정렬시 정상적으로 정렬되지 않는 현상이 개선되었습니다.
+  - 컬럼헤더 영역 또는 행헤더 영역의 text를 클릭하면 정렬되는 기능이 추가되었습니다.
+  - 헤더 클릭 정렬의 사용여부를 지정하는 [](){}속성이 추가되었습니다.
+  - 값 헤더 영역의 text를 클릭하면 값을 이용한 정렬을 할수 있도록 설정창이 표시되는 기능이 추가되었습니다.
+  - 사용자가 정렬을 변경했을때 정렬을 취소할수 있는 [](){} 콜백이 추가되었습니다.  
+  `false`를 return 하면 정렬 변경이 취소됩니다.
+
+1. valueType의 종류와 순서
+  - `setup`화면에 표시되는 [](){}의 종류와 순서를 사용자가 지정할수 있도록 [](){}이 추가되었습니다.
+  - 값 필드 개별로 지정할수 있도록 []()}{} 속성이 추가되었습니다.
+  - `setup`화면에서 값 필드를 추가했을때 선택되는 valueType의 기본값을 지정할수 있는 [](){}속성이 추가되었습니다.
+
+1. 특정 행이나 컬럼을 접은후 excel export시 오류가 발생하는 현상을 수정하였습니다.
+
+1. setup창을 이용한 filter영역에 표시되는 필드 조건의 기본 설정을 변경하도록 하는 [](){}속성이 추가되었습니다.
+
+1. 셀의 값이 없는 경우 표시되는[](){}의 기본값이 `0`에서 `null`로 변경되었습니다.
+  - data 자체가 없을때 와 data의 값이 `0`일때가 구분되는 않는 현상때문에 기본값을 `null`로 변경하였습니다. 피벗 버전변경시 주의해야 합니다.
+
+1. 필드 헤더의 너비를 변경할수 있는 [](){}속성이 추가되었습니다.
+
+1. [](){}
+  - body 셀의 `className`을 추가할수 있는 콜백이 추가되었습니다.
+
+1. labelTooltip의 위치변경
+  - 행 또는 컬럼의 헤더 tooltip 생성위치가 마우스가 위치한 곳에 표시되도록 변경되었습니다.
+
+1. 설정 변경 이벤트
+  - 사용자가 `setup`을 이용해서 피벗설정을 변경할때 발생하는 [](){}이 추가 되었습니다.
+  - `false`를 return하면 설정 변경이 취소됩니다.
+
+1. expand/collapse
+  - 그룹행 또는 그룹컬럼의 펼침상태를 가져오는 [](){}와 [](){} api가 추가되었습니다.
+
+추가된 api
+getFilter
+
+getPivotFields
+
+getCellValues
+
+getCellValuesAt
+
+getValueNames
+
+getCurrent
+
+columnExpanded
+
+rowExpanded
+
+onSetupChanging
+
+onSorting
+
+추가된 enum
+LabelType
+
+#### 오류 수정
+1. [blankFillValue](){}를 `null`로 설정후 excel export 시 `0`으로 출력되는 현상이 수정되었습니다.
 
 ## 1.0.8 (2021 4월)
 
@@ -153,7 +255,7 @@ pivot.setDisplayOptions({
 	showFocus: true
 });
 ```
-  - 포커스가 이동될때 [onCurrentChanged()](http://help.realgrid.com/pivotApi/RealPivot/onCurrentChanged/){:target="_blank"}  콜백이 발생합니다.  
+  - 포커스가 이동될때 [onCurrentChanged()](http://help.realgrid.com/pivotApi/RealPivot/onCurrentChanged/){:target="_blank"}  콜백이 발생합니다. 
   - `CSS` `realpivot-focus` class가 추가되었습니다.
 
 1. 셀 복사
