@@ -12,6 +12,7 @@ permalink: /release/
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
 
+
 ## 1.1.41 (2022년 6월)
 
 ### 기능개선
@@ -33,7 +34,6 @@ permalink: /release/
 
 1. [numberEditor](http://help.realgrid.com/api/types/NumberCellEditor/)
   - `maxIntegerLength`속성이 설정된 셀에서 다른셀로 이동을 해도 해당속성이 계속 적용되는 현상 수정  
-
 
 ## 1.1.40 (2022년 3월)  
 
