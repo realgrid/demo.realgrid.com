@@ -6,13 +6,13 @@ description: ""
 ---
 
 Pivot 최신 버전 이력
-## 1.0.9 (2022 8월)
+## 1.0.9 (2022년 8월)
 
 ---
 
 #### 기능 개선
 1. [getPivotFields](http://help.realgrid.com/pivotApi/types/getPivotFields){:target="_blank"}
-  - 피벗 그리드를 구성하는 필드들을 가져오는 `getPivotFields` api가 추가되었습니다.
+  - 피벗 그리드를 구성하는 필드들을 가져오는  api가 추가되었습니다.
 ```js
 var currentFields = pivot.getPivotFields();
 ```
@@ -52,19 +52,19 @@ var currentFields = pivot.getPivotFields();
 1. valueType의 종류와 순서
   - `setup`화면에 표시되는 [valueType](http://help.realgrid.com/pivotApi/types/ValueType/){:target="_blank"}의 종류와 순서를 사용자가 지정할수 있도록 [setupOptions.expressions](http://help.realgrid.com/pivotApi/types/SetupOptions/#expressions){:target="_blank"} 속성이 추가되었습니다.
   - 값 필드 개별로 사용가능한 `valueType`을 지정할수 있도록 [expressions](http://help.realgrid.com/pivotApi/types/PivotField/#expressions){:target="_blank"} 속성이 추가되었습니다.
-  - [field.expression]{http://help.realgrid.com/pivotApi/types/PivotField/#expression}(:target="_blank")을 지정하지 않았을때 기본값으로 사용되는 [DataOptions.defaultExpression]{http://help.realgrid.com/pivotApi/DataOptions/#defaultExpression}(:target="_blank")속성이 추가되었습니다.
+  - [field.expression](http://help.realgrid.com/pivotApi/types/PivotField/#expression){:target="_blank"}을 지정하지 않았을때 기본값으로 사용되는 [DataOptions.defaultExpression](http://help.realgrid.com/pivotApi/DataOptions/#defaultExpression){:target="_blank"}속성이 추가되었습니다.
 
 1. setup창을 이용한 filter영역에 표시되는 필드 조건의 기본 설정을 변경하도록 하는 [setupOptions.filterOperation](http://help.realgrid.com/pivotApi/types/SetupOptions/#filterOperation){:target="_blank"}속성이 추가되었습니다.
-  - `and` 또는 `or`로 지정할수 있으며 setup화면이 처음 생성될때 한번만 적용되고 사용자가 변경을 하면 변경된 값이 유지됩니다.
+  - `"and"` 또는 `"or"`로 지정할수 있으며 setup화면이 처음 생성될때 한번만 적용되고 사용자가 변경을 하면 변경된 값이 유지됩니다.
 
 1. 셀의 값이 없는 경우 표시되는[blankFillValue](http://help.realgrid.com/pivotApi/types/DisplayOptions/#blankFillValue){:target="_blank"}의 기본값이 `0`에서 `null`로 변경되었습니다.
   - data 자체가 없을때 와 data의 값이 `0`일때가 구분되는 않는 현상때문에 기본값을 `null`로 변경하였습니다. 피벗 버전변경시 주의해야 합니다.
 
-1. 필드 헤더의 너비를 변경할수 있는 [displayOptions.labelTextWidth](http://help.realgrid.com/pivotApi/types/DisplayOptions/#labelTextWidth){:target="_blank"}속성이 추가되었습니다.
+1. 필드 헤더의 너비를 변경할수 있는 [displayOptions.labelTextWidth](http://help.realgrid.com/pivotApi/types/DisplayOptions/#labelTextWidth){:target="_blank"}속성이 추가되었습니다.  
 
 1. [displayOptions.styleCallback](http://help.realgrid.com/pivotApi/types/DisplayOptions/#styleCallback){:target="_blank"} 속성이 추가되었습니다.
   - body 셀의 `className`을 추가할수 있는 콜백이 추가되었습니다.
-  - export시 style을 적용하기 위해서는 [exportOptions.applyStyleCallback](http://help.realgrid.com/pivotApi/types/ExportOptions/#applyStyleCallback){:target="_blank"}을 `true`로 지정해야 합니다.
+  - export시 style을 적용하기 위해서는 [exportOptions.applyStyleCallback](http://help.realgrid.com/pivotApi/types/ExportOptions/#applyStyleCallback){:target="_blank"}을 `true`로 지정해야 합니다.    
 ```js
     var styleCallback = function(pivot, index, value){
         if (index.rows["국가"] === "국산" && index.rows["브랜드명"] === "기아" && index.valueField === "차량가격") {
@@ -77,7 +77,6 @@ var currentFields = pivot.getPivotFields();
             return st;
         }
     };
-
     pivot.setDisplayOptions({"styleCallback": styleCallback});
     pivot.drawView();
 ```
@@ -133,7 +132,7 @@ LabelType
 
 1. 행 또는 컬럼 필드의 값이 `null`또는 `undefined`인 경우 누락되는 현상을 수정하였습니다.
 
-## 1.0.8 (2021 4월)
+## 1.0.8 (2021년 4월)
 
 1. GlobalContextMenu 로 destroy() 사용 시 오류가 개선되었습니다.  
 
