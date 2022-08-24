@@ -94,33 +94,6 @@ var currentFields = pivot.getPivotFields();
 1. labelEnable이 `true`인 필드를 행필드 또는 컬럼필드에만 추가할수 있도록 하는 [pivotField.labelType](http://help.realgrid.com/pivotApi/types/PivotField/#labelType){:target="_blank"}이 추가되었습니다.
   - `labelType`을 `row`로 지정하게 되면 행필드에만 추가 가능하며 `column`으로 지정하면 컬럼 필드에만 추가 할수 있습니다.
 
-1. RealGridDom과 연결된 pivot의 경우 [buildPivot()](http://help.realgrid.com/pivotApi/RealPivot/buildPivot/){:target="_blank"}을 호출해도 변경된 data를 가져오는 현상을 개선하였습니다.
-
-
-추가된 api
-getFilter
-
-getPivotFields
-
-getCellValues
-
-getCellValuesAt
-
-getValueNames
-
-getCurrent
-
-columnExpanded
-
-rowExpanded
-
-onSetupChanging
-
-onSorting
-
-추가된 enum
-LabelType
-
 #### 오류 수정
 1. [blankFillValue](http://help.realgrid.com/pivotApi/types/DisplayOptions/#blankFillValue){:target="_blank"}를 `null`로 설정후 excel export 시 `0`으로 출력되는 현상이 수정되었습니다.
 
@@ -131,6 +104,8 @@ LabelType
 1. 특정 행이나 컬럼을 접은후 excel export시 오류가 발생하는 현상을 수정하였습니다.
 
 1. 행 또는 컬럼 필드의 값이 `null`또는 `undefined`인 경우 누락되는 현상을 수정하였습니다.
+
+1. RealGridDom과 연결된 pivot의 경우 [buildPivot()](http://help.realgrid.com/pivotApi/RealPivot/buildPivot/){:target="_blank"}을 호출해도 변경전 data를 가져오는 현상을 개선하였습니다.
 
 ## 1.0.8 (2021년 4월)
 
