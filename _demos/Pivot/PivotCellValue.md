@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 셀값 확인
+title: 피벗 셀값 확인
 ico: true
 order: 20
 devbox: true
