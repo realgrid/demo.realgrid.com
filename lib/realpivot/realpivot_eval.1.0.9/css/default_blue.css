@@ -1071,3 +1071,13 @@ div.realpivot-filter {
   width: 7px;
   height: 11px;
 }
+
+.background-high {
+  background: #ff0000;
+  color: white;
+}
+
+.background-low {
+  background: #0000ff;
+  color: white;
+}
