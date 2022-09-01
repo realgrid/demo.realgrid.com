@@ -11,7 +11,7 @@ Pivot 최신 버전 이력
 ---
 
 #### 기능 개선
-1. [getPivotFields](http://help.realgrid.com/pivotApi/types/getPivotFields){:target="_blank"}
+1. [getPivotFields](http://help.realgrid.com/pivotApi/RealPivot/getPivotFields/){:target="_blank"}
   - 피벗 그리드를 구성하는 필드들을 가져오는  api가 추가되었습니다.
 ```js
 var currentFields = pivot.getPivotFields();
@@ -20,22 +20,22 @@ var currentFields = pivot.getPivotFields();
 1. 셀에 값이 없는 경우 표시되는 [emptyValue](http://help.realgrid.com/pivotApi/types/PivotField/#emptyValue){:target="_blank"}속성이 추가되었습니다.
   - `blankFillValue`보다 우선해서 적용됩니다.
 
-1. [columnSizeCallback](http://help.realgrid.com/pivotApi/DisplayOptions/#columnSizeCallback){:target="_blank"}
+1. [columnSizeCallback](http://help.realgrid.com/pivotApi/types/DisplayOptions/#columnSizeCallback){:target="_blank"}
   - column의 너비를 변경할수 있는 columnSizeCallback이 추가되었습니다.
   - `0`을 return시 화면에는 보이지 않지만 excel export시에는 너비가 `0`으로 출력됩니다.
 
-1. [getFilter](http://help.realgrid.com/pivotApi/getFilter){:target="_blank"}
+1. [getFilter](http://help.realgrid.com/pivotApi/RealPivot/getFilter/){:target="_blank"}
   - 현재 설정된 filter 정보를 가져오는 api가 추가되었습니다.
 
 1. 행/컬럼/셀의 raw data
   - 행/컬럼/셀의 값을 계산할때 사용된 data의 dataRow를 확인 할수 있도록 개선되었습니다.
-  - 셀의 값을 가져오는 [getCellValues](http://help.realgrid.com/pivotApi/getCellValues){:target="_blank"} api가 추가되었습니다.
-  - 현재 선택된 셀또는 입력된 CellIndex의 값을 가져오는 [getCellValuesAt](http://help.realgrid.com/pivotApi/getCellValuesAt){:target="_blank"} api가 추가되었습니다.
+  - 셀의 값을 가져오는 [getCellValues](http://help.realgrid.com/pivotApi/RealPivot/getCellValues/){:target="_blank"} api가 추가되었습니다.
+  - 현재 선택된 셀또는 입력된 CellIndex의 값을 가져오는 [getCellValuesAt](http://help.realgrid.com/pivotApi/RealPivot/getCellValuesAt/){:target="_blank"} api가 추가되었습니다.
   - [getRowValues](http://help.realgrid.com/pivotApi/RealPivot/getRowValues/){:target="_blank"}의 결과값에 `dataRows`가 추가되었습니다.
   - [getColumnValues](http://help.realgrid.com/pivotApi/RealPivot/getColumnValues/){:target="_blank"}의 결과값에 `dataRows`가 추가되었습니다.
 
 1. 현재 선택된 셀의 index
-  - 현재 선택된 셀의 index를 가져오는 [getCurrent](http://help.realgrid.com/pivotApi/getCurrent){:target="_blank"} api가 추가되었습니다.
+  - 현재 선택된 셀의 index를 가져오는 [getCurrent](http://help.realgrid.com/pivotApi/RealPivot/getCurrent/){:target="_blank"} api가 추가되었습니다.
 
 1. 피벗 크기 변경
   - 브라우저의 크기가 변경되거나 피벗 컨테이너의 display속성이 변경되었을때 피벗의 크기가 변경되도록 하는 [displayOptions.watchDisplayChange](http://help.realgrid.com/pivotApi/types/DisplayOptions/#watchDisplayChange){:target="_blank"} 속성이 추가되었습니다.
@@ -46,13 +46,13 @@ var currentFields = pivot.getPivotFields();
   - 컬럼헤더 영역 또는 행헤더 영역의 text를 클릭하면 정렬되는 기능이 추가되었습니다.
   - 헤더 클릭 정렬의 사용여부를 지정하는 [headerOptions.headerSortable](http://help.realgrid.com/pivotApi/types/HeaderOptions/#headerSortable){:target="_blank"}속성이 추가되었습니다.
   - 값 헤더 영역의 text를 클릭하면 값을 이용한 정렬을 할수 있도록 설정창이 표시되는 기능이 추가되었습니다.
-  - 사용자가 정렬을 변경했을때 정렬을 취소할수 있는 [onSorting](http://help.realgrid.com/pivotApi/callback/onSorting){:target="_blank"} 콜백이 추가되었습니다.  
+  - 사용자가 정렬을 변경했을때 정렬을 취소할수 있는 [onSorting](http://help.realgrid.com/pivotApi/RealPivot/onSorting/){:target="_blank"} 콜백이 추가되었습니다.  
   `false`를 return 하면 정렬 변경이 취소됩니다.
 
 1. valueType의 종류와 순서
   - `setup`화면에 표시되는 [valueType](http://help.realgrid.com/pivotApi/types/ValueType/){:target="_blank"}의 종류와 순서를 사용자가 지정할수 있도록 [setupOptions.expressions](http://help.realgrid.com/pivotApi/types/SetupOptions/#expressions){:target="_blank"} 속성이 추가되었습니다.
   - 값 필드 개별로 사용가능한 `valueType`을 지정할수 있도록 [expressions](http://help.realgrid.com/pivotApi/types/PivotField/#expressions){:target="_blank"} 속성이 추가되었습니다.
-  - [field.expression](http://help.realgrid.com/pivotApi/types/PivotField/#expression){:target="_blank"}을 지정하지 않았을때 기본값으로 사용되는 [DataOptions.defaultExpression](http://help.realgrid.com/pivotApi/DataOptions/#defaultExpression){:target="_blank"}속성이 추가되었습니다.
+  - [field.expression](http://help.realgrid.com/pivotApi/types/PivotField/#expression){:target="_blank"}을 지정하지 않았을때 기본값으로 사용되는 [DataOptions.defaultExpression](http://help.realgrid.com/pivotApi/types/DataOptions/#defaultExpression){:target="_blank"}속성이 추가되었습니다.
 
 1. setup창을 이용한 filter영역에 표시되는 필드 조건의 기본 설정을 변경하도록 하는 [setupOptions.filterOperation](http://help.realgrid.com/pivotApi/types/SetupOptions/#filterOperation){:target="_blank"}속성이 추가되었습니다.
   - `"and"` 또는 `"or"`로 지정할수 있으며 setup화면이 처음 생성될때 한번만 적용되고 사용자가 변경을 하면 변경된 값이 유지됩니다.
