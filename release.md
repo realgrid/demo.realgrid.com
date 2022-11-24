@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.41'
+title: '최신버전 1.1.42'
 published: true
 permalink: /release/
 ---
@@ -12,6 +12,18 @@ permalink: /release/
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
 
+## 1.1.42 (2022년 11월)
+
+### 오류수정
+1. [MergedRowGrouping](https://demo.realgrid.com/RowGroup/MergedRowGrouping/)
+  - mergedRowGrouping된 컬럼에 button이 있는 경우 간헐적으로 버튼이 사라져서 나타나지 않는 현상 수정
+  - expandHandle이 깜박이는 현상 개선
+
+1. [DatetimeField](https://demo.realgrid.com/DataManager/DatetimeField/)
+  - datetimeFormat이 `iso`인 경우 summer time을 사용중인 지역에서 시간이 1시간씩 당겨져서 출력되는 현상 수정
+
+1. [ExcelExport](https://demo.realgrid.com/Excels/ExcelMergedRowGroup/)
+  - rowGroup.levels에 footerStyles가 지정되어있는 상태에서 excel export발생하는 오류 수정
 
 ## 1.1.41 (2022년 6월)
 
