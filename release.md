@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.42'
+title: '최신버전 1.1.43'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,27 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.43 (2023년 03월)
+
+### 오류수정
+1. dateEditor, listEditor의 버튼에 mouse가 hover되었을때 hover이미지가 표시되지 않는 오류 수정
+    
+1. [setColumn](http://help.realgrid.com/api/GridBase/setColumn/)
+  - setColumn을 이용해서 컬럼의 설정을 변경시 기존에 설정된 `editor`가 정상적으로 적용되지 않는 현상 수정
+
+1. 그룹컬럼의 하위 컬럼이 많은 경우 가로 스크롤의 빈영역의 끝부분을 클릭하면 그룹컬럼의 마지막 컬럼이 보여지도록 개선
+
+1. [onContextMenuItemClicked](http://help.realgrid.com/api/GridBase/onContextMenuItemClicked/)
+  - 컬럼의 헤더에서 contextMenu를 띄운상태에서 menuItem을 클릭했을때 선택된 컬럼이 아닌 컬럼의 그룹이 index.column으로 전달되는 현상 수정
+
+1. [fitColumnWidth](http://help.realgrid.com/api/GridBase/fitColumnWidth/)
+  - visible이 false인 컬럼은 `fitColumnWidth`를 이용해서 너비를 변경할수 없도록 변경
+  
+1. excel export시 visible이 `false`인 컬럼을 [showColumns](http://help.realgrid.com/api/types/GridExportOptions/)를 이용해서 출력할때 너비가 0으로 출력되는 현상 개선
+  
+1. treeView에 여러행을 붙여넣기 할때 [onEditRowPasted](http://help.realgrid.com/api/GridBase/onEditRowPasted/)이벤트로 전달되는 `itemIndex`와 `dataRow`가 정상적이지 않은 현상 개선
+
 
 ## 1.1.42 (2022년 11월)
 
