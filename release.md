@@ -12,11 +12,11 @@ permalink: /release/
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
 
-## 1.1.43 (2023년 02월)
+## 1.1.43 (2023년 03월)
+
 ### 오류수정
 1. dateEditor, listEditor의 버튼에 mouse가 hover되었을때 hover이미지가 표시되지 않는 오류 수정
     
-
 1. [setColumn](http://help.realgrid.com/api/GridBase/setColumn/)
   - setColumn을 이용해서 컬럼의 설정을 변경시 기존에 설정된 `editor`가 정상적으로 적용되지 않는 현상 수정
 
@@ -28,8 +28,7 @@ permalink: /release/
 1. [fitColumnWidth](http://help.realgrid.com/api/GridBase/fitColumnWidth/)
   - visible이 false인 컬럼은 `fitColumnWidth`를 이용해서 너비를 변경할수 없도록 변경
   
-1. excel export시 visible이 `false`인 컬럼을 [showColumns](http://help.realgrid.com/api/types/GridExportOptions/)를 이용해서 출력할때    
-   너비가 0으로 출력되는 현상 개선
+1. excel export시 visible이 `false`인 컬럼을 [showColumns](http://help.realgrid.com/api/types/GridExportOptions/)를 이용해서 출력할때 너비가 0으로 출력되는 현상 개선
   
 1. treeView에 여러행을 붙여넣기 할때 [onEditRowPasted](http://help.realgrid.com/api/GridBase/onEditRowPasted/)이벤트로 전달되는 `itemIndex`와 `dataRow`가 정상적이지 않은 현상 개선
 
