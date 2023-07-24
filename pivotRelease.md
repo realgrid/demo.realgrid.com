@@ -6,6 +6,63 @@ description: ""
 ---
 
 Pivot 최신 버전 이력
+
+## 1.0.10 (2023년 7월)
+#### 기능 개선
+1. [PivotExport](http://demo.realgrid.com/Pivot/PivotExport/){:target="_blank"}
+  - `title` 또는 `tail`영역을 출력할때 `style`속성을 지정할수 있도록 개선되었습니다.
+```js
+  pivot.exportGrid({
+    type: "excel", 
+    target:"local", 
+    documentTitle: {
+      message:"documentTitle", 
+      styles: {border: "2px solid blue", textAlign: "center", color:"red", fontSize:"20px", fontWeight:"bold"},
+    }
+  });
+  // 또는
+  pivot.exportGrid({
+    type: "excel",
+    target: "local",
+    documentTitle: {
+      message: "Title을 입력합니다.",
+      styleName: "style-name"
+    }
+  })
+```
+
+1. [ExportOptions](http://help.realgrid.com/pivotApi/types/ExportOptions/){:target="_blank"}
+  - export시 임의 셀을 출력할수 있도록 [userCells](http://help.realgrid.com/pivotApi/types/ExportOptions/#userCells){:target="_blank"}속성이 추가되었습니다.
+```js
+  pivot.exportGrid({type: "excel", target: "local", 
+    yOffset: 5,
+    userCells: [
+      {row: 1, col: 0, value: '결\n재', mergeRow: 3, mergeCol: 1, styles: {border: "1px solid black", textAlign: "center", verticalAlign: "middle"}, height: 30},
+      {row: 1, col: 1, value: '담당', styles: {border: "1px solid black"}, styleName: "user-cell-2"},
+      {row: 1, col: 2, value: '팀장', styles: {border: "1px solid black"}, styleName: "user-cell-2"},
+      {row: 1, col: 3, value: '부서장', styles: {border: "1px solid black"}, styleName: "user-cell-2"},
+      {row: 1, col: 4, value: '사장', styles: {border: "1px solid black"}, styleName: "user-cell-2"},
+      {row: 2, col: 1, value: '', mergeRow: 2, mergeCol: 1, styles: {border: "1px solid black"}, heights: [40, 50], styleName: "user-cell-2"},
+      {row: 2, col: 2, value: '', mergeRow: 2, mergeCol: 1, styles: {border: "1px solid black"}, styleName: "user-cell-2"},
+      {row: 2, col: 3, value: '', mergeRow: 2, mergeCol: 1, styles: {border: "1px solid black"}, styleName: "user-cell-2"},
+      {row: 2, col: 4, value: '', mergeRow: 2, mergeCol: 1, styles: {border: "1px solid black"}, styleName: "user-cell-2"},
+    ]
+  });
+```
+
+  - 사용자가 출력 셀을 추가할때 출력되는 row와 column을 참조해서 셀의 위치를 변경할수 있도록 [userCellsCallback](http://help.realgrid.com/pivotApi/types/ExportOptions/#userCellsCallback){:target="_blank"}콜백이 추가되었습니다.
+```js
+var callback = function(pivot, rowCount, columnCount) {
+  return [
+    {row: 3, col: colCount -3, mergeCol: 3, text: "열의 마지막에 표시", styles:{textAlign:"right"}}
+  ]
+}
+pivot.exportGrid({"type":"excel", "target":"local", "yOffset":4, userCellsCallback: callback});
+```
+
+1. data를 Loading한 이후 행의 헤더 또는 컬럼의 헤더를 클릭하여 정렬하는 경우 이미 만들어진 데이터를 이용해서 정렬하도록 개선되었습니다.
+
+1. 데이터의 양이 많은 경우 데이터 분석시에도 진행바가 표시되도록 개선되었습니다.
 ## 1.0.9 (2022년 8월)
 
 ---
