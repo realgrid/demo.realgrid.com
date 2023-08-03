@@ -7,7 +7,7 @@ description: ""
 
 Pivot 최신 버전 이력
 
-## 1.0.10 (2023년 7월)
+## 1.0.10 (2023년 8월)
 #### 기능 개선
 1. [PivotExport]({{'/Pivot/PivotExport/' | prepand:site.baseurl}})
   - `title` 또는 `tail`영역을 출력할때 `style`속성을 지정할수 있도록 개선되었습니다.
