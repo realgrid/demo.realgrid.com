@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.43'
+title: '최신버전 1.1.44'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,28 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.44 (2023년 08월)
+
+### 기능 개선
+1. [DisplayOptions](http://help.realgrid.com/api/types/DisplayOptions/)  
+  - 가로스크롤바 또는 세로스크롤바를 항상 표시하도록 하는 hscrollBarVisibility, vscrollBarVisibility 속성 추가
+
+1. 붙여넣기를 할때 행이 추가되는 경우 [onCellPasting](http://help.realgrid.com/api/GridBase/onCellPasting/) 콜백의 itemIndex가 `-1`로 전달되는 현상 개선  
+
+1. [ColumnFooter.callback](https://help.realgrid.com/api/types/ColumnFooter/)에서 계산된 값 또는 `expression`에서 계산된 값을 가져오는 `value`속성 추가  
+
+```js
+gridView.setColumnProperty("column", "footer", 
+  { callback: function(column, footerIndex, grid) {
+      return 20;
+    }
+  }
+);
+
+var footerValue = gridView.getColumnProperty("column", "footer").value;
+
+```
 
 ## 1.1.43 (2023년 03월)
 
