@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.44'
+title: '최신버전 1.1.45'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,16 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+## 1.1.45 (2023년 11월)
+
+### 오류 수정
+1. 컬럼 동적 스타일에서 편집불가로 적용된 셀에 포커스가 있는 상태에서 스크롤되어 화면에서 사라졌을때 편집이 가능해지는 현상 수정
+
+1. [fitColumnWidth](https://help.realgrid.com/api/GridBase/fitColumnWidth/) 또는 더블클릭으로 컬럼의 너비를 조정할때 이미지와 text가 겹치는 현상 수정
+
+1. [DropdownCellEditor](http://help.realgrid.com/api/types/DropDownCellEditor/)
+  - 가변폭글꼴을 사용했을때 일부 조건에서 세로 스크롤이 생기는 현상 개선.
+
 
 ## 1.1.44 (2023년 08월)
 
