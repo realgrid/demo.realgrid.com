@@ -24,7 +24,7 @@ gridView.setFilteringOptions({
 var distinctValues = dataProvider.getDistinctValues("CustomerID");
 var filters = [];
 for(var i = 0; i < distinctValues.length; i++){
-    filters.push({name:distinctValues[i],criteria:"value = " + "'" + distinctValues[i] + "'"});
+    filters.push({name: String(distinctValues[i]),criteria:"value = " + "'" + distinctValues[i] + "'"});
 }
 gridView.setColumnFilters("CustomerID",filters);
 ```
@@ -46,7 +46,7 @@ $("#btnSetFilters").click(function() {
     var distinctValues = dataProvider.getDistinctValues("CustomerID");
     var filters = [];
     for(var i = 0; i < distinctValues.length; i++){
-        filters.push({name:distinctValues[i],criteria:"value = " + "'" + distinctValues[i] + "'"});
+        filters.push({name: String(distinctValues[i]),criteria:"value = " + "'" + distinctValues[i] + "'"});
     }
     gridView.setColumnFilters("CustomerID",filters);
 });
