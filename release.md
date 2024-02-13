@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.45'
+title: '최신버전 1.1.46'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,18 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.46 (2024년 02월)
+
+### 기능 개선
+1. [setSelection](https://help.realgrid.com/api/GridBase/setSelection/) 시 selection관련 이벤트가 발생하지 않도록 하는 parameter추가
+
+### 오류 수정
+1. pasteOptions.applyMaxLength를 `true`로 설정해도 maxLength이상 붙여넣기 되는 현상 수정
+
+1. TreeGrid에 filter가 설정되어있는 상태에서 Data를 Load했을때 정상적으로 filtering되지 않는 현상 개선.
+
+
 ## 1.1.45 (2023년 11월)
 
 ### 오류 수정
