@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.46'
+title: '최신버전 1.1.47'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,18 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.47 (2024년 06월)
+### 기능 개선
+1. `잘라내기` 기능 추가
+  - `ctrl + x`를 입력시 선택된 셀 또는 block을 잘라내기 할수 있는 기능 추가.
+  - [onCut](http://help.realgrid.com/api/GridBase/onCut/) 사용자가 잘라내기를 할때 발생하는 이벤트 추가
+
+### 오류 수정
+1. [DisplayOptions](http://help.realgrid.com/api/types/DisplayOptions/)
+  - border를 일부만 그리는 경우 표시되는 않는 현상 개선
+1. [PasteOptions](http://help.realgrid.com/api/types/PasteOptions/)
+  - 편집불가 컬럼에서 여러행의 data를 붙여넣기를 할때 정상적으로 붙여넣기가 되지 않는 현상 개선
 
 ## 1.1.46 (2024년 02월)
 
