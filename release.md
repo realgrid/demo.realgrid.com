@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.47'
+title: '최신버전 1.1.48'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,14 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.48 (2024년 07월)
+### 기능 개선
+1. tablet에 mouse를 연결했을때 focus및 스크롤 안되는 현상 개선
+1. iOS에서 내부 스크롤이 끝난후 외부 스크롤이 동작하지 않는 현상 개선
+1. [DateCellEditor](https://help.realgrid.com/api/types/DateCellEditor/)
+  - date editor에서 시간을 직접 입력할수 있도록 변경
+1. 그리드에서 여러줄을 복사후 엑셀에 붙여넣기 할때 엑셀 버전에 따라 빈행이 추가적으로 선택되는 현상 개선
 
 ## 1.1.47 (2024년 06월)
 ### 기능 개선
