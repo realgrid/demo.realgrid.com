@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.48'
+title: '최신버전 1.1.49'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,13 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.49 (2024년 11월)
+### 오류 수정
+1. `dynamicStyles`를 사용해서 셀별로 `editable`을 변경하는 경우 `editButton`이 정상적으로 표시되지 않는 현상 개선
+1. 붙여넣기시 [onEditRowPasted](https://help.realgrid.com/api/GridBase/onEditRowPasted/)이벤트 내에서 [gridView.setValue](https://help.realgrid.com/api/GridBase/setValue/)를 사용하는 경우 발생하는 오류 수정
+1. [DropDownCellEditor](https://help.realgrid.com/api/types/DropDownCellEditor/)에 동일한 `Label`값이 있는 경우 선택한 값이 아닌 곳에 위치하는 현상 개선
+1. `TreeView`에서 행을 추가하고 [expandAll](https://help.realgrid.com/api/TreeView/expandAll/)을 호출하는 경우 focus된 위치에 따라서 스크롤이 되는 현상 개선
 
 ## 1.1.48 (2024년 07월)
 ### 기능 개선
