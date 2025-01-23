@@ -1,11 +1,29 @@
 ---
 layout: page
-title: 'Pivot 최신버전 1.0.10'
+title: 'Pivot 최신버전 1.0.11'
 published: true
 description: ""
 ---
 
 Pivot 최신 버전 이력
+## 1.0.11 (2025년 1월)
+#### 기능 개선
+1. [SetupOptions](https://help.realgrid.com/pivotApi/types/SetupOptions/){:target="_blank"}
+  - 설정창을 왼쪽 또는 오른쪽으로 표시하도록 하는 `position` 속성 추가
+```js
+pivot.setSetupOptions({position: "right"});
+```
+
+1. [PivotField.displayLabels](https://help.realgrid.com/pivotApi/types/PivotField/){:target="_blank"}
+  - 행의 합계를 표시하는 영역에도 `displayLables`가 적용되도록 수정
+
+1. `chromium`계열 브라우저의 콘솔창에 웹접근성 관련 오류가 표시되지 않도록 개선    
+
+1. focus cell의 위치를 지정하도록 하는 [setCurrent]((http://help.realgrid.com/pivotApi/RealPivot/setCurrent/){:target="_blank"} api가 추가.    
+  - `valueField`, `rowPath`, `columnPath`를 지정하면 해당하는 셀의 위치로 focus가 이동한다.    
+```js
+  pivot.setCurrent("차량가격", ["국산","기아","대형"], [4, 10]);
+```
 
 ## 1.0.10 (2023년 8월)
 #### 기능 개선
