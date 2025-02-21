@@ -1,11 +1,22 @@
 ---
 layout: page
-title: 'Pivot 최신버전 1.0.11'
+title: 'Pivot 최신버전 1.0.12'
 published: true
 description: ""
 ---
 
 Pivot 최신 버전 이력
+## 1.0.12 (2025년 2월)
+#### 기능 개선
+1. 설정창을 왼쪽에 표시했을때 `tooltip`이 정상적인 위치에 표시되지 않는 현상 개선    
+1. 일부 프레임웍에서 `RealPivot module`이 load되지 않는 현상 개선
+1. 설정창과 pivot화면의 간격을 지정하는 [SetupOptions](https://help.realgrid.com/pivotApi/types/SetupOptions/){:target="_blank"}.itemGap 속성 추가
+
+#### 오류 수정
+1. [SummaryOptions](https://help.realgrid.com/pivotApi/types/SummaryOptions/){:target="_blank"}의 `totalFixed`가 `true`일때 `rowPosition`또는 `columnPosition`이 `last`인 경우 키보드를 이용한 focus이동 개선    
+스크롤시 전체요약 영역이 일부 표시되지 않는 현상 개선
+
+
 ## 1.0.11 (2025년 1월)
 #### 기능 개선
 1. [SetupOptions](https://help.realgrid.com/pivotApi/types/SetupOptions/){:target="_blank"}
@@ -19,7 +30,7 @@ pivot.setSetupOptions({position: "right"});
 
 1. `chromium`계열 브라우저의 콘솔창에 웹접근성 관련 오류가 표시되지 않도록 개선    
 
-1. focus cell의 위치를 지정하도록 하는 [setCurrent]((http://help.realgrid.com/pivotApi/RealPivot/setCurrent/){:target="_blank"} api가 추가.    
+1. focus cell의 위치를 지정하도록 하는 [setCurrent](http://help.realgrid.com/pivotApi/RealPivot/setCurrent/){:target="_blank"} api가 추가.    
   - `valueField`, `rowPath`, `columnPath`를 지정하면 해당하는 셀의 위치로 focus가 이동한다.    
 ```js
   pivot.setCurrent("차량가격", ["국산","기아","대형"], [4, 10]);
