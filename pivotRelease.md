@@ -1,11 +1,20 @@
 ---
 layout: page
-title: 'Pivot 최신버전 1.0.12'
+title: 'Pivot 최신버전 1.0.13'
 published: true
 description: ""
 ---
 
 Pivot 최신 버전 이력
+## 1.0.13 (2025년 4월)
+#### 기능 개선
+1. `setupView`가 종료될때 발생하는 [onSetupClosed](http://help.realgrid.com/pivotApi/RealPivot/onSetupClosed/){:target="_blank"}이벤트 추가
+1. [showSetupView()](http://help.realgrid.com/pivotApi/RealPivot/showSetupView/){:target="_blank"}를 이용해서 설정화면을 표시할때 parentElement를 지정할수 있도록 개선
+
+#### 오류 수정
+1. setupView가 표시되는 상태에서 `showSetupView`를 다시 호출하면 pivot을 사용할수 없는 현상 개선
+
+
 ## 1.0.12 (2025년 2월)
 #### 기능 개선
 1. 설정창을 왼쪽에 표시했을때 `tooltip`이 정상적인 위치에 표시되지 않는 현상 개선    
