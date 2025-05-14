@@ -1,11 +1,16 @@
 ---
 layout: page
-title: 'Pivot 최신버전 1.0.13'
+title: 'Pivot 최신버전 1.0.14'
 published: true
 description: ""
 ---
 
 Pivot 최신 버전 이력
+## 1.0.14 (2025년 5월)
+#### 기능 개선
+1. 설정창에서 전체 설정을 초기화 할수 있는 버튼을 표시하도록 하는 [SetupOptions.showResetAllButton](https://help.realgrid.com/pivotApi/types/SetupOptions/){:target="_blank"} 과 개별 필드초기화 버튼을 표시하도록 하는 [SetupOptions.showResetButtons](https://help.realgrid.com/pivotApi/types/SetupOptions/){:target="_blank"}속성 추가
+
+
 ## 1.0.13 (2025년 4월)
 #### 기능 개선
 1. `setupView`가 종료될때 발생하는 [onSetupClosed](http://help.realgrid.com/pivotApi/RealPivot/onSetupClosed/){:target="_blank"}이벤트 추가
