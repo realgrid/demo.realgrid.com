@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.50'
+title: '최신버전 1.1.51'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,15 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.51 (2025년 08월)
+### 오류 수정
+1. column.styles.datetimeFormat이 `yyy*-MM-dd`로 되어있을때 발생하는 오류 수정
+
+### 기능 개선
+1. 그리드가 focus를 가지거나 잃는 경우 호출되는 [onGridFocusChanged](https://help.realgrid.com/api/GridBase/onGridFocusChanged)이벤트 추가
+
+
 ## 1.1.50 (2025년 06월)
 ### 오류 수정
 1. `EditOptions.editable`이 `false`이고 browser가 safari일때 일부 editor에서 복사가 되지 않는 현상 수정
