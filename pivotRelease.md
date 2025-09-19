@@ -1,11 +1,21 @@
 ---
 layout: page
-title: 'Pivot 최신버전 1.0.14'
+title: 'Pivot 최신버전 1.0.15'
 published: true
 description: ""
 ---
 
 Pivot 최신 버전 이력
+## 1.0.15 (2025년 9월)
+#### 기능 개선
+1. [DisplayOptions](https://help.realgrid.com/pivotApi/types/DisplayOptions/){:target="_blank"}에 header, row, column 영역의 resize 가능 여부를 제어하는 속성을 추가    
+1. [PivotField](https://help.realgrid.com/pivotApi/types/PivotField/){:target="_blank"} 에 `displayField`가 지정되어있고 `displayField`의 data가 `""`일때 `sourceField`의 data가 표시되는 현상 수정
+1. [SetupOptions](https://help.realgrid.com/pivotApi/types/SetupOptions/){:target="_blank"}에 행필드 또는 컬럼필드의 조작을 막도록 하는 [rowControlLevel](https://help.realgrid.com/pivotApi/types/SetupOptions/){:target="_blank"}, [columnControlLevel](https://help.realgrid.com/pivotApi/types/SetupOptions/){:target="_blank"} 속성추가
+1. value의 값을 절대값으로 표시할수 있도록 `numberFormat` 개선
+
+#### 오류 수정
+1. [SummaryOptions](https://help.realgrid.com/pivotApi/types/SummaryOptions/){:target="_blank"}의 `totalFixed`가 `true`이고 `rowPosition`이 `last`이면서 data가 적은 경우 행의 합계가 정상적으로 표시되지 않는 오류 수정
+
 ## 1.0.14 (2025년 5월)
 #### 기능 개선
 1. 설정창에서 전체 설정을 초기화 할수 있는 버튼을 표시하도록 하는 [SetupOptions.showResetAllButton](https://help.realgrid.com/pivotApi/types/SetupOptions/){:target="_blank"} 과 개별 필드초기화 버튼을 표시하도록 하는 [SetupOptions.showResetButtons](https://help.realgrid.com/pivotApi/types/SetupOptions/){:target="_blank"}속성 추가
