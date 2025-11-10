@@ -1,11 +1,35 @@
 ---
 layout: page
-title: 'Pivot 최신버전 1.0.15'
+title: 'Pivot 최신버전 1.0.16'
 published: true
 description: ""
 ---
 
 Pivot 최신 버전 이력
+## 1.0.16 (2025년 11월)
+#### 기능 개선
+1. licensekey가 프레임웍의 환경변수에 있는 경우 licensekey를 등록하거나 등록된 licensekey를 가져올수 있는 [setLicenseKey]({{"%help%/pivotApi/RealPivot/setLicenseKey" | replace: '%help%', site.helpurl}}){:target="_blank"}와 [getLicenseKey]({{"%help/pivotApi/RealPivot/getLicenseKey/" | replace: "%help", site.helpurl}}){:target="_blank"} 추가    
+```js
+RealPivot.setLicenseKey(licensekey)
+```
+1. `RowLabel`또는 `ColumnLabel`에 출력되고 있는 text가 항상 보여지도록 개선    
+1. sort시 `순차정렬`또는 `역차정렬`외 `정렬안함`도 표시되도록 하는 [SortOptions.alwaysSort]({{"%help%/pivotApi/types/SortOptions" | replace: "%help%", site.helpurl }}){:target="_blank"} 속성 추가 기본값: `true`    
+1. `valueField`를 클릭시 valueField의 값으로 정렬하도록 하는 [SortOptions.valueFieldSortable]({{"%help%/pivotApi/types/SortOptions" | replace: "%help%", site.helpurl }}){:target="_blank"} 속성 추가   
+1. 정렬시 현재선택된 셀을 유지하도록 하는 [SortOptions.keepFocusCell]({{"%help%/pivotApi/types/SortOptions" | replace: "%help%", site.helpurl}}){:target="_blank"}속성 추가    
+1. 행또는 컬럼 정렬시 labelField가 설정되어있는 경우 labelField의 값으로 정렬하도록 하는 [SortOptions.sortByLabel]({{"%help%/pivotApi/types/SortOptions" | replace: "%help%", site.helpurl}}){:target="_blank"}속성 추가    
+1. [focusGuide]({{"%help%/pivotApi/types/DisplayOptions/" | replace: "%help%", site.helpurl }}){:target="_blank"}의 영역이 rowLabel과 columnLabel영역까지 표시되도록 하는 [extendFocusGuide]({{"%help%/pivotApi/types/DisplayOptions/" | replace: "%help%", site.helpurl }}){:target="_blank"} 속성 추가    
+1. valueField를 정렬할때 컬럼 또는 행 값 기준 정렬외 행 정렬 과 valueField정렬이 동시에 가능하도록 개선    
+행필드중 일부를 정렬안함 상태로 설정하고 컬럼의 valueField중 정렬할려는 vauleField의 header를 클릭하면 정렬되지 않은 행 필드를 valueField의 값을 이용해서 정렬한다.   
+
+
+
+#### 오류 수정
+1. 일부 환경에서 가로 스크롤이 되지 않는 현상 개선    
+1. 세로 스크롤시 이동되는 행의 갯수가 일치하지 않는 현상 개선    
+1. 정렬시 사용자가 변경한 높이가 초기화 되는 현상 개선    
+1. [expandColumnLevel]({{"%help%/pivotApi/RealPivot/expandColumnLevel" | replace: "%help%", site.helpurl}}){:target="_blank"}를 이용해서 컬럼을 접은후 간헐적으로 스크롤영역이 깨지는 현상 개선    
+1. [SummaryOptions]({{"%help%/pivotApi/types/SummaryOptions/" | replace: "%help%", site.helpurl}}){:target="_blank"}의 `totalFixed`가 `true`이면서 valueField가 하나일때 가로스크롤시 합계영역이 일부 가려지는 현상 개선    
+
 ## 1.0.15 (2025년 9월)
 #### 기능 개선
 1. [DisplayOptions](https://help.realgrid.com/pivotApi/types/DisplayOptions/){:target="_blank"}에 header, row, column 영역의 resize 가능 여부를 제어하는 속성을 추가    
