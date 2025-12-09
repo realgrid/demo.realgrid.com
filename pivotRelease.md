@@ -1,11 +1,18 @@
 ---
 layout: page
-title: 'Pivot 최신버전 1.0.16'
+title: 'Pivot 최신버전 1.0.17'
 published: true
 description: ""
 ---
 
 Pivot 최신 버전 이력
+## 1.0.17 (2025년 12월)
+#### 기능 개선
+1. excel export시 header영역이 분리되어 export되도록 개선    
+행의 높이가 보여지고 있는 높이로 export되도록 개선    
+
+1. header의 [formType]({{"%help%/pivotApi/types/FormType/" | replace: '%help%', site.helpurl}}){:target="_blank"}이 `grid`일때 row Header영역을 클릭하면 정렬되도록 개선    
+
 ## 1.0.16 (2025년 11월)
 #### 기능 개선
 1. licensekey가 프레임웍의 환경변수에 있는 경우 licensekey를 등록하거나 등록된 licensekey를 가져올수 있는 [setLicenseKey]({{"%help%/pivotApi/RealPivot/setLicenseKey" | replace: '%help%', site.helpurl}}){:target="_blank"}와 [getLicenseKey]({{"%help/pivotApi/RealPivot/getLicenseKey/" | replace: "%help", site.helpurl}}){:target="_blank"} 추가    
