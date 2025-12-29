@@ -10,6 +10,8 @@ categories:
 tags: ['pivot']
 ---
 
+※ 참고사항: RealPivot은 웹접근성을 지원하지 않습니다.
+
 <a class="btn primary small round lowercase" id="btnStep1">1. dataProvider, pivot 객체 생성 및 연결</a>
 <a class="btn primary small round lowercase" id="btnStep2">2. dataProvider field생성 및 pivot fieldMapping</a>
 <a class="btn primary small round lowercase" id="btnStep3">3. 데이터 불러오기 및 그리기</a>
