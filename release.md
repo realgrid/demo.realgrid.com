@@ -1,6 +1,6 @@
 ---
 layout: page
-title: '최신버전 1.1.51'
+title: '최신버전 1.1.52'
 published: true
 permalink: /release/
 ---
@@ -11,6 +11,14 @@ permalink: /release/
   - 객체명, 함수명, 옵션명, 속성명의 대소문자 사용에 주의 하세요.
     - 예: PasteOptions.forceColumnValidation 속성
 {% endcomment %}
+
+## 1.1.52 (2026년 04월)
+### 오류 수정
+1. [onSelectionAdded](https://help.realgrid.com/api/GridBase/onSelectionAdded/)이벤트가 2번 실행되는 현상 개선
+
+### 기능 개선
+1. 분산/표준편차 계산시 결측치를 제외하고 계산되도록 수정
+1. 스크롤시에는 [ColumnFooter.callback](https://help.realgrid.com/api/types/ColumnFooter/)이 호출되지 않도록 개선
 
 ## 1.1.51 (2025년 08월)
 ### 오류 수정
