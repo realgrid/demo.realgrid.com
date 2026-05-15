@@ -1,11 +1,21 @@
 ---
 layout: page
-title: 'Pivot 최신버전 1.0.17'
+title: 'Pivot 최신버전 1.0.18'
 published: true
 description: ""
 ---
 
 Pivot 최신 버전 이력
+## 1.0.18 (2026년 05월)
+#### 기능 개선
+1. 그룹요약 셀이 그룹영역까지 확장되어 표시되도록 하는 [SummaryOptions.rowGroupMerge]({{"%help%/pivotApi/types/SummaryOptions/" | relpace: "%help%", site.helpurl}}){:target="_blank"} 속성 추가 기본값 `false`    
+
+1. [expandColumnLevel]({{"%help%/pivotApi/RealPivot/expandColumnLevel" | replace: "%help%", site.helpurl}}){:target="_blank"} 또는 [expandRowLevel]({{"%help%/pivotApi/RealPivot/expandRowLevel" | replace: "%help%", site.helpurl}}){:target="_blank"}을 이용해서 행 또는 컬럼을 펼칠때 하위 Level의 상태를 지정할수 있도록 `expandDescentants` 매개변수 추가    
+
+#### 오류 수정
+1. 행 또는 열이 접힌상태에서 excel로 export할때 [exportOptions.expandAll]({{"%help%/pivotApi/types/ExportOptions" | replace: "%help%", site.helpurl}}){:target="_blank"}{:target="_blank"}을 `true`로 지정해도 접힌 상태로 출력되는 오류 수정
+
+
 ## 1.0.17 (2025년 12월)
 #### 기능 개선
 1. excel export시 header영역이 분리되어 export되도록 개선    
